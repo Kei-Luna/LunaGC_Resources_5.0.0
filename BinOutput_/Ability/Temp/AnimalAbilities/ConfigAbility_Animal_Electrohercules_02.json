@@ -1,0 +1,3327 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Partner_Animal_Electrohercules_StaminaController",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "JumpBack",
+            "BeHit",
+            "Die",
+            "Born",
+            "BeHitThrow",
+            "Struggle",
+            "Defend_BS",
+            "Defend_Loop",
+            "Defend",
+            "JumpForward_Recoil",
+            "JumpForward_Long",
+            "JumpForward_Critical",
+            "JumpForward_Once",
+            "JumpForward_Short"
+          ],
+          "modifierName": "Partner_Animal_Electrohercules_JumpBack_InputUnuseable",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "JumpForward_Charging",
+            "JumpBack",
+            "JumpForward_Once",
+            "JumpForward_Critical",
+            "JumpForward_Recoil",
+            "JumpForward_Long",
+            "JumpForward_Short",
+            "BeHit",
+            "Die",
+            "Born",
+            "Warning",
+            "BeHitThrow",
+            "Struggle",
+            "Defend"
+          ],
+          "modifierName": "Partner_Animal_Electrohercules_Defend_InputUnuseable",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_ONIKABUTOBATTLE_PARTNER_CANRECOVERSTAMINA",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Stamina_NoRecover",
+            "Stamina_CanRecover"
+          ]
+        },
+        {
+          "$type": "KKNFAFIHCDF",
+          "useableList": [
+            {
+              "checkCanDoSkill": true,
+              "conditions": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_STAMINA",
+                  "param3": 32.5,
+                  "compareType": "MoreThanAndEqual"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_ONIKABUTOBATTLE_PARTNER_JUMPBACK_USEABLE",
+                  "param3": 1.0
+                }
+              ]
+            },
+            {
+              "inputActionType": "Action2",
+              "conditions": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_STAMINA",
+                  "param3": 25.0,
+                  "compareType": "MoreThanAndEqual"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_ONIKABUTOBATTLE_PARTNER_JUMPBACK_USEABLE",
+                  "param3": 1.0
+                }
+              ]
+            },
+            {
+              "inputActionType": "Action3",
+              "conditions": [
+                {
+                  "$type": "HHHMNCNPBDK",
+                  "predicates": [
+                    {
+                      "$type": "BGOKEHHCFHG",
+                      "predicates": [
+                        {
+                          "$type": "CNGGLKHONAA",
+                          "target": "Self",
+                          "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_STAMINA",
+                          "param3": 30.0,
+                          "compareType": "MoreThanAndEqual"
+                        },
+                        {
+                          "$type": "CNGGLKHONAA",
+                          "target": "Self",
+                          "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DEFEND_STATE",
+                          "param3": 0.0
+                        },
+                        {
+                          "$type": "CNGGLKHONAA",
+                          "target": "Self",
+                          "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DEFEND_USEABLE",
+                          "param3": 1.0
+                        }
+                      ]
+                    },
+                    {
+                      "$type": "BGOKEHHCFHG",
+                      "predicates": [
+                        {
+                          "$type": "CNGGLKHONAA",
+                          "target": "Self",
+                          "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DEFEND_STATE",
+                          "param3": 0.0,
+                          "compareType": "MoreThan"
+                        },
+                        {
+                          "$type": "CNGGLKHONAA",
+                          "target": "Self",
+                          "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DEFEND_USEABLE",
+                          "param3": 1.0
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "abilitySpecials": {
+        "Electrohercules_Property_MaxStamina": 100.0,
+        "Electrohercules_Property_StaminaRecoverRate": 3.0
+      },
+      "modifiers": {
+        "Stamina_NoRecover": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "Stamina_CanRecover": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.10000000149011612,
+          "onThinkInterval": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": "Electrohercules_Property_StaminaRecoverRate",
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_STAMINA",
+              "useLimitRange": true,
+              "param2": "Electrohercules_Property_MaxStamina",
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Partner_Animal_Electrohercules_JumpBack_InputUnuseable": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_ONIKABUTOBATTLE_PARTNER_JUMPBACK_USEABLE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_ONIKABUTOBATTLE_PARTNER_JUMPFORWARD_USEABLE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ONIKABUTOBATTLE_PARTNER_JUMPBACK_USEABLE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ONIKABUTOBATTLE_PARTNER_JUMPFORWARD_USEABLE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Partner_Animal_Electrohercules_Defend_InputUnuseable": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DEFEND_USEABLE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DEFEND_USEABLE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": "Electrohercules_Property_MaxStamina",
+          "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_STAMINA_MAX",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": "Electrohercules_Property_MaxStamina",
+          "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_STAMINA",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_ONIKABUTOBATTLE_PARTNER_CANRECOVERSTAMINA",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_ONIKABUTOBATTLE_PARTNER_JUMPBACK_USEABLE",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_ONIKABUTOBATTLE_PARTNER_JUMPFORWARD_USEABLE",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DEFEND_USEABLE",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_ONIKABUTOBATTLE_ISPARTNER",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Partner_Animal_Electrohercules_Defend_StaminaController",
+      "abilityMixins": [
+        {
+          "$type": "PCJHFFKBGIJ",
+          "chargeTime": 0.20000000298023224,
+          "EKKJNADOEMB": 999999.0,
+          "onBeginUncharged": [
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_STAMINA",
+              "overrideMapKey": "Electrohercules_Property_CurrentStamina"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_STAMINA_PREDEDUCTED",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 30.0,
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_STAMINA_PREDEDUCTED",
+              "useLimitRange": true,
+              "param2": "Electrohercules_Property_CurrentStamina",
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_STAMINA_PREDEDUCTED",
+              "overrideMapKey": "Electrohercules_Stamina_Defend_Prededucted"
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "DefendStart"
+            }
+          ],
+          "onReleaseUncharged": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_STAMINA_PREDEDUCTED",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": [
+                0.0,
+                1.0,
+                "Electrohercules_Stamina_Defend_Prededucted",
+                "MUL",
+                "SUB"
+              ],
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_STAMINA",
+              "useLimitRange": true,
+              "param2": "Electrohercules_Property_MaxStamina",
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "Rebound",
+              "param3": true
+            }
+          ],
+          "onBeginCharged": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Partner_Animal_Electrohercules_DefendLoop"
+            }
+          ],
+          "onReleaseCharged": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": [
+                0.0,
+                1.0,
+                "Electrohercules_Stamina_Defend_Prededucted",
+                "MUL",
+                "SUB"
+              ],
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_STAMINA",
+              "useLimitRange": true,
+              "param2": "Electrohercules_Property_MaxStamina",
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Partner_Animal_Electrohercules_DefendLoop"
+            }
+          ],
+          "onCancelCharged": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "DefendEnd"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Partner_Animal_Electrohercules_DefendLoop"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_STAMINA_PREDEDUCTED",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ONIKABUTOBATTLE_PARTNER_CANRECOVERSTAMINA",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "chargeStateIDs": [
+            "Defend_BS",
+            "Defend_Loop"
+          ],
+          "inputActionType": "Action3",
+          "secondChargeTime": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_STAMINA_PREDEDUCTED",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": [
+                0.0,
+                1.0,
+                "Electrohercules_Stamina_Defend_Prededucted",
+                "MUL",
+                "SUB"
+              ],
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_STAMINA",
+              "useLimitRange": true,
+              "param2": "Electrohercules_Property_MaxStamina",
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "Rebound",
+              "param3": true
+            }
+          ]
+        }
+      ],
+      "abilitySpecials": {
+        "Electrohercules_Stamina_Defend_Prededucted": 30.0,
+        "Electrohercules_Stamina_Defend_LoopCost": 1.0,
+        "Electrohercules_Property_CurrentStamina": 0.0,
+        "Electrohercules_Property_MaxStamina": 100.0
+      },
+      "modifiers": {
+        "Partner_Animal_Electrohercules_DefendLoop": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.10000000149011612,
+          "modifierMixins": [
+            {
+              "$type": "CCNIOPJEHOE",
+              "globalValueKey": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_STAMINA",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                [
+                  "Electrohercules_Property_MaxStamina",
+                  0.5,
+                  "ADD"
+                ]
+              ],
+              "modifierNameSteps": [
+                "Partner_Animal_Electrohercules_Defend_StaminaEmpty",
+                "Empty"
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": [
+                0.0,
+                1.0,
+                "Electrohercules_Stamina_Defend_LoopCost",
+                "MUL",
+                "SUB"
+              ],
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_STAMINA",
+              "useLimitRange": true,
+              "param2": "Electrohercules_Property_MaxStamina",
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_ONIKABUTOBATTLE_PARTNER_CANRECOVERSTAMINA",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "Defend",
+              "param3": true
+            },
+            {
+              "$type": "DLEIPBPNAIM",
+              "paramList": [
+                0,
+                3,
+                0
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_ONIKABUTOBATTLE_PLAYERCONTROL_CHARGEDISPLAY",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_STAMINA_PREDEDUCTED",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ONIKABUTOBATTLE_PARTNER_CANRECOVERSTAMINA",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "Defend"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": [
+                0.0,
+                1.0,
+                "Electrohercules_Stamina_Defend_LoopCost",
+                "MUL",
+                "SUB"
+              ],
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_STAMINA",
+              "useLimitRange": true,
+              "param2": "Electrohercules_Property_MaxStamina",
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Partner_Animal_Electrohercules_Defend_StaminaEmpty": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Partner_Animal_Electrohercules_DefendLoop"
+            }
+          ]
+        },
+        "Empty": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_STAMINA_PREDEDUCTED",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": "Electrohercules_Property_MaxStamina",
+          "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_STAMINA_MAX",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "KJCHPDPBJHL",
+          "boolID": "TutorialDefend",
+          "param3": true
+        },
+        {
+          "$type": "BLCCGIPAOIP",
+          "PLLJBINMGJK": "DoSkill"
+        },
+        {
+          "$type": "AKEEDILMOJF",
+          "intID": "SkillID",
+          "param3": 1031.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Partner_Animal_Electrohercules_Defend_LogicController",
+      "abilityMixins": [
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueKey": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DEFEND_STATE",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5,
+            2.5
+          ],
+          "modifierNameSteps": [
+            "Partner_Animal_Electrohercules_Defend_Normal",
+            "Partner_Animal_Electrohercules_Defend_Rebound",
+            "Partner_Animal_Electrohercules_Defend_Defend"
+          ]
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Defend_BS",
+            "Defend_Loop",
+            "Defend"
+          ],
+          "modifierName": "Partner_Animal_Electrohercules_DefendEffect",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Standby"
+          ],
+          "modifierName": "Partner_Animal_Electrohercules_DefendState_ForceInit",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Partner_Animal_Electrohercules_Defend_Normal": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_Rebound",
+                "HitBox_Defend"
+              ]
+            }
+          ]
+        },
+        "Partner_Animal_Electrohercules_Defend_Rebound": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_Rebound",
+                "HitBox_Defend"
+              ],
+              "setEnable": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_Rebound",
+                "HitBox_Defend"
+              ]
+            }
+          ]
+        },
+        "Partner_Animal_Electrohercules_Defend_Defend": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_Defend"
+              ],
+              "setEnable": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_Defend"
+              ]
+            }
+          ]
+        },
+        "Partner_Animal_Electrohercules_DefendEffect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Animal_Electrohercules_DefendBS",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+                  "param3": 0.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "modifierName": "Partner_Animal_Electrohercules_Defend_ReboundTimer01"
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "modifierName": "Partner_Animal_Electrohercules_Defend_ReboundTimer02"
+                }
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Animal_Electrohercules_DefendAS",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Partner_Animal_Electrohercules_Defend_ReboundTimer01"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Partner_Animal_Electrohercules_Defend_ReboundTimer02"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DEFEND_STATE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "Rebound"
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "TutorialDefend"
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Animal_Electrohercules_DefendHit",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "DLEIPBPNAIM",
+              "predicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "Electrohercules_RangedAttack02"
+                  ]
+                }
+              ],
+              "paramList": [
+                0,
+                2,
+                1
+              ]
+            }
+          ]
+        },
+        "Partner_Animal_Electrohercules_Defend_ReboundTimer01": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.800000011920929,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DEFEND_STATE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 2.0,
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DEFEND_STATE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkIntervalIsFixedUpdate": true,
+          "thinkIntervalIgnoreTimeScale": true
+        },
+        "Partner_Animal_Electrohercules_Defend_ReboundTimer02": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.4000000059604645,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DEFEND_STATE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 2.0,
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DEFEND_STATE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkIntervalIsFixedUpdate": true,
+          "thinkIntervalIgnoreTimeScale": true
+        },
+        "Partner_Animal_Electrohercules_DefendState_ForceInit": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DEFEND_STATE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DEFEND_STATE",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Electrohercules_ReboundElectricBall_Hit",
+      "modifiers": {
+        "Animal_Electrohercules_ElectricBall_Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Animal_Electrohercules_ElectricBall_ReboundLoop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Animal_Electrohercules_ReboundElectricBall_SetDefendState": {
+          "modifierName": "",
+          "elementDurability": 2.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 5.0,
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_TUTORIAL_STAGE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Animal_Electrohercules_ElectricBall_Effect"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "INBCDALOHMP",
+          "target": "Target",
+          "targetPredicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+              "param3": 0.0
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "PELJALPANCA",
+              "target": "Target",
+              "modifierName": "Animal_Electrohercules_ReboundElectricBall_SetDefendState"
+            }
+          ]
+        },
+        {
+          "$type": "CCNPNMMONDO",
+          "target": "Target",
+          "attackInfo": {
+            "attackTag": "Electrohercules_Rebound",
+            "attenuationTag": "",
+            "attenuationGroup": "default",
+            "attackProperty": {
+              "actorGrassSubHurtDelta": 0.0,
+              "actorWindSubHurtDelta": 0.0,
+              "IPFJJJGABPL": 100.0,
+              "strikeType": "Blunt",
+              "enBreak": 0.0,
+              "GLKMCMDJBIK": 0.0
+            }
+          }
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Animal_Electrohercules_ElectricBall_Kicked_Bullet_Hit",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "useRotation": true
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "NCFFNDHGCMH"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Electrohercules_Tutorial_Rebound",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "BeHit"
+          ],
+          "modifierName": "Animal_Electrohercules_Tutorial_Rebound_Start",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Animal_Electrohercules_Tutorial_Rebound_Start": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 3.0,
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_TUTORIAL_STAGE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "IPMMJGMONCI",
+          "skillIDs": [
+            1051
+          ]
+        },
+        {
+          "$type": "BLCCGIPAOIP",
+          "PLLJBINMGJK": "DoSkill"
+        },
+        {
+          "$type": "AKEEDILMOJF",
+          "intID": "SkillID",
+          "param3": 1051.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Electrohercules_Tutorial_Gadget",
+      "modifiers": {
+        "Animal_Electrohercules_Tutorial_Gadget_Behit": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onBeingHit": [
+            {
+              "$type": "PELJALPANCA",
+              "target": "Owner",
+              "predicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "Electrohercules_RangedAttack02"
+                  ]
+                }
+              ],
+              "modifierName": "Animal_Electrohercules_Tutorial_Gadget_SetOwnerDefendState"
+            },
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        },
+        "Animal_Electrohercules_Tutorial_Gadget_SetOwnerDefendState": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 4.0,
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_TUTORIAL_STAGE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Animal_Electrohercules_Tutorial_Gadget_Behit"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Electrohercules_Tutorial_Defend",
+      "onAbilityStart": [
+        {
+          "$type": "IPMMJGMONCI",
+          "skillIDs": [
+            1061
+          ]
+        },
+        {
+          "$type": "BLCCGIPAOIP",
+          "PLLJBINMGJK": "DoSkill"
+        },
+        {
+          "$type": "AKEEDILMOJF",
+          "intID": "SkillID",
+          "param3": 1061.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Electrohercules_RangeAttack02",
+      "onAbilityStart": [
+        {
+          "$type": "CAKDDHLKOAB",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+              "param3": 1.0,
+              "compareType": "LessAndEqual"
+            }
+          ],
+          "bulletID": 43805010,
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.20000000298023224,
+              "LPCHALMFFOD": 0.4000000059604645
+            },
+            "useRotation": true
+          },
+          "ownerIsTarget": true,
+          "lifeByOwnerV2": true
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+              "param3": 2.0
+            }
+          ],
+          "bulletID": 43805011,
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.20000000298023224,
+              "LPCHALMFFOD": 0.4000000059604645
+            },
+            "useRotation": true
+          },
+          "ownerIsTarget": true,
+          "lifeByOwnerV2": true
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+              "param3": 3.0
+            }
+          ],
+          "bulletID": 43805012,
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.20000000298023224,
+              "LPCHALMFFOD": 0.4000000059604645
+            },
+            "useRotation": true
+          },
+          "ownerIsTarget": true,
+          "lifeByOwnerV2": true
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Animal_Electrohercules_RangeAttack02_AS",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Electrohercules_ElectricBall_Hit",
+      "modifiers": {
+        "Animal_Electrohercules_ElectricBall_Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Animal_Electrohercules_ElectricBall_Kicked_Bullet",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Animal_Electrohercules_ElectricBall_Tutorial_Timer": {
+          "modifierName": "",
+          "elementDurability": 1.2000000476837158,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.8999999761581421,
+          "onThinkInterval": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 4.0,
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_TUTORIAL_STAGE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "ForceSetReboundTutorialStateTimer"
+            }
+          ],
+          "onThinkIntervalIsFixedUpdate": true,
+          "thinkIntervalIgnoreTimeScale": true
+        },
+        "ForceSetReboundTutorialStateTimer": {
+          "modifierName": "",
+          "elementDurability": 3.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_TUTORIAL_REBOUNDBALLFIRED",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_TUTORIAL_STAGE",
+                  "param3": 4.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "param3": 5.0,
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_TUTORIAL_STAGE",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Animal_Electrohercules_ElectricBall_Effect"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "target": "OriginOwner",
+          "modifierName": "Animal_Electrohercules_ElectricBall_Tutorial_Timer"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JGEBAJLEBMO"
+              },
+              "OAHPDLJIADP": 0.15000000596046448
+            },
+            "attackInfo": {
+              "attackTag": "Electrohercules_RangedAttack02",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.0,
+                "actorWindSubHurtDelta": 0.0,
+                "IPFJJJGABPL": 100.0,
+                "enBreak": 0.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "none",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV0"
+              },
+              "canHitHead": true
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Animal_Electrohercules_ElectricBall_Kicked_Bullet_Hit",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "useRotation": true
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Electrohercules_RangeAttack03",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "RangeAttack03_BS"
+          ],
+          "modifierName": "Animal_Electrohercules_RangeAttack03BS",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "RangeAttack03"
+          ],
+          "modifierName": "Animal_Electrohercules_RangeAttack03ClearLaser",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "RangeAttack03_AS"
+          ],
+          "modifierName": "Animal_Electrohercules_RangeAttack03AS",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Animal_Electrohercules_RangeAttack03BS": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+                  "param3": 0.0
+                }
+              ],
+              "modifierName": "Animal_Electrohercules_RangeAttack03_SetTurorialState"
+            }
+          ]
+        },
+        "Animal_Electrohercules_RangeAttack03_SetTurorialState": {
+          "modifierName": "",
+          "elementDurability": 0.800000011920929,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 6.0,
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_TUTORIAL_STAGE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Animal_Electrohercules_RangeAttack03ClearLaser": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 43805015
+              }
+            }
+          ]
+        },
+        "Animal_Electrohercules_RangeAttack03AS": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+                  "param3": 0.0
+                }
+              ],
+              "param3": 7.0,
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_TUTORIAL_STAGE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 43805015,
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "useRotation": true
+          },
+          "lifeByOwnerV2": true
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Electrohercules_RangeAttack03_LaserBullet",
+      "onAbilityStart": [
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JGEBAJLEBMO"
+              },
+              "OAHPDLJIADP": 0.15000000596046448
+            },
+            "attackInfo": {
+              "attackTag": "Electrohercules_RangedAttack03",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.0,
+                "actorWindSubHurtDelta": 0.0,
+                "IPFJJJGABPL": 100.0,
+                "enBreak": 0.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "none",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV0"
+              }
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Partner_Animal_Electrohercules_AttackLandedHandler",
+      "abilityMixins": [
+        {
+          "$type": "DIDNLIKKLLF",
+          "stateIDs": [
+            "JumpForward_Long",
+            "JumpForward_Short"
+          ],
+          "enterActions": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_ONIKABUTOBATTLE_PARTNER_JUMPATTACK_ISINHITCD",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "CAKDDHLKOAB",
+              "bulletID": 43805001,
+              "born": {
+                "$type": "JHEBKCMEMLN"
+              },
+              "trackTarget": "Self"
+            }
+          ],
+          "exitActions": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "sortType": "Reversed",
+                "configID": 43805001
+              }
+            }
+          ],
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "DIDNLIKKLLF",
+          "stateIDs": [
+            "JumpForward_Long_CanTriggerCritical",
+            "JumpForward_Short_CanTriggerCritical"
+          ],
+          "enterActions": [
+            {
+              "$type": "CAKDDHLKOAB",
+              "bulletID": 43805002,
+              "born": {
+                "$type": "JHEBKCMEMLN"
+              },
+              "trackTarget": "Self"
+            }
+          ],
+          "exitActions": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "sortType": "Reversed",
+                "configID": 43805002
+              }
+            }
+          ],
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "JumpForward_Damage": 10.0,
+        "JumpForward_Critical_Damage": 25.0,
+        "Rebound_Damage": 20.0,
+        "ChargeState": 0.0,
+        "Endure_DamageReduce": 1.0
+      },
+      "modifiers": {
+        "Partner_Animal_Electrohercules_AttackLandedPredicate": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Other",
+              "targetPredicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "Electrohercules_JumpForward_CriticalTrigger"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "LDIAIDLOPEE",
+                  "globalValueKey": "_ONIKABUTOBATTLE_PLAYERCONTROL_CHARGESTATE",
+                  "overrideMapKey": "ChargeState"
+                },
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_ENDURESTATE",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "param3": [
+                    0.0,
+                    15.0,
+                    "SUB",
+                    "ChargeState",
+                    "JumpForward_Damage",
+                    "MUL",
+                    "SUB",
+                    "JumpForward_Critical_Damage",
+                    "SUB"
+                  ],
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_HP",
+                  "useLimitRange": true,
+                  "param2": 999999.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_ENDURESTATE",
+                      "param3": 0.0,
+                      "compareType": "MoreThan"
+                    }
+                  ],
+                  "param3": [
+                    0.0,
+                    15.0,
+                    "Endure_DamageReduce",
+                    "MUL",
+                    "SUB",
+                    "ChargeState",
+                    "JumpForward_Damage",
+                    "MUL",
+                    "Endure_DamageReduce",
+                    "MUL",
+                    "SUB",
+                    "JumpForward_Critical_Damage",
+                    "Endure_DamageReduce",
+                    "MUL",
+                    "SUB"
+                  ],
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_HP",
+                  "useLimitRange": true,
+                  "param2": 999999.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "FNAMKOMELEP",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ONIKABUTOBATTLE_ISHERCULES",
+                      "param3": 1.0
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_ENDURESTATE",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "born": {
+                    "$type": "JHEBKCMEMLN",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 0.0
+                    }
+                  },
+                  "damage": [
+                    15.0,
+                    "ChargeState",
+                    "JumpForward_Damage",
+                    "MUL",
+                    "ADD",
+                    "JumpForward_Critical_Damage",
+                    "ADD"
+                  ],
+                  "text": "",
+                  "damageType": "Critical"
+                },
+                {
+                  "$type": "FNAMKOMELEP",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ONIKABUTOBATTLE_ISHERCULES",
+                      "param3": 1.0
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_ENDURESTATE",
+                      "param3": 0.0,
+                      "compareType": "MoreThan"
+                    }
+                  ],
+                  "born": {
+                    "$type": "JHEBKCMEMLN",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 0.0
+                    }
+                  },
+                  "damage": [
+                    15.0,
+                    "Endure_DamageReduce",
+                    "MUL",
+                    "ChargeState",
+                    "JumpForward_Damage",
+                    "MUL",
+                    "Endure_DamageReduce",
+                    "MUL",
+                    "ADD",
+                    "JumpForward_Critical_Damage",
+                    "Endure_DamageReduce",
+                    "MUL",
+                    "ADD"
+                  ],
+                  "text": "",
+                  "damageType": "Critical"
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Other",
+              "targetPredicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "Electrohercules_JumpForward"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "LDIAIDLOPEE",
+                  "globalValueKey": "_ONIKABUTOBATTLE_PLAYERCONTROL_CHARGESTATE",
+                  "overrideMapKey": "ChargeState"
+                },
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_ENDURESTATE",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "param3": [
+                    0.0,
+                    15.0,
+                    "SUB",
+                    "ChargeState",
+                    "JumpForward_Damage",
+                    "MUL",
+                    "SUB"
+                  ],
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_HP",
+                  "useLimitRange": true,
+                  "param2": 999999.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_ENDURESTATE",
+                      "param3": 0.0,
+                      "compareType": "MoreThan"
+                    }
+                  ],
+                  "param3": [
+                    0.0,
+                    15.0,
+                    "Endure_DamageReduce",
+                    "MUL",
+                    "SUB",
+                    "ChargeState",
+                    "JumpForward_Damage",
+                    "MUL",
+                    "Endure_DamageReduce",
+                    "MUL",
+                    "SUB"
+                  ],
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_HP",
+                  "useLimitRange": true,
+                  "param2": 999999.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "FNAMKOMELEP",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ONIKABUTOBATTLE_ISHERCULES",
+                      "param3": 1.0
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_ENDURESTATE",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "born": {
+                    "$type": "JHEBKCMEMLN",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 0.0
+                    }
+                  },
+                  "damage": [
+                    15.0,
+                    "ChargeState",
+                    "JumpForward_Damage",
+                    "MUL",
+                    "ADD"
+                  ],
+                  "text": ""
+                },
+                {
+                  "$type": "FNAMKOMELEP",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ONIKABUTOBATTLE_ISHERCULES",
+                      "param3": 1.0
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_ENDURESTATE",
+                      "param3": 0.0,
+                      "compareType": "MoreThan"
+                    }
+                  ],
+                  "born": {
+                    "$type": "JHEBKCMEMLN",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 0.0
+                    }
+                  },
+                  "damage": [
+                    15.0,
+                    "Endure_DamageReduce",
+                    "MUL",
+                    "ChargeState",
+                    "JumpForward_Damage",
+                    "MUL",
+                    "Endure_DamageReduce",
+                    "MUL",
+                    "ADD"
+                  ],
+                  "text": ""
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "Electrohercules_Rebound"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_ENDURESTATE",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "param3": [
+                    0.0,
+                    1.0,
+                    "Rebound_Damage",
+                    "MUL",
+                    "SUB"
+                  ],
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_HP",
+                  "useLimitRange": true,
+                  "param2": 999999.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_ENDURESTATE",
+                      "param3": 0.0,
+                      "compareType": "MoreThan"
+                    }
+                  ],
+                  "param3": [
+                    0.0,
+                    1.0,
+                    "Rebound_Damage",
+                    "MUL",
+                    "Endure_DamageReduce",
+                    "MUL",
+                    "SUB"
+                  ],
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_HP",
+                  "useLimitRange": true,
+                  "param2": 999999.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "FNAMKOMELEP",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ONIKABUTOBATTLE_ISHERCULES",
+                      "param3": 1.0
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_ENDURESTATE",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "elementType": "Electric",
+                  "born": {
+                    "$type": "JHEBKCMEMLN",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 0.0
+                    }
+                  },
+                  "damage": "Rebound_Damage",
+                  "text": ""
+                },
+                {
+                  "$type": "FNAMKOMELEP",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ONIKABUTOBATTLE_ISHERCULES",
+                      "param3": 1.0
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_ENDURESTATE",
+                      "param3": 0.0,
+                      "compareType": "MoreThan"
+                    }
+                  ],
+                  "elementType": "Electric",
+                  "born": {
+                    "$type": "JHEBKCMEMLN",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 0.0
+                    }
+                  },
+                  "damage": [
+                    "Rebound_Damage",
+                    "Endure_DamageReduce",
+                    "MUL"
+                  ],
+                  "text": ""
+                },
+                {
+                  "$type": "AKEEDILMOJF",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_ENDURESTATE",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "intID": "HitFlag",
+                  "param3": 2.0
+                },
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_ENDURESTATE",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "PLLJBINMGJK": "BeHit"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Partner_Animal_Electrohercules_AttackLandedPredicate"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Electrohercules_AttackLandedHandler",
+      "abilityMixins": [
+        {
+          "$type": "DIDNLIKKLLF",
+          "stateIDs": [
+            "MeleeAttack01",
+            "MeleeAttack01_01",
+            "MeleeAttack01_02",
+            "MeleeAttack01_03"
+          ],
+          "enterActions": [
+            {
+              "$type": "CAKDDHLKOAB",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+                  "param3": 0.0,
+                  "compareType": "MoreThan"
+                }
+              ],
+              "bulletID": 43805007,
+              "born": {
+                "$type": "JHEBKCMEMLN"
+              },
+              "trackTarget": "Self"
+            },
+            {
+              "$type": "CAKDDHLKOAB",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "bulletID": 43805004,
+              "born": {
+                "$type": "JHEBKCMEMLN"
+              },
+              "trackTarget": "Self"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ONIKABUTOBATTLE_ENEMY_ISMELEEATTACKING",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "exitActions": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "sortType": "Reversed",
+                "configID": 43805007
+              }
+            },
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "sortType": "Reversed",
+                "configID": 43805004
+              }
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_ONIKABUTOBATTLE_ENEMY_ISMELEEATTACKING",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "APJKOLPHCGH",
+          "stateIDs": [
+            "QuakeAttack"
+          ],
+          "enterActions": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ISINQUAKEATTACK",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "exitActions": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_ISINQUAKEATTACK",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "MeleeAttack01_Damage": 1.0,
+        "RangedAttack01_Damage": 1.0,
+        "RangeAttack02_Damage": 1.0,
+        "RangeAttack03_Damage": 1.0
+      },
+      "modifiers": {
+        "Animal_Electrohercules_AttackLandedPredicate": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "Electrohercules_RangedAttack01"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "target": "Target",
+                  "param3": [
+                    0.0,
+                    1.0,
+                    "RangedAttack01_Damage",
+                    "MUL",
+                    "SUB"
+                  ],
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_HP",
+                  "useLimitRange": true,
+                  "param2": 999999.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "FNAMKOMELEP",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ONIKABUTOBATTLE_ISHERCULES",
+                      "param3": 1.0
+                    }
+                  ],
+                  "elementType": "Electric",
+                  "born": {
+                    "$type": "JHEBKCMEMLN",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 0.0
+                    }
+                  },
+                  "damage": "RangedAttack01_Damage",
+                  "text": ""
+                },
+                {
+                  "$type": "AKEEDILMOJF",
+                  "target": "Target",
+                  "intID": "HitFlag",
+                  "param3": 3.0
+                },
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "target": "Target",
+                  "PLLJBINMGJK": "BeHit"
+                },
+                {
+                  "$type": "DLEIPBPNAIM",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ONIKABUTOBATTLE_ISHERCULES",
+                      "param3": 1.0
+                    }
+                  ],
+                  "paramList": [
+                    1,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "Electrohercules_QuakeAttack",
+                    "Electrohercules_MeleeAttack01"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "target": "Target",
+                  "param3": [
+                    0.0,
+                    1.0,
+                    "MeleeAttack01_Damage",
+                    "MUL",
+                    "SUB"
+                  ],
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_HP",
+                  "useLimitRange": true,
+                  "param2": 999999.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "FNAMKOMELEP",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ONIKABUTOBATTLE_ISHERCULES",
+                      "param3": 1.0
+                    }
+                  ],
+                  "born": {
+                    "$type": "JHEBKCMEMLN",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 0.0
+                    }
+                  },
+                  "damage": "MeleeAttack01_Damage",
+                  "text": ""
+                },
+                {
+                  "$type": "AKEEDILMOJF",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "NNEHDJHMING",
+                      "attackTags": [
+                        "Electrohercules_QuakeAttack"
+                      ]
+                    }
+                  ],
+                  "intID": "HitFlag",
+                  "param3": 3.0
+                },
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "NNEHDJHMING",
+                      "attackTags": [
+                        "Electrohercules_QuakeAttack"
+                      ]
+                    }
+                  ],
+                  "PLLJBINMGJK": "BeHit"
+                },
+                {
+                  "$type": "DLEIPBPNAIM",
+                  "predicates": [
+                    {
+                      "$type": "NNEHDJHMING",
+                      "attackTags": [
+                        "Electrohercules_MeleeAttack01"
+                      ]
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ONIKABUTOBATTLE_ISHERCULES",
+                      "param3": 1.0
+                    }
+                  ],
+                  "paramList": [
+                    1,
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "$type": "DLEIPBPNAIM",
+                  "predicates": [
+                    {
+                      "$type": "NNEHDJHMING",
+                      "attackTags": [
+                        "Electrohercules_QuakeAttack"
+                      ]
+                    }
+                  ],
+                  "paramList": [
+                    1,
+                    2,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "Electrohercules_RangedAttack02"
+                  ]
+                },
+                {
+                  "$type": "JFHFLFIAGPL",
+                  "hitBoxType": "Head"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "modifierName": "Partner_Animal_Electrohercules_Defend_TriggerReboundBullet"
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+                      "param3": 0.0
+                    }
+                  ],
+                  "param3": 1.0,
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_TUTORIAL_REBOUNDBALLFIRED",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "Electrohercules_RangedAttack02"
+                  ]
+                },
+                {
+                  "$type": "JFHFLFIAGPL"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "target": "Target",
+                  "param3": [
+                    0.0,
+                    1.0,
+                    "RangeAttack02_Damage",
+                    "MUL",
+                    "SUB"
+                  ],
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_HP",
+                  "useLimitRange": true,
+                  "param2": 999999.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "FNAMKOMELEP",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ONIKABUTOBATTLE_ISHERCULES",
+                      "param3": 1.0
+                    }
+                  ],
+                  "elementType": "Electric",
+                  "born": {
+                    "$type": "JHEBKCMEMLN",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 0.0
+                    }
+                  },
+                  "damage": "RangeAttack02_Damage",
+                  "text": ""
+                },
+                {
+                  "$type": "AKEEDILMOJF",
+                  "target": "Target",
+                  "intID": "HitFlag",
+                  "param3": 2.0
+                },
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "target": "Target",
+                  "PLLJBINMGJK": "BeHit"
+                },
+                {
+                  "$type": "DLEIPBPNAIM",
+                  "paramList": [
+                    1,
+                    3,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "Electrohercules_RangedAttack03"
+                  ]
+                },
+                {
+                  "$type": "JFHFLFIAGPL"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "target": "Target",
+                  "param3": [
+                    0.0,
+                    1.0,
+                    "RangeAttack03_Damage",
+                    "MUL",
+                    "SUB"
+                  ],
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_HP",
+                  "useLimitRange": true,
+                  "param2": 999999.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "FNAMKOMELEP",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ONIKABUTOBATTLE_ISHERCULES",
+                      "param3": 1.0
+                    }
+                  ],
+                  "elementType": "Electric",
+                  "born": {
+                    "$type": "JHEBKCMEMLN",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 0.0
+                    }
+                  },
+                  "damage": "RangeAttack03_Damage",
+                  "text": ""
+                },
+                {
+                  "$type": "DLEIPBPNAIM",
+                  "paramList": [
+                    1,
+                    4,
+                    0
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "Partner_Animal_Electrohercules_Defend_TriggerReboundBullet": {
+          "stacking": "Multiple",
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CAKDDHLKOAB",
+              "bulletID": 43805013,
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.20000000298023224,
+                  "LPCHALMFFOD": 0.4000000059604645
+                },
+                "useRotation": true
+              },
+              "trackTarget": "Caster",
+              "lifeByOwnerV2": true
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 25.0,
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_STAMINA",
+              "useLimitRange": true,
+              "param2": 100.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "DLEIPBPNAIM",
+              "paramList": [
+                0,
+                2,
+                0
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "KNHHAJNCCBI",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+              "param3": 3.0
+            }
+          ],
+          "param3": 34.0,
+          "overrideMapKey": "MeleeAttack01_Damage",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "KNHHAJNCCBI",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+              "param3": 2.0
+            }
+          ],
+          "param3": 10.0,
+          "overrideMapKey": "MeleeAttack01_Damage",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "KNHHAJNCCBI",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+              "param3": 1.0
+            }
+          ],
+          "param3": 5.0,
+          "overrideMapKey": "MeleeAttack01_Damage",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "KNHHAJNCCBI",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+              "param3": 0.0
+            }
+          ],
+          "param3": 1.0,
+          "overrideMapKey": "MeleeAttack01_Damage",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "KNHHAJNCCBI",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+              "param3": 3.0
+            }
+          ],
+          "param3": 10.0,
+          "overrideMapKey": "RangedAttack01_Damage",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "KNHHAJNCCBI",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+              "param3": 2.0
+            }
+          ],
+          "param3": 6.0,
+          "overrideMapKey": "RangedAttack01_Damage",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "KNHHAJNCCBI",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+              "param3": 1.0
+            }
+          ],
+          "param3": 3.0,
+          "overrideMapKey": "RangedAttack01_Damage",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "KNHHAJNCCBI",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+              "param3": 0.0
+            }
+          ],
+          "param3": 1.0,
+          "overrideMapKey": "RangedAttack01_Damage",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "KNHHAJNCCBI",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+              "param3": 3.0
+            }
+          ],
+          "param3": 5.0,
+          "overrideMapKey": "RangeAttack02_Damage",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "KNHHAJNCCBI",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+              "param3": 2.0
+            }
+          ],
+          "param3": 3.0,
+          "overrideMapKey": "RangeAttack02_Damage",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "KNHHAJNCCBI",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+              "param3": 1.0
+            }
+          ],
+          "param3": 3.0,
+          "overrideMapKey": "RangeAttack02_Damage",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "KNHHAJNCCBI",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+              "param3": 0.0
+            }
+          ],
+          "param3": 1.0,
+          "overrideMapKey": "RangeAttack02_Damage",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "KNHHAJNCCBI",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+              "param3": 3.0
+            }
+          ],
+          "param3": 6.0,
+          "overrideMapKey": "RangeAttack03_Damage",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "KNHHAJNCCBI",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+              "param3": 2.0
+            }
+          ],
+          "param3": 3.0,
+          "overrideMapKey": "RangeAttack03_Damage",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "KNHHAJNCCBI",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+              "param3": 1.0
+            }
+          ],
+          "param3": 2.0,
+          "overrideMapKey": "RangeAttack03_Damage",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "KNHHAJNCCBI",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+              "param3": 0.0
+            }
+          ],
+          "param3": 1.0,
+          "overrideMapKey": "RangeAttack03_Damage",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Animal_Electrohercules_AttackLandedPredicate"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Electrohercules_Blink",
+      "abilityMixins": [
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "EnterAIPhase02",
+          "modifierName": "Electrohercules_ExtraState_Blink",
+          "normalizeStart": 0.47999998927116394,
+          "normalizeEnd": 0.7599999904632568,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "DIDNLIKKLLF",
+          "stateIDs": [
+            "EnterAIPhase02"
+          ],
+          "enterActions": [
+            {
+              "$type": "MPAGCPPAIHJ",
+              "key": "_ONIKABUTOBATTLE_MONSTER_BLINKPOS",
+              "born": {
+                "$type": "ICKMMAHFNIM",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": -0.20000000298023224
+                },
+                "onGround": true,
+                "positionKey": "_ONIKABUTOBATTLE_SCENEBORDER_R_POS",
+                "directionKey": ""
+              }
+            }
+          ],
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Electrohercules_ExtraState_Blink": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "HMIDGKNOHJM",
+              "renderNames": [
+                "Body"
+              ]
+            },
+            {
+              "$type": "KKNAEDPOLAC",
+              "positionKey": "_ONIKABUTOBATTLE_MONSTER_BLINKPOS",
+              "directionKey": "",
+              "useGlobalUp": true
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox"
+              ]
+            },
+            {
+              "$type": "LHLKOEDEJLK",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 43805008
+              },
+              "index": 1
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "HMIDGKNOHJM",
+              "renderNames": [
+                "Body"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "LHLKOEDEJLK",
+              "index": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Electrohercules_EndureState",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_ENDURESTATE",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5,
+            2.5
+          ],
+          "modifierNameSteps": [
+            "Electrohercules_EndureState_Normal",
+            "Electrohercules_EndureState_Level01",
+            "Electrohercules_EndureState_Level02"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Electrohercules_EndureState_Normal": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "EndureState",
+              "param3": 0.0
+            }
+          ]
+        },
+        "Electrohercules_EndureState_Level01": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "EndureState",
+              "param3": 1.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Animal_Electrohercules_HeavyState_Break",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "EndureState",
+              "param3": 1.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Animal_Electrohercules_HeavyState_Break",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Animal_Electrohercules_HeavyState_Behit",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Electrohercules_EndureState_Level02": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "EndureState",
+              "param3": 2.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Animal_Electrohercules_HeavyState_Enter",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Animal_Electrohercules_HeavyState_Behit",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 2.0,
+          "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_ENDURESTATE",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Electrohercules_StageController_Level05",
+      "modifiers": {
+        "Animal_Electrohercules_StageController_Level05_Difficulty01": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_HP",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                -0.5,
+                70.00499725341797,
+                1000.5
+              ],
+              "modifierNameSteps": [
+                "Electrohercules_Stage02",
+                "Electrohercules_Stage01"
+              ]
+            }
+          ]
+        },
+        "Animal_Electrohercules_StageController_Level05_Difficulty02": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_HP",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                -0.5,
+                100.00499725341797,
+                1000.5
+              ],
+              "modifierNameSteps": [
+                "Electrohercules_Stage02",
+                "Electrohercules_Stage01"
+              ]
+            }
+          ]
+        },
+        "Animal_Electrohercules_StageController_Level05_Difficulty03": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_HP",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                -0.5,
+                280.0050048828125,
+                1000.5
+              ],
+              "modifierNameSteps": [
+                "Electrohercules_Stage02",
+                "Electrohercules_Stage01"
+              ]
+            }
+          ]
+        },
+        "Electrohercules_Stage01": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "HNGKOKDJKDL",
+              "canBeHandledOnRecover": true,
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+                  "param3": 2.0,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "skillEliteSetID": 1
+            },
+            {
+              "$type": "HNGKOKDJKDL",
+              "canBeHandledOnRecover": true,
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+                  "param3": 3.0
+                }
+              ],
+              "skillEliteSetID": 2
+            }
+          ]
+        },
+        "Electrohercules_Stage02": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFFKENEJFFB",
+              "intID": "AIPhase",
+              "value": 2
+            },
+            {
+              "$type": "HNGKOKDJKDL",
+              "canBeHandledOnRecover": true,
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+                  "param3": 2.0,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "skillEliteSetID": 3
+            },
+            {
+              "$type": "HNGKOKDJKDL",
+              "canBeHandledOnRecover": true,
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+                  "param3": 3.0
+                }
+              ],
+              "skillEliteSetID": 4
+            },
+            {
+              "$type": "OHPMBBJIJFG",
+              "canBeHandledOnRecover": true,
+              "value": 1.5
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "GFFKENEJFFB",
+              "intID": "AIPhase",
+              "value": 1
+            },
+            {
+              "$type": "OHPMBBJIJFG",
+              "canBeHandledOnRecover": true,
+              "value": 1.75
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "KFCDMIMBBLD",
+          "born": {
+            "$type": "JHEBKCMEMLN",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": -4.5
+            },
+            "onGround": true
+          },
+          "lifeByOwnerV2": true,
+          "gadgetID": 43805008,
+          "campID": 4001
+        },
+        {
+          "$type": "PELJALPANCA",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+              "param3": 1.0
+            }
+          ],
+          "modifierName": "Animal_Electrohercules_StageController_Level05_Difficulty01"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+              "param3": 2.0
+            }
+          ],
+          "modifierName": "Animal_Electrohercules_StageController_Level05_Difficulty02"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+              "param3": 3.0
+            }
+          ],
+          "modifierName": "Animal_Electrohercules_StageController_Level05_Difficulty03"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Electrohercules_GetUpHandler",
+      "modifiers": {
+        "Animal_Electrohercules_GetUpHandler01": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_HITHCOUNT_",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                -0.5,
+                1.5,
+                2.5
+              ],
+              "modifierNameSteps": [
+                "Empty",
+                "Animal_Electrohercules_GetUpHandler02"
+              ]
+            },
+            {
+              "$type": "DIDNLIKKLLF",
+              "stateIDs": [
+                "Hit_H"
+              ],
+              "exitActions": [
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "param3": 1.0,
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_HITHCOUNT_",
+                  "useLimitRange": true,
+                  "param2": 1.0,
+                  "repeatTimes": 0.0
+                }
+              ],
+              "DGFCLAIDIFI": ""
+            },
+            {
+              "$type": "DIDNLIKKLLF",
+              "stateIDs": [
+                "GetUp"
+              ],
+              "enterActions": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "param3": 0.0,
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_HITHCOUNT_",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ],
+              "DGFCLAIDIFI": ""
+            }
+          ]
+        },
+        "Animal_Electrohercules_GetUpHandler02": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "GetUp",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "GetUp"
+            }
+          ]
+        },
+        "Empty": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+              "param3": 2.0,
+              "compareType": "LessAndEqual"
+            }
+          ],
+          "modifierName": "Animal_Electrohercules_GetUpHandler01"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+              "param3": 3.0
+            }
+          ],
+          "modifierName": "Animal_Electrohercules_GetUpHandler02"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Electrohercules_SkillElite_Level01",
+      "modifiers": {
+        "Animal_Electrohercules_SkillElite_Level01_SetSkillElite": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "HNGKOKDJKDL",
+              "canBeHandledOnRecover": true,
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+                  "param3": 3.0
+                }
+              ],
+              "skillEliteSetID": 2
+            },
+            {
+              "$type": "HNGKOKDJKDL",
+              "canBeHandledOnRecover": true,
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ONIKABUTOBATTLE_MONSTER_ELECTROHERCULES_DIFFICULTY",
+                  "param3": 2.0,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "skillEliteSetID": 1
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Animal_Electrohercules_SkillElite_Level01_SetSkillElite"
+        }
+      ]
+    }
+  }
+]

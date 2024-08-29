@@ -1,0 +1,69 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_MonsterSummonChallenge",
+      "abilitySpecials": {
+        "AttackUpRatio": 0.0,
+        "Charge_EfficiencyDelta": 0.0,
+        "HotHp_Ratio": 0.0,
+        "Hot_Interval": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_MonsterSummonChallenge_AttackRatio": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_AttackRatio": "AttackUpRatio"
+          },
+          "isLimitedProperties": true
+        },
+        "UNIQUE_MonsterSummonChallenge_ChargeEfficiencyDelta": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_ChargeEfficiencyDelta": "Charge_EfficiencyDelta"
+          },
+          "isLimitedProperties": true
+        },
+        "UNIQUE_MonsterSummonChallenge_HotHealBuff": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": "Hot_Interval",
+          "onThinkInterval": [
+            {
+              "$type": "FHGPOFDJDCO",
+              "shieldHP": true,
+              "CKDBFHCIJEK": "HotHp_Ratio",
+              "cdRatio": ""
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "CurTeamAvatars",
+          "modifierName": "UNIQUE_MonsterSummonChallenge_AttackRatio"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "CurTeamAvatars",
+          "modifierName": "UNIQUE_MonsterSummonChallenge_ChargeEfficiencyDelta"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "CurTeamAvatars",
+          "modifierName": "UNIQUE_MonsterSummonChallenge_HotHealBuff"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  }
+]

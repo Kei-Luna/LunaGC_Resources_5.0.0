@@ -1,0 +1,145 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "DynamicAbility_MichiaeMatsuri_Pressure",
+      "abilityMixins": [
+        {
+          "$type": "NDFFAEHJMAL",
+          "globalValueKey": "SGV_MichiaeMatsuri_DarkPressure",
+          "actions": [
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "SGV_MichiaeMatsuri_DarkPressure",
+              "overrideMapKey": "DeBuffStacking"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "MichiaeMatsuri_Pressure"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "MichiaeMatsuri_Pressure"
+            }
+          ]
+        }
+      ],
+      "abilitySpecials": {
+        "SubDefenceRatio": 0.0,
+        "SubAttackRatio": 0.0,
+        "DeBuffStacking": 0.0
+      },
+      "modifiers": {
+        "MichiaeMatsuri_Pressure": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EEPKCGMKKJC",
+              "modifierName": "UNIQUE_MichiaeMatsuri_Pressure_Avatar"
+            },
+            {
+              "$type": "PHLKCMFKFIN",
+              "globalValueKey": "SGV_MichiaeMatsuri_DarkPressure",
+              "valueSteps": [
+                7.5,
+                30.0
+              ],
+              "modifierNameSteps": [
+                "MichiaeMatsuri_Pressure_Debuffeffect_Team"
+              ]
+            }
+          ]
+        },
+        "MichiaeMatsuri_Pressure_Debuffeffect_Team": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EEPKCGMKKJC",
+              "modifierName": "MichiaeMatsuri_Pressure_Debuffeffect_Avatar"
+            }
+          ]
+        },
+        "MichiaeMatsuri_Pressure_Debuffeffect_Avatar": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "DefenseDown"
+        },
+        "UNIQUE_MichiaeMatsuri_Pressure_Avatar": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "LDBCDLJECKF",
+              "ignoreEventInfo": true,
+              "actorWindSubHurtDelta": [
+                "SubAttackRatio",
+                "DeBuffStacking",
+                "MUL"
+              ]
+            }
+          ],
+          "properties": {
+            "Actor_FireSubHurtDelta": [
+              "SubDefenceRatio",
+              "DeBuffStacking",
+              "MUL"
+            ],
+            "Actor_ElecSubHurtDelta": [
+              "SubDefenceRatio",
+              "DeBuffStacking",
+              "MUL"
+            ],
+            "Actor_WaterSubHurtDelta": [
+              "SubDefenceRatio",
+              "DeBuffStacking",
+              "MUL"
+            ],
+            "Actor_GrassSubHurtDelta": [
+              "SubDefenceRatio",
+              "DeBuffStacking",
+              "MUL"
+            ],
+            "Actor_WindSubHurtDelta": [
+              "SubDefenceRatio",
+              "DeBuffStacking",
+              "MUL"
+            ],
+            "Actor_IceSubHurtDelta": [
+              "SubDefenceRatio",
+              "DeBuffStacking",
+              "MUL"
+            ],
+            "Actor_RockSubHurtDelta": [
+              "SubDefenceRatio",
+              "DeBuffStacking",
+              "MUL"
+            ],
+            "Actor_PhysicalSubHurtDelta": [
+              "SubDefenceRatio",
+              "DeBuffStacking",
+              "MUL"
+            ]
+          }
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "LDIAIDLOPEE",
+          "globalValueKey": "SGV_MichiaeMatsuri_DarkPressure",
+          "overrideMapKey": "DeBuffStacking"
+        },
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "MichiaeMatsuri_Pressure"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "MichiaeMatsuri_Pressure"
+        }
+      ]
+    }
+  }
+]

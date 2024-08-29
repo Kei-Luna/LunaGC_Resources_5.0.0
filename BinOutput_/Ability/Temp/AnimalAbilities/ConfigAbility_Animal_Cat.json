@@ -1,0 +1,442 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Cat_SitDown",
+      "onAbilityStart": [
+        {
+          "$type": "GFFKENEJFFB",
+          "intID": "ActionState",
+          "value": 1
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Cat_Prone",
+      "onAbilityStart": [
+        {
+          "$type": "GFFKENEJFFB",
+          "intID": "ActionState",
+          "value": 2
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Cat_StandUp",
+      "onAbilityStart": [
+        {
+          "$type": "GFFKENEJFFB",
+          "intID": "ActionState"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Cat_AIStateInitial",
+      "abilityMixins": [
+        {
+          "$type": "EAKJOFAIAPH",
+          "poseIDs": [
+            1
+          ],
+          "enterActions": [
+            {
+              "$type": "DOANGHCALGB",
+              "skillIDs": [
+                102,
+                103
+              ]
+            }
+          ]
+        },
+        {
+          "$type": "EAKJOFAIAPH",
+          "poseIDs": [
+            101
+          ],
+          "enterActions": [
+            {
+              "$type": "DOANGHCALGB",
+              "skillIDs": [
+                112,
+                113
+              ]
+            }
+          ]
+        },
+        {
+          "$type": "EAKJOFAIAPH",
+          "poseIDs": [
+            2,
+            12
+          ],
+          "enterActions": [
+            {
+              "$type": "DOANGHCALGB",
+              "skillIDs": [
+                201,
+                202,
+                203
+              ]
+            }
+          ]
+        },
+        {
+          "$type": "EAKJOFAIAPH",
+          "poseIDs": [
+            201
+          ],
+          "enterActions": [
+            {
+              "$type": "DOANGHCALGB",
+              "skillIDs": [
+                211,
+                212,
+                213
+              ]
+            }
+          ]
+        },
+        {
+          "$type": "EAKJOFAIAPH",
+          "poseIDs": [
+            3,
+            13
+          ],
+          "enterActions": [
+            {
+              "$type": "DOANGHCALGB",
+              "skillIDs": [
+                301,
+                302
+              ]
+            }
+          ]
+        },
+        {
+          "$type": "EAKJOFAIAPH",
+          "poseIDs": [
+            301
+          ],
+          "enterActions": [
+            {
+              "$type": "DOANGHCALGB",
+              "skillIDs": [
+                311,
+                312
+              ]
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_Invincible": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "state": "Invincible"
+        },
+        "DenyLockOn": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "DenyLockOn"
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Invincible"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "DenyLockOn"
+        },
+        {
+          "$type": "OPAOGKPJLIG",
+          "resistanceListID": 11001
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Cat_BeHit",
+      "abilityMixins": [
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            1,
+            2,
+            3,
+            101,
+            201,
+            202,
+            301,
+            302,
+            12,
+            13
+          ],
+          "modifierName": "BeHitCount"
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Disappear"
+          ],
+          "modifierName": "Disappear",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EAKJOFAIAPH",
+          "poseIDs": [
+            5,
+            501
+          ],
+          "enterActions": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "FleeCountDown"
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "BeHitCount": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onBeingHit": [
+            {
+              "$type": "FEKJDLHHOLE",
+              "floatID": "DodgeWeight",
+              "useRandomValue": true,
+              "randomValueMin": 0.0,
+              "randomValueMax": 1.0
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Avatar",
+                    "Monster",
+                    "Gadget",
+                    "Bullet",
+                    "Vehicle",
+                    "Partner"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "BeHitTrigger"
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "IDNGFEEBPAM",
+                  "boolID": "FleeState",
+                  "param3": true
+                },
+                {
+                  "$type": "KJCHPDPBJHL",
+                  "boolID": "FleeState",
+                  "param3": true
+                }
+              ]
+            },
+            {
+              "$type": "GFFKENEJFFB",
+              "intID": "ActionState"
+            }
+          ]
+        },
+        "Disappear": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AKIIMECIGKE",
+              "duration": 3.0
+            },
+            {
+              "$type": "NCFFNDHGCMH",
+              "duration": 2.0,
+              "killSelfType": "Disappear",
+              "value": true,
+              "banExp": true
+            }
+          ]
+        },
+        "FleeCountDown": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "elementDurability": 30.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "FleeState"
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "FleeState"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Cat_CautiousRunning",
+      "abilityMixins": [
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            402
+          ],
+          "modifierName": "CautiousRunSpeedModifier"
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Disappear_Cautious"
+          ],
+          "modifierName": "Disappear_Cautious",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "CautiousRunSpeedModifier": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FEKJDLHHOLE",
+              "floatID": "MoveSpeedRatio",
+              "param3": 1.5
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "FleeState",
+              "param3": true
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "FleeState",
+              "param3": true
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "DisappearCautious",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FEKJDLHHOLE",
+              "floatID": "MoveSpeedRatio",
+              "param3": 1.0
+            }
+          ]
+        },
+        "Disappear_Cautious": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AKIIMECIGKE",
+              "duration": 5.0
+            },
+            {
+              "$type": "NCFFNDHGCMH",
+              "duration": 1.0,
+              "killSelfType": "Disappear",
+              "value": true,
+              "banExp": true
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Cat_TurnToSurround",
+      "onAbilityStart": [
+        {
+          "$type": "IDNGFEEBPAM",
+          "boolID": "Surround",
+          "param3": true
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Cat_OutOfSurround",
+      "onAbilityStart": [
+        {
+          "$type": "IDNGFEEBPAM",
+          "boolID": "Surround"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Cat_CatFeedPointRegister",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "HungryAction",
+            "HungryAfterAction"
+          ],
+          "modifierName": "CatFeedPointRegister",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "CatFeedPointRegister": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AFLBOAPGDBD",
+              "pointType": "CatFeedPoint"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ELPBHEGNGPL",
+              "pointType": "CatFeedPoint"
+            }
+          ],
+          "onKill": [
+            {
+              "$type": "ELPBHEGNGPL",
+              "pointType": "CatFeedPoint"
+            }
+          ]
+        }
+      }
+    }
+  }
+]

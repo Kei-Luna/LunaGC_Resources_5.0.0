@@ -1,0 +1,396 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CoinCollect_TestAbility",
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CoinCollect_MoveSpeedUp",
+      "abilityMixins": [
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueTarget": "Team",
+          "globalValueKey": "SGV_CoinCollect_Widget_SkillEnabled",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Blank",
+            "UNIQUE_CoinCollect_MoveSpeedUp"
+          ]
+        }
+      ],
+      "abilitySpecials": {
+        "SpeedUpRatio": 0.0
+      },
+      "modifiers": {
+        "Blank": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "UNIQUE_CoinCollect_MoveSpeedUp": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Animator_MoveSpeedRatio": "SpeedUpRatio"
+          },
+          "isLimitedProperties": true
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CoinCollect_RocketJump",
+      "abilityMixins": [
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueTarget": "Team",
+          "globalValueKey": "SGV_CoinCollect_Widget_SkillEnabled",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Blank",
+            "UNIQUE_CoinCollect_RocketJump"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Blank": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "UNIQUE_CoinCollect_RocketJump": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "OBFLHMDNOCN",
+              "shieldHP": true,
+              "canBeHandledOnRecover": true,
+              "damageRatio": "DungeonJump",
+              "enable": true,
+              "extention": {
+                "xzMultiplier": 2.0,
+                "yMultiplier": 6.0
+              }
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "OBFLHMDNOCN",
+              "shieldHP": true,
+              "damageRatio": "DungeonJump"
+            }
+          ],
+          "onAvatarIn": [
+            {
+              "$type": "OBFLHMDNOCN",
+              "shieldHP": true,
+              "canBeHandledOnRecover": true,
+              "damageRatio": "DungeonJump",
+              "enable": true,
+              "extention": {
+                "xzMultiplier": 2.0,
+                "yMultiplier": 6.0
+              }
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CoinCollect_CreateWindField",
+      "abilityMixins": [
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueTarget": "Team",
+          "globalValueKey": "GV_WINDFIELD",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Blank",
+            "UNIQUE_CoinCollect_CreateWindField_ApplyTeam"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Blank": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "UNIQUE_CoinCollect_CreateWindField_ApplyTeam": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "MPAGCPPAIHJ",
+              "target": "Team",
+              "key": "CoinCollect_WindField_Pos",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "useRotation": true
+              }
+            },
+            {
+              "$type": "PELJALPANCA",
+              "target": "Team",
+              "modifierName": "CoinCollect_CreateWindField"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "GV_WINDFIELD",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "CoinCollect_CreateWindField": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "shieldHP": true,
+              "gadgetInfo": {
+                "configID": 44000549
+              }
+            },
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "ICKMMAHFNIM",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "direction": {
+                  "$type": "FNKDGDKJHPC",
+                  "eularAngles": {
+                    "x": 0.10000000149011612,
+                    "y": 0.10000000149011612,
+                    "z": 0.10000000149011612
+                  }
+                },
+                "useRotation": true,
+                "positionKey": "CoinCollect_WindField_Pos",
+                "directionKey": ""
+              },
+              "gadgetID": 44000549,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ]
+        },
+        "CoinCollect_RemoveWindField": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "shieldHP": true,
+              "gadgetInfo": {
+                "configID": 44000549
+              }
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "target": "Team",
+          "param3": 0.0,
+          "key": "GV_WINDFIELD",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "PELJALPANCA",
+          "target": "Team",
+          "modifierName": "CoinCollect_RemoveWindField"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CoinCollect_CreateWindZone",
+      "modifiers": {
+        "UNIQUE_CoinCollect_WindFiled_Effect": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 10.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Item_WindSeed_WindField",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_CoinCollect_WindFiled_Effect"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CoinCollect_CostStamina_Zero",
+      "abilityMixins": [
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueTarget": "Team",
+          "globalValueKey": "SGV_CoinCollect_Widget_SkillEnabled",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Blank",
+            "UNIQUE_CoinCollect_CostStamina_Zero"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Blank": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "UNIQUE_CoinCollect_CostStamina_Zero": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_CostStaminaRatio": -999.0
+          },
+          "isLimitedProperties": true
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CoinCollect_Range_Eff",
+      "abilityMixins": [
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueTarget": "Team",
+          "globalValueKey": "SGV_CoinCollect_Widget_SkillEnabled",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Blank",
+            "UNIQUE_CoinCollect_Range_Eff_Handler"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Blank": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "UNIQUE_CoinCollect_Range_Eff_Handler": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "UNIQUE_CoinCollect_Range_Eff"
+            }
+          ],
+          "onAvatarIn": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "UNIQUE_CoinCollect_Range_Eff"
+            }
+          ],
+          "onAvatarOut": [
+            {
+              "$type": "KBODPNEEFGD",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_CoinCollect_Range_Eff"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_CoinCollect_Range_Eff": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_DIK_BUFFC_01_Buff",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "isDynamicAbility": true
+    }
+  }
+]

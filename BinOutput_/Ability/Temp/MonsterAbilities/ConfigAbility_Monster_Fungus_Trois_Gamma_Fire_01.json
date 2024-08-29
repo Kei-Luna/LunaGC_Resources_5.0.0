@@ -1,0 +1,298 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Fungus_Trois_Gamma_Fire_Steer",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "MeleeAttackNormal_BS"
+          ],
+          "angularSpeed": 240.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "MeleeAttackOverdose_BS"
+          ],
+          "angularSpeed": 720.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "MeleeAttackDecay_BS"
+          ],
+          "angularSpeed": 120.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "ExplodeChase"
+          ],
+          "endNormalizedTime": 99.0,
+          "angularSpeed": 540.0,
+          "attackTrigger": "ExplodeChaseTrigger",
+          "attackDistance": 3.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "ExplodeDecayChase"
+          ],
+          "endNormalizedTime": 99.0,
+          "angularSpeed": 540.0,
+          "attackTrigger": "ExplodeChaseTrigger",
+          "attackDistance": 4.5,
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Fungus_Trois_Gamma_Fire_MeleeAttackNormal",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "MeleeAttackNormal_BS",
+            "MeleeAttackNormal_Loop"
+          ],
+          "modifierName": "MeleeAttackBSEffect_Normal",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "MeleeAttackOverdose_BS",
+            "MeleeAttackOverdose_Loop"
+          ],
+          "modifierName": "MeleeAttackBSEffect_Overdose",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "MeleeAttackDecay_Loop"
+          ],
+          "modifierName": "MeleeAttackBSEffect_Decayed",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "MeleeAttackBSEffect_Normal": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Fungus_Trois_Gamma_Fire_MeleeAttackNormal_Loop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "MeleeAttackBSEffect_Overdose": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Fungus_Trois_Gamma_Fire_MeleeAttackNormal_Loop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "MeleeAttackBSEffect_Decayed": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Fungus_Trois_Gamma_Fire_MeleeAttackDecayed_Loop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Fungus_Trois_Gamma_Fire_ExplodeLoop",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "ExplodeNormal_BS",
+            "ExplodeNormal_Loop"
+          ],
+          "modifierName": "ExplodeLoopEffect_Normal",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "ExplodeOverdose_BS",
+            "ExplodeOverdose_Loop"
+          ],
+          "modifierName": "ExplodeLoopEffect_Overdose",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "ExplodeDecay_BS",
+            "ExplodeDecay_Loop"
+          ],
+          "modifierName": "ExplodeLoopEffect_Decayed",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Standby",
+            "StandbyFree"
+          ],
+          "modifierName": "ExplodeOverdoseStartHandler",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "ExplodeOverdose_Attack"
+          ],
+          "modifierName": "ExplodeOverdoseHandler",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "ExplodeOverdoseCount": 0.0
+      },
+      "modifiers": {
+        "ExplodeLoopEffect_Normal": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Fungus_Trois_Gamma_Fire_ExplodeNormal_Loop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "ExplodeLoopEffect_Overdose": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Fungus_Trois_Gamma_Fire_ExplodeNormal_Loop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "ExplodeLoopEffect_Decayed": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Fungus_Trois_Gamma_Fire_ExplodeDecayed_Loop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "ExplodeOverdoseStartHandler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_MONSTER_FUNGUS_TROIS_GAMMA_FIRE_EXPLODEOVERDOSECOUNT_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "_MONSTER_FUNGUS_TROIS_GAMMA_FIRE_EXPLODEOVERDOSECOUNT_",
+              "overrideMapKey": "ExplodeOverdoseCount"
+            },
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "ExplodeOverdoseCount",
+              "param3": "ExplodeOverdoseCount"
+            }
+          ]
+        },
+        "ExplodeOverdoseHandler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "_MONSTER_FUNGUS_TROIS_GAMMA_FIRE_EXPLODEOVERDOSECOUNT_",
+              "param2": 3.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "_MONSTER_FUNGUS_TROIS_GAMMA_FIRE_EXPLODEOVERDOSECOUNT_",
+              "overrideMapKey": "ExplodeOverdoseCount"
+            },
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "ExplodeOverdoseCount",
+              "param3": "ExplodeOverdoseCount"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Fungus_Trois_Gamma_Fire_HitThrowDropToGround",
+      "onAbilityStart": [
+        {
+          "$type": "INBCDALOHMP",
+          "targetPredicates": [
+            {
+              "$type": "JFLFAEAHLJM",
+              "filters": [
+                "Water"
+              ]
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Fungus_HitThrowToGround_Water",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0,
+              "useRemoteSelfPos": true
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

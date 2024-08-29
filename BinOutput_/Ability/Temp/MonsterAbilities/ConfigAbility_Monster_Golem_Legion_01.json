@@ -1,0 +1,1493 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Legion_WQDenyLockOn",
+      "abilityMixins": [
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            121
+          ],
+          "modifierName": "PowerOff_DenyLockOn"
+        }
+      ],
+      "modifiers": {
+        "PowerOff_DenyLockOn": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "DenyLockOn"
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Legion_KillGadget",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Attack02_Loop"
+          ],
+          "modifierName": "ClearArea",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "ClearArea": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.10000000149011612,
+          "onAdded": [
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR4H4",
+                "campTargetType": "Enemy",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_COMMON_GADGET_ISSUMMON",
+                  "param3": 0.0,
+                  "compareType": "MoreThan"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "modifierName": "Kill_Summon_Gadget"
+                }
+              ]
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR4H4",
+                "campTargetType": "Enemy",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_COMMON_GADGET_ISSUMMON",
+                  "param3": 0.0,
+                  "compareType": "MoreThan"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "modifierName": "Kill_Summon_Gadget"
+                }
+              ]
+            }
+          ]
+        },
+        "Kill_Summon_Gadget": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Legion_ShaderDie",
+      "onAbilityStart": [
+        {
+          "$type": "AKEEDILMOJF",
+          "intID": "Skin",
+          "param3": 0.0
+        },
+        {
+          "$type": "HMIDGKNOHJM",
+          "renderNames": [
+            "EffectWater"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Legion_Die",
+      "onAbilityStart": [
+        {
+          "$type": "HMIDGKNOHJM",
+          "renderNames": [
+            "EffectWater",
+            "Body",
+            "Weapon"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Legion_Alert",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Alert"
+          ],
+          "modifierName": "LegionAlert",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "StandbyStatue"
+          ],
+          "modifierName": "StatueBillboard",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "StandbyStatue",
+            "Alert"
+          ],
+          "modifierName": "StatueMode",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            111,
+            121
+          ],
+          "modifierName": "LegionSkin"
+        },
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            121
+          ],
+          "modifierName": "LegionLimbo"
+        }
+      ],
+      "abilitySpecials": {
+        "sub_hurt_delta_positive_before_battle": 2.0
+      },
+      "modifiers": {
+        "LegionLimbo": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "PowerOff_Invincible"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "PowerOff_IsGhostToAllied"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "PowerOff_IsGhostToEnemy"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "PowerOff_MuteTaunt"
+            }
+          ]
+        },
+        "StatueMode": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Entity_MassRatio": 1000.0,
+            "Entity_WeightRatio": 5.0,
+            "Actor_EndureDelta": 0.0010000000474974513,
+            "Actor_PhysicalSubHurtDelta": "sub_hurt_delta_positive_before_battle",
+            "Actor_FireSubHurtDelta": "sub_hurt_delta_positive_before_battle",
+            "Actor_ElecSubHurtDelta": "sub_hurt_delta_positive_before_battle",
+            "Actor_IceSubHurtDelta": "sub_hurt_delta_positive_before_battle",
+            "Actor_WaterSubHurtDelta": "sub_hurt_delta_positive_before_battle",
+            "Actor_GrassSubHurtDelta": "sub_hurt_delta_positive_before_battle",
+            "Actor_WindSubHurtDelta": "sub_hurt_delta_positive_before_battle",
+            "Actor_RockSubHurtDelta": "sub_hurt_delta_positive_before_battle"
+          }
+        },
+        "StatueBillboard": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CIGJDPCDOEB",
+              "onAdded": [
+                {
+                  "$type": "HBNEMPLJCMB",
+                  "hide": true
+                }
+              ],
+              "onRemoved": [
+                {
+                  "$type": "HBNEMPLJCMB"
+                }
+              ]
+            }
+          ]
+        },
+        "LegionAlert": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "Statue"
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "BlindStatue"
+            }
+          ]
+        },
+        "LegionSkin": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CIGJDPCDOEB",
+              "onAdded": [
+                {
+                  "$type": "AKEEDILMOJF",
+                  "intID": "Skin",
+                  "param3": 0.0
+                }
+              ],
+              "onRemoved": [
+                {
+                  "$type": "AKEEDILMOJF",
+                  "intID": "Skin",
+                  "param3": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        "PowerOff_Invincible": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "Invincible"
+        },
+        "PowerOff_IsGhostToAllied": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "IsGhostToAllied"
+        },
+        "PowerOff_IsGhostToEnemy": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "IsGhostToEnemy"
+        },
+        "PowerOff_MuteTaunt": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "MuteTaunt"
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Legion_WeakAS",
+      "onAbilityStart": [
+        {
+          "$type": "GFFKENEJFFB",
+          "canBeHandledOnRecover": true,
+          "intID": "StateFlag",
+          "value": 1
+        },
+        {
+          "$type": "HMIDGKNOHJM",
+          "canBeHandledOnRecover": true,
+          "renderNames": [
+            "EffectWater"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Legion_Weak",
+      "abilityMixins": [
+        {
+          "$type": "APJKOLPHCGH",
+          "stateIDs": [
+            "Weak_BS"
+          ],
+          "enterActions": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "WeakeState_BS"
+            }
+          ],
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Weak_BS"
+          ],
+          "modifierName": "WeakBulletCleaner",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Weak_Loop"
+          ],
+          "modifierName": "WeakDieState",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "WeakTime": 8.0
+      },
+      "modifiers": {
+        "WeakBulletCleaner": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "NCFFNDHGCMH",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 42614102
+              }
+            }
+          ]
+        },
+        "EffectWaterClose": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "HMIDGKNOHJM",
+              "renderNames": [
+                "EffectWater"
+              ]
+            }
+          ]
+        },
+        "RecoverRendererManager": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onReconnect": [
+            {
+              "$type": "HMIDGKNOHJM",
+              "canBeHandledOnRecover": true,
+              "predicates": [
+                {
+                  "$type": "BCFNGJHILAG",
+                  "predicates": [
+                    {
+                      "$type": "NIFDMKMHAGJ",
+                      "logic": "Equal",
+                      "param3": 203.0,
+                      "parameter": "poseID"
+                    }
+                  ]
+                }
+              ],
+              "renderNames": [
+                "EffectWater"
+              ]
+            }
+          ]
+        },
+        "WeakeState_BS": {
+          "modifierName": "",
+          "elementDurability": "WeakTime",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFFKENEJFFB",
+              "intID": "StateFlag",
+              "value": 3
+            },
+            {
+              "$type": "HMIDGKNOHJM",
+              "renderNames": [
+                "EffectWater"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "DOANGHCALGB",
+              "skillIDs": [
+                111
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "IPMMJGMONCI",
+              "skillIDs": [
+                111
+              ]
+            }
+          ]
+        },
+        "WeakDieState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NAOEBBPINOO",
+              "hasAnimatorDie": true,
+              "dieEndTime": 3.5,
+              "dieForceDisappearTime": 3.5,
+              "dieDisappearEffect": "",
+              "muteHitBox": true,
+              "dieDenyLockOn": true,
+              "dieIsGhostToEnemy": true,
+              "dieIgnoreTriggerBullet": true,
+              "muteBillboard": true,
+              "mutePushCollider": true
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "Weak",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "Weak"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "RecoverRendererManager"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Legion_ReturnToBorn",
+      "abilityMixins": [
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            901,
+            902,
+            903
+          ],
+          "modifierName": "ReturnToBorn_Start"
+        },
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            101
+          ],
+          "modifierName": "ReturnToBorn_Start"
+        }
+      ],
+      "modifiers": {
+        "ReturnToBorn_Start": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFFKENEJFFB",
+              "canBeHandledOnRecover": true,
+              "intID": "StateFlag",
+              "value": 1
+            },
+            {
+              "$type": "HMIDGKNOHJM",
+              "renderNames": [
+                "EffectWater"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Legion_ShieldManager",
+      "abilityMixins": [
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            101,
+            201
+          ],
+          "modifierName": "UNIQUE_Legion_Shield"
+        }
+      ],
+      "abilitySpecials": {
+        "IncombatSubHurtDelta": 0.5
+      },
+      "modifiers": {
+        "UNIQUE_Legion_Shield": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementType": "Rock",
+          "IPFJJJGABPL": 300.0,
+          "modifierMixins": [
+            {
+              "$type": "BKAAGFNKMLF",
+              "onShieldBroken": [
+                {
+                  "$type": "ONALKNNKKLH",
+                  "cameraShake": {
+                    "shakeRange": 0.11999999731779099,
+                    "shakeTime": 0.10000000149011612,
+                    "shakeDistance": 15.0,
+                    "extension": {
+                      "baseOnCamera": true
+                    }
+                  }
+                },
+                {
+                  "$type": "KBFEIHEAMBM",
+                  "rotationDampTime": "Eff_Monster_Golem_Legion_Weak",
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                },
+                {
+                  "$type": "CCNPNMMONDO",
+                  "attackInfo": {
+                    "attackTag": "",
+                    "attenuationTag": "",
+                    "attenuationGroup": "default",
+                    "hitPattern": {
+                      "onHitEffectName": "default",
+                      "hitImpulseY": "",
+                      "hitImpulseType": "LV0",
+                      "hitHaltTime": 0.10000000149011612,
+                      "hitHaltTimeScale": 0.05000000074505806
+                    }
+                  }
+                },
+                {
+                  "$type": "AHPEKICBIIL",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "ShieldActivity",
+                      "param3": 0.0,
+                      "compareType": "MoreThan"
+                    }
+                  ],
+                  "luaCallType": "FromGroup",
+                  "funcName": "SLC_BuffDungeon_50_Add_Counter",
+                  "param1": 0.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                },
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "WeakTrigger",
+                  "mpTriggerOnRemote": true
+                }
+              ],
+              "showDamageText": "",
+              "useMutiPlayerFixData": true
+            }
+          ],
+          "properties": {
+            "Actor_PhysicalSubHurtDelta": "IncombatSubHurtDelta",
+            "Actor_FireSubHurtDelta": "IncombatSubHurtDelta",
+            "Actor_ElecSubHurtDelta": "IncombatSubHurtDelta",
+            "Actor_WaterSubHurtDelta": "IncombatSubHurtDelta",
+            "Actor_GrassSubHurtDelta": "IncombatSubHurtDelta",
+            "Actor_WindSubHurtDelta": "IncombatSubHurtDelta",
+            "Actor_IceSubHurtDelta": "IncombatSubHurtDelta",
+            "Actor_RockSubHurtDelta": "IncombatSubHurtDelta"
+          }
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "Golem_Legion",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "KNHHAJNCCBI",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "ShieldActivity",
+              "param3": 1.0
+            }
+          ],
+          "param3": 10.0,
+          "overrideMapKey": "IncombatSubHurtDelta",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Legion_SteerAttack",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Attack01"
+          ],
+          "endNormalizedTime": 0.15000000596046448,
+          "angularSpeed": 120.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Attack01"
+          ],
+          "startNormalizedTime": 0.3799999952316284,
+          "endNormalizedTime": 0.44999998807907104,
+          "angularSpeed": 150.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Attack02_BS"
+          ],
+          "startNormalizedTime": 0.3840000033378601,
+          "endNormalizedTime": 0.5770000219345093,
+          "angularSpeed": 240.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Attack02_BS"
+          ],
+          "startNormalizedTime": 0.8399999737739563,
+          "endNormalizedTime": 0.9200000166893005,
+          "angularSpeed": 240.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Attack02_BS"
+          ],
+          "startNormalizedTime": 0.9200000166893005,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Attack02_Loop"
+          ],
+          "endNormalizedTime": 20.0,
+          "angularSpeed": 180.0,
+          "attackTrigger": "Attack02Trigger",
+          "attackDistance": 7.5,
+          "JGOMHKMFHIO": true,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Attack02_AS"
+          ],
+          "endNormalizedTime": 0.12999999523162842,
+          "angularSpeed": 90.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Attack02_AS"
+          ],
+          "startNormalizedTime": 0.18000000715255737,
+          "endNormalizedTime": 0.27000001072883606,
+          "angularSpeed": 120.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Attack02_Stay"
+          ],
+          "startNormalizedTime": 0.10999999940395355,
+          "endNormalizedTime": 0.16300000250339508,
+          "angularSpeed": 90.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Attack02_Stay1"
+          ],
+          "startNormalizedTime": 0.10999999940395355,
+          "endNormalizedTime": 0.16300000250339508,
+          "angularSpeed": 90.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Attack02_Stay"
+          ],
+          "startNormalizedTime": 0.4000000059604645,
+          "endNormalizedTime": 0.4699999988079071,
+          "angularSpeed": 120.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Attack02_Stay1"
+          ],
+          "startNormalizedTime": 0.4000000059604645,
+          "endNormalizedTime": 0.4699999988079071,
+          "angularSpeed": 120.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Attack03"
+          ],
+          "endNormalizedTime": 0.07000000029802322,
+          "angularSpeed": 120.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Attack03"
+          ],
+          "startNormalizedTime": 0.15000000596046448,
+          "endNormalizedTime": 0.2199999988079071,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Attack03"
+          ],
+          "startNormalizedTime": 0.2199999988079071,
+          "endNormalizedTime": 0.38999998569488525,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Attack04"
+          ],
+          "endNormalizedTime": 0.10000000149011612,
+          "angularSpeed": 60.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Attack04"
+          ],
+          "startNormalizedTime": 0.30000001192092896,
+          "endNormalizedTime": 0.36000001430511475,
+          "angularSpeed": 240.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Attack05_BS"
+          ],
+          "startNormalizedTime": 0.05000000074505806,
+          "endNormalizedTime": 0.20000000298023224,
+          "angularSpeed": 270.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Attack05_BS"
+          ],
+          "startNormalizedTime": 0.5,
+          "endNormalizedTime": 0.75,
+          "angularSpeed": 90.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Legion_Attack02",
+      "abilityMixins": [
+        {
+          "$type": "JJFFOLOAJFO",
+          "normalizedStateIDList": [
+            {
+              "stateID": "Attack02_BS",
+              "normalizeStart": 0.5830000042915344
+            },
+            {
+              "stateID": "Attack02_Loop",
+              "normalizeEnd": 99.0
+            },
+            {
+              "stateID": "Attack02_AS",
+              "normalizeEnd": 0.33899998664855957
+            }
+          ],
+          "modifierName": "Attack02RunEffect2",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Attack02_Loop"
+          ],
+          "modifierName": "Attack02Checker",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Attack02_Stay"
+          ],
+          "modifierName": "Attack02StayChecker",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Attack02_BS"
+          ],
+          "modifierName": "Attack02Reset",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Attack02RunEffect2": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Golem_Legion_HeavyBlade_BS2",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Attack02Reset": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GNAEJNBIFAC",
+              "PLLJBINMGJK": "Attack02Trigger"
+            }
+          ]
+        },
+        "Attack02StayChecker": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.009999999776482582,
+          "onThinkInterval": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "SelfAttackTarget",
+              "targetPredicates": [
+                {
+                  "$type": "FMBJAJFLDIP",
+                  "logic": "LesserOrEqual",
+                  "param3": 5.0,
+                  "DDALGNLEHOD": ""
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "KJCHPDPBJHL",
+                  "boolID": "Attack02Near",
+                  "param3": true
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "KJCHPDPBJHL",
+                  "boolID": "Attack02Near"
+                }
+              ]
+            }
+          ]
+        },
+        "Attack02Checker": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.009999999776482582,
+          "onThinkInterval": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "SelfAttackTarget",
+              "targetPredicates": [
+                {
+                  "$type": "FMBJAJFLDIP",
+                  "logic": "LesserOrEqual",
+                  "param3": 7.5,
+                  "DDALGNLEHOD": ""
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "Attack02Trigger"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Legion_Attack04",
+      "onAbilityStart": [
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42614101,
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "onGround": true,
+            "direction": {
+              "$type": "MEADFIJAHPG",
+              "angleOffsetCorrect": {
+                "KGEPIMHBMOL": 0.0,
+                "JEBHCGDPFEJ": 0.0,
+                "LPCHALMFFOD": 0.0
+              },
+              "maxAngleType": "Horizontal",
+              "maxAngle": 0.0,
+              "startPoint": ""
+            },
+            "useRotation": true
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Golem_Legion_FireBlade",
+      "modifiers": {
+        "FireBlade_Bullet": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Golem_Legion_FireBall_FireBlade",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "FireBlade_Bullet"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "JHKEHNJBMOF",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JGEBAJLEBMO"
+              },
+              "size": {
+                "KGEPIMHBMOL": 1.0,
+                "JEBHCGDPFEJ": 1.0,
+                "LPCHALMFFOD": 1.0
+              }
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.800000011920929,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Fire",
+                "IPFJJJGABPL": 50.0,
+                "strikeType": "Slash",
+                "enBreak": 200.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV4"
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Legion_Attack05",
+      "abilityMixins": [
+        {
+          "$type": "JJFFOLOAJFO",
+          "normalizedStateIDList": [
+            {
+              "stateID": "Attack05_BS",
+              "normalizeStart": 0.8370000123977661
+            },
+            {
+              "stateID": "Attack05_Loop",
+              "normalizeEnd": 99.0
+            },
+            {
+              "stateID": "Attack05_AS",
+              "normalizeEnd": 0.550000011920929
+            }
+          ],
+          "modifierName": "Attack05MonsterEffect",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "JJFFOLOAJFO",
+          "normalizedStateIDList": [
+            {
+              "stateID": "Attack05_BS",
+              "normalizeStart": 0.16899999976158142
+            },
+            {
+              "stateID": "Attack05_Loop",
+              "normalizeEnd": 99.0
+            },
+            {
+              "stateID": "Attack05_AS",
+              "normalizeEnd": 0.5
+            }
+          ],
+          "modifierName": "Attack05MonsterEffect2",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Attack05_Loop"
+          ],
+          "modifierName": "SpecialShakeLabel",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Attack05_Loop"
+          ],
+          "modifierName": "SkillInterruptCleaner",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Attack05_Loop"
+          ],
+          "modifierName": "Attack05Timer",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Attack05_BS",
+            "Attack05_AS"
+          ],
+          "modifierName": "Attack05TimerReset",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "SpecialShakeLabel": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CIGJDPCDOEB",
+              "onAdded": [
+                {
+                  "$type": "KJCHPDPBJHL",
+                  "boolID": "Attack05Shake",
+                  "param3": true
+                }
+              ],
+              "onRemoved": [
+                {
+                  "$type": "KJCHPDPBJHL",
+                  "canBeHandledOnRecover": true,
+                  "boolID": "Attack05Shake"
+                }
+              ]
+            }
+          ]
+        },
+        "Attack05MonsterEffect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Golem_Legion_MagicField_Loop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Attack05MonsterEffect2": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Golem_Legion_MagicField_Loop_Weapon",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "SkillInterruptCleaner": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 42614102
+              }
+            }
+          ]
+        },
+        "Attack05Timer": {
+          "modifierName": "",
+          "elementDurability": 6.300000190734863,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "Attack05End",
+              "mpTriggerOnRemote": true
+            }
+          ]
+        },
+        "Attack05TimerReset": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GNAEJNBIFAC",
+              "PLLJBINMGJK": "Attack05End"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "KFCDMIMBBLD",
+          "target": "SelfAttackTarget",
+          "born": {
+            "$type": "JHEBKCMEMLN",
+            "onGround": true,
+            "direction": {
+              "$type": "FNKDGDKJHPC"
+            },
+            "useRotation": true
+          },
+          "lifeByOwnerV2": true,
+          "gadgetID": 42614102
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Golem_Legion_FireArea",
+      "modifiers": {
+        "FireArea_Hit1": {
+          "modifierName": "",
+          "elementDurability": 6.0,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.800000011920929,
+          "onThinkInterval": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Golem_Legion_MagicField_Field_Hit",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 0.0
+                    },
+                    "useRotation": true
+                  },
+                  "OAHPDLJIADP": 5.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.4000000059604645,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Fire",
+                    "IPFJJJGABPL": 25.0,
+                    "enBreak": 0.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV1",
+                    "hitHaltTimeScale": 0.05000000074505806
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ],
+          "onThinkIntervalIsFixedUpdate": true
+        },
+        "FireArea_Hit2Delay": {
+          "modifierName": "",
+          "elementDurability": 5.579999923706055,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "FireArea_Hit2"
+            }
+          ]
+        },
+        "FireArea_Hit2": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.699999988079071,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Golem_Legion_MagicField_Field_AS",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 0.0
+                    },
+                    "useRotation": true
+                  },
+                  "OAHPDLJIADP": 5.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.800000011920929,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Fire",
+                    "IPFJJJGABPL": 25.0,
+                    "enBreak": 200.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV5",
+                    "hitHaltTimeScale": 0.05000000074505806
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ],
+          "onThinkIntervalIsFixedUpdate": true
+        },
+        "FireArea_Effect": {
+          "modifierName": "",
+          "elementDurability": 7.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Golem_Legion_MagicField_Field_BS",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "direction": {
+                  "$type": "FNKDGDKJHPC"
+                },
+                "useRotation": true
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Golem_Legion_MagicField_Field_Loop",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "direction": {
+                  "$type": "FNKDGDKJHPC"
+                },
+                "useRotation": true
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "FireArea_Hit1"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "FireArea_Hit2Delay"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "FireArea_Effect"
+        }
+      ]
+    }
+  }
+]

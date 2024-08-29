@@ -1,0 +1,560 @@
+{
+  "common": {
+    "effectAttachShape": {
+      "$type": "FJNPJANPGGC",
+      "mesh": "EffectMesh"
+    },
+    "mass": 9999999.0,
+    "height": 1.0,
+    "affectedByWorld": true,
+    "checkInSurface": true,
+    "canTriggerElementReactionText": false,
+    "useGrassDisplacement": true,
+    "clearAnimatorOnSetLightDeactive": true,
+    "clearAIOnSetLightDeactive": true
+  },
+  "headControl": {
+    "$type": "KPIPDEBDPIH",
+    "useHeadControl": true,
+    "maxYawDegree": 60.0,
+    "maxPitchDegree": 30.0,
+    "animStates": [
+      "NormalIdle/Standby",
+      "NormalIdle/Sit",
+      "NormalMove/Walk",
+      "NormalMove/Run",
+      "StandbyToSit",
+      "SitToStandby"
+    ]
+  },
+  "model": {
+    "bornEffect": "",
+    "attachEffect": "",
+    "canBakeMesh": false,
+    "BKPFGNPLDNJ": ""
+  },
+  "dither": {
+    "showDitherDuration": 1.0
+  },
+  "combat": {
+    "property": {
+      "endureType": "Monster_Minion",
+      "weight": 101.0,
+      "isInvincible": true
+    },
+    "beHit": {
+      "hitBloodEffect": "",
+      "muteAllHitEffect": true,
+      "muteAllHitText": true
+    },
+    "combatLock": {
+      "lockShape": "CircleLockEnemy",
+      "denyLockOn": true,
+      "lockType": "Animal_Lv2"
+    },
+    "die": {
+      "dieEndTime": 2.0,
+      "dieForceDisappearTime": 10.0,
+      "dieDisappearEffect": ""
+    },
+    "animEvents": {
+      "DodgeCameraShake": {
+        "attackPattern": {
+          "$type": "JHKEHNJBMOF",
+          "triggerType": "TriggerNoRepeat",
+          "ignoreMassive": true,
+          "born": {
+            "$type": "IAENDIPDFKD"
+          },
+          "size": {
+            "KGEPIMHBMOL": 0.10000000149011612,
+            "JEBHCGDPFEJ": 0.10000000149011612,
+            "LPCHALMFFOD": 0.10000000149011612
+          }
+        },
+        "attackInfo": {
+          "attackTag": "",
+          "attenuationTag": "",
+          "attenuationGroup": "default",
+          "attackProperty": {
+            "actorGrassSubHurtDelta": 0.0,
+            "actorWindSubHurtDelta": 0.0,
+            "IPFJJJGABPL": 0.0,
+            "GLKMCMDJBIK": 0.0
+          },
+          "hitPattern": {
+            "onHitEffectName": "none",
+            "hitImpulseY": "",
+            "hitImpulseType": "LV0",
+            "hitHaltTimeScale": 0.05000000074505806
+          },
+          "forceCameraShake": true,
+          "cameraShake": {
+            "shakeType": "CustomVector",
+            "shakeRange": 0.125,
+            "shakeTime": 1.0,
+            "shakeDistance": 35.0,
+            "shakeDir": {
+              "y": 1.0
+            },
+            "extension": {
+              "baseOnCamera": true,
+              "rangeAttenuation": 0.0
+            }
+          }
+        }
+      }
+    }
+  },
+  "abilities": [
+    {
+      "abilityID": "Homeworld_CommonInitial",
+      "abilityName": "Animal_Homeworld_Common_Initial",
+      "abilityOverride": ""
+    }
+  ],
+  "stateLayers": {
+    "defaultLayer": {
+      "$type": "GBGJJIIEMBD",
+      "layerIndexName": "",
+      "CPAANEIJCGD": "",
+      "stateIDs": {
+        "Born": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Born": []
+          },
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "NormalIdle": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Standby": [],
+            "Sit": [
+              "Audio_Dog_Sit"
+            ]
+          },
+          "canDoSkill": true,
+          "canSyncMove": true,
+          "resetAnimatorTriggerOnEnter": [
+            "BeHitTrigger"
+          ],
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "NormalMove": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Walk": [
+              "Audio_Monster_Homeworld_Inu_Walk"
+            ],
+            "Run": [
+              "Audio_Monster_Homeworld_Inu_Run"
+            ],
+            "Sprint": [
+              "Audio_Monster_Homeworld_Inu_Run"
+            ]
+          },
+          "canSyncMove": true,
+          "resetAnimatorTriggerOnEnter": [
+            "BeHitTrigger"
+          ],
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ],
+          "canSteer": true
+        },
+        "Turn": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Turn": [
+              "Audio_Dog_Walk"
+            ]
+          },
+          "canSyncMove": true,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ],
+          "canSteer": true
+        },
+        "Die": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Die": [
+              "Animal_Homeworld_DogPrick_Disappear",
+              "Audio_Dog_StandbyToProne"
+            ]
+          }
+        },
+        "Dodge": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Dodge01": [
+              "Animal_Homeworld_Inu_Shihandai_Dodge01",
+              "Audio_Monster_Homeworld_Inu_Dodge01"
+            ],
+            "Dodge02": [
+              "Animal_Homeworld_Inu_Shihandai_Dodge02",
+              "Audio_Monster_Homeworld_Inu_Dodge02"
+            ],
+            "Dodge03": [
+              "Animal_Homeworld_Inu_Shihandai_Dodge03",
+              "Audio_Monster_Homeworld_Inu_Dodge03"
+            ]
+          },
+          "resetAnimatorTriggerOnEnter": [
+            "BeHit",
+            "BeHitTrigger"
+          ],
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill",
+            "BeHitTrigger"
+          ]
+        },
+        "StandbyToSit": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "StandbyToSit": [
+              "Audio_Dog_StandbyToSit"
+            ]
+          },
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ]
+        },
+        "SitToStandby": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "SitToStandby": [
+              "Audio_Dog_SitToStandby"
+            ]
+          },
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ]
+        },
+        "Personality_Crouch": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Personality_Crouch01": [],
+            "Personality_Crouch02": [
+              "Audio_Monster_Homeworld_Inu_Crouch02"
+            ]
+          },
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ]
+        },
+        "Personality_Sit": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Personality_Sit01": []
+          },
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ]
+        }
+      }
+    }
+  },
+  "initialPoses": {
+    "Default": {
+      "initialPoseID": 1,
+      "initialPoseParams": {
+        "intParams": {
+          "ActionState": "0"
+        }
+      }
+    }
+  },
+  "aibeta": {
+    "enable": true,
+    "friendliness": 1,
+    "decisionArchetype": "Animal_Homeworld",
+    "precombat": {
+      "satietyTime": 60.0
+    },
+    "sensing": {
+      "settings": {
+        "DefaultSetting": {
+          "viewRange": 10.0,
+          "horizontalFov": 90.0,
+          "verticalFov": 45.0,
+          "feelRange": 3.5
+        }
+      }
+    },
+    "neurons": {
+      "DefaultSetting": [
+        "HIT"
+      ],
+      "Hungry": [
+        "HIT",
+        "HUNGRY"
+      ]
+    },
+    "threat": {
+      "GHIJMOKOLMB": "",
+      "clearThreatTargetDistance": 15.0,
+      "clearThreatEdgeDistance": 0.0,
+      "clearThreatByTargetOutOfZone": true,
+      "clearThreatTimerByDistance": 1.0,
+      "threatDecreaseSpeed": 500.0
+    },
+    "defendArea": {
+      "defendRange": 100.0
+    },
+    "poseControl": {
+      "items": [
+        {
+          "minTime": 7.0,
+          "maxTime": 15.0,
+          "poseID": 1,
+          "randomPose": [
+            2
+          ],
+          "switchOnlyInCanDoSkillState": true
+        },
+        {
+          "minTime": 7.0,
+          "maxTime": 15.0,
+          "poseID": 101,
+          "randomPose": [
+            2
+          ],
+          "switchOnlyInCanDoSkillState": true
+        },
+        {
+          "minTime": 60.0,
+          "maxTime": 120.0,
+          "poseID": 2,
+          "randomPose": [
+            1
+          ],
+          "switchOnlyInCanDoSkillState": true
+        },
+        {
+          "minTime": 15.0,
+          "maxTime": 30.0,
+          "poseID": 201,
+          "randomPose": [
+            1
+          ],
+          "switchOnlyInCanDoSkillState": true
+        },
+        {
+          "minTime": 30.0,
+          "maxTime": 60.0,
+          "poseID": 401,
+          "randomPose": [
+            1
+          ],
+          "switchOnlyInCanDoSkillState": true
+        }
+      ]
+    },
+    "ui": {
+      "hasDirectionIndicator": false,
+      "HMNNBFDEHLG": ""
+    },
+    "skills": {
+      "101": {
+        "name": "Personality_Crouch01Free",
+        "castCondition": {
+          "pose": [
+            1
+          ],
+          "needReInitCD": true,
+          "pickRangeMax": 5.0
+        },
+        "cd": 5.0,
+        "cdUpperRange": 25.0,
+        "initialCD": 10.0,
+        "initialCDUpperRange": 15.0,
+        "publicCDGroup": "",
+        "HHAGODJIAPE": "",
+        "stateIDs": [
+          "Personality_Crouch"
+        ],
+        "flagTargetReachable": "10",
+        "flagSelfOnTemplateCollider": "01",
+        "flagSelfInZone": "10",
+        "flagTargetInZone": "11"
+      },
+      "111": {
+        "name": "Personality_Crouch01Fight",
+        "castCondition": {
+          "pose": [
+            101
+          ],
+          "needReInitCD": true,
+          "pickRangeMax": 5.0
+        },
+        "cd": 5.0,
+        "cdUpperRange": 25.0,
+        "initialCD": 10.0,
+        "initialCDUpperRange": 15.0,
+        "publicCDGroup": "",
+        "HHAGODJIAPE": "",
+        "stateIDs": [
+          "Personality_Crouch"
+        ],
+        "flagTargetReachable": "10",
+        "flagSelfOnTemplateCollider": "01",
+        "flagSelfInZone": "10",
+        "flagTargetInZone": "11"
+      },
+      "411": {
+        "name": "Personality_Crouch02Chase",
+        "castCondition": {
+          "pose": [
+            401
+          ],
+          "needReInitCD": true,
+          "pickRangeMax": 5.0
+        },
+        "cd": 15.0,
+        "cdUpperRange": 15.0,
+        "initialCD": 1.0,
+        "initialCDUpperRange": 4.0,
+        "publicCDGroup": "",
+        "HHAGODJIAPE": "",
+        "stateIDs": [
+          "Personality_Crouch"
+        ],
+        "flagTargetReachable": "10",
+        "flagSelfOnTemplateCollider": "01",
+        "flagSelfInZone": "10",
+        "flagTargetInZone": "11"
+      }
+    },
+    "skillGCD": 5.0,
+    "mixin": {
+      "setControllerParameterOnBeHitByEntityType": [
+        {
+          "poseIDs": [
+            1,
+            2,
+            101,
+            201,
+            401
+          ],
+          "settings": [
+            {
+              "entityTypes": [
+                "Bullet",
+                "Avatar",
+                "Field",
+                "Gadget"
+              ],
+              "onSuccess": {
+                "setPoseInt": [
+                  {
+                    "intID": "RandomPose",
+                    "value": 4
+                  }
+                ],
+                "setAnimatorTrigger": [
+                  {
+                    "PLLJBINMGJK": "BeHitTrigger"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "birdCirclingTactic": [
+      {
+        "$type": "AOMGMAHGNIO",
+        "enable": true,
+        "condition": {
+          "pose": [
+            401
+          ]
+        },
+        "JMCOBEPDIGM": {
+          "LEGOOCKKGNE": 20.0,
+          "GGEBMFHFBPO": 3.5,
+          "BCFEBFGGNKC": 10.0,
+          "KFFGCIMPNMJ": 6.0,
+          "JMFANEAJLCH": 5,
+          "NFFBMIAKAJO": 1,
+          "PKNJDNAGLNM": 1,
+          "DCGOANLCMOC": 60.0,
+          "NBENNEKDIIA": 1.5,
+          "CNOEOAJEBOK": 1.5,
+          "FLPMDIAJDKL": false,
+          "MNPDDAKDHGK": ""
+        }
+      },
+      {
+        "$type": "NNJKLGNPMNN",
+        "enable": true,
+        "JMCOBEPDIGM": {
+          "MNPDDAKDHGK": "",
+          "GJDMDHIBCME": ""
+        }
+      },
+      {
+        "$type": "FPELBIJFGCE",
+        "enable": true,
+        "condition": {
+          "pose": [
+            1,
+            101
+          ]
+        },
+        "GNBDAEHGLHI": [
+          0,
+          1,
+          2
+        ],
+        "JMCOBEPDIGM": {
+          "NBENNEKDIIA": 0.75,
+          "KPNDPKIOPJM": 12.5,
+          "PINAFKEDDLL": 7.5,
+          "ANMPOPEBDIA": 15.0,
+          "GMJFIMFFOEL": 5.0,
+          "CHCPFDMADEI": 7.5,
+          "MNPDDAKDHGK": ""
+        }
+      }
+    ]
+  },
+  "inputKeys": [
+    {
+      "keyID": 101,
+      "inputKeyCode": 257,
+      "abilityName": ""
+    },
+    {
+      "keyID": 201,
+      "inputKeyCode": 258,
+      "abilityName": ""
+    },
+    {
+      "keyID": 411,
+      "inputKeyCode": 259,
+      "abilityName": ""
+    }
+  ],
+  "move": {
+    "$type": "IPNMJMHDMPF",
+    "positionModifyState": "Walk",
+    "PKHOMJHFAEE": "RootNode"
+  },
+  "animal": {
+    "tickAbilityElement": false,
+    "hasCharacterRenderering": false
+  }
+}

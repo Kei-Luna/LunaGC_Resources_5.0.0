@@ -1,0 +1,4125 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CatchAnimal_Shoot",
+      "abilityMixins": [
+        {
+          "$type": "MEPDDGMALEE",
+          "targetWidgetMaterialId": 220043,
+          "onActive": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "_ABILITY_CatchAnimal_Useable",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onDisable": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_CatchAnimal_Useable",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_ABILITY_CatchAnimal_Useable",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Blank",
+            "ActivityAbility_CatchAnimal_Handler"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Blank": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "ActivityAbility_CatchAnimal_Handler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "shieldHP": true,
+              "modifierName": "ActivityAbility_CatchAnimal_AddSkillInfo"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "shieldHP": true,
+              "modifierName": "ActivityAbility_CatchAnimal_SwitchSkill"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "shieldHP": true,
+              "modifierName": "ActivityAbility_CatchAnimal_Aim_Handler"
+            }
+          ]
+        },
+        "ActivityAbility_CatchAnimal_AddSkillInfo": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PDFENCBHHAI",
+              "shieldHP": true,
+              "skillID": 20040
+            },
+            {
+              "$type": "OCLNBBMMIOK",
+              "skillID": 20040,
+              "amountByTargetCurrentHPRatio": 0.10000000149011612,
+              "costStaminaRatio": 1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KFOBADMAFJF",
+              "shieldHP": true,
+              "skillID": 20040,
+              "refreshAfterRemove": true
+            }
+          ]
+        },
+        "ActivityAbility_CatchAnimal_SwitchSkill": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BBDLKGEJDOJ",
+              "priority": "Playmode",
+              "skillIndex": 1,
+              "skillID": 20040
+            },
+            {
+              "$type": "LFLOIBGPKDE",
+              "syncOnChangeAvatar": true,
+              "syncOnCDChange": true,
+              "itemId": 220043,
+              "skillId": 20040,
+              "skillCDOffset": 0.5
+            }
+          ]
+        },
+        "ActivityAbility_CatchAnimal_Aim_Handler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "Channel_BS",
+                "Channel_Loop",
+                "Channel_AS"
+              ],
+              "modifierName": "Trigger_OnExit",
+              "DGFCLAIDIFI": ""
+            },
+            {
+              "$type": "GODEMHMODCN",
+              "skillID": 20040,
+              "EKKJNADOEMB": 0.11999999731779099,
+              "onBeginCharged": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "shieldHP": true,
+                  "param3": 0.0,
+                  "key": "_ABILITY_Common_Channel_IsTrigger",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ],
+              "onReleaseCharged": [
+                {
+                  "$type": "PELJALPANCA",
+                  "shieldHP": true,
+                  "modifierName": "Shoot_Short"
+                }
+              ],
+              "onBeginSecondCharged": [
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "StartChannelTrigger"
+                }
+              ],
+              "onReleaseSecondCharged": [
+                {
+                  "$type": "PELJALPANCA",
+                  "shieldHP": true,
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ABILITY_Common_Channel_IsTrigger",
+                      "param3": 0.0
+                    }
+                  ],
+                  "modifierName": "Shoot_Long"
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "shieldHP": true,
+                  "param3": 1.0,
+                  "key": "_ABILITY_Common_Channel_IsTrigger",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ],
+              "onCancelCharged": [
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "EndChannelTrigger"
+                }
+              ],
+              "chargeStateIDs": [
+                "Channel_Loop"
+              ]
+            },
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "Channel_BS",
+                "Channel_Loop"
+              ],
+              "modifierName": "Focus",
+              "DGFCLAIDIFI": ""
+            }
+          ]
+        },
+        "ActivityAbility_CatchAnimal_ChangePlayMode": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "KAIOONFFNHC",
+              "slotType": "SlotQuickUse"
+            },
+            {
+              "$type": "KAIOONFFNHC"
+            },
+            {
+              "$type": "KAIOONFFNHC",
+              "slotType": "SlotCharge"
+            }
+          ]
+        },
+        "Trigger_OnExit": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ABILITY_Common_Channel_IsTrigger",
+                  "param3": 0.0
+                }
+              ],
+              "modifierName": "Shoot_Short"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "_ABILITY_Common_Channel_IsTrigger",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Focus": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BAGMOLODOME",
+              "cameraFollowLower": {
+                "x": 0.6000000238418579,
+                "y": 0.20000000298023224,
+                "z": -1.7999999523162842
+              },
+              "cameraFollowUpper": {
+                "x": 0.6000000238418579,
+                "y": -0.10000000149011612,
+                "z": -1.7999999523162842
+              },
+              "cameraFollowMaxDegree": 40.0,
+              "cameraFollowMinDegree": -40.0,
+              "dragButtonName": "Skill2",
+              "assistance": {
+                "ps4": {
+                  "useGyro": true
+                },
+                "ps5": {
+                  "useGyro": true
+                },
+                "other": {
+                  "useGyro": true
+                }
+              },
+              "canMove": false,
+              "vcamFov": 30.0,
+              "disableAnim": true,
+              "OMHGAKJIEFB": ""
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "LockMotionFlagExitChannel",
+              "param3": true
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_CatchAnimal_Charge",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "ActivityAbility_CatchAnimal_ChangePlayMode"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ABILITY_Common_IsChannelState",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LJEDLFDLLDP",
+              "shieldHP": true,
+              "keepRotation": true
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "shieldHP": true,
+              "boolID": "LockMotionFlagExitChannel"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Common_IsChannelState",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Shoot_Short": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "OCLNBBMMIOK",
+              "skillID": 20040,
+              "amountByTargetCurrentHPRatio": 1.0,
+              "costStaminaRatio": 1.0
+            },
+            {
+              "$type": "MKACPODPLOC",
+              "itemId": 220043
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_CatchAnimal_Shoot",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.5,
+                  "LPCHALMFFOD": 1.2000000476837158
+                },
+                "attachPointName": "FocusAnchor",
+                "attachPointTargetType": "Self"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "CAKDDHLKOAB",
+              "bulletID": 420000009,
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.5,
+                  "LPCHALMFFOD": 1.2000000476837158
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "angleOffset": {
+                    "KGEPIMHBMOL": 0.0,
+                    "JEBHCGDPFEJ": 0.0,
+                    "LPCHALMFFOD": 0.0
+                  },
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "attachPointName": "FocusAnchor",
+                "attachPointTargetType": "Self"
+              }
+            }
+          ]
+        },
+        "Shoot_Long": {
+          "modifierName": "",
+          "elementDurability": 0.30000001192092896,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "OCLNBBMMIOK",
+              "skillID": 20040,
+              "amountByTargetCurrentHPRatio": 1.0,
+              "costStaminaRatio": 1.0
+            },
+            {
+              "$type": "MKACPODPLOC",
+              "itemId": 220043
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_CatchAnimal_Shoot",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "attachPointName": "WeaponR",
+                "attachPointTargetType": "Self"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "GPKOPAOMILE",
+                  "weaponTypes": [
+                    "WEAPON_BOW"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "CAKDDHLKOAB",
+                  "bulletID": 420000010,
+                  "born": {
+                    "$type": "KLPANPDGHHA",
+                    "direction": {
+                      "$type": "LHBLDEOLGKF",
+                      "angleOffset": {
+                        "KGEPIMHBMOL": 0.0,
+                        "JEBHCGDPFEJ": 0.0,
+                        "LPCHALMFFOD": 0.0
+                      },
+                      "attachPointName": "FocusAnchor",
+                      "attachPointTargetType": "Self"
+                    },
+                    "attachPointName": "WeaponR",
+                    "attachPointTargetType": "Self"
+                  }
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "CAKDDHLKOAB",
+                  "bulletID": 420000010,
+                  "born": {
+                    "$type": "KLPANPDGHHA",
+                    "direction": {
+                      "$type": "LHBLDEOLGKF",
+                      "angleOffset": {
+                        "KGEPIMHBMOL": 0.0,
+                        "JEBHCGDPFEJ": 0.0,
+                        "LPCHALMFFOD": 0.0
+                      },
+                      "attachPointName": "FocusAnchor",
+                      "attachPointTargetType": "Self"
+                    },
+                    "attachPointName": "WeaponR",
+                    "attachPointTargetType": "Self"
+                  }
+                }
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "shieldHP": true,
+              "PLLJBINMGJK": "EndChannelTrigger"
+            }
+          ]
+        }
+      },
+      "onKill": [
+        {
+          "$type": "PPDJHLBHCIK",
+          "shieldHP": true,
+          "muteRemoteAction": true,
+          "JFDCCIECAJB": "ActivityAimState"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CatchAnimal_Bullet",
+      "modifiers": {
+        "Life_Timer": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.8500000238418579,
+          "onThinkInterval": [
+            {
+              "$type": "GJCAPCBELPA",
+              "abilityName": "ActivityAbility_CatchAnimal_Bullet"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "ANLOBBMKNIJ",
+          "rotationDampTime": "Eff_SceneObj_CatchAnimal_Bullet",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Life_Timer"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_ABILITY_CatchAnimal_IsCaptured",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_SceneObj_CatchAnimal_Hit",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "IIDNEOBNEJI"
+        },
+        {
+          "$type": "INBCDALOHMP",
+          "otherTargets": {
+            "$type": "IJOFJOGLDHE",
+            "topLimit": 1,
+            "entityTypePriority": [
+              "Monster"
+            ],
+            "sortType": "Nearest",
+            "shapeName": "CircleR3H5",
+            "campTargetType": "Enemy",
+            "doOffStage": 1.0
+          },
+          "targetPredicates": [
+            {
+              "$type": "HHHMNCNPBDK",
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "EnvAnimal"
+                  ]
+                },
+                {
+                  "$type": "BCFNGJHILAG",
+                  "predicates": [
+                    {
+                      "$type": "BCFNGJHILAG",
+                      "predicates": [
+                        {
+                          "$type": "NIMAPECDNKD",
+                          "entityTypes": [
+                            "Monster"
+                          ]
+                        },
+                        {
+                          "$type": "CNGGLKHONAA",
+                          "key": "_ANIMAL_ENTITY_TYPE",
+                          "param3": 1.0
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "LNNPEEBFPDF",
+              "target": "Other",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_ABILITY_CatchAnimal_IsCaptured",
+                  "param3": 0.0
+                }
+              ],
+              "materialId": 220043
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ABILITY_CatchAnimal_IsCaptured",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        {
+          "$type": "NCFFNDHGCMH"
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "Life_Timer"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CatchMushroomMonster_Shoot",
+      "abilityMixins": [
+        {
+          "$type": "FKKJJMOHCLI",
+          "targetWidgetMaterialIDs": [
+            220073
+          ],
+          "onActive": [
+            {
+              "$type": "PELJALPANCA",
+              "shieldHP": true,
+              "modifierName": "ActivityAbility_CatchAnimal_AddSkillInfo"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "shieldHP": true,
+              "modifierName": "ActivityAbility_CatchAnimal_SwitchSkill"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "shieldHP": true,
+              "modifierName": "ActivityAbility_CatchAnimal_Aim_Handler"
+            }
+          ],
+          "onDisable": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "shieldHP": true,
+              "modifierName": "ActivityAbility_CatchAnimal_AddSkillInfo"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "shieldHP": true,
+              "modifierName": "ActivityAbility_CatchAnimal_SwitchSkill"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "shieldHP": true,
+              "modifierName": "ActivityAbility_CatchAnimal_Aim_Handler"
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "ActivityAbility_CatchAnimal_AddSkillInfo": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PDFENCBHHAI",
+              "shieldHP": true,
+              "skillID": 20049
+            },
+            {
+              "$type": "OCLNBBMMIOK",
+              "skillID": 20049,
+              "amountByTargetCurrentHPRatio": 0.10000000149011612,
+              "costStaminaRatio": 1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KFOBADMAFJF",
+              "shieldHP": true,
+              "skillID": 20049,
+              "refreshAfterRemove": true
+            }
+          ]
+        },
+        "ActivityAbility_CatchAnimal_SwitchSkill": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BBDLKGEJDOJ",
+              "priority": "Playmode",
+              "skillIndex": 1,
+              "skillID": 20049
+            },
+            {
+              "$type": "LFLOIBGPKDE",
+              "syncOnChangeAvatar": true,
+              "syncOnCDChange": true,
+              "itemId": 220073,
+              "skillId": 20049,
+              "skillCDOffset": 0.5
+            }
+          ]
+        },
+        "ActivityAbility_CatchAnimal_Aim_Handler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "Channel_BS",
+                "Channel_Loop",
+                "Channel_AS"
+              ],
+              "modifierName": "Trigger_OnExit",
+              "DGFCLAIDIFI": ""
+            },
+            {
+              "$type": "GODEMHMODCN",
+              "skillID": 20049,
+              "EKKJNADOEMB": 0.11999999731779099,
+              "onBeginCharged": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "shieldHP": true,
+                  "param3": 0.0,
+                  "key": "_ABILITY_Common_Channel_IsTrigger",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ],
+              "onReleaseCharged": [
+                {
+                  "$type": "PELJALPANCA",
+                  "shieldHP": true,
+                  "modifierName": "Shoot_Short"
+                }
+              ],
+              "onBeginSecondCharged": [
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "StartChannelTrigger"
+                }
+              ],
+              "onReleaseSecondCharged": [
+                {
+                  "$type": "PELJALPANCA",
+                  "shieldHP": true,
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ABILITY_Common_Channel_IsTrigger",
+                      "param3": 0.0
+                    }
+                  ],
+                  "modifierName": "Shoot_Long"
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "shieldHP": true,
+                  "param3": 1.0,
+                  "key": "_ABILITY_Common_Channel_IsTrigger",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ],
+              "onCancelCharged": [
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "EndChannelTrigger"
+                }
+              ],
+              "chargeStateIDs": [
+                "Channel_Loop"
+              ]
+            },
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "Channel_BS",
+                "Channel_Loop"
+              ],
+              "modifierName": "Focus",
+              "DGFCLAIDIFI": ""
+            }
+          ]
+        },
+        "ActivityAbility_CatchAnimal_ChangePlayMode": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "KAIOONFFNHC",
+              "slotType": "SlotQuickUse"
+            },
+            {
+              "$type": "KAIOONFFNHC",
+              "slotType": "SlotCharge"
+            },
+            {
+              "$type": "KAIOONFFNHC"
+            }
+          ]
+        },
+        "Trigger_OnExit": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ABILITY_Common_Channel_IsTrigger",
+                  "param3": 0.0
+                }
+              ],
+              "modifierName": "Shoot_Short"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "_ABILITY_Common_Channel_IsTrigger",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Focus": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BAGMOLODOME",
+              "cameraFollowLower": {
+                "x": 0.6000000238418579,
+                "y": 0.20000000298023224,
+                "z": -1.7999999523162842
+              },
+              "cameraFollowUpper": {
+                "x": 0.5,
+                "y": -0.20000000298023224,
+                "z": -1.7999999523162842
+              },
+              "cameraFollowMaxDegree": 40.0,
+              "cameraFollowMinDegree": -40.0,
+              "dragButtonName": "Skill2",
+              "assistance": {
+                "ps4": {
+                  "useGyro": true
+                },
+                "ps5": {
+                  "useGyro": true
+                },
+                "other": {
+                  "useGyro": true
+                }
+              },
+              "canMove": false,
+              "vcamFov": 30.0,
+              "disableAnim": true,
+              "OMHGAKJIEFB": ""
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "LockMotionFlagExitChannel",
+              "param3": true
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_CatchAnimal_Charge_FungusFighter",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "ActivityAbility_CatchAnimal_ChangePlayMode"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ABILITY_Common_IsChannelState",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LJEDLFDLLDP",
+              "shieldHP": true,
+              "keepRotation": true
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "shieldHP": true,
+              "boolID": "LockMotionFlagExitChannel"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Common_IsChannelState",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Shoot_Short": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "OCLNBBMMIOK",
+              "skillID": 20049,
+              "amountByTargetCurrentHPRatio": 1.0,
+              "costStaminaRatio": 1.0
+            },
+            {
+              "$type": "MKACPODPLOC",
+              "itemId": 220073
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_CatchAnimal_Shoot_FungusFighter",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.5,
+                  "LPCHALMFFOD": 1.2000000476837158
+                },
+                "attachPointName": "FocusAnchor",
+                "attachPointTargetType": "Self"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AHPEKICBIIL",
+              "shieldHP": true,
+              "luaCallType": "CurGalleryControlGroup",
+              "funcName": "SLC_AvatarUseCatchWidget",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            },
+            {
+              "$type": "CAKDDHLKOAB",
+              "bulletID": 420000020,
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.5,
+                  "LPCHALMFFOD": 1.2000000476837158
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "angleOffset": {
+                    "KGEPIMHBMOL": 0.0,
+                    "JEBHCGDPFEJ": 0.0,
+                    "LPCHALMFFOD": 0.0
+                  },
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "attachPointName": "FocusAnchor",
+                "attachPointTargetType": "Self"
+              }
+            }
+          ]
+        },
+        "Shoot_Long": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "OCLNBBMMIOK",
+              "skillID": 20049,
+              "amountByTargetCurrentHPRatio": 1.0,
+              "costStaminaRatio": 1.0
+            },
+            {
+              "$type": "MKACPODPLOC",
+              "itemId": 220073
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_CatchAnimal_Shoot_FungusFighter",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "attachPointName": "WeaponR",
+                "attachPointTargetType": "Self"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "GPKOPAOMILE",
+                  "weaponTypes": [
+                    "WEAPON_BOW"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "AHPEKICBIIL",
+                  "shieldHP": true,
+                  "luaCallType": "CurGalleryControlGroup",
+                  "funcName": "SLC_AvatarUseCatchWidget",
+                  "param1": 0.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                },
+                {
+                  "$type": "CAKDDHLKOAB",
+                  "bulletID": 420000021,
+                  "born": {
+                    "$type": "KLPANPDGHHA",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.30000001192092896,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 1.2000000476837158
+                    },
+                    "direction": {
+                      "$type": "LHBLDEOLGKF",
+                      "angleOffset": {
+                        "KGEPIMHBMOL": -1.5,
+                        "JEBHCGDPFEJ": 0.0,
+                        "LPCHALMFFOD": 0.0
+                      },
+                      "attachPointName": "FocusAnchor",
+                      "attachPointTargetType": "Self"
+                    },
+                    "attachPointName": "FocusAnchor",
+                    "attachPointTargetType": "Self"
+                  }
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "INBCDALOHMP",
+                  "targetPredicates": [
+                    {
+                      "$type": "HHHMNCNPBDK",
+                      "predicates": [
+                        {
+                          "$type": "AFDBJPOLDNE",
+                          "bodyType": "BODY_MALE"
+                        },
+                        {
+                          "$type": "AFDBJPOLDNE",
+                          "bodyType": "BODY_LADY"
+                        }
+                      ]
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "AHPEKICBIIL",
+                      "shieldHP": true,
+                      "luaCallType": "CurGalleryControlGroup",
+                      "funcName": "SLC_AvatarUseCatchWidget",
+                      "param1": 0.0,
+                      "MGAMDEHMCOL": 0.0,
+                      "MMHOHAOGPLP": 0.0
+                    },
+                    {
+                      "$type": "CAKDDHLKOAB",
+                      "bulletID": 420000021,
+                      "born": {
+                        "$type": "KLPANPDGHHA",
+                        "offset": {
+                          "KGEPIMHBMOL": 0.0,
+                          "JEBHCGDPFEJ": 0.10000000149011612,
+                          "LPCHALMFFOD": 1.2000000476837158
+                        },
+                        "direction": {
+                          "$type": "LHBLDEOLGKF",
+                          "angleOffset": {
+                            "KGEPIMHBMOL": -1.5,
+                            "JEBHCGDPFEJ": 0.0,
+                            "LPCHALMFFOD": 0.0
+                          },
+                          "attachPointName": "FocusAnchor",
+                          "attachPointTargetType": "Self"
+                        },
+                        "attachPointName": "FocusAnchor",
+                        "attachPointTargetType": "Self"
+                      }
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "INBCDALOHMP",
+                      "targetPredicates": [
+                        {
+                          "$type": "HHHMNCNPBDK",
+                          "predicates": [
+                            {
+                              "$type": "AFDBJPOLDNE",
+                              "bodyType": "BODY_BOY"
+                            },
+                            {
+                              "$type": "AFDBJPOLDNE",
+                              "bodyType": "BODY_GIRL"
+                            }
+                          ]
+                        }
+                      ],
+                      "successActions": [
+                        {
+                          "$type": "AHPEKICBIIL",
+                          "shieldHP": true,
+                          "luaCallType": "CurGalleryControlGroup",
+                          "funcName": "SLC_AvatarUseCatchWidget",
+                          "param1": 0.0,
+                          "MGAMDEHMCOL": 0.0,
+                          "MMHOHAOGPLP": 0.0
+                        },
+                        {
+                          "$type": "CAKDDHLKOAB",
+                          "bulletID": 420000021,
+                          "born": {
+                            "$type": "KLPANPDGHHA",
+                            "offset": {
+                              "KGEPIMHBMOL": 0.0,
+                              "JEBHCGDPFEJ": 0.25,
+                              "LPCHALMFFOD": 1.2000000476837158
+                            },
+                            "direction": {
+                              "$type": "LHBLDEOLGKF",
+                              "angleOffset": {
+                                "KGEPIMHBMOL": -1.5,
+                                "JEBHCGDPFEJ": 0.0,
+                                "LPCHALMFFOD": 0.0
+                              },
+                              "attachPointName": "FocusAnchor",
+                              "attachPointTargetType": "Self"
+                            },
+                            "attachPointName": "FocusAnchor",
+                            "attachPointTargetType": "Self"
+                          }
+                        }
+                      ],
+                      "failActions": [
+                        {
+                          "$type": "AHPEKICBIIL",
+                          "shieldHP": true,
+                          "luaCallType": "CurGalleryControlGroup",
+                          "funcName": "SLC_AvatarUseCatchWidget",
+                          "param1": 0.0,
+                          "MGAMDEHMCOL": 0.0,
+                          "MMHOHAOGPLP": 0.0
+                        },
+                        {
+                          "$type": "CAKDDHLKOAB",
+                          "bulletID": 420000021,
+                          "born": {
+                            "$type": "KLPANPDGHHA",
+                            "offset": {
+                              "KGEPIMHBMOL": 0.0,
+                              "JEBHCGDPFEJ": 0.5,
+                              "LPCHALMFFOD": 1.2000000476837158
+                            },
+                            "direction": {
+                              "$type": "LHBLDEOLGKF",
+                              "angleOffset": {
+                                "KGEPIMHBMOL": -1.5,
+                                "JEBHCGDPFEJ": 0.0,
+                                "LPCHALMFFOD": 0.0
+                              },
+                              "attachPointName": "FocusAnchor",
+                              "attachPointTargetType": "Self"
+                            },
+                            "attachPointName": "FocusAnchor",
+                            "attachPointTargetType": "Self"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "shieldHP": true,
+              "PLLJBINMGJK": "EndChannelTrigger"
+            }
+          ]
+        }
+      },
+      "onKill": [
+        {
+          "$type": "PPDJHLBHCIK",
+          "shieldHP": true,
+          "muteRemoteAction": true,
+          "JFDCCIECAJB": "ActivityAimState"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CatchMushroomMonster_ForceFire",
+      "modifiers": {
+        "DenyLock": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "DenyLockOn",
+          "onAdded": [
+            {
+              "$type": "OPAOGKPJLIG",
+              "resistanceListID": 11002
+            }
+          ]
+        },
+        "Invincible": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CIBMLJJLANN",
+              "excludeForces": [
+                "WindZoneType"
+              ]
+            }
+          ],
+          "state": "Invincible"
+        },
+        "GhostToAllied": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "IsGhostToAllied"
+        },
+        "GhostToEmeny": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "IsGhostToEnemy"
+        },
+        "ActivityAbility_CatchAnimal_AddSkillInfo": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PDFENCBHHAI",
+              "shieldHP": true,
+              "skillID": 20051
+            },
+            {
+              "$type": "PPDJHLBHCIK",
+              "shieldHP": true,
+              "canBeHandledOnRecover": true,
+              "muteRemoteAction": true,
+              "toPlayMode": "FungusFighterBattle"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KFOBADMAFJF",
+              "shieldHP": true,
+              "skillID": 20051,
+              "refreshAfterRemove": true
+            },
+            {
+              "$type": "PPDJHLBHCIK",
+              "shieldHP": true,
+              "canBeHandledOnRecover": true,
+              "muteRemoteAction": true,
+              "JFDCCIECAJB": "FungusFighterBattle"
+            }
+          ]
+        },
+        "ActivityAbility_CatchAnimal_SwitchSkill": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BBDLKGEJDOJ",
+              "priority": "Playmode",
+              "skillIndex": 1,
+              "skillID": 20051
+            }
+          ]
+        },
+        "ActivityAbility_CatchAnimal_Aim_Handler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "Channel_BS",
+                "Channel_Loop",
+                "Channel_AS"
+              ],
+              "modifierName": "Trigger_OnExit",
+              "DGFCLAIDIFI": ""
+            },
+            {
+              "$type": "GODEMHMODCN",
+              "skillID": 20051,
+              "EKKJNADOEMB": 0.11999999731779099,
+              "onBeginCharged": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "shieldHP": true,
+                  "param3": 0.0,
+                  "key": "_ABILITY_Common_Channel_IsTrigger",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ],
+              "onReleaseCharged": [
+                {
+                  "$type": "BAKEBEKLLAC",
+                  "muteRemoteAction": true,
+                  "id": 470510101
+                }
+              ],
+              "onBeginSecondCharged": [
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "StartChannelTrigger"
+                },
+                {
+                  "$type": "KFCDMIMBBLD",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 0.0
+                    }
+                  },
+                  "gadgetID": 420000024,
+                  "campID": 1001,
+                  "campTargetType": "Enemy"
+                }
+              ],
+              "onReleaseSecondCharged": [
+                {
+                  "$type": "PELJALPANCA",
+                  "shieldHP": true,
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ABILITY_Common_Channel_IsTrigger",
+                      "param3": 0.0
+                    }
+                  ],
+                  "modifierName": "Shoot_Long"
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "shieldHP": true,
+                  "param3": 1.0,
+                  "key": "_ABILITY_Common_Channel_IsTrigger",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ],
+              "onCancelCharged": [
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "EndChannelTrigger"
+                }
+              ],
+              "chargeStateIDs": [
+                "Channel_Loop"
+              ]
+            },
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "Channel_BS",
+                "Channel_Loop"
+              ],
+              "modifierName": "Focus",
+              "DGFCLAIDIFI": ""
+            }
+          ]
+        },
+        "ActivityAbility_CatchAnimal_ChangePlayMode": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "KAIOONFFNHC",
+              "slotType": "SlotQuickUse"
+            },
+            {
+              "$type": "KAIOONFFNHC",
+              "slotType": "SlotCharge"
+            },
+            {
+              "$type": "KAIOONFFNHC"
+            }
+          ]
+        },
+        "Trigger_OnExit": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "_ABILITY_Common_Channel_IsTrigger",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "JKFLDIKGJEF",
+              "shieldHP": true,
+              "gadgetInfo": {
+                "configID": 420000024
+              }
+            }
+          ]
+        },
+        "Focus": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BAGMOLODOME",
+              "cameraFollowLower": {
+                "x": 0.6000000238418579,
+                "y": 0.20000000298023224,
+                "z": -1.7999999523162842
+              },
+              "cameraFollowUpper": {
+                "x": 0.6000000238418579,
+                "y": -0.10000000149011612,
+                "z": -1.7999999523162842
+              },
+              "cameraFollowMaxDegree": 40.0,
+              "cameraFollowMinDegree": -40.0,
+              "dragButtonName": "Skill2",
+              "assistance": {
+                "ps4": {
+                  "useGyro": true
+                },
+                "ps5": {
+                  "useGyro": true
+                },
+                "other": {
+                  "useGyro": true
+                }
+              },
+              "canMove": false,
+              "vcamFov": 30.0,
+              "disableAnim": true,
+              "OMHGAKJIEFB": ""
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "LockMotionFlagExitChannel",
+              "param3": true
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_CatchAnimal_Charge",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ABILITY_Common_IsChannelState",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LJEDLFDLLDP",
+              "shieldHP": true,
+              "keepRotation": true
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "shieldHP": true,
+              "boolID": "LockMotionFlagExitChannel"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Common_IsChannelState",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Shoot_Short": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "OCLNBBMMIOK",
+              "skillID": 20051,
+              "amountByTargetCurrentHPRatio": 1.0,
+              "costStaminaRatio": 1.0
+            }
+          ]
+        },
+        "Shoot_Long": {
+          "modifierName": "",
+          "elementDurability": 0.30000001192092896,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "OCLNBBMMIOK",
+              "skillID": 20051,
+              "amountByTargetCurrentHPRatio": 1.0,
+              "costStaminaRatio": 1.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_CatchAnimal_Shoot",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "attachPointName": "WeaponR",
+                "attachPointTargetType": "Self"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 420000024
+              },
+              "modifierName": "UNIQUE_CatchMushroomMonster_Aim_Driver"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "shieldHP": true,
+              "PLLJBINMGJK": "EndChannelTrigger"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "ActivityAbility_CatchAnimal_AddSkillInfo"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "ActivityAbility_CatchAnimal_SwitchSkill"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "ActivityAbility_CatchAnimal_Aim_Handler"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "GhostToEmeny"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "GhostToAllied"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "DenyLock"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "Invincible"
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "PPDJHLBHCIK",
+          "shieldHP": true,
+          "muteRemoteAction": true,
+          "JFDCCIECAJB": "ActivityAimState"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CatchMushroomMonster_Aim_Driver",
+      "modifiers": {
+        "UNIQUE_CatchMushroomMonster_Aim_Driver": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PBIEAKMPGAE",
+              "entityTypes": [
+                "Monster"
+              ],
+              "colliderNodeName": "PRIVATE_RayCast",
+              "FKECHNGFOEG": -1.0,
+              "actionQueue": [
+                {
+                  "$type": "JLDEMMJAMLC",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "NIMAPECDNKD",
+                      "entityTypes": [
+                        "Monster"
+                      ]
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ANIMAL_ENTITY_TYPE",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "modifierName": "Lock_Eff"
+                }
+              ],
+              "onLeaveScopeActionQueue": [
+                {
+                  "$type": "PFKNEFGOHIH",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "NIMAPECDNKD",
+                      "entityTypes": [
+                        "Monster"
+                      ]
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ANIMAL_ENTITY_TYPE",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "modifierName": "Lock_Eff"
+                }
+              ],
+              "onRemoveActionQueue": [
+                {
+                  "$type": "PFKNEFGOHIH",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "NIMAPECDNKD",
+                      "entityTypes": [
+                        "Monster"
+                      ]
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ANIMAL_ENTITY_TYPE",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "modifierName": "Lock_Eff"
+                },
+                {
+                  "$type": "BAKEBEKLLAC",
+                  "muteRemoteAction": true,
+                  "id": 470510102
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "NIMAPECDNKD",
+                      "entityTypes": [
+                        "Monster"
+                      ]
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ANIMAL_ENTITY_TYPE",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "modifierName": "PreOnFire"
+                }
+              ],
+              "aimType": "OneInScope"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "KillSelfDelay"
+            }
+          ]
+        },
+        "Lock_Eff": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Activity_FungusFighter_Lock",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "PreOnFire": {
+          "stacking": "Multiple",
+          "modifierName": "",
+          "elementDurability": 0.30000001192092896,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBODPNEEFGD",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR40",
+                "campTargetType": "All",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "BCFNGJHILAG",
+                  "predicates": [
+                    {
+                      "$type": "KGBDHDJLELL"
+                    }
+                  ]
+                }
+              ],
+              "modifierName": "UNIQUE_FungusFighter_FocusFire"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "UNIQUE_FungusFighter_FocusFire"
+            }
+          ]
+        },
+        "UNIQUE_FungusFighter_FocusFire": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 2.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Activity_FungusFighter_Onfire",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "GKNNJOEDOOF",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR40",
+                "campTargetType": "Enemy",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "SGV_Fungus_StartBurst_Immediately",
+                  "param3": 0.0,
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "tauntLevel": "Monster_TauntLevel_6",
+              "tauntModifierOwner": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "GKNNJOEDOOF",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR40",
+                "campTargetType": "Enemy",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "SGV_Fungus_StartBurst_Immediately",
+                  "param3": 0.0,
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "careValue": -50000.0,
+              "tauntModifierOwner": true
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "GKNNJOEDOOF",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR40",
+                "campTargetType": "Enemy",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "SGV_Fungus_StartBurst_Immediately",
+                  "param3": 0.0,
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "tauntLevel": "Monster_TauntLevel_6",
+              "tauntModifierOwner": true
+            }
+          ]
+        },
+        "KillSelfDelay": {
+          "modifierName": "",
+          "elementDurability": 0.30000001192092896,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_CatchMushroomMonster_Aim_Driver"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CatchMushroomBeast_Bullet",
+      "onAdded": [
+        {
+          "$type": "ANLOBBMKNIJ",
+          "rotationDampTime": "Eff_SceneObj_CatchAnimal_Bullet_FungusFighter",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_SceneObj_CatchAnimal_Hit_FungusFighter",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "IIDNEOBNEJI"
+        },
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "GMDIMKKHACA",
+              "triggerType": "TriggerNoRepeat",
+              "ignoreMassive": true,
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": -2.5,
+                  "LPCHALMFFOD": 0.0
+                }
+              },
+              "height": 5.0,
+              "OAHPDLJIADP": 3.0
+            },
+            "attackInfo": {
+              "attackTag": "Mushroom_Monster_Catch",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.0,
+                "actorWindSubHurtDelta": 0.0,
+                "IPFJJJGABPL": 0.0,
+                "strikeType": "Default",
+                "enBreak": 0.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV1",
+                "hitHaltTimeScale": 0.05000000074505806
+              }
+            }
+          },
+          "targetType": "All"
+        },
+        {
+          "$type": "NCFFNDHGCMH"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CatchAnimal_Shoot_DogGame",
+      "modifiers": {
+        "ActivityAbility_CatchAnimal_AddSkillInfo": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PDFENCBHHAI",
+              "shieldHP": true,
+              "skillID": 20041
+            },
+            {
+              "$type": "OCLNBBMMIOK",
+              "skillID": 20041,
+              "amountByTargetCurrentHPRatio": 0.10000000149011612,
+              "costStaminaRatio": 1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KFOBADMAFJF",
+              "shieldHP": true,
+              "skillID": 20041,
+              "refreshAfterRemove": true
+            }
+          ]
+        },
+        "ActivityAbility_CatchAnimal_SwitchSkill": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BBDLKGEJDOJ",
+              "priority": "Playmode",
+              "skillIndex": 1,
+              "skillID": 20041
+            },
+            {
+              "$type": "LFLOIBGPKDE",
+              "syncOnChangeAvatar": true,
+              "syncOnCDChange": true,
+              "itemId": 220046,
+              "skillId": 20041,
+              "skillCDOffset": 0.5
+            }
+          ]
+        },
+        "ActivityAbility_CatchAnimal_Aim_Handler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "Channel_BS",
+                "Channel_Loop",
+                "Channel_AS"
+              ],
+              "modifierName": "Trigger_OnExit",
+              "DGFCLAIDIFI": ""
+            },
+            {
+              "$type": "GODEMHMODCN",
+              "skillID": 20041,
+              "EKKJNADOEMB": 0.11999999731779099,
+              "onBeginCharged": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "shieldHP": true,
+                  "param3": 0.0,
+                  "key": "_ABILITY_Common_Channel_IsTrigger",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ],
+              "onReleaseCharged": [
+                {
+                  "$type": "PELJALPANCA",
+                  "shieldHP": true,
+                  "modifierName": "Shoot_Short"
+                }
+              ],
+              "onBeginSecondCharged": [
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "StartChannelTrigger"
+                }
+              ],
+              "onReleaseSecondCharged": [
+                {
+                  "$type": "PELJALPANCA",
+                  "shieldHP": true,
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ABILITY_Common_Channel_IsTrigger",
+                      "param3": 0.0
+                    }
+                  ],
+                  "modifierName": "Shoot_Long"
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "shieldHP": true,
+                  "param3": 1.0,
+                  "key": "_ABILITY_Common_Channel_IsTrigger",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ],
+              "onCancelCharged": [
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "EndChannelTrigger"
+                }
+              ],
+              "chargeStateIDs": [
+                "Channel_Loop"
+              ]
+            },
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "Channel_BS",
+                "Channel_Loop"
+              ],
+              "modifierName": "Focus",
+              "DGFCLAIDIFI": ""
+            }
+          ]
+        },
+        "ActivityAbility_CatchAnimal_ChangePlayMode": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "KAIOONFFNHC",
+              "slotType": "SlotQuickUse"
+            },
+            {
+              "$type": "KAIOONFFNHC",
+              "slotType": "SlotCharge"
+            },
+            {
+              "$type": "KAIOONFFNHC"
+            }
+          ]
+        },
+        "Trigger_OnExit": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ABILITY_Common_Channel_IsTrigger",
+                  "param3": 0.0
+                }
+              ],
+              "modifierName": "Shoot_Short"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "_ABILITY_Common_Channel_IsTrigger",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Focus": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BAGMOLODOME",
+              "cameraFollowLower": {
+                "x": 0.6000000238418579,
+                "y": 0.20000000298023224,
+                "z": -1.7999999523162842
+              },
+              "cameraFollowUpper": {
+                "x": 0.6000000238418579,
+                "y": -0.10000000149011612,
+                "z": -1.7999999523162842
+              },
+              "cameraFollowMaxDegree": 40.0,
+              "cameraFollowMinDegree": -40.0,
+              "dragButtonName": "Skill2",
+              "assistance": {
+                "ps4": {
+                  "useGyro": true
+                },
+                "ps5": {
+                  "useGyro": true
+                },
+                "other": {
+                  "useGyro": true
+                }
+              },
+              "canMove": false,
+              "vcamFov": 30.0,
+              "disableAnim": true,
+              "OMHGAKJIEFB": ""
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "LockMotionFlagExitChannel",
+              "param3": true
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_CatchAnimal_Charge",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "ActivityAbility_CatchAnimal_ChangePlayMode"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ABILITY_Common_IsChannelState",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LJEDLFDLLDP",
+              "shieldHP": true,
+              "keepRotation": true
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "shieldHP": true,
+              "boolID": "LockMotionFlagExitChannel"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Common_IsChannelState",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Shoot_Short": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "OCLNBBMMIOK",
+              "skillID": 20041,
+              "amountByTargetCurrentHPRatio": 1.0,
+              "costStaminaRatio": 1.0
+            },
+            {
+              "$type": "MKACPODPLOC",
+              "itemId": 220046
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_CatchAnimal_Shoot",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.5,
+                  "LPCHALMFFOD": 1.2000000476837158
+                },
+                "attachPointName": "FocusAnchor",
+                "attachPointTargetType": "Self"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "CAKDDHLKOAB",
+              "bulletID": 420000011,
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.5,
+                  "LPCHALMFFOD": 1.2000000476837158
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "angleOffset": {
+                    "KGEPIMHBMOL": 0.0,
+                    "JEBHCGDPFEJ": 0.0,
+                    "LPCHALMFFOD": 0.0
+                  },
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "attachPointName": "FocusAnchor",
+                "attachPointTargetType": "Self"
+              }
+            }
+          ]
+        },
+        "Shoot_Long": {
+          "modifierName": "",
+          "elementDurability": 0.30000001192092896,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "OCLNBBMMIOK",
+              "skillID": 20041,
+              "amountByTargetCurrentHPRatio": 1.0,
+              "costStaminaRatio": 1.0
+            },
+            {
+              "$type": "MKACPODPLOC",
+              "itemId": 220046
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_CatchAnimal_Shoot",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "attachPointName": "WeaponR",
+                "attachPointTargetType": "Self"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "GPKOPAOMILE",
+                  "weaponTypes": [
+                    "WEAPON_BOW"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "CAKDDHLKOAB",
+                  "bulletID": 420000012,
+                  "born": {
+                    "$type": "KLPANPDGHHA",
+                    "direction": {
+                      "$type": "LHBLDEOLGKF",
+                      "angleOffset": {
+                        "KGEPIMHBMOL": 0.0,
+                        "JEBHCGDPFEJ": 0.0,
+                        "LPCHALMFFOD": 0.0
+                      },
+                      "attachPointName": "FocusAnchor",
+                      "attachPointTargetType": "Self"
+                    },
+                    "attachPointName": "WeaponR",
+                    "attachPointTargetType": "Self"
+                  }
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "CAKDDHLKOAB",
+                  "bulletID": 420000012,
+                  "born": {
+                    "$type": "KLPANPDGHHA",
+                    "direction": {
+                      "$type": "LHBLDEOLGKF",
+                      "angleOffset": {
+                        "KGEPIMHBMOL": 0.0,
+                        "JEBHCGDPFEJ": 0.0,
+                        "LPCHALMFFOD": 0.0
+                      },
+                      "attachPointName": "FocusAnchor",
+                      "attachPointTargetType": "Self"
+                    },
+                    "attachPointName": "WeaponR",
+                    "attachPointTargetType": "Self"
+                  }
+                }
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "shieldHP": true,
+              "PLLJBINMGJK": "EndChannelTrigger"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "ActivityAbility_CatchAnimal_AddSkillInfo"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "ActivityAbility_CatchAnimal_SwitchSkill"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "ActivityAbility_CatchAnimal_Aim_Handler"
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "PPDJHLBHCIK",
+          "shieldHP": true,
+          "muteRemoteAction": true,
+          "JFDCCIECAJB": "ActivityAimState"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CatchAnimal_Bullet_DogGame",
+      "modifiers": {
+        "AnimalKillSelf": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_CatchAnimal_CaughtSuccess",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AHPEKICBIIL",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "BHFFBBOLCCP",
+                  "target": "Team",
+                  "modifierName": "IsInHachiSneak"
+                }
+              ],
+              "luaCallType": "FromGroup",
+              "funcName": "MonsterCallCaught",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ]
+        },
+        "DogGame_Life_Handler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.550000011920929,
+          "onThinkInterval": [
+            {
+              "$type": "GJCAPCBELPA",
+              "abilityName": "ActivityAbility_CatchAnimal_Bullet_DogGame"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "ANLOBBMKNIJ",
+          "rotationDampTime": "Eff_SceneObj_CatchAnimal_Bullet",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "DogGame_Life_Handler"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_SceneObj_CatchAnimal_Hit",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "IIDNEOBNEJI"
+        },
+        {
+          "$type": "AHPEKICBIIL",
+          "shieldHP": true,
+          "predicates": [
+            {
+              "$type": "BHFFBBOLCCP",
+              "target": "Team",
+              "modifierName": "IsInHachiSneak"
+            }
+          ],
+          "luaCallType": "CurChallengeGroup",
+          "funcName": "HachiSneakWidgetUsed",
+          "param1": 0.0,
+          "MGAMDEHMCOL": 0.0,
+          "MMHOHAOGPLP": 0.0
+        },
+        {
+          "$type": "INBCDALOHMP",
+          "target": "Other",
+          "otherTargets": {
+            "$type": "IJOFJOGLDHE",
+            "topLimit": 1,
+            "entityTypePriority": [
+              "Monster"
+            ],
+            "sortType": "Nearest",
+            "shapeName": "CircleR3H5",
+            "campTargetType": "Enemy",
+            "doOffStage": 1.0
+          },
+          "targetPredicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_AFFIX_INU_SHIHANDAI_EVENT_ANIMAL_TAG",
+              "param3": 1.0,
+              "compareType": "MoreThanAndEqual"
+            },
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_PROTECTED_BY_SHIELD",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            },
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_ANIMAL_IN_INVISIBLE_WAVE",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "PELJALPANCA",
+              "target": "Target",
+              "modifierName": "AnimalKillSelf"
+            },
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "JGEBAJLEBMO",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                }
+              },
+              "gadgetID": 70590056,
+              "campID": 1001,
+              "campTargetType": "All"
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Target",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_IS_INU_SHIHANDAI",
+                  "param3": 1.0
+                }
+              ],
+              "param3": 1.0,
+              "key": "_CAPTURED_BY_SPECIALITEM",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        {
+          "$type": "NCFFNDHGCMH"
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "DogGame_Life_Handler"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CatchAnimal_Shoot_Test",
+      "modifiers": {
+        "ActivityAbility_CatchAnimal_AddSkillInfo": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PDFENCBHHAI",
+              "shieldHP": true,
+              "skillID": 20042
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KFOBADMAFJF",
+              "shieldHP": true,
+              "skillID": 20042,
+              "refreshAfterRemove": true
+            }
+          ]
+        },
+        "ActivityAbility_CatchAnimal_SwitchSkill": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BBDLKGEJDOJ",
+              "priority": "Playmode",
+              "skillIndex": 1,
+              "skillID": 20042
+            }
+          ]
+        },
+        "ActivityAbility_CatchAnimal_Aim_Handler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "GODEMHMODCN",
+              "skillID": 20042,
+              "EKKJNADOEMB": 0.11999999731779099,
+              "onReleaseCharged": [
+                {
+                  "$type": "PELJALPANCA",
+                  "shieldHP": true,
+                  "modifierName": "Shoot_Short"
+                }
+              ],
+              "onBeginSecondCharged": [
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "StartChannelTrigger"
+                }
+              ],
+              "onReleaseSecondCharged": [
+                {
+                  "$type": "PELJALPANCA",
+                  "shieldHP": true,
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ABILITY_Common_IsChannelState",
+                      "param3": 1.0
+                    }
+                  ],
+                  "modifierName": "Shoot_Long"
+                }
+              ],
+              "onCancelCharged": [
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "EndChannelTrigger"
+                }
+              ],
+              "chargeStateIDs": [
+                "Channel_Loop"
+              ]
+            },
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "Channel_BS",
+                "Channel_Loop"
+              ],
+              "modifierName": "Focus",
+              "DGFCLAIDIFI": ""
+            }
+          ]
+        },
+        "ActivityAbility_CatchAnimal_ChangePlayMode": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "KAIOONFFNHC",
+              "slotType": "SlotQuickUse"
+            },
+            {
+              "$type": "KAIOONFFNHC",
+              "slotType": "SlotCharge"
+            },
+            {
+              "$type": "KAIOONFFNHC"
+            }
+          ]
+        },
+        "Focus": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BAGMOLODOME",
+              "cameraFollowLower": {
+                "x": 0.6000000238418579,
+                "y": 0.20000000298023224,
+                "z": -1.7999999523162842
+              },
+              "cameraFollowUpper": {
+                "x": 0.6000000238418579,
+                "y": -0.10000000149011612,
+                "z": -1.7999999523162842
+              },
+              "cameraFollowMaxDegree": 40.0,
+              "cameraFollowMinDegree": -40.0,
+              "dragButtonName": "Skill2",
+              "assistance": {
+                "ps4": {
+                  "useGyro": true
+                },
+                "ps5": {
+                  "useGyro": true
+                },
+                "other": {
+                  "useGyro": true
+                }
+              },
+              "canMove": false,
+              "vcamFov": 30.0,
+              "disableAnim": true,
+              "OMHGAKJIEFB": ""
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "LockMotionFlagExitChannel",
+              "param3": true
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_CatchAnimal_Charge",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "ActivityAbility_CatchAnimal_ChangePlayMode"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ABILITY_Common_IsChannelState",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LJEDLFDLLDP",
+              "shieldHP": true,
+              "keepRotation": true
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "shieldHP": true,
+              "boolID": "LockMotionFlagExitChannel"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Common_IsChannelState",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Shoot_Short": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PPMAOBKEOHI",
+              "skillID": 20042,
+              "shareCDType": 1
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_CatchAnimal_Shoot",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.5,
+                  "LPCHALMFFOD": 1.2000000476837158
+                },
+                "attachPointName": "FocusAnchor",
+                "attachPointTargetType": "Self"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "CAKDDHLKOAB",
+              "bulletID": 420000009,
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.5,
+                  "LPCHALMFFOD": 1.2000000476837158
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "angleOffset": {
+                    "KGEPIMHBMOL": 0.0,
+                    "JEBHCGDPFEJ": 0.0,
+                    "LPCHALMFFOD": 0.0
+                  },
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "attachPointName": "FocusAnchor",
+                "attachPointTargetType": "Self"
+              }
+            }
+          ]
+        },
+        "Shoot_Long": {
+          "modifierName": "",
+          "elementDurability": 0.30000001192092896,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PPMAOBKEOHI",
+              "skillID": 20042
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_CatchAnimal_Shoot",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "attachPointName": "WeaponR",
+                "attachPointTargetType": "Self"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "GPKOPAOMILE",
+                  "weaponTypes": [
+                    "WEAPON_BOW"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "CAKDDHLKOAB",
+                  "bulletID": 420000010,
+                  "born": {
+                    "$type": "KLPANPDGHHA",
+                    "direction": {
+                      "$type": "LHBLDEOLGKF",
+                      "angleOffset": {
+                        "KGEPIMHBMOL": 0.0,
+                        "JEBHCGDPFEJ": 0.0,
+                        "LPCHALMFFOD": 0.0
+                      },
+                      "attachPointName": "FocusAnchor",
+                      "attachPointTargetType": "Self"
+                    },
+                    "attachPointName": "WeaponR",
+                    "attachPointTargetType": "Self"
+                  }
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "CAKDDHLKOAB",
+                  "bulletID": 420000010,
+                  "born": {
+                    "$type": "KLPANPDGHHA",
+                    "direction": {
+                      "$type": "LHBLDEOLGKF",
+                      "angleOffset": {
+                        "KGEPIMHBMOL": 0.0,
+                        "JEBHCGDPFEJ": 0.0,
+                        "LPCHALMFFOD": 0.0
+                      },
+                      "attachPointName": "FocusAnchor",
+                      "attachPointTargetType": "Self"
+                    },
+                    "attachPointName": "WeaponR",
+                    "attachPointTargetType": "Self"
+                  }
+                }
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "shieldHP": true,
+              "PLLJBINMGJK": "EndChannelTrigger"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "ActivityAbility_CatchAnimal_AddSkillInfo"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "ActivityAbility_CatchAnimal_SwitchSkill"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "ActivityAbility_CatchAnimal_Aim_Handler"
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "PPDJHLBHCIK",
+          "shieldHP": true,
+          "muteRemoteAction": true,
+          "JFDCCIECAJB": "ActivityAimState"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CatchAnimal_Throw",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Crouch",
+            "CrouchThrowBS",
+            "CrouchThrowLoop",
+            "CrouchThrowAS"
+          ],
+          "modifierName": "SetCrouchState",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueKey": "_ABILITY_Is_In_Crouch",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "NotInCrouchSkillSet",
+            "InCrouchSkillSet"
+          ]
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "CrouchThrowLoop"
+          ],
+          "modifierName": "Charge",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "CrouchThrowLoop"
+          ],
+          "modifierName": "Charge2",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "CrouchThrowLoop"
+          ],
+          "modifierName": "Focus_02",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "CrouchThrowAS",
+          "modifierName": "ThrowBean_Trigger",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Channel_Loop"
+          ],
+          "modifierName": "Charge",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Channel_Loop"
+          ],
+          "modifierName": "Charge2",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Channel_Loop"
+          ],
+          "modifierName": "Focus",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Channel_BS"
+          ],
+          "modifierName": "Ban_SKill_CatchBoar",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "ChannelAS",
+          "modifierName": "ThrowBean_Trigger_1",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "DummyThrowSpeedUp": 0.0
+      },
+      "modifiers": {
+        "SetCrouchState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "IsInCrouch",
+              "param3": 1.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ABILITY_Is_In_Crouch",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "IsInCrouch",
+              "param3": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_ABILITY_Is_In_Crouch",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "NotInCrouchSkillSet": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "ADCFAHFIPHN",
+              "skillID": 20045,
+              "nextLoopTriggerID": "NextLoopTrigger",
+              "endHoldTrigger": "EndChannelTrigger",
+              "beforeStateIDs": [
+                "Channel_BS"
+              ],
+              "chargeLoopStateIDs": [
+                "Channel_Loop",
+                "Channel_AS"
+              ],
+              "chargeLoopDurations": [
+                0.05000000074505806,
+                6.5
+              ]
+            }
+          ]
+        },
+        "InCrouchSkillSet": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "ADCFAHFIPHN",
+              "skillID": 20045,
+              "nextLoopTriggerID": "NextLoopTrigger",
+              "endHoldTrigger": "EndHoldTrigger",
+              "beforeStateIDs": [
+                "CrouchThrowBS"
+              ],
+              "chargeLoopStateIDs": [
+                "CrouchThrowLoop",
+                "CrouchThrowAS"
+              ],
+              "chargeLoopDurations": [
+                0.05000000074505806,
+                6.5
+              ]
+            }
+          ]
+        },
+        "Quest_AddSkillInfo": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PDFENCBHHAI",
+              "skillID": 20045
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KFOBADMAFJF",
+              "skillID": 20045
+            }
+          ]
+        },
+        "Quest_ChangePlayMode_Handler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BBDLKGEJDOJ",
+              "priority": "Quest",
+              "skillIndex": 1,
+              "skillID": 20045
+            }
+          ]
+        },
+        "Focus": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BAGMOLODOME",
+              "cameraFollowLower": {
+                "x": 0.800000011920929,
+                "y": 0.5,
+                "z": -3.0
+              },
+              "cameraFollowUpper": {
+                "x": 0.5,
+                "y": 0.800000011920929,
+                "z": -1.5
+              },
+              "dragButtonName": "Skill2",
+              "showCrosshair": false,
+              "OMHGAKJIEFB": ""
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LJEDLFDLLDP"
+            }
+          ]
+        },
+        "Focus_02": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BAGMOLODOME",
+              "cameraFollowLower": {
+                "x": 0.800000011920929,
+                "y": 0.800000011920929,
+                "z": -3.5
+              },
+              "cameraFollowUpper": {
+                "x": 0.5,
+                "y": 1.2999999523162842,
+                "z": -2.5
+              },
+              "dragButtonName": "Skill2",
+              "showCrosshair": false,
+              "OMHGAKJIEFB": ""
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LJEDLFDLLDP"
+            }
+          ]
+        },
+        "Charge": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 8.0,
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Charge_Return"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Charge_Return"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Charge_Return"
+            }
+          ]
+        },
+        "Charge_Return": {
+          "modifierName": "",
+          "elementDurability": 3.5,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.10000000149011612,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 3.0,
+              "key": "_DUMMY_THROW_RANGE",
+              "useLimitRange": true,
+              "param2": 3.0,
+              "repeatTimes": 3.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Ambor_Dummy_Line_Duplicate",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 0.25,
+              "key": "_DUMMY_THROW_RANGE",
+              "useLimitRange": true,
+              "param2": 8.0,
+              "repeatTimes": 3.0
+            },
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "_DUMMY_THROW_RANGE",
+              "overrideMapKey": "DummyThrowSpeedUp"
+            }
+          ]
+        },
+        "Charge2": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Charge_Return2_Trigger"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Charge_Return2"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Charge_Return2_Trigger"
+            }
+          ]
+        },
+        "Charge_Return2_Trigger": {
+          "modifierName": "",
+          "elementDurability": 5.0,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 4.0,
+          "onThinkInterval": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Charge_Return2"
+            }
+          ]
+        },
+        "Charge_Return2": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 8.0,
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Charge_Return2_Loop"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Charge_Return2_Loop"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Charge_Return2_Loop"
+            }
+          ]
+        },
+        "Charge_Return2_Loop": {
+          "modifierName": "",
+          "elementDurability": 3.5,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.10000000149011612,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 8.0,
+              "key": "_DUMMY_THROW_RANGE",
+              "useLimitRange": true,
+              "param2": 8.0,
+              "repeatTimes": 8.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Ambor_Dummy_Line_Duplicate",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -0.25,
+              "key": "_DUMMY_THROW_RANGE",
+              "useLimitRange": true,
+              "param2": 8.0,
+              "repeatTimes": 3.0
+            },
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "_DUMMY_THROW_RANGE",
+              "overrideMapKey": "DummyThrowSpeedUp"
+            }
+          ]
+        },
+        "ThrowBean_Trigger": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "OCLNBBMMIOK",
+              "skillID": 20045,
+              "amountByTargetCurrentHPRatio": 1.0,
+              "costStaminaRatio": 1.0
+            },
+            {
+              "$type": "CAKDDHLKOAB",
+              "bulletID": 420000019,
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 1.2999999523162842,
+                  "LPCHALMFFOD": 0.10000000149011612
+                }
+              }
+            }
+          ]
+        },
+        "ThrowBean_Trigger_1": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "OCLNBBMMIOK",
+              "skillID": 20045,
+              "amountByTargetCurrentHPRatio": 1.0,
+              "costStaminaRatio": 1.0
+            },
+            {
+              "$type": "CAKDDHLKOAB",
+              "bulletID": 420000019,
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 2.0999999046325684,
+                  "LPCHALMFFOD": 0.10000000149011612
+                }
+              }
+            }
+          ]
+        },
+        "Ban_SKill_CatchBoar": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "CatchBoarMark",
+              "param3": 1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "CatchBoarMark",
+              "param3": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "LCOEFEMOHLP",
+          "param3": 4.0,
+          "key": "_DUMMY_THROW_RANGE",
+          "useLimitRange": true,
+          "param2": 8.0,
+          "repeatTimes": 4.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_ABILITY_Is_In_Crouch",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Quest_AddSkillInfo"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Quest_ChangePlayMode_Handler"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Ability_Bullet_CatchAnimal_Throw",
+      "abilitySpecials": {
+        "DummyThrowSpeedUp": 0.0
+      },
+      "modifiers": {
+        "SpeedUP": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Animator_OverallSpeedRatio": [
+              "DummyThrowSpeedUp",
+              0.11999999731779099,
+              "MUL",
+              0.47999998927116394,
+              "SUB"
+            ]
+          }
+        },
+        "BoarHunt_Boss_Eff": {
+          "stacking": "Multiple",
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_CaptureSkills_08",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BEMPFJGAPHG",
+          "srcTarget": "OriginOwner",
+          "dstTarget": "Self",
+          "srcKey": "_DUMMY_THROW_RANGE",
+          "dstKey": "_DUMMY_THROW_RANGE"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_ABILITY_HUNT_SUCCESS",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "LDIAIDLOPEE",
+          "globalValueKey": "_DUMMY_THROW_RANGE",
+          "overrideMapKey": "DummyThrowSpeedUp"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "SpeedUP"
+        },
+        {
+          "$type": "ANLOBBMKNIJ",
+          "rotationDampTime": "Eff_SceneObj_CaptureSkills_02",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "IIDNEOBNEJI",
+          "volume": 0.0
+        },
+        {
+          "$type": "INBCDALOHMP",
+          "otherTargets": {
+            "$type": "IJOFJOGLDHE",
+            "topLimit": 1,
+            "sortType": "Nearest",
+            "shapeName": "CircleR0_9H1_2",
+            "campTargetType": "All",
+            "doOffStage": 1.0
+          },
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_Is_Hunt_Trap",
+              "param3": 1.0
+            }
+          ],
+          "targetPredicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_Is_Hunt_Trap",
+              "param3": 1.0
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ABILITY_HUNT_SUCCESS",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_ABILITY_Hit_Eff_Mark",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        {
+          "$type": "INBCDALOHMP",
+          "otherTargets": {
+            "$type": "IJOFJOGLDHE",
+            "entityTypePriority": [
+              "Gadget"
+            ],
+            "sortType": "Nearest",
+            "shapeName": "CircleR1_1H3",
+            "campTargetType": "Enemy",
+            "doOffStage": 1.0
+          },
+          "targetPredicates": [
+            {
+              "$type": "NIMAPECDNKD",
+              "entityTypes": [
+                "Gadget"
+              ]
+            },
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_Can_Be_Triggered_By_Bullet",
+              "param3": 1.0
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ABILITY_HUNT_SUCCESS",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Target",
+              "param3": 1.0,
+              "key": "_Gadget_Hunt_Attack",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 2.0,
+              "key": "_ABILITY_Hit_Eff_Mark",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        {
+          "$type": "INBCDALOHMP",
+          "otherTargets": {
+            "$type": "IJOFJOGLDHE",
+            "entityTypePriority": [
+              "Monster"
+            ],
+            "sortType": "Nearest",
+            "shapeName": "CircleR1_7H6",
+            "campTargetType": "Enemy",
+            "doOffStage": 1.0
+          },
+          "predicates": [
+            {
+              "$type": "NIMAPECDNKD",
+              "entityTypes": [
+                "Monster"
+              ]
+            },
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_Is_Hunt_Animal_Activity3.1",
+              "param3": 1.0
+            },
+            {
+              "$type": "BCFNGJHILAG",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_HUNT_BOSS",
+                  "param3": 1.0
+                }
+              ]
+            }
+          ],
+          "targetPredicates": [
+            {
+              "$type": "NIMAPECDNKD",
+              "entityTypes": [
+                "Monster"
+              ]
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ABILITY_HUNT_SUCCESS",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ABILITY_Hit_Eff_Mark",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "CCNPNMMONDO",
+              "target": "Target",
+              "attackInfo": {
+                "attackTag": "_BOAR_HUNT_ATTACK",
+                "attenuationTag": "",
+                "attenuationGroup": "default",
+                "attackProperty": {
+                  "actorGrassSubHurtDelta": 0.0,
+                  "actorWindSubHurtDelta": 0.0,
+                  "IPFJJJGABPL": 0.0,
+                  "enBreak": 0.0,
+                  "GLKMCMDJBIK": 0.0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "$type": "INBCDALOHMP",
+          "otherTargets": {
+            "$type": "IJOFJOGLDHE",
+            "topLimit": 1,
+            "entityTypePriority": [
+              "Monster"
+            ],
+            "sortType": "Nearest",
+            "shapeName": "CircleR3_5H8",
+            "campTargetType": "Enemy",
+            "doOffStage": 1.0
+          },
+          "predicates": [
+            {
+              "$type": "NIMAPECDNKD",
+              "entityTypes": [
+                "Monster"
+              ]
+            },
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_HUNT_BOSS",
+              "param3": 1.0
+            }
+          ],
+          "targetPredicates": [
+            {
+              "$type": "NIMAPECDNKD",
+              "entityTypes": [
+                "Monster"
+              ]
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ABILITY_HUNT_SUCCESS",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PELJALPANCA",
+              "target": "Target",
+              "modifierName": "BoarHunt_Boss_Eff"
+            },
+            {
+              "$type": "CCNPNMMONDO",
+              "target": "Target",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_IN_ANGRY",
+                  "param3": 1.0
+                }
+              ],
+              "born": {
+                "$type": "JGEBAJLEBMO"
+              },
+              "attackInfo": {
+                "attackTag": "_BOAR_HUNT_ATTACK",
+                "attenuationTag": "",
+                "attenuationGroup": "default",
+                "attackProperty": {
+                  "actorGrassSubHurtDelta": 0.0,
+                  "actorWindSubHurtDelta": 0.0,
+                  "IPFJJJGABPL": 0.0,
+                  "strikeType": "Slash",
+                  "enBreak": 0.0,
+                  "attackType": "Range",
+                  "HMBONGBFIAP": 100.0,
+                  "AIGBINPINKE": -5.0,
+                  "trueDamage": true,
+                  "GLKMCMDJBIK": 0.0
+                },
+                "hitPattern": {
+                  "onHitEffectName": "default",
+                  "hitImpulseY": "",
+                  "hitImpulseType": "LV1"
+                }
+              }
+            },
+            {
+              "$type": "CCNPNMMONDO",
+              "target": "Target",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_IN_ANGRY",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "born": {
+                "$type": "JGEBAJLEBMO"
+              },
+              "attackInfo": {
+                "attackTag": "_BOAR_HUNT_ATTACK",
+                "attenuationTag": "",
+                "attenuationGroup": "default",
+                "attackProperty": {
+                  "actorGrassSubHurtDelta": 0.0,
+                  "actorWindSubHurtDelta": 0.0,
+                  "IPFJJJGABPL": 0.0,
+                  "strikeType": "Slash",
+                  "enBreak": 0.0,
+                  "attackType": "Range",
+                  "HMBONGBFIAP": 18000.0,
+                  "AIGBINPINKE": -5.0,
+                  "trueDamage": true,
+                  "GLKMCMDJBIK": 0.0
+                },
+                "hitPattern": {
+                  "onHitEffectName": "default",
+                  "hitImpulseY": "",
+                  "hitImpulseType": "LV1"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "predicates": [
+            {
+              "$type": "JFLFAEAHLJM",
+              "filters": [
+                "Ice",
+                "Water"
+              ],
+              "offset": {
+                "y": -0.20000000298023224
+              }
+            }
+          ],
+          "param3": 1.0,
+          "key": "_ABILITY_HUNT_SUCCESS",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "GFANIJMFNOJ",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_ABILITY_Hit_Eff_Mark",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "hitEntity": "",
+          "hitScene": {
+            "defaultEffect": "Eff_SceneObj_CaptureSkills_03",
+            "surfaceEffect": {
+              "Water": "Eff_SceneObj_CaptureSkills_07"
+            }
+          }
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_ABILITY_Hit_Eff_Mark",
+              "param3": 1.0
+            }
+          ],
+          "rotationDampTime": "Eff_SceneObj_CaptureSkills_05",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_ABILITY_Hit_Eff_Mark",
+              "param3": 2.0
+            }
+          ],
+          "rotationDampTime": "Eff_SceneObj_CaptureSkills_04",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "KFCDMIMBBLD",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_ABILITY_HUNT_SUCCESS",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "born": {
+            "$type": "JGEBAJLEBMO",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "onGround": true,
+            "onGroundRaycastUpDist": 3.0
+          },
+          "gadgetID": 70800231,
+          "campID": 4001,
+          "campTargetType": "All"
+        },
+        {
+          "$type": "NNFPKJPFJBE",
+          "temperature": 40.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CatchAnimal_Temperature_Controller",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Crouch",
+            "CrouchToStandby",
+            "CrouchThrowBS",
+            "CrouchThrowLoop",
+            "CrouchThrowAS"
+          ],
+          "modifierName": "UNIQUE_BoarHunt_Crouch_State_Mark",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueKey": "_Is_In_Crouch_State",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Blank",
+            "UNIQUE_Monster_Temperature_Reduce_In_Crouch"
+          ]
+        },
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueKey": "_Is_In_Jungle",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Blank",
+            "UNIQUE_Monster_Temperature_Reduce_In_Jungle"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Blank": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "UNIQUE_BoarHunt_Crouch_State_Mark": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Caster",
+              "param3": 1.0,
+              "key": "_Is_In_Crouch_State",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Caster",
+              "param3": 0.0,
+              "key": "_Is_In_Crouch_State",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "UNIQUE_Monster_Temperature_Reduce_In_Crouch": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "DJDOFIKEMJD",
+              "monsterGV": "_Is_Hunt_Animal_Activity3.1",
+              "growRateMultiplier": 0.6000000238418579
+            }
+          ]
+        },
+        "UNIQUE_Monster_Temperature_Reduce_In_Jungle": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "DJDOFIKEMJD",
+              "monsterGV": "_Is_Hunt_Animal_Activity3.1",
+              "growRateMultiplier": 0.6000000238418579
+            },
+            {
+              "$type": "COEDOLJOHAK",
+              "postEffectAssetName": "PostEffect_Activity_BoarHunt_ScreenEffect",
+              "duration": 0.0,
+              "JAHICEHEJCI": true
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "target": "Caster",
+          "param3": 0.0,
+          "key": "_Is_In_Crouch_State",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "target": "Caster",
+          "param3": 0.0,
+          "key": "_Is_In_Jungle",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityBoarChallenge_Playmode_Switch_1",
+      "modifiers": {
+        "Activity_BoarChallenge_Playmode_1": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CIGJDPCDOEB",
+              "onAdded": [
+                {
+                  "$type": "PPDJHLBHCIK",
+                  "shieldHP": true,
+                  "canBeHandledOnRecover": true,
+                  "muteRemoteAction": true,
+                  "toPlayMode": "BoarChuck"
+                }
+              ],
+              "onRemoved": [
+                {
+                  "$type": "PPDJHLBHCIK",
+                  "shieldHP": true,
+                  "canBeHandledOnRecover": true,
+                  "muteRemoteAction": true,
+                  "JFDCCIECAJB": "BoarChuck"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "modifierName": "Activity_BoarChallenge_Playmode_1"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityBoarChallenge_Playmode_Switch_2",
+      "modifiers": {
+        "Activity_BoarChallenge_Playmode_2": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CIGJDPCDOEB",
+              "onAdded": [
+                {
+                  "$type": "PPDJHLBHCIK",
+                  "shieldHP": true,
+                  "canBeHandledOnRecover": true,
+                  "muteRemoteAction": true,
+                  "toPlayMode": "BoarHunt"
+                }
+              ],
+              "onRemoved": [
+                {
+                  "$type": "PPDJHLBHCIK",
+                  "shieldHP": true,
+                  "canBeHandledOnRecover": true,
+                  "muteRemoteAction": true,
+                  "JFDCCIECAJB": "BoarHunt"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "modifierName": "Activity_BoarChallenge_Playmode_2"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityBoarChallenge_Playmode_Switch_3",
+      "modifiers": {
+        "Activity_BoarChallenge_Playmode_3": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CIGJDPCDOEB",
+              "onAdded": [
+                {
+                  "$type": "PPDJHLBHCIK",
+                  "shieldHP": true,
+                  "canBeHandledOnRecover": true,
+                  "muteRemoteAction": true,
+                  "toPlayMode": "BoarKingChallenge"
+                }
+              ],
+              "onRemoved": [
+                {
+                  "$type": "PPDJHLBHCIK",
+                  "shieldHP": true,
+                  "canBeHandledOnRecover": true,
+                  "muteRemoteAction": true,
+                  "JFDCCIECAJB": "BoarKingChallenge"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "modifierName": "Activity_BoarChallenge_Playmode_3"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  }
+]

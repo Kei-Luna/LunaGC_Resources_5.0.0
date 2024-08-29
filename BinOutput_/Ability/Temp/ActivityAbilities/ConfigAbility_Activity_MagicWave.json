@@ -1,0 +1,791 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_MagicWave_SkillButton",
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "target": "Team",
+          "shieldHP": true,
+          "param3": 0.0,
+          "key": "_ABILITY_MagicWave_State",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Avatar_Activity_MagicWave",
+      "abilityMixins": [
+        {
+          "$type": "GODEMHMODCN",
+          "skillID": 20067,
+          "chargeTime": 0.20000000298023224,
+          "EKKJNADOEMB": 999999.0,
+          "onBeginUncharged": [
+            {
+              "$type": "GNAEJNBIFAC",
+              "PLLJBINMGJK": "StartChannelTrigger"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "SetTrigger"
+            }
+          ],
+          "onBeginCharged": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "StartChannelTrigger"
+            }
+          ],
+          "onReleaseCharged": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "EndChannelTrigger"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "SetTrigger"
+            }
+          ],
+          "onCancelCharged": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "EndChannelTrigger"
+            }
+          ],
+          "chargeStateIDs": [
+            "Channel_Loop"
+          ]
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Channel_BS",
+            "Channel_Loop"
+          ],
+          "modifierName": "Focus",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Activity_MagicWave_Team_Switch": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "JPPFBGJICKI",
+              "key": "_ABILITY_MagicWave_State",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "_ABILITY_MagicWave_State",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "Empty",
+                "Activity_MagicWave_Team"
+              ]
+            }
+          ]
+        },
+        "Empty": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "Activity_MagicWave_Team": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "Activity_MagicWave_Avatar"
+            }
+          ]
+        },
+        "Activity_MagicWave_Avatar": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "MMEOBGGBNLK",
+              "shieldHP": true,
+              "skillID": 20062
+            },
+            {
+              "$type": "PDFENCBHHAI",
+              "shieldHP": true,
+              "skillID": 20067
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "shieldHP": true,
+              "modifierName": "MagicWave_SwitchSkill_Handler"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "MMEOBGGBNLK",
+              "shieldHP": true
+            },
+            {
+              "$type": "KFOBADMAFJF",
+              "shieldHP": true,
+              "skillID": 20067,
+              "refreshAfterRemove": true
+            }
+          ],
+          "onAvatarIn": [
+            {
+              "$type": "MMEOBGGBNLK",
+              "shieldHP": true,
+              "skillID": 20062
+            }
+          ]
+        },
+        "MagicWave_SwitchSkill_Handler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BBDLKGEJDOJ",
+              "priority": "AvatarSpecial",
+              "skillIndex": 1,
+              "skillID": 20067
+            }
+          ]
+        },
+        "SetTrigger": {
+          "modifierName": "",
+          "elementDurability": 0.15000000596046448,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "EndChannelTrigger"
+            }
+          ]
+        },
+        "Focus": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.20000000298023224,
+          "modifierMixins": [
+            {
+              "$type": "PBIEAKMPGAE",
+              "entityTypes": [
+                "Monster",
+                "Gadget"
+              ],
+              "colliderNodeName": "PRIVATE_RayCast",
+              "FKECHNGFOEG": -1.0,
+              "actionQueue": [
+                {
+                  "$type": "MDIAKCCDEAL",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "NIMAPECDNKD",
+                      "entityTypes": [
+                        "Monster",
+                        "Gadget"
+                      ]
+                    },
+                    {
+                      "$type": "JHAJOBAACDP",
+                      "tag": "WaterGunTarget"
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ANIMAL_ENTITY_TYPE",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    },
+                    {
+                      "$type": "BCFNGJHILAG",
+                      "predicates": [
+                        {
+                          "$type": "PBNMMCGHGHK"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$type": "EGJDFNHCFAA",
+                  "target": "SelfAttackTarget",
+                  "targetKey": "_TempTarget"
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "target": "Target",
+                  "shieldHP": true,
+                  "predicates": [
+                    {
+                      "$type": "BFLHPEICOEP",
+                      "namedTransform": "ConnectPoint1"
+                    },
+                    {
+                      "$type": "JHAJOBAACDP",
+                      "tag": "WaterGunTarget"
+                    }
+                  ],
+                  "param3": 3.0,
+                  "key": "gv_ConnectType",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "target": "Target",
+                  "shieldHP": true,
+                  "predicates": [
+                    {
+                      "$type": "BFLHPEICOEP",
+                      "namedTransform": "ConnectPoint2"
+                    },
+                    {
+                      "$type": "JHAJOBAACDP",
+                      "tag": "WaterGunTarget"
+                    }
+                  ],
+                  "param3": 4.0,
+                  "key": "gv_ConnectType",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ],
+              "onLeaveScopeActionQueue": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "target": "TempTarget",
+                  "shieldHP": true,
+                  "fishtankMap": {
+                    "ALBJEAMOFLG": "_TempTarget"
+                  },
+                  "param3": 0.0,
+                  "key": "gv_ConnectType",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "KEEOEKPABPN",
+                  "onlyAvatar": false
+                }
+              ],
+              "onRemoveActionQueue": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "target": "TempTarget",
+                  "shieldHP": true,
+                  "fishtankMap": {
+                    "ALBJEAMOFLG": "_TempTarget"
+                  },
+                  "param3": 0.0,
+                  "key": "gv_ConnectType",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "KEEOEKPABPN",
+                  "onlyAvatar": false
+                }
+              ],
+              "aimType": "OneInScope",
+              "cd": [
+                "ConnectPoint1",
+                "ConnectPoint2"
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ABILITY_Diving_InDive_Mark",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "INBCDALOHMP",
+                  "targetPredicates": [
+                    {
+                      "$type": "BGMAGODJEMF",
+                      "featureTagIDs": [
+                        1044
+                      ]
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "BAGMOLODOME",
+                      "cameraFollowLower": {
+                        "x": 0.3499999940395355,
+                        "y": 0.9599999785423279,
+                        "z": -5.0
+                      },
+                      "cameraFollowUpper": {
+                        "x": 0.3499999940395355,
+                        "y": 0.9599999785423279,
+                        "z": -4.599999904632568
+                      },
+                      "cameraFastFocusMode": true,
+                      "dragButtonName": "Skill2",
+                      "assistance": {
+                        "ps4": {},
+                        "ps5": {},
+                        "other": {
+                          "useGyro": true
+                        }
+                      },
+                      "canMove": false,
+                      "OMHGAKJIEFB": ""
+                    }
+                  ]
+                },
+                {
+                  "$type": "INBCDALOHMP",
+                  "targetPredicates": [
+                    {
+                      "$type": "BGMAGODJEMF",
+                      "featureTagIDs": [
+                        1043
+                      ]
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "BAGMOLODOME",
+                      "cameraFollowLower": {
+                        "x": 0.3499999940395355,
+                        "y": 0.9599999785423279,
+                        "z": -5.0
+                      },
+                      "cameraFollowUpper": {
+                        "x": 0.3499999940395355,
+                        "y": 0.9599999785423279,
+                        "z": -4.599999904632568
+                      },
+                      "cameraFastFocusMode": true,
+                      "dragButtonName": "Skill2",
+                      "assistance": {
+                        "ps4": {},
+                        "ps5": {},
+                        "other": {
+                          "useGyro": true
+                        }
+                      },
+                      "canMove": false,
+                      "OMHGAKJIEFB": ""
+                    }
+                  ]
+                },
+                {
+                  "$type": "INBCDALOHMP",
+                  "targetPredicates": [
+                    {
+                      "$type": "BGMAGODJEMF",
+                      "featureTagIDs": [
+                        1042
+                      ]
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "BAGMOLODOME",
+                      "cameraFollowLower": {
+                        "x": 0.3499999940395355,
+                        "y": 1.059999942779541,
+                        "z": -5.0
+                      },
+                      "cameraFollowUpper": {
+                        "x": 0.3499999940395355,
+                        "y": 1.059999942779541,
+                        "z": -4.599999904632568
+                      },
+                      "cameraFastFocusMode": true,
+                      "dragButtonName": "Skill2",
+                      "assistance": {
+                        "ps4": {},
+                        "ps5": {},
+                        "other": {
+                          "useGyro": true
+                        }
+                      },
+                      "canMove": false,
+                      "OMHGAKJIEFB": ""
+                    }
+                  ]
+                },
+                {
+                  "$type": "INBCDALOHMP",
+                  "targetPredicates": [
+                    {
+                      "$type": "BGMAGODJEMF",
+                      "featureTagIDs": [
+                        1041
+                      ]
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "BAGMOLODOME",
+                      "cameraFollowLower": {
+                        "x": 0.3499999940395355,
+                        "y": 1.159999966621399,
+                        "z": -5.0
+                      },
+                      "cameraFollowUpper": {
+                        "x": 0.3499999940395355,
+                        "y": 1.159999966621399,
+                        "z": -4.599999904632568
+                      },
+                      "cameraFastFocusMode": true,
+                      "dragButtonName": "Skill2",
+                      "assistance": {
+                        "ps4": {},
+                        "ps5": {},
+                        "other": {
+                          "useGyro": true
+                        }
+                      },
+                      "canMove": false,
+                      "OMHGAKJIEFB": ""
+                    }
+                  ]
+                },
+                {
+                  "$type": "INBCDALOHMP",
+                  "targetPredicates": [
+                    {
+                      "$type": "BGMAGODJEMF",
+                      "featureTagIDs": [
+                        1045
+                      ]
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "BAGMOLODOME",
+                      "cameraFollowLower": {
+                        "x": 0.3499999940395355,
+                        "y": 0.6600000262260437,
+                        "z": -5.0
+                      },
+                      "cameraFollowUpper": {
+                        "x": 0.3499999940395355,
+                        "y": 0.6600000262260437,
+                        "z": -4.599999904632568
+                      },
+                      "cameraFastFocusMode": true,
+                      "dragButtonName": "Skill2",
+                      "assistance": {
+                        "ps4": {},
+                        "ps5": {},
+                        "other": {
+                          "useGyro": true
+                        }
+                      },
+                      "canMove": false,
+                      "OMHGAKJIEFB": ""
+                    }
+                  ]
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "BAGMOLODOME",
+                  "cameraFollowLower": {
+                    "x": 0.3499999940395355,
+                    "y": 0.9599999785423279,
+                    "z": -5.0
+                  },
+                  "cameraFollowUpper": {
+                    "x": 0.3499999940395355,
+                    "y": 0.9599999785423279,
+                    "z": -4.599999904632568
+                  },
+                  "cameraFastFocusMode": true,
+                  "dragButtonName": "Skill2",
+                  "assistance": {
+                    "ps4": {},
+                    "ps5": {},
+                    "other": {
+                      "useGyro": true
+                    }
+                  },
+                  "canMove": false,
+                  "OMHGAKJIEFB": ""
+                }
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LJEDLFDLLDP",
+              "keepRotation": true
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "PELJALPANCA",
+              "target": "TempTarget",
+              "fishtankMap": {
+                "ALBJEAMOFLG": "_TempTarget"
+              },
+              "modifierName": "CaptureBeam"
+            },
+            {
+              "$type": "CCNPNMMONDO",
+              "target": "TempTarget",
+              "fishtankMap": {
+                "ALBJEAMOFLG": "_TempTarget"
+              },
+              "attackInfo": {
+                "attackTag": "WaterGun",
+                "attenuationTag": "",
+                "attenuationGroup": "default",
+                "attackProperty": {
+                  "actorGrassSubHurtDelta": 0.20000000298023224,
+                  "actorWindSubHurtDelta": 0.0,
+                  "IPFJJJGABPL": 0.0,
+                  "strikeType": "Default",
+                  "HMBONGBFIAP": 0.0,
+                  "trueDamage": true,
+                  "GLKMCMDJBIK": 0.0
+                },
+                "hitPattern": {
+                  "onHitEffectName": "default",
+                  "hitImpulseY": "",
+                  "hitImpulseType": "LV1",
+                  "hitHaltTimeScale": 0.05000000074505806
+                }
+              }
+            }
+          ]
+        },
+        "Lock_Eff": {
+          "modifierName": "",
+          "elementDurability": 10.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Avatar_Diving_Absorb_Lock",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "CaptureBeam": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CCNIOPJEHOE",
+              "globalValueKey": "gv_ConnectType",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                3.5,
+                4.5
+              ],
+              "modifierNameSteps": [
+                "NoEffect",
+                "ConnectEffect1",
+                "ConnectEffect2"
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "EGJDFNHCFAA",
+              "target": "Caster",
+              "targetKey": "_TempAvatarTarget"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "gv_ConnectType",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "NoEffect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "ConnectEffect1": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "target": "Caster",
+              "rotationDampTime": "Eff_Avatar_Diving_SprayGun_Bullet",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0,
+              "setSelfAsEffectPluginTarget": true
+            }
+          ]
+        },
+        "ConnectEffect2": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "target": "Caster",
+              "rotationDampTime": "Eff_Avatar_Diving_SprayGun_Bullet_1",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0,
+              "setSelfAsEffectPluginTarget": true
+            }
+          ]
+        },
+        "Bullet": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.20000000298023224,
+          "onAdded": [
+            {
+              "$type": "EGJDFNHCFAA",
+              "target": "SelfAttackTarget",
+              "targetKey": "_TempTarget"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "target": "TempTarget",
+              "fishtankMap": {
+                "ALBJEAMOFLG": "_TempTarget"
+              },
+              "modifierName": "CaptureBeam"
+            },
+            {
+              "$type": "CCNPNMMONDO",
+              "target": "TempTarget",
+              "fishtankMap": {
+                "ALBJEAMOFLG": "_TempTarget"
+              },
+              "attackInfo": {
+                "attackTag": "WaterGun",
+                "attenuationTag": "",
+                "attenuationGroup": "default",
+                "attackProperty": {
+                  "actorGrassSubHurtDelta": 0.20000000298023224,
+                  "actorWindSubHurtDelta": 0.0,
+                  "IPFJJJGABPL": 0.0,
+                  "strikeType": "Default",
+                  "HMBONGBFIAP": 0.0,
+                  "trueDamage": true,
+                  "GLKMCMDJBIK": 0.0
+                },
+                "hitPattern": {
+                  "onHitEffectName": "default",
+                  "hitImpulseY": "",
+                  "hitImpulseType": "LV1",
+                  "hitHaltTimeScale": 0.05000000074505806
+                }
+              }
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "GCHLGDKBHCC",
+              "gadgetInfo": {
+                "configID": 40034201
+              },
+              "forceKillTime": 1.5
+            },
+            {
+              "$type": "NCFFNDHGCMH",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 40034201
+              }
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "EGJDFNHCFAA",
+              "target": "SelfAttackTarget",
+              "targetKey": "_TempTarget"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "target": "TempTarget",
+              "fishtankMap": {
+                "ALBJEAMOFLG": "_TempTarget"
+              },
+              "modifierName": "CaptureBeam"
+            },
+            {
+              "$type": "CCNPNMMONDO",
+              "target": "TempTarget",
+              "fishtankMap": {
+                "ALBJEAMOFLG": "_TempTarget"
+              },
+              "attackInfo": {
+                "attackTag": "WaterGun",
+                "attenuationTag": "",
+                "attenuationGroup": "default",
+                "attackProperty": {
+                  "actorGrassSubHurtDelta": 0.20000000298023224,
+                  "actorWindSubHurtDelta": 0.0,
+                  "IPFJJJGABPL": 0.0,
+                  "strikeType": "Default",
+                  "HMBONGBFIAP": 0.0,
+                  "trueDamage": true,
+                  "GLKMCMDJBIK": 0.0
+                },
+                "hitPattern": {
+                  "onHitEffectName": "default",
+                  "hitImpulseY": "",
+                  "hitImpulseType": "LV1",
+                  "hitHaltTimeScale": 0.05000000074505806
+                }
+              }
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "target": "Team",
+          "shieldHP": true,
+          "param3": 0.0,
+          "key": "_ABILITY_MagicWave_State",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "Activity_MagicWave_Team_Switch"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  }
+]

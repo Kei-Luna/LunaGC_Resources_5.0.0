@@ -1,0 +1,1421 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_LanV3Race_Rush_GV_Init",
+      "modifiers": {
+        "UNIQUE_Activity_LanV3Race_Rush_EnergyInit": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "AVATAR_LANV3RACE_ENERGY",
+              "useLimitRange": true,
+              "param2": 300.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "shieldHP": true,
+              "param3": 3.0,
+              "key": "AVATAR_LANV3RACE_ENERGY_MaxChargeCount",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "AVATAR_LANV3RACE_ENERGY_ShowProgress",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "Team",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_UNIQUE_Activity_LanV3Race_SwitchSkill_Team"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "AVATAR_LANV3RACE_ENERGY",
+              "useLimitRange": true,
+              "param2": 300.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "UNIQUE_UNIQUE_Activity_LanV3Race_SwitchSkill_Team": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "UNIQUE_UNIQUE_Activity_LanV3Race_SwitchSkill_Avatar"
+            }
+          ]
+        },
+        "UNIQUE_UNIQUE_Activity_LanV3Race_SwitchSkill_Avatar": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "shieldHP": true,
+              "modifierName": "Activity_LanV3Race_Rush_AddSkillInfo"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "shieldHP": true,
+              "modifierName": "Activity_LanV3Race_Rush_SwitchSkill"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "shieldHP": true,
+              "modifierName": "Activity_LanV3Race_Rush_SwitchSkill_Air"
+            }
+          ]
+        },
+        "Activity_LanV3Race_Rush_AddSkillInfo": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PDFENCBHHAI",
+              "shieldHP": true,
+              "skillID": 20341
+            },
+            {
+              "$type": "PDFENCBHHAI",
+              "shieldHP": true,
+              "skillID": 20342
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KFOBADMAFJF",
+              "shieldHP": true,
+              "skillID": 20341
+            },
+            {
+              "$type": "KFOBADMAFJF",
+              "shieldHP": true,
+              "skillID": 20342
+            }
+          ]
+        },
+        "Activity_LanV3Race_Rush_SwitchSkill": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BBDLKGEJDOJ",
+              "priority": "Playmode",
+              "skillIndex": 1,
+              "skillID": 20341
+            }
+          ]
+        },
+        "Activity_LanV3Race_Rush_SwitchSkill_Air": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "KMPFLHBHBBP",
+              "index": 1,
+              "priority": "PlaymodeExtra1",
+              "jumpSkillID": 20342,
+              "flySkillID": 20342,
+              "changeOnAdd": true
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "modifierName": "UNIQUE_Activity_LanV3Race_Rush_EnergyInit"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_LanV3Race_Rush",
+      "modifiers": {
+        "Activity_LanV3Race_Rush": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "ActivitySkill_CustomSkill01"
+              ],
+              "modifierName": "LanV3Race_Rush_InAni",
+              "DGFCLAIDIFI": ""
+            }
+          ]
+        },
+        "LanV3Race_Rush_InAni": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "COEDOLJOHAK",
+              "postEffectAssetName": "PostEffect_Skiff_Sprint",
+              "duration": 0.0
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "LanV3Race_Rush_Timer"
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "target": "Team",
+              "param3": -100.0,
+              "key": "AVATAR_LANV3RACE_ENERGY",
+              "useLimitRange": true,
+              "param2": 300.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "LanV3Race_Rush_NoGravity"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "LanV3Race_Rush_Eat_Coin"
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Activity_LanV3Race_Fireworks_Rush_In",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "OCLNBBMMIOK",
+              "skillID": 20341,
+              "amountByTargetCurrentHPRatio": 1.0,
+              "costStaminaRatio": 1.0
+            },
+            {
+              "$type": "OCLNBBMMIOK",
+              "skillID": 20342,
+              "amountByTargetCurrentHPRatio": 1.0,
+              "costStaminaRatio": 1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "JHKEHNJBMOF",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 2.5
+                    },
+                    "useRotation": true
+                  },
+                  "size": {
+                    "KGEPIMHBMOL": 6.0,
+                    "JEBHCGDPFEJ": 3.0,
+                    "LPCHALMFFOD": 6.0
+                  }
+                },
+                "attackInfo": {
+                  "attackTag": "LanV3_Rush_Attack",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorWindSubHurtDelta": 0.0,
+                    "IPFJJJGABPL": 0.0,
+                    "enBreak": 0.0,
+                    "attackType": "None",
+                    "HMBONGBFIAP": 0.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV0"
+                  }
+                }
+              },
+              "targetType": "AllExceptSelf"
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "topLimit": 1,
+                "sortType": "Nearest",
+                "shapeName": "SectorR23D90H10",
+                "campTargetType": "Enemy",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_LanV3_Race_Lock_Asist_Mark",
+                  "param3": 1.0
+                }
+              ],
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_LanV3_Race_Lock_Asist_Mark",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "11111111turndirection"
+                },
+                {
+                  "$type": "MPAGCPPAIHJ",
+                  "target": "Target",
+                  "key": "_ABILITY_LanV3_Race_Lock_Asist_Pos",
+                  "born": {
+                    "$type": "JHEBKCMEMLN",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 0.0
+                    },
+                    "useRotation": true
+                  },
+                  "setTarget": false
+                },
+                {
+                  "$type": "PAMDPDLLAPG",
+                  "toPos": {
+                    "$type": "ICKMMAHFNIM",
+                    "positionKey": "_ABILITY_LanV3_Race_Lock_Asist_Pos",
+                    "directionKey": ""
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "CAKDDHLKOAB",
+              "bulletID": 420000025,
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true,
+                "attachPointName": "RootNode"
+              }
+            },
+            {
+              "$type": "PJENOLFAFMG"
+            },
+            {
+              "$type": "EOBKCKNFHDM",
+              "shieldHP": true,
+              "passThrough": true
+            },
+            {
+              "$type": "CNMAKBJBODN",
+              "hdMeshKey": "Default"
+            },
+            {
+              "$type": "LBLNHEBGPJI",
+              "forces": [
+                "RushMoveType",
+                "InertiaType"
+              ]
+            },
+            {
+              "$type": "PCDJJDJHPGC",
+              "ignoreAirGY": true
+            },
+            {
+              "$type": "CHGDNOCPAMC",
+              "toPos": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 20.0
+                },
+                "useRotation": true
+              },
+              "NKPCHMCNNOK": 0.75,
+              "animatorStateIDs": [
+                "ActivitySkill_CustomSkill01"
+              ],
+              "overrideMoveCollider": "",
+              "isInAir": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Activity_LanV3Race_Fireworks_Rush_Out",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "PJENOLFAFMG",
+              "shieldHP": true,
+              "KGGEDGKGLDD": true
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 420000025
+              },
+              "modifierName": "UNIQUE_LanV3_RushBulletEff"
+            },
+            {
+              "$type": "JKFLDIKGJEF",
+              "shieldHP": true,
+              "gadgetInfo": {
+                "configID": 420000025
+              }
+            },
+            {
+              "$type": "LBLNHEBGPJI",
+              "forces": [
+                "RushMoveType",
+                "InertiaType",
+                "FixedRushMoveType"
+              ]
+            },
+            {
+              "$type": "CHGDNOCPAMC",
+              "toPos": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.20000000298023224,
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true
+              },
+              "NKPCHMCNNOK": 1.0,
+              "overrideMoveCollider": "",
+              "isInAir": true
+            },
+            {
+              "$type": "EOBKCKNFHDM",
+              "shieldHP": true,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "CNMAKBJBODN",
+              "canBeHandledOnRecover": true,
+              "enable": true,
+              "hdMeshKey": "Default"
+            }
+          ],
+          "onHittingOther": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Other",
+              "targetPredicates": [
+                {
+                  "$type": "JHAJOBAACDP",
+                  "tag": "Activity_AttackableBallon"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Other",
+                  "modifierName": "Kill_Ribbon_Ball"
+                }
+              ]
+            }
+          ]
+        },
+        "Kill_Ribbon_Ball": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "Activity_AttackableBallon_NeedKill",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "LanV3Race_Rush_Timer": {
+          "modifierName": "",
+          "elementDurability": 0.800000011920929,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "target": "Self",
+                  "logic": "LesserOrEqual",
+                  "param3": 2.0
+                }
+              ],
+              "PLLJBINMGJK": "CustomSkill_End_Drop"
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "target": "Self",
+                  "param3": 2.0
+                }
+              ],
+              "PLLJBINMGJK": "CustomSkill_End_Fly"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "target": "Self",
+                  "logic": "LesserOrEqual",
+                  "param3": 2.0
+                },
+                {
+                  "$type": "BCFNGJHILAG",
+                  "predicates": [
+                    {
+                      "$type": "JFLFAEAHLJM",
+                      "filters": [
+                        "Water"
+                      ],
+                      "offset": {
+                        "y": -0.20000000298023224
+                      }
+                    }
+                  ]
+                }
+              ],
+              "modifierName": "LanV3Race_Rush_NoGravity"
+            }
+          ]
+        },
+        "LanV3Race_Rush_NoGravity": {
+          "modifierName": "",
+          "elementDurability": 1.4500000476837158,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_AddGravityScale": -2.0
+          },
+          "onAdded": [
+            {
+              "$type": "LBLNHEBGPJI",
+              "forces": [
+                "RushMoveType",
+                "InertiaType"
+              ]
+            },
+            {
+              "$type": "PCDJJDJHPGC",
+              "ignoreAirGY": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PCDJJDJHPGC"
+            }
+          ]
+        },
+        "LanV3Race_Rush_Eat_Coin": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.10000000149011612,
+          "onThinkInterval": [
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "PBLNLAENOGB",
+                "topLimit": 10,
+                "sortType": "Nearest",
+                "tag": "IS_COIN"
+              },
+              "successActions": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "FMBJAJFLDIP",
+                      "logic": "LesserOrEqual",
+                      "compareType": "XYZ",
+                      "param3": 9.0,
+                      "DDALGNLEHOD": ""
+                    }
+                  ],
+                  "param3": 1.0,
+                  "key": "GV_Picked",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Activity_LanV3Race_Rush"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "INBCDALOHMP",
+          "target": "Caster",
+          "targetPredicates": [
+            {
+              "$type": "HHHMNCNPBDK",
+              "predicates": [
+                {
+                  "$type": "COMDBBNFCIJ",
+                  "logic": "Equal",
+                  "param3": true,
+                  "parameter": "&CanUseSkill"
+                },
+                {
+                  "$type": "COMDBBNFCIJ",
+                  "logic": "Equal",
+                  "param3": true,
+                  "parameter": "&CanUseAirSkill"
+                }
+              ]
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "SkillID",
+              "param3": 210.0
+            }
+          ]
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_LanV3Race_Rush_Bullet",
+      "modifiers": {
+        "UNIQUE_LanV3_RushBulletEff": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.8500000238418579,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Activity_LanV3Race_Fireworks_Rush_Loop",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "RootNode"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onHittingOther": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Other",
+              "targetPredicates": [
+                {
+                  "$type": "JHAJOBAACDP",
+                  "tag": "Activity_AttackableBallon"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Other",
+                  "modifierName": "Kill_Ribbon_Ball"
+                }
+              ]
+            }
+          ]
+        },
+        "Kill_Ribbon_Ball": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "Activity_AttackableBallon_NeedKill",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_LanV3_RushBulletEff"
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "NCFFNDHGCMH"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true
+              },
+              "OAHPDLJIADP": 3.5
+            },
+            "attackInfo": {
+              "attackTag": "LanV3_Rush_Attack",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorWindSubHurtDelta": 0.0,
+                "IPFJJJGABPL": 0.0,
+                "enBreak": 0.0,
+                "attackType": "None",
+                "HMBONGBFIAP": 0.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV0"
+              }
+            }
+          },
+          "targetType": "AllExceptSelf"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_LanV3BoatGame_State_Driver",
+      "modifiers": {
+        "LanV3BoatGame_Playmode_Switch": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CIGJDPCDOEB",
+              "onAdded": [
+                {
+                  "$type": "PPDJHLBHCIK",
+                  "shieldHP": true,
+                  "canBeHandledOnRecover": true,
+                  "muteRemoteAction": true,
+                  "toPlayMode": "LanternRiteV3Boat"
+                }
+              ],
+              "onRemoved": [
+                {
+                  "$type": "PPDJHLBHCIK",
+                  "shieldHP": true,
+                  "canBeHandledOnRecover": true,
+                  "muteRemoteAction": true,
+                  "JFDCCIECAJB": "LanternRiteV3Boat"
+                }
+              ]
+            }
+          ]
+        },
+        "LanV3BoatGame_Vehicle_Handler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "Vehicle",
+              "modifierName": "LanV3BoatGame_WeakNet_Protect"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "Vehicle",
+              "modifierName": "Sprint_Attack_Handler"
+            }
+          ]
+        },
+        "Sprint_Attack_Handler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "Sprint"
+              ],
+              "modifierName": "Sprint_Attack",
+              "DGFCLAIDIFI": ""
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 100.0,
+              "key": "_ABILITY_LanV3BoatGame_Skill_Energy",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_ABILITY_LanV3BoatGame_Skill_Energy",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Sprint_Attack": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.30000001192092896,
+          "onAdded": [
+            {
+              "$type": "AIFPLABJNMA",
+              "target": "Owner",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "filterByFrame": true,
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 0.0
+                    },
+                    "direction": {
+                      "$type": "AHGNBAPONLA",
+                      "angleOffset": {
+                        "KGEPIMHBMOL": 0.0,
+                        "JEBHCGDPFEJ": 0.0,
+                        "LPCHALMFFOD": 0.0
+                      }
+                    },
+                    "useRotation": true
+                  },
+                  "OAHPDLJIADP": 3.5
+                },
+                "attackInfo": {
+                  "attackTag": "Skiff_Sprint",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 1.0,
+                    "actorWindSubHurtDelta": 0.0,
+                    "IPFJJJGABPL": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 25.0,
+                    "attackType": "Melee",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.019999999552965164
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "AIFPLABJNMA",
+              "target": "Owner",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "filterByFrame": true,
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 0.0
+                    },
+                    "direction": {
+                      "$type": "AHGNBAPONLA",
+                      "angleOffset": {
+                        "KGEPIMHBMOL": 0.0,
+                        "JEBHCGDPFEJ": 0.0,
+                        "LPCHALMFFOD": 0.0
+                      }
+                    },
+                    "useRotation": true
+                  },
+                  "OAHPDLJIADP": 3.5
+                },
+                "attackInfo": {
+                  "attackTag": "Skiff_Sprint",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 1.0,
+                    "actorWindSubHurtDelta": 0.0,
+                    "IPFJJJGABPL": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 25.0,
+                    "attackType": "Melee",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.019999999552965164
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "OnVehicleIn_Checker_Avatar": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "Vehicle",
+              "modifierName": "LanV3BoatGame_WeakNet_Protect"
+            }
+          ],
+          "onVehicleIn": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "Vehicle",
+              "modifierName": "LanV3BoatGame_WeakNet_Protect"
+            }
+          ]
+        },
+        "LanV3BoatGame_Skill_Transfer": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NDFFAEHJMAL",
+              "globalValueKey": "SGV_BoatV3_CollectItemNum",
+              "actions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Vehicle",
+                  "shieldHP": true,
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Team",
+                      "key": "SGV_BoatV3_CollectItemNum",
+                      "param3": 1.0,
+                      "compareType": "MoreThanAndEqual"
+                    }
+                  ],
+                  "modifierName": "LanV3Boat_Stamina_Recover"
+                },
+                {
+                  "$type": "BEMPFJGAPHG",
+                  "shieldHP": true,
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Team",
+                      "key": "SGV_BoatV3_Ghost",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "srcTarget": "Team",
+                  "dstTarget": "Team",
+                  "srcKey": "SGV_BoatV3_SkillIndex",
+                  "dstKey": "_ABILITY_BoatV3_SkillIndex_Team"
+                }
+              ]
+            },
+            {
+              "$type": "CCNIOPJEHOE",
+              "globalValueTarget": "Team",
+              "globalValueKey": "_ABILITY_BoatV3_SkillIndex_Team",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5,
+                2.5,
+                3.5,
+                4.5,
+                5.5,
+                6.5,
+                7.5
+              ],
+              "modifierNameSteps": [
+                "LanV3Boat_Skill_Origin",
+                "LanV3Boat_Skill_Stamina_Recover",
+                "LanV3Boat_Skill_Shield",
+                "LanV3Boat_Skill_Absorb",
+                "LanV3Boat_Skill_Vortex",
+                "LanV3Boat_Skill_RushMove",
+                "LanV3Boat_Skill_Mire",
+                "LanV3Boat_Skill_Ghost"
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_BoatV3_SkillIndex_Team",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "LanV3BoatGame_Ghost_Hanlder": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.5,
+          "modifierMixins": [
+            {
+              "$type": "CCNIOPJEHOE",
+              "globalValueTarget": "Team",
+              "globalValueKey": "SGV_BoatV3_Ghost",
+              "valueSteps": [
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "LanV3Boat_Ghost_Team"
+              ]
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "target": "Team",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Team",
+                  "key": "SGV_BoatV3_Ghost",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "modifierName": "LanV3Boat_Ghost_Team"
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "target": "Vehicle",
+              "shieldHP": true,
+              "canBeHandledOnRecover": true,
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Team",
+                  "key": "SGV_BoatV3_Ghost",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "PLLJBINMGJK": "OutLine_Off",
+              "mpTriggerOnRemote": true
+            }
+          ]
+        },
+        "LanV3Boat_Ghost_Team": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "shieldHP": true,
+              "param3": 7.0,
+              "key": "_ABILITY_BoatV3_SkillIndex_Team",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "Vehicle",
+              "shieldHP": true,
+              "modifierName": "LanV3Boat_Ghost_Boat"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_BoatV3_SkillIndex_Team",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "LanV3Boat_Ghost_Boat": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.15000000596046448,
+          "modifierMixins": [
+            {
+              "$type": "LCFEOMJJGBF",
+              "ditherValue": 0.5,
+              "cutInTime": 0.10000000149011612,
+              "cutOutTime": 0.20000000298023224,
+              "forceUpdateAtStart": true
+            },
+            {
+              "$type": "CIBMLJJLANN",
+              "excludeForces": [
+                "WindZoneType",
+                "SpeedupType"
+              ]
+            }
+          ],
+          "state": "Invincible",
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "target": "Vehicle",
+              "rotationDampTime": "Eff_Activity_LanV3BoatGame_Ghost",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "LanV3Boat_Ghost_Boat_IsGhostToEnemy"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "LanV3Boat_Ghost_Boat_IsGhostToAllied"
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_LanV3BoatGame_Stamina_Recover"
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_LanV3BoatGame_Shield"
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_LanV3BoatGame_Coin_Absorb"
+            },
+            {
+              "$type": "GNAEJNBIFAC",
+              "target": "Vehicle",
+              "canBeHandledOnRecover": true,
+              "PLLJBINMGJK": "OutLine_Off"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "target": "Vehicle",
+              "rotationDampTime": "Eff_Activity_LanV3BoatGame_Ghost",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "target": "Vehicle",
+              "canBeHandledOnRecover": true,
+              "PLLJBINMGJK": "OutLine_Off",
+              "mpTriggerOnRemote": true
+            },
+            {
+              "$type": "GNAEJNBIFAC",
+              "target": "Vehicle",
+              "canBeHandledOnRecover": true,
+              "PLLJBINMGJK": "OutLine_On"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "target": "Vehicle",
+              "canBeHandledOnRecover": true,
+              "PLLJBINMGJK": "OutLine_On",
+              "mpTriggerOnRemote": true
+            }
+          ]
+        },
+        "LanV3Boat_Ghost_Boat_IsGhostToEnemy": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "IsGhostToEnemy"
+        },
+        "LanV3Boat_Ghost_Boat_IsGhostToAllied": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "IsGhostToAllied"
+        },
+        "LanV3BoatGame_WeakNet_Protect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onBeingHit": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "BoatRaceGear"
+                  ]
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Team",
+                  "key": "SGV_BoatV3_HP",
+                  "param3": 1.0
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Team",
+                  "key": "SGV_BoatV3_Ghost",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "TempImmune",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_ABILITY_BoatV3_In_Shield_State",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "target": "Team",
+                  "param3": 7.0,
+                  "key": "_ABILITY_BoatV3_SkillIndex_Team",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        "LanV3Boat_Skill_Origin": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CMOCCIJDPCK",
+              "targetVehicleIDs": [
+                45001003
+              ],
+              "skillDepotId": 99001002
+            }
+          ]
+        },
+        "LanV3Boat_Skill_Mire": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CMOCCIJDPCK",
+              "targetVehicleIDs": [
+                45001003
+              ],
+              "skillDepotId": 99001003
+            }
+          ]
+        },
+        "LanV3Boat_Skill_Absorb": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CMOCCIJDPCK",
+              "targetVehicleIDs": [
+                45001003
+              ],
+              "skillDepotId": 99001004
+            }
+          ]
+        },
+        "LanV3Boat_Skill_Vortex": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CMOCCIJDPCK",
+              "targetVehicleIDs": [
+                45001003
+              ],
+              "skillDepotId": 99001006
+            }
+          ]
+        },
+        "LanV3Boat_Skill_Stamina_Recover": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CMOCCIJDPCK",
+              "targetVehicleIDs": [
+                45001003
+              ],
+              "skillDepotId": 99001008
+            }
+          ]
+        },
+        "LanV3Boat_Skill_RushMove": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CMOCCIJDPCK",
+              "targetVehicleIDs": [
+                45001003
+              ],
+              "skillDepotId": 99001007
+            }
+          ]
+        },
+        "LanV3Boat_Skill_Shield": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CMOCCIJDPCK",
+              "targetVehicleIDs": [
+                45001003
+              ],
+              "skillDepotId": 99001005
+            }
+          ]
+        },
+        "LanV3Boat_Skill_Ghost": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CMOCCIJDPCK",
+              "targetVehicleIDs": [
+                45001003
+              ],
+              "skillDepotId": 99001009
+            }
+          ]
+        },
+        "LanV3Boat_Stamina_Recover": {
+          "stacking": "Multiple",
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IJEHOLMBKJJ",
+              "param3": 240.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "target": "Vehicle",
+              "rotationDampTime": "Eff_Activity_LanV3BoatGame_Stamina_Recover",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "modifierName": "LanV3BoatGame_Skill_Transfer"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "modifierName": "LanV3BoatGame_Ghost_Hanlder"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "modifierName": "LanV3BoatGame_Vehicle_Handler"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "CurTeamAvatars",
+          "modifierName": "OnVehicleIn_Checker_Avatar"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  }
+]

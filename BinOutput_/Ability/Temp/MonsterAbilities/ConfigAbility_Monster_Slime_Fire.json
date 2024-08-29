@@ -1,0 +1,2199 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Slime_Alert",
+      "onAbilityStart": [
+        {
+          "$type": "IDNGFEEBPAM",
+          "boolID": "RunAround"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Slime_SpecialsState",
+      "abilityMixins": [
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            9,
+            901
+          ],
+          "modifierName": "SpecialsState"
+        }
+      ],
+      "modifiers": {
+        "SpecialsState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onBeingHit": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "RunAround"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Fire_01_Dead",
+      "onKill": [
+        {
+          "$type": "KFCDMIMBBLD",
+          "predicates": [
+            {
+              "$type": "NFJHABGCNHE",
+              "element": "Fire"
+            }
+          ],
+          "born": {
+            "$type": "JHEBKCMEMLN",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.20000000298023224,
+              "LPCHALMFFOD": 0.0
+            }
+          },
+          "gadgetID": 42001018,
+          "campID": 4001,
+          "campTargetType": "All"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Fire_01_SelfExplosion",
+      "modifiers": {
+        "SelfExplosion": {
+          "modifierName": "",
+          "elementDurability": 1.7000000476837158,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_SelfExplosion_Small",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.20000000298023224,
+                  "LPCHALMFFOD": 0.0
+                }
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.800000011920929,
+                      "LPCHALMFFOD": 0.0
+                    }
+                  },
+                  "OAHPDLJIADP": 0.75
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 2.0,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Fire",
+                    "IPFJJJGABPL": 50.0,
+                    "strikeType": "Blunt",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV5",
+                    "hitHaltTimeScale": 0.05000000074505806
+                  },
+                  "forceCameraShake": true,
+                  "cameraShake": {
+                    "shakeRange": 0.03999999910593033,
+                    "shakeTime": 0.30000001192092896,
+                    "extension": {
+                      "rangeAttenuation": 0.8999999761581421
+                    }
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "NCFFNDHGCMH",
+              "duration": 5.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "SelfExplosion"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Fire_02_Dead",
+      "onAbilityStart": [
+        {
+          "$type": "JFAFIJFHNDM",
+          "faceAnimation": "Die"
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Slime_Fire_SelfExplosion_Middle_BS",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            }
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Fire_02_SelfExplosion",
+      "modifiers": {
+        "SelfExplosion": {
+          "modifierName": "",
+          "elementDurability": 1.7000000476837158,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_SelfExplosion_Middle",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.5,
+                  "LPCHALMFFOD": 0.0
+                }
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.800000011920929,
+                      "LPCHALMFFOD": 0.0
+                    }
+                  },
+                  "OAHPDLJIADP": 1.5
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 2.0,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Fire",
+                    "IPFJJJGABPL": 50.0,
+                    "strikeType": "Blunt",
+                    "enBreak": 100.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV5",
+                    "hitHaltTimeScale": 0.05000000074505806
+                  },
+                  "forceCameraShake": true,
+                  "cameraShake": {
+                    "shakeRange": 0.05999999865889549,
+                    "shakeTime": 0.30000001192092896,
+                    "extension": {
+                      "rangeAttenuation": 0.8999999761581421
+                    }
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "NCFFNDHGCMH",
+              "duration": 5.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "INBCDALOHMP",
+          "targetPredicates": [
+            {
+              "$type": "NFJHABGCNHE",
+              "target": "Owner",
+              "element": "Fire"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "SelfExplosion"
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Fire_03_Dead",
+      "onAbilityStart": [
+        {
+          "$type": "JFAFIJFHNDM",
+          "faceAnimation": "Die"
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Slime_Fire_SelfExplosion_Large_BS",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            }
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Fire_03_SelfExplosion",
+      "modifiers": {
+        "SelfExplosion": {
+          "modifierName": "",
+          "elementDurability": 1.7000000476837158,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_SelfExplosion_Large",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.800000011920929,
+                  "LPCHALMFFOD": 0.0
+                }
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.800000011920929,
+                      "LPCHALMFFOD": 0.0
+                    }
+                  },
+                  "OAHPDLJIADP": 2.75
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.6660000085830688,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Fire",
+                    "IPFJJJGABPL": 50.0,
+                    "strikeType": "Blunt",
+                    "enBreak": 200.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV6",
+                    "hitHaltTimeScale": 0.05000000074505806
+                  },
+                  "forceCameraShake": true,
+                  "cameraShake": {
+                    "shakeRange": 0.20000000298023224,
+                    "shakeTime": 0.30000001192092896,
+                    "shakeDistance": 25.0,
+                    "extension": {
+                      "rangeAttenuation": 0.8999999761581421
+                    }
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "NCFFNDHGCMH",
+              "duration": 5.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "INBCDALOHMP",
+          "targetPredicates": [
+            {
+              "$type": "NFJHABGCNHE",
+              "target": "Owner",
+              "element": "Fire"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "SelfExplosion"
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Fire_01_FireBorn",
+      "abilityMixins": [
+        {
+          "$type": "FDOLONNOJHG",
+          "elementTypes": [
+            "Fire"
+          ],
+          "reject": true,
+          "modifierName": "FireDetect"
+        }
+      ],
+      "modifiers": {
+        "OnFire_Trigger": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "elementDurability": 0.800000011920929,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "FireShader",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "UNIQUE_FireBorn"
+            }
+          ]
+        },
+        "FireDetect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onBeingHit": [
+            {
+              "$type": "GJCAPCBELPA",
+              "predicates": [
+                {
+                  "$type": "PNLEEOAGKLD",
+                  "element": "Fire"
+                },
+                {
+                  "$type": "NIFDMKMHAGJ",
+                  "logic": "Lesser",
+                  "param3": 100.0,
+                  "parameter": "PoseID"
+                }
+              ],
+              "abilityName": "Slime_Fire_01_FireBorn"
+            }
+          ]
+        },
+        "UNIQUE_FireBorn": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementType": "Fire",
+          "IPFJJJGABPL": 25.0,
+          "modifierMixins": [
+            {
+              "$type": "HCCJNFOGEKI",
+              "oldPatterns": [
+                "Monster_Slime_Fire_01_NormalAttack"
+              ],
+              "newPatterns": [
+                "Monster_Slime_Fire_01_NormalAttack_Fire"
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "FireReborn"
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "FireState",
+              "param3": true
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "FireShader",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_Extinguish_Small",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "FireState"
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "FireShader"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "FireReborn"
+            }
+          ]
+        },
+        "FireReborn": {
+          "modifierName": "",
+          "elementDurability": 10.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "RebornGCD",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "RebornGCD"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "OnFire_Trigger"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "OnFire_Trigger"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Fire_02_FireBorn",
+      "abilityMixins": [
+        {
+          "$type": "FDOLONNOJHG",
+          "elementTypes": [
+            "Fire"
+          ],
+          "reject": true,
+          "modifierName": "FireDetect"
+        },
+        {
+          "$type": "FDOLONNOJHG",
+          "elementTypes": [
+            "Water"
+          ],
+          "modifierName": "WaterDetect"
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_MONSTER_Slime_SimpleStick",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_Fire_02_SimpleStick_LockHP"
+          ]
+        }
+      ],
+      "modifiers": {
+        "ImmuneToFire": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PHBONPABPIH",
+              "attackTag": "BurningDamage"
+            }
+          ]
+        },
+        "OnFire_Trigger": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "elementDurability": 0.800000011920929,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "FireShader",
+              "param3": true
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_Absorption_Middle",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_MONSTER_Slime_SimpleStick",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "modifierName": "UNIQUE_FireBorn"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_MONSTER_Slime_SimpleStick",
+                  "param3": 1.0
+                }
+              ],
+              "modifierName": "UNIQUE_Fire_02_FireBorn_SimpleStick"
+            }
+          ]
+        },
+        "FireDetect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onBeingHit": [
+            {
+              "$type": "GJCAPCBELPA",
+              "predicates": [
+                {
+                  "$type": "PNLEEOAGKLD",
+                  "element": "Fire"
+                },
+                {
+                  "$type": "NIFDMKMHAGJ",
+                  "logic": "Lesser",
+                  "param3": 100.0,
+                  "parameter": "PoseID"
+                }
+              ],
+              "abilityName": "Slime_Fire_02_FireBorn"
+            }
+          ]
+        },
+        "UNIQUE_FireBorn": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementType": "Fire",
+          "IPFJJJGABPL": 25.0,
+          "modifierMixins": [
+            {
+              "$type": "HCCJNFOGEKI",
+              "oldPatterns": [
+                "Monster_Slime_Fire_02_NormalAttack"
+              ],
+              "newPatterns": [
+                "Monster_Slime_Fire_02_NormalAttack_Fire"
+              ]
+            },
+            {
+              "$type": "IBPGGPHEDLF",
+              "gadgetIDList": [
+                42001019
+              ],
+              "campID": 4001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "FireReborn"
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_Burst_Middle",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "FireState",
+              "param3": true
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "FireShader",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_Extinguish_Middle",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "FireState"
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "FireShader"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "FireReborn"
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_BeHit",
+              "born": {
+                "$type": "DHDAAHGFPHK",
+                "direction": {
+                  "$type": "OANIBLLHFGH"
+                },
+                "alongGround": true
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "FireReborn": {
+          "modifierName": "",
+          "elementDurability": 7.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "RebornGCD",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "RebornGCD"
+            }
+          ]
+        },
+        "WaterDetect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "IsWet",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "IsWet"
+            }
+          ]
+        },
+        "UNIQUE_Fire_02_SimpleStick_LockHP": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "state": "LockHP"
+        },
+        "UNIQUE_Fire_02_FireBorn_SimpleStick": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementType": "Fire",
+          "IPFJJJGABPL": 25.0,
+          "isElementDurabilityMutable": false,
+          "state": "LockHP",
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_Burst_Middle",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "FireState",
+              "param3": true
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "FireShader",
+              "param3": true
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_BeHit",
+              "born": {
+                "$type": "DHDAAHGFPHK",
+                "direction": {
+                  "$type": "OANIBLLHFGH"
+                },
+                "alongGround": true
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onKill": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "FireShader"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "ImmuneToFire"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "OnFire_Trigger"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Fire_02_FireBorn_Tutorial",
+      "abilityMixins": [
+        {
+          "$type": "FDOLONNOJHG",
+          "elementTypes": [
+            "Fire"
+          ],
+          "reject": true,
+          "modifierName": "FireDetect"
+        },
+        {
+          "$type": "FDOLONNOJHG",
+          "elementTypes": [
+            "Water"
+          ],
+          "modifierName": "WaterDetect"
+        }
+      ],
+      "modifiers": {
+        "ImmuneToFire": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PHBONPABPIH",
+              "attackTag": "BurningDamage"
+            }
+          ]
+        },
+        "OnFire_Trigger": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "elementDurability": 0.800000011920929,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "FireShader",
+              "param3": true
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_Absorption_Middle",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "UNIQUE_FireBorn"
+            }
+          ]
+        },
+        "FireDetect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onBeingHit": [
+            {
+              "$type": "GJCAPCBELPA",
+              "predicates": [
+                {
+                  "$type": "PNLEEOAGKLD",
+                  "element": "Fire"
+                },
+                {
+                  "$type": "NIFDMKMHAGJ",
+                  "logic": "Lesser",
+                  "param3": 100.0,
+                  "parameter": "PoseID"
+                }
+              ],
+              "abilityName": "Slime_Fire_02_FireBorn_Tutorial"
+            }
+          ]
+        },
+        "UNIQUE_FireBorn": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementType": "Fire",
+          "IPFJJJGABPL": 25.0,
+          "modifierMixins": [
+            {
+              "$type": "HCCJNFOGEKI",
+              "oldPatterns": [
+                "Monster_Slime_Fire_02_NormalAttack"
+              ],
+              "newPatterns": [
+                "Monster_Slime_Fire_02_NormalAttack_Fire"
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "FireReborn"
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_Burst_Middle",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "FireState",
+              "param3": true
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "FireShader",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_Extinguish_Middle",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "FireState"
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "FireShader"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "FireReborn"
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_BeHit",
+              "born": {
+                "$type": "DHDAAHGFPHK",
+                "direction": {
+                  "$type": "OANIBLLHFGH"
+                },
+                "alongGround": true
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "FireReborn": {
+          "modifierName": "",
+          "elementDurability": 7.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "RebornGCD",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "RebornGCD"
+            }
+          ]
+        },
+        "WaterDetect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "IsWet",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "IsWet"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "ImmuneToFire"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "OnFire_Trigger"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Fire_03_FireBorn",
+      "abilityMixins": [
+        {
+          "$type": "FDOLONNOJHG",
+          "elementTypes": [
+            "Fire"
+          ],
+          "reject": true,
+          "modifierName": "FireDetect"
+        },
+        {
+          "$type": "FDOLONNOJHG",
+          "elementTypes": [
+            "Water"
+          ],
+          "modifierName": "WaterDetect"
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_MONSTER_Slime_SimpleStick",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_Fire_03_SimpleStick_LockHP"
+          ]
+        }
+      ],
+      "modifiers": {
+        "ImmuneToFire": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PHBONPABPIH",
+              "attackTag": "BurningDamage"
+            }
+          ]
+        },
+        "OnFire_Trigger": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "elementDurability": 0.800000011920929,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "FireShader",
+              "param3": true
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_Absorption_Large",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_MONSTER_Slime_SimpleStick",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "modifierName": "UNIQUE_FireBorn"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_MONSTER_Slime_SimpleStick",
+                  "param3": 1.0
+                }
+              ],
+              "modifierName": "UNIQUE_Fire_03_FireBorn_SimpleStick"
+            }
+          ]
+        },
+        "FireDetect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onBeingHit": [
+            {
+              "$type": "GJCAPCBELPA",
+              "predicates": [
+                {
+                  "$type": "PNLEEOAGKLD",
+                  "element": "Fire"
+                },
+                {
+                  "$type": "NIFDMKMHAGJ",
+                  "logic": "Lesser",
+                  "param3": 100.0,
+                  "parameter": "PoseID"
+                }
+              ],
+              "abilityName": "Slime_Fire_03_FireBorn"
+            }
+          ]
+        },
+        "UNIQUE_FireBorn": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementType": "Fire",
+          "IPFJJJGABPL": 200.0,
+          "modifierMixins": [
+            {
+              "$type": "HCCJNFOGEKI",
+              "oldPatterns": [
+                "Monster_Slime_Fire_03_NormalAttack",
+                "Monster_Slime_Fire_JumpAttack"
+              ],
+              "newPatterns": [
+                "Monster_Slime_Fire_03_NormalAttack_Fire",
+                "Monster_Slime_Fire_JumpAttack_Fire"
+              ]
+            },
+            {
+              "$type": "IBPGGPHEDLF",
+              "gadgetIDList": [
+                42001020
+              ],
+              "campID": 4001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "FireReborn"
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_Burst_Large",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "FireState",
+              "param3": true
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "FireShader",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_Extinguish_Large",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "FireState"
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "FireShader"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "FireReborn"
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_BeHit",
+              "born": {
+                "$type": "DHDAAHGFPHK",
+                "direction": {
+                  "$type": "OANIBLLHFGH"
+                },
+                "alongGround": true
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "FireReborn": {
+          "modifierName": "",
+          "elementDurability": 20.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "RebornGCD",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "RebornGCD"
+            }
+          ]
+        },
+        "WaterDetect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "IsWet",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "IsWet"
+            }
+          ]
+        },
+        "UNIQUE_Fire_03_SimpleStick_LockHP": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "state": "LockHP"
+        },
+        "UNIQUE_Fire_03_FireBorn_SimpleStick": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementType": "Fire",
+          "IPFJJJGABPL": 25.0,
+          "isElementDurabilityMutable": false,
+          "state": "LockHP",
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_Burst_Middle",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "FireState",
+              "param3": true
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "FireShader",
+              "param3": true
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_BeHit",
+              "born": {
+                "$type": "DHDAAHGFPHK",
+                "direction": {
+                  "$type": "OANIBLLHFGH"
+                },
+                "alongGround": true
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onKill": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "FireShader"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "ImmuneToFire"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "OnFire_Trigger"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Fire_JumpGround_castShadow",
+      "onAbilityStart": [
+        {
+          "$type": "ONALKNNKKLH",
+          "cameraShake": {
+            "shakeType": "CustomVector",
+            "shakeRange": 0.05999999865889549,
+            "shakeTime": 0.15000000596046448,
+            "shakeDir": {
+              "y": 1.0
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Fire_JumpGround_Alert",
+      "abilityMixins": [
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "JumpAttack",
+          "modifierName": "JumpCollider",
+          "normalizeStart": 0.3449999988079071,
+          "normalizeEnd": 0.7400000095367432,
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "JumpGround_Alert": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_JumpGround_Alert",
+              "born": {
+                "$type": "HCHAOBKOELI"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "JumpCollider": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CIGJDPCDOEB",
+              "onAdded": [
+                {
+                  "$type": "IEJIAEEJHGE"
+                },
+                {
+                  "$type": "FDFGJPNDKEA",
+                  "pushColliderNames": [
+                    "PushCollider"
+                  ]
+                }
+              ],
+              "onRemoved": [
+                {
+                  "$type": "IEJIAEEJHGE",
+                  "castShadow": true
+                },
+                {
+                  "$type": "FDFGJPNDKEA",
+                  "pushColliderNames": [
+                    "PushCollider"
+                  ],
+                  "setEnable": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "JumpGround_Alert"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Fire_JumpGround_Attack",
+      "modifiers": {
+        "UNIQUE_MonsterEliteAffix_DefaultState": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "HNGKOKDJKDL",
+              "skillEliteSetID": 1
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_ELITEAFFIX_TAG",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "modifierName": "UNIQUE_MonsterEliteAffix_DefaultState"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "AIFPLABJNMA",
+          "predicates": [
+            {
+              "$type": "NFJHABGCNHE",
+              "element": "Fire"
+            }
+          ],
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "GMDIMKKHACA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                }
+              },
+              "height": 1.5,
+              "OAHPDLJIADP": 2.0
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 1.0,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Fire",
+                "IPFJJJGABPL": 50.0,
+                "strikeType": "Blunt",
+                "enBreak": 200.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV5",
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "forceCameraShake": true,
+              "cameraShake": {
+                "shakeType": "CustomVector",
+                "shakeRange": 0.11999999731779099,
+                "shakeTime": 0.15000000596046448,
+                "shakeDistance": 25.0,
+                "shakeDir": {
+                  "y": -1.0
+                }
+              }
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "AIFPLABJNMA",
+          "predicates": [
+            {
+              "$type": "BCFNGJHILAG",
+              "predicates": [
+                {
+                  "$type": "NFJHABGCNHE",
+                  "element": "Fire"
+                }
+              ]
+            }
+          ],
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "GMDIMKKHACA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                }
+              },
+              "height": 1.5,
+              "OAHPDLJIADP": 1.25
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.6660000085830688,
+                "actorWindSubHurtDelta": 0.0,
+                "IPFJJJGABPL": 100.0,
+                "strikeType": "Blunt",
+                "enBreak": 50.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV5",
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "forceCameraShake": true,
+              "cameraShake": {
+                "shakeType": "CustomVector",
+                "shakeRange": 0.11999999731779099,
+                "shakeTime": 0.15000000596046448,
+                "shakeDistance": 25.0,
+                "shakeDir": {
+                  "y": -1.0
+                }
+              }
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Fire_FireBall",
+      "onAbilityStart": [
+        {
+          "$type": "CAKDDHLKOAB",
+          "predicates": [
+            {
+              "$type": "NFJHABGCNHE",
+              "element": "Fire"
+            }
+          ],
+          "bulletID": 42101007,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.800000011920929
+            },
+            "direction": {
+              "$type": "MEADFIJAHPG",
+              "startPoint": ""
+            },
+            "attachPointName": "RootNode"
+          }
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "predicates": [
+            {
+              "$type": "BCFNGJHILAG",
+              "predicates": [
+                {
+                  "$type": "NFJHABGCNHE",
+                  "element": "Fire"
+                }
+              ]
+            }
+          ],
+          "rotationDampTime": "Eff_Monster_F_Slime_FireSmoke",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Fire_FireBall_Loop",
+      "modifiers": {
+        "UNIQUE_FireBall_Loop": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementType": "Fire",
+          "IPFJJJGABPL": 50.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_FireBall_Loop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_FireBall_Loop"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Fire_FireBall_Explode",
+      "onAbilityStart": [
+        {
+          "$type": "KBODPNEEFGD",
+          "modifierName": "UNIQUE_FireBall_Loop"
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Slime_Fire_FireBall_HitGround",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.25,
+                  "LPCHALMFFOD": 0.0
+                }
+              },
+              "OAHPDLJIADP": 1.0
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.25,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Fire",
+                "IPFJJJGABPL": 50.0,
+                "strikeType": "Default",
+                "enBreak": 50.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV3",
+                "hitHaltTimeScale": 0.05000000074505806
+              },
+              "cameraShake": {
+                "shakeRange": 0.05999999865889549,
+                "shakeTime": 0.09000000357627869
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Fire_02_AnimationSteer",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "FireReborn"
+          ],
+          "endNormalizedTime": 0.6000000238418579,
+          "angularSpeed": 360.0,
+          "attackTrigger": "",
+          "attackDistance": 12.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "NormalAttack"
+          ],
+          "endNormalizedTime": 0.25,
+          "angularSpeed": 360.0,
+          "attackTrigger": "",
+          "attackDistance": 12.0,
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Fire_03_AnimationSteer",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Turn"
+          ],
+          "endNormalizedTime": 0.5400000214576721,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "attackDistance": 12.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "JumpAttack"
+          ],
+          "endNormalizedTime": 0.20000000298023224,
+          "angularSpeed": 120.0,
+          "attackTrigger": "",
+          "attackDistance": 12.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "FireBall"
+          ],
+          "endNormalizedTime": 0.6399999856948853,
+          "angularSpeed": 360.0,
+          "attackTrigger": "",
+          "attackDistance": 12.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "FireReborn"
+          ],
+          "endNormalizedTime": 0.6000000238418579,
+          "angularSpeed": 360.0,
+          "attackTrigger": "",
+          "attackDistance": 12.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "NormalAttack"
+          ],
+          "endNormalizedTime": 0.25,
+          "angularSpeed": 360.0,
+          "attackTrigger": "",
+          "attackDistance": 12.0,
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Fire_02_TutorialGlobalValue",
+      "abilityMixins": [
+        {
+          "$type": "HCCJNFOGEKI",
+          "oldPatterns": [
+            "Monster_Slime_Fire_02_FireReborn"
+          ],
+          "newPatterns": [
+            "Monster_Slime_Fire_02_FireReborn_Tutorial"
+          ]
+        }
+      ],
+      "onAdded": [
+        {
+          "$type": "AKJOHBCCCIJ",
+          "dieImmediately": true
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Slime_Fire_Die",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Fire_02_Fire_MvMLogic",
+      "abilityMixins": [
+        {
+          "$type": "FDOLONNOJHG",
+          "elementTypes": [
+            "Fire"
+          ],
+          "reject": true,
+          "modifierName": "FireDetect"
+        },
+        {
+          "$type": "FDOLONNOJHG",
+          "elementTypes": [
+            "Water"
+          ],
+          "modifierName": "WaterDetect"
+        }
+      ],
+      "modifiers": {
+        "ImmuneToFire": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PHBONPABPIH",
+              "attackTag": "BurningDamage"
+            }
+          ]
+        },
+        "OnFire_Trigger": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "elementDurability": 0.800000011920929,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "FireShader",
+              "param3": true
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_Absorption_Middle",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_MVM_CAMP_VALUE",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "modifierName": "UNIQUE_FireBorn_MvM01"
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "modifierName": "UNIQUE_FireBorn_MvM02"
+                }
+              ]
+            }
+          ]
+        },
+        "FireDetect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onBeingHit": [
+            {
+              "$type": "GJCAPCBELPA",
+              "predicates": [
+                {
+                  "$type": "PNLEEOAGKLD",
+                  "element": "Fire"
+                },
+                {
+                  "$type": "NIFDMKMHAGJ",
+                  "logic": "Lesser",
+                  "param3": 100.0,
+                  "parameter": "PoseID"
+                }
+              ],
+              "abilityName": "Slime_Fire_02_FireBorn"
+            }
+          ]
+        },
+        "UNIQUE_FireBorn_MvM01": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementType": "Fire",
+          "IPFJJJGABPL": 25.0,
+          "modifierMixins": [
+            {
+              "$type": "HCCJNFOGEKI",
+              "oldPatterns": [
+                "Monster_Slime_Fire_02_NormalAttack"
+              ],
+              "newPatterns": [
+                "Monster_Slime_Fire_02_NormalAttack_Fire"
+              ]
+            },
+            {
+              "$type": "IBPGGPHEDLF",
+              "gadgetIDList": [
+                42001019
+              ],
+              "campID": 3001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "FireReborn"
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_Burst_Middle",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "FireState",
+              "param3": true
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "FireShader",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_Extinguish_Middle",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "FireState"
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "FireShader"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "FireReborn"
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_BeHit",
+              "born": {
+                "$type": "DHDAAHGFPHK",
+                "direction": {
+                  "$type": "OANIBLLHFGH"
+                },
+                "alongGround": true
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "UNIQUE_FireBorn_MvM02": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementType": "Fire",
+          "IPFJJJGABPL": 25.0,
+          "modifierMixins": [
+            {
+              "$type": "HCCJNFOGEKI",
+              "oldPatterns": [
+                "Monster_Slime_Fire_02_NormalAttack"
+              ],
+              "newPatterns": [
+                "Monster_Slime_Fire_02_NormalAttack_Fire"
+              ]
+            },
+            {
+              "$type": "IBPGGPHEDLF",
+              "gadgetIDList": [
+                42001019
+              ],
+              "campID": 4001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "FireReborn"
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_Burst_Middle",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "FireState",
+              "param3": true
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "FireShader",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_Extinguish_Middle",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "FireState"
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "FireShader"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "FireReborn"
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_BeHit",
+              "born": {
+                "$type": "DHDAAHGFPHK",
+                "direction": {
+                  "$type": "OANIBLLHFGH"
+                },
+                "alongGround": true
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "FireReborn": {
+          "modifierName": "",
+          "elementDurability": 7.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "RebornGCD",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "RebornGCD"
+            }
+          ]
+        },
+        "WaterDetect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "IsWet",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "IsWet"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "ImmuneToFire"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "OnFire_Trigger"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Fire_02_Fire_MvMCommonThreat",
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "target": "SelfAttackTarget",
+          "param3": 1.0,
+          "key": "_MVM_ATTACK_TARGET",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,1098 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Ice_02_IceState",
+      "abilityMixins": [
+        {
+          "$type": "IKABNNHLJHD",
+          "width": 0.75,
+          "height": 0.75,
+          "doAction": {
+            "$type": "JLDEMMJAMLC",
+            "target": "Other",
+            "modifierName": "UNIQUE_IceSurface"
+          }
+        }
+      ],
+      "modifiers": {
+        "IceState": {
+          "modifierName": "",
+          "elementType": "Frozen",
+          "IPFJJJGABPL": 50.0,
+          "isElementDurabilityMutable": false,
+          "onAdded": [
+            {
+              "$type": "OPAOGKPJLIG",
+              "resistanceListID": 14002
+            }
+          ]
+        },
+        "UNIQUE_IceSurface": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementType": "Ice",
+          "IPFJJJGABPL": 80.0
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "IceState"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Ice_03_IceState",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_JUMPATTACK_FLAG",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            0.0,
+            0.8999999761581421
+          ],
+          "modifierNameSteps": [
+            "IceFloor_Trigger"
+          ]
+        }
+      ],
+      "modifiers": {
+        "IceState": {
+          "modifierName": "",
+          "elementType": "Frozen",
+          "IPFJJJGABPL": 50.0,
+          "isElementDurabilityMutable": false
+        },
+        "IceFloor_Trigger": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "IKABNNHLJHD",
+              "width": 1.5,
+              "height": 1.5,
+              "doAction": {
+                "$type": "JLDEMMJAMLC",
+                "target": "Other",
+                "modifierName": "UNIQUE_IceSurface"
+              }
+            }
+          ]
+        },
+        "UNIQUE_IceSurface": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 1.0,
+          "elementType": "Ice",
+          "IPFJJJGABPL": 80.0
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "IceState"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Ice_03_Shield",
+      "abilitySpecials": {
+        "ElementShield_DurabilityImprove": 0.0,
+        "ElementShield_GapReduce": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_Shield": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementType": "Frozen",
+          "IPFJJJGABPL": [
+            200.0,
+            "ElementShield_DurabilityImprove",
+            "MUL",
+            200.0,
+            "ADD"
+          ],
+          "modifierMixins": [
+            {
+              "$type": "AAPIOACHKCI",
+              "elementType": "Ice",
+              "showDamageText": "",
+              "DLBHHADKGJN": 360.0,
+              "maxShieldByHPRatio": 1.0,
+              "shieldAngle": 0.20000000298023224,
+              "useMutiPlayerFixData": true,
+              "updateShieldByMaxHp": true
+            },
+            {
+              "$type": "CGGHGFIOCKN",
+              "valueSteps": [
+                0.5,
+                [
+                  60.0,
+                  "ElementShield_DurabilityImprove",
+                  "MUL",
+                  60.0,
+                  "ADD"
+                ],
+                [
+                  120.0,
+                  "ElementShield_DurabilityImprove",
+                  "MUL",
+                  120.0,
+                  "ADD"
+                ],
+                [
+                  200.0,
+                  "ElementShield_DurabilityImprove",
+                  "MUL",
+                  201.0,
+                  "ADD"
+                ]
+              ],
+              "modifierNameSteps": [
+                "Shield_Stage03",
+                "Shield_Stage02",
+                "Shield_Stage01"
+              ]
+            }
+          ],
+          "properties": {
+            "Actor_EndureDelta": 0.4000000059604645
+          },
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "ShieldState",
+              "param3": true
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBoxShield"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox"
+              ]
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "MonsterAffix_ElementRecovery_Ice"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBoxShield"
+              ]
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "ShieldState"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "ShieldReborn"
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Ice_ShieldHit",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "MonsterAffix_ElementRecovery_Ice": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "onThinkInterval": [
+            {
+              "$type": "ODHJJKENLPE",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_MONSTERAFFIX_ELEMENTRECOVERY_ICE",
+                  "param3": 1.0,
+                  "forceByCaster": true
+                }
+              ],
+              "param3": 30.0,
+              "modifierName": "UNIQUE_Shield",
+              "elementType": "Frozen",
+              "useLimitRange": true,
+              "param2": 300.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "ShieldReborn": {
+          "modifierName": "",
+          "elementDurability": [
+            18.0,
+            "ElementShield_GapReduce",
+            "MUL",
+            18.0,
+            "ADD"
+          ],
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "RebornGCD",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "RebornGCD"
+            }
+          ]
+        },
+        "Shield_Stage01": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KMMLIOKPIKN",
+              "renderNames": [
+                "Ice01"
+              ],
+              "setEnable": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KMMLIOKPIKN",
+              "renderNames": [
+                "Ice01"
+              ]
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Ice_ShieldDestroy_Stage01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Shield_Stage02": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KMMLIOKPIKN",
+              "renderNames": [
+                "Ice02"
+              ],
+              "setEnable": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KMMLIOKPIKN",
+              "renderNames": [
+                "Ice02"
+              ]
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Ice_ShieldDestroy_Stage02",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Shield_Stage03": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KMMLIOKPIKN",
+              "renderNames": [
+                "Ice03"
+              ],
+              "setEnable": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KMMLIOKPIKN",
+              "renderNames": [
+                "Ice03"
+              ]
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Ice_ShieldDestroy_Stage03",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "LDIAIDLOPEE",
+          "globalValueKey": "_MONSTERAFFIX_ELEMENTSHIELD_DURABILITYIMPROVE",
+          "overrideMapKey": "ElementShield_DurabilityImprove"
+        },
+        {
+          "$type": "LDIAIDLOPEE",
+          "globalValueKey": "_MONSTERAFFIX_ELEMENTSHIELD_GAPREDUCE",
+          "overrideMapKey": "ElementShield_GapReduce"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Shield"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Shield"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Ice_TestTool_ShieldDestroy",
+      "onAbilityStart": [
+        {
+          "$type": "KBODPNEEFGD",
+          "modifierName": "UNIQUE_Shield"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Ice_JumpGround_castShadow",
+      "onAbilityStart": [
+        {
+          "$type": "LCOEFEMOHLP",
+          "param3": 1.0,
+          "key": "_JUMPATTACK_FLAG",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "ONALKNNKKLH",
+          "cameraShake": {
+            "shakeType": "CustomVector",
+            "shakeRange": 0.05999999865889549,
+            "shakeTime": 0.15000000596046448,
+            "shakeDir": {
+              "y": 1.0
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Ice_JumpGround_Alert",
+      "abilityMixins": [
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "JumpAttack",
+          "modifierName": "JumpCollider",
+          "normalizeStart": 0.3449999988079071,
+          "normalizeEnd": 0.7400000095367432,
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "JumpGround_Alert": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Fire_JumpGround_Alert",
+              "born": {
+                "$type": "HCHAOBKOELI"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "JumpCollider": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CIGJDPCDOEB",
+              "onAdded": [
+                {
+                  "$type": "IEJIAEEJHGE"
+                },
+                {
+                  "$type": "FDFGJPNDKEA",
+                  "pushColliderNames": [
+                    "PushCollider"
+                  ]
+                }
+              ],
+              "onRemoved": [
+                {
+                  "$type": "IEJIAEEJHGE",
+                  "castShadow": true
+                },
+                {
+                  "$type": "FDFGJPNDKEA",
+                  "pushColliderNames": [
+                    "PushCollider"
+                  ],
+                  "setEnable": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "JumpGround_Alert"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Ice_JumpGround_Attack",
+      "modifiers": {
+        "UNIQUE_MonsterEliteAffix_DefaultState": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "HNGKOKDJKDL",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "GV_TD_MONSTER_SLIME_SHIELDREBORN",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "skillEliteSetID": 1
+            },
+            {
+              "$type": "HNGKOKDJKDL",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "GV_TD_MONSTER_SLIME_SHIELDREBORN",
+                  "param3": 1.0
+                }
+              ],
+              "skillEliteSetID": 3
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_ELITEAFFIX_TAG",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "modifierName": "UNIQUE_MonsterEliteAffix_DefaultState"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "GMDIMKKHACA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                }
+              },
+              "height": 1.5,
+              "OAHPDLJIADP": 2.0
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 1.0,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Ice",
+                "IPFJJJGABPL": 50.0,
+                "strikeType": "Blunt",
+                "enBreak": 200.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV5",
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "forceCameraShake": true,
+              "cameraShake": {
+                "shakeType": "CustomVector",
+                "shakeRange": 0.11999999731779099,
+                "shakeTime": 0.15000000596046448,
+                "shakeDistance": 25.0,
+                "shakeDir": {
+                  "y": -1.0
+                }
+              }
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "LCOEFEMOHLP",
+          "param3": -1.0,
+          "key": "_JUMPATTACK_FLAG",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Ice_ThrowAtk",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "ThrowAttack_BS_01",
+            "ThrowAttack_BS_02",
+            "ThrowAttack_BS_03"
+          ],
+          "modifierName": "ThrowAttack_BS_01",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "ThrowAttack_BS_02",
+            "ThrowAttack_BS_03"
+          ],
+          "modifierName": "ThrowAttack_BS_02",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "ThrowAttack_BS_03"
+          ],
+          "modifierName": "ThrowAttack_BS_03",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "ThrowAttack_BS",
+            "ThrowAttack_BS_01",
+            "ThrowAttack_BS_02",
+            "ThrowAttack_BS_03"
+          ],
+          "modifierName": "ThrowAttack_BS",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "ThrowAttack_AS"
+          ],
+          "modifierName": "SetAimPoint",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "SetAimPoint": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "target": "SelfAttackTarget",
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "onGround": true
+              },
+              "gadgetID": 42001001,
+              "campID": 4001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "DOGDNJHJADD"
+            }
+          ]
+        },
+        "ThrowAttack_BS_01": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Ice_Cone_BS",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "attachPointName": "IceCone_01"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Ice_Cone_Missile_BS",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "attachPointName": "IceCone_01"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "ThrowAttack_BS_02": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Ice_Cone_BS",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "attachPointName": "IceCone_02"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Ice_Cone_Missile_BS",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "attachPointName": "IceCone_02"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "ThrowAttack_BS_03": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Ice_Cone_BS",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "attachPointName": "IceCone_03"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Ice_Cone_Missile_BS",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "attachPointName": "IceCone_03"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "ThrowAttack_BS": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "ThrowAttack_BS_01"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "ThrowAttack_BS_02"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "ThrowAttack_BS_03"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "MDIAKCCDEAL",
+          "otherTargets": {
+            "$type": "MEOIGEJCJLB",
+            "topLimit": 1,
+            "sortType": "Reversed",
+            "configID": 42001001
+          }
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42001004,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "direction": {
+              "$type": "MEADFIJAHPG",
+              "startPoint": ""
+            },
+            "attachPointName": "IceCone_01"
+          }
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42001004,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "direction": {
+              "$type": "MEADFIJAHPG",
+              "startPoint": ""
+            },
+            "attachPointName": "IceCone_02"
+          }
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42001004,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "direction": {
+              "$type": "MEADFIJAHPG",
+              "startPoint": ""
+            },
+            "attachPointName": "IceCone_03"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Ice_Cone_Loop",
+      "modifiers": {
+        "UNIQUE_IceCone_Loop": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementType": "Frozen",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Ice_Cone_Missile",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_IceCone_Loop"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Ice_Cone_Explode",
+      "onAbilityStart": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Slime_Ice_Cone_AS",
+          "born": {
+            "$type": "JGEBAJLEBMO"
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "KBODPNEEFGD",
+          "modifierName": "UNIQUE_IceCone_Loop"
+        },
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.25,
+                  "LPCHALMFFOD": 0.0
+                }
+              },
+              "OAHPDLJIADP": 1.0
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.3330000042915344,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Ice",
+                "IPFJJJGABPL": 50.0,
+                "strikeType": "Blunt",
+                "enBreak": 100.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV3",
+                "hitHaltTimeScale": 0.05000000074505806
+              },
+              "cameraShake": {
+                "shakeRange": 0.05999999865889549,
+                "shakeTime": 0.09000000357627869
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Ice_BlowAtk",
+      "onAbilityStart": [
+        {
+          "$type": "KFCDMIMBBLD",
+          "born": {
+            "$type": "JHEBKCMEMLN",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 4.0
+            },
+            "onGround": true,
+            "alongGround": true
+          },
+          "gadgetID": 42001005,
+          "campID": 4001,
+          "campTargetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Ice_Fog",
+      "modifiers": {
+        "Ice_Fog": {
+          "modifierName": "",
+          "elementDurability": 10.0,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.5,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Ice_Fog",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "target": "Owner",
+              "boolID": "Protected",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "target": "Owner",
+              "boolID": "Protected"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 0.0
+                    }
+                  },
+                  "OAHPDLJIADP": 3.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "Group1",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.10000000149011612,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Ice",
+                    "IPFJJJGABPL": 25.0,
+                    "enBreak": 0.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV1",
+                    "hitHaltTimeScale": 0.05000000074505806
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Ice_Fog"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Ice_02_AnimationSteer",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "NormalAttack"
+          ],
+          "endNormalizedTime": 0.25,
+          "angularSpeed": 360.0,
+          "attackTrigger": "",
+          "attackDistance": 12.0,
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Ice_03_AnimationSteer",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Turn"
+          ],
+          "endNormalizedTime": 0.5400000214576721,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "attackDistance": 12.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "JumpAttack"
+          ],
+          "endNormalizedTime": 0.20000000298023224,
+          "angularSpeed": 120.0,
+          "attackTrigger": "",
+          "attackDistance": 12.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "ThrowAttack"
+          ],
+          "endNormalizedTime": 0.5600000023841858,
+          "angularSpeed": 360.0,
+          "attackTrigger": "",
+          "attackDistance": 12.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "BlowAttack"
+          ],
+          "endNormalizedTime": 0.23999999463558197,
+          "angularSpeed": 360.0,
+          "attackTrigger": "",
+          "attackDistance": 12.0,
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  }
+]

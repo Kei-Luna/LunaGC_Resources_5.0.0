@@ -1,0 +1,1695 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_MachinaIustitia_Sentry_Pose",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_MACHINAIUSTITIA_STATIC_STATE_",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -1.5,
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Pose_Init_Pneuma",
+            "Pose_Init_Normal",
+            "Pose_Init_Ousia"
+          ]
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "arkheGradeKey",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -1.5,
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Pose_Pneuma_1",
+            "Pose_Normal",
+            "Pose_Ousia_1"
+          ]
+        },
+        {
+          "$type": "CADNOOEAFHD",
+          "actionQueue": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "predicates": [
+                {
+                  "$type": "IMPNKNCABJD",
+                  "target": "Self"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "arkheGradeKey",
+                  "param3": 0.0
+                }
+              ],
+              "PLLJBINMGJK": "HitSpecialTrigger"
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "Sit"
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "NoSensing"
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "Pose_Init_Pneuma": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PILJLANJHMK",
+              "param3": -1.0,
+              "key": "arkheGradeKey",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Pose_Init_Normal": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PILJLANJHMK",
+              "param3": 0.0,
+              "key": "arkheGradeKey",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Pose_Init_Ousia": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PILJLANJHMK",
+              "param3": 1.0,
+              "key": "arkheGradeKey",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "Sentry_Ousia_EventPatternHandler"
+            }
+          ]
+        },
+        "Pose_Pneuma_1": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFFKENEJFFB",
+              "intID": "StateTag",
+              "value": -1
+            },
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "StateTag",
+              "param3": -1.0
+            },
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "EnergyTag",
+              "param3": -1.0
+            },
+            {
+              "$type": "GNAEJNBIFAC",
+              "PLLJBINMGJK": "HitSpecialTrigger"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_MACHINAIUSTITIA_NEEDREPAIR_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Sentry_SelfRepair_Delay"
+            }
+          ]
+        },
+        "Pose_Normal": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFFKENEJFFB",
+              "intID": "StateTag"
+            },
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "StateTag",
+              "param3": 0.0
+            },
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "EnergyTag",
+              "param3": 0.0
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "Sentry_NeedRepair_Delay"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "Sentry_SelfRepair_Delay"
+            }
+          ]
+        },
+        "Pose_Ousia_1": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFFKENEJFFB",
+              "intID": "StateTag",
+              "value": 1
+            },
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "StateTag",
+              "param3": 1.0
+            },
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "EnergyTag",
+              "param3": 1.0
+            },
+            {
+              "$type": "GNAEJNBIFAC",
+              "PLLJBINMGJK": "HitSpecialTrigger"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_MACHINAIUSTITIA_NEEDREPAIR_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Sentry_SelfRepair_Delay"
+            }
+          ]
+        },
+        "Sentry_Ousia_EventPatternHandler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "HCCJNFOGEKI",
+              "oldPatterns": [
+                "Monster_MachinaIustitia_Sentry_EMP_Pneuma",
+                "Monster_MachinaIustitia_Sentry_Recover_Pneuma"
+              ],
+              "newPatterns": [
+                "Monster_MachinaIustitia_Sentry_EMP_Ousia",
+                "Monster_MachinaIustitia_Sentry_Recover_Ousia"
+              ]
+            }
+          ]
+        },
+        "Sentry_NeedRepair_Delay": {
+          "modifierName": "",
+          "elementDurability": 4.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_MACHINAIUSTITIA_NEEDREPAIR_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Sentry_SelfRepair_Delay": {
+          "modifierName": "",
+          "elementDurability": 25.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "predicates": [
+                {
+                  "$type": "BCFNGJHILAG",
+                  "predicates": [
+                    {
+                      "$type": "NIFDMKMHAGJ",
+                      "logic": "Equal",
+                      "param3": 901.0,
+                      "parameter": "PoseID"
+                    },
+                    {
+                      "$type": "NIFDMKMHAGJ",
+                      "logic": "Equal",
+                      "param3": 1.0,
+                      "parameter": "PoseID"
+                    },
+                    {
+                      "$type": "NIFDMKMHAGJ",
+                      "logic": "Equal",
+                      "param3": 11.0,
+                      "parameter": "PoseID"
+                    },
+                    {
+                      "$type": "NIFDMKMHAGJ",
+                      "logic": "Equal",
+                      "param3": 21.0,
+                      "parameter": "PoseID"
+                    },
+                    {
+                      "$type": "NIFDMKMHAGJ",
+                      "logic": "Equal",
+                      "param3": 9001.0,
+                      "parameter": "PoseID"
+                    }
+                  ]
+                }
+              ],
+              "param3": 1.0,
+              "key": "_MACHINAIUSTITIA_SELFRECOVER_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_MachinaIustitia_Sentry_RepairPose",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_MACHINAIUSTITIA_CHARGED_",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Pose_NoRepair",
+            "Pose_ReadyRepair"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Pose_NoRepair": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "RepairTag"
+            }
+          ]
+        },
+        "Pose_ReadyRepair": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "RepairTag",
+              "param3": true
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_MACHINAIUSTITIA_NEEDREPAIR_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_MACHINAIUSTITIA_NEEDREPAIR_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_MACHINAIUSTITIA_CHARGED_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_MACHINAIUSTITIA_SELFRECOVER_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_MachinaIustitia_Sentry_Recover_Pneuma",
+      "onAbilityStart": [
+        {
+          "$type": "PILJLANJHMK",
+          "param3": -1.0,
+          "key": "arkheGradeKey",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_MACHINAIUSTITIA_CHARGED_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_MACHINAIUSTITIA_SELFRECOVER_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_MachinaIustitia_Sentry_RecoverEffect_Pneuma",
+      "onAbilityStart": [
+        {
+          "$type": "KBODPNEEFGD",
+          "modifierName": "UNIQUE_MachinaIustitia_Charge_Effect_Pneuma"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_MachinaIustitia_Sentry_Recover_Ousia",
+      "onAbilityStart": [
+        {
+          "$type": "PILJLANJHMK",
+          "param3": 1.0,
+          "key": "arkheGradeKey",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_MACHINAIUSTITIA_CHARGED_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_MACHINAIUSTITIA_SELFRECOVER_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_MachinaIustitia_Sentry_RecoverEffect_Ousia",
+      "onAbilityStart": [
+        {
+          "$type": "KBODPNEEFGD",
+          "modifierName": "UNIQUE_MachinaIustitia_Charge_Effect_Ousia"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_MachinaIustitia_Sentry_CoilEffect",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_MACHINAIUSTITIA_COIL_STATE_",
+          "gvInTalk": -1.0,
+          "valueSteps": [
+            -1.5,
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "MachinaIustitia_Sentry_NoCoil",
+            "MachinaIustitia_Sentry_CoilEffect01_Handler",
+            "MachinaIustitia_Sentry_CoilEffect02_Handler"
+          ]
+        }
+      ],
+      "modifiers": {
+        "MachinaIustitia_Sentry_NoCoil": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "MachinaIustitia_Sentry_CoilEffect01_Handler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "arkheGradeKey",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                -1.5,
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "MachinaIustitia_Sentry_CoilEffect01_Pneuma",
+                "Blank",
+                "MachinaIustitia_Sentry_CoilEffect01_Ousia"
+              ]
+            }
+          ]
+        },
+        "MachinaIustitia_Sentry_CoilEffect02_Handler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "arkheGradeKey",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                -1.5,
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "MachinaIustitia_Sentry_CoilEffect02_Pneuma",
+                "Blank",
+                "MachinaIustitia_Sentry_CoilEffect02_Ousia"
+              ]
+            }
+          ]
+        },
+        "MachinaIustitia_Sentry_CoilEffect01_Pneuma": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_MachinaIustitia_Coil01_Pneuma",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true,
+                "attachPointName": "CoilAttachPoint01"
+              },
+              "PPPDJGDDOGD": 1.5,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "MachinaIustitia_Sentry_CoilEffect01_Ousia": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_MachinaIustitia_Coil01_Ousia",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true,
+                "attachPointName": "CoilAttachPoint01"
+              },
+              "PPPDJGDDOGD": 1.5,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "MachinaIustitia_Sentry_CoilEffect02_Pneuma": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_MachinaIustitia_Coil02_Pneuma",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true,
+                "attachPointName": "CoilAttachPoint02"
+              },
+              "PPPDJGDDOGD": 1.5,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "MachinaIustitia_Sentry_CoilEffect02_Ousia": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_MachinaIustitia_Coil02_Ousia",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true,
+                "attachPointName": "CoilAttachPoint02"
+              },
+              "PPPDJGDDOGD": 1.5,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Blank": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      },
+      "onKill": [
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "MachinaIustitia_Sentry_CoilEffect01_Pneuma"
+        },
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "MachinaIustitia_Sentry_CoilEffect01_Ousia"
+        },
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "MachinaIustitia_Sentry_CoilEffect02_Pneuma"
+        },
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "MachinaIustitia_Sentry_CoilEffect02_Ousia"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_MachinaIustitia_Sentry_RushAtk",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "RushAtk"
+          ],
+          "modifierName": "Sentry_RushAtk_RushMove_Handler",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Sentry_RushAtk_RushMove": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "SelfAttackTarget",
+              "targetPredicates": [
+                {
+                  "$type": "FMBJAJFLDIP",
+                  "logic": "Lesser",
+                  "param3": 2.0,
+                  "DDALGNLEHOD": ""
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "POLLHJCDPMK",
+                  "toPos": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 2.0
+                    },
+                    "onGround": true,
+                    "useRotation": true
+                  },
+                  "timeRange": 0.10999999940395355
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "POLLHJCDPMK",
+                  "toPos": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 3.0
+                    },
+                    "onGround": true,
+                    "useRotation": true
+                  },
+                  "timeRange": 0.10999999940395355
+                }
+              ]
+            }
+          ]
+        },
+        "Sentry_RushAtk_RushMove_Handler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_SENTRY_RUSHATK_FOLLOWBULLET_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Sentry_RushAtk_RushMove"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_SENTRY_RUSHATK_FOLLOWBULLET_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_SENTRY_RUSHATK_FOLLOWBULLET_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Sentry_RushAtk_RushMove"
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42406015,
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "useRotation": true
+          },
+          "trackTarget": "Self",
+          "lifeByOwnerV2": true
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_MachinaIustitia_Sentry_RushAtk_KillBullet",
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_SENTRY_RUSHATK_FOLLOWBULLET_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "MachinaIustitia_Sentry_RushAtk_FollowBullet",
+      "abilityMixins": [
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueTarget": "OriginOwner",
+          "globalValueKey": "_SENTRY_RUSHATK_FOLLOWBULLET_",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Blank",
+            "Sentry_RushAtk_FollowBullet_Kill"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Sentry_RushAtk_FollowBullet_Kill": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        },
+        "Blank": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JGEBAJLEBMO"
+              },
+              "OAHPDLJIADP": 1.0
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.6000000238418579,
+                "actorWindSubHurtDelta": 0.0,
+                "IPFJJJGABPL": 0.0,
+                "strikeType": "Blunt",
+                "enBreak": 50.0,
+                "attackType": "Melee",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV3",
+                "retreatType": "ByHitDirection",
+                "hitHaltTimeScale": 0.05000000074505806
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_MachinaIustitia_Sentry_EMP_Pneuma",
+      "onAbilityStart": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_MachinaIustitia_Sentry_EMP_Pneuma_Fire",
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "useRotation": true,
+            "attachPointName": "EMPPoint"
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42406011,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "useRotation": true,
+            "attachPointName": "EMPPoint"
+          },
+          "lifeByOwnerV2": true
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_MachinaIustitia_Sentry_EMP_Ousia",
+      "onAbilityStart": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_MachinaIustitia_Sentry_EMP_Ousia_Fire",
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "useRotation": true,
+            "attachPointName": "EMPPoint"
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42406013,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "useRotation": true,
+            "attachPointName": "EMPPoint"
+          },
+          "lifeByOwnerV2": true
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "MachinaIustitia_Sentry_EMP_Pneuma_Bullet",
+      "modifiers": {
+        "Sentry_EMP_Pneuma_Bullet_Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_MachinaIustitia_Sentry_EMP_Pneuma_Bullet",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Sentry_EMP_Pneuma_Bullet_Effect"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "KFCDMIMBBLD",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "OriginOwner",
+              "key": "_SENTRY_PARTNER_TAG_",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "ownerIs": "Owner",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "onGround": true,
+            "alongGround": true,
+            "useRotation": true
+          },
+          "lifeByOwnerV2": true,
+          "gadgetID": 42406012,
+          "campID": 4001,
+          "campTargetType": "Enemy"
+        },
+        {
+          "$type": "KFCDMIMBBLD",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "OriginOwner",
+              "key": "_SENTRY_PARTNER_TAG_",
+              "param3": 1.0
+            }
+          ],
+          "ownerIs": "Owner",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "onGround": true,
+            "alongGround": true,
+            "useRotation": true
+          },
+          "lifeByOwnerV2": true,
+          "gadgetID": 42406012,
+          "campID": 3001,
+          "campTargetType": "Enemy"
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_MachinaIustitia_Sentry_EMP_Pneuma_Bullet_AS",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "NKEFJJHHAPG"
+        },
+        {
+          "$type": "NCFFNDHGCMH",
+          "duration": 0.10000000149011612
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "MachinaIustitia_Sentry_EMP_Pneuma_Bomb",
+      "modifiers": {
+        "Sentry_EMP_Pneuma_Bomb_Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_MachinaIustitia_Sentry_EMP_Pneuma_Damage",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Sentry_EMP_Pneuma_Bomb_Damage": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.5,
+          "onAdded": [
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "checkHitLayerType": "Both",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "useRotation": true
+                  },
+                  "OAHPDLJIADP": 3.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.25,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Electric",
+                    "IPFJJJGABPL": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 50.0,
+                    "attackType": "Range",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV3",
+                    "hitHaltTimeScale": 0.009999999776482582
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "checkHitLayerType": "Both",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "useRotation": true
+                  },
+                  "OAHPDLJIADP": 3.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.25,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Electric",
+                    "IPFJJJGABPL": 10.0,
+                    "strikeType": "Default",
+                    "enBreak": 1.0,
+                    "attackType": "Range",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.009999999776482582
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "Sentry_EMP_Pneuma_Bomb_Life": {
+          "modifierName": "",
+          "elementDurability": 2.9000000953674316,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_MachinaIustitia_Sentry_EMP_Pneuma_FinalDamage",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "checkHitLayerType": "Both",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "useRotation": true
+                  },
+                  "OAHPDLJIADP": 3.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.5,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Electric",
+                    "IPFJJJGABPL": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 25.0,
+                    "attackType": "Range",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.009999999776482582
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Sentry_EMP_Pneuma_Bomb_Effect"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Sentry_EMP_Pneuma_Bomb_Damage"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Sentry_EMP_Pneuma_Bomb_Life"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "MachinaIustitia_Sentry_EMP_Ousia_Bullet",
+      "modifiers": {
+        "Sentry_EMP_Ousia_Bullet_Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_MachinaIustitia_Sentry_EMP_Ousia_Bullet",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Sentry_EMP_Ousia_Bullet_Effect"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "KFCDMIMBBLD",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "OriginOwner",
+              "key": "_SENTRY_PARTNER_TAG_",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "ownerIs": "Owner",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "onGround": true,
+            "alongGround": true,
+            "useRotation": true
+          },
+          "lifeByOwnerV2": true,
+          "gadgetID": 42406014,
+          "campID": 4001,
+          "campTargetType": "Enemy"
+        },
+        {
+          "$type": "KFCDMIMBBLD",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "OriginOwner",
+              "key": "_SENTRY_PARTNER_TAG_",
+              "param3": 1.0
+            }
+          ],
+          "ownerIs": "Owner",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "onGround": true,
+            "alongGround": true,
+            "useRotation": true
+          },
+          "lifeByOwnerV2": true,
+          "gadgetID": 42406014,
+          "campID": 3001,
+          "campTargetType": "Enemy"
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_MachinaIustitia_Sentry_EMP_Ousia_Bullet_AS",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "NKEFJJHHAPG"
+        },
+        {
+          "$type": "NCFFNDHGCMH",
+          "duration": 0.10000000149011612
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "MachinaIustitia_Sentry_EMP_Ousia_Bomb",
+      "modifiers": {
+        "Sentry_EMP_Ousia_Bomb_Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_MachinaIustitia_Sentry_EMP_Ousia_Alert",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Sentry_EMP_Ousia_Bomb_Life": {
+          "modifierName": "",
+          "elementDurability": 3.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_MachinaIustitia_Sentry_EMP_Ousia_Explode",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "checkHitLayerType": "Both",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "useRotation": true
+                  },
+                  "OAHPDLJIADP": 4.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 1.0,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Electric",
+                    "IPFJJJGABPL": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 100.0,
+                    "attackType": "Range",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV4",
+                    "hitHaltTimeScale": 0.009999999776482582
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Sentry_EMP_Ousia_Bomb_Effect"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Sentry_EMP_Ousia_Bomb_Life"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_MachinaIustitia_Sentry_Steer",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "NormalMove"
+          ],
+          "endNormalizedTime": 999.0,
+          "angularSpeed": 60.0,
+          "attackTrigger": "",
+          "JGOMHKMFHIO": true,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Turn"
+          ],
+          "endNormalizedTime": 0.6669999957084656,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "JGOMHKMFHIO": true,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "RushAtk"
+          ],
+          "startNormalizedTime": 0.04800000041723251,
+          "endNormalizedTime": 0.08900000154972076,
+          "angularSpeed": 360.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "EMP"
+          ],
+          "startNormalizedTime": 0.039000000804662704,
+          "endNormalizedTime": 0.15700000524520874,
+          "angularSpeed": 270.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_MachinaIustitia_Sentry_ExitBattle",
+      "abilityMixins": [
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            901
+          ],
+          "modifierName": "ExitBattle"
+        }
+      ],
+      "modifiers": {
+        "ExitBattle": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_MACHINAIUSTITIA_NEEDREPAIR_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_MACHINAIUSTITIA_CHARGED_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_MachinaIustitia_Charge_Effect_Pneuma"
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_MachinaIustitia_Charge_Effect_Ousia"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_MACHINAIUSTITIA_NEEDREPAIR_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_MACHINAIUSTITIA_CHARGED_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PILJLANJHMK",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_MACHINAIUSTITIA_STATIC_STATE_",
+                  "param3": -1.0
+                }
+              ],
+              "param3": -1.0,
+              "key": "arkheGradeKey",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PILJLANJHMK",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_MACHINAIUSTITIA_STATIC_STATE_",
+                  "param3": 1.0
+                }
+              ],
+              "param3": 1.0,
+              "key": "arkheGradeKey",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_MachinaIustitia_Charge_Effect_Pneuma"
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_MachinaIustitia_Charge_Effect_Ousia"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_MachinaIustitia_Sentry_Alert",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Alert"
+          ],
+          "modifierName": "Sentry_AlertHandler",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AOKOIIHJJPJ",
+          "alertness": [
+            2
+          ],
+          "modifierName": "Sentry_ForceAlertDelay"
+        }
+      ],
+      "modifiers": {
+        "Sentry_AlertHandler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "Sit"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_MACHINAIUSTITIA_SENTRY_SIT_ALERT_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Sentry_ForceAlertDelay": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_MACHINAIUSTITIA_SENTRY_SIT_ALERT_",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "modifierName": "Sentry_ForceAlert"
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "Sit"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_MACHINAIUSTITIA_SENTRY_SIT_ALERT_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Sentry_ForceAlert": {
+          "modifierName": "",
+          "elementDurability": 2.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "Sit"
+            }
+          ]
+        },
+        "Sentry_ForceHitAlert": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "APJKOLPHCGH",
+              "stateIDs": [
+                "BeHit"
+              ],
+              "enterActions": [
+                {
+                  "$type": "IDNGFEEBPAM",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_MACHINAIUSTITIA_SENTRY_SIT_ALERT_",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "boolID": "Sit"
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "param3": 1.0,
+                  "key": "_MACHINAIUSTITIA_SENTRY_SIT_ALERT_",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ],
+              "DGFCLAIDIFI": ""
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_MACHINAIUSTITIA_SENTRY_SIT_ALERT_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Sentry_ForceHitAlert"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "IDNGFEEBPAM",
+          "boolID": "Sit"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_MachinaIustitia_Sentry_HitSpecial",
+      "abilityMixins": [
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "HitSpecial",
+          "modifierName": "Sentry_HitSpecial",
+          "normalizeEnd": 0.5799999833106995,
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Sentry_HitSpecial": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_MachinaIustitia_HitSpecial",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_MachinaIustitia_EscapePrison_Patrol_Alert",
+      "onAbilityStart": [
+        {
+          "$type": "IDNGFEEBPAM",
+          "boolID": "PatrolOnlyAlert",
+          "param3": true
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_MachinaIustitia_EscapePrison_Patrol_TurnIdle",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "TurnIdle"
+          ],
+          "modifierName": "BoxMatch_TurnIdle",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "BoxMatch_TurnIdle": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "PatrolOnlyAlert"
+            }
+          ]
+        }
+      }
+    }
+  }
+]

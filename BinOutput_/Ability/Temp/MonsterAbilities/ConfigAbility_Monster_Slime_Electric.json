@@ -1,0 +1,2401 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Electric_ResistShock",
+      "modifiers": {
+        "ResistShock": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "OPAOGKPJLIG",
+              "resistanceListID": 14004
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Electric_TestTool_Discharge",
+      "onAbilityStart": [
+        {
+          "$type": "KBODPNEEFGD",
+          "modifierName": "UNIQUE_SLime_Electric_ElementState"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Electric_02_ElementState",
+      "abilityMixins": [
+        {
+          "$type": "FDOLONNOJHG",
+          "elementTypes": [
+            "Electric"
+          ],
+          "reject": true,
+          "modifierName": "ElectricDetect"
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_MONSTER_Slime_SimpleStick",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_SLime_Electric_ElementState",
+            "UNIQUE_SLime_02_Electric_ElementState_SimpleStick"
+          ]
+        }
+      ],
+      "abilitySpecials": {
+        "DischargeTime": 7.0
+      },
+      "modifiers": {
+        "ElectricDetect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onBeingHit": [
+            {
+              "$type": "GJCAPCBELPA",
+              "predicates": [
+                {
+                  "$type": "PNLEEOAGKLD",
+                  "element": "Electric"
+                },
+                {
+                  "$type": "NIFDMKMHAGJ",
+                  "logic": "LesserOrEqual",
+                  "param3": 3.0,
+                  "parameter": "PoseID"
+                }
+              ],
+              "abilityName": "Slime_Electric_02_ElementState"
+            }
+          ]
+        },
+        "UNIQUE_SLime_Electric_ElementState": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementType": "Electric",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "_ABILITY_SLIME_ELECTRIC_POSITIVE_COUNT",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                -1.0,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "Discharge_Timer",
+                "Discharge_Timer_Off"
+              ]
+            },
+            {
+              "$type": "CBKLCFKNHGH",
+              "campTargetType": "SelfCamp",
+              "targetPredicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ABILITY_SLIME_ELECTRIC_PROPERITY",
+                  "param3": 1.0
+                },
+                {
+                  "$type": "NFJHABGCNHE",
+                  "element": "Electric"
+                }
+              ],
+              "onFieldEnter": [
+                {
+                  "$type": "INBCDALOHMP",
+                  "otherTargets": {
+                    "$type": "MNOAFODCBLI",
+                    "campTargetType": "SelfCamp"
+                  },
+                  "targetPredicates": [
+                    {
+                      "$type": "NIMAPECDNKD",
+                      "entityTypes": [
+                        "Monster"
+                      ]
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ABILITY_SLIME_ELECTRIC_PROPERITY",
+                      "param3": 1.0
+                    },
+                    {
+                      "$type": "NFJHABGCNHE",
+                      "element": "Electric"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "GPDAIGICDKI",
+                      "target": "Target",
+                      "partRootNames": [
+                        "AntennaControl"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$type": "INBCDALOHMP",
+                  "targetPredicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ABILITY_SLIME_ELECTRIC_POSITIVE_COUNT",
+                      "param3": 0.0,
+                      "compareType": "MoreThan"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "IDNGFEEBPAM",
+                      "boolID": "IsAttract",
+                      "param3": true
+                    },
+                    {
+                      "$type": "KJCHPDPBJHL",
+                      "boolID": "IsAttract",
+                      "param3": true
+                    },
+                    {
+                      "$type": "KGKOLOLDKHH",
+                      "partRootNames": [
+                        "AntennaControl"
+                      ],
+                      "enable": true
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "IDNGFEEBPAM",
+                      "boolID": "IsAttract"
+                    },
+                    {
+                      "$type": "KJCHPDPBJHL",
+                      "boolID": "IsAttract"
+                    },
+                    {
+                      "$type": "KGKOLOLDKHH",
+                      "partRootNames": [
+                        "AntennaControl"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "onFieldExit": [
+                {
+                  "$type": "INBCDALOHMP",
+                  "otherTargets": {
+                    "$type": "MNOAFODCBLI",
+                    "campTargetType": "SelfCamp"
+                  },
+                  "targetPredicates": [
+                    {
+                      "$type": "NIMAPECDNKD",
+                      "entityTypes": [
+                        "Monster"
+                      ]
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ABILITY_SLIME_ELECTRIC_PROPERITY",
+                      "param3": 1.0
+                    },
+                    {
+                      "$type": "NFJHABGCNHE",
+                      "element": "Electric"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "GPDAIGICDKI",
+                      "target": "Target",
+                      "partRootNames": [
+                        "AntennaControl"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$type": "INBCDALOHMP",
+                  "targetPredicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ABILITY_SLIME_ELECTRIC_POSITIVE_COUNT",
+                      "param3": 0.0,
+                      "compareType": "MoreThan"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "IDNGFEEBPAM",
+                      "boolID": "IsAttract",
+                      "param3": true
+                    },
+                    {
+                      "$type": "KJCHPDPBJHL",
+                      "boolID": "IsAttract",
+                      "param3": true
+                    },
+                    {
+                      "$type": "KGKOLOLDKHH",
+                      "partRootNames": [
+                        "AntennaControl"
+                      ],
+                      "enable": true
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "IDNGFEEBPAM",
+                      "boolID": "IsAttract"
+                    },
+                    {
+                      "$type": "KJCHPDPBJHL",
+                      "boolID": "IsAttract"
+                    },
+                    {
+                      "$type": "KGKOLOLDKHH",
+                      "partRootNames": [
+                        "AntennaControl"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "replaceOnAddedInTick": true,
+              "simpleCountGlobaValueKey": "_ABILITY_SLIME_ELECTRIC_POSITIVE_COUNT",
+              "simpleCountMaxValue": 0.0,
+              "simpleCountMinValue": 0.0
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 0.0,
+              "key": "_ABILITY_SLIME_ELECTRIC_PROPERITY",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Discharge_Timer"
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "ElementState",
+              "param3": true
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "SkinShader",
+              "param3": true
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Electric_Idle",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "HMKGPFBBDIC",
+              "key": "_ABILITY_SLIME_ELECTRIC_PROPERITY"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Discharge_Timer"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Discharge_Transition"
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "ElementState"
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "SkinShader"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "RebornTimer"
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "ODHJJKENLPE",
+              "predicates": [
+                {
+                  "$type": "PNLEEOAGKLD",
+                  "element": "Electric"
+                }
+              ],
+              "param3": 25.0,
+              "modifierName": "UNIQUE_SLime_Electric_ElementState",
+              "useLimitRange": true,
+              "param2": 100.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "RebornTimer": {
+          "modifierName": "",
+          "elementDurability": 7.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "RebornGCD",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "RebornGCD"
+            }
+          ]
+        },
+        "Discharge": {
+          "modifierName": "",
+          "elementDurability": 0.05000000074505806,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Electric_Discharge_Ready",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Electric_Discharge",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": -0.15000000596046448,
+                  "LPCHALMFFOD": 0.0
+                },
+                "direction": {
+                  "$type": "AHGNBAPONLA"
+                },
+                "attachPointName": "ElectrifiedBody"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "LPAMFJLFPDF",
+              "attackTargetMapEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerAlways",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.3499999940395355,
+                      "LPCHALMFFOD": -0.5
+                    }
+                  },
+                  "height": 0.5,
+                  "OAHPDLJIADP": 1.5499999523162842
+                },
+                "attackInfoMap": {
+                  "Enemy": {
+                    "attackTag": "",
+                    "attenuationTag": "",
+                    "attenuationGroup": "default",
+                    "attackProperty": {
+                      "actorGrassSubHurtDelta": 1.0,
+                      "actorWindSubHurtDelta": 0.0,
+                      "elementType": "Electric",
+                      "IPFJJJGABPL": 50.0,
+                      "strikeType": "Default",
+                      "enBreak": 80.0,
+                      "GLKMCMDJBIK": 0.0
+                    },
+                    "hitPattern": {
+                      "onHitEffectName": "default",
+                      "hitImpulseY": "",
+                      "hitImpulseType": "LV2",
+                      "hitHaltTimeScale": 0.009999999776482582
+                    }
+                  },
+                  "Alliance": {
+                    "attackTag": "",
+                    "attenuationTag": "",
+                    "attenuationGroup": "default",
+                    "attackProperty": {
+                      "actorGrassSubHurtDelta": 0.0,
+                      "actorWindSubHurtDelta": 0.0,
+                      "elementType": "Electric",
+                      "IPFJJJGABPL": 50.0,
+                      "enBreak": 80.0,
+                      "GLKMCMDJBIK": 0.0
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 0.0,
+              "key": "_ABILITY_SLIME_ELECTRIC_DISCHARGE",
+              "useLimitRange": true,
+              "randomInRange": true,
+              "param2": 9.0,
+              "repeatTimes": 5.0
+            },
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "_ABILITY_SLIME_ELECTRIC_DISCHARGE",
+              "overrideMapKey": "DischargeTime"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Discharge_Timer"
+            },
+            {
+              "$type": "ODHJJKENLPE",
+              "param3": -25.0,
+              "modifierName": "UNIQUE_SLime_Electric_ElementState",
+              "useLimitRange": true,
+              "param2": 100.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Discharge_Timer": {
+          "modifierName": "",
+          "elementDurability": "DischargeTime",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Electric_Discharge_Gap",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "attachPointName": "ElectrifiedBody"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "NFJHABGCNHE",
+                  "element": "Electric"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ABILITY_SLIME_ELECTRIC_POSITIVE_COUNT",
+                  "param3": 0.0,
+                  "forceByCaster": true
+                }
+              ],
+              "modifierName": "Discharge_Transition"
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "predicates": [
+                {
+                  "$type": "NFJHABGCNHE",
+                  "element": "Electric"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ABILITY_SLIME_ELECTRIC_POSITIVE_COUNT",
+                  "param3": 0.0,
+                  "forceByCaster": true
+                }
+              ],
+              "PLLJBINMGJK": "Discharge",
+              "mpTriggerOnRemote": true
+            }
+          ]
+        },
+        "Discharge_Timer_Off": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Electric_Discharge_Gap",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "attachPointName": "ElectrifiedBody"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Discharge_Transition": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Electric_Discharge_BS",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "JFAFIJFHNDM",
+              "faceAnimation": "Attack"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "NFJHABGCNHE",
+                  "element": "Electric"
+                }
+              ],
+              "modifierName": "Discharge"
+            }
+          ]
+        },
+        "UNIQUE_SLime_02_Electric_ElementState_SimpleStick": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementType": "Electric",
+          "IPFJJJGABPL": 50.0,
+          "isElementDurabilityMutable": false,
+          "state": "LockHP",
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "ElementState",
+              "param3": true
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "SkinShader",
+              "param3": true
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Electric_Idle",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "UNIQUE_SLime_Electric_ElementState"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Electric_03_ElementState",
+      "abilityMixins": [
+        {
+          "$type": "FDOLONNOJHG",
+          "elementTypes": [
+            "Electric"
+          ],
+          "reject": true,
+          "modifierName": "ElectricDetect"
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_MONSTER_Slime_SimpleStick",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_SLime_Electric_ElementState",
+            "UNIQUE_SLime_03_Electric_ElementState_SimpleStick"
+          ]
+        }
+      ],
+      "abilitySpecials": {
+        "DischargeTime": 7.0
+      },
+      "modifiers": {
+        "ElectricDetect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onBeingHit": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "PNLEEOAGKLD",
+                  "element": "Electric"
+                },
+                {
+                  "$type": "NIFDMKMHAGJ",
+                  "logic": "LesserOrEqual",
+                  "param3": 3.0,
+                  "parameter": "PoseID"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PFKNEFGOHIH",
+                  "modifierName": "RebornTimer"
+                },
+                {
+                  "$type": "GJCAPCBELPA",
+                  "abilityName": "Slime_Electric_03_ElementState"
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_SLime_Electric_ElementState": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementType": "Electric",
+          "IPFJJJGABPL": 200.0,
+          "modifierMixins": [
+            {
+              "$type": "HCCJNFOGEKI",
+              "oldPatterns": [
+                "Monster_Slime_Electric_03_NormalAttack",
+                "Monster_Slime_Electric_JumpAttack"
+              ],
+              "newPatterns": [
+                "Monster_Slime_Electric_03_NormalAttack_Electric",
+                "Monster_Slime_Electric_JumpAttack_Electric"
+              ]
+            },
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "_ABILITY_SLIME_ELECTRIC_POSITIVE_COUNT",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                -1.0,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "Discharge_Timer",
+                "Discharge_Timer_Off"
+              ]
+            },
+            {
+              "$type": "CBKLCFKNHGH",
+              "campTargetType": "SelfCamp",
+              "targetPredicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ABILITY_SLIME_ELECTRIC_PROPERITY",
+                  "param3": 1.0
+                },
+                {
+                  "$type": "NFJHABGCNHE",
+                  "element": "Electric"
+                }
+              ],
+              "onFieldEnter": [
+                {
+                  "$type": "INBCDALOHMP",
+                  "otherTargets": {
+                    "$type": "MNOAFODCBLI",
+                    "campTargetType": "SelfCamp"
+                  },
+                  "targetPredicates": [
+                    {
+                      "$type": "NIMAPECDNKD",
+                      "entityTypes": [
+                        "Monster"
+                      ]
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ABILITY_SLIME_ELECTRIC_PROPERITY",
+                      "param3": 1.0
+                    },
+                    {
+                      "$type": "NFJHABGCNHE",
+                      "element": "Electric"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "GPDAIGICDKI",
+                      "target": "Target",
+                      "partRootNames": [
+                        "AntennaControl"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$type": "INBCDALOHMP",
+                  "targetPredicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ABILITY_SLIME_ELECTRIC_POSITIVE_COUNT",
+                      "param3": 0.0,
+                      "compareType": "MoreThan"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "IDNGFEEBPAM",
+                      "boolID": "IsAttract",
+                      "param3": true
+                    },
+                    {
+                      "$type": "KJCHPDPBJHL",
+                      "boolID": "IsAttract",
+                      "param3": true
+                    },
+                    {
+                      "$type": "KGKOLOLDKHH",
+                      "partRootNames": [
+                        "AntennaControl"
+                      ],
+                      "enable": true
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "IDNGFEEBPAM",
+                      "boolID": "IsAttract"
+                    },
+                    {
+                      "$type": "KJCHPDPBJHL",
+                      "boolID": "IsAttract"
+                    },
+                    {
+                      "$type": "KGKOLOLDKHH",
+                      "partRootNames": [
+                        "AntennaControl"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "onFieldExit": [
+                {
+                  "$type": "INBCDALOHMP",
+                  "otherTargets": {
+                    "$type": "MNOAFODCBLI",
+                    "campTargetType": "SelfCamp"
+                  },
+                  "targetPredicates": [
+                    {
+                      "$type": "NIMAPECDNKD",
+                      "entityTypes": [
+                        "Monster"
+                      ]
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ABILITY_SLIME_ELECTRIC_PROPERITY",
+                      "param3": 1.0
+                    },
+                    {
+                      "$type": "NFJHABGCNHE",
+                      "element": "Electric"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "GPDAIGICDKI",
+                      "target": "Target",
+                      "partRootNames": [
+                        "AntennaControl"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$type": "INBCDALOHMP",
+                  "targetPredicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ABILITY_SLIME_ELECTRIC_POSITIVE_COUNT",
+                      "param3": 0.0,
+                      "compareType": "MoreThan"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "IDNGFEEBPAM",
+                      "boolID": "IsAttract",
+                      "param3": true
+                    },
+                    {
+                      "$type": "KJCHPDPBJHL",
+                      "boolID": "IsAttract",
+                      "param3": true
+                    },
+                    {
+                      "$type": "KGKOLOLDKHH",
+                      "partRootNames": [
+                        "AntennaControl"
+                      ],
+                      "enable": true
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "IDNGFEEBPAM",
+                      "boolID": "IsAttract"
+                    },
+                    {
+                      "$type": "KJCHPDPBJHL",
+                      "boolID": "IsAttract"
+                    },
+                    {
+                      "$type": "KGKOLOLDKHH",
+                      "partRootNames": [
+                        "AntennaControl"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "replaceOnAddedInTick": true,
+              "simpleCountGlobaValueKey": "_ABILITY_SLIME_ELECTRIC_POSITIVE_COUNT",
+              "simpleCountMaxValue": 0.0,
+              "simpleCountMinValue": 0.0
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 0.0,
+              "key": "_ABILITY_SLIME_ELECTRIC_PROPERITY",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Discharge_Timer"
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "ElementState",
+              "param3": true
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "SkinShader",
+              "param3": true
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Electric_Idle",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "HMKGPFBBDIC",
+              "key": "_ABILITY_SLIME_ELECTRIC_PROPERITY"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Discharge_Timer"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Discharge_Transition"
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "ElementState"
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "SkinShader"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "RebornTimer"
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "ODHJJKENLPE",
+              "predicates": [
+                {
+                  "$type": "PNLEEOAGKLD",
+                  "element": "Electric"
+                }
+              ],
+              "param3": 25.0,
+              "modifierName": "UNIQUE_SLime_Electric_ElementState",
+              "useLimitRange": true,
+              "param2": 200.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "RebornTimer": {
+          "modifierName": "",
+          "elementDurability": 15.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "RebornGCD",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "RebornGCD"
+            }
+          ]
+        },
+        "Discharge": {
+          "modifierName": "",
+          "elementDurability": 0.05000000074505806,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Electric_Discharge_Ready",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Electric_Discharge",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": -0.30000001192092896,
+                  "LPCHALMFFOD": 0.0
+                },
+                "direction": {
+                  "$type": "AHGNBAPONLA"
+                },
+                "attachPointName": "ElectrifiedBody"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "LPAMFJLFPDF",
+              "attackTargetMapEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.75,
+                      "LPCHALMFFOD": -0.6000000238418579
+                    }
+                  },
+                  "height": 0.75,
+                  "OAHPDLJIADP": 2.9000000953674316
+                },
+                "attackInfoMap": {
+                  "Enemy": {
+                    "attackTag": "",
+                    "attenuationTag": "",
+                    "attenuationGroup": "default",
+                    "attackProperty": {
+                      "actorGrassSubHurtDelta": 0.3330000042915344,
+                      "actorWindSubHurtDelta": 0.0,
+                      "elementType": "Electric",
+                      "IPFJJJGABPL": 50.0,
+                      "strikeType": "Default",
+                      "enBreak": 80.0,
+                      "GLKMCMDJBIK": 0.0
+                    },
+                    "hitPattern": {
+                      "onHitEffectName": "default",
+                      "hitImpulseY": "",
+                      "hitImpulseType": "LV2",
+                      "hitHaltTimeScale": 0.009999999776482582
+                    }
+                  },
+                  "Alliance": {
+                    "attackTag": "",
+                    "attenuationTag": "",
+                    "attenuationGroup": "default",
+                    "attackProperty": {
+                      "actorGrassSubHurtDelta": 0.0,
+                      "actorWindSubHurtDelta": 0.0,
+                      "elementType": "Electric",
+                      "IPFJJJGABPL": 50.0,
+                      "enBreak": 80.0,
+                      "GLKMCMDJBIK": 0.0
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 0.0,
+              "key": "_ABILITY_SLIME_ELECTRIC_DISCHARGE",
+              "useLimitRange": true,
+              "randomInRange": true,
+              "param2": 9.0,
+              "repeatTimes": 5.0
+            },
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "_ABILITY_SLIME_ELECTRIC_DISCHARGE",
+              "overrideMapKey": "DischargeTime"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Discharge_Timer"
+            },
+            {
+              "$type": "ODHJJKENLPE",
+              "param3": -25.0,
+              "modifierName": "UNIQUE_SLime_Electric_ElementState",
+              "useLimitRange": true,
+              "param2": 200.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Discharge_Timer": {
+          "modifierName": "",
+          "elementDurability": "DischargeTime",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Electric_Discharge_Gap",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "attachPointName": "ElectrifiedBody"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "NFJHABGCNHE",
+                  "element": "Electric"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ABILITY_SLIME_ELECTRIC_POSITIVE_COUNT",
+                  "param3": 0.0,
+                  "forceByCaster": true
+                }
+              ],
+              "modifierName": "Discharge_Transition"
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "predicates": [
+                {
+                  "$type": "NFJHABGCNHE",
+                  "element": "Electric"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ABILITY_SLIME_ELECTRIC_POSITIVE_COUNT",
+                  "param3": 0.0,
+                  "forceByCaster": true
+                }
+              ],
+              "PLLJBINMGJK": "Discharge",
+              "mpTriggerOnRemote": true
+            }
+          ]
+        },
+        "Discharge_Timer_Off": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Electric_Discharge_Gap",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "attachPointName": "ElectrifiedBody"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Discharge_Transition": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Electric_Discharge_BS",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "JFAFIJFHNDM",
+              "faceAnimation": "Attack"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "NFJHABGCNHE",
+                  "element": "Electric"
+                }
+              ],
+              "modifierName": "Discharge"
+            }
+          ]
+        },
+        "UNIQUE_SLime_03_Electric_ElementState_SimpleStick": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementType": "Electric",
+          "IPFJJJGABPL": 50.0,
+          "isElementDurabilityMutable": false,
+          "state": "LockHP",
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "ElementState",
+              "param3": true
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "SkinShader",
+              "param3": true
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Electric_Idle",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "UNIQUE_SLime_Electric_ElementState"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "UNIQUE_SLime_Electric_ElementState"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Electric_03_Positive_ElementState",
+      "abilityMixins": [
+        {
+          "$type": "FDOLONNOJHG",
+          "elementTypes": [
+            "Electric"
+          ],
+          "reject": true,
+          "modifierName": "ElectricDetect"
+        }
+      ],
+      "abilitySpecials": {
+        "DischargeTime": 7.0
+      },
+      "modifiers": {
+        "ElectricDetect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onBeingHit": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "PNLEEOAGKLD",
+                  "element": "Electric"
+                },
+                {
+                  "$type": "NIFDMKMHAGJ",
+                  "logic": "LesserOrEqual",
+                  "param3": 3.0,
+                  "parameter": "PoseID"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PFKNEFGOHIH",
+                  "modifierName": "RebornTimer"
+                },
+                {
+                  "$type": "GJCAPCBELPA",
+                  "abilityName": "Slime_Electric_03_Positive_ElementState"
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_SLime_Electric_ElementState": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementType": "Electric",
+          "IPFJJJGABPL": 500.0,
+          "modifierMixins": [
+            {
+              "$type": "HCCJNFOGEKI",
+              "oldPatterns": [
+                "Monster_Slime_Electric_03_NormalAttack",
+                "Monster_Slime_Electric_JumpAttack"
+              ],
+              "newPatterns": [
+                "Monster_Slime_Electric_03_NormalAttack_Electric",
+                "Monster_Slime_Electric_JumpAttack_Electric"
+              ]
+            },
+            {
+              "$type": "CBKLCFKNHGH",
+              "campTargetType": "SelfCamp",
+              "targetPredicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ABILITY_SLIME_ELECTRIC_PROPERITY",
+                  "param3": 0.0
+                },
+                {
+                  "$type": "NFJHABGCNHE",
+                  "element": "Electric"
+                }
+              ],
+              "onFieldEnter": [
+                {
+                  "$type": "INBCDALOHMP",
+                  "targetPredicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ABILITY_SLIME_ELECTRIC_NEGATIVE_COUNT",
+                      "param3": 0.0,
+                      "compareType": "MoreThan"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "IDNGFEEBPAM",
+                      "boolID": "IsAttract",
+                      "param3": true
+                    },
+                    {
+                      "$type": "KJCHPDPBJHL",
+                      "boolID": "IsAttract",
+                      "param3": true
+                    },
+                    {
+                      "$type": "KGKOLOLDKHH",
+                      "partRootNames": [
+                        "AntennaControl"
+                      ],
+                      "enable": true
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "IDNGFEEBPAM",
+                      "boolID": "IsAttract"
+                    },
+                    {
+                      "$type": "KJCHPDPBJHL",
+                      "boolID": "IsAttract"
+                    },
+                    {
+                      "$type": "KGKOLOLDKHH",
+                      "partRootNames": [
+                        "AntennaControl"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "onFieldExit": [
+                {
+                  "$type": "INBCDALOHMP",
+                  "targetPredicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ABILITY_SLIME_ELECTRIC_NEGATIVE_COUNT",
+                      "param3": 0.0,
+                      "compareType": "MoreThan"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "IDNGFEEBPAM",
+                      "boolID": "IsAttract",
+                      "param3": true
+                    },
+                    {
+                      "$type": "KJCHPDPBJHL",
+                      "boolID": "IsAttract",
+                      "param3": true
+                    },
+                    {
+                      "$type": "KGKOLOLDKHH",
+                      "partRootNames": [
+                        "AntennaControl"
+                      ],
+                      "enable": true
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "IDNGFEEBPAM",
+                      "boolID": "IsAttract"
+                    },
+                    {
+                      "$type": "KJCHPDPBJHL",
+                      "boolID": "IsAttract"
+                    },
+                    {
+                      "$type": "KGKOLOLDKHH",
+                      "partRootNames": [
+                        "AntennaControl"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "replaceOnAddedInTick": true,
+              "simpleCountGlobaValueKey": "_ABILITY_SLIME_ELECTRIC_NEGATIVE_COUNT",
+              "simpleCountMaxValue": 0.0,
+              "simpleCountMinValue": 0.0
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "_ABILITY_SLIME_ELECTRIC_PROPERITY",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Discharge_Timer"
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "ElementState",
+              "param3": true
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "SkinShader",
+              "param3": true
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Electric_Positive_Idle",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "HMKGPFBBDIC",
+              "key": "_ABILITY_SLIME_ELECTRIC_PROPERITY"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Discharge_Timer"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Discharge_Transition"
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "ElementState"
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "SkinShader"
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "IsAttract"
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "IsAttract"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "RebornTimer"
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "ODHJJKENLPE",
+              "predicates": [
+                {
+                  "$type": "PNLEEOAGKLD",
+                  "element": "Electric"
+                }
+              ],
+              "param3": 25.0,
+              "modifierName": "UNIQUE_SLime_Electric_ElementState",
+              "useLimitRange": true,
+              "param2": 500.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "RebornTimer": {
+          "modifierName": "",
+          "elementDurability": 15.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "RebornGCD",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "RebornGCD"
+            }
+          ]
+        },
+        "Discharge": {
+          "modifierName": "",
+          "elementDurability": 0.05000000074505806,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Electric_Positive_Discharge_Ready",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Electric_Positive_Discharge",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": -0.30000001192092896,
+                  "LPCHALMFFOD": 0.0
+                },
+                "direction": {
+                  "$type": "AHGNBAPONLA"
+                },
+                "attachPointName": "ElectrifiedBody"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "LPAMFJLFPDF",
+              "attackTargetMapEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.75,
+                      "LPCHALMFFOD": -0.6000000238418579
+                    }
+                  },
+                  "height": 0.75,
+                  "OAHPDLJIADP": 2.9000000953674316
+                },
+                "attackInfoMap": {
+                  "Enemy": {
+                    "attackTag": "",
+                    "attenuationTag": "",
+                    "attenuationGroup": "default",
+                    "attackProperty": {
+                      "actorGrassSubHurtDelta": 0.3330000042915344,
+                      "actorWindSubHurtDelta": 0.0,
+                      "elementType": "Electric",
+                      "IPFJJJGABPL": 50.0,
+                      "strikeType": "Default",
+                      "enBreak": 80.0,
+                      "GLKMCMDJBIK": 0.0
+                    },
+                    "hitPattern": {
+                      "onHitEffectName": "default",
+                      "hitImpulseY": "",
+                      "hitImpulseType": "LV2",
+                      "hitHaltTimeScale": 0.009999999776482582
+                    }
+                  },
+                  "Alliance": {
+                    "attackTag": "",
+                    "attenuationTag": "",
+                    "attenuationGroup": "default",
+                    "attackProperty": {
+                      "actorGrassSubHurtDelta": 0.0,
+                      "actorWindSubHurtDelta": 0.0,
+                      "elementType": "Electric",
+                      "IPFJJJGABPL": 50.0,
+                      "enBreak": 80.0,
+                      "GLKMCMDJBIK": 0.0
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 0.0,
+              "key": "_ABILITY_SLIME_ELECTRIC_DISCHARGE",
+              "useLimitRange": true,
+              "randomInRange": true,
+              "param2": 9.0,
+              "repeatTimes": 5.0
+            },
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "_ABILITY_SLIME_ELECTRIC_DISCHARGE",
+              "overrideMapKey": "DischargeTime"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Discharge_Timer"
+            },
+            {
+              "$type": "ODHJJKENLPE",
+              "param3": -25.0,
+              "modifierName": "UNIQUE_SLime_Electric_ElementState",
+              "useLimitRange": true,
+              "param2": 500.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Discharge_Positive": {
+          "modifierName": "",
+          "elementDurability": 0.05000000074505806,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR15",
+                "campTargetType": "SelfCamp",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ABILITY_SLIME_ELECTRIC_PROPERITY",
+                  "param3": 0.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "KBFEIHEAMBM",
+                  "target": "Target",
+                  "rotationDampTime": "Eff_Monster_Slime_Electric_Positive_Discharge_Current",
+                  "born": {
+                    "$type": "KLPANPDGHHA",
+                    "attachPointName": "ElectrifiedBody",
+                    "attachPointTargetType": "Caster"
+                  },
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                },
+                {
+                  "$type": "HPIHJNIOBBL",
+                  "responder": "FreeAgent",
+                  "operation": {
+                    "$type": "IHDJFCJMBPA",
+                    "operation": {
+                      "text": "Play_sfx_char_lisa_catalyst_electric_attackElect"
+                    },
+                    "positioning": 0.5,
+                    "duration": 5.0
+                  }
+                },
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "target": "Target",
+                  "PLLJBINMGJK": "Discharge_Current",
+                  "mpTriggerOnRemote": true
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "modifierName": "Discharge_Negative"
+                },
+                {
+                  "$type": "MDIAKCCDEAL",
+                  "target": "Target"
+                },
+                {
+                  "$type": "GMHBGMIOCAF",
+                  "target": "Target",
+                  "key": "_ABILITY_SLIME_ELECTRIC_DISCHARGE_CURRENT_DISTANCE"
+                },
+                {
+                  "$type": "CAKDDHLKOAB",
+                  "bulletID": 42001006,
+                  "born": {
+                    "$type": "KLPANPDGHHA",
+                    "direction": {
+                      "$type": "MEADFIJAHPG",
+                      "startPoint": ""
+                    },
+                    "attachPointName": "RootNode"
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 0.0,
+              "key": "_ABILITY_SLIME_ELECTRIC_DISCHARGE",
+              "useLimitRange": true,
+              "randomInRange": true,
+              "param2": 5.0,
+              "repeatTimes": 3.0
+            },
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "_ABILITY_SLIME_ELECTRIC_DISCHARGE",
+              "overrideMapKey": "DischargeTime"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Discharge_Timer"
+            },
+            {
+              "$type": "ODHJJKENLPE",
+              "param3": -25.0,
+              "modifierName": "UNIQUE_SLime_Electric_ElementState",
+              "useLimitRange": true,
+              "param2": 500.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "DOGDNJHJADD"
+            }
+          ]
+        },
+        "Discharge_Negative": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Electric_Discharge_BS",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Electric_Discharge_Ready",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Slime_Electric_Discharge",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "direction": {
+                  "$type": "AHGNBAPONLA"
+                },
+                "attachPointName": "ElectrifiedBody"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "LPAMFJLFPDF",
+              "attackTargetMapEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.75,
+                      "LPCHALMFFOD": -0.6000000238418579
+                    }
+                  },
+                  "height": 0.75,
+                  "OAHPDLJIADP": 2.9000000953674316
+                },
+                "attackInfoMap": {
+                  "Enemy": {
+                    "attackTag": "",
+                    "attenuationTag": "",
+                    "attenuationGroup": "default",
+                    "attackProperty": {
+                      "actorGrassSubHurtDelta": 0.3330000042915344,
+                      "actorWindSubHurtDelta": 0.0,
+                      "elementType": "Electric",
+                      "IPFJJJGABPL": 50.0,
+                      "strikeType": "Default",
+                      "enBreak": 80.0,
+                      "GLKMCMDJBIK": 0.0
+                    },
+                    "hitPattern": {
+                      "onHitEffectName": "default",
+                      "hitImpulseY": "",
+                      "hitImpulseType": "LV2",
+                      "hitHaltTimeScale": 0.009999999776482582
+                    }
+                  },
+                  "Alliance": {
+                    "attackTag": "",
+                    "attenuationTag": "",
+                    "attenuationGroup": "default",
+                    "attackProperty": {
+                      "actorGrassSubHurtDelta": 0.0,
+                      "actorWindSubHurtDelta": 0.0,
+                      "elementType": "Electric",
+                      "IPFJJJGABPL": 50.0,
+                      "enBreak": 80.0,
+                      "GLKMCMDJBIK": 0.0
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "Discharge_Timer": {
+          "modifierName": "",
+          "elementDurability": "DischargeTime",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Electric_Positive_Discharge_Gap",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "attachPointName": "ElectrifiedBody"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "NFJHABGCNHE",
+                  "element": "Electric"
+                }
+              ],
+              "modifierName": "Discharge_Transition"
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "predicates": [
+                {
+                  "$type": "NFJHABGCNHE",
+                  "element": "Electric"
+                }
+              ],
+              "PLLJBINMGJK": "Discharge",
+              "mpTriggerOnRemote": true
+            }
+          ]
+        },
+        "Discharge_Transition": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Slime_Electric_Positive_Discharge_BS",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "JFAFIJFHNDM",
+              "faceAnimation": "Attack"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "NFJHABGCNHE",
+                  "element": "Electric"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ABILITY_SLIME_ELECTRIC_NEGATIVE_COUNT",
+                  "param3": 0.0,
+                  "forceByCaster": true,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "modifierName": "Discharge"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "NFJHABGCNHE",
+                  "element": "Electric"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ABILITY_SLIME_ELECTRIC_NEGATIVE_COUNT",
+                  "param3": 0.0,
+                  "forceByCaster": true,
+                  "compareType": "MoreThan"
+                }
+              ],
+              "modifierName": "Discharge_Positive"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "UNIQUE_SLime_Electric_ElementState"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "UNIQUE_SLime_Electric_ElementState"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Electric_Current_Damage",
+      "abilitySpecials": {
+        "DischargeTargetDistance": 10.0
+      },
+      "onAdded": [
+        {
+          "$type": "LDIAIDLOPEE",
+          "isFromOwner": true,
+          "globalValueKey": "_ABILITY_SLIME_ELECTRIC_DISCHARGE_CURRENT_DISTANCE",
+          "overrideMapKey": "DischargeTargetDistance"
+        },
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "JHKEHNJBMOF",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.800000011920929,
+                  "LPCHALMFFOD": 0.0
+                },
+                "direction": {
+                  "$type": "MEADFIJAHPG",
+                  "startPoint": ""
+                }
+              },
+              "size": {
+                "KGEPIMHBMOL": 0.6000000238418579,
+                "JEBHCGDPFEJ": 1.2000000476837158,
+                "LPCHALMFFOD": "DischargeTargetDistance"
+              }
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.3330000042915344,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Electric",
+                "IPFJJJGABPL": 50.0,
+                "strikeType": "Default",
+                "enBreak": 80.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV2",
+                "hitHaltTime": 0.10000000149011612,
+                "hitHaltTimeScale": 0.2199999988079071
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "NCFFNDHGCMH"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Electric_JumpGround_castShadow",
+      "onAbilityStart": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_ABILITY_SLIME_ELECTRIC_PROPERITY",
+              "param3": 0.0
+            },
+            {
+              "$type": "NFJHABGCNHE",
+              "element": "Electric"
+            }
+          ],
+          "rotationDampTime": "Eff_Monster_Slime_Electric_JumpPrepared",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_ABILITY_SLIME_ELECTRIC_PROPERITY",
+              "param3": 1.0
+            },
+            {
+              "$type": "NFJHABGCNHE",
+              "element": "Electric"
+            }
+          ],
+          "rotationDampTime": "Eff_Monster_Slime_Electric_Positive_JumpPrepared",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "ONALKNNKKLH",
+          "cameraShake": {
+            "shakeType": "CustomVector",
+            "shakeRange": 0.05999999865889549,
+            "shakeTime": 0.15000000596046448,
+            "shakeDir": {
+              "y": 1.0
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Electric_JumpGround_Alert",
+      "abilityMixins": [
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "JumpAttack",
+          "modifierName": "JumpCollider",
+          "normalizeStart": 0.3449999988079071,
+          "normalizeEnd": 0.7400000095367432,
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "JumpGround_Alert": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "predicates": [
+                {
+                  "$type": "NFJHABGCNHE",
+                  "element": "Electric"
+                }
+              ],
+              "rotationDampTime": "Eff_Monster_Slime_Fire_JumpGround_Alert",
+              "born": {
+                "$type": "HCHAOBKOELI"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "JumpCollider": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CIGJDPCDOEB",
+              "onAdded": [
+                {
+                  "$type": "IEJIAEEJHGE",
+                  "predicates": [
+                    {
+                      "$type": "NFJHABGCNHE",
+                      "element": "Electric"
+                    }
+                  ]
+                },
+                {
+                  "$type": "FDFGJPNDKEA",
+                  "pushColliderNames": [
+                    "PushCollider"
+                  ]
+                }
+              ],
+              "onRemoved": [
+                {
+                  "$type": "IEJIAEEJHGE",
+                  "predicates": [
+                    {
+                      "$type": "NFJHABGCNHE",
+                      "element": "Electric"
+                    }
+                  ],
+                  "castShadow": true
+                },
+                {
+                  "$type": "FDFGJPNDKEA",
+                  "pushColliderNames": [
+                    "PushCollider"
+                  ],
+                  "setEnable": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "JumpGround_Alert"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Electric_JumpGround_Attack",
+      "modifiers": {
+        "UNIQUE_MonsterEliteAffix_DefaultState": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "HNGKOKDJKDL",
+              "skillEliteSetID": 1
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_ELITEAFFIX_TAG",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "modifierName": "UNIQUE_MonsterEliteAffix_DefaultState"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_ABILITY_SLIME_ELECTRIC_PROPERITY",
+              "param3": 0.0
+            },
+            {
+              "$type": "NFJHABGCNHE",
+              "element": "Electric"
+            }
+          ],
+          "rotationDampTime": "Eff_Monster_Slime_Electric_JumpGround",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_ABILITY_SLIME_ELECTRIC_PROPERITY",
+              "param3": 1.0
+            },
+            {
+              "$type": "NFJHABGCNHE",
+              "element": "Electric"
+            }
+          ],
+          "rotationDampTime": "Eff_Monster_Slime_Electric_Positive_JumpGround",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "AIFPLABJNMA",
+          "predicates": [
+            {
+              "$type": "NFJHABGCNHE",
+              "element": "Electric"
+            }
+          ],
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "GMDIMKKHACA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                }
+              },
+              "height": 1.5,
+              "OAHPDLJIADP": 2.0
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 1.0,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Electric",
+                "IPFJJJGABPL": 50.0,
+                "strikeType": "Blunt",
+                "enBreak": 200.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV6",
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "forceCameraShake": true,
+              "cameraShake": {
+                "shakeType": "CustomVector",
+                "shakeRange": 0.11999999731779099,
+                "shakeTime": 0.15000000596046448,
+                "shakeDistance": 25.0,
+                "shakeDir": {
+                  "y": -1.0
+                }
+              }
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "AIFPLABJNMA",
+          "predicates": [
+            {
+              "$type": "BCFNGJHILAG",
+              "predicates": [
+                {
+                  "$type": "NFJHABGCNHE",
+                  "element": "Electric"
+                }
+              ]
+            }
+          ],
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "GMDIMKKHACA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                }
+              },
+              "height": 1.5,
+              "OAHPDLJIADP": 1.25
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.6660000085830688,
+                "actorWindSubHurtDelta": 0.0,
+                "IPFJJJGABPL": 100.0,
+                "strikeType": "Blunt",
+                "enBreak": 50.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV6",
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "forceCameraShake": true,
+              "cameraShake": {
+                "shakeType": "CustomVector",
+                "shakeRange": 0.11999999731779099,
+                "shakeTime": 0.15000000596046448,
+                "shakeDistance": 25.0,
+                "shakeDir": {
+                  "y": -1.0
+                }
+              }
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Slime_Electric_AnimationSteer",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Turn"
+          ],
+          "endNormalizedTime": 0.5400000214576721,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "attackDistance": 12.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "JumpAttack"
+          ],
+          "endNormalizedTime": 0.20000000298023224,
+          "angularSpeed": 120.0,
+          "attackTrigger": "",
+          "attackDistance": 12.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "NormalAttack"
+          ],
+          "endNormalizedTime": 0.25,
+          "angularSpeed": 360.0,
+          "attackTrigger": "",
+          "attackDistance": 12.0,
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  }
+]

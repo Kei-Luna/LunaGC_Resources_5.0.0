@@ -1,0 +1,1389 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "FauneAbyssale_Aplysia_Larva_BubbleTrigger",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "BubbleAttack_BS"
+          ],
+          "modifierName": "BubbleAttack_BS_VFX",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "BubbleAttack_BS",
+            "BubbleAttack"
+          ],
+          "angularSpeed": 120.0,
+          "attackTrigger": "",
+          "facingTargetTypes": [
+            "AttackTarget"
+          ],
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Alert"
+          ],
+          "angularSpeed": 150.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "BubbleAttack_BS_VFX": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_FauneAbyssale_Aplysia_Larva_BubbleTrigger_BS",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42601101,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "direction": {
+              "$type": "AHGNBAPONLA",
+              "useCorrectDir": true
+            },
+            "useRotation": true,
+            "attachPointName": "BornBubble",
+            "attachPointTargetType": "Self"
+          },
+          "trackTarget": "SelfAttackActiveTarget"
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_FauneAbyssale_Aplysia_Larva_BubbleTrigger",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "FauneAbyssale_Aplysia_Larva_BubbleBullet",
+      "modifiers": {
+        "BubbleBullet_Display": {
+          "modifierName": "",
+          "elementType": "Water",
+          "IPFJJJGABPL": 25.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_FauneAbyssale_Aplysia_Larva_BubbleBullet",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_FauneAbyssale_Aplysia_Larva_BubbleBullet_Trail",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "BubbleBullet_Display"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_FauneAbyssale_Aplysia_Larva_BubbleBullet_Broken",
+          "born": {
+            "$type": "JGEBAJLEBMO"
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JGEBAJLEBMO"
+              },
+              "OAHPDLJIADP": 0.800000011920929
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 1.0,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Water",
+                "IPFJJJGABPL": 25.0,
+                "strikeType": "Default",
+                "enBreak": 1.0,
+                "attackType": "Range",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV1"
+              },
+              "canBeModifiedBy": "Owner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "FauneAbyssale_Aplysia_Larva_BubbleBullet_LifeTimeOverVFX",
+      "onAbilityStart": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_FauneAbyssale_Aplysia_Larva_BubbleBullet_Broken",
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "useRotation": true,
+            "attachPointName": "RootNode"
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "RootNode"
+              },
+              "OAHPDLJIADP": 0.800000011920929
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 1.0,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Water",
+                "IPFJJJGABPL": 25.0,
+                "strikeType": "Default",
+                "enBreak": 1.0,
+                "attackType": "Range",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV1"
+              },
+              "canBeModifiedBy": "Owner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "FauneAbyssale_Aplysia_Larva_FrolicBubbleTrigger",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "BubbleFrolic_BS"
+          ],
+          "modifierName": "BubbleAttack_BS_VFX",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "BubbleAttack_Frolic"
+          ],
+          "angularSpeed": 120.0,
+          "attackTrigger": "",
+          "facingTargetTypes": [
+            "BuddyTarget"
+          ],
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "BubbleAttack_BS_VFX": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_FauneAbyssale_Aplysia_Larva_BubbleTrigger_BS",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42601114,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "direction": {
+              "$type": "MEADFIJAHPG",
+              "randomAngleHor": 6.0,
+              "randomAngleVer": 6.0,
+              "maxAngleType": "Vertical",
+              "maxAngle": 16.0,
+              "startPoint": ""
+            },
+            "useRotation": true,
+            "attachPointName": "BornBubble",
+            "attachPointTargetType": "Self"
+          },
+          "trackTarget": "SelfAttackActiveTarget"
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_FauneAbyssale_Aplysia_Larva_BubbleTrigger",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "FauneAbyssale_Aplysia_Larva_FrolicBubble",
+      "modifiers": {
+        "BubbleBullet_Display": {
+          "modifierName": "",
+          "elementType": "Water",
+          "IPFJJJGABPL": 25.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_FauneAbyssale_Aplysia_Larva_BubbleBullet",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_FauneAbyssale_Aplysia_Larva_BubbleBullet_Trail",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "FrolicBubble_Hit": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "BubbleHit",
+              "mpTriggerOnRemote": true
+            },
+            {
+              "$type": "IPMMJGMONCI",
+              "skillIDs": [
+                9003
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "BubbleBullet_Display"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_FauneAbyssale_Aplysia_Larva_BubbleBullet_Broken",
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "useRotation": true,
+            "attachPointName": "RootNode"
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "PELJALPANCA",
+          "target": "Target",
+          "predicates": [
+            {
+              "$type": "HHHMNCNPBDK",
+              "predicates": [
+                {
+                  "$type": "BGMAGODJEMF",
+                  "featureTagIDs": [
+                    4027
+                  ]
+                },
+                {
+                  "$type": "BGMAGODJEMF",
+                  "featureTagIDs": [
+                    4028
+                  ]
+                }
+              ]
+            }
+          ],
+          "modifierName": "FrolicBubble_Hit"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "FauneAbyssale_Aplysia_Larva_Material_01",
+      "modifiers": {
+        "Aplysia_Larva_Identifier": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "MaterialType",
+              "param3": 1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Aplysia_Larva_Identifier"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "FauneAbyssale_Aplysia_Larva_Material_02",
+      "modifiers": {
+        "Aplysia_Larva_Identifier": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "MaterialType",
+              "param3": 2.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Aplysia_Larva_Identifier"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "FauneAbyssale_Aplysia_Mature_IceBullet_Trigger",
+      "abilityMixins": [
+        {
+          "$type": "MFGGKNJLABP",
+          "PNAPPKMKAJP": [
+            "IceBullet_BS"
+          ],
+          "angularSpeed": 135.0,
+          "attackTrigger": "",
+          "JGOMHKMFHIO": true
+        },
+        {
+          "$type": "MFGGKNJLABP",
+          "PNAPPKMKAJP": [
+            "IceBullet"
+          ],
+          "endNormalizedTime": 0.2199999988079071,
+          "angularSpeed": 135.0,
+          "attackTrigger": "",
+          "JGOMHKMFHIO": true
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Alert"
+          ],
+          "angularSpeed": 150.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42601103,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "direction": {
+              "$type": "MEADFIJAHPG",
+              "maxAngleType": "Vertical",
+              "maxAngle": 30.0,
+              "startPoint": ""
+            },
+            "useRotation": true,
+            "attachPointName": "BornBubble",
+            "attachPointTargetType": "Self"
+          },
+          "trackTarget": "SelfAttackActiveTarget"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "FauneAbyssale_Aplysia_Mature_WaterBullet_Trigger",
+      "onAbilityStart": [
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42601104,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "direction": {
+              "$type": "MEADFIJAHPG",
+              "maxAngleType": "Vertical",
+              "maxAngle": 20.0,
+              "startPoint": ""
+            },
+            "useRotation": true,
+            "attachPointName": "BornBubble",
+            "attachPointTargetType": "Self"
+          },
+          "trackTarget": "SelfAttackActiveTarget"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "FauneAbyssale_Aplysia_Mature_IceBullet",
+      "modifiers": {
+        "IceBullet_Display": {
+          "modifierName": "",
+          "elementType": "Ice",
+          "IPFJJJGABPL": 25.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_FauneAbyssale_Aplysia_Mature_IceBullet",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_FauneAbyssale_Aplysia_Mature_IceBullet_Trail",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "IceBullet_Display"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_FauneAbyssale_Aplysia_Mature_IceBullet_Broken",
+          "born": {
+            "$type": "JGEBAJLEBMO"
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JGEBAJLEBMO"
+              },
+              "OAHPDLJIADP": 1.2000000476837158
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 1.0,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Ice",
+                "IPFJJJGABPL": 25.0,
+                "strikeType": "Default",
+                "enBreak": 100.0,
+                "attackType": "Range",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV3"
+              },
+              "canBeModifiedBy": "Owner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "FauneAbyssale_Aplysia_Mature_IceBullet_LifeTimeOverVFX",
+      "onAbilityStart": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_FauneAbyssale_Aplysia_Mature_IceBullet_Broken",
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "useRotation": true,
+            "attachPointName": "RootNode"
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "RootNode"
+              },
+              "OAHPDLJIADP": 1.2000000476837158
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 1.0,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Ice",
+                "IPFJJJGABPL": 25.0,
+                "strikeType": "Default",
+                "enBreak": 100.0,
+                "attackType": "Range",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV3"
+              },
+              "canBeModifiedBy": "Owner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "FauneAbyssale_Aplysia_Mature_WaterBullet",
+      "modifiers": {
+        "WaterBullet_Display": {
+          "modifierName": "",
+          "elementType": "Water",
+          "IPFJJJGABPL": 25.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_FauneAbyssale_Aplysia_Mature_WaterBullet",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_FauneAbyssale_Aplysia_Mature_WaterBullet_Trail",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "WaterBullet_Display"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_FauneAbyssale_Aplysia_Mature_WaterBullet_Broken",
+          "born": {
+            "$type": "JGEBAJLEBMO"
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JGEBAJLEBMO"
+              },
+              "OAHPDLJIADP": 1.2000000476837158
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 1.0,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Water",
+                "IPFJJJGABPL": 25.0,
+                "strikeType": "Default",
+                "enBreak": 50.0,
+                "attackType": "Range",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV2"
+              },
+              "canBeModifiedBy": "Owner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "FauneAbyssale_Aplysia_Mature_WaterBullet_LifeTimeOverVFX",
+      "onAbilityStart": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_FauneAbyssale_Aplysia_Mature_WaterBullet_Broken",
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "useRotation": true,
+            "attachPointName": "RootNode"
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "RootNode"
+              },
+              "OAHPDLJIADP": 1.2000000476837158
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 1.0,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Water",
+                "IPFJJJGABPL": 25.0,
+                "strikeType": "Default",
+                "enBreak": 50.0,
+                "attackType": "Range",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV2"
+              },
+              "canBeModifiedBy": "Owner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "FauneAbyssale_Aplysia_Mature_Rush",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "RushAttack"
+          ],
+          "startNormalizedTime": 0.10999999940395355,
+          "endNormalizedTime": 0.36000001430511475,
+          "angularSpeed": 420.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "RushAttack"
+          ],
+          "startNormalizedTime": 0.3610000014305115,
+          "endNormalizedTime": 0.6399999856948853,
+          "angularSpeed": 35.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "RushAttack"
+          ],
+          "startNormalizedTime": 0.6700000166893005,
+          "endNormalizedTime": 0.8399999737739563,
+          "angularSpeed": 380.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "MFGGKNJLABP",
+          "PNAPPKMKAJP": [
+            "RushAttackInWater"
+          ],
+          "endNormalizedTime": 0.36000001430511475,
+          "GINJMMLNHIA": 25.0,
+          "HIFACMDKHHK": -25.0,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "remoteSteerToLocalTarget": false
+        },
+        {
+          "$type": "MFGGKNJLABP",
+          "PNAPPKMKAJP": [
+            "RushAttackInWater"
+          ],
+          "startNormalizedTime": 0.3610000014305115,
+          "endNormalizedTime": 0.6399999856948853,
+          "GINJMMLNHIA": 25.0,
+          "HIFACMDKHHK": -25.0,
+          "angularSpeed": 35.0,
+          "attackTrigger": "",
+          "remoteSteerToLocalTarget": false
+        },
+        {
+          "$type": "MFGGKNJLABP",
+          "PNAPPKMKAJP": [
+            "RushAttackInWater"
+          ],
+          "startNormalizedTime": 0.6700000166893005,
+          "GINJMMLNHIA": 25.0,
+          "HIFACMDKHHK": -25.0,
+          "angularSpeed": 150.0,
+          "attackTrigger": "",
+          "remoteSteerToLocalTarget": false
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "FauneAbyssale_Aplysia_Mature_IcedJellyBlast",
+      "onAbilityStart": [
+        {
+          "$type": "KFCDMIMBBLD",
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "JEBHCGDPFEJ": -0.6000000238418579
+            },
+            "useRotation": true,
+            "attachPointName": "RootNode"
+          },
+          "gadgetID": 42601105
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "FauneAbyssale_Aplysia_Mature_IcedJellyBlast_DummyGadget",
+      "modifiers": {
+        "IcedJellyBlast_Damage": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CCNPNMMONDO",
+              "attackInfo": {
+                "attackTag": "",
+                "attenuationTag": "",
+                "attenuationGroup": "default",
+                "attackProperty": {
+                  "actorGrassSubHurtDelta": 1.0,
+                  "actorWindSubHurtDelta": 0.0,
+                  "elementType": "Ice",
+                  "IPFJJJGABPL": 50.0,
+                  "strikeType": "Default",
+                  "enBreak": 200.0,
+                  "attackType": "Range",
+                  "GLKMCMDJBIK": 0.0
+                },
+                "hitPattern": {
+                  "onHitEffectName": "default",
+                  "hitImpulseY": "",
+                  "hitImpulseType": "LV4"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "otherTargets": {
+            "$type": "IJOFJOGLDHE",
+            "shapeName": "Aplysia_IcedJellyBlast",
+            "campTargetType": "Enemy",
+            "doOffStage": 1.0
+          },
+          "predicates": [
+            {
+              "$type": "NIMAPECDNKD",
+              "entityTypes": [
+                "Avatar",
+                "Monster",
+                "Partner",
+                "Gadget"
+              ]
+            }
+          ],
+          "modifierName": "IcedJellyBlast_Damage"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "FauneAbyssale_Aplysia_Mature_JellyStateManager",
+      "abilityMixins": [
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            101,
+            102,
+            103,
+            201,
+            250,
+            301,
+            911
+          ],
+          "modifierName": "Aplysia_Floating"
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_JELLY_PART_BROKEN_",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            2.5,
+            3.5
+          ],
+          "modifierNameSteps": [
+            "Aplysia_JellyState",
+            "Aplysia_PartBroken"
+          ]
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_JELLY_PART_BROKEN_",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            3.5
+          ],
+          "modifierNameSteps": [
+            "JellyShield_ElementHandler",
+            "JellyShield_PartBroken"
+          ]
+        },
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            901,
+            911,
+            900
+          ],
+          "modifierName": "ReturnToBorn_SelfHandler"
+        }
+      ],
+      "abilitySpecials": {
+        "sub_hurt_delta_positive": 0.6000000238418579,
+        "element_shield_max_durability": 270.0,
+        "cache_element": 0.0
+      },
+      "modifiers": {
+        "Aplysia_JellyState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KMMLIOKPIKN",
+              "canBeHandledOnRecover": true,
+              "renderNames": [
+                "Bubble"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "PartBroken"
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "PrePartBroken"
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "HideBack",
+              "param3": true
+            }
+          ]
+        },
+        "Aplysia_PartBroken": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KMMLIOKPIKN",
+              "canBeHandledOnRecover": true,
+              "renderNames": [
+                "Bubble"
+              ]
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "PartBroken",
+              "param3": true
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "HideBack"
+            }
+          ]
+        },
+        "ReturnToBorn_SelfHandler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_JELLY_PART_BROKEN_",
+                  "param3": 2.0,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "param3": 2.0,
+              "key": "_JELLY_PART_BROKEN_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": "element_shield_max_durability",
+              "key": "_CACHE_ELEMENT_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_JELLY_PART_BROKEN_",
+                  "param3": 3.0
+                }
+              ],
+              "PLLJBINMGJK": "JellyRecoverTrigger",
+              "mpTriggerOnRemote": true
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "BHFFBBOLCCP",
+                  "modifierName": "Aplysia_Floating"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "param3": 1.0,
+                  "key": "_JELLY_PART_BROKEN_",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "param3": 0.0,
+                  "key": "_JELLY_PART_BROKEN_",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        "JellyShield_ElementHandler": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "elementType": "Frozen",
+          "IPFJJJGABPL": "element_shield_max_durability",
+          "modifierMixins": [
+            {
+              "$type": "BKAAGFNKMLF",
+              "onShieldBroken": [
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "PartBrokenTrigger"
+                },
+                {
+                  "$type": "IDNGFEEBPAM",
+                  "boolID": "PrePartBroken",
+                  "param3": true
+                },
+                {
+                  "$type": "CCNPNMMONDO",
+                  "attackInfo": {
+                    "attackTag": "",
+                    "attenuationTag": "",
+                    "attenuationGroup": "default",
+                    "hitPattern": {
+                      "onHitEffectName": "default",
+                      "hitImpulseY": "",
+                      "hitImpulseType": "LV0",
+                      "hitHaltTime": 0.15000000596046448,
+                      "hitHaltTimeScale": 0.029999999329447746
+                    }
+                  }
+                },
+                {
+                  "$type": "ONALKNNKKLH",
+                  "cameraShake": {
+                    "shakeRange": 0.20000000298023224,
+                    "shakeTime": 0.20000000298023224,
+                    "shakeDistance": 10.0
+                  }
+                },
+                {
+                  "$type": "CDHOAGHMOEE"
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "param3": 2.0,
+                  "key": "_JELLY_PART_BROKEN_",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ],
+              "showDamageText": "",
+              "skipInitAnim": true,
+              "barElementType": "Frozen"
+            }
+          ],
+          "properties": {
+            "Actor_EndureDelta": 0.699999988079071,
+            "Actor_PhysicalSubHurtDelta": "sub_hurt_delta_positive",
+            "Actor_FireSubHurtDelta": "sub_hurt_delta_positive",
+            "Actor_ElecSubHurtDelta": "sub_hurt_delta_positive",
+            "Actor_IceSubHurtDelta": "sub_hurt_delta_positive",
+            "Actor_WaterSubHurtDelta": "sub_hurt_delta_positive",
+            "Actor_GrassSubHurtDelta": "sub_hurt_delta_positive",
+            "Actor_WindSubHurtDelta": "sub_hurt_delta_positive",
+            "Actor_RockSubHurtDelta": "sub_hurt_delta_positive"
+          },
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "PrePartBroken"
+            }
+          ]
+        },
+        "JellyShield_PartBroken": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "Aplysia_Floating": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CIBMLJJLANN",
+              "excludeForces": [
+                "RetreatType",
+                "RetreatAirType"
+              ]
+            },
+            {
+              "$type": "NAOEBBPINOO",
+              "hasAnimatorDie": true,
+              "fallWhenAirDie": false,
+              "dieEndTime": 2.0,
+              "dieForceDisappearTime": 4.0,
+              "dieDisappearEffect": "Eff_Death_InWater_Common",
+              "dieDisappearEffectDelay": 0.07999999821186066,
+              "dieShaderData": "MonsterDieInWater",
+              "dieShaderEnableDurationTime": 0.6000000238418579,
+              "dieModelFadeDelay": 0.30000001192092896,
+              "muteHitBox": true,
+              "dieDenyLockOn": true,
+              "dieIsGhostToEnemy": true,
+              "dieIgnoreTriggerBullet": true,
+              "muteBillboard": true,
+              "mutePushCollider": true
+            },
+            {
+              "$type": "MGIHAKAHDGP",
+              "NCMKEPHAKCA": [
+                "MoveCollider"
+              ]
+            },
+            {
+              "$type": "HCCJNFOGEKI",
+              "oldPatterns": [
+                "Audio_Monster_FauneAbyssale_Aplysia_Mature_Hit_L",
+                "Audio_Monster_FauneAbyssale_Aplysia_Mature_Alert",
+                "Audio_Monster_FauneAbyssale_Aplysia_Mature_Hit_H",
+                "Audio_Monster_FauneAbyssale_Aplysia_Mature_WaterBullet"
+              ],
+              "newPatterns": [
+                "Audio_Monster_FauneAbyssale_Aplysia_Mature_Hit_L_InWater",
+                "Audio_Monster_FauneAbyssale_Aplysia_Mature_AlertInWater",
+                "Audio_Monster_FauneAbyssale_Aplysia_Mature_Hit_H_InWater",
+                "Audio_Monster_FauneAbyssale_Aplysia_Mature_WaterBulletInWater"
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "Floating",
+              "param3": true
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 2.0,
+              "key": "GV_EnvironmentType",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "GBJBFGPDBPL",
+              "disableWeatherEffect": true
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_JELLY_PART_BROKEN_",
+                  "param3": 0.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ONHNLNNAJBN",
+                  "globalValueKey": "_CACHE_ELEMENT_",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0,
+                  "modifierName": "JellyShield_ElementHandler"
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "param3": 1.0,
+                  "key": "_JELLY_PART_BROKEN_",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "Floating"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "GV_EnvironmentType",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "GBJBFGPDBPL"
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_JELLY_PART_BROKEN_",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "param3": 0.0,
+                  "key": "_JELLY_PART_BROKEN_",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "LDIAIDLOPEE",
+                  "globalValueKey": "_CACHE_ELEMENT_",
+                  "overrideMapKey": "cache_element"
+                },
+                {
+                  "$type": "ODHJJKENLPE",
+                  "param3": "cache_element",
+                  "modifierName": "JellyShield_ElementHandler",
+                  "param2": 3.4028234663852886e+38
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "GV_EnvironmentType",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": "element_shield_max_durability",
+          "key": "_CACHE_ELEMENT_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 3.0,
+          "key": "_JELLY_PART_BROKEN_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "MonsterAffix_FauneAbyssale_Mature_Elite",
+      "modifiers": {
+        "FauneAbyssale_Mature_Elite": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "FAUNEABYSSALE_MATURE_ELITE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "Elite",
+              "param3": true
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "FauneAbyssale_Mature_Elite"
+        }
+      ]
+    }
+  }
+]

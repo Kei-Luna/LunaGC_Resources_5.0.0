@@ -1,0 +1,1127 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_Born",
+      "abilityMixins": [
+        {
+          "$type": "JJIHJPCPPGO",
+          "abilityStates": [
+            "ElementFrozen",
+            "ElementPetrifaction"
+          ],
+          "modifierName": "Monster_Apparatus_Enigma_Render_Set"
+        }
+      ],
+      "modifiers": {
+        "Monster_Apparatus_Enigma_Render_Set": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KMMLIOKPIKN",
+              "renderNames": [
+                "DroneShield",
+                "FloraShield",
+                "InsectaShield",
+                "NettlerShield"
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KMMLIOKPIKN",
+              "renderNames": [
+                "DroneShield",
+                "FloraShield",
+                "InsectaShield",
+                "NettlerShield"
+              ],
+              "setEnable": true
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "LCOEFEMOHLP",
+          "param3": -1.0,
+          "key": "_MONSTER_Apparatus_Enigma_Protected",
+          "useLimitRange": true,
+          "param2": 1.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "GJCAPCBELPA",
+          "predicates": [
+            {
+              "$type": "NIFDMKMHAGJ",
+              "logic": "Equal",
+              "param3": 100.0,
+              "parameter": "PoseID"
+            }
+          ],
+          "abilityName": "Monster_Apparatus_Enigma_Weakness"
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "KMMLIOKPIKN",
+          "renderNames": [
+            "DroneShield",
+            "FloraShield",
+            "InsectaShield",
+            "NettlerShield"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_PowerOff",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Born"
+          ],
+          "modifierName": "UNIQUE_Enigma_PowerOff",
+          "predicates": [
+            {
+              "$type": "NIFDMKMHAGJ",
+              "logic": "Equal",
+              "param3": 101.0,
+              "parameter": "PoseID"
+            }
+          ],
+          "isCheckOnAttach": true,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "NormalIdle_PowerOff",
+            "PowerOff_WakeUp"
+          ],
+          "modifierName": "UNIQUE_Enigma_PowerOff",
+          "isCheckOnAttach": true,
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_Enigma_PowerOff": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Entity_MassRatio": 1000.0,
+            "Entity_WeightRatio": 5.0,
+            "Actor_EndureDelta": 0.0
+          },
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "PowerOff_Invincible"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "PowerOff_IsGhostToAllied"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "PowerOff_IsGhostToEnemy"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "PowerOff_MuteTaunt"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "PowerOff_DenyLockOn"
+            },
+            {
+              "$type": "HBNEMPLJCMB",
+              "hide": true
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "PowerOff",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "HBNEMPLJCMB",
+              "predicates": [
+                {
+                  "$type": "HHHMNCNPBDK",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_Enigma_BossFight_Enhanced",
+                      "param3": 1.0
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_Enigma_BossFight",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "PowerOff"
+            }
+          ]
+        },
+        "PowerOff_Invincible": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "Invincible"
+        },
+        "PowerOff_IsGhostToAllied": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "IsGhostToAllied"
+        },
+        "PowerOff_IsGhostToEnemy": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "IsGhostToEnemy"
+        },
+        "PowerOff_MuteTaunt": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "MuteTaunt"
+        },
+        "PowerOff_DenyLockOn": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "DenyLockOn"
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "FDFGJPNDKEA",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_Enigma_BossFight",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "pushColliderNames": [
+            "PushCollider_Occluder"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_PowerOff_Remove",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "PowerOff_WakeUp"
+          ],
+          "modifierName": "PowerOff_WakeUp",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "PowerOff_WakeUp": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFFKENEJFFB",
+              "intID": "EnergyState",
+              "value": 1
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "GJCAPCBELPA",
+              "abilityName": "Monster_Apparatus_Enigma_Weakness"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_Weakness",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Break"
+          ],
+          "modifierName": "UNIQUE_Apparatus_Enigma_BreakState",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "WeaknessDurability": 100.0
+      },
+      "modifiers": {
+        "UNIQUE_Apparatus_Enigma_Weakness": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": "WeaknessDurability",
+          "onAdded": [
+            {
+              "$type": "GFFKENEJFFB",
+              "intID": "EnergyState",
+              "value": 1
+            },
+            {
+              "$type": "AKEEDILMOJF",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_FAKEDIE_Triggered",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "intID": "PowerStage",
+              "param3": 1.0
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -1.0,
+              "key": "_MONSTER_AutoMatron_WeakTag",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "WeakStartTrigger"
+            },
+            {
+              "$type": "GFFKENEJFFB",
+              "intID": "EnergyState"
+            },
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "PowerStage",
+              "param3": 0.0
+            },
+            {
+              "$type": "GJCAPCBELPA",
+              "abilityName": "Monster_Apparatus_Enigma_Weak"
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "_MONSTER_AutoMatron_WeakTag",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "PELJALPANCA",
+              "target": "Target",
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Avatar"
+                  ]
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_Enigma_BossFight_Enhanced",
+                  "param3": 1.0,
+                  "forceByCaster": true
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_ACTIVITY_BlitzRush_Tag",
+                  "param3": 1.0,
+                  "forceByCaster": true
+                },
+                {
+                  "$type": "OHKJOADLOBB",
+                  "target": "Self",
+                  "hitBoxNames": [
+                    "CoreBox"
+                  ]
+                }
+              ],
+              "modifierName": "Activity_BlitzRush_Enhanced_WeakTrigger"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "target": "TargetOriginOwner",
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Avatar"
+                  ]
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_Enigma_BossFight_Enhanced",
+                  "param3": 1.0,
+                  "forceByCaster": true
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_ACTIVITY_BlitzRush_Tag",
+                  "param3": 1.0,
+                  "forceByCaster": true
+                },
+                {
+                  "$type": "OHKJOADLOBB",
+                  "target": "Self",
+                  "hitBoxNames": [
+                    "CoreBox"
+                  ]
+                }
+              ],
+              "modifierName": "Activity_BlitzRush_Enhanced_WeakTrigger"
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "OHKJOADLOBB",
+                  "hitBoxNames": [
+                    "CoreBox"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "BreakTrigger"
+                },
+                {
+                  "$type": "KBODPNEEFGD",
+                  "modifierName": "UNIQUE_Monster_Apparatus_Enigma_BionicInsecta_ShieldState"
+                },
+                {
+                  "$type": "ODHJJKENLPE",
+                  "param3": -50.0,
+                  "modifierName": "UNIQUE_Apparatus_Enigma_Weakness",
+                  "useLimitRange": true,
+                  "param2": 9999.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Apparatus_Enigma_BreakState": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onBeingHit": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "OHKJOADLOBB",
+                  "hitBoxNames": [
+                    "CoreBox"
+                  ]
+                },
+                {
+                  "$type": "KNBFJBFMGLD",
+                  "logic": "GreaterOrEqual",
+                  "enBreak": 80.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ODHJJKENLPE",
+                  "param3": -100.0,
+                  "modifierName": "UNIQUE_Apparatus_Enigma_Weakness",
+                  "useLimitRange": true,
+                  "param2": 9999.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        "Activity_BlitzRush_Enhanced_WeakTrigger": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "SpecificGroup",
+              "callParamList": [
+                246001001
+              ],
+              "funcName": "SLC_Activity_BlitzRush_WeakTrigger",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            },
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "SLC_Activity_BlitzRush_WeakTrigger!!!!!!!"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "UNIQUE_Apparatus_Enigma_Weakness"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_Weakness_Remove",
+      "onAbilityStart": [
+        {
+          "$type": "KBODPNEEFGD",
+          "modifierName": "UNIQUE_Apparatus_Enigma_Weakness"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_Break_Remove",
+      "abilitySpecials": {
+        "BreakProtectTime": 7.5,
+        "BreakProtectTimeDelta": 1.5
+      },
+      "modifiers": {
+        "BreakProtect": {
+          "modifierName": "",
+          "elementDurability": "BreakProtectTime",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "_MONSTER_Apparatus_Enigma_Protected",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "BreakProtectEffect"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -1.0,
+              "key": "_MONSTER_Apparatus_Enigma_Protected",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "BreakProtectEffect": {
+          "modifierName": "",
+          "elementDurability": [
+            "BreakProtectTime",
+            "BreakProtectTimeDelta",
+            "ADD"
+          ],
+          "IPFJJJGABPL": 100.0
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "KBODPNEEFGD",
+          "modifierName": "UNIQUE_Apparatus_Enigma_BreakState"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "BreakProtect"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_Weak",
+      "abilitySpecials": {
+        "WeakTime_ExtraRatio": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_WeakTimer": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": [
+            15.0,
+            "WeakTime_ExtraRatio",
+            "MUL",
+            15.0,
+            "ADD"
+          ],
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NIJGPDECHLC"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "WeakLocked",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "WeakLocked"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "LDIAIDLOPEE",
+          "globalValueKey": "_MONSTER_WeakTime_ExtraRatio",
+          "overrideMapKey": "WeakTime_ExtraRatio"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "UNIQUE_WeakTimer"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_Weak_Effect",
+      "abilityMixins": [
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            202,
+            203
+          ],
+          "modifierName": "WeakEffect"
+        }
+      ],
+      "modifiers": {
+        "WeakEffect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GLOBALVALUE_EnigmaType",
+                  "param3": 1.0
+                }
+              ],
+              "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicDrone_WeakLoop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GLOBALVALUE_EnigmaType",
+                  "param3": 2.0
+                }
+              ],
+              "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicFlora_WeakLoop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GLOBALVALUE_EnigmaType",
+                  "param3": 3.0
+                }
+              ],
+              "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicInsecta_WeakLoop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GLOBALVALUE_EnigmaType",
+                  "param3": 4.0
+                }
+              ],
+              "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicNettler_WeakLoop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_Weak_End",
+      "abilityMixins": [
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Weak_End",
+          "modifierName": "EyeEffect_WeakEnd",
+          "normalizeStart": 0.800000011920929,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Weak_EndAS"
+          ],
+          "modifierName": "Weak_EndAS",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "WeakProtectTime": 15.0,
+        "WeakProtectTimeDelta": 1.5
+      },
+      "modifiers": {
+        "EyeEffect_WeakEnd": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GJCAPCBELPA",
+              "abilityName": "Monster_Apparatus_Enigma_Weakness"
+            }
+          ]
+        },
+        "Weak_EndAS": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GJCAPCBELPA",
+              "abilityName": "Monster_Apparatus_Enigma_Weakness"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "WeakProtect"
+            }
+          ]
+        },
+        "WeakProtect": {
+          "modifierName": "",
+          "elementDurability": "WeakProtectTime",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "_MONSTER_Apparatus_Enigma_Protected",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "WeakProtectEffect"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -1.0,
+              "key": "_MONSTER_Apparatus_Enigma_Protected",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "WeakProtectEffect": {
+          "modifierName": "",
+          "elementDurability": [
+            "WeakProtectTime",
+            "WeakProtectTimeDelta",
+            "ADD"
+          ],
+          "IPFJJJGABPL": 100.0
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_ReturnToBorn",
+      "abilityMixins": [
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            902,
+            903
+          ],
+          "modifierName": "ReturnToBorn_State"
+        },
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            902
+          ],
+          "modifierName": "ReturnToBorn_Disappear"
+        },
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            903
+          ],
+          "modifierName": "ReturnToBorn_Appear"
+        }
+      ],
+      "modifiers": {
+        "ReturnToBorn_Disappear": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AKIIMECIGKE",
+              "duration": 2.0
+            }
+          ]
+        },
+        "ReturnToBorn_Appear": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AKIIMECIGKE",
+              "duration": 0.20000000298023224,
+              "reverse": true
+            }
+          ]
+        },
+        "ReturnToBorn_State": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_Apparatus_Enigma_Weakness"
+            },
+            {
+              "$type": "GNAEJNBIFAC",
+              "PLLJBINMGJK": "WeakStartTrigger"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "ReturnToBorn_Invincible"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "ReturnToBorn_DenyLockOn"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_WeakTimer"
+            },
+            {
+              "$type": "GJCAPCBELPA",
+              "abilityName": "Monster_Apparatus_Enigma_Weakness"
+            }
+          ]
+        },
+        "ReturnToBorn_Invincible": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "Invincible"
+        },
+        "ReturnToBorn_DenyLockOn": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "DenyLockOn"
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_NeedSupport",
+      "abilityMixins": [
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "ChargeAtk",
+          "modifierName": "UNIQUE_Monster_Apparatus_Enigma_NeedSupport",
+          "normalizeEnd": 0.6499999761581421,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "ScorchingSandsLoop"
+          ],
+          "modifierName": "UNIQUE_Monster_Apparatus_Enigma_NeedSupport",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "ChargeAtkLoop"
+          ],
+          "modifierName": "UNIQUE_Monster_Apparatus_Enigma_NeedSupport",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_Monster_Apparatus_Enigma_NeedSupport": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "topLimit": 1,
+                "sortType": "Nearest",
+                "shapeName": "CircleR30",
+                "campTargetType": "SelfCamp",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GLOBALVALUE_EnigmaType",
+                  "param3": 1.0,
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "modifierName": "UNIQUE_Monster_Apparatus_Enigma_Supporter"
+            },
+            {
+              "$type": "KFCDMIMBBLD",
+              "target": "SelfAttackTarget",
+              "lifeByOwnerIsAlive": true,
+              "born": {
+                "$type": "GMLEDLAGLJM",
+                "onGround": true,
+                "linearOffset": -5.0,
+                "linearMin": 5.0,
+                "linearMax": 15.0
+              },
+              "gadgetID": 42401015,
+              "campID": 4001,
+              "campTargetType": "Alliance"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "sortType": "Reversed",
+                "configID": 42401015
+              }
+            }
+          ]
+        },
+        "UNIQUE_Monster_Apparatus_Enigma_Supporter": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "_ENIGMA_Supporter_Tag_",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -1.0,
+              "key": "_ENIGMA_Supporter_Tag_",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_SupportPosition",
+      "modifiers": {
+        "Monster_Apparatus_Enigma_SupportPosition": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_MONSTER_Apparatus_Enigma_SupportPosition",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Monster_Apparatus_Enigma_SupportPosition"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_Machinery",
+      "abilityMixins": [
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueTarget": "Owner",
+          "globalValueKey": "_Apparatus_Enigma_AttackDown_ForMachinery_",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Blank",
+            "Apparatus_Enigma_Machinery_AttackDown"
+          ]
+        },
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueTarget": "Owner",
+          "globalValueKey": "_Apparatus_Enigma_HPDown_ForMachinery_",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Blank",
+            "Apparatus_Enigma_Machinery_HPDown"
+          ]
+        }
+      ],
+      "abilitySpecials": {
+        "AttackRatio": 0.0,
+        "HPRatio": 0.0
+      },
+      "modifiers": {
+        "Apparatus_Enigma_Machinery_AttackDown": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_AttackRatio": "AttackRatio"
+          }
+        },
+        "Apparatus_Enigma_Machinery_HPDown": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_MaxHPRatio": "HPRatio"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_FakeDieCollider",
+      "abilityMixins": [
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            401,
+            402
+          ],
+          "modifierName": "Monster_Apparatus_Enigma_FakeDieCollider"
+        }
+      ],
+      "modifiers": {
+        "Monster_Apparatus_Enigma_FakeDieCollider": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CIGJDPCDOEB",
+              "onAdded": [
+                {
+                  "$type": "FDFGJPNDKEA",
+                  "pushColliderNames": [
+                    "PushCollider"
+                  ]
+                }
+              ],
+              "onRemoved": [
+                {
+                  "$type": "FDFGJPNDKEA",
+                  "pushColliderNames": [
+                    "PushCollider"
+                  ],
+                  "setEnable": true
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+]

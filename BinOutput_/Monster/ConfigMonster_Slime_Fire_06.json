@@ -1,0 +1,639 @@
+{
+  "common": {
+    "effectAttachShape": {
+      "$type": "FJNPJANPGGC",
+      "mesh": "EffectMesh"
+    },
+    "mass": 20.0,
+    "height": 0.800000011920929,
+    "modelHeight": 0.4000000059604645,
+    "affectedByWorld": true,
+    "checkInSurface": true,
+    "scale": 2.0,
+    "disableTickDistance": 200.0,
+    "reconnectSupport": true,
+    "recoverByInitPose": true
+  },
+  "model": {
+    "bornEffect": "",
+    "attachEffect": "",
+    "canBakeMesh": false,
+    "BKPFGNPLDNJ": ""
+  },
+  "combat": {
+    "property": {
+      "endureType": "Monster_Slime",
+      "weight": 60.0
+    },
+    "beHit": {
+      "hitBloodEffect": ""
+    },
+    "combatLock": {
+      "lockShape": "CircleLockEnemy",
+      "lockType": "Avatar&Monster_Lv4"
+    },
+    "die": {
+      "dieEndTime": 1.899999976158142,
+      "dieForceDisappearTime": 8.0,
+      "dieDisappearEffect": "",
+      "muteHitBox": true,
+      "dieDenyLockOn": true,
+      "dieIsGhostToEnemy": true,
+      "dieIgnoreTriggerBullet": true,
+      "muteBillboard": true,
+      "mutePushCollider": true
+    },
+    "animEvents": {
+      "AtkN01": {
+        "attackPattern": {
+          "$type": "GMDIMKKHACA",
+          "triggerType": "TriggerNoRepeat",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.5
+            }
+          },
+          "fanAngle": 150.0,
+          "OAHPDLJIADP": 0.75
+        },
+        "attackInfo": {
+          "attackTag": "",
+          "attenuationTag": "Monster_MvM",
+          "attenuationGroup": "Monster_MvM",
+          "attackProperty": {
+            "actorGrassSubHurtDelta": 1.0,
+            "actorWindSubHurtDelta": 0.0,
+            "IPFJJJGABPL": 100.0,
+            "strikeType": "Blunt",
+            "enBreak": 60.0,
+            "attackType": "Melee",
+            "GLKMCMDJBIK": 0.0
+          },
+          "hitPattern": {
+            "onHitEffectName": "default",
+            "hitImpulseY": "",
+            "hitImpulseType": "LV2"
+          }
+        }
+      },
+      "AtkN01_Fire": {
+        "attackPattern": {
+          "$type": "GMDIMKKHACA",
+          "triggerType": "TriggerNoRepeat",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.5
+            }
+          },
+          "fanAngle": 150.0,
+          "OAHPDLJIADP": 0.75
+        },
+        "attackInfo": {
+          "attackTag": "",
+          "attenuationTag": "Monster_MvM",
+          "attenuationGroup": "Monster_MvM",
+          "attackProperty": {
+            "actorGrassSubHurtDelta": 1.0,
+            "actorWindSubHurtDelta": 0.0,
+            "elementType": "Fire",
+            "IPFJJJGABPL": 50.0,
+            "strikeType": "Blunt",
+            "enBreak": 60.0,
+            "attackType": "Melee",
+            "GLKMCMDJBIK": 0.0
+          },
+          "hitPattern": {
+            "onHitEffectName": "default",
+            "hitImpulseY": "",
+            "hitImpulseType": "LV2"
+          }
+        }
+      }
+    }
+  },
+  "abilities": [
+    {
+      "abilityID": "SelfExplosion",
+      "abilityName": "Slime_Fire_02_Dead",
+      "abilityOverride": ""
+    },
+    {
+      "abilityID": "AnimationSteer",
+      "abilityName": "Slime_Fire_02_AnimationSteer",
+      "abilityOverride": ""
+    },
+    {
+      "abilityID": "FireMuteHurt",
+      "abilityName": "Monster_Common_FireMuteHurt",
+      "abilityOverride": ""
+    },
+    {
+      "abilityID": "Slime_Fire_02_Fire_MvMLogic",
+      "abilityName": "Slime_Fire_02_Fire_MvMLogic",
+      "abilityOverride": ""
+    },
+    {
+      "abilityID": "",
+      "abilityName": "Activity_V4_7_MvM_CommonThreat",
+      "abilityOverride": ""
+    },
+    {
+      "abilityID": "",
+      "abilityName": "Activity_V4_7_MvM_CommonThreatObject",
+      "abilityOverride": ""
+    },
+    {
+      "abilityID": "",
+      "abilityName": "MvM_Monster_Fire_Element_Monster",
+      "abilityOverride": ""
+    }
+  ],
+  "stateLayers": {
+    "defaultLayer": {
+      "$type": "GBGJJIIEMBD",
+      "layerIndexName": "",
+      "CPAANEIJCGD": "",
+      "stateIDs": {
+        "Born": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Born": [
+              "Audio_Slime_02_Born_N"
+            ]
+          },
+          "canSyncMove": true,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "NormalIdle": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Standby": []
+          },
+          "canDoSkill": true,
+          "canSyncMove": true,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "Turn": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Turn": [
+              "Audio_Slime_02_Run_N"
+            ]
+          },
+          "canDoSkill": true,
+          "canSyncMove": true,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ],
+          "canSteer": true,
+          "autoSteer": true
+        },
+        "NormalMove": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Run": [
+              "Audio_Slime_02_Run_N"
+            ]
+          },
+          "canDoSkill": true,
+          "canSyncMove": true,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ],
+          "canSteer": true
+        },
+        "BeHit": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Hit_L": [
+              "Monster_Slime_BeHit",
+              "Audio_Slime_02_Hit_L"
+            ],
+            "Hit_H": [
+              "Monster_Slime_BeHit",
+              "Audio_Slime_02_Hit_H"
+            ]
+          },
+          "resetAnimatorTriggerOnEnter": [
+            "BeHit"
+          ],
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "BeHitThrow": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "HitThrow": [
+              "Monster_Slime_BeHit",
+              "Audio_Slime_02_HitThrow_N"
+            ],
+            "HitThrowDrop": [],
+            "HitThrowToGround": [
+              "Monster_Slime_ThrowToGround_02",
+              "Audio_Slime_02_HitThrowToGround_N"
+            ]
+          },
+          "resetAnimatorTriggerOnEnter": [
+            "BeHit",
+            "HitAir2HitDrop"
+          ],
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "Struggle": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Struggle": []
+          },
+          "resetAnimatorTriggerOnEnter": [
+            "BeHit",
+            "HitAir2HitDrop"
+          ],
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "Die": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Die": [
+              "Monster_Slime_Die",
+              "Monster_Slime_Fire_Die_02_WithFire",
+              "Audio_Slime_Fire_02_Die"
+            ],
+            "DieOffFire": [
+              "Monster_Slime_Die",
+              "Monster_Slime_Fire_Die_02",
+              "Audio_Slime_Fire_02_Die"
+            ],
+            "DieOffFire_Late": [
+              "Monster_Slime_Die",
+              "Monster_Slime_Fire_Die_02",
+              "Audio_Slime_Fire_02_Die"
+            ]
+          },
+          "resetAnimatorTriggerOnEnter": [
+            "DoSkill"
+          ]
+        },
+        "NormalAttack": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "NormalAttack": [
+              "Monster_Slime_NormalAttack_02",
+              "Monster_Slime_Fire_02_NormalAttack",
+              "Audio_Slime_02_NormalAtk_N",
+              "Activity_V4_7_MvM_CommonThreat"
+            ]
+          },
+          "addEndure": 0.0,
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ],
+          "enableCCD": true
+        },
+        "FireReborn": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "FireReborn": [
+              "Monster_Slime_Fire_02_FireRebornMvM"
+            ]
+          },
+          "canDoSkill": true,
+          "addEndure": 0.0,
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ]
+        }
+      }
+    }
+  },
+  "billboard": {
+    "$type": "DNGNMAJBCNP",
+    "attachPoint": "BillboardAttach",
+    "offsetType": "Character",
+    "radiusOffset": 0.5,
+    "showHPBar": true
+  },
+  "initialPoses": {
+    "Default": {
+      "initialPoseParams": {}
+    },
+    "Defend": {
+      "initialPoseID": 999,
+      "initialPoseParams": {
+        "intParams": {
+          "LevelType": "1"
+        }
+      }
+    }
+  },
+  "aibeta": {
+    "enable": true,
+    "moveSetting": {
+      "navMeshAgentName": "Undead01",
+      "almostReachedDistanceWalk": 0.5,
+      "almostReachedDistanceRun": 0.5
+    },
+    "sensing": {
+      "settings": {
+        "DefaultSetting": {
+          "viewRange": 15.0,
+          "viewPanoramic": true,
+          "feelRange": 15.0
+        }
+      },
+      "templates": {
+        "DefaultTemplate": {
+          "DefaultPoses": "DefaultSetting"
+        }
+      }
+    },
+    "neurons": {
+      "DefaultSetting": [
+        "HIT",
+        "FEAR"
+      ],
+      "NeverCombat": []
+    },
+    "threat": {
+      "GHIJMOKOLMB": "",
+      "clearThreatTargetDistance": 100.0,
+      "clearThreatEdgeDistance": 3.5,
+      "clearThreatTimerByDistance": 1.75,
+      "LHDJAIFLCOE": true,
+      "viewThreatGrow": 35.0,
+      "feelThreatGrow": 1000.0,
+      "threatDecreaseSpeed": 5.0,
+      "threatBroadcastRange": 0.0,
+      "viewAttenuation": [
+        {
+          "x": 15.0,
+          "y": 10.0
+        },
+        {
+          "x": 200.0
+        }
+      ],
+      "IIOLFCGEIHN": true,
+      "KKKGOEEOHLL": [
+        "_MVM_FIRE_ELEMENT_MONSTER",
+        "_MVM_ATTACK_FLYTARGET"
+      ],
+      "auxScoreChangeTargetCD": 0.5,
+      "targetDistanceScoreSystem": {
+        "weight": 100,
+        "value": 100.0,
+        "max": 100.0,
+        "enable": true
+      }
+    },
+    "defendArea": {
+      "defendRange": 100.0
+    },
+    "command": {
+      "enable": true,
+      "HDFMIBIKJCO": true
+    },
+    "skills": {
+      "209": {
+        "name": "Reborn_Free",
+        "skillType": "Free",
+        "priority": 1,
+        "castCondition": {
+          "pose": [
+            1,
+            9
+          ]
+        },
+        "cd": 0.25,
+        "publicCDGroup": "",
+        "triggerCDOnStart": true,
+        "HHAGODJIAPE": "",
+        "stateIDs": [
+          "FireReborn"
+        ],
+        "flagTargetReachable": "11",
+        "flagSelfOnTemplateCollider": "11",
+        "flagSelfInZone": "11",
+        "flagTargetInZone": "11"
+      },
+      "201": {
+        "name": "Reborn",
+        "priority": 1,
+        "castCondition": {
+          "pose": [
+            2
+          ]
+        },
+        "cd": 0.25,
+        "publicCDGroup": "",
+        "triggerCDOnStart": true,
+        "HHAGODJIAPE": "",
+        "stateIDs": [
+          "FireReborn"
+        ],
+        "flagTargetReachable": "11",
+        "flagSelfOnTemplateCollider": "11",
+        "flagSelfInZone": "11",
+        "flagTargetInZone": "11"
+      },
+      "202": {
+        "name": "Reborn",
+        "priority": 1,
+        "castCondition": {
+          "pose": [
+            2
+          ]
+        },
+        "cd": 0.25,
+        "publicCDGroup": "",
+        "triggerCDOnStart": true,
+        "HHAGODJIAPE": "",
+        "stateIDs": [
+          "FireReborn"
+        ],
+        "flagTargetReachable": "11",
+        "flagSelfOnTemplateCollider": "11",
+        "flagSelfInZone": "11",
+        "flagTargetInZone": "11"
+      },
+      "203": {
+        "name": "Reborn",
+        "priority": 1,
+        "castCondition": {
+          "pose": [
+            2
+          ]
+        },
+        "cd": 0.25,
+        "publicCDGroup": "",
+        "triggerCDOnStart": true,
+        "HHAGODJIAPE": "",
+        "stateIDs": [
+          "FireReborn"
+        ],
+        "flagTargetReachable": "11",
+        "flagSelfOnTemplateCollider": "11",
+        "flagSelfInZone": "11",
+        "flagTargetInZone": "11"
+      },
+      "204": {
+        "name": "Reborn",
+        "priority": 1,
+        "castCondition": {
+          "pose": [
+            2
+          ]
+        },
+        "cd": 0.25,
+        "publicCDGroup": "",
+        "triggerCDOnStart": true,
+        "HHAGODJIAPE": "",
+        "stateIDs": [
+          "FireReborn"
+        ],
+        "flagTargetReachable": "11",
+        "flagSelfOnTemplateCollider": "11",
+        "flagSelfInZone": "11",
+        "flagTargetInZone": "11"
+      },
+      "301": {
+        "name": "NormalAttack",
+        "combatSkillType": "MeleeAttack",
+        "castCondition": {
+          "pose": [
+            102
+          ],
+          "pickRangeMax": 2.5
+        },
+        "cd": 2.5,
+        "publicCDGroup": "",
+        "triggerCDOnStart": true,
+        "HHAGODJIAPE": "",
+        "stateIDs": [
+          "NormalAttack"
+        ],
+        "flagTargetReachable": "11",
+        "flagSelfOnTemplateCollider": "11",
+        "flagSelfInZone": "11",
+        "flagTargetInZone": "11"
+      },
+      "303": {
+        "name": "NormalAttack",
+        "combatSkillType": "MeleeAttack",
+        "castCondition": {
+          "pose": [
+            2,
+            3
+          ],
+          "pickRangeMax": 2.5
+        },
+        "cd": 2.5,
+        "publicCDGroup": "",
+        "HHAGODJIAPE": "",
+        "stateIDs": [
+          "NormalAttack"
+        ],
+        "flagTargetReachable": "10",
+        "flagSelfOnTemplateCollider": "01",
+        "flagSelfInZone": "10",
+        "flagTargetInZone": "11"
+      }
+    },
+    "skillGCD": 0.0,
+    "target": {
+      "defaultTargetPrioritys": [
+        "COMMAND",
+        "THREAT"
+      ]
+    },
+    "birdCirclingTactic": [
+      {
+        "$type": "KACCHOLJDNK",
+        "enable": true,
+        "condition": {
+          "pose": [
+            2,
+            3,
+            102
+          ]
+        },
+        "JMCOBEPDIGM": {
+          "ANLAAGAMIKF": 1,
+          "KHDFDAAAPEI": 2.5,
+          "HKJODDGJPHA": 99.0,
+          "MNPDDAKDHGK": ""
+        }
+      },
+      {
+        "$type": "MCDGOJLCMBM",
+        "JMCOBEPDIGM": {
+          "MNPDDAKDHGK": "",
+          "GJDMDHIBCME": ""
+        }
+      },
+      {
+        "$type": "COLLJLNKMLC",
+        "JMCOBEPDIGM": {
+          "MNPDDAKDHGK": "",
+          "GJDMDHIBCME": "",
+          "BBPDJAFOGPF": true,
+          "PLLHMGHOAPB": "",
+          "KPIJNGFNAEF": "",
+          "GDPHPLKJGAJ": "",
+          "KKKOAABEHEP": ""
+        }
+      },
+      {
+        "$type": "NNJKLGNPMNN",
+        "enable": true,
+        "condition": {
+          "pose": [
+            221,
+            231,
+            222,
+            232
+          ]
+        },
+        "JMCOBEPDIGM": {
+          "MNPDDAKDHGK": "",
+          "GJDMDHIBCME": "",
+          "IAJDAHDAEFP": true,
+          "OILAIKJEIGB": false
+        }
+      }
+    ]
+  },
+  "inputKeys": [
+    {
+      "keyID": 201,
+      "inputKeyCode": 257,
+      "abilityName": ""
+    },
+    {
+      "keyID": 301,
+      "inputKeyCode": 258,
+      "abilityName": ""
+    }
+  ],
+  "move": {
+    "$type": "IPNMJMHDMPF",
+    "monsterSizeType": "SlimeType",
+    "PKHOMJHFAEE": "RootNode"
+  }
+}

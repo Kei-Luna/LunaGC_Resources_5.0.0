@@ -1,0 +1,542 @@
+{
+  "common": {
+    "effectAttachShape": {
+      "$type": "FJNPJANPGGC",
+      "mesh": "EffectMesh"
+    },
+    "mass": 20.0,
+    "height": 0.5,
+    "modelHeight": 0.4000000059604645,
+    "viewSize": 0.75,
+    "affectedByWorld": true,
+    "checkInSurface": true,
+    "scale": 1.25,
+    "enableCrashDamage": false
+  },
+  "dither": {
+    "showDitherDuration": 2.0
+  },
+  "combat": {
+    "property": {
+      "endureType": "Monster_Slime",
+      "weight": 60.0
+    },
+    "beHit": {
+      "hitBloodEffect": "",
+      "ignoreMinHitVY": true
+    },
+    "combatLock": {
+      "lockShape": "CircleLockEnemy",
+      "lockType": "Avatar&Monster_Lv4"
+    },
+    "die": {
+      "dieForceDisappearTime": 1.0,
+      "dieDisappearEffect": "",
+      "muteHitBox": true,
+      "dieDenyLockOn": true,
+      "dieIsGhostToEnemy": true,
+      "dieIgnoreTriggerBullet": true,
+      "muteBillboard": true,
+      "mutePushCollider": true
+    },
+    "animEvents": {
+      "Monster_Cicin_IceExplode": {
+        "attackPattern": {
+          "$type": "GMDIMKKHACA",
+          "triggerType": "TriggerNoRepeat",
+          "ignoreMassive": true,
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            }
+          },
+          "height": 3.0,
+          "OAHPDLJIADP": 3.0
+        },
+        "attackInfo": {
+          "attackTag": "",
+          "attenuationTag": "",
+          "attenuationGroup": "default",
+          "attackProperty": {
+            "actorGrassSubHurtDelta": 1.0,
+            "actorWindSubHurtDelta": 0.0,
+            "elementType": "Ice",
+            "IPFJJJGABPL": 50.0,
+            "strikeType": "Blunt",
+            "enBreak": 100.0,
+            "attackType": "Melee",
+            "GLKMCMDJBIK": 0.0
+          },
+          "hitPattern": {
+            "onHitEffectName": "default",
+            "hitImpulseY": "",
+            "hitImpulseType": "LV5",
+            "retreatType": "ByHitDirection",
+            "canBeDefenceHalt": true
+          }
+        }
+      }
+    }
+  },
+  "abilities": [
+    {
+      "abilityID": "",
+      "abilityName": "Monster_Darksign_Shadow_MoveRandom",
+      "abilityOverride": ""
+    },
+    {
+      "abilityID": "",
+      "abilityName": "Monster_Darksign_Shadow_General",
+      "abilityOverride": ""
+    },
+    {
+      "abilityID": "",
+      "abilityName": "Monster_Darksign_Shadow_TriggerPowerAttack",
+      "abilityOverride": ""
+    },
+    {
+      "abilityID": "",
+      "abilityName": "Monster_Darksign_Shadow_TriggerWeakAttack",
+      "abilityOverride": ""
+    },
+    {
+      "abilityID": "",
+      "abilityName": "Monster_Darksign_Shadow_TriggerOncePowerAttack",
+      "abilityOverride": ""
+    }
+  ],
+  "stateLayers": {
+    "defaultLayer": {
+      "$type": "GBGJJIIEMBD",
+      "layerIndexName": "",
+      "CPAANEIJCGD": "",
+      "stateIDs": {
+        "Born": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Born": [
+              "Monster_Cicin_Ice_Born"
+            ]
+          },
+          "canDoSkill": true,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "NormalIdle": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Standby": []
+          },
+          "canDoSkill": true,
+          "canSyncMove": true,
+          "addEndure": 1.2000000476837158,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ],
+          "canSteer": true,
+          "autoSteer": true
+        },
+        "NormalMove": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Walk": [],
+            "Run": [],
+            "Run_Standby": []
+          },
+          "canSyncMove": true,
+          "addEndure": 1.2000000476837158,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ],
+          "canSteer": true
+        },
+        "BeHit": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Hit_L": [],
+            "Hit_H": []
+          },
+          "resetAnimatorTriggerOnEnter": [
+            "BeHit"
+          ],
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "Struggle": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Struggle": []
+          },
+          "resetAnimatorTriggerOnEnter": [
+            "BeHit"
+          ],
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "BeHitThrow": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "HitThrow": [
+              "Monster_Slime_BeHit"
+            ]
+          },
+          "resetAnimatorTriggerOnEnter": [
+            "BeHit",
+            "HitAir2HitDrop"
+          ],
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "Die": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Die": []
+          }
+        },
+        "MoveRandom": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "MoveRandom": [
+              "Monster_Darksign_Shadow_MoveRandom"
+            ]
+          },
+          "addEndure": 0.0,
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ]
+        },
+        "OncePowerAttack": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "OncePowerAttack": [
+              "Monster_Darksign_Shadow_TriggerOncePowerAttack"
+            ]
+          },
+          "addEndure": 0.0,
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ]
+        },
+        "PowerAttack": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "PowerAttack": [
+              "Monster_Darksign_Shadow_TriggerPowerAttack"
+            ]
+          },
+          "addEndure": 0.0,
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ]
+        },
+        "WeakAttack": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "WeakAttack": [
+              "Monster_Darksign_Shadow_TriggerWeakAttack"
+            ]
+          },
+          "addEndure": 0.0,
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ]
+        }
+      }
+    }
+  },
+  "initialPoses": {
+    "Default": {}
+  },
+  "aibeta": {
+    "enable": true,
+    "decisionArchetype": "Cicin",
+    "moveSetting": {
+      "moveCategory": "Amphibious",
+      "useNavMesh": false,
+      "navMeshAgentName": "Undead01",
+      "almostReachedDistanceWalk": 2.0,
+      "almostReachedDistanceRun": 2.0
+    },
+    "sensing": {
+      "settings": {
+        "DefaultSetting": {
+          "viewRange": 20.0,
+          "feelRange": 10.0
+        }
+      }
+    },
+    "neurons": {
+      "DefaultSetting": [
+        "HIT"
+      ]
+    },
+    "threat": {
+      "GHIJMOKOLMB": "",
+      "clearThreatEdgeDistance": 3.5,
+      "clearThreatTimerByDistance": 1.75,
+      "viewThreatGrow": 35.0,
+      "feelThreatGrow": 1000.0,
+      "threatDecreaseSpeed": 10.0
+    },
+    "order": {
+      "servant": {
+        "enable": true
+      }
+    },
+    "defendArea": {
+      "defendRange": 50.0
+    },
+    "fly": {
+      "enable": true,
+      "floatingPoses": [
+        1,
+        2,
+        101,
+        201,
+        202,
+        203,
+        204
+      ]
+    },
+    "skillSetting": {
+      "skillEliteSet": {
+        "1": [
+          101
+        ],
+        "2": [
+          102
+        ]
+      }
+    },
+    "skills": {
+      "1": {
+        "name": "RandomMove",
+        "priority": 2,
+        "faceTarget": true,
+        "castCondition": {
+          "pose": [
+            101,
+            201
+          ]
+        },
+        "cd": 2.0,
+        "cdUpperRange": 7.0,
+        "initialCD": 3.0,
+        "publicCDGroup": "",
+        "triggerGCD": false,
+        "HHAGODJIAPE": "",
+        "stateIDs": [
+          "RandomMove"
+        ],
+        "flagTargetReachable": "11",
+        "flagSelfOnTemplateCollider": "01",
+        "flagSelfInZone": "11",
+        "flagTargetInZone": "11"
+      },
+      "101": {
+        "name": "OncePowerAttack",
+        "priority": 1,
+        "faceTarget": true,
+        "castCondition": {
+          "pose": [
+            101
+          ]
+        },
+        "cd": 7.0,
+        "initialCD": 5.0,
+        "publicCDGroup": "",
+        "HHAGODJIAPE": "",
+        "stateIDs": [
+          "OncePowerAttack"
+        ],
+        "flagTargetReachable": "11",
+        "flagSelfOnTemplateCollider": "01",
+        "flagSelfInZone": "11",
+        "flagTargetInZone": "11"
+      },
+      "102": {
+        "name": "PowerAttack",
+        "priority": 1,
+        "faceTarget": true,
+        "castCondition": {
+          "pose": [
+            101
+          ]
+        },
+        "cd": 20.0,
+        "publicCDGroup": "",
+        "triggerCDOnStart": true,
+        "HHAGODJIAPE": "",
+        "stateIDs": [
+          "PowerAttack"
+        ],
+        "flagTargetReachable": "11",
+        "flagSelfOnTemplateCollider": "01",
+        "flagSelfInZone": "11",
+        "flagTargetInZone": "11"
+      },
+      "201": {
+        "name": "WeakAttack",
+        "priority": 1,
+        "faceTarget": true,
+        "castCondition": {
+          "pose": [
+            201
+          ],
+          "needReInitCD": true
+        },
+        "cd": 20.0,
+        "publicCDGroup": "",
+        "HHAGODJIAPE": "",
+        "stateIDs": [
+          "WeakAttack"
+        ],
+        "flagTargetReachable": "11",
+        "flagSelfOnTemplateCollider": "01",
+        "flagSelfInZone": "11",
+        "flagTargetInZone": "11"
+      }
+    },
+    "birdCirclingTactic": [
+      {
+        "$type": "IEOGJPEEPAH",
+        "condition": {
+          "pose": [
+            1,
+            2,
+            101,
+            201,
+            203
+          ]
+        },
+        "JMCOBEPDIGM": {
+          "ANLAAGAMIKF": 1,
+          "NBENNEKDIIA": 10.0,
+          "DDIDGGIONGJ": 1.0,
+          "ANJBGMNJDLL": 1.5,
+          "HIGLILIOAHE": 0.75,
+          "AMIIPPJEIPM": 2.75,
+          "HFBDOEFNFOI": 3.0,
+          "DFLKIHDEOBI": true,
+          "LHMEJOEDKDP": false,
+          "MNPDDAKDHGK": "",
+          "GJDMDHIBCME": ""
+        }
+      },
+      {
+        "$type": "MCDGOJLCMBM",
+        "JMCOBEPDIGM": {
+          "ACOBCFCMBOC": "Spacial",
+          "MNPDDAKDHGK": "",
+          "GJDMDHIBCME": ""
+        }
+      },
+      {
+        "$type": "NNJKLGNPMNN",
+        "JMCOBEPDIGM": {
+          "ANLAAGAMIKF": 1,
+          "JFMIFLNBKMJ": 0.75,
+          "DHGJDIPNDHH": 2.25,
+          "ACOBCFCMBOC": "Spacial",
+          "MNPDDAKDHGK": "",
+          "GJDMDHIBCME": ""
+        }
+      },
+      {
+        "$type": "HMHOIHCBIOJ",
+        "condition": {
+          "pose": [
+            1
+          ]
+        },
+        "JMCOBEPDIGM": {
+          "ANLAAGAMIKF": 2,
+          "KPNDPKIOPJM": 20.0,
+          "PINAFKEDDLL": 15.0,
+          "HIGLILIOAHE": 1.5,
+          "AMIIPPJEIPM": 3.0,
+          "ANMPOPEBDIA": 30.0,
+          "GMJFIMFFOEL": 2.5,
+          "CHCPFDMADEI": 4.0,
+          "NEAKBBLMLDM": 4,
+          "FJEDKNKKAAB": 5,
+          "MNPDDAKDHGK": "",
+          "GJDMDHIBCME": ""
+        }
+      }
+    ]
+  },
+  "inputKeys": [
+    {
+      "keyID": 1,
+      "inputKeyCode": 257,
+      "abilityName": ""
+    },
+    {
+      "keyID": 101,
+      "inputKeyCode": 258,
+      "abilityName": ""
+    },
+    {
+      "keyID": 201,
+      "inputKeyCode": 259,
+      "abilityName": ""
+    },
+    {
+      "keyID": 102,
+      "inputKeyCode": 260,
+      "abilityName": ""
+    }
+  ],
+  "move": {
+    "$type": "IPNMJMHDMPF",
+    "velocityForce": {
+      "excludeForces": [
+        "WindZoneType",
+        "AirflowType"
+      ]
+    },
+    "initWithGroundHitCheck": false,
+    "moveOnWater": true,
+    "monsterSizeType": "SlimeType",
+    "PKHOMJHFAEE": "RootNode"
+  },
+  "audio": {
+    "overrideEmitterName": "",
+    "animAudio": {
+      "onTransitionIn": [
+        {
+          "currentStateName": "Die",
+          "audioEvent": {
+            "text": "Stop_sfx_monster_cicin_thunder_foley_slow_lp"
+          }
+        },
+        {
+          "currentStateName": "RushAtk",
+          "audioEvent": {
+            "text": "Play_sfx_monster_cicin_thunder_electricSurround_start"
+          }
+        }
+      ],
+      "onTransitionOut": [
+        {
+          "currentStateName": "Die",
+          "audioEvent": {
+            "text": ""
+          }
+        }
+      ]
+    }
+  }
+}

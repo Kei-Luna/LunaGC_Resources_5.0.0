@@ -1,0 +1,678 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Oceanid_Crab_02_LifeAlert",
+      "modifiers": {
+        "Monster_Oceanid_Crab_02_LifeAlert": {
+          "modifierName": "",
+          "elementDurability": 8.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "Fight",
+              "param3": true
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Monster_Oceanid_Crab_02_LifeAlert"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Oceanid_Crab_02_BubbleAtkTimer",
+      "modifiers": {
+        "Animal_Oceanid_Crab_02_BeHitFight": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onBeingHit": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "BeHitFight",
+              "param3": true
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Animal_Oceanid_Crab_02_BeHitFight"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Oceanid_Crab_Bubble_Explode",
+      "modifiers": {
+        "Oceanid_Crab_Bubble_Explode_Tail": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "Oceanid_Crab_Bubble_Explode_OpenColliderDelay": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "NKEFJJHHAPG",
+              "setEnable": true
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Oceanid_Crab_Bubble_Explode_Tail"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Oceanid_Crab_Bubble_Explode_OpenColliderDelay"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "Oceanid_Crab_Bubble_Explode_Tail"
+        },
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JGEBAJLEBMO"
+              },
+              "OAHPDLJIADP": 0.5
+            },
+            "attackInfo": {
+              "attackTag": "SnowBallAttack",
+              "attenuationTag": "SnowBall_Damage",
+              "attenuationGroup": "Skirmisher_Fat_SprayGun_Ice",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 1.0,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Water",
+                "IPFJJJGABPL": 50.0,
+                "strikeType": "Blunt",
+                "enBreak": 50.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV4",
+                "retreatType": "ByHitDirection",
+                "hitHaltTimeScale": 0.05000000074505806
+              }
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Oceanid_Crab_WaterBubble",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "NormalMove"
+          ],
+          "modifierName": "WaterStreamHandler",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_WATERSTREAM_STATE_",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Empty",
+            "WaterStream"
+          ]
+        },
+        {
+          "$type": "JJIHJPCPPGO",
+          "abilityStates": [
+            "ElementFrozen",
+            "ElementPetrifaction"
+          ],
+          "modifierName": "SpecialStateDetect"
+        }
+      ],
+      "modifiers": {
+        "WaterStream": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.20000000298023224,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "predicates": [
+                {
+                  "$type": "HHHMNCNPBDK",
+                  "predicates": [
+                    {
+                      "$type": "NIFDMKMHAGJ",
+                      "logic": "Equal",
+                      "param3": 2.0,
+                      "parameter": "PoseID"
+                    },
+                    {
+                      "$type": "NIFDMKMHAGJ",
+                      "logic": "Equal",
+                      "param3": 101.0,
+                      "parameter": "PoseID"
+                    }
+                  ]
+                }
+              ],
+              "rotationDampTime": "Eff_Monster_Oceanid_Crab_BubbleStream",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "AIFPLABJNMA",
+              "predicates": [
+                {
+                  "$type": "HHHMNCNPBDK",
+                  "predicates": [
+                    {
+                      "$type": "NIFDMKMHAGJ",
+                      "logic": "Equal",
+                      "param3": 2.0,
+                      "parameter": "PoseID"
+                    },
+                    {
+                      "$type": "NIFDMKMHAGJ",
+                      "logic": "Equal",
+                      "param3": 101.0,
+                      "parameter": "PoseID"
+                    }
+                  ]
+                }
+              ],
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "JHKEHNJBMOF",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "KLPANPDGHHA",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": -0.5
+                    },
+                    "attachPointName": "BulletAttachPoint"
+                  },
+                  "size": {
+                    "KGEPIMHBMOL": 1.5,
+                    "JEBHCGDPFEJ": 1.5,
+                    "LPCHALMFFOD": 8.0
+                  }
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.10000000149011612,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Water",
+                    "IPFJJJGABPL": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 1.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV1",
+                    "hitHaltTimeScale": 0.05000000074505806
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "SpecialStateDetect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 0.0,
+              "key": "_WATERSTREAM_STATE_",
+              "useLimitRange": true,
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "WaterStreamHandler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "_WATERSTREAM_STATE_",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 0.0,
+              "key": "_WATERSTREAM_STATE_",
+              "useLimitRange": true,
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Empty": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Crab_WaterBubble_Explode",
+      "onAdded": [
+        {
+          "$type": "ANLOBBMKNIJ",
+          "rotationDampTime": "Eff_Monster_Oceanid_Crab_BubbleLoop",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Oceanid_Crab_BubbleAS",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                }
+              },
+              "OAHPDLJIADP": 0.5
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 1.0,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Water",
+                "IPFJJJGABPL": 25.0,
+                "strikeType": "Default",
+                "enBreak": 1.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV1",
+                "hitHaltTimeScale": 0.05000000074505806
+              }
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "NCFFNDHGCMH"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Oceanid_Crab_ElementState",
+      "modifiers": {
+        "UNIQUE_ElementState": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementType": "Water",
+          "IPFJJJGABPL": 100.0,
+          "isElementDurabilityMutable": false
+        },
+        "Monster_Oceanid_Crab_CommonEffect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Oceanid_Crab_CommonEffectLoop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "UNIQUE_ElementState"
+        },
+        {
+          "$type": "OPAOGKPJLIG",
+          "resistanceBuffDebuffs": [
+            "ElementWet",
+            "Struggle"
+          ]
+        },
+        {
+          "$type": "PELJALPANCA",
+          "predicates": [
+            {
+              "$type": "BCFNGJHILAG",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_MONSTERAFFIX_OCEANID_ANIMAL_FOOTEFFECT_OFF",
+                  "param3": 1.0
+                }
+              ]
+            }
+          ],
+          "modifierName": "Monster_Oceanid_Crab_CommonEffect"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Oceanid_Crab_BeingHit",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_BEINGHITSTATE_",
+          "gvInTalk": 1.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Empty",
+            "BeingHit"
+          ]
+        },
+        {
+          "$type": "JJIHJPCPPGO",
+          "abilityStates": [
+            "ElementPetrifaction",
+            "ElementFreeze"
+          ],
+          "modifierName": "ChangeBeingHitState"
+        }
+      ],
+      "modifiers": {
+        "BeingHit": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onBeingHit": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Oceanid_AnimalBeHitSpecial",
+              "born": {
+                "$type": "DHDAAHGFPHK",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.10000000149011612
+                }
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "ChangeBeingHitState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 0.0,
+              "key": "_BEINGHITSTATE_",
+              "useLimitRange": true,
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "_BEINGHITSTATE_",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 1.0
+            }
+          ]
+        },
+        "Empty": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Oceanid_Crab_02_FearFallAttack",
+      "modifiers": {
+        "Monster_Oceanid_Crab_02_Watcher": {
+          "modifierName": "",
+          "elementDurability": 3.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "FromGroup",
+              "callParamList": [
+                133102112
+              ],
+              "funcName": "SLC_FallingAttack_Crab",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "LCOEFEMOHLP",
+          "param3": 1.0,
+          "key": "_MONSTER_OCEANID_CRAB_FEARFALLATK",
+          "useLimitRange": true,
+          "param2": 1.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Oceanid_Crab_HealHp_Challenge",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_HEALHP_STATE_",
+          "gvInTalk": 1.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Empty",
+            "UNIQUE_Crab_Water_HealHp"
+          ]
+        }
+      ],
+      "abilitySpecials": {
+        "HealHPHigh": 0.15000000596046448
+      },
+      "modifiers": {
+        "UNIQUE_Crab_Water_HealHp": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.5,
+          "onBeingHit": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_MONSTERAFFIX_OCEANID_02_ANIMALHEAL_UP",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "modifierName": "HealHP_Pause_AffixUp"
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "modifierName": "HealHP_Pause"
+                }
+              ]
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_MONSTERAFFIX_OCEANID_02_ANIMALHEAL_UP",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "FHGPOFDJDCO",
+                  "ECOAIFKENNM": "HealHPHigh",
+                  "cdRatio": ""
+                },
+                {
+                  "$type": "KBFEIHEAMBM",
+                  "rotationDampTime": "Eff_Monster_Oceanid_Boar_Heal",
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                }
+              ]
+            }
+          ]
+        },
+        "HealHP_Pause": {
+          "modifierName": "",
+          "elementDurability": 3.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 0.0,
+              "key": "_HEALHP_STATE_",
+              "useLimitRange": true,
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "_HEALHP_STATE_",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 1.0
+            }
+          ]
+        },
+        "HealHP_Pause_AffixUp": {
+          "modifierName": "",
+          "elementDurability": 1.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 0.0,
+              "key": "_HEALHP_STATE_",
+              "useLimitRange": true,
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "_HEALHP_STATE_",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 1.0
+            }
+          ]
+        },
+        "Empty": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      }
+    }
+  }
+]

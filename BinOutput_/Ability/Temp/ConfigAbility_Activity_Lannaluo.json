@@ -1,0 +1,910 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_Lannaluo_Handler",
+      "abilityMixins": [
+        {
+          "$type": "ENGNAJCEOHN",
+          "onEnterCombat": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "EndChannelTrigger"
+            }
+          ]
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "BLCCGIPAOIP",
+          "shieldHP": true,
+          "PLLJBINMGJK": "EndChannelTrigger"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "INBCDALOHMP",
+          "targetPredicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_ABILITY_Lannaluo_IsInState",
+              "param3": 1.0
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "EndChannelTrigger"
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "StartChannelTrigger"
+            }
+          ]
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_Lannaluo_Shoot",
+      "abilityMixins": [
+        {
+          "$type": "FKKJJMOHCLI",
+          "targetWidgetMaterialIDs": [
+            220053,
+            220071
+          ],
+          "onActive": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "shieldHP": true,
+              "modifierName": "ActivityAbility_Lannaluo_Shoot_Handler"
+            }
+          ],
+          "onDisable": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "shieldHP": true,
+              "modifierName": "ActivityAbility_Lannaluo_Shoot_Handler"
+            }
+          ]
+        }
+      ],
+      "abilitySpecials": {
+        "Skill_State": 0.0
+      },
+      "modifiers": {
+        "ActivityAbility_Lannaluo_Shoot_Handler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "Channel_BS",
+                "Channel_Loop"
+              ],
+              "modifierName": "ActivityAbility_Lannaluo_ChangePlayMode",
+              "DGFCLAIDIFI": ""
+            },
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "Channel_BS",
+                "Channel_Loop"
+              ],
+              "modifierName": "ActivityAbility_Lannaluo_Focus",
+              "DGFCLAIDIFI": ""
+            }
+          ]
+        },
+        "ActivityAbility_Lannaluo_ChangePlayMode": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "KGGIJDLICMA",
+              "targetWidgetMaterialId": 220053
+            },
+            {
+              "$type": "KGGIJDLICMA",
+              "targetWidgetMaterialId": 220071
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "PPDJHLBHCIK",
+              "shieldHP": true,
+              "muteRemoteAction": true,
+              "toPlayMode": "LannaluoState"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ABILITY_Lannaluo_IsInState",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PPDJHLBHCIK",
+              "shieldHP": true,
+              "muteRemoteAction": true,
+              "JFDCCIECAJB": "LannaluoState"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Lannaluo_IsInState",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "ActivityAbility_Lannaluo_Focus": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BAGMOLODOME",
+              "cameraFollowLower": {
+                "x": 0.6000000238418579,
+                "y": 0.20000000298023224,
+                "z": -1.7999999523162842
+              },
+              "cameraFollowUpper": {
+                "x": 0.6000000238418579,
+                "y": -0.10000000149011612,
+                "z": -1.7999999523162842
+              },
+              "cameraFollowMaxDegree": 40.0,
+              "cameraFollowMinDegree": -40.0,
+              "dragButtonName": "Skill2",
+              "assistance": {
+                "ps4": {
+                  "useGyro": true
+                },
+                "ps5": {
+                  "useGyro": true
+                },
+                "other": {
+                  "useGyro": true
+                }
+              },
+              "canMove": false,
+              "showCrosshair": false,
+              "vcamFov": 30.0,
+              "disableAnim": true,
+              "OMHGAKJIEFB": ""
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "LockMotionFlagExitChannel",
+              "param3": true
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ABILITY_Common_IsChannelState",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LJEDLFDLLDP",
+              "shieldHP": true,
+              "keepRotation": true
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "shieldHP": true,
+              "boolID": "LockMotionFlagExitChannel"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Common_IsChannelState",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "ActivityAbility_Lannaluo_TriggerShoot": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "_ABILITY_Lannaluo_SkillState",
+              "overrideMapKey": "Skill_State"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": "Skill_State",
+              "key": "_ABILITY_Lannaluo_Skill_InTime",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "CAKDDHLKOAB",
+              "bulletID": 420000017,
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "attachPointName": "FocusAnchor"
+              }
+            },
+            {
+              "$type": "OCLNBBMMIOK",
+              "skillID": 20330,
+              "amountByTargetCurrentHPRatio": 1.0,
+              "costStaminaRatio": 1.0
+            }
+          ]
+        },
+        "ActivityAbility_Lannaluo_Skill_CD": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ABILITY_Lannaluo_CD",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Lannaluo_CD",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "ActivityAbility_Lannaluo_TriggerShoot"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "ActivityAbility_Lannaluo_Skill_CD"
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "PPDJHLBHCIK",
+          "shieldHP": true,
+          "muteRemoteAction": true,
+          "JFDCCIECAJB": "LannaluoState"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_Lannaluo_Skill",
+      "abilityMixins": [
+        {
+          "$type": "FKKJJMOHCLI",
+          "targetWidgetMaterialIDs": [
+            220053,
+            220071
+          ],
+          "onActive": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "shieldHP": true,
+              "modifierName": "ActivityAbility_Lannaluo_Skill_Handler"
+            }
+          ],
+          "onDisable": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "shieldHP": true,
+              "modifierName": "ActivityAbility_Lannaluo_Skill_Handler"
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "ActivityAbility_Lannaluo_Skill_Handler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "Channel_BS",
+                "Channel_Loop"
+              ],
+              "modifierName": "ActivityAbility_Lannaluo_SwitchSkill",
+              "DGFCLAIDIFI": ""
+            },
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "Channel_BS",
+                "Channel_Loop"
+              ],
+              "modifierName": "ActivityAbility_Lannaluo_Skill_Handler_01",
+              "DGFCLAIDIFI": ""
+            }
+          ]
+        },
+        "ActivityAbility_Lannaluo_Skill_Add": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 2.0,
+          "onAdded": [
+            {
+              "$type": "PDFENCBHHAI",
+              "shieldHP": true,
+              "skillID": 20330
+            },
+            {
+              "$type": "PDFENCBHHAI",
+              "shieldHP": true,
+              "skillID": 20331
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KFOBADMAFJF",
+              "shieldHP": true,
+              "skillID": 20330,
+              "refreshAfterRemove": true
+            },
+            {
+              "$type": "KFOBADMAFJF",
+              "shieldHP": true,
+              "skillID": 20331,
+              "refreshAfterRemove": true
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "PDFENCBHHAI",
+              "shieldHP": true,
+              "skillID": 20330
+            },
+            {
+              "$type": "PDFENCBHHAI",
+              "shieldHP": true,
+              "skillID": 20331
+            }
+          ]
+        },
+        "ActivityAbility_Lannaluo_SwitchSkill": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BBDLKGEJDOJ",
+              "priority": "Playmode",
+              "skillID": 20330
+            },
+            {
+              "$type": "BBDLKGEJDOJ",
+              "priority": "Playmode",
+              "skillIndex": 1,
+              "skillID": 20331
+            },
+            {
+              "$type": "CCNIOPJEHOE",
+              "globalValueTarget": "Team",
+              "globalValueKey": "SGV_LanlaluoCommander",
+              "valueSteps": [
+                0.5,
+                1.5,
+                2.5,
+                3.5,
+                4.5
+              ],
+              "modifierNameSteps": [
+                "ActivityAbility_Lannaluo_Switch_Forbid",
+                "ActivityAbility_Lannaluo_Switch_Forbid",
+                "ActivityAbility_Lannaluo_Switch_Forbid",
+                "Blank"
+              ],
+              "actionQueues": [
+                [
+                  {
+                    "$type": "BOBCOJHOKKD",
+                    "param3": 1.0,
+                    "key": "_ABILITY_Lannaluo_SkillState",
+                    "param2": 0.0,
+                    "repeatTimes": 0.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "BOBCOJHOKKD",
+                    "param3": 2.0,
+                    "key": "_ABILITY_Lannaluo_SkillState",
+                    "param2": 0.0,
+                    "repeatTimes": 0.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "BOBCOJHOKKD",
+                    "param3": 3.0,
+                    "key": "_ABILITY_Lannaluo_SkillState",
+                    "param2": 0.0,
+                    "repeatTimes": 0.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "BOBCOJHOKKD",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "_ABILITY_Lannaluo_SkillState",
+                        "param3": 0.0,
+                        "compareType": "NoneOrEqual"
+                      }
+                    ],
+                    "param3": 1.0,
+                    "key": "_ABILITY_Lannaluo_SkillState",
+                    "param2": 0.0,
+                    "repeatTimes": 0.0
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        "ActivityAbility_Lannaluo_Switch_Forbid": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "KAIOONFFNHC",
+              "slotType": "Slot2"
+            }
+          ]
+        },
+        "ActivityAbility_Lannaluo_Skill_Handler_01": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "_ABILITY_Lannaluo_CD",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "ActivityAbility_Lannaluo_Skill_Handler_02",
+                "Blank"
+              ]
+            },
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "_ABILITY_Lannaluo_SkillState",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                0.5,
+                1.5,
+                2.5,
+                3.5
+              ],
+              "modifierNameSteps": [
+                "ActivityAbility_Lannaluo_Eff_01",
+                "ActivityAbility_Lannaluo_Eff_02",
+                "ActivityAbility_Lannaluo_Eff_03"
+              ]
+            }
+          ]
+        },
+        "Blank": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "ActivityAbility_Lannaluo_Skill_Handler_02": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "_ABILITY_Lannaluo_SkillState",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                0.5,
+                1.5,
+                2.5,
+                3.5
+              ],
+              "modifierNameSteps": [
+                "ActivityAbility_Lannaluo_Skill_01",
+                "ActivityAbility_Lannaluo_Skill_02",
+                "ActivityAbility_Lannaluo_Skill_03"
+              ]
+            }
+          ]
+        },
+        "ActivityAbility_Lannaluo_Skill_01": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 15.0,
+              "key": "_FURIOUSMONOLITH_THROW_RANGE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Lannaluo_Aim_Line_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "ActivityAbility_Lannaluo_Skill_02": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 15.0,
+              "key": "_FURIOUSMONOLITH_THROW_RANGE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Lannaluo_Aim_Line_02",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "ActivityAbility_Lannaluo_Skill_03": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 15.0,
+              "key": "_FURIOUSMONOLITH_THROW_RANGE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Lannaluo_Aim_Line_03",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "ActivityAbility_Lannaluo_Eff_01": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Lannaluo_Aim_Charge_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "ActivityAbility_Lannaluo_Eff_02": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Lannaluo_Aim_Charge_02",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "ActivityAbility_Lannaluo_Eff_03": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Lannaluo_Aim_Charge_03",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_ABILITY_Lannaluo_SkillState",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "ActivityAbility_Lannaluo_Skill_Add"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "INBCDALOHMP",
+          "targetPredicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_ABILITY_Lannaluo_SkillState",
+              "param3": 3.0
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ABILITY_Lannaluo_SkillState",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "_ABILITY_Lannaluo_SkillState",
+              "useLimitRange": true,
+              "param2": 3.0,
+              "repeatTimes": 1.0
+            }
+          ]
+        },
+        {
+          "$type": "OCLNBBMMIOK",
+          "skillID": 20331,
+          "amountByTargetCurrentHPRatio": 0.5,
+          "costStaminaRatio": 1.0
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_Lannaluo_Shooter",
+      "onAbilityStart": [
+        {
+          "$type": "KFCDMIMBBLD",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.5,
+              "LPCHALMFFOD": 0.0
+            }
+          },
+          "gadgetID": 420000018,
+          "campID": 1001,
+          "campTargetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_Lannaluo_Gadget",
+      "modifiers": {
+        "ActivityAbility_Lannaluo_Trigger_Skill01": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Lannaluo_SkillBurst_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD"
+                  },
+                  "OAHPDLJIADP": 3.5
+                },
+                "attackInfo": {
+                  "attackTag": "Activity_Lannaluo_Type_01",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.0,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "AntiFire",
+                    "IPFJJJGABPL": 0.0,
+                    "strikeType": "Default",
+                    "enBreak": 0.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "none",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV1",
+                    "muteHitText": true
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "ActivityAbility_Lannaluo_Trigger_Skill02": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Lannaluo_SkillBurst_02",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD"
+                  },
+                  "OAHPDLJIADP": 3.5
+                },
+                "attackInfo": {
+                  "attackTag": "Activity_Lannaluo_Type_02",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.0,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "AntiFire",
+                    "IPFJJJGABPL": 0.0,
+                    "strikeType": "Default",
+                    "enBreak": 0.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "none",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV1",
+                    "muteHitText": true
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "ActivityAbility_Lannaluo_Trigger_Skill03": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Lannaluo_SkillBurst_03",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD"
+                  },
+                  "OAHPDLJIADP": 3.5
+                },
+                "attackInfo": {
+                  "attackTag": "Activity_Lannaluo_Type_03",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.0,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "AntiFire",
+                    "IPFJJJGABPL": 0.0,
+                    "strikeType": "Default",
+                    "enBreak": 0.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "none",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV1",
+                    "muteHitText": true
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "OriginOwner",
+              "key": "_ABILITY_Lannaluo_Skill_InTime",
+              "param3": 1.0
+            }
+          ],
+          "modifierName": "ActivityAbility_Lannaluo_Trigger_Skill01"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "OriginOwner",
+              "key": "_ABILITY_Lannaluo_Skill_InTime",
+              "param3": 2.0
+            }
+          ],
+          "modifierName": "ActivityAbility_Lannaluo_Trigger_Skill02"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "OriginOwner",
+              "key": "_ABILITY_Lannaluo_Skill_InTime",
+              "param3": 3.0
+            }
+          ],
+          "modifierName": "ActivityAbility_Lannaluo_Trigger_Skill03"
+        }
+      ]
+    }
+  }
+]

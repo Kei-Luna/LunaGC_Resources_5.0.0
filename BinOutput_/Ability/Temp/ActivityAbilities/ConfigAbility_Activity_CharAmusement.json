@@ -1,0 +1,5211 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_CharAmusement_CoinDetect_TeamAbility",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "GV_CoinRangeLevel",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "CharAmusement_CoinDetect_Normal",
+            "CharAmusement_CoinDetect_Super"
+          ]
+        }
+      ],
+      "modifiers": {
+        "CharAmusement_CoinDetect_Normal": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.10000000149011612,
+          "onThinkInterval": [
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR4H6",
+                "centerBasedOn": "CurLocalAvatar",
+                "campTargetType": "Enemy",
+                "campBasedOn": "CurLocalAvatar",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "CharAmusement_Coin_Type",
+                  "param3": 2.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "KBFEIHEAMBM",
+                  "target": "CurLocalAvatar",
+                  "rotationDampTime": "Eff_SceneObj_GetGlideChampCoin",
+                  "born": {
+                    "$type": "JHEBKCMEMLN"
+                  },
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                },
+                {
+                  "$type": "KBFEIHEAMBM",
+                  "target": "Target",
+                  "rotationDampTime": "Eff_SceneObj_GlideChampCoin_Hit_Super",
+                  "born": {
+                    "$type": "JHEBKCMEMLN"
+                  },
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                },
+                {
+                  "$type": "AHPEKICBIIL",
+                  "target": "Target",
+                  "luaCallType": "CurGalleryControlGroup",
+                  "funcName": "SLC_CharAmusement_CoinGet",
+                  "paramNum": 1,
+                  "param1": 2.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "modifierName": "CharAmusement_CoinPicked"
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR3H4",
+                "centerBasedOn": "CurLocalAvatar",
+                "campTargetType": "Enemy",
+                "campBasedOn": "CurLocalAvatar",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "CharAmusement_Coin_Type",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "KBFEIHEAMBM",
+                  "target": "CurLocalAvatar",
+                  "rotationDampTime": "Eff_SceneObj_GetGlideChampCoin",
+                  "born": {
+                    "$type": "JHEBKCMEMLN"
+                  },
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                },
+                {
+                  "$type": "KBFEIHEAMBM",
+                  "target": "Target",
+                  "rotationDampTime": "Eff_SceneObj_GlideChampCoin_Hit",
+                  "born": {
+                    "$type": "JHEBKCMEMLN"
+                  },
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                },
+                {
+                  "$type": "AHPEKICBIIL",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "CharAmusement_Coin_Type",
+                      "param3": 1.0
+                    }
+                  ],
+                  "luaCallType": "CurGalleryControlGroup",
+                  "funcName": "SLC_CharAmusement_CoinGet",
+                  "paramNum": 1,
+                  "param1": 1.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "modifierName": "CharAmusement_CoinPicked"
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR3H3",
+                "centerBasedOn": "CurLocalAvatar",
+                "campTargetType": "Enemy",
+                "campBasedOn": "CurLocalAvatar",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "CharAmusement_Stamina",
+                  "param3": 1.0,
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "IJEHOLMBKJJ",
+                  "target": "CurLocalAvatar",
+                  "shieldHP": true,
+                  "param3": 300.0
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "modifierName": "CharAmusement_StaminaPicked"
+                }
+              ]
+            }
+          ]
+        },
+        "CharAmusement_CoinDetect_Super": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.10000000149011612,
+          "onThinkInterval": [
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR6.5H5",
+                "centerBasedOn": "CurLocalAvatar",
+                "campTargetType": "Enemy",
+                "campBasedOn": "CurLocalAvatar",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "CharAmusement_Coin_Type",
+                  "param3": 2.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "KBFEIHEAMBM",
+                  "target": "CurLocalAvatar",
+                  "rotationDampTime": "Eff_SceneObj_GetGlideChampCoin",
+                  "born": {
+                    "$type": "JHEBKCMEMLN"
+                  },
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                },
+                {
+                  "$type": "KBFEIHEAMBM",
+                  "target": "Target",
+                  "rotationDampTime": "Eff_SceneObj_GlideChampCoin_Hit_Super",
+                  "born": {
+                    "$type": "JHEBKCMEMLN"
+                  },
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                },
+                {
+                  "$type": "AHPEKICBIIL",
+                  "target": "Target",
+                  "luaCallType": "CurGalleryControlGroup",
+                  "funcName": "SLC_CharAmusement_CoinGet",
+                  "paramNum": 1,
+                  "param1": 2.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "modifierName": "CharAmusement_CoinPicked"
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR5H5",
+                "centerBasedOn": "CurLocalAvatar",
+                "campTargetType": "Enemy",
+                "campBasedOn": "CurLocalAvatar",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "CharAmusement_Coin_Type",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "KBFEIHEAMBM",
+                  "target": "CurLocalAvatar",
+                  "rotationDampTime": "Eff_SceneObj_GetGlideChampCoin",
+                  "born": {
+                    "$type": "JHEBKCMEMLN"
+                  },
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                },
+                {
+                  "$type": "KBFEIHEAMBM",
+                  "target": "Target",
+                  "rotationDampTime": "Eff_SceneObj_GlideChampCoin_Hit",
+                  "born": {
+                    "$type": "JHEBKCMEMLN"
+                  },
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                },
+                {
+                  "$type": "AHPEKICBIIL",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "CharAmusement_Coin_Type",
+                      "param3": 1.0
+                    }
+                  ],
+                  "luaCallType": "CurGalleryControlGroup",
+                  "funcName": "SLC_CharAmusement_CoinGet",
+                  "paramNum": 1,
+                  "param1": 1.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "modifierName": "CharAmusement_CoinPicked"
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR3H3",
+                "centerBasedOn": "CurLocalAvatar",
+                "campTargetType": "Enemy",
+                "campBasedOn": "CurLocalAvatar",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "CharAmusement_Stamina",
+                  "param3": 1.0,
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "IJEHOLMBKJJ",
+                  "target": "CurLocalAvatar",
+                  "shieldHP": true,
+                  "param3": 300.0
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "modifierName": "CharAmusement_StaminaPicked"
+                }
+              ]
+            }
+          ]
+        },
+        "CharAmusement_CoinPicked": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": -1.0,
+              "key": "CharAmusement_Coin_Type",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "CharAmusement_StaminaPicked": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "CharAmusement_Stamina",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "GV_CoinRangeLevel",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CharAmusement_BaseBall_AvatarAbility",
+      "modifiers": {
+        "CharAmusement_BaseBall_Hide": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Model"
+              ]
+            }
+          ]
+        },
+        "CharAmusement_BaseBall_PlayerHit": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onHittingOther": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "Elemental_Art"
+                  ]
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "Baseball_Type",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "modifierName": "CharAmusement_BaseBall_Hide"
+                },
+                {
+                  "$type": "KBFEIHEAMBM",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "SGV_BaseBall_State",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "rotationDampTime": "Eff_SceneObj_Baseball_02_Score",
+                  "born": {
+                    "$type": "JHEBKCMEMLN"
+                  },
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                },
+                {
+                  "$type": "KBFEIHEAMBM",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "SGV_BaseBall_State",
+                      "param3": 1.0,
+                      "compareType": "MoreThanAndEqual"
+                    }
+                  ],
+                  "rotationDampTime": "Eff_SceneObj_Baseball_HighScore",
+                  "born": {
+                    "$type": "JHEBKCMEMLN"
+                  },
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                },
+                {
+                  "$type": "AHPEKICBIIL",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "SGV_BaseBall_State",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "luaCallType": "SpecificGroup",
+                  "isTarget": true,
+                  "callParamList": [
+                    247608006
+                  ],
+                  "funcName": "SLC_CharAmusement_BaseBallHit",
+                  "paramNum": 2,
+                  "param1": 1.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                },
+                {
+                  "$type": "AHPEKICBIIL",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "SGV_BaseBall_State",
+                      "param3": 1.0
+                    }
+                  ],
+                  "luaCallType": "SpecificGroup",
+                  "isTarget": true,
+                  "callParamList": [
+                    247608006
+                  ],
+                  "funcName": "SLC_CharAmusement_BaseBallHit",
+                  "paramNum": 2,
+                  "param1": 1.0,
+                  "MGAMDEHMCOL": 1.0,
+                  "MMHOHAOGPLP": 0.0
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "Elemental_Art"
+                  ]
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "Baseball_Type",
+                  "param3": 2.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "modifierName": "CharAmusement_BaseBall_Hide"
+                },
+                {
+                  "$type": "KBFEIHEAMBM",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "SGV_BaseBall_State",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "rotationDampTime": "Eff_SceneObj_Baseball_01_Score",
+                  "born": {
+                    "$type": "JHEBKCMEMLN"
+                  },
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                },
+                {
+                  "$type": "KBFEIHEAMBM",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "SGV_BaseBall_State",
+                      "param3": 1.0,
+                      "compareType": "MoreThanAndEqual"
+                    }
+                  ],
+                  "rotationDampTime": "Eff_SceneObj_Baseball_HighScore",
+                  "born": {
+                    "$type": "JHEBKCMEMLN"
+                  },
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                },
+                {
+                  "$type": "AHPEKICBIIL",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "SGV_BaseBall_State",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "luaCallType": "SpecificGroup",
+                  "isTarget": true,
+                  "callParamList": [
+                    247608006
+                  ],
+                  "funcName": "SLC_CharAmusement_BaseBallHit",
+                  "paramNum": 2,
+                  "param1": 3.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                },
+                {
+                  "$type": "AHPEKICBIIL",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "SGV_BaseBall_State",
+                      "param3": 1.0
+                    }
+                  ],
+                  "luaCallType": "SpecificGroup",
+                  "isTarget": true,
+                  "callParamList": [
+                    247608006
+                  ],
+                  "funcName": "SLC_CharAmusement_BaseBallHit",
+                  "paramNum": 2,
+                  "param1": 3.0,
+                  "MGAMDEHMCOL": 1.0,
+                  "MMHOHAOGPLP": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "CharAmusement_BaseBall_PlayerHit"
+        },
+        {
+          "$type": "PPDJHLBHCIK",
+          "shieldHP": true,
+          "canBeHandledOnRecover": true,
+          "muteRemoteAction": true,
+          "toPlayMode": "CharAmuseBaseball"
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "PPDJHLBHCIK",
+          "shieldHP": true,
+          "canBeHandledOnRecover": true,
+          "muteRemoteAction": true,
+          "JFDCCIECAJB": "CharAmuseBaseball"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CharAmusement_FootBall_CreateGate_01",
+      "modifiers": {
+        "CharAmusement_FootBall_GateGV": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "SlimeGate_AttachEff_State",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "CharAmusement_FootBall_CreateGate": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "HFNFMFHCHAF",
+              "actionQueue": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "shieldHP": true,
+                  "modifierName": "CharAmusement_FootBall_GateGV"
+                }
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "canBeHandledOnRecover": true,
+              "muteRemoteAction": true,
+              "born": {
+                "$type": "BBIDJJMEHNM",
+                "worldPos": {
+                  "x": 200.0,
+                  "z": 170.0
+                }
+              },
+              "gadgetID": 70320083,
+              "campID": 5001
+            },
+            {
+              "$type": "KFCDMIMBBLD",
+              "canBeHandledOnRecover": true,
+              "muteRemoteAction": true,
+              "born": {
+                "$type": "BBIDJJMEHNM",
+                "worldPos": {
+                  "x": 200.0,
+                  "z": 230.0
+                },
+                "worldFwd": {
+                  "z": -1.0
+                }
+              },
+              "gadgetID": 70320083,
+              "campID": 5001
+            },
+            {
+              "$type": "KFCDMIMBBLD",
+              "canBeHandledOnRecover": true,
+              "muteRemoteAction": true,
+              "born": {
+                "$type": "BBIDJJMEHNM",
+                "worldPos": {
+                  "x": 170.0,
+                  "z": 200.0
+                },
+                "worldFwd": {
+                  "x": 1.0
+                }
+              },
+              "gadgetID": 70320083,
+              "campID": 5001
+            },
+            {
+              "$type": "KFCDMIMBBLD",
+              "canBeHandledOnRecover": true,
+              "muteRemoteAction": true,
+              "born": {
+                "$type": "BBIDJJMEHNM",
+                "worldPos": {
+                  "x": 230.0,
+                  "z": 200.0
+                },
+                "worldFwd": {
+                  "x": -1.0
+                }
+              },
+              "gadgetID": 70320083,
+              "campID": 5001
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "CharAmusement_FootBall_CreateGate"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CharAmusement_FootBall_CreateGate_02",
+      "modifiers": {
+        "CharAmusement_FootBall_GateGV": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 2.0,
+              "key": "SlimeGate_AttachEff_State",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "CharAmusement_FootBall_CreateGate": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "HFNFMFHCHAF",
+              "actionQueue": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "shieldHP": true,
+                  "modifierName": "CharAmusement_FootBall_GateGV"
+                }
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "canBeHandledOnRecover": true,
+              "muteRemoteAction": true,
+              "born": {
+                "$type": "BBIDJJMEHNM",
+                "worldPos": {
+                  "x": 200.0,
+                  "z": 170.0
+                }
+              },
+              "gadgetID": 70320084,
+              "campID": 5001
+            },
+            {
+              "$type": "KFCDMIMBBLD",
+              "canBeHandledOnRecover": true,
+              "muteRemoteAction": true,
+              "born": {
+                "$type": "BBIDJJMEHNM",
+                "worldPos": {
+                  "x": 200.0,
+                  "z": 230.0
+                },
+                "worldFwd": {
+                  "z": -1.0
+                }
+              },
+              "gadgetID": 70320084,
+              "campID": 5001
+            },
+            {
+              "$type": "KFCDMIMBBLD",
+              "canBeHandledOnRecover": true,
+              "muteRemoteAction": true,
+              "born": {
+                "$type": "BBIDJJMEHNM",
+                "worldPos": {
+                  "x": 170.0,
+                  "z": 200.0
+                },
+                "worldFwd": {
+                  "x": 1.0
+                }
+              },
+              "gadgetID": 70320084,
+              "campID": 5001
+            },
+            {
+              "$type": "KFCDMIMBBLD",
+              "canBeHandledOnRecover": true,
+              "muteRemoteAction": true,
+              "born": {
+                "$type": "BBIDJJMEHNM",
+                "worldPos": {
+                  "x": 230.0,
+                  "z": 200.0
+                },
+                "worldFwd": {
+                  "x": -1.0
+                }
+              },
+              "gadgetID": 70320084,
+              "campID": 5001
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "CharAmusement_FootBall_CreateGate"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CharAmusement_FootBall_CreateGate_03",
+      "modifiers": {
+        "CharAmusement_FootBall_GateGV": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "SlimeGate_AttachEff_State",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "CharAmusement_FootBall_CreateGate": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "HFNFMFHCHAF",
+              "actionQueue": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "shieldHP": true,
+                  "modifierName": "CharAmusement_FootBall_GateGV"
+                }
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "canBeHandledOnRecover": true,
+              "muteRemoteAction": true,
+              "born": {
+                "$type": "BBIDJJMEHNM",
+                "worldPos": {
+                  "x": 200.0,
+                  "z": 170.0
+                }
+              },
+              "gadgetID": 70320083,
+              "campID": 5001
+            },
+            {
+              "$type": "KFCDMIMBBLD",
+              "canBeHandledOnRecover": true,
+              "muteRemoteAction": true,
+              "born": {
+                "$type": "BBIDJJMEHNM",
+                "worldPos": {
+                  "x": 200.0,
+                  "z": 230.0
+                },
+                "worldFwd": {
+                  "z": -1.0
+                }
+              },
+              "gadgetID": 70320083,
+              "campID": 5001
+            },
+            {
+              "$type": "KFCDMIMBBLD",
+              "canBeHandledOnRecover": true,
+              "muteRemoteAction": true,
+              "born": {
+                "$type": "BBIDJJMEHNM",
+                "worldPos": {
+                  "x": 170.0,
+                  "z": 200.0
+                },
+                "worldFwd": {
+                  "x": 1.0
+                }
+              },
+              "gadgetID": 70320083,
+              "campID": 5001
+            },
+            {
+              "$type": "KFCDMIMBBLD",
+              "canBeHandledOnRecover": true,
+              "muteRemoteAction": true,
+              "born": {
+                "$type": "BBIDJJMEHNM",
+                "worldPos": {
+                  "x": 230.0,
+                  "z": 200.0
+                },
+                "worldFwd": {
+                  "x": -1.0
+                }
+              },
+              "gadgetID": 70320083,
+              "campID": 5001
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "CharAmusement_FootBall_CreateGate"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_WindFlowerV2_SpinningBall_TeamAbility",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "GV_JumpUpBuff",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_CharAmusement_RocketJump"
+          ]
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_CharAmusement_CameraFix": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "LDDNKABEHEF",
+              "maxDistance": 10.0,
+              "resetToMaxOnStart": true,
+              "lerpInDuration": 0.5,
+              "lerpOutDuration": 2.0
+            }
+          ]
+        },
+        "UNIQUE_CharAmusement_RocketJump": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "CharAmusement_RocketJump_Avator"
+            }
+          ]
+        },
+        "CharAmusement_RocketJump_Avator": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "Jump"
+              ],
+              "modifierName": "CharAmusement_RocketJumpEffect",
+              "DGFCLAIDIFI": ""
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_JumpUp_01_Buff",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "OBFLHMDNOCN",
+              "canBeHandledOnRecover": true,
+              "damageRatio": "DungeonJump",
+              "enable": true,
+              "extention": {
+                "xzMultiplier": 3.0,
+                "yMultiplier": 5.0
+              }
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "OBFLHMDNOCN",
+              "target": "CurTeamAvatars",
+              "shieldHP": true,
+              "damageRatio": "DungeonJump"
+            }
+          ]
+        },
+        "CharAmusement_RocketJumpEffect": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Stages_Level_Common_Jumpplatform_01_Active",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "UNIQUE_CharAmusement_CameraFix"
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "UNIQUE_CharAmusement_CameraFix"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_WindFlowerV2_WaterRun_TeamAbility",
+      "modifiers": {
+        "UNIQUE_Hider_MoveSpeedDown": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Animator_MoveSpeedRatio": -0.30000001192092896
+          },
+          "isLimitedProperties": true
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "UNIQUE_Hider_MoveSpeedDown"
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "UNIQUE_Hider_MoveSpeedDown"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_CharAmusement_SkillCDDown_Test1",
+      "abilitySpecials": {
+        "SkillCDDownRatio": 0.30000001192092896
+      },
+      "modifiers": {
+        "UNIQUE_Activity_CharAmusement_SkillCDDown_Test": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "LFDMBLDKNMK",
+              "onTriggerSkill": [
+                {
+                  "$type": "PELJALPANCA",
+                  "modifierName": "UNIQUE_Activity_CharAmusement_SkillCDDown_Test_CDDown"
+                }
+              ],
+              "useSkillStart": true
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_SkillCDDown_Test_CDDown": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "CCMOJLPKHDN",
+              "skillSlot": [
+                2
+              ],
+              "amountByTargetCurrentHPRatio": [
+                0.0,
+                1.0,
+                "SkillCDDownRatio",
+                "MUL",
+                "SUB"
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Activity_CharAmusement_SkillCDDown_Test"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_CharAmusement_SkillCDDown_Test2",
+      "abilitySpecials": {
+        "SkillCDDownRatio": 0.6000000238418579
+      },
+      "modifiers": {
+        "UNIQUE_Activity_CharAmusement_SkillCDDown_Test2": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "LFDMBLDKNMK",
+              "onTriggerSkill": [
+                {
+                  "$type": "PELJALPANCA",
+                  "modifierName": "UNIQUE_Activity_CharAmusement_SkillCDDown_Test2_CDDown"
+                }
+              ],
+              "useSkillStart": true
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_SkillCDDown_Test2_CDDown": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "CCMOJLPKHDN",
+              "skillSlot": [
+                2
+              ],
+              "amountByTargetCurrentHPRatio": [
+                0.0,
+                1.0,
+                "SkillCDDownRatio",
+                "MUL",
+                "SUB"
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Activity_CharAmusement_SkillCDDown_Test2"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_CharAmusement_SkillCDDown_Test3",
+      "abilitySpecials": {
+        "SkillCDDownRatio": 0.8999999761581421
+      },
+      "modifiers": {
+        "UNIQUE_Activity_CharAmusement_SkillCDDown_Test3": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "LFDMBLDKNMK",
+              "onTriggerSkill": [
+                {
+                  "$type": "PELJALPANCA",
+                  "modifierName": "UNIQUE_Activity_CharAmusement_SkillCDDown_Test3_CDDown"
+                }
+              ],
+              "useSkillStart": true
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_SkillCDDown_Test3_CDDown": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "CCMOJLPKHDN",
+              "skillSlot": [
+                2
+              ],
+              "amountByTargetCurrentHPRatio": [
+                0.0,
+                1.0,
+                "SkillCDDownRatio",
+                "MUL",
+                "SUB"
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Activity_CharAmusement_SkillCDDown_Test3"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_WindFlowerV3_AceCombat_TeamAbility",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "SGV_AceCombat_Player",
+          "valueSteps": [
+            0.5,
+            1.5,
+            2.5,
+            3.5,
+            4.5
+          ],
+          "modifierNameSteps": [
+            "AceCombatPlayer01",
+            "AceCombatPlayer02",
+            "AceCombatPlayer03",
+            "AceCombatPlayer04"
+          ],
+          "NMCLMHFBALJ": true
+        },
+        {
+          "$type": "NKEPLGAIEJM",
+          "modifierName": "MarkBeHit"
+        }
+      ],
+      "modifiers": {
+        "MarkBeHit": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onBeingHit": [
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "CharAmusement_AceBullet"
+                  ]
+                }
+              ],
+              "modifierName": "MarkAction"
+            }
+          ]
+        },
+        "MarkAction": {
+          "stacking": "MultipleRefresh",
+          "stackingOption": {
+            "abilitySpecialName": "",
+            "maxModifierNumForMultipleType": 1.0
+          },
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AHPEKICBIIL",
+              "target": "CurLocalAvatar",
+              "luaCallType": "CurGalleryControlGroup",
+              "isTarget": true,
+              "funcName": "SLC_PlayerDamage",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ]
+        },
+        "AceCombatPlayer01": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 1.0,
+              "key": "CharAmuseLauncher_Player",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "AceCombatPlayer02": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 2.0,
+              "key": "CharAmuseLauncher_Player",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "AceCombatPlayer03": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 3.0,
+              "key": "CharAmuseLauncher_Player",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "AceCombatPlayer04": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 4.0,
+              "key": "CharAmuseLauncher_Player",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_WindFlowerV3_BasketBall_AvatarAbility",
+      "abilityMixins": [
+        {
+          "$type": "HFNFMFHCHAF",
+          "actionQueue": [
+            {
+              "$type": "PELJALPANCA",
+              "target": "Target",
+              "shieldHP": true,
+              "modifierName": "CharAmusement_Basketball_Attack"
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "CharAmusement_Basketball_Watcher": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onHittingOther": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Other",
+              "shieldHP": true,
+              "targetPredicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "CharAmusement_Basketball"
+                  ]
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "CharAmuseBasket",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "MCOBFPMHMHJ",
+                  "target": "Target",
+                  "luaCallType": "FromGroup",
+                  "isTarget": true,
+                  "sourceName": "CharAmuseBasket",
+                  "param1": 0.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        "CharAmusement_Basketball_Attack": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "JJGIIICBELE",
+              "tags": [
+                "CharAmuseBasket"
+              ],
+              "isChecker": true
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "INBCDALOHMP",
+              "shieldHP": true,
+              "targetPredicates": [
+                {
+                  "$type": "HHHMNCNPBDK",
+                  "predicates": [
+                    {
+                      "$type": "BHFFBBOLCCP",
+                      "modifierName": "Rabbit_GenerateElementBall_Handler"
+                    },
+                    {
+                      "$type": "BHFFBBOLCCP",
+                      "modifierName": "UNIQUE_Ambor_Dummy_Timer"
+                    }
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "Debug:CharAmusement_Basketball_Attack!!!!!!!!!!"
+                },
+                {
+                  "$type": "AIFPLABJNMA",
+                  "target": "CurLocalAvatar",
+                  "attackEvent": {
+                    "attackPattern": {
+                      "$type": "GMDIMKKHACA",
+                      "triggerType": "TriggerNoRepeat",
+                      "born": {
+                        "$type": "IAENDIPDFKD",
+                        "offset": {
+                          "KGEPIMHBMOL": 0.0,
+                          "JEBHCGDPFEJ": -1.5,
+                          "LPCHALMFFOD": 0.0
+                        },
+                        "useRotation": true
+                      },
+                      "height": 3.0,
+                      "OAHPDLJIADP": 0.800000011920929
+                    },
+                    "attackInfo": {
+                      "attackTag": "CharAmusement_Basketball",
+                      "attenuationTag": "",
+                      "attenuationGroup": "default",
+                      "attackProperty": {
+                        "actorWindSubHurtDelta": 0.0,
+                        "IPFJJJGABPL": 100.0,
+                        "ignoreAttackerProperty": true,
+                        "strikeType": "Default",
+                        "attackType": "Range",
+                        "HMBONGBFIAP": 0.0,
+                        "GLKMCMDJBIK": 0.0
+                      },
+                      "hitPattern": {
+                        "onHitEffectName": "default",
+                        "hitImpulseY": "",
+                        "hitImpulseType": "LV1",
+                        "hitHaltTimeScale": 0.05000000074505806
+                      }
+                    }
+                  },
+                  "targetType": "AllExceptSelf"
+                },
+                {
+                  "$type": "NCFFNDHGCMH",
+                  "configIdArray": [
+                    70000000
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "CharAmusement_Basketball_Watcher"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_WindFlowerV3_HightJump_CoinDetect_TeamAbility",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "GV_CoinRangeLevel",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5
+          ],
+          "modifierNameSteps": [
+            "CharAmusement_CoinDetect_Normal"
+          ]
+        },
+        {
+          "$type": "NDFFAEHJMAL",
+          "globalValueKey": "SGV_CharAmusement_CoinEffect",
+          "actions": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_GetGlideChampCoin",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "CharAmusement_CoinDetect_Normal": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.05000000074505806,
+          "onThinkInterval": [
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR5H5",
+                "centerBasedOn": "CurLocalAvatar",
+                "campTargetType": "Enemy",
+                "campBasedOn": "CurLocalAvatar",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "CharAmusement_Coin_Type",
+                  "param3": 2.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "AHPEKICBIIL",
+                  "target": "Target",
+                  "luaCallType": "CurGalleryControlGroup",
+                  "funcName": "SLC_CharAmusement_CoinGet",
+                  "paramNum": 1,
+                  "param1": 2.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR4H6",
+                "centerBasedOn": "CurLocalAvatar",
+                "campTargetType": "Enemy",
+                "campBasedOn": "CurLocalAvatar",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "CharAmusement_Coin_Type",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "AHPEKICBIIL",
+                  "target": "Target",
+                  "luaCallType": "CurGalleryControlGroup",
+                  "funcName": "SLC_CharAmusement_CoinGet",
+                  "paramNum": 1,
+                  "param1": 1.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR3H3",
+                "centerBasedOn": "CurLocalAvatar",
+                "campTargetType": "Enemy",
+                "campBasedOn": "CurLocalAvatar",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "CharAmusement_Stamina",
+                  "param3": 1.0,
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "IJEHOLMBKJJ",
+                  "target": "CurLocalAvatar",
+                  "shieldHP": true,
+                  "param3": 300.0
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "modifierName": "CharAmusement_StaminaPicked"
+                }
+              ]
+            }
+          ]
+        },
+        "CharAmusement_CoinPicked": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": -1.0,
+              "key": "CharAmusement_Coin_Type",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "CharAmusement_StaminaPicked": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "CharAmusement_Stamina",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "GV_CoinRangeLevel",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_WindFlowerV3_HighJump_AvatarAbility",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "_WindFlowerV3_HighJump_AvatarRouteMove",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "CloseCameraCollision"
+          ]
+        },
+        {
+          "$type": "DOGKIMOLHLC",
+          "onEnter": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 1.0,
+              "key": "_WindFlowerV3_HighJump_AvatarRouteMove",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onExit": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 0.0,
+              "key": "_WindFlowerV3_HighJump_AvatarRouteMove",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "PressingFloor": {
+          "stacking": "MultipleRefreshNoRemove",
+          "stackingOption": {
+            "abilitySpecialName": "",
+            "maxModifierNumForMultipleType": 1.0
+          },
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "IsPressed",
+              "param3": 1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "IsPressed",
+              "param3": 0.0
+            }
+          ]
+        },
+        "WindFlowerV3_HighJump_RecoverHandle": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onReconnect": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_WindFlowerV3_HighJump_AvatarRouteMove",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "CloseCameraCollision": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "GPANDDKLPLI"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "WindFlowerV3_HighJump_RecoverHandle"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_WindFlowerV3_HighJump_TeamAbility",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "GV_JumpUpBuff",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_CharAmusement_HighJump_RocketJump"
+          ]
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_CharAmusement_HighJump_CameraFix": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "LDDNKABEHEF",
+              "maxDistance": 10.0,
+              "resetToMaxOnStart": true,
+              "lerpInDuration": 0.5,
+              "lerpOutDuration": 2.0
+            }
+          ]
+        },
+        "UNIQUE_CharAmusement_HighJump_RocketJump": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "CharAmusement_RocketJump_Avatar"
+            }
+          ]
+        },
+        "CharAmusement_RocketJump_Avatar": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "Jump"
+              ],
+              "modifierName": "CharAmusement_RocketJumpEffect",
+              "DGFCLAIDIFI": ""
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_JumpUp_01_Buff",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "OBFLHMDNOCN",
+              "canBeHandledOnRecover": true,
+              "damageRatio": "DungeonJump",
+              "enable": true,
+              "extention": {
+                "xzMultiplier": 3.0,
+                "yMultiplier": 5.0
+              }
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "OBFLHMDNOCN",
+              "target": "CurTeamAvatars",
+              "shieldHP": true,
+              "damageRatio": "DungeonJump"
+            }
+          ]
+        },
+        "CharAmusement_RocketJumpEffect": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Stages_Level_Common_Jumpplatform_01_Active",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "CharAmusement_Teleport_Protect": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 1.0,
+              "key": "_Activity_CharAmusement_Teleport_Protect",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 0.0,
+              "key": "_Activity_CharAmusement_Teleport_Protect",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "UNIQUE_CharAmusement_HighJump_Search": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.5,
+          "onThinkInterval": [
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleHighJumpRange",
+                "centerBasedOn": "CurLocalAvatar",
+                "campTargetType": "Enemy",
+                "campBasedOn": "CurLocalAvatar",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "CharAmusement_Teleport",
+                  "param3": 1.0
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "CurLocalAvatar",
+                  "key": "_WindFlowerV3_HighJump_AvatarRouteMove",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_Activity_CharAmusement_Teleport_Protect",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "Debug:UNIQUE_CharAmusement_HighJump_Search!!!!!!!!!!"
+                },
+                {
+                  "$type": "AHPEKICBIIL",
+                  "luaCallType": "CurGalleryControlGroup",
+                  "funcName": "SLC_CharAmusement_Teleport",
+                  "param1": 0.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "modifierName": "CharAmusement_Teleport_Protect"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "UNIQUE_CharAmusement_HighJump_Search"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_CharAmusement_SkillCDDown_Level1",
+      "abilitySpecials": {
+        "SkillCDDownRatio_Lv1": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_Activity_CharAmusement_SkillCDDown_Level1": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_SkillCDMinusRatio": "SkillCDDownRatio_Lv1"
+          }
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Activity_CharAmusement_SkillCDDown_Level1"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_CharAmusement_SkillCDDown_Level2",
+      "abilitySpecials": {
+        "SkillCDDownRatio_Lv2": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_Activity_CharAmusement_SkillCDDown_Level2": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_SkillCDMinusRatio": "SkillCDDownRatio_Lv2"
+          }
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Activity_CharAmusement_SkillCDDown_Level2"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_CharAmusement_SkillCDDown_Level3",
+      "abilitySpecials": {
+        "SkillCDDownRatio_Lv3": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_Activity_CharAmusement_SkillCDDown_Level3": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_SkillCDMinusRatio": "SkillCDDownRatio_Lv3"
+          }
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Activity_CharAmusement_SkillCDDown_Level3"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_CharAmusement_SkillCDDown_Level4",
+      "modifiers": {
+        "UNIQUE_Activity_CharAmusement_SkillCDDown_Level4": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "LFDMBLDKNMK",
+              "onTriggerSkill": [
+                {
+                  "$type": "CCMOJLPKHDN",
+                  "skillID": 10782,
+                  "cdMin": -99.0
+                },
+                {
+                  "$type": "CCMOJLPKHDN",
+                  "skillID": 10772,
+                  "cdMin": -99.0
+                },
+                {
+                  "$type": "CCMOJLPKHDN",
+                  "skillID": 10422,
+                  "cdMin": -99.0
+                },
+                {
+                  "$type": "CCMOJLPKHDN",
+                  "skillID": 10423,
+                  "cdMin": -99.0
+                },
+                {
+                  "$type": "CCMOJLPKHDN",
+                  "skillID": 10032,
+                  "cdMin": -99.0
+                },
+                {
+                  "$type": "CCMOJLPKHDN",
+                  "skillID": 10607,
+                  "cdMin": -99.0
+                }
+              ],
+              "useSkillStart": true,
+              "clearSkillIdDelay": 0.20000000298023224
+            },
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "Yelan_ElementalArt_BS",
+                "Yelan_ElementalArt_Hold",
+                "Yelan_ElementalArt_Stop",
+                "Yelan_ElementalArt_Strike"
+              ],
+              "modifierName": "Avatar_Activity_CharAmusement_Yelan_ResetCD",
+              "DGFCLAIDIFI": ""
+            }
+          ]
+        },
+        "Avatar_Activity_CharAmusement_Yelan_ResetCD": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "shieldHP": true,
+              "modifierName": "Avatar_Activity_CharAmusement_Yelan_ResetCD_Delay"
+            }
+          ]
+        },
+        "Avatar_Activity_CharAmusement_Yelan_ResetCD_Delay": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "CCMOJLPKHDN",
+              "shieldHP": true,
+              "skillID": 10607,
+              "cdMin": -99.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Activity_CharAmusement_SkillCDDown_Level4"
+        },
+        {
+          "$type": "CCMOJLPKHDN",
+          "skillID": 10782,
+          "cdMin": -99.0
+        },
+        {
+          "$type": "CCMOJLPKHDN",
+          "skillID": 10772,
+          "cdMin": -99.0
+        },
+        {
+          "$type": "CCMOJLPKHDN",
+          "skillID": 10422,
+          "cdMin": -99.0
+        },
+        {
+          "$type": "CCMOJLPKHDN",
+          "skillID": 10423,
+          "cdMin": -99.0
+        },
+        {
+          "$type": "CCMOJLPKHDN",
+          "skillID": 10032,
+          "cdMin": -99.0
+        },
+        {
+          "$type": "CCMOJLPKHDN",
+          "skillID": 10607,
+          "cdMin": -99.0
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_CharAmusement_RecoverHealth",
+      "abilitySpecials": {
+        "RecoverInterval": 0.0,
+        "RecoverRatio": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_Activity_CharAmusement_RecoverHealth": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": "RecoverInterval",
+          "onThinkInterval": [
+            {
+              "$type": "FHGPOFDJDCO",
+              "shieldHP": true,
+              "CKDBFHCIJEK": "RecoverRatio",
+              "cdRatio": ""
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Activity_CharAmusement_RecoverHealth"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_CharAmusement_RecoverEnergy_Once",
+      "abilitySpecials": {
+        "RecoverValue": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_Activity_CharAmusement_RecoverEnergy_Once": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AHCALEMEJPJ",
+              "shieldHP": true,
+              "param3": "RecoverValue"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Activity_CharAmusement_RecoverEnergy_Once"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_CharAmusement_RecoverEnergy_LV1",
+      "abilitySpecials": {
+        "RecoverInterval": 0.0,
+        "RecoverValue": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_Activity_CharAmusement_RecoverEnergy_LV1": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": "RecoverInterval",
+          "onThinkInterval": [
+            {
+              "$type": "AHCALEMEJPJ",
+              "shieldHP": true,
+              "param3": "RecoverValue"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Activity_CharAmusement_RecoverEnergy_LV1"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_CharAmusement_RecoverEnergy_LV2",
+      "abilitySpecials": {
+        "RecoverInterval_LV2": 0.0,
+        "RecoverValue_LV2": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_Activity_CharAmusement_RecoverEnergy_LV2": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": "RecoverInterval_LV2",
+          "onThinkInterval": [
+            {
+              "$type": "AHCALEMEJPJ",
+              "shieldHP": true,
+              "param3": "RecoverValue_LV2"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Activity_CharAmusement_RecoverEnergy_LV2"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_CharAmusement_Thunder_ByElectricNum",
+      "abilityMixins": [
+        {
+          "$type": "EEPKCGMKKJC",
+          "modifierName": "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum"
+        },
+        {
+          "$type": "EEPKCGMKKJC",
+          "modifierName": "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum_Decision_ElecReaction"
+        },
+        {
+          "$type": "EEPKCGMKKJC",
+          "modifierName": "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum_Action_SummonThunder"
+        },
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueTarget": "Team",
+          "globalValueKey": "IsTriggerElectReact",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum_CountWindow"
+          ]
+        }
+      ],
+      "abilitySpecials": {
+        "ImpactDamageSystemValue": 0.0,
+        "CountWindow": 0.0,
+        "Count_LV1": 0.0,
+        "Count_LV2": 0.0,
+        "DamageValue1": 0.0,
+        "DamageValue2": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "GEICHMDHPHI",
+              "entityTypes": [
+                "Monster"
+              ],
+              "reactionTypes": [
+                "Shock"
+              ],
+              "actions": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "target": "Team",
+                  "shieldHP": true,
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Team",
+                      "key": "CountWiondwFlag",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "param3": 1.0,
+                  "key": "IsTriggerElectReact",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum_Decision_ElecReaction": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "GEICHMDHPHI",
+              "entityTypes": [
+                "Monster"
+              ],
+              "reactionTypes": [
+                "Shock"
+              ],
+              "actions": [
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "target": "Team",
+                  "shieldHP": true,
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Team",
+                      "key": "CountWiondwFlag",
+                      "param3": 1.0
+                    }
+                  ],
+                  "param3": 1.0,
+                  "key": "ElecNum",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "AHPEKICBIIL",
+                  "luaCallType": "CurGalleryControlGroup",
+                  "funcName": "SLC_CharAmuse_BattleAction",
+                  "paramNum": 1,
+                  "param1": 1.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum_Action_SummonThunder": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "GEICHMDHPHI",
+              "entityTypes": [
+                "Monster"
+              ],
+              "reactionTypes": [
+                "Shock"
+              ],
+              "actions": [
+                {
+                  "$type": "INBCDALOHMP",
+                  "target": "Other",
+                  "shieldHP": true,
+                  "targetPredicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Team",
+                      "key": "ThunderFlag",
+                      "param3": 1.0,
+                      "compareType": "MoreThanAndEqual"
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Team",
+                      "key": "CharAmusement_Thunder_CD",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "INBCDALOHMP",
+                      "target": "Other",
+                      "shieldHP": true,
+                      "targetPredicates": [
+                        {
+                          "$type": "CNGGLKHONAA",
+                          "target": "Team",
+                          "key": "ThunderFlag",
+                          "param3": 2.0,
+                          "compareType": "MoreThanAndEqual"
+                        }
+                      ],
+                      "successActions": [
+                        {
+                          "$type": "KBFEIHEAMBM",
+                          "target": "Other",
+                          "shieldHP": true,
+                          "rotationDampTime": "Eff_SceneObj_RaioTrunk_01_ThunderFall_Plus",
+                          "born": {
+                            "$type": "JHEBKCMEMLN"
+                          },
+                          "ownedByLevel": true,
+                          "PPPDJGDDOGD": 1.0,
+                          "AJDILHJFNKE": -1.0
+                        },
+                        {
+                          "$type": "PELJALPANCA",
+                          "target": "Other",
+                          "shieldHP": true,
+                          "modifierName": "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum_Action_Thunder_LV2"
+                        }
+                      ],
+                      "failActions": [
+                        {
+                          "$type": "KBFEIHEAMBM",
+                          "target": "Other",
+                          "shieldHP": true,
+                          "rotationDampTime": "Eff_SceneObj_RaioTrunk_01_ThunderFall",
+                          "born": {
+                            "$type": "JHEBKCMEMLN"
+                          },
+                          "ownedByLevel": true,
+                          "PPPDJGDDOGD": 1.0,
+                          "AJDILHJFNKE": -1.0
+                        },
+                        {
+                          "$type": "PELJALPANCA",
+                          "target": "Other",
+                          "shieldHP": true,
+                          "modifierName": "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum_Action_Thunder_LV1"
+                        }
+                      ]
+                    },
+                    {
+                      "$type": "BOBCOJHOKKD",
+                      "target": "Team",
+                      "shieldHP": true,
+                      "param3": 0.0,
+                      "key": "ThunderFlag",
+                      "param2": 0.0,
+                      "repeatTimes": 0.0
+                    },
+                    {
+                      "$type": "PELJALPANCA",
+                      "target": "Team",
+                      "shieldHP": true,
+                      "modifierName": "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum_Thunder_CD"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum_Thunder_CD": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": -1.0,
+              "key": "CharAmusement_Thunder_CD",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": 0.0,
+              "key": "CharAmusement_Thunder_CD",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum_CountWindow": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "CountWindow",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": 1.0,
+              "key": "CountWiondwFlag",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": 0.0,
+              "key": "CountWiondwFlag",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": 0.0,
+              "key": "IsTriggerElectReact",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Team",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Team",
+                  "key": "ElecNum",
+                  "param3": "Count_LV1",
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "INBCDALOHMP",
+                  "target": "Team",
+                  "targetPredicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Team",
+                      "key": "ElecNum",
+                      "param3": "Count_LV2",
+                      "compareType": "MoreThanAndEqual"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "BOBCOJHOKKD",
+                      "target": "Team",
+                      "param3": 2.0,
+                      "key": "ThunderFlag",
+                      "param2": 0.0,
+                      "repeatTimes": 0.0
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "BOBCOJHOKKD",
+                      "target": "Team",
+                      "param3": 1.0,
+                      "key": "ThunderFlag",
+                      "param2": 0.0,
+                      "repeatTimes": 0.0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": 0.0,
+              "key": "ElecNum",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum_Action_Thunder_LV1": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AIFPLABJNMA",
+              "target": "Applier",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD"
+                  },
+                  "OAHPDLJIADP": 5.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Electric",
+                    "IPFJJJGABPL": 0.0,
+                    "ignoreAttackerProperty": true,
+                    "enBreak": 0.0,
+                    "attackType": "Melee",
+                    "HMBONGBFIAP": [
+                      "DamageValue1",
+                      "ImpactDamageSystemValue",
+                      "MUL"
+                    ],
+                    "trueDamage": true,
+                    "ignoreModifyDamage": true,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.019999999552965164
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum_Action_Thunder_LV2": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AIFPLABJNMA",
+              "target": "Applier",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD"
+                  },
+                  "OAHPDLJIADP": 10.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Electric",
+                    "IPFJJJGABPL": 0.0,
+                    "ignoreAttackerProperty": true,
+                    "enBreak": 0.0,
+                    "attackType": "Melee",
+                    "HMBONGBFIAP": [
+                      "DamageValue2",
+                      "ImpactDamageSystemValue",
+                      "MUL"
+                    ],
+                    "trueDamage": true,
+                    "ignoreModifyDamage": true,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.019999999552965164
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "GDHGMAPPGHD",
+          "key": "ImpactDamageSystemValue",
+          "damageRatio": "ElementLevelCo"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "target": "Team",
+          "param3": 0.0,
+          "key": "ThunderFlag",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_CharAmusement_Thunder_ByElectricNum2",
+      "abilityMixins": [
+        {
+          "$type": "EEPKCGMKKJC",
+          "modifierName": "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum2"
+        },
+        {
+          "$type": "EEPKCGMKKJC",
+          "modifierName": "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum2_Decision_ElecReaction"
+        },
+        {
+          "$type": "EEPKCGMKKJC",
+          "modifierName": "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum2_Action_SummonThunder"
+        },
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueTarget": "Team",
+          "globalValueKey": "IsTriggerElectReact",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum2_CountWindow"
+          ]
+        }
+      ],
+      "abilitySpecials": {
+        "ImpactDamageSystemValue": 0.0,
+        "CountWindow": 0.0,
+        "Count_LV1": 0.0,
+        "Count_LV2": 0.0,
+        "DamageValue1": 0.0,
+        "DamageValue2": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum2": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "GEICHMDHPHI",
+              "entityTypes": [
+                "Monster"
+              ],
+              "reactionTypes": [
+                "Overdose",
+                "OverdoseElectric",
+                "OverdoseGrass"
+              ],
+              "actions": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "target": "Team",
+                  "shieldHP": true,
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Team",
+                      "key": "CountWiondwFlag",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "param3": 1.0,
+                  "key": "IsTriggerElectReact",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum2_Decision_ElecReaction": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "GEICHMDHPHI",
+              "entityTypes": [
+                "Monster"
+              ],
+              "reactionTypes": [
+                "Overdose",
+                "OverdoseElectric",
+                "OverdoseGrass"
+              ],
+              "actions": [
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "target": "Team",
+                  "shieldHP": true,
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Team",
+                      "key": "CountWiondwFlag",
+                      "param3": 1.0
+                    }
+                  ],
+                  "param3": 1.0,
+                  "key": "ElecNum",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "AHPEKICBIIL",
+                  "luaCallType": "CurGalleryControlGroup",
+                  "funcName": "SLC_CharAmuse_BattleAction",
+                  "paramNum": 1,
+                  "param1": 1.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum2_Action_SummonThunder": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "GEICHMDHPHI",
+              "entityTypes": [
+                "Monster"
+              ],
+              "reactionTypes": [
+                "Overdose",
+                "OverdoseElectric",
+                "OverdoseGrass"
+              ],
+              "actions": [
+                {
+                  "$type": "INBCDALOHMP",
+                  "target": "Other",
+                  "shieldHP": true,
+                  "targetPredicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Team",
+                      "key": "ThunderFlag",
+                      "param3": 1.0,
+                      "compareType": "MoreThanAndEqual"
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Team",
+                      "key": "CharAmusement_Thunder_CD",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "INBCDALOHMP",
+                      "target": "Other",
+                      "shieldHP": true,
+                      "targetPredicates": [
+                        {
+                          "$type": "CNGGLKHONAA",
+                          "target": "Team",
+                          "key": "ThunderFlag",
+                          "param3": 2.0,
+                          "compareType": "MoreThanAndEqual"
+                        }
+                      ],
+                      "successActions": [
+                        {
+                          "$type": "KBFEIHEAMBM",
+                          "target": "Other",
+                          "shieldHP": true,
+                          "rotationDampTime": "Eff_SceneObj_RaioTrunk_01_ThunderFall_Plus",
+                          "born": {
+                            "$type": "JHEBKCMEMLN"
+                          },
+                          "ownedByLevel": true,
+                          "PPPDJGDDOGD": 1.0,
+                          "AJDILHJFNKE": -1.0
+                        },
+                        {
+                          "$type": "PELJALPANCA",
+                          "target": "Other",
+                          "shieldHP": true,
+                          "modifierName": "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum2_Action_Thunder_LV2"
+                        }
+                      ],
+                      "failActions": [
+                        {
+                          "$type": "KBFEIHEAMBM",
+                          "target": "Other",
+                          "shieldHP": true,
+                          "rotationDampTime": "Eff_SceneObj_RaioTrunk_01_ThunderFall",
+                          "born": {
+                            "$type": "JHEBKCMEMLN"
+                          },
+                          "ownedByLevel": true,
+                          "PPPDJGDDOGD": 1.0,
+                          "AJDILHJFNKE": -1.0
+                        },
+                        {
+                          "$type": "PELJALPANCA",
+                          "target": "Other",
+                          "shieldHP": true,
+                          "modifierName": "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum2_Action_Thunder_LV1"
+                        }
+                      ]
+                    },
+                    {
+                      "$type": "BOBCOJHOKKD",
+                      "target": "Team",
+                      "shieldHP": true,
+                      "param3": 0.0,
+                      "key": "ThunderFlag",
+                      "param2": 0.0,
+                      "repeatTimes": 0.0
+                    },
+                    {
+                      "$type": "PELJALPANCA",
+                      "target": "Team",
+                      "shieldHP": true,
+                      "modifierName": "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum2_Thunder_CD"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum2_Thunder_CD": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": -1.0,
+              "key": "CharAmusement_Thunder_CD",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": 0.0,
+              "key": "CharAmusement_Thunder_CD",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum2_CountWindow": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "CountWindow",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": 1.0,
+              "key": "CountWiondwFlag",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": 0.0,
+              "key": "CountWiondwFlag",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": 0.0,
+              "key": "IsTriggerElectReact",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Team",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Team",
+                  "key": "ElecNum",
+                  "param3": "Count_LV1",
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "INBCDALOHMP",
+                  "target": "Team",
+                  "targetPredicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Team",
+                      "key": "ElecNum",
+                      "param3": "Count_LV2",
+                      "compareType": "MoreThanAndEqual"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "BOBCOJHOKKD",
+                      "target": "Team",
+                      "param3": 2.0,
+                      "key": "ThunderFlag",
+                      "param2": 0.0,
+                      "repeatTimes": 0.0
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "BOBCOJHOKKD",
+                      "target": "Team",
+                      "param3": 1.0,
+                      "key": "ThunderFlag",
+                      "param2": 0.0,
+                      "repeatTimes": 0.0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": 0.0,
+              "key": "ElecNum",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum2_Action_Thunder_LV1": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AIFPLABJNMA",
+              "target": "Applier",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD"
+                  },
+                  "OAHPDLJIADP": 5.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Electric",
+                    "IPFJJJGABPL": 0.0,
+                    "ignoreAttackerProperty": true,
+                    "enBreak": 0.0,
+                    "attackType": "Melee",
+                    "HMBONGBFIAP": [
+                      "DamageValue1",
+                      "ImpactDamageSystemValue",
+                      "MUL"
+                    ],
+                    "trueDamage": true,
+                    "ignoreModifyDamage": true,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.019999999552965164
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_Thunder_ByElectricNum2_Action_Thunder_LV2": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AIFPLABJNMA",
+              "target": "Applier",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD"
+                  },
+                  "OAHPDLJIADP": 10.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Electric",
+                    "IPFJJJGABPL": 0.0,
+                    "ignoreAttackerProperty": true,
+                    "enBreak": 0.0,
+                    "attackType": "Melee",
+                    "HMBONGBFIAP": [
+                      "DamageValue2",
+                      "ImpactDamageSystemValue",
+                      "MUL"
+                    ],
+                    "trueDamage": true,
+                    "ignoreModifyDamage": true,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.019999999552965164
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "GDHGMAPPGHD",
+          "key": "ImpactDamageSystemValue",
+          "damageRatio": "ElementLevelCo"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "target": "Team",
+          "param3": 0.0,
+          "key": "ThunderFlag",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_CharAmusement_Impact_ByNormalAttackNum",
+      "abilityMixins": [
+        {
+          "$type": "NKEPLGAIEJM",
+          "modifierName": "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum"
+        },
+        {
+          "$type": "NKEPLGAIEJM",
+          "modifierName": "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum_Decision_NormalAttackLand"
+        },
+        {
+          "$type": "NKEPLGAIEJM",
+          "modifierName": "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum_Action_SummonImpact"
+        },
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueTarget": "Team",
+          "globalValueKey": "NormalAttackLand",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum_CountWindow"
+          ]
+        }
+      ],
+      "abilitySpecials": {
+        "ImpactDamageSystemValue": 0.0,
+        "CountWindow": 0.0,
+        "Count_LV1": 0.0,
+        "Count_LV2": 0.0,
+        "DamageValue1": 0.0,
+        "DamageValue2": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Other",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Team",
+                  "key": "CountWiondwFlag",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "NNEHDJHMING",
+                  "target": "Self",
+                  "attackTags": [
+                    "NormalAttack_01",
+                    "NormalAttack_02",
+                    "NormalAttack_03",
+                    "NormalAttack_04",
+                    "NormalAttack_05",
+                    "NormalAttack_06"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "target": "Team",
+                  "param3": 1.0,
+                  "key": "NormalAttackLand",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum_Decision_NormalAttackLand": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Other",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Team",
+                  "key": "CountWiondwFlag",
+                  "param3": 1.0
+                },
+                {
+                  "$type": "NNEHDJHMING",
+                  "target": "Self",
+                  "attackTags": [
+                    "NormalAttack_01",
+                    "NormalAttack_02",
+                    "NormalAttack_03",
+                    "NormalAttack_04",
+                    "NormalAttack_05",
+                    "NormalAttack_06"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "target": "Team",
+                  "param3": 1.0,
+                  "key": "AttackNum",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Other",
+              "targetPredicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "target": "Self",
+                  "attackTags": [
+                    "NormalAttack_01",
+                    "NormalAttack_02",
+                    "NormalAttack_03",
+                    "NormalAttack_04",
+                    "NormalAttack_05",
+                    "NormalAttack_06"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "AHPEKICBIIL",
+                  "luaCallType": "CurGalleryControlGroup",
+                  "funcName": "SLC_CharAmuse_BattleAction",
+                  "paramNum": 1,
+                  "param1": 2.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum_Action_SummonImpact": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Other",
+              "targetPredicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "target": "Self",
+                  "attackTags": [
+                    "NormalAttack_01",
+                    "NormalAttack_02",
+                    "NormalAttack_03",
+                    "NormalAttack_04",
+                    "NormalAttack_05",
+                    "NormalAttack_06"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "INBCDALOHMP",
+                  "target": "Other",
+                  "targetPredicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Team",
+                      "key": "ImpactFlag",
+                      "param3": 1.0,
+                      "compareType": "MoreThanAndEqual"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "INBCDALOHMP",
+                      "target": "Other",
+                      "targetPredicates": [
+                        {
+                          "$type": "CNGGLKHONAA",
+                          "target": "Team",
+                          "key": "ImpactFlag",
+                          "param3": 2.0,
+                          "compareType": "MoreThanAndEqual"
+                        }
+                      ],
+                      "successActions": [
+                        {
+                          "$type": "KBFEIHEAMBM",
+                          "target": "Other",
+                          "shieldHP": true,
+                          "rotationDampTime": "Eff_EnergyDisk_ElementalBurst_Wave_R100_Plus",
+                          "born": {
+                            "$type": "JHEBKCMEMLN"
+                          },
+                          "ownedByLevel": true,
+                          "PPPDJGDDOGD": 1.0,
+                          "AJDILHJFNKE": -1.0
+                        },
+                        {
+                          "$type": "PELJALPANCA",
+                          "target": "Other",
+                          "shieldHP": true,
+                          "modifierName": "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum_Action_Impact_LV2"
+                        }
+                      ],
+                      "failActions": [
+                        {
+                          "$type": "KBFEIHEAMBM",
+                          "target": "Other",
+                          "shieldHP": true,
+                          "rotationDampTime": "Eff_EnergyDisk_ElementalBurst_Wave_R40",
+                          "born": {
+                            "$type": "JHEBKCMEMLN"
+                          },
+                          "ownedByLevel": true,
+                          "PPPDJGDDOGD": 1.0,
+                          "AJDILHJFNKE": -1.0
+                        },
+                        {
+                          "$type": "PELJALPANCA",
+                          "target": "Other",
+                          "shieldHP": true,
+                          "modifierName": "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum_Action_Impact_LV1"
+                        }
+                      ]
+                    },
+                    {
+                      "$type": "BOBCOJHOKKD",
+                      "target": "Team",
+                      "param3": 0.0,
+                      "key": "ImpactFlag",
+                      "param2": 0.0,
+                      "repeatTimes": 0.0
+                    }
+                  ]
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "target": "Team",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Team",
+                      "key": "CountWindowDone",
+                      "param3": 1.0,
+                      "compareType": "MoreThanAndEqual"
+                    }
+                  ],
+                  "param3": 0.0,
+                  "key": "AttackNum",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "target": "Team",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Team",
+                      "key": "CountWindowDone",
+                      "param3": 1.0,
+                      "compareType": "MoreThanAndEqual"
+                    }
+                  ],
+                  "param3": 0.0,
+                  "key": "CountWindowDone",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum_CountWindow": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "CountWindow",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": 1.0,
+              "key": "CountWiondwFlag",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": 0.0,
+              "key": "CountWiondwFlag",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": 0.0,
+              "key": "NormalAttackLand",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": 1.0,
+              "key": "CountWindowDone",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Team",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Team",
+                  "key": "AttackNum",
+                  "param3": "Count_LV1",
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "INBCDALOHMP",
+                  "target": "Team",
+                  "targetPredicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Team",
+                      "key": "AttackNum",
+                      "param3": "Count_LV2",
+                      "compareType": "MoreThanAndEqual"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "BOBCOJHOKKD",
+                      "target": "Team",
+                      "param3": 2.0,
+                      "key": "ImpactFlag",
+                      "param2": 0.0,
+                      "repeatTimes": 0.0
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "BOBCOJHOKKD",
+                      "target": "Team",
+                      "param3": 1.0,
+                      "key": "ImpactFlag",
+                      "param2": 0.0,
+                      "repeatTimes": 0.0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum_Action_Impact_LV1": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AIFPLABJNMA",
+              "target": "Applier",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD"
+                  },
+                  "OAHPDLJIADP": 5.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorWindSubHurtDelta": 0.0,
+                    "IPFJJJGABPL": 0.0,
+                    "ignoreAttackerProperty": true,
+                    "enBreak": 0.0,
+                    "attackType": "Melee",
+                    "HMBONGBFIAP": [
+                      "DamageValue1",
+                      "ImpactDamageSystemValue",
+                      "MUL"
+                    ],
+                    "trueDamage": true,
+                    "ignoreModifyDamage": true,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.019999999552965164
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum_Action_Impact_LV2": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AIFPLABJNMA",
+              "target": "Applier",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD"
+                  },
+                  "OAHPDLJIADP": 10.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorWindSubHurtDelta": 0.0,
+                    "IPFJJJGABPL": 0.0,
+                    "ignoreAttackerProperty": true,
+                    "enBreak": 0.0,
+                    "attackType": "Melee",
+                    "HMBONGBFIAP": [
+                      "DamageValue2",
+                      "ImpactDamageSystemValue",
+                      "MUL"
+                    ],
+                    "trueDamage": true,
+                    "ignoreModifyDamage": true,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.019999999552965164
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "GDHGMAPPGHD",
+          "key": "ImpactDamageSystemValue",
+          "damageRatio": "ElementLevelCo"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "target": "Team",
+          "param3": 0.0,
+          "key": "ImpactFlag",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "target": "Team",
+          "param3": 0.0,
+          "key": "CountWindowDone",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_CharAmusement_Impact_ByNormalAttackNum2",
+      "abilityMixins": [
+        {
+          "$type": "NKEPLGAIEJM",
+          "modifierName": "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum2"
+        },
+        {
+          "$type": "NKEPLGAIEJM",
+          "modifierName": "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum2_Decision_NormalAttackLand"
+        },
+        {
+          "$type": "NKEPLGAIEJM",
+          "modifierName": "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum2_Action_SummonImpact"
+        },
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueTarget": "Team",
+          "globalValueKey": "NormalAttackLand",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum2_CountWindow"
+          ]
+        }
+      ],
+      "abilitySpecials": {
+        "ImpactDamageSystemValue": 0.0,
+        "CountWindow": 0.0,
+        "Count_LV1": 0.0,
+        "Count_LV2": 0.0,
+        "DamageValue1": 0.0,
+        "DamageValue2": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum2": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Other",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Team",
+                  "key": "CountWiondwFlag",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "NNEHDJHMING",
+                  "target": "Self",
+                  "attackTags": [
+                    "NormalAttack_01",
+                    "NormalAttack_02",
+                    "NormalAttack_03",
+                    "NormalAttack_04",
+                    "NormalAttack_05",
+                    "NormalAttack_06"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "target": "Team",
+                  "param3": 1.0,
+                  "key": "NormalAttackLand",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum2_Decision_NormalAttackLand": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Other",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Team",
+                  "key": "CountWiondwFlag",
+                  "param3": 1.0
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Team",
+                  "key": "AttackInterval",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "NNEHDJHMING",
+                  "target": "Self",
+                  "attackTags": [
+                    "NormalAttack_01",
+                    "NormalAttack_02",
+                    "NormalAttack_03",
+                    "NormalAttack_04",
+                    "NormalAttack_05",
+                    "NormalAttack_06"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "target": "Team",
+                  "param3": 1.0,
+                  "key": "AttackNum",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Team",
+                  "modifierName": "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum2_Interval"
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Other",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Team",
+                  "key": "AttackInterval_Watcher",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "NNEHDJHMING",
+                  "target": "Self",
+                  "attackTags": [
+                    "NormalAttack_01",
+                    "NormalAttack_02",
+                    "NormalAttack_03",
+                    "NormalAttack_04",
+                    "NormalAttack_05",
+                    "NormalAttack_06"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "AHPEKICBIIL",
+                  "luaCallType": "CurGalleryControlGroup",
+                  "funcName": "SLC_CharAmuse_BattleAction",
+                  "paramNum": 1,
+                  "param1": 2.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Team",
+                  "modifierName": "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum2_Interval_Watcher"
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum2_Action_SummonImpact": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Other",
+              "targetPredicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "target": "Self",
+                  "attackTags": [
+                    "NormalAttack_01",
+                    "NormalAttack_02",
+                    "NormalAttack_03",
+                    "NormalAttack_04",
+                    "NormalAttack_05",
+                    "NormalAttack_06"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "INBCDALOHMP",
+                  "target": "Other",
+                  "targetPredicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Team",
+                      "key": "ImpactFlag",
+                      "param3": 1.0,
+                      "compareType": "MoreThanAndEqual"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "INBCDALOHMP",
+                      "target": "Other",
+                      "targetPredicates": [
+                        {
+                          "$type": "CNGGLKHONAA",
+                          "target": "Team",
+                          "key": "ImpactFlag",
+                          "param3": 2.0,
+                          "compareType": "MoreThanAndEqual"
+                        }
+                      ],
+                      "successActions": [
+                        {
+                          "$type": "KBFEIHEAMBM",
+                          "target": "Other",
+                          "shieldHP": true,
+                          "rotationDampTime": "Eff_EnergyDisk_ElementalBurst_Wave_R100_Plus",
+                          "born": {
+                            "$type": "JHEBKCMEMLN"
+                          },
+                          "ownedByLevel": true,
+                          "PPPDJGDDOGD": 1.0,
+                          "AJDILHJFNKE": -1.0
+                        },
+                        {
+                          "$type": "PELJALPANCA",
+                          "target": "Other",
+                          "shieldHP": true,
+                          "modifierName": "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum2_Action_Impact_LV2"
+                        }
+                      ],
+                      "failActions": [
+                        {
+                          "$type": "KBFEIHEAMBM",
+                          "target": "Other",
+                          "shieldHP": true,
+                          "rotationDampTime": "Eff_EnergyDisk_ElementalBurst_Wave_R40",
+                          "born": {
+                            "$type": "JHEBKCMEMLN"
+                          },
+                          "ownedByLevel": true,
+                          "PPPDJGDDOGD": 1.0,
+                          "AJDILHJFNKE": -1.0
+                        },
+                        {
+                          "$type": "PELJALPANCA",
+                          "target": "Other",
+                          "shieldHP": true,
+                          "modifierName": "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum2_Action_Impact_LV1"
+                        }
+                      ]
+                    },
+                    {
+                      "$type": "BOBCOJHOKKD",
+                      "target": "Team",
+                      "param3": 0.0,
+                      "key": "ImpactFlag",
+                      "param2": 0.0,
+                      "repeatTimes": 0.0
+                    }
+                  ]
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "target": "Team",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Team",
+                      "key": "CountWindowDone",
+                      "param3": 1.0,
+                      "compareType": "MoreThanAndEqual"
+                    }
+                  ],
+                  "param3": 0.0,
+                  "key": "AttackNum",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "target": "Team",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Team",
+                      "key": "CountWindowDone",
+                      "param3": 1.0,
+                      "compareType": "MoreThanAndEqual"
+                    }
+                  ],
+                  "param3": 0.0,
+                  "key": "CountWindowDone",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum2_Interval": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.05000000074505806,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": -1.0,
+              "key": "AttackInterval",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": 0.0,
+              "key": "AttackInterval",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum2_Interval_Watcher": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.05000000074505806,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": -1.0,
+              "key": "AttackInterval_Watcher",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": 0.0,
+              "key": "AttackInterval_Watcher",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum2_CountWindow": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "CountWindow",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": 1.0,
+              "key": "CountWiondwFlag",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": 0.0,
+              "key": "CountWiondwFlag",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": 0.0,
+              "key": "NormalAttackLand",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": 1.0,
+              "key": "CountWindowDone",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Team",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Team",
+                  "key": "AttackNum",
+                  "param3": "Count_LV1",
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "INBCDALOHMP",
+                  "target": "Team",
+                  "targetPredicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Team",
+                      "key": "AttackNum",
+                      "param3": "Count_LV2",
+                      "compareType": "MoreThanAndEqual"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "BOBCOJHOKKD",
+                      "target": "Team",
+                      "param3": 2.0,
+                      "key": "ImpactFlag",
+                      "param2": 0.0,
+                      "repeatTimes": 0.0
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "BOBCOJHOKKD",
+                      "target": "Team",
+                      "param3": 1.0,
+                      "key": "ImpactFlag",
+                      "param2": 0.0,
+                      "repeatTimes": 0.0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum2_Action_Impact_LV1": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AIFPLABJNMA",
+              "target": "Applier",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD"
+                  },
+                  "OAHPDLJIADP": 5.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorWindSubHurtDelta": 0.0,
+                    "IPFJJJGABPL": 0.0,
+                    "ignoreAttackerProperty": true,
+                    "enBreak": 0.0,
+                    "attackType": "Melee",
+                    "HMBONGBFIAP": [
+                      "DamageValue1",
+                      "ImpactDamageSystemValue",
+                      "MUL"
+                    ],
+                    "trueDamage": true,
+                    "ignoreModifyDamage": true,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.019999999552965164
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_Impact_ByNormalAttackNum2_Action_Impact_LV2": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AIFPLABJNMA",
+              "target": "Applier",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD"
+                  },
+                  "OAHPDLJIADP": 10.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorWindSubHurtDelta": 0.0,
+                    "IPFJJJGABPL": 0.0,
+                    "ignoreAttackerProperty": true,
+                    "enBreak": 0.0,
+                    "attackType": "Melee",
+                    "HMBONGBFIAP": [
+                      "DamageValue2",
+                      "ImpactDamageSystemValue",
+                      "MUL"
+                    ],
+                    "trueDamage": true,
+                    "ignoreModifyDamage": true,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.019999999552965164
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "GDHGMAPPGHD",
+          "key": "ImpactDamageSystemValue",
+          "damageRatio": "ElementLevelCo"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "target": "Team",
+          "param3": 0.0,
+          "key": "ImpactFlag",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "target": "Team",
+          "param3": 0.0,
+          "key": "CountWindowDone",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_CharAmusement_ShieldBreak_KillSelf",
+      "modifiers": {
+        "UNIQUE_Activity_CharAmusement_ShieldBreak_KillSelf_Decision_HasShield": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "PBDKHMAHJPJ",
+                  "target": "Self",
+                  "damageRatio": "All",
+                  "usePotentShield": true
+                }
+              ],
+              "modifierName": "UNIQUE_Activity_CharAmusement_ShieldBreak_KillSelf"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "PBDKHMAHJPJ",
+                  "target": "Self",
+                  "damageRatio": "All",
+                  "usePotentShield": true
+                }
+              ],
+              "modifierName": "UNIQUE_Activity_CharAmusement_ShieldBreak_KillSelf"
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_ShieldBreak_KillSelf": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onBeingHit": [
+            {
+              "$type": "NCFFNDHGCMH",
+              "predicates": [
+                {
+                  "$type": "BCFNGJHILAG",
+                  "predicates": [
+                    {
+                      "$type": "PBDKHMAHJPJ",
+                      "target": "Self",
+                      "damageRatio": "All",
+                      "usePotentShield": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Activity_CharAmusement_ShieldBreak_KillSelf_Decision_HasShield"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_CharAmusement_Water_AttachTimeDown",
+      "abilityMixins": [
+        {
+          "$type": "NKEPLGAIEJM",
+          "modifierName": "UNIQUE_Activity_CharAmusement_Water_AttachTimeDown"
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_Activity_CharAmusement_Water_AttachTimeDown": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FENDAOCNABM",
+              "elementType": "Water",
+              "durationRatio": 0.949999988079071
+            }
+          ]
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_CharAmusement_UnendlessHowlingSoul",
+      "abilityMixins": [
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueKey": "_ABILITY_HowlingSoul_Flag",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_Activity_CharAmusement_HowlingSoulAddDuration_Handler"
+          ]
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_Activity_CharAmusement_HowlingSoulAddDuration_Handler": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_Activity_CharAmusement_HowlingSoulAddDuration"
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_HowlingSoulAddDuration": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 3.0,
+          "state": "IgnoreAddEnergy",
+          "onAdded": [
+            {
+              "$type": "ODHJJKENLPE",
+              "shieldHP": true,
+              "param3": 100.0,
+              "modifierName": "UNIQUE_HowlingSoul_Main_Handler",
+              "param2": 3.4028234663852886e+38
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "ODHJJKENLPE",
+              "shieldHP": true,
+              "param3": 100.0,
+              "modifierName": "UNIQUE_HowlingSoul_Main_Handler",
+              "param2": 3.4028234663852886e+38
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "ODHJJKENLPE",
+              "shieldHP": true,
+              "param3": 100.0,
+              "modifierName": "UNIQUE_HowlingSoul_Main_Handler",
+              "param2": 3.4028234663852886e+38
+            }
+          ]
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_CharAmusement_Invincible",
+      "modifiers": {
+        "UNIQUE_Activity_CharAmusement_Invincible": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "state": "LockHP"
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Activity_CharAmusement_Invincible"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_CharAmusement_IgnoreAddEnergy",
+      "modifiers": {
+        "UNIQUE_Activity_CharAmusement_IgnoreAddEnergy": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Activity_CharAmusement_IgnoreAddEnergy"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CharAmusement_Ban_SkillButton",
+      "modifiers": {
+        "UNIQUE_Activity_CharAmusement_Ban_SkillButton": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PDFENCBHHAI",
+              "shieldHP": true,
+              "skillID": 20055
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_Activity_CharAmusement_SwitchNomalAttackButton"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBODPNEEFGD",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_Activity_CharAmusement_SwitchNomalAttackButton"
+            },
+            {
+              "$type": "KFOBADMAFJF",
+              "shieldHP": true,
+              "skillID": 20055
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_SwitchNomalAttackButton": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BBDLKGEJDOJ",
+              "priority": "Playmode",
+              "skillID": 20055
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Activity_CharAmusement_Ban_SkillButton"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CharAmusement_Ban_UltimateSkillButton",
+      "modifiers": {
+        "UNIQUE_Activity_CharAmusement_Ban_UltimateSkillButton": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PDFENCBHHAI",
+              "shieldHP": true,
+              "skillID": 20056
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_Activity_CharAmusement_Ban_SwitchUltimateSkillButton"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBODPNEEFGD",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_Activity_CharAmusement_Ban_SwitchUltimateSkillButton"
+            },
+            {
+              "$type": "KFOBADMAFJF",
+              "shieldHP": true,
+              "skillID": 20056
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_Ban_SwitchUltimateSkillButton": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BBDLKGEJDOJ",
+              "priority": "Playmode",
+              "skillIndex": 4,
+              "skillID": 20056
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Activity_CharAmusement_Ban_UltimateSkillButton"
+        },
+        {
+          "$type": "PPDJHLBHCIK",
+          "shieldHP": true,
+          "canBeHandledOnRecover": true,
+          "muteRemoteAction": true,
+          "toPlayMode": "CharAmuseFootball"
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "PPDJHLBHCIK",
+          "shieldHP": true,
+          "canBeHandledOnRecover": true,
+          "muteRemoteAction": true,
+          "JFDCCIECAJB": "CharAmuseFootball"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CharAmusement_Ban_UltimateSkill",
+      "modifiers": {
+        "UNIQUE_Activity_CharAmusement_Ban_UltimateSkill": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PDFENCBHHAI",
+              "shieldHP": true,
+              "skillID": 20056
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_Activity_CharAmusement_Ban_SwitchUltimateSkill"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBODPNEEFGD",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_Activity_CharAmusement_Ban_SwitchUltimateSkill"
+            },
+            {
+              "$type": "KFOBADMAFJF",
+              "shieldHP": true,
+              "skillID": 20056
+            }
+          ]
+        },
+        "UNIQUE_Activity_CharAmusement_Ban_SwitchUltimateSkill": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BBDLKGEJDOJ",
+              "priority": "Playmode",
+              "skillIndex": 4,
+              "skillID": 20056
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Activity_CharAmusement_Ban_UltimateSkill"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CharAmusement_Thunder_Gadget",
+      "abilitySpecials": {
+        "ImpactDamageSystemValue": 0.0,
+        "DamageValue1": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_CharAmusement_Thunder_Gadget": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 2.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_RaioTrunk_01_ThunderFall",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD"
+                  },
+                  "OAHPDLJIADP": 5.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorWindSubHurtDelta": 0.0,
+                    "IPFJJJGABPL": 0.0,
+                    "ignoreAttackerProperty": true,
+                    "enBreak": 0.0,
+                    "attackType": "Melee",
+                    "HMBONGBFIAP": [
+                      "DamageValue1",
+                      "ImpactDamageSystemValue",
+                      "MUL"
+                    ],
+                    "trueDamage": true,
+                    "ignoreModifyDamage": true,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.019999999552965164
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "GDHGMAPPGHD",
+          "key": "ImpactDamageSystemValue",
+          "damageRatio": "ElementLevelCo"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_CharAmusement_Thunder_Gadget"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CharAmusement_Thunder_Plus_Gadget",
+      "abilitySpecials": {
+        "ImpactDamageSystemValue": 0.0,
+        "DamageValue": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_CharAmusement_Thunder_Plus_Gadget": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 2.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_RaioTrunk_01_ThunderFall_Plus",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD"
+                  },
+                  "OAHPDLJIADP": 5.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorWindSubHurtDelta": 0.0,
+                    "IPFJJJGABPL": 0.0,
+                    "ignoreAttackerProperty": true,
+                    "enBreak": 0.0,
+                    "attackType": "Melee",
+                    "HMBONGBFIAP": [
+                      "DamageValue",
+                      "ImpactDamageSystemValue",
+                      "MUL"
+                    ],
+                    "trueDamage": true,
+                    "ignoreModifyDamage": true,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.019999999552965164
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "GDHGMAPPGHD",
+          "key": "ImpactDamageSystemValue",
+          "damageRatio": "ElementLevelCo"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_CharAmusement_Thunder_Plus_Gadget"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CharAmusement_Impact_Gadget",
+      "abilitySpecials": {
+        "ImpactDamageSystemValue": 0.0,
+        "DamageValue1": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_CharAmusement_Impact_Gadget": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 2.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_EnergyDisk_ElementalBurst_Wave_R40",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD"
+                  },
+                  "OAHPDLJIADP": 5.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorWindSubHurtDelta": 0.0,
+                    "IPFJJJGABPL": 0.0,
+                    "ignoreAttackerProperty": true,
+                    "enBreak": 0.0,
+                    "attackType": "Melee",
+                    "HMBONGBFIAP": [
+                      "DamageValue1",
+                      "ImpactDamageSystemValue",
+                      "MUL"
+                    ],
+                    "trueDamage": true,
+                    "ignoreModifyDamage": true,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.019999999552965164
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "GDHGMAPPGHD",
+          "key": "ImpactDamageSystemValue",
+          "damageRatio": "ElementLevelCo"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_CharAmusement_Impact_Gadget"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CharAmusement_Impact_Plus_Gadget",
+      "abilitySpecials": {
+        "ImpactDamageSystemValue": 0.0,
+        "DamageValue": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_CharAmusement_Impact_Plus_Gadget": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 2.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_EnergyDisk_ElementalBurst_Wave_R100_Plus",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD"
+                  },
+                  "OAHPDLJIADP": 5.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorWindSubHurtDelta": 0.0,
+                    "IPFJJJGABPL": 0.0,
+                    "ignoreAttackerProperty": true,
+                    "enBreak": 0.0,
+                    "attackType": "Melee",
+                    "HMBONGBFIAP": [
+                      "DamageValue",
+                      "ImpactDamageSystemValue",
+                      "MUL"
+                    ],
+                    "trueDamage": true,
+                    "ignoreModifyDamage": true,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.019999999552965164
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "GDHGMAPPGHD",
+          "key": "ImpactDamageSystemValue",
+          "damageRatio": "ElementLevelCo"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_CharAmusement_Impact_Plus_Gadget"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_CharAmusement_Wanderer_Endless",
+      "modifiers": {
+        "ActivityAbility_CharAmusement_Wanderer_Endless_Team": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "ActivityAbility_CharAmusement_Wanderer_Endless"
+            }
+          ]
+        },
+        "ActivityAbility_CharAmusement_Wanderer_Endless": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "modifierMixins": [
+            {
+              "$type": "IGHABCFHOIC"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "ODHJJKENLPE",
+              "shieldHP": true,
+              "param3": 100.0,
+              "modifierName": "UNIQUE_Avatar_Wanderer_ElementalArt_HoverAir_Handler",
+              "param2": 3.4028234663852886e+38
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "ODHJJKENLPE",
+              "shieldHP": true,
+              "param3": 100.0,
+              "modifierName": "UNIQUE_Avatar_Wanderer_ElementalArt_HoverAir_Handler",
+              "param2": 3.4028234663852886e+38
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "ActivityAbility_CharAmusement_Wanderer_Endless_Team"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  }
+]

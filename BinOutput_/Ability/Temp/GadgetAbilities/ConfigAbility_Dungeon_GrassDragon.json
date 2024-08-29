@@ -1,0 +1,766 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_GrassDragon_ProtectObj",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Controller"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "Active"
+        },
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "Eff_On",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Blank",
+            "GlowEff"
+          ]
+        },
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "SGV_Show_Bar",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Blank",
+            "ShowBar"
+          ]
+        },
+        {
+          "$type": "NDFFAEHJMAL",
+          "globalValueKey": "SGV_On_Progress_Up",
+          "actions": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Progress_Up_Effect"
+            }
+          ]
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "TurnToLand"
+          ],
+          "modifierName": "BornEffect_Latency",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "collider",
+                "ExtraPush"
+              ]
+            }
+          ]
+        },
+        "Active": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "collider",
+                "ExtraPush"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "DelayAddGlowEff"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "Eff_On",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "AHPEKICBIIL",
+              "predicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "Apep_UnderlingAttack_Type1"
+                  ]
+                }
+              ],
+              "luaCallType": "FromGroup",
+              "funcName": "SLC_UpdateProtectScore",
+              "paramNum": 1,
+              "param1": -12.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            },
+            {
+              "$type": "AHPEKICBIIL",
+              "predicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "Apep_UnderlingAttack_Type2"
+                  ]
+                }
+              ],
+              "luaCallType": "FromGroup",
+              "funcName": "SLC_UpdateProtectScore",
+              "paramNum": 1,
+              "param1": -24.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            },
+            {
+              "$type": "AHPEKICBIIL",
+              "predicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "Apep_UnderlingAttack_Type3"
+                  ]
+                }
+              ],
+              "luaCallType": "FromGroup",
+              "funcName": "SLC_UpdateProtectScore",
+              "paramNum": 1,
+              "param1": -280.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ]
+        },
+        "DelayAddGlowEff": {
+          "modifierName": "",
+          "elementDurability": 5.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "Eff_On",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BAKEBEKLLAC",
+              "id": 201790201
+            }
+          ]
+        },
+        "Blank": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "GlowEff": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Prop_Apep_Gel_03",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Prop_Apep_Gel_03_Charge",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "FromGroup",
+              "funcName": "SLC_NotifyStage2",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ]
+        },
+        "ShowBar": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "FPJKHKCJHIF",
+              "maxValue": 2000.0,
+              "param3": "SGV_GrassDragon_CUR_PROGRESS",
+              "displayName": "MONSTER_APEP_STAGE2_PROCESS",
+              "customKeyList": [
+                "ProgressPoint1",
+                "ProgressPoint5"
+              ]
+            }
+          ]
+        },
+        "TauntTrigger": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.5,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_MONSTER_Apep_Stage2_DefendTarget",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "GKNNJOEDOOF",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR25",
+                "campTargetType": "Enemy",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "HHHMNCNPBDK",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_MONSTER_Apep_Underling_SeedOfKarna_Tag",
+                      "param3": 1.0
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_MONSTER_Apep_Underling_SeedOfShiva_Tag",
+                      "param3": 1.0
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "GKNNJOEDOOF",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR25",
+                "campTargetType": "Enemy",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "HHHMNCNPBDK",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_MONSTER_Apep_Underling_SeedOfKarna_Tag",
+                      "param3": 1.0
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_MONSTER_Apep_Underling_SeedOfShiva_Tag",
+                      "param3": 1.0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "Success": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "collider",
+                "ExtraPush"
+              ],
+              "setEnable": true
+            }
+          ]
+        },
+        "Progress_Up_Effect": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "elementDurability": 2.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "topLimit": 1,
+                "sortType": "Nearest",
+                "shapeName": "CircleR25",
+                "campTargetType": "SelfCamp",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_MONSTER_Apep_Underling_SpecialGadget",
+                  "param3": 1.0
+                }
+              ],
+              "rotationDampTime": "Eff_SceneObj_Prop_Apep_Gel_03_ChargeOnce",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "direction": {
+                  "$type": "MNAGGDAEGCB",
+                  "angleOffset": {
+                    "KGEPIMHBMOL": 0.0,
+                    "JEBHCGDPFEJ": 180.0,
+                    "LPCHALMFFOD": 0.0
+                  }
+                },
+                "useRotation": true
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "topLimit": 1,
+                "sortType": "Nearest",
+                "shapeName": "CircleR25",
+                "campTargetType": "SelfCamp",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_SKILLOBJ_GrassDragon_Protect_Gel",
+                  "param3": 1.0
+                }
+              ],
+              "PLLJBINMGJK": "Charge",
+              "mpTriggerOnRemote": true
+            }
+          ]
+        },
+        "BornEffect_Latency": {
+          "modifierName": "",
+          "elementDurability": 3.5,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Prop_Apep_Gel_01_Born",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "Eff_On",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "ProgressPoint1",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 2000.0,
+          "key": "ProgressPoint5",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "TauntTrigger"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_GrassDragon_Vine_Up",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Controller"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "Active"
+        }
+      ],
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "GadgetState",
+              "param3": 0.0
+            }
+          ]
+        },
+        "Active": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "GadgetState",
+              "param3": 201.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_GrassDragon_StoryNotify",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Controller"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "Notify1to2"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 202,
+          "modifierName": "Notify2to3"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 203,
+          "modifierName": "Notify1"
+        }
+      ],
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "Notify1": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "MOEGJKJDPMB",
+              "targetAlias": "13027",
+              "valueString": "DentroDragonStage1"
+            }
+          ]
+        },
+        "Notify1to2": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "MOEGJKJDPMB",
+              "targetAlias": "13027",
+              "valueString": "DentroDragonStage2"
+            }
+          ]
+        },
+        "Notify2to3": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "MOEGJKJDPMB",
+              "targetAlias": "13027",
+              "valueString": "DentroDragonStage3"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_GrassDragon_StageChange_12_Cam",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Controller"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "Active"
+        }
+      ],
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "Active": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "MBEFHJGANEA",
+              "cameraMoveCfgPath": "Camera_Monster_Apep_GadgetChange",
+              "distance": 50.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_GrassDragon_Music",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Controller"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "Music_S01"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 202,
+          "modifierName": "Music_S03"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 204,
+          "modifierName": "Music_S04"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 203,
+          "modifierName": "Music_End"
+        }
+      ],
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "Music_S01": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Apep_Music_S01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Music_S03": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Apep_Music_S03",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Music_S04": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Apep_Music_S04",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Music_End": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Apep_Music_End",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_GrassDragon_Protect_Gel",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Hang"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "Drop"
+        },
+        {
+          "$type": "NDFFAEHJMAL",
+          "globalValueKey": "SGV_GrassDragon_CUR_PROGRESS",
+          "actions": [
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "SGV_GrassDragon_CUR_PROGRESS",
+              "overrideMapKey": "curProgress"
+            },
+            {
+              "$type": "FEKJDLHHOLE",
+              "floatID": "Blend",
+              "param3": [
+                "curProgress",
+                "Ani_Multiplier",
+                "MUL"
+              ]
+            }
+          ]
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "TurnToLand"
+          ],
+          "modifierName": "Drop_Effect",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "Ani_Multiplier": 0.0005000000237487257,
+        "curProgress": 0.0
+      },
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "SGV_GrassDragon_CUR_PROGRESS",
+              "overrideMapKey": "curProgress"
+            },
+            {
+              "$type": "FEKJDLHHOLE",
+              "floatID": "Blend",
+              "param3": [
+                "curProgress",
+                "Ani_Multiplier",
+                "MUL"
+              ]
+            }
+          ]
+        },
+        "Hang": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "Drop": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "Drop_Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Prop_Apep_Gel_03_Fall",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "LandEffect_Latency"
+            }
+          ]
+        },
+        "LandEffect_Latency": {
+          "modifierName": "",
+          "elementDurability": 5.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Prop_Apep_Gel_03_Land",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Controller"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_SKILLOBJ_GrassDragon_Protect_Gel",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  }
+]

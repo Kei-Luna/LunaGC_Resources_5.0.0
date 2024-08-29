@@ -1,0 +1,321 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "TeamAbility_Scene_ShadowPlay_ButtonController",
+      "onAdded": [
+        {
+          "$type": "MMEOBGGBNLK",
+          "target": "CurTeamAvatars",
+          "skillID": 20028
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "target": "Team",
+          "param3": 100.0,
+          "key": "GV_Scene_ShadowPlay_Transfer",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "MMEOBGGBNLK",
+          "target": "CurTeamAvatars"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "target": "Team",
+          "param3": 0.0,
+          "key": "GV_Scene_ShadowPlay_Transfer",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "TeamAbility_Scene_ShadowPlay_Transfer",
+      "abilityMixins": [
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueTarget": "Team",
+          "globalValueKey": "_Is_In_Shadow",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "_Is_In_Shadow_0",
+            "_Is_In_Shadow_1"
+          ]
+        }
+      ],
+      "modifiers": {
+        "_Is_In_Shadow_0": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "_Is_In_Shadow_1": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurLocalAvatar",
+              "modifierName": "_Is_In_Shadow_1_Avatar"
+            }
+          ]
+        },
+        "_Is_In_Shadow_1_Avatar": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_Is_In_Shadow",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "LIAKJHCLFLK"
+        },
+        {
+          "$type": "INBCDALOHMP",
+          "otherTargets": {
+            "$type": "PBLNLAENOGB",
+            "entityTypePriority": [
+              "Gadget"
+            ],
+            "tag": "_ShadowPlay_Background"
+          },
+          "successActions": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Other",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_Is_In_Shadow",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "target": "Other",
+                  "param3": 0.0,
+                  "key": "_Is_In_Shadow",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "target": "Other",
+                  "param3": 1.0,
+                  "key": "_Is_In_Shadow",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Level_WhiteBox_ShadowPlay_Decal"
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Level_WhiteBox_ShadowPlay_BackGround",
+      "abilityMixins": [
+        {
+          "$type": "NDFFAEHJMAL",
+          "globalValueKey": "_Is_In_Shadow",
+          "actions": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_Is_In_Shadow",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "target": "Team",
+                  "param3": 0.0,
+                  "key": "_Is_In_Shadow",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "MPAGCPPAIHJ",
+                  "key": "_ShadowPlay_Trans_Pos",
+                  "born": {
+                    "$type": "KLPANPDGHHA",
+                    "useRotation": true,
+                    "attachPointName": "Exit_Point"
+                  }
+                },
+                {
+                  "$type": "BEMPFJGAPHG",
+                  "srcTarget": "Self",
+                  "dstTarget": "CurLocalAvatar",
+                  "srcKey": "_ShadowPlay_Trans_Pos_0",
+                  "dstKey": "_ShadowPlay_Trans_Pos_0"
+                },
+                {
+                  "$type": "BEMPFJGAPHG",
+                  "srcTarget": "Self",
+                  "dstTarget": "CurLocalAvatar",
+                  "srcKey": "_ShadowPlay_Trans_Pos_1",
+                  "dstKey": "_ShadowPlay_Trans_Pos_1"
+                },
+                {
+                  "$type": "BEMPFJGAPHG",
+                  "srcTarget": "Self",
+                  "dstTarget": "CurLocalAvatar",
+                  "srcKey": "_ShadowPlay_Trans_Pos_2",
+                  "dstKey": "_ShadowPlay_Trans_Pos_2"
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "CurLocalAvatar",
+                  "modifierName": "Action_Trans"
+                },
+                {
+                  "$type": "LEIIOBLDOMP",
+                  "enable": true
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "target": "Team",
+                  "param3": 1.0,
+                  "key": "_Is_In_Shadow",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "MPAGCPPAIHJ",
+                  "key": "_ShadowPlay_Trans_Pos",
+                  "born": {
+                    "$type": "KLPANPDGHHA",
+                    "useRotation": true,
+                    "attachPointName": "Start_Point"
+                  }
+                },
+                {
+                  "$type": "BEMPFJGAPHG",
+                  "srcTarget": "Self",
+                  "dstTarget": "CurLocalAvatar",
+                  "srcKey": "_ShadowPlay_Trans_Pos_0",
+                  "dstKey": "_ShadowPlay_Trans_Pos_0"
+                },
+                {
+                  "$type": "BEMPFJGAPHG",
+                  "srcTarget": "Self",
+                  "dstTarget": "CurLocalAvatar",
+                  "srcKey": "_ShadowPlay_Trans_Pos_1",
+                  "dstKey": "_ShadowPlay_Trans_Pos_1"
+                },
+                {
+                  "$type": "BEMPFJGAPHG",
+                  "srcTarget": "Self",
+                  "dstTarget": "CurLocalAvatar",
+                  "srcKey": "_ShadowPlay_Trans_Pos_2",
+                  "dstKey": "_ShadowPlay_Trans_Pos_2"
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "CurLocalAvatar",
+                  "modifierName": "Action_Trans"
+                },
+                {
+                  "$type": "LEIIOBLDOMP"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "$type": "LNEJGOMCBMO",
+          "succActions": [
+            {
+              "$type": "GJCAPCBELPA",
+              "abilityName": "SceneObj_Level_WhiteBox_ShadowPlay_BackGround"
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "Action_Trans": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KKNAEDPOLAC",
+              "positionKey": "_ShadowPlay_Trans_Pos",
+              "directionKey": ""
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AOOCGNCCAJB",
+          "isAdd": true,
+          "tag": "_ShadowPlay_Background"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "ELNHKGAPIBJ",
+          "content": "onAbilityStart"
+        },
+        {
+          "$type": "HPIDNBEGJLL",
+          "predicates": [
+            {
+              "$type": "HNLCJOPBDLC"
+            }
+          ],
+          "state": 201
+        },
+        {
+          "$type": "HPIDNBEGJLL",
+          "predicates": [
+            {
+              "$type": "HNLCJOPBDLC",
+              "gadgetState": 201
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

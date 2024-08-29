@@ -1,0 +1,823 @@
+{
+  "common": {
+    "effectAttachShape": {
+      "$type": "FJNPJANPGGC",
+      "mesh": "EffectMesh"
+    },
+    "mass": 200.0,
+    "height": 1.899999976158142,
+    "viewSize": 1.5,
+    "scale": 2.4000000953674316,
+    "reconnectSupport": true,
+    "recoverByInitPose": true
+  },
+  "headControl": {
+    "$type": "KPIPDEBDPIH",
+    "useHeadControl": true,
+    "maxYawDegree": 15.0,
+    "maxPitchDegree": 12.0,
+    "speed": 3.0,
+    "animStates": [
+      "NormalIdle/Standby",
+      "Move/Swim"
+    ]
+  },
+  "model": {
+    "bornEffect": "",
+    "attachEffect": "",
+    "BKPFGNPLDNJ": ""
+  },
+  "dither": {
+    "showDitherDuration": 2.0
+  },
+  "combat": {
+    "property": {
+      "endureType": "Monster_Demiboss_Humanoid",
+      "weight": 300.0
+    },
+    "beHit": {
+      "hitBloodEffect": ""
+    },
+    "combatLock": {
+      "lockShape": "CircleLockEnemy",
+      "lockType": "Avatar&Monster_Lv4"
+    },
+    "die": {
+      "hasAnimatorDie": true,
+      "fallWhenAirDie": false,
+      "dieEndTime": 2.0,
+      "dieForceDisappearTime": 4.0,
+      "dieDisappearEffect": "Eff_Death_InWater_Common",
+      "dieDisappearEffectDelay": 0.07999999821186066,
+      "dieShaderData": "MonsterDieInWater",
+      "dieShaderEnableDurationTime": 0.6000000238418579,
+      "dieModelFadeDelay": 0.30000001192092896,
+      "muteHitBox": true,
+      "dieDenyLockOn": true,
+      "dieIsGhostToEnemy": true,
+      "dieIgnoreTriggerBullet": true,
+      "muteBillboard": true,
+      "mutePushCollider": true
+    },
+    "animEvents": {
+      "AE_Rush": {
+        "attackPattern": {
+          "$type": "BELNOFAKNBA",
+          "triggerType": "TriggerNoRepeat",
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.05999999865889549,
+              "JEBHCGDPFEJ": 0.05999999865889549,
+              "LPCHALMFFOD": 1.25
+            },
+            "attachPointName": "RootNode",
+            "attachPointTargetType": "Self"
+          },
+          "OAHPDLJIADP": 3.0
+        },
+        "attackInfo": {
+          "attackTag": "",
+          "attenuationTag": "Aplysia_Rush",
+          "attenuationGroup": "Universal_RushAttack",
+          "attackProperty": {
+            "actorGrassSubHurtDelta": 1.0,
+            "actorWindSubHurtDelta": 0.0,
+            "IPFJJJGABPL": 100.0,
+            "strikeType": "Default",
+            "enBreak": 120.0,
+            "attackType": "Melee",
+            "GLKMCMDJBIK": 0.0
+          },
+          "hitPattern": {
+            "onHitEffectName": "default",
+            "hitImpulseY": "",
+            "hitImpulseType": "",
+            "overrideHitImpulse": {
+              "hitLevel": "Air",
+              "IMIJMPGJOGG": 240.0,
+              "BPCDKKBKOBM": 500.0
+            },
+            "retreatType": "ByAttackerForward"
+          }
+        }
+      }
+    }
+  },
+  "abilities": [
+    {
+      "abilityID": "",
+      "abilityName": "FauneAbyssale_Aplysia_Mature_MultiWaterBullet_Trigger",
+      "abilityOverride": ""
+    },
+    {
+      "abilityID": "",
+      "abilityName": "FauneAbyssale_Aplysia_Mature_02",
+      "abilityOverride": ""
+    },
+    {
+      "abilityID": "",
+      "abilityName": "FauneAbyssale_Aplysia_Mature_EnhancedSingleWaterBulletTrigger",
+      "abilityOverride": ""
+    }
+  ],
+  "stateLayers": {
+    "defaultLayer": {
+      "$type": "GBGJJIIEMBD",
+      "layerIndexName": "",
+      "CPAANEIJCGD": "",
+      "stateIDs": {
+        "Born": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Born": []
+          }
+        },
+        "NormalIdle": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Standby": [],
+            "Standby_UnderWater": []
+          },
+          "canDoSkill": true,
+          "canSyncMove": true,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ],
+          "canSteer": true,
+          "GGODGEGHPJD": true
+        },
+        "Move": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Move": [],
+            "Move_UnderWater": []
+          },
+          "canDoSkill": true,
+          "canSyncMove": true,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ],
+          "canSteer": true,
+          "GGODGEGHPJD": true
+        },
+        "Swim": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Run_BS": [],
+            "Run": [],
+            "Run_AS": [],
+            "SpecialSwim_BS": [],
+            "SpecialSwim": [],
+            "SpecialSwim_AS": []
+          },
+          "canDoSkill": true,
+          "canSyncMove": true,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ],
+          "canSteer": true,
+          "blendMove": "BlendMove"
+        },
+        "BeHit": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Hit_H": [
+              "Audio_Monster_FauneAbyssale_Aplysia_Mature_02_Hit_H"
+            ]
+          },
+          "resetAnimatorTriggerOnEnter": [
+            "BeHit"
+          ],
+          "airMoveFollowAnimation": true
+        },
+        "Die": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Die": [
+              "FauneAbyssale_Aplysia_Mature_AirDie",
+              "Audio_Monster_FauneAbyssale_Aplysia_Mature_02_DieInwater"
+            ]
+          },
+          "resetAnimatorTriggerOnEnter": [
+            "DoSkill",
+            "BeHit"
+          ]
+        },
+        "Alert": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Alert": [
+              "Audio_Monster_FauneAbyssale_Aplysia_Mature_02_Alert"
+            ]
+          },
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "WaterBullet_BS00": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "WaterBullet_BS00": [
+              "FauneAbyssale_Aplysia_Mature_MultiWaterBulletTrigger",
+              "Audio_Monster_FauneAbyssale_Aplysia_Mature_02_WaterBullet_BS00"
+            ]
+          },
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "WaterBullet_BS01": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "WaterBullet_BS01": []
+          },
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "WaterBullet_BS02": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "WaterBullet_BS02": [
+              "Audio_Monster_FauneAbyssale_Aplysia_Mature_02_WaterBullet_BS02"
+            ]
+          },
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "WaterBullet": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "WaterBullet": []
+          },
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "SingleBullet_BS": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "SingleBullet_BS": [
+              "FauneAbyssale_Aplysia_Mature_SingleWaterBulletTrigger_BS",
+              "Audio_Monster_FauneAbyssale_Aplysia_Mature_02_SingleBullet_BS"
+            ]
+          },
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "SingleBullet": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "SingleBullet": [
+              "FauneAbyssale_Aplysia_Mature_EnhancedSingleWaterBulletTrigger"
+            ]
+          },
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "RushAttackInWater": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "RushAttackInWater": [
+              "FauneAbyssale_Aplysia_Mature_EnhancedRush_BS",
+              "FauneAbyssale_Aplysia_Mature_EnhancedRush",
+              "Audio_Monster_FauneAbyssale_Aplysia_Mature_02_RushAttackInWater"
+            ]
+          },
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "RushAttackInWater02": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "RushAttackInWater02": [
+              "FauneAbyssale_Aplysia_Mature_EnhancedRush",
+              "Audio_Monster_FauneAbyssale_Aplysia_Mature_02_RushAttackInWater"
+            ]
+          },
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "PlayingTail": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "PlayingTail": [
+              "Audio_Monster_FauneAbyssale_Aplysia_Mature_02_PlayingTail"
+            ]
+          },
+          "canDoSkill": true,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        }
+      }
+    }
+  },
+  "billboard": {
+    "$type": "DNGNMAJBCNP",
+    "attachPoint": "BillboardAttach",
+    "offset": {
+      "y": 0.8999999761581421
+    },
+    "radiusOffset": 1.0,
+    "enableSelfAdapt": true,
+    "showDistance": 32.0,
+    "showHPBar": true,
+    "size": "Big"
+  },
+  "initialPoses": {
+    "Default": {
+      "initialPoseID": 1,
+      "initialPoseParams": {
+        "intParams": {
+          "FreePoseMark": "1"
+        }
+      }
+    },
+    "MuteAll": {
+      "initialPoseID": 2,
+      "initialPoseParams": {
+        "intParams": {
+          "FreePoseMark": "2"
+        }
+      }
+    },
+    "SpecialSwim": {
+      "initialPoseID": 3,
+      "initialPoseParams": {
+        "intParams": {
+          "FreePoseMark": "3"
+        }
+      }
+    }
+  },
+  "aibeta": {
+    "enable": true,
+    "moveSetting": {
+      "moveCategory": "Dive",
+      "useNavMesh": false,
+      "useToTheMoon": true,
+      "navMeshAgentName": "Undead01",
+      "almostReachedDistanceWalk": 2.0,
+      "almostReachedDistanceRun": 2.0,
+      "NBNEMLJJKPP": true
+    },
+    "buddySetting": {
+      "enable": true,
+      "buddyFeatureTagIDs": [
+        4027
+      ]
+    },
+    "sensing": {
+      "settings": {
+        "DefaultSetting": {
+          "viewRange": 25.0,
+          "hearAttractionRange": 0.0,
+          "feelRange": 10.0,
+          "sourcelessHitAttractionRange": 20.0
+        },
+        "HighAlert": {
+          "viewRange": 25.0,
+          "viewPanoramic": true,
+          "hearAttractionRange": 0.0,
+          "feelRange": 10.0,
+          "sourcelessHitAttractionRange": 20.0
+        }
+      },
+      "templates": {
+        "DefaultTemplate": {
+          "DefaultPoses": "DefaultSetting",
+          "201": "HighAlert",
+          "900": "HighAlert",
+          "911": "HighAlert"
+        }
+      }
+    },
+    "neurons": {
+      "DefaultSetting": [
+        "HIT"
+      ],
+      "NeverCombat": []
+    },
+    "threat": {
+      "GHIJMOKOLMB": "",
+      "clearThreatTargetDistance": 70.0,
+      "threatDecreaseSpeed": 45.0,
+      "viewAttenuation": [
+        {
+          "x": 10.0,
+          "y": 1.0
+        },
+        {
+          "x": 15.0,
+          "y": 0.800000011920929
+        },
+        {
+          "x": 50.0,
+          "y": 0.4000000059604645
+        },
+        {
+          "x": 70.0,
+          "y": 0.20000000298023224
+        }
+      ]
+    },
+    "defendArea": {
+      "defendRange": 120.0
+    },
+    "fly": {
+      "enable": true,
+      "IPJLPEHKCJA": [
+        101,
+        102,
+        103,
+        201,
+        900,
+        911
+      ]
+    },
+    "skillGroupCDConfigs": [
+      {
+        "skillGroupCDID": 1,
+        "skillGroupCDTime": 22.0
+      }
+    ],
+    "skills": {
+      "101": {
+        "name": "Alert",
+        "skillType": "OnAlert",
+        "publicCDGroup": "",
+        "ignoreGCD": true,
+        "HHAGODJIAPE": "",
+        "stateIDs": [
+          "Alert"
+        ],
+        "skillQueryingTime": 3.0,
+        "flagTargetReachable": "10",
+        "flagSelfOnTemplateCollider": "01",
+        "flagSelfInZone": "10",
+        "flagTargetInZone": "11"
+      },
+      "211": {
+        "name": "WaterBullet",
+        "priority": 2,
+        "castCondition": {
+          "pose": [
+            201
+          ],
+          "BNLDGHLANLI": [
+            1,
+            2
+          ],
+          "pickRangeMax": 30.0,
+          "EELFCDOLLPM": 10.0
+        },
+        "cd": 12.5,
+        "cdUpperRange": 2.0,
+        "publicCDGroup": "",
+        "ignoreGCD": true,
+        "HHAGODJIAPE": "",
+        "stateIDs": [
+          "WaterBullet_BS00",
+          "WaterBullet_BS01",
+          "WaterBullet_BS02",
+          "WaterBullet"
+        ],
+        "flagTargetReachable": "11",
+        "flagSelfOnTemplateCollider": "11",
+        "flagSelfInZone": "11",
+        "flagTargetInZone": "11"
+      },
+      "212": {
+        "name": "SingleBullet",
+        "priority": 3,
+        "castCondition": {
+          "pose": [
+            201
+          ],
+          "BNLDGHLANLI": [
+            1,
+            2
+          ],
+          "pickRangeMax": 30.0,
+          "EELFCDOLLPM": 8.0
+        },
+        "cd": 5.0,
+        "cdUpperRange": 2.0,
+        "publicCDGroup": "",
+        "HHAGODJIAPE": "",
+        "stateIDs": [
+          "SingleBullet_BS",
+          "SingleBullet"
+        ],
+        "flagTargetReachable": "11",
+        "flagSelfOnTemplateCollider": "11",
+        "flagSelfInZone": "11",
+        "flagTargetInZone": "11"
+      },
+      "402": {
+        "name": "RushAttack",
+        "priority": 3,
+        "castCondition": {
+          "pose": [
+            201
+          ],
+          "BNLDGHLANLI": [
+            1,
+            2
+          ],
+          "pickRangeMax": 50.0
+        },
+        "cd": 7.5,
+        "cdUpperRange": 2.0,
+        "publicCDGroup": "",
+        "ignoreGCD": true,
+        "HHAGODJIAPE": "",
+        "stateIDs": [
+          "RushAttackInWater",
+          "RushAttackInWater02"
+        ],
+        "flagTargetReachable": "11",
+        "flagSelfOnTemplateCollider": "11",
+        "flagSelfInZone": "10",
+        "flagTargetInZone": "10"
+      },
+      "9001": {
+        "name": "PlayingTail",
+        "skillType": "Free",
+        "castCondition": {
+          "pose": [
+            101
+          ]
+        },
+        "cd": 10.0,
+        "cdUpperRange": 2.0,
+        "initialCD": 2.0,
+        "initialCDUpperRange": 2.0,
+        "publicCDGroup": "",
+        "skillGroupCDID": 1,
+        "HHAGODJIAPE": "",
+        "stateIDs": [
+          "PlayingTail"
+        ],
+        "flagTargetReachable": "10",
+        "flagSelfOnTemplateCollider": "01",
+        "flagSelfInZone": "10",
+        "flagTargetInZone": "11"
+      }
+    },
+    "skillGCD": 2.5,
+    "groupSurroundTactic": {
+      "Default": {
+        "MFNHGOKLGMO": 2.5999999046325684,
+        "PPLFPCCFFNC": 4.0,
+        "FAMIMLKMEDP": 4.0,
+        "DLJJBMDIMKL": 2.0,
+        "FODOJABAOOA": 2.0,
+        "OADPAECCPPP": 0.4000000059604645,
+        "IAIPPCLBLHB": 1.399999976158142,
+        "FHJNEHJAIKC": 0.4000000059604645,
+        "IBCPEGIJEMI": 1.2000000476837158
+      },
+      "FacingMove": {
+        "MFNHGOKLGMO": 4.5,
+        "PPLFPCCFFNC": 4.0,
+        "FAMIMLKMEDP": 4.0,
+        "DLJJBMDIMKL": 2.0,
+        "FODOJABAOOA": 2.0,
+        "OADPAECCPPP": 0.4000000059604645,
+        "IAIPPCLBLHB": 1.399999976158142,
+        "FHJNEHJAIKC": 0.4000000059604645,
+        "IBCPEGIJEMI": 1.2000000476837158
+      }
+    },
+    "birdCirclingTactic": [
+      {
+        "$type": "MCDGOJLCMBM",
+        "JMCOBEPDIGM": {
+          "ACOBCFCMBOC": "Spacial",
+          "MNPDDAKDHGK": "Default",
+          "GJDMDHIBCME": ""
+        },
+        "PIOCBHLFLJP": {
+          "103": {
+            "ACOBCFCMBOC": "Spacial",
+            "MNPDDAKDHGK": "",
+            "GJDMDHIBCME": ""
+          }
+        }
+      },
+      {
+        "$type": "COLLJLNKMLC",
+        "JMCOBEPDIGM": {
+          "ANLAAGAMIKF": 1,
+          "MNPDDAKDHGK": "Default",
+          "GJDMDHIBCME": "",
+          "ACOBCFCMBOC": "Spacial",
+          "PLLHMGHOAPB": "",
+          "KPIJNGFNAEF": "",
+          "GDPHPLKJGAJ": "",
+          "KKKOAABEHEP": ""
+        },
+        "PIOCBHLFLJP": {
+          "103": {
+            "MNPDDAKDHGK": "",
+            "GJDMDHIBCME": "",
+            "ACOBCFCMBOC": "Spacial",
+            "PLLHMGHOAPB": "",
+            "KPIJNGFNAEF": "",
+            "GDPHPLKJGAJ": "",
+            "KKKOAABEHEP": ""
+          }
+        }
+      },
+      {
+        "$type": "NNJKLGNPMNN",
+        "enable": true,
+        "JMCOBEPDIGM": {
+          "ANLAAGAMIKF": 1,
+          "ACOBCFCMBOC": "Auto",
+          "OJGLKPBCLGB": 2.0,
+          "MNPDDAKDHGK": "Default",
+          "GJDMDHIBCME": ""
+        }
+      },
+      {
+        "$type": "MJJFBALNDCH",
+        "JMCOBEPDIGM": {
+          "ANLAAGAMIKF": 1,
+          "DDFIKIJKKOE": true,
+          "MNPDDAKDHGK": "Default",
+          "GJDMDHIBCME": ""
+        },
+        "PIOCBHLFLJP": {
+          "103": {
+            "ANLAAGAMIKF": 1,
+            "DDFIKIJKKOE": true,
+            "MNPDDAKDHGK": "",
+            "GJDMDHIBCME": ""
+          }
+        }
+      },
+      {
+        "$type": "EPPOBBAEPED",
+        "enable": true,
+        "condition": {
+          "pose": [
+            201
+          ]
+        },
+        "JMCOBEPDIGM": {
+          "FAKGFIDPCFL": 35.0,
+          "GHCEDMEHKLN": 25.0,
+          "ONFAMCFCNFM": 0.0,
+          "KLODEFMNFIC": 1.0,
+          "MDIJLJGMLND": true,
+          "MNPDDAKDHGK": "Default",
+          "GJDMDHIBCME": "",
+          "OCJMIBOCPAH": 1.0
+        }
+      },
+      {
+        "$type": "AFPKJOCDEIF",
+        "enable": true,
+        "condition": {
+          "pose": [
+            101,
+            102,
+            103
+          ]
+        },
+        "JMCOBEPDIGM": {
+          "ANLAAGAMIKF": 1,
+          "OODBIGLAFGG": {
+            "IDEFILBHNAP": 0.699999988079071,
+            "JFBDDDBIHDE": 10.0,
+            "APHHENPJNLO": 10.0,
+            "PELOBMPBAJF": 10.0,
+            "GNFCHLHAPNI": 10.0
+          },
+          "KPNDPKIOPJM": 6.0,
+          "MNPDDAKDHGK": "Default",
+          "GJDMDHIBCME": "",
+          "BHEHHOJOGEI": 0.75,
+          "OIGAJIFCDMI": 2.0,
+          "BMDNOGNPICH": 3.0,
+          "ANMPOPEBDIA": 5.0
+        },
+        "PIOCBHLFLJP": {
+          "201": {
+            "ANLAAGAMIKF": 1,
+            "OODBIGLAFGG": {
+              "IDEFILBHNAP": 0.699999988079071,
+              "JFBDDDBIHDE": 10.0,
+              "APHHENPJNLO": 10.0,
+              "PELOBMPBAJF": 10.0,
+              "GNFCHLHAPNI": 10.0
+            },
+            "KPNDPKIOPJM": 2.5,
+            "PINAFKEDDLL": 0.5,
+            "MNPDDAKDHGK": "Default",
+            "GJDMDHIBCME": "",
+            "BHEHHOJOGEI": 0.75,
+            "ANMPOPEBDIA": 20.0
+          }
+        }
+      },
+      {
+        "$type": "MNBBAPLOENP",
+        "enable": true,
+        "condition": {
+          "pose": [
+            201
+          ]
+        },
+        "JMCOBEPDIGM": {
+          "GOMIFCDDDLF": 5.0,
+          "JCPAFNBJDEN": 30.0,
+          "JOJBOHEDBHC": 0.0,
+          "AFILKAGDAHN": 0.5,
+          "ALIBHHJHHMN": 0.5,
+          "OMHBOLPFEPM": 1.5,
+          "BJIEHJIOICI": 3.0,
+          "FPNBEHAAJOL": {
+            "LLICGJHIGME": 0.0,
+            "FKIEIIJAPEH": 0.0,
+            "OJLPFPNFMDJ": 0.0,
+            "JFBDDDBIHDE": 0.0,
+            "EHLPOCLAEFO": 0.0,
+            "APHHENPJNLO": 0.0,
+            "AKMJKEIJEHM": 2.0,
+            "PELOBMPBAJF": 14.0,
+            "BLOIJOGPILM": 2.0,
+            "GNFCHLHAPNI": 14.0,
+            "DFHLPPNLGIE": 0.0,
+            "CLDDLKFCODO": 0.0,
+            "GNJEAKAKLHD": 0.0,
+            "EHAGCHIFFHA": 0.0
+          },
+          "GLBILFHBNFD": false,
+          "MNPDDAKDHGK": "FacingMove",
+          "GJDMDHIBCME": ""
+        }
+      }
+    ]
+  },
+  "inputKeys": [
+    {
+      "keyID": 9001,
+      "inputKeyCode": 257,
+      "abilityName": ""
+    },
+    {
+      "keyID": 401,
+      "inputKeyCode": 259,
+      "abilityName": ""
+    },
+    {
+      "keyID": 211,
+      "inputKeyCode": 260,
+      "abilityName": ""
+    },
+    {
+      "keyID": 212,
+      "inputKeyCode": 261,
+      "abilityName": ""
+    }
+  ],
+  "move": {
+    "$type": "IPNMJMHDMPF",
+    "velocityForce": {
+      "excludeForces": [
+        "RetreatType",
+        "RetreatAirType"
+      ]
+    },
+    "moveOnWaterDepth": 8.0,
+    "raycasts": [
+      {
+        "raycastLength": 1.5,
+        "raycastType": "DownToGroundOnlyInWater",
+        "startPoint": ""
+      }
+    ],
+    "deepWaterLevel": 0.3799999952316284,
+    "OGBEFBMLJJI": true,
+    "facingMove": "AirBlend",
+    "airFacingMove": "AirBlend",
+    "yawSpeedRatio": 1.0,
+    "velocityRatio": 1.0,
+    "rotationModifyExtra": true,
+    "PKHOMJHFAEE": "RootNode",
+    "NIDFEFPEKAI": 30.0,
+    "JNAPCJLHJDO": true,
+    "HFJBMHBMJBF": true,
+    "PDAJCFPNJBK": true
+  }
+}

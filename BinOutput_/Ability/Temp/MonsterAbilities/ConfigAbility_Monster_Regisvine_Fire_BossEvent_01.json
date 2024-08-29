@@ -1,0 +1,1383 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Regisvine_Fire_BossEvent_StageControl",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_REGISVINE_STAGE",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.10000000149011612,
+            0.5,
+            1.5,
+            2.5,
+            3.5,
+            4.5,
+            5.5
+          ],
+          "modifierNameSteps": [
+            "Init_0",
+            "HeadState_1",
+            "ReadyForFireStorm_2",
+            "RootStage_3",
+            "Stun_4",
+            "ReadyForRecovery_5"
+          ]
+        },
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueKey": "_REGISVINE_STAGE",
+          "valueSteps": [
+            -0.10000000149011612,
+            3.5
+          ],
+          "modifierNameSteps": [
+            "CoreProtect"
+          ]
+        }
+      ],
+      "abilitySpecials": {
+        "stun_timer": 15.0,
+        "sub_hurt_delta": 0.0,
+        "core_state_sub_hurt_delta": 3.0
+      },
+      "modifiers": {
+        "Init_0": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "IsRootCore"
+            },
+            {
+              "$type": "GFFKENEJFFB",
+              "intID": "Stage"
+            }
+          ]
+        },
+        "HeadState_1": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BAKEBEKLLAC",
+              "id": 31040003
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "IsRootCore"
+            },
+            {
+              "$type": "GFFKENEJFFB",
+              "intID": "Stage",
+              "value": 1
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_Core",
+                "HitBox_Fruit"
+              ]
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_Core_Critical"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "GV_EffigyChallenge_V5_Boss_DisableButtonT",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Regisvine_Fire_Core_Normal",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "ReadyForFireStorm_2": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "IsRootCore"
+            },
+            {
+              "$type": "GFFKENEJFFB",
+              "intID": "Stage",
+              "value": 2
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "GV_EffigyChallenge_V5_Boss_DisableButtonT",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "RootStage_3": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BAKEBEKLLAC",
+              "id": 31040004
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "IsRootCore",
+              "param3": true
+            },
+            {
+              "$type": "GFFKENEJFFB",
+              "intID": "Stage",
+              "value": 3
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_Core",
+                "HitBox_Fruit"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_Core_Critical"
+              ]
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "GV_EffigyChallenge_V5_Boss_DisableButtonT",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Stun_4": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "IsRootCore"
+            },
+            {
+              "$type": "GFFKENEJFFB",
+              "intID": "Stage",
+              "value": 4
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_Core",
+                "HitBox_Fruit"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_Core_Critical"
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "SGV_EffigyChallenge_V5_AssistOptionSelected_3",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "KNHHAJNCCBI",
+                  "param3": 21.0,
+                  "overrideMapKey": "stun_timer",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "JLDEMMJAMLC",
+                  "modifierName": "StunHurtDelta"
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "KNHHAJNCCBI",
+                  "param3": 15.0,
+                  "overrideMapKey": "stun_timer",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "StunTimer"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "GV_EffigyChallenge_V5_Boss_DisableButtonT",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "ReadyForRecovery_5": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "IsRootCore"
+            },
+            {
+              "$type": "GFFKENEJFFB",
+              "intID": "Stage",
+              "value": 5
+            }
+          ]
+        },
+        "CoreProtect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_PhysicalSubHurtDelta": "core_state_sub_hurt_delta",
+            "Actor_FireSubHurtDelta": "core_state_sub_hurt_delta",
+            "Actor_ElecSubHurtDelta": "core_state_sub_hurt_delta",
+            "Actor_WaterSubHurtDelta": "core_state_sub_hurt_delta",
+            "Actor_GrassSubHurtDelta": "core_state_sub_hurt_delta",
+            "Actor_WindSubHurtDelta": "core_state_sub_hurt_delta",
+            "Actor_IceSubHurtDelta": "core_state_sub_hurt_delta",
+            "Actor_RockSubHurtDelta": "core_state_sub_hurt_delta"
+          }
+        },
+        "StunHurtDelta": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_PhysicalSubHurtDelta": "sub_hurt_delta",
+            "Actor_FireSubHurtDelta": "sub_hurt_delta",
+            "Actor_ElecSubHurtDelta": "sub_hurt_delta",
+            "Actor_IceSubHurtDelta": "sub_hurt_delta",
+            "Actor_WaterSubHurtDelta": "sub_hurt_delta",
+            "Actor_GrassSubHurtDelta": "sub_hurt_delta",
+            "Actor_WindSubHurtDelta": "sub_hurt_delta",
+            "Actor_RockSubHurtDelta": "sub_hurt_delta"
+          }
+        },
+        "StunTimer": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": "stun_timer",
+          "onThinkInterval": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 5.0,
+              "key": "_REGISVINE_STAGE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "KFCDMIMBBLD",
+          "sightGroupWithOwner": true,
+          "lifeByOwnerV2": true,
+          "gadgetID": 42602049,
+          "byServer": true
+        },
+        {
+          "$type": "OPAOGKPJLIG",
+          "shieldHP": true,
+          "resistanceBuffDebuffs": [
+            "ElementFreeze",
+            "Struggle",
+            "ElementPetrifaction"
+          ]
+        },
+        {
+          "$type": "HMIDGKNOHJM",
+          "renderNames": [
+            "Core"
+          ],
+          "setEnable": true
+        },
+        {
+          "$type": "HMIDGKNOHJM",
+          "renderNames": [
+            "Core_Broken"
+          ]
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "GV_EffigyChallenge_V5_Boss_DisableButtonT",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "IBACDLDFCND",
+          "enable": true,
+          "specialCameraName": "StunFocus",
+          "frameDelay": 1,
+          "lockTrans": ""
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 2.0,
+          "key": "_REGISVINE_STAGE",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BLCCGIPAOIP",
+          "PLLJBINMGJK": "StageChange",
+          "mpTriggerOnRemote": true
+        },
+        {
+          "$type": "CCNPNMMONDO",
+          "attackInfo": {
+            "attackTag": "",
+            "attenuationTag": "",
+            "attenuationGroup": "default",
+            "hitPattern": {
+              "onHitEffectName": "default",
+              "hitImpulseY": "",
+              "hitImpulseType": "LV0",
+              "hitHaltTime": 0.10000000149011612,
+              "hitHaltTimeScale": 0.05000000074505806
+            }
+          }
+        },
+        {
+          "$type": "JPHLIDGMGBG",
+          "cameraRadialBlur": {
+            "power": 0.4000000059604645,
+            "blurTime": 0.05000000074505806,
+            "fadeTime": 0.20000000298023224
+          }
+        },
+        {
+          "$type": "ONALKNNKKLH",
+          "cameraShake": {
+            "shakeRange": 1.2999999523162842,
+            "shakeTime": 0.36000001430511475,
+            "shakeDistance": 50.0,
+            "extension": {
+              "baseCycle": 0.36000001430511475,
+              "cycleDamping": 0.0,
+              "rangeAttenuation": 0.019999999552965164
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Regisvine_Fire_BossEvent_StartCycle",
+      "abilityMixins": [
+        {
+          "$type": "APJKOLPHCGH",
+          "stateIDs": [
+            "RevengeAttack",
+            "Alert"
+          ],
+          "exitActions": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 1.0,
+              "key": "_REGISVINE_STAGE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "DLEIPBPNAIM",
+          "paramList": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 1.0,
+          "key": "_REGISVINE_STAGE",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Regisvine_Fire_BossEvent_ShieldBreak",
+      "onAbilityStart": [
+        {
+          "$type": "AHPEKICBIIL",
+          "luaCallType": "CurGalleryControlGroup",
+          "funcName": "SLC_EffigyChallenge_V5_SubChallengeAchieve",
+          "param1": 0.0,
+          "MGAMDEHMCOL": 0.0,
+          "MMHOHAOGPLP": 0.0
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 4.0,
+          "key": "_REGISVINE_STAGE",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BLCCGIPAOIP",
+          "PLLJBINMGJK": "ShieldBreak",
+          "mpTriggerOnRemote": true
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "_CAMERA_STATE",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "CCNPNMMONDO",
+          "attackInfo": {
+            "attackTag": "",
+            "attenuationTag": "",
+            "attenuationGroup": "default",
+            "hitPattern": {
+              "onHitEffectName": "default",
+              "hitImpulseY": "",
+              "hitImpulseType": "LV0",
+              "hitHaltTime": 0.10000000149011612,
+              "hitHaltTimeScale": 0.05000000074505806
+            }
+          }
+        },
+        {
+          "$type": "JPHLIDGMGBG",
+          "cameraRadialBlur": {
+            "power": 0.4000000059604645,
+            "blurTime": 0.05000000074505806,
+            "fadeTime": 0.20000000298023224
+          }
+        },
+        {
+          "$type": "ONALKNNKKLH",
+          "cameraShake": {
+            "shakeRange": 1.2999999523162842,
+            "shakeTime": 0.36000001430511475,
+            "shakeDistance": 50.0,
+            "extension": {
+              "baseCycle": 0.36000001430511475,
+              "cycleDamping": 0.0,
+              "rangeAttenuation": 0.019999999552965164
+            }
+          }
+        },
+        {
+          "$type": "IBACDLDFCND",
+          "enable": true,
+          "specialCameraName": "StunFocus",
+          "frameDelay": 1,
+          "lockTrans": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Regisvine_Fire_BossEvent_HeadSkillSwitch_Enable",
+      "onAbilityStart": [
+        {
+          "$type": "IDNGFEEBPAM",
+          "boolID": "HeadSkillSwitch",
+          "param3": true
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Regisvine_Fire_BossEvent_HeadSkillSwitch_Disable",
+      "onAbilityStart": [
+        {
+          "$type": "IDNGFEEBPAM",
+          "boolID": "HeadSkillSwitch"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Regisvine_Fire_BossEvent_ColliderManager",
+      "abilityMixins": [
+        {
+          "$type": "JJFFOLOAJFO",
+          "normalizedStateIDList": [
+            {
+              "stateID": "HeadAttack",
+              "normalizeStart": 0.4129999876022339,
+              "normalizeEnd": 0.6000000238418579
+            },
+            {
+              "stateID": "HeadCombo_Attack01",
+              "normalizeStart": 0.4129999876022339,
+              "normalizeEnd": 0.6000000238418579
+            },
+            {
+              "stateID": "HeadCombo_Attack02",
+              "normalizeStart": 0.4129999876022339,
+              "normalizeEnd": 0.6000000238418579
+            },
+            {
+              "stateID": "MeleeCombo",
+              "normalizeStart": 0.46799999475479126,
+              "normalizeEnd": 0.8309999704360962
+            },
+            {
+              "stateID": "HeadCombo_Final",
+              "normalizeStart": 0.46799999475479126,
+              "normalizeEnd": 0.8309999704360962
+            }
+          ],
+          "modifierName": "HeadDown",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "JJFFOLOAJFO",
+          "normalizedStateIDList": [
+            {
+              "stateID": "FlameLazer_Attack02",
+              "normalizeStart": 0.1080000028014183,
+              "normalizeEnd": 0.7699999809265137
+            },
+            {
+              "stateID": "FlameLazer_Attack03",
+              "normalizeStart": 0.1080000028014183,
+              "normalizeEnd": 0.7699999809265137
+            }
+          ],
+          "modifierName": "HeadLazer",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "JJFFOLOAJFO",
+          "normalizedStateIDList": [
+            {
+              "stateID": "ShieldBreak",
+              "normalizeStart": 0.7200000286102295
+            },
+            {
+              "stateID": "Stun"
+            },
+            {
+              "stateID": "RevengeAttack",
+              "normalizeEnd": 0.15000000596046448
+            }
+          ],
+          "modifierName": "StunPush",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "HeadDown": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider_Head"
+              ],
+              "setEnable": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider_Head"
+              ]
+            }
+          ]
+        },
+        "StunPush": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider_Faint01",
+                "PushCollider_Faint01_Extra"
+              ],
+              "setEnable": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider_Faint01",
+                "PushCollider_Faint01_Extra"
+              ]
+            }
+          ]
+        },
+        "HeadLazer": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider_LazerAttack"
+              ],
+              "setEnable": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider_LazerAttack"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Regisvine_Fire_BossEvent_CameraManager",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_CAMERA_STATE",
+          "gvInTalk": -1.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5,
+            2.5,
+            3.5
+          ],
+          "modifierNameSteps": [
+            "Camera_Default",
+            "Camera_FireStormStartView",
+            "Camera_FireStormCrossFireView",
+            "Camera_LavaBlastCharge"
+          ]
+        },
+        {
+          "$type": "AOKOIIHJJPJ",
+          "alertness": [
+            2,
+            3
+          ],
+          "modifierName": "Camera_Manager"
+        }
+      ],
+      "modifiers": {
+        "Camera_Manager": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "APJKOLPHCGH",
+              "stateIDs": [
+                "Standby"
+              ],
+              "enterActions": [
+                {
+                  "$type": "FNPMFLOOCDD",
+                  "predicates": [
+                    {
+                      "$type": "BCFNGJHILAG",
+                      "predicates": [
+                        {
+                          "$type": "CNGGLKHONAA",
+                          "key": "_CAMERA_STATE",
+                          "param3": 0.0
+                        }
+                      ]
+                    }
+                  ],
+                  "param3": 0.0,
+                  "key": "_CAMERA_STATE",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ],
+              "DGFCLAIDIFI": ""
+            },
+            {
+              "$type": "APJKOLPHCGH",
+              "stateIDs": [
+                "FlameLazer_Attack01"
+              ],
+              "enterActions": [
+                {
+                  "$type": "FNPMFLOOCDD",
+                  "param3": 3.0,
+                  "key": "_CAMERA_STATE",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ],
+              "exitActions": [
+                {
+                  "$type": "FNPMFLOOCDD",
+                  "param3": 0.0,
+                  "key": "_CAMERA_STATE",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ],
+              "DGFCLAIDIFI": ""
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 0.0,
+              "key": "_CAMERA_STATE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "IBACDLDFCND",
+              "enable": true,
+              "specialCameraName": "BasicView",
+              "frameDelay": 1,
+              "lockTrans": ""
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 0.0,
+              "key": "_CAMERA_STATE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Camera_Default": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IBACDLDFCND",
+              "enable": true,
+              "specialCameraName": "BasicView",
+              "frameDelay": 1,
+              "lockTrans": ""
+            }
+          ]
+        },
+        "Camera_FireStormStartView": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IBACDLDFCND",
+              "enable": true,
+              "specialCameraName": "FireStormStartView",
+              "frameDelay": 1,
+              "lockTrans": ""
+            }
+          ]
+        },
+        "Camera_FireStormCrossFireView": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IBACDLDFCND",
+              "enable": true,
+              "specialCameraName": "FireStormCrossFireView",
+              "frameDelay": 1,
+              "lockTrans": ""
+            }
+          ]
+        },
+        "Camera_LavaBlastCharge": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IBACDLDFCND",
+              "enable": true,
+              "specialCameraName": "LavaBlastCharge",
+              "frameDelay": 1,
+              "lockTrans": ""
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Regisvine_Fire_BossEvent_TickToFindDummyGadget",
+      "modifiers": {
+        "Tick_To_Find_DummyGadget": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 2.0,
+          "onAdded": [
+            {
+              "$type": "KGKOLOLDKHH",
+              "partRootNames": [
+                "BaseControl"
+              ],
+              "enable": true
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "HighFreq_Tick"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "GPDAIGICDKI",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 42602001
+              },
+              "partRootNames": [
+                "BaseControl"
+              ]
+            }
+          ],
+          "onKill": [
+            {
+              "$type": "KGKOLOLDKHH",
+              "partRootNames": [
+                "BaseControl"
+              ]
+            }
+          ]
+        },
+        "HighFreq_Tick": {
+          "modifierName": "",
+          "elementDurability": 5.0,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.019999999552965164,
+          "onThinkInterval": [
+            {
+              "$type": "GPDAIGICDKI",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 42602001
+              },
+              "partRootNames": [
+                "BaseControl"
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Tick_To_Find_DummyGadget"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Regisvine_Fire_BossEvent_LavaBlastLogic",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "LavaBlast_Loop",
+            "LavaBlast_Ready"
+          ],
+          "modifierName": "LavaBlast_MonsterVFX",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "DIDNLIKKLLF",
+          "stateIDs": [
+            "LavaBlast_Attack"
+          ],
+          "enterActions": [
+            {
+              "$type": "ONALKNNKKLH",
+              "cameraShake": {
+                "shakeRange": 1.5,
+                "shakeTime": 0.36000001430511475,
+                "shakeDistance": 50.0,
+                "extension": {
+                  "baseCycle": 0.23999999463558197,
+                  "cycleDamping": 0.0,
+                  "rangeAttenuation": 0.019999999552965164
+                }
+              }
+            },
+            {
+              "$type": "CAKDDHLKOAB",
+              "bulletID": 42602052
+            }
+          ],
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "FlameLazer_Attack02",
+          "modifierName": "LazerAttack_Damage",
+          "normalizeStart": 0.125,
+          "normalizeEnd": 0.33000001311302185,
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "LazerAttack_Damage": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.15000000596046448,
+          "onAdded": [
+            {
+              "$type": "JPHLIDGMGBG",
+              "cameraRadialBlur": {
+                "power": 2.4000000953674316,
+                "blurTime": 0.20999999344348907,
+                "fadeTime": 0.30000001192092896
+              }
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "LPCHALMFFOD": 4.75
+                    },
+                    "useRotation": true
+                  },
+                  "height": 3.0,
+                  "fanAngle": 25.0,
+                  "OAHPDLJIADP": 21.0,
+                  "MMBCLAEOEFB": 3.799999952316284
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "LazerAttack",
+                  "attenuationGroup": "Sandworm_Stage02_TailStormAttack",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.8999999761581421,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Fire",
+                    "IPFJJJGABPL": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 200.0,
+                    "attackType": "Range",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "",
+                    "overrideHitImpulse": {
+                      "hitLevel": "Heavy",
+                      "IMIJMPGJOGG": 700.0
+                    }
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "LPCHALMFFOD": 4.75
+                    },
+                    "useRotation": true
+                  },
+                  "height": 3.0,
+                  "fanAngle": 25.0,
+                  "OAHPDLJIADP": 21.0,
+                  "MMBCLAEOEFB": 3.799999952316284
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "LazerAttack",
+                  "attenuationGroup": "Sandworm_Stage02_TailStormAttack",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.699999988079071,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Fire",
+                    "IPFJJJGABPL": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 5.0,
+                    "attackType": "Range",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV0"
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "LavaBlast_MonsterVFX": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KGKOLOLDKHH",
+              "partRootNames": [
+                "BlazeSeedSource"
+              ],
+              "enable": true
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Regisvine_Fire_BossEvent_LavaBlast_Charge",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Regisvine_Fire_BossEvent_LavaBlast_Charge_AttackShape",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Regisvine_Fire_SummonBlazeSeed_03",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 3.0,
+              "key": "_CAMERA_STATE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KGKOLOLDKHH",
+              "partRootNames": [
+                "BlazeSeedSource"
+              ]
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 0.0,
+              "key": "_CAMERA_STATE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Regisvine_Fire_BossEvent_FireStormLogic",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "FireStorm_Loop"
+          ],
+          "modifierName": "FireStorm_VFX",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "APJKOLPHCGH",
+          "stateIDs": [
+            "FireStorm_BS"
+          ],
+          "enterActions": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 1.0,
+              "key": "_CAMERA_STATE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Regisvine_Fire_MissileAttack_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "WindZoneBurst": {
+          "modifierName": "",
+          "elementDurability": 1.2000000476837158,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EIMGEIJIDNO",
+              "shapeName": "CircleR24",
+              "strength": -90.0,
+              "IAELBHDMINN": 0.5,
+              "MMBCLAEOEFB": 0.0,
+              "targetType": "Enemy",
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Avatar"
+                  ]
+                }
+              ],
+              "modifierName": "",
+              "forceGrowth": 1000.0
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "JPHLIDGMGBG",
+              "cameraRadialBlur": {
+                "power": 5.0,
+                "blurTime": 0.6000000238418579,
+                "fadeTime": 0.4399999976158142
+              }
+            },
+            {
+              "$type": "PELJALPANCA",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR10H10",
+                "campTargetType": "Enemy",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Avatar",
+                    "Monster",
+                    "Partner",
+                    "Gadget"
+                  ]
+                }
+              ],
+              "modifierName": "Force_Push_Off"
+            }
+          ]
+        },
+        "Force_Push_Off": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CCNPNMMONDO",
+              "attackInfo": {
+                "attackTag": "Regisvine_SurroundingFire",
+                "attenuationTag": "",
+                "attenuationGroup": "Regisvine_SurroundingFire",
+                "attackProperty": {
+                  "actorGrassSubHurtDelta": 0.0,
+                  "actorWindSubHurtDelta": 0.0,
+                  "IPFJJJGABPL": 100.0,
+                  "enBreak": 500.0,
+                  "GLKMCMDJBIK": 0.0
+                },
+                "hitPattern": {
+                  "onHitEffectName": "default",
+                  "hitImpulseY": "",
+                  "hitImpulseType": "",
+                  "overrideHitImpulse": {
+                    "hitLevel": "Air",
+                    "BPCDKKBKOBM": 500.0
+                  }
+                },
+                "forceCameraShake": true,
+                "cameraShake": {
+                  "shakeType": "HitVector",
+                  "shakeRange": 5.0,
+                  "shakeTime": 0.800000011920929,
+                  "shakeDistance": 40.0,
+                  "extension": {
+                    "baseCycle": 0.4000000059604645,
+                    "cycleDamping": 0.699999988079071
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "FireStorm_VFX": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EIMGEIJIDNO",
+              "shapeName": "CircleR24",
+              "strength": -2.5999999046325684,
+              "IAELBHDMINN": 0.949999988079071,
+              "MMBCLAEOEFB": 6.5,
+              "targetType": "Enemy",
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Avatar",
+                    "Monster",
+                    "Partner",
+                    "Gadget"
+                  ]
+                }
+              ],
+              "modifierName": ""
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 0.0,
+              "key": "_FIRE_STORM_DESTROY",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 2.0,
+              "key": "_CAMERA_STATE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Regisvine_Fire_MissileAttack_02",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "KFCDMIMBBLD",
+              "lifeByOwnerV2": true,
+              "gadgetID": 42602050
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 1.0,
+              "key": "_FIRE_STORM_DESTROY",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 0.0,
+              "key": "_CAMERA_STATE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PFIOPNPNADE",
+              "id": 31040004
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 1.0,
+          "key": "_FIRE_STORM_DESTROY",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "WindZoneBurst"
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 3.0,
+          "key": "_REGISVINE_STAGE",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "DLEIPBPNAIM",
+          "paramList": [
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "_FIRE_STORM_DESTROY",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  }
+]

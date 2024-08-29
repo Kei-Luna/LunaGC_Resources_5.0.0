@@ -1,0 +1,1130 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_BionicDrone_Initialization",
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_GLOBALVALUE_EnigmaType",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_BionicDrone_CoreActive",
+      "abilityMixins": [
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "ChargeAtk",
+          "modifierName": "UNIQUE_Monster_Apparatus_Enigma_BionicDrone_CoreState",
+          "normalizeEnd": 0.699999988079071,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "CoveringFireBS",
+          "modifierName": "UNIQUE_Monster_Apparatus_Enigma_BionicDrone_CoreState",
+          "normalizeEnd": 0.8999999761581421,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            202
+          ],
+          "modifierName": "Enigma_BionicDrone_Weak"
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_Monster_Apparatus_Enigma_BionicDrone_CoreState": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "PowerStage",
+              "param3": 2.0
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "_MONSTER_Apparatus_Enigma_CoreActive",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "CoreBox"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "MainBox"
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -1.0,
+              "key": "_MONSTER_Apparatus_Enigma_CoreActive",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "CoreBox"
+              ]
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "MainBox"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "AKEEDILMOJF",
+              "predicates": [
+                {
+                  "$type": "ALLFFNEOPGA",
+                  "param3": 0,
+                  "parameter": "PowerStage"
+                }
+              ],
+              "intID": "PowerStage",
+              "param3": 1.0
+            }
+          ]
+        },
+        "Enigma_BionicDrone_Weak": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Owner",
+              "param3": 1.0,
+              "key": "_WATCHER_80104_1",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onKill": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "target": "Owner",
+          "param3": 1.0,
+          "key": "_WATCHER_80105_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_BionicDrone_AimAtk",
+      "modifiers": {
+        "Apparatus_Enigma_BionicDrone_AimAtk_Target": {
+          "modifierName": "",
+          "elementDurability": 3.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Avatar"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "JLDEMMJAMLC",
+                  "modifierName": "Apparatus_Enigma_BionicDrone_AimAtk_Avatar"
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Partner",
+                    "Vehicle"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "JLDEMMJAMLC",
+                  "modifierName": "Monster_Apparatus_Enigma_BionicDrone_AimAtk_Alert"
+                }
+              ]
+            }
+          ]
+        },
+        "Apparatus_Enigma_BionicDrone_AimAtk_Avatar": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "IJKJKFHPENC",
+              "modifierName": "Monster_Apparatus_Enigma_BionicDrone_AimAtk_Alert"
+            }
+          ]
+        },
+        "Monster_Apparatus_Enigma_BionicDrone_AimAtk_Alert": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicDrone_AimAtk_Alert",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "target": "SelfAttackTarget",
+          "modifierName": "Apparatus_Enigma_BionicDrone_AimAtk_Target"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_BionicDrone_AimAtk_TriggerBullet",
+      "onAbilityStart": [
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42401001,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "direction": {
+              "$type": "MEADFIJAHPG",
+              "maxAngleType": "Vertical",
+              "maxAngle": 15.0,
+              "startPoint": ""
+            },
+            "attachPointName": "CorePoint"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_BionicDrone_AimAtk_Bullet",
+      "modifiers": {
+        "Apparatus_Enigma_BionicDrone_AimAtk_BulletEffect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicDrone_AimAtk_Bullet",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicDrone_AimAtk_Bullet_Trail",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Apparatus_Enigma_BionicDrone_AimAtk_BulletEffect"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JGEBAJLEBMO"
+              },
+              "OAHPDLJIADP": 0.4000000059604645
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.699999988079071,
+                "actorWindSubHurtDelta": 0.0,
+                "IPFJJJGABPL": 100.0,
+                "strikeType": "Pierce",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV3",
+                "hitHaltTimeScale": 0.05000000074505806
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicDrone_AimAtk_Explode",
+          "born": {
+            "$type": "JGEBAJLEBMO"
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_BionicDrone_ChargeAtk",
+      "modifiers": {
+        "Apparatus_Enigma_BionicDrone_ChargeAtk_Target": {
+          "modifierName": "",
+          "elementDurability": 3.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Avatar"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "JLDEMMJAMLC",
+                  "modifierName": "Apparatus_Enigma_BionicDrone_ChargeAtk_Avatar"
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Partner",
+                    "Vehicle"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "JLDEMMJAMLC",
+                  "modifierName": "Monster_Apparatus_Enigma_BionicDrone_ChargeAtk_Alert"
+                }
+              ]
+            }
+          ]
+        },
+        "Apparatus_Enigma_BionicDrone_ChargeAtk_Avatar": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "IJKJKFHPENC",
+              "modifierName": "Monster_Apparatus_Enigma_BionicDrone_ChargeAtk_Alert"
+            }
+          ]
+        },
+        "Monster_Apparatus_Enigma_BionicDrone_ChargeAtk_Alert": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicDrone_ChargeAtk_Alert",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "target": "SelfAttackTarget",
+          "modifierName": "Apparatus_Enigma_BionicDrone_ChargeAtk_Target"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_BionicDrone_ChargeAtk_TriggerBullet",
+      "onAbilityStart": [
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42401002,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "direction": {
+              "$type": "MEADFIJAHPG",
+              "maxAngleType": "Vertical",
+              "maxAngle": 45.0,
+              "startPoint": ""
+            },
+            "attachPointName": "CorePoint"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_BionicDrone_ChargeAtk_Bullet",
+      "modifiers": {
+        "Apparatus_Enigma_BionicDrone_ChargeAtk_BulletEffect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicDrone_ChargeAtk_Bullet",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicDrone_ChargeAtk_Bullet_Trail",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Apparatus_Enigma_BionicDrone_ChargeAtk_BulletEffect"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JGEBAJLEBMO"
+              },
+              "OAHPDLJIADP": 0.5
+            },
+            "attackInfo": {
+              "attackTag": "Apparatus_Enigma_PowerAtk",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 1.0,
+                "actorWindSubHurtDelta": 0.0,
+                "IPFJJJGABPL": 100.0,
+                "strikeType": "Blunt",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV3",
+                "hitHaltTimeScale": 0.05000000074505806
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicDrone_ChargeAtk_Explode",
+          "born": {
+            "$type": "JGEBAJLEBMO"
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_BionicDrone_VoltSwitch",
+      "onAbilityStart": [
+        {
+          "$type": "MPAGCPPAIHJ",
+          "key": "_MONSTER_Apparatus_Enigma_BionicDrone_VoltSwitch_BulletPos",
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "attachPointName": "CorePoint"
+          }
+        },
+        {
+          "$type": "ENBLCDCKLMK",
+          "key": "_MONSTER_Apparatus_Enigma_BionicDrone_VoltSwitch_BulletDir",
+          "born": {
+            "$type": "IAENDIPDFKD"
+          }
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42401003,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "direction": {
+              "$type": "AHGNBAPONLA"
+            },
+            "attachPointName": "CorePoint"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_BionicDrone_VoltSwitch_EnergyBall",
+      "modifiers": {
+        "Monster_Apparatus_Enigma_BionicDrone_VoltSwitch_EnergyBall": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicDrone_VoltSwitch_EnergyBall",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Monster_Apparatus_Enigma_BionicDrone_VoltSwitch_EnergyBall"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "KFCDMIMBBLD",
+          "ownerIs": "Owner",
+          "lifeByOwnerIsAlive": true,
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "onGround": true,
+            "alongGround": true
+          },
+          "gadgetID": 42401004,
+          "campID": 4001,
+          "campTargetType": "Alliance"
+        },
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "GMDIMKKHACA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                }
+              },
+              "height": 1.0,
+              "OAHPDLJIADP": 1.2000000476837158
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.4000000059604645,
+                "actorWindSubHurtDelta": 0.0,
+                "IPFJJJGABPL": 100.0,
+                "strikeType": "Default",
+                "attackType": "Range",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV0",
+                "retreatType": "ByHitDirection"
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_BionicDrone_VoltSwitch_EnergyBall_Land",
+      "modifiers": {
+        "Monster_Apparatus_Enigma_BionicDrone_VoltSwitch_EnergyBall_Land": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.20000000298023224,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicDrone_VoltSwitch_EnergyBall_Land",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 0.0
+                    }
+                  },
+                  "height": 1.0,
+                  "OAHPDLJIADP": 1.2000000476837158
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "Monster_Konungmathr_Attenuation_1",
+                  "attenuationGroup": "Monster_Konungmathr_Attenuation_1",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.30000001192092896,
+                    "actorWindSubHurtDelta": 0.0,
+                    "IPFJJJGABPL": 100.0,
+                    "strikeType": "Default",
+                    "attackType": "Range",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV0",
+                    "retreatType": "ByHitDirection"
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Monster_Apparatus_Enigma_BionicDrone_VoltSwitch_EnergyBall_Land"
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicDrone_VoltSwitch_EnergyBall_LandAS",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "Monster_Apparatus_Enigma_BionicDrone_VoltSwitch_EnergyBall_Land"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_BionicDrone_CoveringFire",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "CoveringFireBS",
+            "CoveringFireLoop"
+          ],
+          "modifierName": "Apparatus_Enigma_BionicDrone_CoveringFire_Effect",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "CoveringFireLoop"
+          ],
+          "modifierName": "Apparatus_Enigma_BionicDrone_CoveringFire_Active",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Apparatus_Enigma_BionicDrone_CoveringFire_Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicDrone_CoveringFire",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Apparatus_Enigma_BionicDrone_CoveringFire_Active": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "target": "SelfAttackTarget",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_ENIGMA_Supporter_Tag_",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "lifeByOwnerIsAlive": true,
+              "born": {
+                "$type": "MPCGPEHJNNH",
+                "onGround": true,
+                "direction": {
+                  "$type": "AHGNBAPONLA"
+                },
+                "alongGround": true,
+                "timeForPredictive": 0.5
+              },
+              "gadgetID": 42401005,
+              "campID": 4001,
+              "campTargetType": "Alliance"
+            },
+            {
+              "$type": "KFCDMIMBBLD",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "topLimit": 1,
+                "sortType": "Nearest",
+                "shapeName": "CircleR30",
+                "campTargetType": "SelfCamp",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_ENIGMA_Supporter_Tag_",
+                  "param3": 1.0
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_MONSTER_Apparatus_Enigma_SupportPosition",
+                  "param3": 1.0
+                }
+              ],
+              "lifeByOwnerIsAlive": true,
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "onGround": true,
+                "alongGround": true
+              },
+              "gadgetID": 42401005,
+              "campID": 4001,
+              "campTargetType": "Alliance"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "sortType": "Reversed",
+                "configID": 42401005
+              },
+              "modifierName": "KillSelf_Latency"
+            }
+          ]
+        },
+        "KillSelf_Latency": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "NCFFNDHGCMH",
+              "configIdArray": [
+                42401005
+              ]
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "GJCAPCBELPA",
+          "otherTargets": {
+            "$type": "MEOIGEJCJLB",
+            "configID": 42401005
+          },
+          "abilityName": "Monster_Apparatus_Enigma_BionicDrone_CoveringFire_Position"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_BionicDrone_CoveringFire_Position",
+      "modifiers": {
+        "Apparatus_Enigma_BionicDrone_CoveringFire_Position": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.5,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicDrone_CoveringFire_DamageArea",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "direction": {
+                  "$type": "FNKDGDKJHPC",
+                  "eularAngles": {
+                    "x": 0.10000000149011612,
+                    "y": 0.10000000149011612,
+                    "z": 0.10000000149011612
+                  }
+                }
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.10000000149011612,
+                      "JEBHCGDPFEJ": 0.10000000149011612,
+                      "LPCHALMFFOD": 0.10000000149011612
+                    }
+                  },
+                  "height": 3.0,
+                  "OAHPDLJIADP": 1.7999999523162842
+                },
+                "attackInfo": {
+                  "attackTag": "Apparatus_Enigma_PowerAtk",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.30000001192092896,
+                    "actorWindSubHurtDelta": 0.0,
+                    "IPFJJJGABPL": 100.0,
+                    "strikeType": "Default",
+                    "attackType": "Range",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV1",
+                    "retreatType": "ByHitDirection"
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "NCFFNDHGCMH",
+              "predicates": [
+                {
+                  "$type": "BCFNGJHILAG",
+                  "predicates": [
+                    {
+                      "$type": "IMPNKNCABJD",
+                      "target": "Owner"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "AttackEvent_Latency": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 0.0
+                    }
+                  },
+                  "height": 3.0,
+                  "OAHPDLJIADP": 5.800000190734863
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.4000000059604645,
+                    "actorWindSubHurtDelta": 0.0,
+                    "IPFJJJGABPL": 100.0,
+                    "strikeType": "Default",
+                    "attackType": "Range",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "retreatType": "ByHitDirection"
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Apparatus_Enigma_BionicDrone_CoveringFire_Position"
+        },
+        {
+          "$type": "MPAGCPPAIHJ",
+          "key": "_MONSTER_Apparatus_Enigma_BionicDrone_CoveringFire_EffectPos",
+          "born": {
+            "$type": "IAENDIPDFKD"
+          }
+        },
+        {
+          "$type": "ENBLCDCKLMK",
+          "key": "_MONSTER_Apparatus_Enigma_BionicDrone_CoveringFire_EffectDir",
+          "born": {
+            "$type": "ECGAJMICCCF"
+          }
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicDrone_CoveringFire_DamageArea_Trigger",
+          "born": {
+            "$type": "ICKMMAHFNIM",
+            "onGround": true,
+            "onGroundIgnoreWater": true,
+            "onGroundRaycastUpDist": 3.0,
+            "positionKey": "_MONSTER_Apparatus_Enigma_BionicDrone_CoveringFire_EffectPos",
+            "directionKey": "_MONSTER_Apparatus_Enigma_BionicDrone_CoveringFire_EffectDir"
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "AttackEvent_Latency"
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "Apparatus_Enigma_BionicDrone_CoveringFire_Position"
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicDrone_CoveringFire_DamageArea_AS",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "direction": {
+              "$type": "FNKDGDKJHPC",
+              "eularAngles": {
+                "x": 0.10000000149011612,
+                "y": 0.10000000149011612,
+                "z": 0.10000000149011612
+              }
+            }
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_BionicDrone_Steer",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "AimAtk"
+          ],
+          "endNormalizedTime": 0.4699999988079071,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "ChargeAtk"
+          ],
+          "endNormalizedTime": 0.699999988079071,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "VoltSwitch"
+          ],
+          "endNormalizedTime": 0.5799999833106995,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "CoveringFireBS"
+          ],
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Turn"
+          ],
+          "startNormalizedTime": 0.10000000149011612,
+          "endNormalizedTime": 0.30000001192092896,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Turn"
+          ],
+          "startNormalizedTime": 0.30000001192092896,
+          "endNormalizedTime": 0.6000000238418579,
+          "angularSpeed": 360.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,943 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Cicin_FireElectricBall",
+      "modifiers": {
+        "UNIQUE_MonsterEliteAffix_DefaultState": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "HNGKOKDJKDL",
+              "skillEliteSetID": 1
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_ELITEAFFIX_TAG",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "modifierName": "UNIQUE_MonsterEliteAffix_DefaultState"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42606001,
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.20000000298023224,
+              "LPCHALMFFOD": 1.2000000476837158
+            },
+            "direction": {
+              "$type": "MEADFIJAHPG",
+              "startPoint": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Cicin_ElectricBall_Hit",
+      "onAbilityStart": [
+        {
+          "$type": "KBODPNEEFGD",
+          "modifierName": "UNIQUE_Cicin_ElectricBall_Loop"
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Cicin_Thunder_ElectricBallAS",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "AIFPLABJNMA",
+          "shieldHP": true,
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JGEBAJLEBMO"
+              },
+              "OAHPDLJIADP": 0.5
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 1.0,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Electric",
+                "IPFJJJGABPL": 50.0,
+                "strikeType": "Default",
+                "enBreak": 20.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV2",
+                "hitHaltTimeScale": 0.05000000074505806
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Cicin_ElectricBall_Effect",
+      "modifiers": {
+        "UNIQUE_Cicin_ElectricBall_Loop": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementType": "Electric",
+          "IPFJJJGABPL": 25.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Cicin_Thunder_ElectricBall",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "UNIQUE_Cicin_ElectricBall_Loop"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Cicin_RushAtkTrigger",
+      "modifiers": {
+        "RushAtkTrigger_Delay1": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "RushAtkTrigger"
+            }
+          ]
+        },
+        "RushAtkTrigger_Delay2": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "RushAtkTrigger"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "BLCCGIPAOIP",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_SummonNumberInCicin",
+              "param3": 1.0
+            }
+          ],
+          "PLLJBINMGJK": "RushAtkTrigger"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_SummonNumberInCicin",
+              "param3": 2.0
+            }
+          ],
+          "modifierName": "RushAtkTrigger_Delay1"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_SummonNumberInCicin",
+              "param3": 3.0
+            }
+          ],
+          "modifierName": "RushAtkTrigger_Delay2"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Cicin_RushAtk",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "RushAtk"
+          ],
+          "modifierName": "Cincin_Thunder_RushAtk",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "RushAtk"
+          ],
+          "modifierName": "Cincin_Thunder_RushAtk_EnableCollider",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "NormalAtk"
+          ],
+          "endNormalizedTime": 0.75,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "attackDistance": 1.5,
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Cincin_Thunder_RushAtk": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.20000000298023224,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Cicin_Thunder_ElectricSurround",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Cicin_Thunder_ElectricSurroundAS",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "Ordered"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD"
+                  },
+                  "OAHPDLJIADP": 2.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 1.0,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Electric",
+                    "IPFJJJGABPL": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 25.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "retreatType": "ByTangent",
+                    "hitHaltTimeScale": 0.05000000074505806
+                  },
+                  "cameraShake": {}
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "Cincin_Thunder_RushAtk_EnableCollider": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_EndureDelta": 0.0
+          },
+          "onAdded": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ],
+              "setEnable": true
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Cicin_BlinkState",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Blink"
+          ],
+          "modifierName": "Blink_State",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Blink_State": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_Cicin_Blink_Actions"
+            }
+          ]
+        },
+        "UNIQUE_Cicin_Blink_Actions": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "Blink_Invincible"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "Blink_DenyLockOn"
+            },
+            {
+              "$type": "PJENOLFAFMG"
+            },
+            {
+              "$type": "NAAJIHIKECC",
+              "partNames": [
+                "equip01"
+              ]
+            },
+            {
+              "$type": "HBNEMPLJCMB",
+              "hide": true
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox"
+              ]
+            },
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox",
+                "HeadBox"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "PJENOLFAFMG",
+              "KGGEDGKGLDD": true
+            },
+            {
+              "$type": "NAAJIHIKECC",
+              "KGGEDGKGLDD": true,
+              "partNames": [
+                "equip01"
+              ]
+            },
+            {
+              "$type": "HBNEMPLJCMB"
+            }
+          ]
+        },
+        "Blink_Invincible": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "Invincible"
+        },
+        "Blink_DenyLockOn": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "DenyLockOn"
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "UNIQUE_Cicin_Blink_Actions"
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Fatuus_Summoner_Disappear",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            }
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "KEEOEKPABPN",
+          "target": "CurLocalAvatar"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Cicin_FindBlinkPoint",
+      "onAbilityStart": [
+        {
+          "$type": "BHPDPACKKNI",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_SummonNumberInCicin",
+              "param3": 1.0
+            }
+          ],
+          "born": {
+            "$type": "ECGAJMICCCF",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 1.25,
+              "LPCHALMFFOD": 2.0
+            }
+          },
+          "limitY": 2.5
+        },
+        {
+          "$type": "BHPDPACKKNI",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_SummonNumberInCicin",
+              "param3": 2.0
+            }
+          ],
+          "born": {
+            "$type": "ECGAJMICCCF",
+            "offset": {
+              "KGEPIMHBMOL": 2.0,
+              "JEBHCGDPFEJ": 1.25,
+              "LPCHALMFFOD": 2.0
+            }
+          },
+          "limitY": 2.5
+        },
+        {
+          "$type": "BHPDPACKKNI",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_SummonNumberInCicin",
+              "param3": 3.0
+            }
+          ],
+          "born": {
+            "$type": "ECGAJMICCCF",
+            "offset": {
+              "KGEPIMHBMOL": -2.0,
+              "JEBHCGDPFEJ": 1.25,
+              "LPCHALMFFOD": 2.0
+            }
+          },
+          "limitY": 2.5
+        },
+        {
+          "$type": "IDNGFEEBPAM",
+          "boolID": "Ordered",
+          "param3": true
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Cicin_Blink",
+      "onAbilityStart": [
+        {
+          "$type": "IFCMHHHOLCK"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Cicin_BlinkAS",
+      "onAbilityStart": [
+        {
+          "$type": "MDIAKCCDEAL",
+          "target": "CurLocalAvatar",
+          "turnToTargetImmediately": true
+        },
+        {
+          "$type": "KBODPNEEFGD",
+          "modifierName": "UNIQUE_Cicin_Blink_Actions"
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Fatuus_Summoner_Appear",
+          "born": {
+            "$type": "IAENDIPDFKD"
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Cicin_Die",
+      "onAdded": [
+        {
+          "$type": "LCOEFEMOHLP",
+          "target": "Owner",
+          "param3": 1.0,
+          "key": "_Summon_Count",
+          "useLimitRange": true,
+          "param2": 3.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "LCOEFEMOHLP",
+          "target": "Owner",
+          "param3": -1.0,
+          "key": "_Summon_Count",
+          "useLimitRange": true,
+          "param2": 3.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Cicin_ThunderShieldCreateEnergy",
+      "onAbilityStart": [
+        {
+          "$type": "LCOEFEMOHLP",
+          "target": "Owner",
+          "param3": 1.0,
+          "key": "_ISOwner",
+          "useLimitRange": true,
+          "param2": 1.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "LCOEFEMOHLP",
+          "target": "Owner",
+          "param3": -1.0,
+          "key": "_Summon_Count",
+          "useLimitRange": true,
+          "param2": 3.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42606003,
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            }
+          },
+          "trackTarget": "TargetOwner"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Cicin_ThunderShieldDie",
+      "onAbilityStart": [
+        {
+          "$type": "NCFFNDHGCMH",
+          "value": true,
+          "banExp": true
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Cicin_Fury",
+      "abilityMixins": [
+        {
+          "$type": "DIDNLIKKLLF",
+          "stateIDs": [
+            "Fury"
+          ],
+          "enterActions": [
+            {
+              "$type": "ELKFEEMFJFI",
+              "scale": 2.0
+            }
+          ],
+          "exitActions": [
+            {
+              "$type": "ELKFEEMFJFI"
+            }
+          ],
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Cicin_Steer",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "NormalAtk"
+          ],
+          "endNormalizedTime": 0.75,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "attackDistance": 1.5,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Fury"
+          ],
+          "endNormalizedTime": 4.0,
+          "angularSpeed": 120.0,
+          "attackTrigger": "",
+          "attackDistance": 1.5,
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Cicin_CommonEffect",
+      "abilityMixins": [
+        {
+          "$type": "JJIHJPCPPGO",
+          "abilityStates": [
+            "ElementFrozen"
+          ],
+          "modifierName": "FrozenDetect"
+        }
+      ],
+      "modifiers": {
+        "FrozenDetect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KMMLIOKPIKN",
+              "renderNames": [
+                "Wing"
+              ]
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "CommonEffect"
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "Frozen",
+              "param3": true
+            },
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider_Frozen"
+              ],
+              "setEnable": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KMMLIOKPIKN",
+              "renderNames": [
+                "Wing"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "CommonEffect"
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "Frozen"
+            },
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider_Frozen"
+              ]
+            }
+          ]
+        },
+        "CommonEffect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Cicin_Thunder_WingElement_L",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "attachPointName": "WingLeft"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Cicin_Thunder_WingElement_R",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "attachPointName": "WingRight"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Cicin_Thunder_BodyElement",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "CommonEffect"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Cicin_Element",
+      "modifiers": {
+        "Element": {
+          "modifierName": "",
+          "elementType": "Electric",
+          "IPFJJJGABPL": 50.0,
+          "isElementDurabilityMutable": false
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Element"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Cicin_TriggerOwnerDodge",
+      "onAbilityStart": [
+        {
+          "$type": "GJCAPCBELPA",
+          "target": "Owner",
+          "predicates": [
+            {
+              "$type": "FMBJAJFLDIP",
+              "logic": "GreaterOrEqual",
+              "param3": 6.0,
+              "DDALGNLEHOD": ""
+            }
+          ],
+          "abilityName": "Monster_Fatuus_Summoner_FindDodgePoint"
+        },
+        {
+          "$type": "GJCAPCBELPA",
+          "target": "Owner",
+          "predicates": [
+            {
+              "$type": "FMBJAJFLDIP",
+              "logic": "Lesser",
+              "param3": 6.0,
+              "DDALGNLEHOD": ""
+            }
+          ],
+          "abilityName": "Monster_Fatuus_Summoner_FindDodgeBackPoint"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Cicin_ThunderEnergy",
+      "modifiers": {
+        "ThunderEnergy_Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Cicin_Thunder_Disappear",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "ThunderEnergy_Effect"
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Cicin_Thunder_DisappearBS",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "INBCDALOHMP",
+          "target": "Target",
+          "targetPredicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_ISOwner",
+              "param3": 1.0
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "ThunderEnergy_Effect"
+            },
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Cicin_ThunderEnergyAS",
+      "onAbilityStart": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Cicin_Thunder_DisappearAS",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  }
+]

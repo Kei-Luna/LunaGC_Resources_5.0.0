@@ -1,0 +1,288 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_ForestWQ_AssistAttack",
+      "abilityMixins": [
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueTarget": "Team",
+          "globalValueKey": "SGV_Ability_ForestWQ",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Blank",
+            "UNIQUE_Ability_ForestWQ_StartHandle"
+          ]
+        }
+      ],
+      "abilitySpecials": {
+        "GenerateCDTime": 0.0,
+        "DamageValue": 0.0,
+        "DamageSystemValue": 0.0,
+        "Grass_Slash_RandomDir": 0.0,
+        "HealHPRatio": 0.0,
+        "HealHPInterval": 0.0,
+        "ReviveElemEnergyValue": 0.0
+      },
+      "modifiers": {
+        "Blank": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "UNIQUE_Ability_ForestWQ_StartHandle": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_Ability_ForestWQ_AssistAttack"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_Ability_ForestWQ_RecoverHP"
+            }
+          ]
+        },
+        "UNIQUE_Ability_ForestWQ_AssistAttack": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Other",
+              "shieldHP": true,
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Team",
+                  "key": "GeneratePurpleState",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "GAGDDICMFEH",
+                  "target": "Other",
+                  "damage": 0.0
+                },
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Other",
+                  "shieldHP": true,
+                  "modifierName": "Ability_ForestWQ_AssistAttack_Delay"
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Team",
+                  "shieldHP": true,
+                  "modifierName": "UNIQUE_Ability_ForestWQ_AssistAttack_CD"
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Other",
+              "shieldHP": true,
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Team",
+                  "key": "GeneratePurpleState",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Gadget"
+                  ]
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_IS_WeakMode",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Other",
+                  "shieldHP": true,
+                  "modifierName": "Ability_ForestWQ_AssistAttack_Delay"
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Team",
+                  "shieldHP": true,
+                  "modifierName": "UNIQUE_Ability_ForestWQ_AssistAttack_CD"
+                }
+              ]
+            }
+          ]
+        },
+        "Ability_ForestWQ_AssistAttack_Delay": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FLJLMOKONMB",
+              "shieldHP": true,
+              "valueRangeMax": 100.0,
+              "overrideMapKey": "Grass_Slash_RandomDir"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": "Grass_Slash_RandomDir",
+              "key": "_ABILITY_WitheredForest_Grass_Slash_RandomDir",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Activity_WitheredForest_Grass_Slash",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "direction": {
+                  "$type": "AHGNBAPONLA"
+                },
+                "attachPointName": "Fx_ChestNode",
+                "attachPointTargetType": "Self"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "target": "Applier",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD"
+                  },
+                  "OAHPDLJIADP": 4.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "DamageValue",
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Grass",
+                    "IPFJJJGABPL": 10.0,
+                    "enBreak": 0.0,
+                    "attackType": "Melee",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.019999999552965164
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "UNIQUE_Ability_ForestWQ_AssistAttack_CD": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "GenerateCDTime",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": -1.0,
+              "key": "GeneratePurpleState",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "GeneratePurpleState",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "UNIQUE_Ability_ForestWQ_RecoverHP": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": "HealHPInterval",
+          "properties": {
+            "Actor_EndureDelta": 0.0
+          },
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "DeathZoneGV_ExtraHeal",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "FHGPOFDJDCO",
+              "CKDBFHCIJEK": "HealHPRatio",
+              "cdRatio": ""
+            },
+            {
+              "$type": "AHCALEMEJPJ",
+              "param3": "ReviveElemEnergyValue"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "DeathZoneGV_ExtraHeal",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "isLimitedProperties": true
+        }
+      },
+      "isDynamicAbility": true
+    }
+  }
+]

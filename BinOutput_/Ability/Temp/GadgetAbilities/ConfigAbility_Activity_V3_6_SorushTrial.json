@@ -1,0 +1,1194 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_SorushTrialRace_CoinGet_TeamAbility",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "GV_PetalCoinRangeLevel",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5,
+            100.0
+          ],
+          "modifierNameSteps": [
+            "Blank",
+            "NormalRange",
+            "SuperRange"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Blank": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "NormalRange": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.10000000149011612,
+          "onAdded": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "基础拾取距离"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "PBLNLAENOGB",
+                "topLimit": 6,
+                "sortType": "Nearest",
+                "tag": "IS_PETALCOIN"
+              },
+              "successActions": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "FMBJAJFLDIP",
+                      "logic": "LesserOrEqual",
+                      "compareType": "XYZ",
+                      "param3": 3.0,
+                      "DDALGNLEHOD": ""
+                    }
+                  ],
+                  "param3": 1.0,
+                  "key": "GV_PetalPicked",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        "SuperRange": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.10000000149011612,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "Avatar_SuperRange_Eff"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "超级拾取距离"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "PBLNLAENOGB",
+                "topLimit": 6,
+                "sortType": "Nearest",
+                "tag": "IS_PETALCOIN"
+              },
+              "successActions": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "FMBJAJFLDIP",
+                      "logic": "LesserOrEqual",
+                      "compareType": "XYZ",
+                      "param3": 6.0,
+                      "DDALGNLEHOD": ""
+                    }
+                  ],
+                  "param3": 1.0,
+                  "key": "GV_PetalPicked",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        "Avatar_SuperRange_Eff": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "target": "Vehicle",
+              "shieldHP": true,
+              "rotationDampTime": "Eff_SceneObj_Slusha_Accelerator_01_Sorush",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "target": "Team",
+          "param3": 1.0,
+          "key": "GV_PetalCoinRangeLevel",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "KBODPNEEFGD",
+          "target": "Team",
+          "modifierName": "UNIQUE_PetalPickRangeBuff"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "target": "Team",
+          "param3": 0.0,
+          "key": "GV_PetalCoinRangeLevel",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Common_Property_Ani_Prop_Floating_Colorful_Petal_01",
+      "abilityMixins": [
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueKey": "GV_PetalPicked",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "BePicked"
+          ]
+        }
+      ],
+      "modifiers": {
+        "CoinMaterial": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Floating_Colorful_Petal_01_Default",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Floating_Colorful_Petal_01_Collection",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        },
+        "BePicked": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "CurGalleryControlGroup",
+              "funcName": "SLC_Activity_SorushTrialRace_CoinGet",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "target": "Vehicle",
+              "shieldHP": true,
+              "rotationDampTime": "Eff_SceneObj_Floating_Colorful_Petal_01_Follow",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "RootNode_FX"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "CoinMaterial"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "CoinMaterial"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "GV_PetalPicked",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "AOOCGNCCAJB",
+          "isAdd": true,
+          "tag": "IS_PETALCOIN"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Common_Property_Ani_Prop_Slusha_Accelerator_01",
+      "modifiers": {
+        "StandByEffect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Slusha_Accelerator_01_Loop",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "RootNode"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "UNIQUE_PetalPickRangeBuff": {
+          "stacking": "RefreshUniqueDurability",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 4.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "target": "Team",
+              "param3": 1.0,
+              "key": "GV_PetalCoinRangeLevel",
+              "useLimitRange": true,
+              "param2": 1000.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "target": "Team",
+              "param3": -1.0,
+              "key": "GV_PetalCoinRangeLevel",
+              "useLimitRange": true,
+              "param2": 1000.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "StandByEffect"
+        }
+      ],
+      "onFieldEnter": [
+        {
+          "$type": "INBCDALOHMP",
+          "target": "Target",
+          "targetPredicates": [
+            {
+              "$type": "NIMAPECDNKD",
+              "entityTypes": [
+                "Vehicle"
+              ]
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "PELJALPANCA",
+              "target": "Team",
+              "modifierName": "UNIQUE_PetalPickRangeBuff"
+            },
+            {
+              "$type": "IJEHOLMBKJJ",
+              "target": "Vehicle",
+              "shieldHP": true,
+              "param3": 1000.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Slusha_Accelerator_01_Broken",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "RootNode"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Common_Property_Ani_Prop_AbyssEmitter_01",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "Elf_Target_Seeker"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "StandBy_Effect"
+        }
+      ],
+      "modifiers": {
+        "StandBy_Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_AbyssEmitter_01_Blur",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "RootNode"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Blur_Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "onThinkInterval": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "NeedEmit",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "MNOAFODCBLI",
+                "campTargetType": "All"
+              },
+              "targetPredicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Vehicle"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "param3": 1.0,
+                  "key": "NeedEmit",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "NeedEmit",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "HPIDNBEGJLL",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "AlreadyEmit",
+                      "param3": 0.0
+                    }
+                  ],
+                  "state": 201
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "HPIDNBEGJLL"
+                }
+              ]
+            }
+          ]
+        },
+        "Elf_Target_Seeker": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 5.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_AbyssEmitter_01",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "RootNode"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MDIAKCCDEAL",
+              "otherTargets": {
+                "$type": "MNOAFODCBLI",
+                "campTargetType": "All"
+              },
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Vehicle"
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "IBDEPLJMONN"
+                }
+              ],
+              "modifierName": "Elf_Bullet_Queue"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "AlreadyEmit",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "AlreadyEmit",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "MDIAKCCDEAL",
+              "otherTargets": {
+                "$type": "MNOAFODCBLI",
+                "campTargetType": "All"
+              },
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Vehicle"
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "IBDEPLJMONN"
+                }
+              ],
+              "modifierName": "Elf_Bullet_Queue"
+            }
+          ]
+        },
+        "Elf_Bullet_Queue": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_AbyssEmitter_BulletHell_01_Shoot",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "ShootPoint1"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "CAKDDHLKOAB",
+              "predicates": [
+                {
+                  "$type": "IBDEPLJMONN"
+                }
+              ],
+              "bulletID": 70291103,
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "direction": {
+                  "$type": "LEIHCELGBNN",
+                  "angleOffset": {
+                    "KGEPIMHBMOL": 0.0,
+                    "JEBHCGDPFEJ": 45.0,
+                    "LPCHALMFFOD": 0.0
+                  }
+                },
+                "useRotation": true,
+                "attachPointName": "ShootPoint1"
+              },
+              "lifeByOwnerIsAlive": true
+            },
+            {
+              "$type": "CAKDDHLKOAB",
+              "predicates": [
+                {
+                  "$type": "IBDEPLJMONN"
+                }
+              ],
+              "bulletID": 70291103,
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "direction": {
+                  "$type": "LEIHCELGBNN",
+                  "angleOffset": {
+                    "KGEPIMHBMOL": 0.0,
+                    "JEBHCGDPFEJ": 30.0,
+                    "LPCHALMFFOD": 0.0
+                  }
+                },
+                "useRotation": true,
+                "attachPointName": "ShootPoint1"
+              },
+              "lifeByOwnerIsAlive": true
+            },
+            {
+              "$type": "CAKDDHLKOAB",
+              "predicates": [
+                {
+                  "$type": "IBDEPLJMONN"
+                }
+              ],
+              "bulletID": 70291103,
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "direction": {
+                  "$type": "LEIHCELGBNN",
+                  "angleOffset": {
+                    "KGEPIMHBMOL": 0.0,
+                    "JEBHCGDPFEJ": 15.0,
+                    "LPCHALMFFOD": 0.0
+                  }
+                },
+                "useRotation": true,
+                "attachPointName": "ShootPoint1"
+              },
+              "lifeByOwnerIsAlive": true
+            },
+            {
+              "$type": "CAKDDHLKOAB",
+              "predicates": [
+                {
+                  "$type": "IBDEPLJMONN"
+                }
+              ],
+              "bulletID": 70291103,
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "direction": {
+                  "$type": "LEIHCELGBNN",
+                  "angleOffset": {
+                    "KGEPIMHBMOL": 0.0,
+                    "JEBHCGDPFEJ": 0.0,
+                    "LPCHALMFFOD": 0.0
+                  }
+                },
+                "useRotation": true,
+                "attachPointName": "ShootPoint1"
+              },
+              "lifeByOwnerIsAlive": true
+            },
+            {
+              "$type": "CAKDDHLKOAB",
+              "predicates": [
+                {
+                  "$type": "IBDEPLJMONN"
+                }
+              ],
+              "bulletID": 70291103,
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "direction": {
+                  "$type": "LEIHCELGBNN",
+                  "angleOffset": {
+                    "KGEPIMHBMOL": 0.0,
+                    "JEBHCGDPFEJ": -15.0,
+                    "LPCHALMFFOD": 0.0
+                  }
+                },
+                "useRotation": true,
+                "attachPointName": "ShootPoint1"
+              },
+              "lifeByOwnerIsAlive": true
+            },
+            {
+              "$type": "CAKDDHLKOAB",
+              "predicates": [
+                {
+                  "$type": "IBDEPLJMONN"
+                }
+              ],
+              "bulletID": 70291103,
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "direction": {
+                  "$type": "LEIHCELGBNN",
+                  "angleOffset": {
+                    "KGEPIMHBMOL": 0.0,
+                    "JEBHCGDPFEJ": -30.0,
+                    "LPCHALMFFOD": 0.0
+                  }
+                },
+                "useRotation": true,
+                "attachPointName": "ShootPoint1"
+              },
+              "lifeByOwnerIsAlive": true
+            },
+            {
+              "$type": "CAKDDHLKOAB",
+              "predicates": [
+                {
+                  "$type": "IBDEPLJMONN"
+                }
+              ],
+              "bulletID": 70291103,
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "direction": {
+                  "$type": "LEIHCELGBNN",
+                  "angleOffset": {
+                    "KGEPIMHBMOL": 0.0,
+                    "JEBHCGDPFEJ": -45.0,
+                    "LPCHALMFFOD": 0.0
+                  }
+                },
+                "useRotation": true,
+                "attachPointName": "ShootPoint1"
+              },
+              "lifeByOwnerIsAlive": true
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Blur_Effect"
+        },
+        {
+          "$type": "LCOEFEMOHLP",
+          "param3": 0.0,
+          "key": "NeedEmit",
+          "useLimitRange": true,
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "LCOEFEMOHLP",
+          "param3": 0.0,
+          "key": "AlreadyEmit",
+          "useLimitRange": true,
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_SceneObj_AbyssEmitter_01_Disappear",
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "useRotation": true,
+            "attachPointName": "RootNode"
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Common_Property_Ani_Prop_AbyssEmitter_BulletHell_01_Damage",
+      "onAbilityStart": [
+        {
+          "$type": "AIFPLABJNMA",
+          "shieldHP": true,
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "OAHPDLJIADP": 5.0
+            },
+            "attackInfo": {
+              "attackTag": "SorushHit",
+              "attenuationTag": "",
+              "attenuationGroup": "default"
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "NCFFNDHGCMH"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Common_Property_Ani_Prop_AbyssEmitter_BulletHell_01_Material",
+      "modifiers": {
+        "EffectMaterial": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_AbyssEmitter_BulletHell_01",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "RootNode"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "EffectMaterial"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Common_Property_Prop_SorushTrialOperator_01",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 202,
+          "modifierName": "ReMove"
+        }
+      ],
+      "modifiers": {
+        "AddEffect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Challengestarter_03",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "EffectPoint"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "ReMove": {
+          "modifierName": "",
+          "elementDurability": 2.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "AddEffect"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "AddEffect"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Common_Property_Prop_SorushTrialOperator_02",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 202,
+          "modifierName": "ReMove"
+        }
+      ],
+      "modifiers": {
+        "AddEffect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Challengestarter_02",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "EffectPoint"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "ReMove": {
+          "modifierName": "",
+          "elementDurability": 2.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "AddEffect"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "AddEffect"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_SorushTrialRace_SorushBeHit_TeamAbility",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "Sorush_Active",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_SorushBeHit_TeamHandle"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Blank": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "UNIQUE_SorushBeHit_TeamHandle": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "onThinkInterval": [
+            {
+              "$type": "PELJALPANCA",
+              "target": "Vehicle",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_SorushBeHit_DetectDamage"
+            }
+          ]
+        },
+        "UNIQUE_SorushBeHit_DetectDamage": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "state": "LockHP",
+          "onBeingHit": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_AbyssEmitter_01_BulletHit",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "SorushHit"
+                  ]
+                }
+              ],
+              "modifierName": "UNIQUE_SorushBeHit_DamageProgress"
+            }
+          ]
+        },
+        "UNIQUE_SorushBeHit_DamageProgress": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "CurGalleryControlGroup",
+              "funcName": "SLC_Activity_SorushTrialRace_SorushBeHit",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "Sorush_Active",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "KBODPNEEFGD",
+          "target": "Vehicle",
+          "modifierName": "UNIQUE_SorushBeHit_DetectDamage"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_SorushTrialPhotoMatch_SorushPhotoActive_TeamAbility",
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "target": "Team",
+          "param3": 1.0,
+          "key": "_ACTIVITY_SORUSHTRIAL_PHOTOMATCH_ACTIVE_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_SorushTrialPhotoMatch_SorushPhotoDeActive_TeamAbility",
+      "onRemoved": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "target": "Team",
+          "param3": 0.0,
+          "key": "_ACTIVITY_SORUSHTRIAL_PHOTOMATCH_ACTIVE_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Common_Property_Ani_Prop_SorushTrailPhotoMatchPoint_01",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Hide"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "Active"
+        }
+      ],
+      "modifiers": {
+        "Active": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Time_LimitPosition_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_LimitPosition_Disappear",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Hide": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_SorushTrial_BanItem_TeamAbility",
+      "abilityMixins": [
+        {
+          "$type": "NKEPLGAIEJM",
+          "modifierName": "Activity_SorushTrial_BanItem"
+        }
+      ],
+      "modifiers": {
+        "Activity_SorushTrial_BanItem": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "KAIOONFFNHC",
+              "slotType": "SlotQuickUse"
+            }
+          ]
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Gear_Platform_SorushTrailGlideDirtyBalloon_01",
+      "modifiers": {
+        "DirtyBalloon": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "CurGalleryControlGroup",
+              "funcName": "SLC_Activity_SorushTrialRace_SorushBeHit",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "DirtyBalloon_Eff"
+            }
+          ]
+        },
+        "DirtyBalloon_Eff": {
+          "modifierName": "",
+          "elementDurability": 1.5,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "COEDOLJOHAK",
+              "postEffectAssetName": "PostEffect_Scene_Mud",
+              "duration": 1.5
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "AKCJLBDMNDE",
+              "muteRemoteAction": true,
+              "enable": true,
+              "cameraFogEffectName": "Eff_SceneObj_GlideChampBalloon_03_02",
+              "playerFogEffectName": ""
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AKCJLBDMNDE",
+              "cameraFogEffectName": "",
+              "playerFogEffectName": ""
+            }
+          ]
+        }
+      },
+      "onFieldEnter": [
+        {
+          "$type": "PELJALPANCA",
+          "target": "Target",
+          "modifierName": "DirtyBalloon"
+        },
+        {
+          "$type": "NCFFNDHGCMH"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_SorushTrial_ClearLocalGadgets_TeamAbility",
+      "onAdded": [
+        {
+          "$type": "EKBIAFFHLLP"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  }
+]

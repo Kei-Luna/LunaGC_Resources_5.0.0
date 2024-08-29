@@ -1,0 +1,1788 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_Challenge_SprintAreaAttack",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "SprintBS"
+          ],
+          "modifierName": "ActivityAbility_Challenge_SprintAreaAttack_Check",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "Charge_CD": 10.0,
+        "MaxCount": 3.0
+      },
+      "modifiers": {
+        "ActivityAbility_Challenge_SprintAreaAttack_Check": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Team",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Team",
+                  "key": "_Is_ActivityAbility_Challenge_SprintAreaAttack_Count",
+                  "param3": 2.0,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Team",
+                  "modifierName": "UNIQUE_ActivityAbility_Challenge_SprintAreaAttack_Team_CD"
+                },
+                {
+                  "$type": "KFCDMIMBBLD",
+                  "target": "CurLocalAvatar",
+                  "born": {
+                    "$type": "JHEBKCMEMLN"
+                  },
+                  "gadgetID": 44000007,
+                  "campID": 1001,
+                  "campTargetType": "Enemy"
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_ActivityAbility_Challenge_SprintAreaAttack_Team_CD": {
+          "stackingOption": {
+            "abilitySpecialName": "",
+            "maxModifierNumForMultipleType": "MaxCount"
+          },
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "Charge_CD",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "_Is_ActivityAbility_Challenge_SprintAreaAttack_Count",
+              "useLimitRange": true,
+              "param2": "MaxCount",
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -1.0,
+              "key": "_Is_ActivityAbility_Challenge_SprintAreaAttack_Count",
+              "useLimitRange": true,
+              "param2": "MaxCount",
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "LCOEFEMOHLP",
+          "target": "Team",
+          "param3": 0.0,
+          "key": "_Is_ActivityAbility_Challenge_SprintAreaAttack_Count",
+          "useLimitRange": true,
+          "param2": "MaxCount",
+          "repeatTimes": 0.0
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_Challenge_SprintAreaAttack_Gadget",
+      "abilitySpecials": {
+        "Delay": 1.0,
+        "Damage": 4.0,
+        "DamageSystemValue": 0.0
+      },
+      "modifiers": {
+        "SprintAreaAttack": {
+          "modifierName": "",
+          "elementDurability": "Delay",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Stages_GainWave_Stay",
+              "born": {
+                "$type": "JHEBKCMEMLN"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Stages_GainWave_01",
+              "born": {
+                "$type": "JHEBKCMEMLN"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "target": "OriginOwner",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD"
+                  },
+                  "OAHPDLJIADP": 4.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorWindSubHurtDelta": 0.0,
+                    "IPFJJJGABPL": 100.0,
+                    "ignoreAttackerProperty": true,
+                    "HMBONGBFIAP": [
+                      "Damage",
+                      "DamageSystemValue",
+                      "MUL"
+                    ],
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.05000000074505806
+                  },
+                  "cameraShake": {}
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "SprintAreaAttack"
+        },
+        {
+          "$type": "GDHGMAPPGHD",
+          "shieldHP": true,
+          "key": "DamageSystemValue",
+          "damageRatio": "ElementLevelCo"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_Challenge_FallAnthem_AddHurt",
+      "abilitySpecials": {
+        "Damage": 2.0
+      },
+      "modifiers": {
+        "UNIQUE_ActivityAbility_Challenge_FallAnthem_AddHurt": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "LDBCDLJECKF",
+              "attackTags": [
+                "FallingAttack"
+              ],
+              "actorWindSubHurtDelta": "Damage"
+            },
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "FallingAnthem_AS_1",
+                "FallingAnthem_AS_2"
+              ],
+              "modifierName": "TriggerAreaAttack",
+              "DGFCLAIDIFI": ""
+            }
+          ]
+        },
+        "TriggerAreaAttack": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LBINHEFBJMN",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "entityTypePriority": [
+                  "Gadget"
+                ],
+                "shapeName": "CircleR25",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "IS_ARENASHAKE",
+                  "param3": 1.0
+                }
+              ],
+              "param1": 201
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_Challenge_FallAnthem_AddHurt"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_Challenge_AtkDefUpAfterULT",
+      "abilityMixins": [
+        {
+          "$type": "LFDMBLDKNMK",
+          "onTriggerUltimateSkill": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "target": "CurTeamAvatars",
+              "param3": 1.0,
+              "key": "_ability_ActivityAbility_Challenge_AtkDefUpAfterULT_BuffCurCount",
+              "useLimitRange": true,
+              "param2": "Buff_MaxCount",
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "_ability_ActivityAbility_Challenge_AtkDefUpAfterULT_BuffCurCount",
+              "overrideMapKey": "Buff_CurCount"
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "target": "CurTeamAvatars",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_ActivityAbility_Challenge_AtkDefUpAfterULT"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurTeamAvatars",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_ActivityAbility_Challenge_AtkDefUpAfterULT"
+            }
+          ],
+          "clearSkillIdDelay": 0.20000000298023224
+        }
+      ],
+      "abilitySpecials": {
+        "Buff_CurCount": 0.0,
+        "Buff_MaxCount": 5.0,
+        "Buff_AtkRate": 0.10000000149011612,
+        "Buff_DefRate": 0.10000000149011612
+      },
+      "modifiers": {
+        "UNIQUE_ActivityAbility_Challenge_AtkDefUpAfterULT": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_AttackRatio": [
+              "Buff_AtkRate",
+              "Buff_CurCount",
+              "MUL"
+            ],
+            "Actor_DefenceRatio": [
+              "Buff_DefRate",
+              "Buff_CurCount",
+              "MUL"
+            ]
+          },
+          "state": "AttackUp",
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_ActivityAbility_Challenge_AtkDefUpAfterULT_DefState"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_ActivityAbility_Challenge_AtkDefUpAfterULT_DefState": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "state": "DefenseUp"
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "HMKGPFBBDIC",
+          "key": "_ability_ActivityAbility_Challenge_AtkDefUpAfterULT_BuffCurCount"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_Challenge_AtkSpeed",
+      "abilitySpecials": {
+        "AtkSpeed": 0.5
+      },
+      "modifiers": {
+        "UNIQUE_ActivityAbility_Challenge_AtkSpeed": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Animator_AttackSpeedRatio": "AtkSpeed"
+          },
+          "isLimitedProperties": true
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_Challenge_AtkSpeed"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_Challenge_EnhancExtraAttack",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "ExtraAttack",
+            "ExtraAttack1",
+            "ExtraAttack2",
+            "ExtraAttack3",
+            "ExtraAttack_BS"
+          ],
+          "modifierName": "UNIQUE_ActivityAbility_Challenge_EnhancExtraAttack_Cost",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "Cost": -0.5,
+        "Damage": 0.25
+      },
+      "modifiers": {
+        "UNIQUE_ActivityAbility_Challenge_EnhancExtraAttack_Cost": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_CostStaminaRatio": "Cost"
+          },
+          "isLimitedProperties": true
+        },
+        "UNIQUE_ActivityAbility_Challenge_EnhancExtraAttack_AddHurt": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "LDBCDLJECKF",
+              "attackTags": [
+                "ExtraAttack"
+              ],
+              "actorWindSubHurtDelta": "Damage"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_Challenge_EnhancExtraAttack_AddHurt"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_Challenge_AreaAttackOnEnemyKilled",
+      "abilityMixins": [
+        {
+          "$type": "MFCOIAIMHEL",
+          "attackTags": [
+            "ExtraAttack"
+          ],
+          "detectWindow": 0.6000000238418579,
+          "onKill": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Other",
+              "targetPredicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "MPAGCPPAIHJ",
+                  "target": "SelfAttackTarget",
+                  "key": "_ActivityAbility_Challenge_AreaAttackOnEnemyKilled_POS",
+                  "setTarget": false
+                },
+                {
+                  "$type": "KBFEIHEAMBM",
+                  "rotationDampTime": "Eff_Stages_GainWave_01",
+                  "born": {
+                    "$type": "ICKMMAHFNIM",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 1.0,
+                      "LPCHALMFFOD": 0.0
+                    },
+                    "onGround": true,
+                    "positionKey": "_ActivityAbility_Challenge_AreaAttackOnEnemyKilled_POS",
+                    "directionKey": ""
+                  },
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                },
+                {
+                  "$type": "AIFPLABJNMA",
+                  "target": "Caster",
+                  "attackEvent": {
+                    "attackPattern": {
+                      "$type": "BELNOFAKNBA",
+                      "triggerType": "TriggerNoRepeat",
+                      "born": {
+                        "$type": "ICKMMAHFNIM",
+                        "offset": {
+                          "KGEPIMHBMOL": 0.0,
+                          "JEBHCGDPFEJ": 1.0,
+                          "LPCHALMFFOD": 0.0
+                        },
+                        "onGround": true,
+                        "positionKey": "_ActivityAbility_Challenge_AreaAttackOnEnemyKilled_POS",
+                        "directionKey": ""
+                      },
+                      "OAHPDLJIADP": 4.0
+                    },
+                    "attackInfo": {
+                      "attackTag": "",
+                      "attenuationTag": "",
+                      "attenuationGroup": "default",
+                      "attackProperty": {
+                        "actorWindSubHurtDelta": 0.0,
+                        "IPFJJJGABPL": 100.0,
+                        "ignoreAttackerProperty": true,
+                        "HMBONGBFIAP": [
+                          "Damage",
+                          "DamageSystemValue",
+                          "MUL"
+                        ],
+                        "GLKMCMDJBIK": 0.0
+                      },
+                      "hitPattern": {
+                        "onHitEffectName": "",
+                        "hitImpulseY": "",
+                        "hitImpulseType": "LV2",
+                        "hitHaltTimeScale": 0.05000000074505806
+                      },
+                      "cameraShake": {}
+                    }
+                  },
+                  "targetType": "Enemy"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "abilitySpecials": {
+        "Damage": 4.0,
+        "DamageSystemValue": 0.0
+      },
+      "onAdded": [
+        {
+          "$type": "GDHGMAPPGHD",
+          "shieldHP": true,
+          "key": "DamageSystemValue",
+          "damageRatio": "ElementLevelCo"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_Challenge_ElemReactExplode_AddHurt",
+      "abilitySpecials": {
+        "Value": 1.0
+      },
+      "modifiers": {
+        "UNIQUE_ActivityAbility_Challenge_ElemReactExplode_AddHurt": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_ElemReactExplodeDelta": "Value"
+          },
+          "isLimitedProperties": true
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_Challenge_ElemReactExplode_AddHurt"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_Challenge_ElemReactElectric_AddHurt",
+      "abilitySpecials": {
+        "Value": 1.0
+      },
+      "modifiers": {
+        "UNIQUE_ActivityAbility_Challenge_ElemReactElectric_AddHurt": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_ElemReactElectricDelta": "Value"
+          },
+          "isLimitedProperties": true
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_Challenge_ElemReactElectric_AddHurt"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_Challenge_FireAddHurt",
+      "abilitySpecials": {
+        "Value": 0.5
+      },
+      "modifiers": {
+        "UNIQUE_ActivityAbility_Challenge_FireAddHurt": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_FireAddHurtDelta": "Value"
+          },
+          "isLimitedProperties": true
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_Challenge_FireAddHurt"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_Challenge_ShockAddHurt",
+      "abilitySpecials": {
+        "Value": 1.5
+      },
+      "modifiers": {
+        "UNIQUE_ActivityAbility_Challenge_ShockAddHurt_Team": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "IJKJKFHPENC",
+              "modifierName": "UNIQUE_ActivityAbility_Challenge_ShockAddHurt_Avatar"
+            }
+          ]
+        },
+        "UNIQUE_ActivityAbility_Challenge_ShockAddHurt_Avatar": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_ElemReactElectricDelta": "Value"
+          },
+          "isLimitedProperties": true
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "modifierName": "UNIQUE_ActivityAbility_Challenge_ShockAddHurt_Team"
+        }
+      ],
+      "onAvatarIn": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "modifierName": "UNIQUE_ActivityAbility_Challenge_ShockAddHurt_Team"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_Challenge_ShockAreaAttack",
+      "abilityMixins": [
+        {
+          "$type": "GEICHMDHPHI",
+          "entityTypes": [
+            "Monster"
+          ],
+          "reactionTypes": [
+            "Shock"
+          ],
+          "actions": [
+            {
+              "$type": "PELJALPANCA",
+              "target": "Team",
+              "modifierName": "UNIQUE_ActivityAbility_Challenge_ShockAreaAttack_Team"
+            }
+          ]
+        }
+      ],
+      "abilitySpecials": {
+        "Value_CD": 4.0
+      },
+      "modifiers": {
+        "UNIQUE_ActivityAbility_Challenge_ShockAreaAttack_Team": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "Value_CD",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "SpecificGroup",
+              "callParamList": [
+                133001577
+              ],
+              "funcName": "Activity_Arena_ShockAreaAttack",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ]
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_Challenge_FallingAttack",
+      "abilitySpecials": {
+        "Value_Base": 0.0,
+        "Value_Up": 0.5,
+        "Value_CurCount": 0.0,
+        "Value_MaxCount": 10.0
+      },
+      "modifiers": {
+        "UNIQUE_ActivityAbility_Challenge_FallingAttack_Team": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "IJKJKFHPENC",
+              "modifierName": "UNIQUE_ActivityAbility_Challenge_FallingAttack_Avatar"
+            }
+          ]
+        },
+        "UNIQUE_ActivityAbility_Challenge_FallingAttack_Avatar": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "LDBCDLJECKF",
+              "attackTags": [
+                "FallingAttack"
+              ],
+              "actorWindSubHurtDelta": [
+                "Value_Base",
+                "Value_Up",
+                "Value_CurCount",
+                "MUL",
+                "ADD"
+              ]
+            },
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "FallingAnthem_AS_1",
+                "FallingAnthem_AS_2"
+              ],
+              "modifierName": "TriggerAreaAttack",
+              "DGFCLAIDIFI": ""
+            }
+          ]
+        },
+        "TriggerAreaAttack": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "SpecificGroup",
+              "callParamList": [
+                133001582
+              ],
+              "funcName": "Activity_Arena_FallingAreaAttack",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "target": "CurTeamAvatars",
+              "param3": 1.0,
+              "key": "_ActivityAbility_Challenge_FallingAttack_TempValue",
+              "useLimitRange": true,
+              "param2": "Value_MaxCount",
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LDIAIDLOPEE",
+              "target": "CurTeamAvatars",
+              "globalValueKey": "_ActivityAbility_Challenge_FallingAttack_TempValue",
+              "overrideMapKey": "Value_CurCount"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "modifierName": "UNIQUE_ActivityAbility_Challenge_FallingAttack_Team"
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "HMKGPFBBDIC",
+          "shieldHP": true,
+          "key": "_ActivityAbility_Challenge_FallingAttack_TempValue"
+        }
+      ],
+      "onAvatarIn": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "modifierName": "UNIQUE_ActivityAbility_Challenge_FallingAttack_Team"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_Challenge_Frozen",
+      "abilitySpecials": {
+        "Value_DamageRate": 135.0,
+        "Value_CD": 2.0,
+        "Value_Chance": 0.5,
+        "Value_Frozen_DamageSystemValue": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_ActivityAbility_Challenge_Frozen_Team": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "IJKJKFHPENC",
+              "modifierName": "UNIQUE_ActivityAbility_Challenge_Frozen_Avatar"
+            }
+          ]
+        },
+        "UNIQUE_ActivityAbility_Challenge_Frozen_Avatar": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Other",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Team",
+                  "key": "_ActivityAbility_Challenge_Frozen_CD",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "targetPredicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "NormalAttack_01",
+                    "NormalAttack_02",
+                    "NormalAttack_03",
+                    "NormalAttack_04",
+                    "NormalAttack_05",
+                    "NormalAttack_06",
+                    "ExtraAttack"
+                  ]
+                },
+                {
+                  "$type": "DHJDNPOHKPF",
+                  "abilityState": "ElementFreeze"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BEIEKAHLNED",
+                  "target": "Caster",
+                  "chance": "Value_Chance",
+                  "successActions": [
+                    {
+                      "$type": "PELJALPANCA",
+                      "target": "Team",
+                      "modifierName": "UNIQUE_ActivityAbility_Challenge_Frozen_CD_Team"
+                    },
+                    {
+                      "$type": "BOBCOJHOKKD",
+                      "target": "Caster",
+                      "param3": 1.0,
+                      "key": "_ActivityAbility_Challenge_Frozen_DoAttack",
+                      "param2": 0.0,
+                      "repeatTimes": 0.0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "PELJALPANCA",
+              "target": "Other",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ActivityAbility_Challenge_Frozen_DoAttack",
+                  "param3": 0.0,
+                  "forceByCaster": true,
+                  "compareType": "MoreThan"
+                }
+              ],
+              "modifierName": "ActivityAbility_Challenge_Frozen_AreaAttack"
+            },
+            {
+              "$type": "HMKGPFBBDIC",
+              "target": "CurTeamAvatars",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ActivityAbility_Challenge_Frozen_DoAttack",
+                  "param3": 0.0,
+                  "forceByCaster": true,
+                  "compareType": "MoreThan"
+                }
+              ],
+              "key": "_ActivityAbility_Challenge_Frozen_DoAttack"
+            }
+          ]
+        },
+        "ActivityAbility_Challenge_Frozen_AreaAttack": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Stages_GainWave_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "target": "Applier",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD"
+                  },
+                  "OAHPDLJIADP": 4.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorWindSubHurtDelta": 0.0,
+                    "IPFJJJGABPL": 0.0,
+                    "ignoreAttackerProperty": true,
+                    "enBreak": 0.0,
+                    "HMBONGBFIAP": [
+                      "Value_DamageRate",
+                      "Value_Frozen_DamageSystemValue",
+                      "MUL"
+                    ],
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV3",
+                    "hitHaltTimeScale": 0.05000000074505806
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "UNIQUE_ActivityAbility_Challenge_Frozen_CD_Team": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "Value_CD",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ActivityAbility_Challenge_Frozen_CD",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "HMKGPFBBDIC",
+              "key": "_ActivityAbility_Challenge_Frozen_CD"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "modifierName": "UNIQUE_ActivityAbility_Challenge_Frozen_Team"
+        },
+        {
+          "$type": "GDHGMAPPGHD",
+          "shieldHP": true,
+          "key": "Value_Frozen_DamageSystemValue",
+          "damageRatio": "ElementLevelCo"
+        },
+        {
+          "$type": "HMKGPFBBDIC",
+          "target": "CurTeamAvatars",
+          "shieldHP": true,
+          "key": "_ActivityAbility_Challenge_Frozen_DoAttack"
+        }
+      ],
+      "onAvatarIn": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "modifierName": "UNIQUE_ActivityAbility_Challenge_Frozen_Team"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_Challenge_LowHp",
+      "abilitySpecials": {
+        "Value_Buff_A_Hp": 0.699999988079071,
+        "Value_Buff_A": 0.5,
+        "Value_Buff_B_Hp": 0.5,
+        "Value_Buff_B": 0.25,
+        "Value_Buff_C_Hp": 0.30000001192092896,
+        "Value_Buff_C_CD": 2.0,
+        "Value_Buff_C_Chance": 1.0,
+        "Value_Buff_C_DamageRate": 10.0,
+        "Value_Buff_C_DamageSystemValue": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_ActivityAbility_Challenge_LowHp_Team": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "IJKJKFHPENC",
+              "modifierName": "UNIQUE_ActivityAbility_Challenge_LowHp_Avatar"
+            }
+          ]
+        },
+        "UNIQUE_ActivityAbility_Challenge_LowHp_Avatar": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "DIFGDDGLFDJ",
+              "onEvent": "HP",
+              "predicates": [
+                {
+                  "$type": "AFCIHEABHEL",
+                  "logic": "LesserOrEqual",
+                  "ratio": "Value_Buff_A_Hp"
+                }
+              ],
+              "modifierName": "UNIQUE_ActivityAbility_Challenge_LowHp_AttackUp"
+            },
+            {
+              "$type": "DIFGDDGLFDJ",
+              "onEvent": "HP",
+              "predicates": [
+                {
+                  "$type": "AFCIHEABHEL",
+                  "ratio": "Value_Buff_A_Hp"
+                }
+              ],
+              "modifierName": "Del_AttackUp"
+            },
+            {
+              "$type": "DIFGDDGLFDJ",
+              "onEvent": "HP",
+              "predicates": [
+                {
+                  "$type": "AFCIHEABHEL",
+                  "logic": "LesserOrEqual",
+                  "ratio": "Value_Buff_B_Hp"
+                }
+              ],
+              "modifierName": "UNIQUE_ActivityAbility_Challenge_LowHp_AttackSpeedUp"
+            },
+            {
+              "$type": "DIFGDDGLFDJ",
+              "onEvent": "HP",
+              "predicates": [
+                {
+                  "$type": "AFCIHEABHEL",
+                  "ratio": "Value_Buff_B_Hp"
+                }
+              ],
+              "modifierName": "Del_AttackSpeedUp"
+            },
+            {
+              "$type": "DIFGDDGLFDJ",
+              "onEvent": "HP",
+              "predicates": [
+                {
+                  "$type": "AFCIHEABHEL",
+                  "logic": "LesserOrEqual",
+                  "ratio": "Value_Buff_C_Hp"
+                }
+              ],
+              "modifierName": "UNIQUE_ActivityAbility_Challenge_LowHp_AreaAttack"
+            },
+            {
+              "$type": "DIFGDDGLFDJ",
+              "onEvent": "HP",
+              "predicates": [
+                {
+                  "$type": "AFCIHEABHEL",
+                  "ratio": "Value_Buff_C_Hp"
+                }
+              ],
+              "modifierName": "Del_AreaAttack"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "predicates": [
+                {
+                  "$type": "AFCIHEABHEL",
+                  "logic": "LesserOrEqual",
+                  "ratio": "Value_Buff_A_Hp"
+                }
+              ],
+              "modifierName": "UNIQUE_ActivityAbility_Challenge_LowHp_AttackUp"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "predicates": [
+                {
+                  "$type": "AFCIHEABHEL",
+                  "logic": "LesserOrEqual",
+                  "ratio": "Value_Buff_B_Hp"
+                }
+              ],
+              "modifierName": "UNIQUE_ActivityAbility_Challenge_LowHp_AttackSpeedUp"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "predicates": [
+                {
+                  "$type": "AFCIHEABHEL",
+                  "logic": "LesserOrEqual",
+                  "ratio": "Value_Buff_C_Hp"
+                }
+              ],
+              "modifierName": "UNIQUE_ActivityAbility_Challenge_LowHp_AreaAttack"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBODPNEEFGD",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_ActivityAbility_Challenge_LowHp_AttackUp"
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_ActivityAbility_Challenge_LowHp_AttackSpeedUp"
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_ActivityAbility_Challenge_LowHp_AreaAttack"
+            }
+          ]
+        },
+        "UNIQUE_ActivityAbility_Challenge_LowHp_AttackUp": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_AttackRatio": "Value_Buff_A"
+          },
+          "state": "AttackUp",
+          "isLimitedProperties": true
+        },
+        "UNIQUE_ActivityAbility_Challenge_LowHp_AttackSpeedUp": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Animator_AttackSpeedRatio": "Value_Buff_B"
+          },
+          "state": "SpeedUp",
+          "isLimitedProperties": true
+        },
+        "UNIQUE_ActivityAbility_Challenge_LowHp_AreaAttack": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Other",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Team",
+                  "key": "ActivityAbility_Challenge_LowHp_AreaAttack_CD",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "targetPredicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BEIEKAHLNED",
+                  "target": "Caster",
+                  "chance": "Value_Buff_C_Chance",
+                  "successActions": [
+                    {
+                      "$type": "PELJALPANCA",
+                      "target": "Team",
+                      "modifierName": "UNIQUE_ActivityAbility_Challenge_LowHp_AreaAttack_CD_Team"
+                    },
+                    {
+                      "$type": "BOBCOJHOKKD",
+                      "target": "Caster",
+                      "param3": 1.0,
+                      "key": "ActivityAbility_Challenge_LowHp_AreaAttack_DoAttack",
+                      "param2": 0.0,
+                      "repeatTimes": 0.0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "PELJALPANCA",
+              "target": "Other",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "ActivityAbility_Challenge_LowHp_AreaAttack_DoAttack",
+                  "param3": 0.0,
+                  "forceByCaster": true,
+                  "compareType": "MoreThan"
+                }
+              ],
+              "modifierName": "ActivityAbility_Challenge_LowHp_AreaAttack"
+            },
+            {
+              "$type": "HMKGPFBBDIC",
+              "target": "CurTeamAvatars",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "ActivityAbility_Challenge_LowHp_AreaAttack_DoAttack",
+                  "param3": 0.0,
+                  "forceByCaster": true,
+                  "compareType": "MoreThan"
+                }
+              ],
+              "key": "ActivityAbility_Challenge_LowHp_AreaAttack_DoAttack"
+            }
+          ]
+        },
+        "UNIQUE_ActivityAbility_Challenge_LowHp_AreaAttack_CD_Team": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "Value_Buff_C_CD",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "ActivityAbility_Challenge_LowHp_AreaAttack_CD",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "HMKGPFBBDIC",
+              "key": "ActivityAbility_Challenge_LowHp_AreaAttack_CD"
+            }
+          ]
+        },
+        "ActivityAbility_Challenge_LowHp_AreaAttack": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Stages_GainWave_01",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "onGround": true
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "target": "Applier",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 0.0
+                    },
+                    "onGround": true
+                  },
+                  "OAHPDLJIADP": 5.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorWindSubHurtDelta": 0.0,
+                    "IPFJJJGABPL": 0.0,
+                    "ignoreAttackerProperty": true,
+                    "enBreak": 0.0,
+                    "HMBONGBFIAP": [
+                      "Value_Buff_C_DamageRate",
+                      "Value_Buff_C_DamageSystemValue",
+                      "MUL"
+                    ],
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV1",
+                    "hitHaltTimeScale": 0.05000000074505806
+                  },
+                  "cameraShake": {}
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "Del_AttackUp": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBODPNEEFGD",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_ActivityAbility_Challenge_LowHp_AttackUp"
+            }
+          ]
+        },
+        "Del_AttackSpeedUp": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBODPNEEFGD",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_ActivityAbility_Challenge_LowHp_AttackSpeedUp"
+            }
+          ]
+        },
+        "Del_AreaAttack": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBODPNEEFGD",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_ActivityAbility_Challenge_LowHp_AreaAttack"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "modifierName": "UNIQUE_ActivityAbility_Challenge_LowHp_Team"
+        },
+        {
+          "$type": "GDHGMAPPGHD",
+          "shieldHP": true,
+          "key": "Value_Buff_C_DamageSystemValue",
+          "damageRatio": "ElementLevelCo"
+        }
+      ],
+      "onAvatarIn": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "modifierName": "UNIQUE_ActivityAbility_Challenge_LowHp_Team"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_Challenge_ExtraAttack",
+      "abilitySpecials": {
+        "Value_AtkSpeed": 0.25,
+        "Value_DamageRate": 20.0,
+        "Value_DamageSystemValue": 0.0,
+        "Value_DamageUp": 0.5,
+        "Value_MaxBuffCount": 8.0,
+        "Value_CurBuffCount": 0.0,
+        "Value_Cost": -0.5
+      },
+      "modifiers": {
+        "UNIQUE_ActivityAbility_Challenge_ExtraAttack_Avatar": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "MFCOIAIMHEL",
+              "attackTags": [
+                "ExtraAttack"
+              ],
+              "detectWindow": 0.6000000238418579,
+              "onKill": [
+                {
+                  "$type": "KBODPNEEFGD",
+                  "modifierName": "UNIQUE_TowerBuff_ShieldEnhanceAtk_HasBuff"
+                },
+                {
+                  "$type": "INBCDALOHMP",
+                  "target": "Other",
+                  "targetPredicates": [
+                    {
+                      "$type": "NIMAPECDNKD",
+                      "entityTypes": [
+                        "Monster"
+                      ]
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "INBCDALOHMP",
+                      "target": "Other",
+                      "targetPredicates": [
+                        {
+                          "$type": "CNGGLKHONAA",
+                          "target": "Team",
+                          "key": "_ActivityAbility_Challenge_ExtraAttackOnEnemyKilled_Count",
+                          "param3": "Value_MaxBuffCount",
+                          "compareType": "MoreThanAndEqual"
+                        }
+                      ],
+                      "successActions": [
+                        {
+                          "$type": "MPAGCPPAIHJ",
+                          "target": "Other",
+                          "shieldHP": true,
+                          "key": "_ActivityAbility_Challenge_ExtraAttackOnEnemyKilled_POS",
+                          "setTarget": false
+                        },
+                        {
+                          "$type": "KBFEIHEAMBM",
+                          "shieldHP": true,
+                          "rotationDampTime": "Eff_Stages_GainWave_01",
+                          "born": {
+                            "$type": "ICKMMAHFNIM",
+                            "offset": {
+                              "KGEPIMHBMOL": 0.0,
+                              "JEBHCGDPFEJ": 1.0,
+                              "LPCHALMFFOD": 0.0
+                            },
+                            "onGround": true,
+                            "positionKey": "_ActivityAbility_Challenge_ExtraAttackOnEnemyKilled_POS",
+                            "directionKey": ""
+                          },
+                          "PPPDJGDDOGD": 1.0,
+                          "AJDILHJFNKE": -1.0
+                        },
+                        {
+                          "$type": "AIFPLABJNMA",
+                          "target": "Caster",
+                          "shieldHP": true,
+                          "attackEvent": {
+                            "attackPattern": {
+                              "$type": "BELNOFAKNBA",
+                              "triggerType": "TriggerNoRepeat",
+                              "born": {
+                                "$type": "ICKMMAHFNIM",
+                                "offset": {
+                                  "KGEPIMHBMOL": 0.0,
+                                  "JEBHCGDPFEJ": 1.0,
+                                  "LPCHALMFFOD": 0.0
+                                },
+                                "onGround": true,
+                                "positionKey": "_ActivityAbility_Challenge_ExtraAttackOnEnemyKilled_POS",
+                                "directionKey": ""
+                              },
+                              "OAHPDLJIADP": 5.0
+                            },
+                            "attackInfo": {
+                              "attackTag": "",
+                              "attenuationTag": "",
+                              "attenuationGroup": "default",
+                              "attackProperty": {
+                                "actorWindSubHurtDelta": 0.0,
+                                "IPFJJJGABPL": 100.0,
+                                "ignoreAttackerProperty": true,
+                                "HMBONGBFIAP": [
+                                  "Value_DamageRate",
+                                  "Value_DamageSystemValue",
+                                  "MUL"
+                                ],
+                                "GLKMCMDJBIK": 0.0
+                              },
+                              "hitPattern": {
+                                "onHitEffectName": "",
+                                "hitImpulseY": "",
+                                "hitImpulseType": "LV2",
+                                "hitHaltTimeScale": 0.05000000074505806
+                              },
+                              "cameraShake": {}
+                            }
+                          },
+                          "targetType": "Enemy"
+                        }
+                      ],
+                      "failActions": [
+                        {
+                          "$type": "LCOEFEMOHLP",
+                          "target": "Team",
+                          "param3": 1.0,
+                          "key": "_ActivityAbility_Challenge_ExtraAttackOnEnemyKilled_Count",
+                          "useLimitRange": true,
+                          "param2": "Value_MaxBuffCount",
+                          "repeatTimes": 0.0
+                        },
+                        {
+                          "$type": "PELJALPANCA",
+                          "target": "CurLocalAvatar",
+                          "shieldHP": true,
+                          "modifierName": "ActivityAbility_Challenge_ExtraAttack_RefreshCount"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "ExtraAttack",
+                "ExtraAttack1",
+                "ExtraAttack2",
+                "ExtraAttack3",
+                "Attack01",
+                "Attack02",
+                "Attack03",
+                "Attack04",
+                "Attack05",
+                "Attack06",
+                "ExtraAttack_BS",
+                "ExtraAttack_Charge",
+                "Gandalfr_Attack01",
+                "Gandalfr_Attack02",
+                "Gandalfr_Attack03",
+                "Gandalfr_Attack04",
+                "Gandalfr_Attack05",
+                "Gandalfr_Attack06",
+                "Gandalfr_ExtraAttack",
+                "Katana_Attack01",
+                "Katana_Attack02",
+                "Katana_Attack03",
+                "Katana_Attack04",
+                "Katana_Attack05",
+                "Katana_Attack06",
+                "Katana_ExtraAttack"
+              ],
+              "modifierName": "UNIQUE_ActivityAbility_Challenge_ExtraAttack_Cost",
+              "DGFCLAIDIFI": ""
+            }
+          ],
+          "properties": {
+            "Animator_AttackSpeedRatio": "Value_AtkSpeed"
+          },
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "shieldHP": true,
+              "modifierName": "ActivityAbility_Challenge_ExtraAttack_RefreshCount"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "HMKGPFBBDIC",
+              "shieldHP": true,
+              "key": "_ActivityAbility_Challenge_ExtraAttackOnEnemyKilled_Count"
+            }
+          ],
+          "onAvatarIn": [
+            {
+              "$type": "PELJALPANCA",
+              "shieldHP": true,
+              "modifierName": "ActivityAbility_Challenge_ExtraAttack_RefreshCount"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "ActivityAbility_Challenge_ExtraAttack_RefreshCount": {
+          "stacking": "Multiple",
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BEMPFJGAPHG",
+              "shieldHP": true,
+              "srcTarget": "Team",
+              "dstTarget": "Self",
+              "srcKey": "_ActivityAbility_Challenge_ExtraAttackOnEnemyKilled_Count",
+              "dstKey": "_ActivityAbility_Challenge_ExtraAttackOnEnemyKilled_Count"
+            },
+            {
+              "$type": "LDIAIDLOPEE",
+              "shieldHP": true,
+              "globalValueKey": "_ActivityAbility_Challenge_ExtraAttackOnEnemyKilled_Count",
+              "overrideMapKey": "Value_CurBuffCount"
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_ActivityAbility_Challenge_ExtraAttack_Buff"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_ActivityAbility_Challenge_ExtraAttack_Buff"
+            }
+          ]
+        },
+        "UNIQUE_ActivityAbility_Challenge_ExtraAttack_Buff": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "LDBCDLJECKF",
+              "attackTags": [
+                "ExtraAttack"
+              ],
+              "actorWindSubHurtDelta": [
+                "Value_CurBuffCount",
+                "Value_DamageUp",
+                "MUL"
+              ],
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_ActivityAbility_Challenge_ExtraAttack_Cost": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_CostStaminaRatio": "Value_Cost"
+          },
+          "isLimitedProperties": true
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_Challenge_ExtraAttack_Avatar"
+        },
+        {
+          "$type": "GDHGMAPPGHD",
+          "shieldHP": true,
+          "key": "Value_DamageSystemValue",
+          "damageRatio": "ElementLevelCo"
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "KBODPNEEFGD",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_Challenge_ExtraAttack_Buff"
+        },
+        {
+          "$type": "HMKGPFBBDIC",
+          "target": "Team",
+          "shieldHP": true,
+          "key": "_ActivityAbility_Challenge_ExtraAttackOnEnemyKilled_Count"
+        },
+        {
+          "$type": "HMKGPFBBDIC",
+          "shieldHP": true,
+          "key": "_ActivityAbility_Challenge_ExtraAttackOnEnemyKilled_Count"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  }
+]

@@ -1,0 +1,477 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Dq_Property_Prop_SmokeDevice_01",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Close"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "Open"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 202,
+          "modifierName": "CoolDown"
+        }
+      ],
+      "modifiers": {
+        "HachiSmokeArea": {
+          "modifierName": "",
+          "elementDurability": 1.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "FromGroup",
+              "funcName": "SLC_SmokeClearThreat",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "FromGroup",
+              "funcName": "SLC_SmokeSetThreat",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ]
+        },
+        "HachiDenyLockOn": {
+          "modifierName": "",
+          "elementDurability": 1.5,
+          "IPFJJJGABPL": 100.0,
+          "state": "DenyLockOn"
+        },
+        "Close": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Item_Hint_SearchPoint",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "LBINHEFBJMN",
+              "predicates": [
+                {
+                  "$type": "BCFNGJHILAG",
+                  "predicates": [
+                    {
+                      "$type": "NNEHDJHMING",
+                      "attackTags": [
+                        "BurningDamage",
+                        "ShockDamage"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "param1": 201
+            }
+          ]
+        },
+        "CoolDown": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "DisableInteractTimer"
+            }
+          ]
+        },
+        "OpenStateTimer": {
+          "modifierName": "",
+          "elementDurability": 5.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "LBINHEFBJMN",
+              "param1": 202
+            }
+          ]
+        },
+        "DisableInteractTimer": {
+          "modifierName": "",
+          "elementDurability": 10.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "LBINHEFBJMN"
+            }
+          ]
+        },
+        "Open": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.5,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_ScenObj_SmokeDevice_01_Fog",
+              "PPPDJGDDOGD": 0.5,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "OpenStateTimer"
+            },
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "FromGroup",
+              "funcName": "SLC_HachiGadgetActionMark",
+              "paramNum": 1,
+              "param1": 1.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR5",
+                "campTargetType": "All",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Avatar"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "modifierName": "HachiSmokeArea"
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Other",
+                  "modifierName": "HachiDenyLockOn"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "OPAOGKPJLIG",
+          "resistanceListID": 11002
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Dq_Property_Prop_NoisyBait_01",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Close"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "Open"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 202,
+          "modifierName": "CoolDown"
+        }
+      ],
+      "modifiers": {
+        "Close": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Item_Hint_SearchPoint",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Quest_SiteInteract_Event",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.6000000238418579,
+                  "LPCHALMFFOD": 0.0
+                }
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "LBINHEFBJMN",
+              "predicates": [
+                {
+                  "$type": "BCFNGJHILAG",
+                  "predicates": [
+                    {
+                      "$type": "NNEHDJHMING",
+                      "attackTags": [
+                        "BurningDamage",
+                        "ShockDamage"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "param1": 201
+            }
+          ]
+        },
+        "CoolDown": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "DisableInteractTimer"
+            }
+          ]
+        },
+        "OpenStateTimer": {
+          "modifierName": "",
+          "elementDurability": 10.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "LBINHEFBJMN",
+              "param1": 202
+            }
+          ]
+        },
+        "DisableInteractTimer": {
+          "modifierName": "",
+          "elementDurability": 5.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "LBINHEFBJMN"
+            }
+          ]
+        },
+        "Open": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.5,
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "OpenStateTimer"
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_NoisyBait_01",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "attachPointName": "RootNode"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "FromGroup",
+              "funcName": "SLC_HachiGadgetActionMark",
+              "paramNum": 1,
+              "param1": 2.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "sortType": "Nearest",
+                "shapeName": "CircleR10",
+                "campTargetType": "All",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_IS_INU_SHIHANDAI",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "modifierName": "UNIQUE_HappyPoint_Attracted"
+                },
+                {
+                  "$type": "MPAGCPPAIHJ",
+                  "target": "Target",
+                  "key": "_HAPPY_POINT_POS",
+                  "born": {
+                    "$type": "IAENDIPDFKD"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_HappyPoint_Attracted": {
+          "stacking": "RefreshUniqueDurability",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_FIND_HAPPY_POINT",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_FIND_HAPPY_POINT",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "OPAOGKPJLIG",
+          "resistanceListID": 11002
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Dq_Property_Prop_HachiWayPoint_01",
+      "onFieldEnter": [
+        {
+          "$type": "INBCDALOHMP",
+          "target": "Target",
+          "targetPredicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_IS_INU_SHIHANDAI",
+              "param3": 1.0
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Target",
+              "param3": 1.0,
+              "key": "_SHIHANDAI_TO_SEARCH",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Gear_Property_Ani_Prop_WoodenCage_01",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "Door_Open"
+        }
+      ],
+      "modifiers": {
+        "Door_Open": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_CoverSmoke_Mini_01",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "attachPointName": "LockPosition"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "LBINHEFBJMN",
+              "param1": 202
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Common_Property_Prop_HintPoint_01",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "DefaultEffect"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "HideEffect"
+        }
+      ],
+      "modifiers": {
+        "DefaultEffect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_QuestGuide_Position",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "HideEffect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      }
+    }
+  }
+]

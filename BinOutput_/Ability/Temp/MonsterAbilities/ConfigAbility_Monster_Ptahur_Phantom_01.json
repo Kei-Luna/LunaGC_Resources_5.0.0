@@ -1,0 +1,2925 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_01_SteerAttack",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "BladeSlash01"
+          ],
+          "startNormalizedTime": 0.1599999964237213,
+          "endNormalizedTime": 0.20000000298023224,
+          "angularSpeed": 540.0,
+          "attackTrigger": "",
+          "attackDistance": 1.5,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "BladeSlash02"
+          ],
+          "startNormalizedTime": 0.10000000149011612,
+          "endNormalizedTime": 0.12999999523162842,
+          "angularSpeed": 540.0,
+          "attackTrigger": "",
+          "attackDistance": 1.5,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "BladeSlash03"
+          ],
+          "endNormalizedTime": 0.20000000298023224,
+          "angularSpeed": 240.0,
+          "attackTrigger": "",
+          "attackDistance": 1.5,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "ThrowBlade"
+          ],
+          "startNormalizedTime": 0.23999999463558197,
+          "endNormalizedTime": 0.41999998688697815,
+          "angularSpeed": 240.0,
+          "attackTrigger": "",
+          "attackDistance": 1.5,
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_01_StandbyEffectManager",
+      "onAdded": [
+        {
+          "$type": "OPAOGKPJLIG",
+          "resistanceListID": 13002
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_BladeComboCounter",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Standby"
+          ],
+          "modifierName": "ClearComboCounter",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "BladeComboCounter": 0.0
+      },
+      "modifiers": {
+        "ClearComboCounter": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_MONSTER_PTAHUR_PHANTOM_BLADECOMBOCOUNTER",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "_MONSTER_PTAHUR_PHANTOM_BLADECOMBOCOUNTER",
+              "overrideMapKey": "BladeComboCounter"
+            },
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "BladeComboCounter",
+              "param3": "BladeComboCounter"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_MONSTER_PTAHUR_PHANTOM_BLADECOMBOCOUNTER",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "LCOEFEMOHLP",
+          "param3": 1.0,
+          "key": "_MONSTER_PTAHUR_PHANTOM_BLADECOMBOCOUNTER",
+          "useLimitRange": true,
+          "param2": 9.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "LDIAIDLOPEE",
+          "globalValueKey": "_MONSTER_PTAHUR_PHANTOM_BLADECOMBOCOUNTER",
+          "overrideMapKey": "BladeComboCounter"
+        },
+        {
+          "$type": "AKEEDILMOJF",
+          "intID": "BladeComboCounter",
+          "param3": "BladeComboCounter"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_BladeSlash_PhaseMoveToTarget",
+      "onAbilityStart": [
+        {
+          "$type": "INBCDALOHMP",
+          "targetPredicates": [
+            {
+              "$type": "FMBJAJFLDIP",
+              "target": "SelfAttackTarget",
+              "logic": "LesserOrEqual",
+              "param3": 4.0,
+              "DDALGNLEHOD": ""
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "BHPDPACKKNI",
+              "target": "SelfAttackTarget",
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 4.0
+                },
+                "onGround": true
+              },
+              "hitSceneType": "BlinkHitSceneTestByThreeSegments",
+              "limitY": 2.5
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "BHPDPACKKNI",
+              "target": "SelfAttackTarget",
+              "born": {
+                "$type": "GMLEDLAGLJM",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "onGround": true,
+                "linearOffset": -2.0,
+                "linearXZ": false,
+                "linearMin": 0.0,
+                "linearMax": 6.0
+              },
+              "hitSceneType": "BlinkHitSceneTestByThreeSegments",
+              "limitY": 2.5
+            }
+          ]
+        },
+        {
+          "$type": "IFCMHHHOLCK"
+        },
+        {
+          "$type": "PAMDPDLLAPG",
+          "target": "SelfAttackTarget",
+          "toPos": {
+            "$type": "JHEBKCMEMLN"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_PhaseMoveToTarget",
+      "onAbilityStart": [
+        {
+          "$type": "FIFEAMMHOIC",
+          "target": "SelfAttackTarget",
+          "forwardAngle": 90.0,
+          "minRange": 6.5,
+          "maxRange": 6.5,
+          "ignoreWater": true
+        },
+        {
+          "$type": "IFCMHHHOLCK"
+        },
+        {
+          "$type": "PAMDPDLLAPG",
+          "target": "SelfAttackTarget",
+          "toPos": {
+            "$type": "JHEBKCMEMLN"
+          }
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Ptahur_Phantom_01_PhaseStrike_PhaseDoor",
+          "born": {
+            "$type": "DNEKFAOHKBC",
+            "direction": {
+              "$type": "MEADFIJAHPG",
+              "startPoint": ""
+            },
+            "useRotation": true
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_PhaseIn",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_MONSTER_PTAHUR_PHANTOM_VISIBLE",
+          "gvInTalk": 1.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5,
+            2.5
+          ],
+          "modifierNameSteps": [
+            "PhaseOut",
+            "PhaseIn",
+            "Empty"
+          ]
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_MONSTER_PTAHUR_PHANTOM_HITTABLE",
+          "gvInTalk": 1.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Inhittable",
+            "Hittable"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Empty": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "PhaseOut": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PJENOLFAFMG"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_MONSTER_PTAHUR_PHANTOM_WEAPON_VISIBLE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider",
+                "PushCollider_Occluder"
+              ]
+            }
+          ]
+        },
+        "PhaseIn": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PJENOLFAFMG",
+              "KGGEDGKGLDD": true
+            },
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider",
+                "PushCollider_Occluder"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Ptahur_Phantom_01_ChestBlackHole",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Ptahur_Phantom_01_Noise",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_MONSTER_PTAHUR_PHANTOM_WEAPON_VISIBLE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onKill": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 2.0,
+              "key": "_MONSTER_PTAHUR_PHANTOM_VISIBLE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Inhittable": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_01",
+                "HeadBox"
+              ]
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "IsInvincible"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "IsDenyLockOn"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "IsGhostToEnemy"
+            },
+            {
+              "$type": "HBNEMPLJCMB",
+              "hide": true
+            }
+          ]
+        },
+        "Hittable": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_01",
+                "HeadBox"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "HBNEMPLJCMB"
+            }
+          ]
+        },
+        "IsDenyLockOn": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "DenyLockOn"
+        },
+        "IsInvincible": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "Invincible"
+        },
+        "IsGhostToEnemy": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "IsGhostToEnemy"
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_MONSTER_PTAHUR_PHANTOM_VISIBLE",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_PhaseOut",
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_MONSTER_PTAHUR_PHANTOM_VISIBLE",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_WeaponShow",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_MONSTER_PTAHUR_PHANTOM_WEAPON_VISIBLE",
+          "gvInTalk": 1.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "WeaponHide",
+            "WeaponShow"
+          ]
+        }
+      ],
+      "modifiers": {
+        "WeaponHide": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "HMIDGKNOHJM",
+              "renderNames": [
+                "MonEquip_Ptahur_Phantom_Sword_Model"
+              ]
+            }
+          ]
+        },
+        "WeaponShow": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "HMIDGKNOHJM",
+              "renderNames": [
+                "MonEquip_Ptahur_Phantom_Sword_Model"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Ptahur_Phantom_01_BladeBlackHole",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_MONSTER_PTAHUR_PHANTOM_WEAPON_VISIBLE",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_WeaponHide",
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_MONSTER_PTAHUR_PHANTOM_WEAPON_VISIBLE",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_Sethittable",
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_MONSTER_PTAHUR_PHANTOM_HITTABLE",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_Setinhittable",
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_MONSTER_PTAHUR_PHANTOM_HITTABLE",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_01_ThrowBlade_Throw",
+      "onAbilityStart": [
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42909002,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "direction": {
+              "$type": "MEADFIJAHPG",
+              "startPoint": ""
+            },
+            "useRotation": true,
+            "attachPointName": "ThrowBladeSource"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_01_EnvironmentAttackHandler",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "Ptahur_Phantom_TimeElapsed",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            30.5,
+            60.5,
+            999999.5
+          ],
+          "modifierNameSteps": [
+            "EnvironmentState01",
+            "EnvironmentState02",
+            "EnvironmentState03"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Ptahur_Phantom_TimeTicker": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "onThinkInterval": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "Ptahur_Phantom_TimeElapsed",
+              "param2": 999999.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "EnvironmentState01": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 15.0,
+          "onThinkInterval": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "target": "SelfAttackTarget",
+              "born": {
+                "$type": "MPCGPEHJNNH",
+                "bornRandom": {
+                  "$type": "OJKHDGHBNKP",
+                  "minRandomRange": 0.0,
+                  "maxRandomRange": 0.5
+                },
+                "onGround": true,
+                "onGroundRaycastUpDist": 0.20000000298023224,
+                "timeForPredictive": 0.5
+              },
+              "lifeByOwnerV2": true,
+              "gadgetID": 42909030,
+              "campID": 4001
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "RandomEnvironmentAttackLauncher01"
+            }
+          ]
+        },
+        "EnvironmentState02": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 9.0,
+          "onThinkInterval": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "target": "SelfAttackTarget",
+              "born": {
+                "$type": "MPCGPEHJNNH",
+                "bornRandom": {
+                  "$type": "OJKHDGHBNKP",
+                  "minRandomRange": 0.0,
+                  "maxRandomRange": 0.5
+                },
+                "onGround": true,
+                "onGroundRaycastUpDist": 0.20000000298023224,
+                "timeForPredictive": 0.5
+              },
+              "lifeByOwnerV2": true,
+              "gadgetID": 42909030,
+              "campID": 4001
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "RandomEnvironmentAttackLauncher02"
+            }
+          ]
+        },
+        "EnvironmentState03": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 5.0,
+          "onThinkInterval": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "target": "SelfAttackTarget",
+              "born": {
+                "$type": "MPCGPEHJNNH",
+                "bornRandom": {
+                  "$type": "OJKHDGHBNKP",
+                  "minRandomRange": 0.0,
+                  "maxRandomRange": 0.5
+                },
+                "onGround": true,
+                "onGroundRaycastUpDist": 0.20000000298023224,
+                "timeForPredictive": 0.5
+              },
+              "lifeByOwnerV2": true,
+              "gadgetID": 42909030,
+              "campID": 4001
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "RandomEnvironmentAttackLauncher03"
+            }
+          ]
+        },
+        "RandomEnvironmentAttackLauncher01": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.20000000298023224,
+          "onAdded": [
+            {
+              "$type": "GJGCDHFJDKC",
+              "IJMPMODENGI": 1,
+              "actions": [
+                {
+                  "$type": "KFCDMIMBBLD",
+                  "target": "SelfAttackTarget",
+                  "born": {
+                    "$type": "MPCGPEHJNNH",
+                    "bornRandom": {
+                      "$type": "OJKHDGHBNKP",
+                      "minRandomRange": 3.0,
+                      "maxRandomRange": 7.5
+                    },
+                    "onGround": true,
+                    "onGroundRaycastUpDist": 0.20000000298023224,
+                    "timeForPredictive": 0.5
+                  },
+                  "lifeByOwnerV2": true,
+                  "gadgetID": 42909030,
+                  "campID": 4001
+                }
+              ]
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "GJGCDHFJDKC",
+              "IJMPMODENGI": 1,
+              "actions": [
+                {
+                  "$type": "KFCDMIMBBLD",
+                  "target": "SelfAttackTarget",
+                  "born": {
+                    "$type": "MPCGPEHJNNH",
+                    "bornRandom": {
+                      "$type": "OJKHDGHBNKP",
+                      "minRandomRange": 3.0,
+                      "maxRandomRange": 7.5
+                    },
+                    "onGround": true,
+                    "onGroundRaycastUpDist": 0.20000000298023224,
+                    "timeForPredictive": 0.5
+                  },
+                  "lifeByOwnerV2": true,
+                  "gadgetID": 42909030,
+                  "campID": 4001
+                }
+              ]
+            }
+          ]
+        },
+        "RandomEnvironmentAttackLauncher02": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.20000000298023224,
+          "onAdded": [
+            {
+              "$type": "GJGCDHFJDKC",
+              "IJMPMODENGI": 1,
+              "actions": [
+                {
+                  "$type": "KFCDMIMBBLD",
+                  "target": "SelfAttackTarget",
+                  "born": {
+                    "$type": "MPCGPEHJNNH",
+                    "bornRandom": {
+                      "$type": "OJKHDGHBNKP",
+                      "minRandomRange": 3.0,
+                      "maxRandomRange": 7.5
+                    },
+                    "onGround": true,
+                    "onGroundRaycastUpDist": 0.20000000298023224,
+                    "timeForPredictive": 0.5
+                  },
+                  "lifeByOwnerV2": true,
+                  "gadgetID": 42909030,
+                  "campID": 4001
+                }
+              ]
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "GJGCDHFJDKC",
+              "IJMPMODENGI": 1,
+              "actions": [
+                {
+                  "$type": "KFCDMIMBBLD",
+                  "target": "SelfAttackTarget",
+                  "born": {
+                    "$type": "MPCGPEHJNNH",
+                    "bornRandom": {
+                      "$type": "OJKHDGHBNKP",
+                      "minRandomRange": 3.0,
+                      "maxRandomRange": 7.5
+                    },
+                    "onGround": true,
+                    "onGroundRaycastUpDist": 0.20000000298023224,
+                    "timeForPredictive": 0.5
+                  },
+                  "lifeByOwnerV2": true,
+                  "gadgetID": 42909030,
+                  "campID": 4001
+                }
+              ]
+            }
+          ]
+        },
+        "RandomEnvironmentAttackLauncher03": {
+          "modifierName": "",
+          "elementDurability": 0.8999999761581421,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.20000000298023224,
+          "onAdded": [
+            {
+              "$type": "GJGCDHFJDKC",
+              "IJMPMODENGI": 1,
+              "actions": [
+                {
+                  "$type": "KFCDMIMBBLD",
+                  "target": "SelfAttackTarget",
+                  "born": {
+                    "$type": "MPCGPEHJNNH",
+                    "bornRandom": {
+                      "$type": "OJKHDGHBNKP",
+                      "minRandomRange": 3.0,
+                      "maxRandomRange": 7.5
+                    },
+                    "onGround": true,
+                    "onGroundRaycastUpDist": 0.20000000298023224,
+                    "timeForPredictive": 0.5
+                  },
+                  "lifeByOwnerV2": true,
+                  "gadgetID": 42909030,
+                  "campID": 4001
+                }
+              ]
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "GJGCDHFJDKC",
+              "IJMPMODENGI": 1,
+              "actions": [
+                {
+                  "$type": "KFCDMIMBBLD",
+                  "target": "SelfAttackTarget",
+                  "born": {
+                    "$type": "MPCGPEHJNNH",
+                    "bornRandom": {
+                      "$type": "OJKHDGHBNKP",
+                      "minRandomRange": 3.0,
+                      "maxRandomRange": 7.5
+                    },
+                    "onGround": true,
+                    "onGroundRaycastUpDist": 0.20000000298023224,
+                    "timeForPredictive": 0.5
+                  },
+                  "lifeByOwnerV2": true,
+                  "gadgetID": 42909030,
+                  "campID": 4001
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "Ptahur_Phantom_TimeElapsed",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Ptahur_Phantom_TimeTicker"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "KFCDMIMBBLD",
+          "target": "SelfAttackTarget",
+          "born": {
+            "$type": "MPCGPEHJNNH",
+            "bornRandom": {
+              "$type": "OJKHDGHBNKP",
+              "minRandomRange": 0.0,
+              "maxRandomRange": 1.0
+            },
+            "onGround": true,
+            "onGroundRaycastUpDist": 0.20000000298023224,
+            "timeForPredictive": 0.5
+          },
+          "lifeByOwnerV2": true,
+          "gadgetID": 42909030,
+          "campID": 4001
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_EnvironmentAttack",
+      "modifiers": {
+        "Damage_Timer": {
+          "modifierName": "",
+          "elementDurability": 2.4000000953674316,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 2.0,
+          "onThinkInterval": [
+            {
+              "$type": "EDNOMJCBPIM",
+              "rotationDampTime": "Eff_Monster_Ptahur_Phantom_EnvironmentAttack_Attack",
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "onGround": true,
+                "alongGround": true
+              }
+            },
+            {
+              "$type": "HPIHJNIOBBL",
+              "operation": {
+                "$type": "AKCGGGOIJAO",
+                "operation": {
+                  "text": "Play_sfx_monster_effigy_ice_vfx_spikeStrike_attack"
+                }
+              }
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "SingleDamage"
+            }
+          ]
+        },
+        "SingleDamage": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 0.0
+                    },
+                    "onGround": true,
+                    "alongGround": true,
+                    "useRotation": true
+                  },
+                  "height": 3.0,
+                  "OAHPDLJIADP": 2.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.5,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Electric",
+                    "IPFJJJGABPL": 10.0,
+                    "strikeType": "Default",
+                    "enBreak": 0.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV0",
+                    "hitHaltTimeScale": 0.05000000074505806
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "EDNOMJCBPIM",
+          "rotationDampTime": "Eff_Monster_Ptahur_Phantom_EnvironmentAttack_Warning",
+          "born": {
+            "$type": "JHEBKCMEMLN",
+            "onGround": true,
+            "alongGround": true
+          }
+        },
+        {
+          "$type": "HPIHJNIOBBL",
+          "operation": {
+            "$type": "AKCGGGOIJAO",
+            "operation": {
+              "text": "Play_sfx_monster_effigy_ice_vfx_spikeStrike_alert"
+            }
+          }
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Damage_Timer"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_VertexBreakingBuffAttack",
+      "modifiers": {
+        "Damage_Timer": {
+          "modifierName": "",
+          "elementDurability": 1.2000000476837158,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.800000011920929,
+          "onThinkInterval": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "SingleDamage"
+            }
+          ]
+        },
+        "SingleDamage": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "ignoreMassive": true,
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "JEBHCGDPFEJ": 2.0
+                    },
+                    "useRotation": true
+                  },
+                  "OAHPDLJIADP": 4.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.0,
+                    "actorWindSubHurtDelta": 0.0,
+                    "IPFJJJGABPL": 100.0,
+                    "GLKMCMDJBIK": 1.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "none",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV0",
+                    "muteHitText": true
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Ptahur_ArkheAttack",
+          "born": {
+            "$type": "JHEBKCMEMLN",
+            "onGround": true,
+            "alongGround": true
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Damage_Timer"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_01_ThrowBlade_Bullet",
+      "modifiers": {
+        "Bullet_Loop": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Ptahur_Phantom_01_ThrowBlade_Bullet",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Bullet_Loop"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "Bullet_Loop"
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Ptahur_Phantom_01_ThrowBlade_Bullet_Explode",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_01_ThrowBlade_Bullet_Damage",
+      "onAbilityStart": [
+        {
+          "$type": "CCNPNMMONDO",
+          "target": "Target",
+          "attacker": "CasterOriginOwner",
+          "attackInfo": {
+            "attackTag": "",
+            "attenuationTag": "",
+            "attenuationGroup": "default",
+            "attackProperty": {
+              "actorGrassSubHurtDelta": 1.0,
+              "actorWindSubHurtDelta": 0.0,
+              "elementType": "Electric",
+              "IPFJJJGABPL": 10.0,
+              "strikeType": "Blunt",
+              "enBreak": 100.0,
+              "attackType": "Range",
+              "GLKMCMDJBIK": 0.0
+            },
+            "hitPattern": {
+              "onHitEffectName": "default",
+              "hitImpulseY": "",
+              "hitImpulseType": "LV3",
+              "hitHaltTimeScale": 0.05000000074505806
+            },
+            "canBeModifiedBy": "OriginOwner"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Devourer_Phantom_BladeSlash01_CastAfterStrike",
+      "onAbilityStart": [
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42909026,
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "onGround": true,
+            "useRotation": true
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Devourer_Phantom_BladeSlash02_CastAfterStrike",
+      "onAbilityStart": [
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42909027,
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "onGround": true,
+            "useRotation": true
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Devourer_Phantom_BladeSlash03_CastAfterStrike",
+      "onAbilityStart": [
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42909028,
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "onGround": true,
+            "useRotation": true
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Devourer_Phantom_BladeSlash01_AfterStrike",
+      "onAbilityStart": [
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "GMDIMKKHACA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true
+              },
+              "height": 3.0,
+              "fanAngle": 180.0,
+              "OAHPDLJIADP": 7.0,
+              "MMBCLAEOEFB": 2.75
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.5,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Electric",
+                "IPFJJJGABPL": 10.0,
+                "strikeType": "Slash",
+                "enBreak": 50.0,
+                "attackType": "Melee",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV4",
+                "canBeDefenceHalt": true
+              }
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Devourer_Phantom_BladeSlash02_AfterStrike",
+      "onAbilityStart": [
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "GMDIMKKHACA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true
+              },
+              "height": 3.0,
+              "fanAngle": 45.0,
+              "OAHPDLJIADP": 12.0,
+              "MMBCLAEOEFB": 0.0
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.5,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Electric",
+                "IPFJJJGABPL": 10.0,
+                "strikeType": "Slash",
+                "enBreak": 50.0,
+                "attackType": "Melee",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV4",
+                "canBeDefenceHalt": true
+              }
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Devourer_Phantom_BladeSlash03_AfterStrike",
+      "onAbilityStart": [
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "GMDIMKKHACA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true
+              },
+              "height": 3.0,
+              "fanAngle": 240.0,
+              "OAHPDLJIADP": 9.0,
+              "MMBCLAEOEFB": 5.0
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.5,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Electric",
+                "IPFJJJGABPL": 10.0,
+                "strikeType": "Slash",
+                "enBreak": 50.0,
+                "attackType": "Melee",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV4",
+                "canBeDefenceHalt": true
+              }
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_PhaseMoveToVertexPoint",
+      "onAbilityStart": [
+        {
+          "$type": "BHPDPACKKNI",
+          "target": "SelfAttackTarget",
+          "born": {
+            "$type": "BBIDJJMEHNM",
+            "onGround": true,
+            "worldPos": {
+              "x": 4602.93798828125,
+              "z": -201.63479614257812
+            },
+            "worldFwd": {
+              "z": 1.0
+            }
+          },
+          "hitSceneType": "BlinkHitSceneTestByThreeSegments",
+          "limitY": 2.5
+        },
+        {
+          "$type": "IFCMHHHOLCK"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_EnterVertexState",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "NormalIdle",
+            "Break",
+            "Die"
+          ],
+          "modifierName": "NoVertexState",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "PTAHUR_PHANTOM_VERTEXSTATE",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Empty",
+            "VertexState"
+          ]
+        },
+        {
+          "$type": "PDIMAGBFBIE",
+          "valueSteps": [
+            0.699999988079071,
+            0.30000001192092896
+          ],
+          "modifierNameSteps": [
+            "LifePercent01",
+            "LifePercent02",
+            "LifePercent03"
+          ]
+        },
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "SGV_EnterDevour_Count",
+          "valueSteps": [
+            -0.5,
+            1.5,
+            99.5
+          ],
+          "modifierNameSteps": [
+            "Empty",
+            "WatcherHandler"
+          ],
+          "NMCLMHFBALJ": true
+        }
+      ],
+      "modifiers": {
+        "Empty": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "VertexState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Ptahur_Phantom_VertexAttack_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "BAKEBEKLLAC",
+              "id": 201980103
+            },
+            {
+              "$type": "DLEIPBPNAIM",
+              "paramList": [
+                0,
+                0,
+                0
+              ]
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "HHHMNCNPBDK",
+                  "predicates": [
+                    {
+                      "$type": "LBCGJFGOKMP"
+                    },
+                    {
+                      "$type": "LBCGJFGOKMP",
+                      "logic": "Lesser"
+                    }
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "AIFPLABJNMA",
+                  "attackEvent": {
+                    "attackPattern": {
+                      "$type": "JHKEHNJBMOF",
+                      "triggerType": "TriggerNoRepeat",
+                      "ignoreMassive": true,
+                      "born": {
+                        "$type": "IAENDIPDFKD",
+                        "useRotation": true
+                      },
+                      "size": {
+                        "KGEPIMHBMOL": 0.10000000149011612,
+                        "JEBHCGDPFEJ": 0.10000000149011612,
+                        "LPCHALMFFOD": 0.10000000149011612
+                      }
+                    },
+                    "attackInfo": {
+                      "attackTag": "",
+                      "attenuationTag": "",
+                      "attenuationGroup": "default",
+                      "attackProperty": {
+                        "actorGrassSubHurtDelta": 0.0,
+                        "actorWindSubHurtDelta": 0.0,
+                        "IPFJJJGABPL": 100.0,
+                        "GLKMCMDJBIK": 0.0
+                      },
+                      "hitPattern": {
+                        "onHitEffectName": "none",
+                        "hitImpulseY": "",
+                        "hitImpulseType": "LV0",
+                        "muteHitText": true
+                      },
+                      "cameraShake": {
+                        "shakeType": "CustomVector",
+                        "shakeRange": 1.0,
+                        "shakeTime": 2.0,
+                        "shakeDistance": 35.0,
+                        "shakeDir": {
+                          "z": 2.0
+                        },
+                        "extension": {
+                          "baseOnCamera": true,
+                          "rangeAttenuation": 0.0
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "$type": "KBFEIHEAMBM",
+                  "rotationDampTime": "Eff_Monster_MachinaIustitia_Fusion",
+                  "born": {
+                    "$type": "KLPANPDGHHA",
+                    "useRotation": true,
+                    "attachPointName": "Fusion_Node"
+                  },
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                },
+                {
+                  "$type": "KBFEIHEAMBM",
+                  "rotationDampTime": "Eff_Monster_Ptahur_Phantom_VertexAttack_01_Explode",
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                },
+                {
+                  "$type": "DLEIPBPNAIM",
+                  "paramList": [
+                    0,
+                    0,
+                    1
+                  ]
+                },
+                {
+                  "$type": "GJCAPCBELPA",
+                  "abilityName": "Monster_Ptahur_Phantom_PhaseIn"
+                },
+                {
+                  "$type": "KBFEIHEAMBM",
+                  "rotationDampTime": "Eff_Monster_Ptahur_Phantom_01_PhaseIn",
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                },
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "Break"
+                },
+                {
+                  "$type": "DLLGNJPHFDE",
+                  "ECOAIFKENNM": 0.25,
+                  "BJKGFBGEFPB": ""
+                },
+                {
+                  "$type": "JKFLDIKGJEF",
+                  "gadgetInfo": {
+                    "configID": 42909012
+                  }
+                },
+                {
+                  "$type": "JKFLDIKGJEF",
+                  "gadgetInfo": {
+                    "configID": 42909013
+                  }
+                },
+                {
+                  "$type": "JKFLDIKGJEF",
+                  "gadgetInfo": {
+                    "configID": 42909014
+                  }
+                },
+                {
+                  "$type": "JKFLDIKGJEF",
+                  "gadgetInfo": {
+                    "configID": 42909015
+                  }
+                },
+                {
+                  "$type": "JKFLDIKGJEF",
+                  "gadgetInfo": {
+                    "configID": 42909016
+                  }
+                },
+                {
+                  "$type": "JKFLDIKGJEF",
+                  "gadgetInfo": {
+                    "configID": 42909017
+                  }
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "param3": 0.0,
+                  "key": "PTAHUR_PHANTOM_VERTEXSTATE",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            }
+          ],
+          "onKill": [
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "JHKEHNJBMOF",
+                  "triggerType": "TriggerNoRepeat",
+                  "ignoreMassive": true,
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "useRotation": true
+                  },
+                  "size": {
+                    "KGEPIMHBMOL": 0.10000000149011612,
+                    "JEBHCGDPFEJ": 0.10000000149011612,
+                    "LPCHALMFFOD": 0.10000000149011612
+                  }
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.0,
+                    "actorWindSubHurtDelta": 0.0,
+                    "IPFJJJGABPL": 100.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "none",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV0",
+                    "muteHitText": true
+                  },
+                  "cameraShake": {
+                    "shakeType": "CustomVector",
+                    "shakeRange": 1.0,
+                    "shakeTime": 2.0,
+                    "shakeDistance": 35.0,
+                    "shakeDir": {
+                      "z": 2.0
+                    },
+                    "extension": {
+                      "baseOnCamera": true,
+                      "rangeAttenuation": 0.0
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Ptahur_Phantom_VertexAttack_01_Explode",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "PJENOLFAFMG",
+              "KGGEDGKGLDD": true
+            },
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 42909012
+              }
+            },
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 42909013
+              }
+            },
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 42909014
+              }
+            },
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 42909015
+              }
+            },
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 42909016
+              }
+            },
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 42909017
+              }
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "PTAHUR_PHANTOM_VERTEXSTATE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "LifePercent01": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "LifePercent02": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LMICIIMGMGO",
+              "rotationDampTime": "Eff_UI_ShieldBar_PtahurDimensionShatter_ShatterOnce",
+              "effectSlot": "UICombatBar",
+              "effectPattern": ""
+            },
+            {
+              "$type": "ONEOKBONCFN",
+              "rotationDampTime": "Eff_UI_ShieldBar_PtahurDimensionShatter_Level01",
+              "effectSlot": "UICombatBar"
+            }
+          ]
+        },
+        "LifePercent03": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LMICIIMGMGO",
+              "rotationDampTime": "Eff_UI_ShieldBar_PtahurDimensionShatter_ShatterOnce",
+              "effectSlot": "UICombatBar",
+              "effectPattern": ""
+            },
+            {
+              "$type": "ONEOKBONCFN",
+              "rotationDampTime": "Eff_UI_ShieldBar_PtahurDimensionShatter_Level02",
+              "effectSlot": "UICombatBar"
+            }
+          ]
+        },
+        "ShieldBarHandler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "KDAILFEPHCK",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "topLimit": 1,
+                "sortType": "Nearest",
+                "shapeName": "CircleR1000",
+                "campTargetType": "Alliance",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "skipInitAnim": true
+            }
+          ]
+        },
+        "NoVertexState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "PTAHUR_PHANTOM_VERTEXSTATE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "WatcherHandler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "HCLAKBJKPLE",
+              "watcherId": 82188
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "ShieldBarHandler"
+        },
+        {
+          "$type": "AOOCGNCCAJB",
+          "isAdd": true,
+          "tag": "_PTAHUR_PHANTOM_"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "PTAHUR_PHANTOM_DIE",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "PTAHUR_PHANTOM_VERTEXSTATE",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "LifePercent03"
+        },
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "LifePercent02"
+        },
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "LifePercent03"
+        },
+        {
+          "$type": "LMICIIMGMGO",
+          "rotationDampTime": "Eff_UI_ShieldBar_PtahurDimensionShatter_End",
+          "effectSlot": "UICombatBar",
+          "effectPattern": ""
+        },
+        {
+          "$type": "PJENOLFAFMG",
+          "KGGEDGKGLDD": true
+        },
+        {
+          "$type": "HMIDGKNOHJM",
+          "renderNames": [
+            "MonEquip_Ptahur_Phantom_Sword_Model"
+          ],
+          "setEnable": true
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "PTAHUR_PHANTOM_DIE",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_SetVertexFxToEnd",
+      "onAbilityStart": [
+        {
+          "$type": "GFOOGEIKGBI",
+          "parameter": "End",
+          "attachPoint": "",
+          "rotationDampTime": "Eff_Monster_Ptahur_Phantom_VertexAttack_01"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_ExitVertexState",
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "PTAHUR_PHANTOM_VERTEXSTATE",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_CastDrakeAttack_01",
+      "onAbilityStart": [
+        {
+          "$type": "KFCDMIMBBLD",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": -11.5,
+              "JEBHCGDPFEJ": 1.149999976158142,
+              "LPCHALMFFOD": 1.8399959802627563
+            },
+            "alongGround": true,
+            "useRotation": true
+          },
+          "gadgetID": 42909013
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_CastDrakeAttack_02",
+      "onAbilityStart": [
+        {
+          "$type": "KFCDMIMBBLD",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 11.5,
+              "JEBHCGDPFEJ": 1.149999976158142,
+              "LPCHALMFFOD": 1.8399959802627563
+            },
+            "alongGround": true,
+            "useRotation": true
+          },
+          "gadgetID": 42909013
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_CastDrakeAttack_03",
+      "onAbilityStart": [
+        {
+          "$type": "KFCDMIMBBLD",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 11.5,
+              "JEBHCGDPFEJ": 1.149999976158142,
+              "LPCHALMFFOD": 20.83799934387207
+            },
+            "alongGround": true,
+            "useRotation": true
+          },
+          "gadgetID": 42909013
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_CastDrakeAttack_04",
+      "onAbilityStart": [
+        {
+          "$type": "KFCDMIMBBLD",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": -11.5,
+              "JEBHCGDPFEJ": 1.149999976158142,
+              "LPCHALMFFOD": 20.83799934387207
+            },
+            "alongGround": true,
+            "useRotation": true
+          },
+          "gadgetID": 42909013
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_CastPantherAttack_01",
+      "onAbilityStart": [
+        {
+          "$type": "KFCDMIMBBLD",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": -11.5,
+              "JEBHCGDPFEJ": 1.149999976158142,
+              "LPCHALMFFOD": 1.8399959802627563
+            },
+            "alongGround": true,
+            "useRotation": true
+          },
+          "gadgetID": 42909015
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_CastPantherAttack_02",
+      "onAbilityStart": [
+        {
+          "$type": "KFCDMIMBBLD",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 11.5,
+              "JEBHCGDPFEJ": 1.149999976158142,
+              "LPCHALMFFOD": 1.8399959802627563
+            },
+            "alongGround": true,
+            "useRotation": true
+          },
+          "gadgetID": 42909015
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_CastPantherAttack_03",
+      "onAbilityStart": [
+        {
+          "$type": "KFCDMIMBBLD",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 11.5,
+              "JEBHCGDPFEJ": 1.149999976158142,
+              "LPCHALMFFOD": 20.83799934387207
+            },
+            "alongGround": true,
+            "useRotation": true
+          },
+          "gadgetID": 42909015
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_CastPantherAttack_04",
+      "onAbilityStart": [
+        {
+          "$type": "KFCDMIMBBLD",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": -11.5,
+              "JEBHCGDPFEJ": 1.149999976158142,
+              "LPCHALMFFOD": 20.83799934387207
+            },
+            "alongGround": true,
+            "useRotation": true
+          },
+          "gadgetID": 42909015
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_CastJellyFishAttack_01",
+      "onAbilityStart": [
+        {
+          "$type": "KFCDMIMBBLD",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": -11.5,
+              "JEBHCGDPFEJ": 1.149999976158142,
+              "LPCHALMFFOD": 1.8399959802627563
+            },
+            "alongGround": true,
+            "useRotation": true
+          },
+          "gadgetID": 42909017
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_CastJellyFishAttack_02",
+      "onAbilityStart": [
+        {
+          "$type": "KFCDMIMBBLD",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 11.5,
+              "JEBHCGDPFEJ": 1.149999976158142,
+              "LPCHALMFFOD": 1.8399959802627563
+            },
+            "alongGround": true,
+            "useRotation": true
+          },
+          "gadgetID": 42909017
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_CastJellyFishAttack_03",
+      "onAbilityStart": [
+        {
+          "$type": "KFCDMIMBBLD",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 11.5,
+              "JEBHCGDPFEJ": 1.149999976158142,
+              "LPCHALMFFOD": 20.83799934387207
+            },
+            "alongGround": true,
+            "useRotation": true
+          },
+          "gadgetID": 42909017
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_CastJellyFishAttack_04",
+      "onAbilityStart": [
+        {
+          "$type": "KFCDMIMBBLD",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": -11.5,
+              "JEBHCGDPFEJ": 1.149999976158142,
+              "LPCHALMFFOD": 20.83799934387207
+            },
+            "alongGround": true,
+            "useRotation": true
+          },
+          "gadgetID": 42909017
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Ptahur_Underlings_KillSelf",
+      "onAbilityStart": [
+        {
+          "$type": "NCFFNDHGCMH"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Ptahur_Underlings_DrakeAttack_Vertex",
+      "modifiers": {
+        "BS": {
+          "modifierName": "",
+          "elementDurability": 0.800000011920929,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Ptahur_Phantom_VertexAttack_Vertex_Alert",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Loop"
+            }
+          ]
+        },
+        "Loop": {
+          "modifierName": "",
+          "elementDurability": 0.4000000059604645,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Ptahur_Phantom_VertexAttack_Vertex_BS",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "ownerIs": "Owner",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "alongGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 42909012
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Ptahur_Phantom_VertexAttack_Vertex_AS",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "BS"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Ptahur_Phantom_PantherAttack_Vertex",
+      "modifiers": {
+        "BS": {
+          "modifierName": "",
+          "elementDurability": 0.800000011920929,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Ptahur_Phantom_VertexAttack_Vertex_Alert",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Loop"
+            }
+          ]
+        },
+        "Loop": {
+          "modifierName": "",
+          "elementDurability": 0.4000000059604645,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Ptahur_Phantom_VertexAttack_Vertex_BS",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "ownerIs": "Owner",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "alongGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 42909014
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Ptahur_Phantom_VertexAttack_Vertex_AS",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "BS"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Ptahur_Phantom_JellyFishAttack_Vertex",
+      "modifiers": {
+        "BS": {
+          "modifierName": "",
+          "elementDurability": 0.800000011920929,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Ptahur_Phantom_VertexAttack_Vertex_Alert",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Loop"
+            }
+          ]
+        },
+        "Loop": {
+          "modifierName": "",
+          "elementDurability": 0.4000000059604645,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Ptahur_Phantom_VertexAttack_Vertex_BS",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "ownerIs": "Owner",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "alongGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 42909016
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Ptahur_Phantom_VertexAttack_Vertex_AS",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "BS"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Ptahur_Underlings_DrakeAttack",
+      "modifiers": {
+        "AttackDuration": {
+          "modifierName": "",
+          "elementDurability": 2.5999999046325684,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Ptahur_Phantom_VertexAttack_Drake_MuiltiBullet_AttackEnd",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "MDIAKCCDEAL",
+          "otherTargets": {
+            "$type": "IJOFJOGLDHE",
+            "topLimit": 1,
+            "sortType": "Nearest",
+            "shapeName": "CircleR50",
+            "campTargetType": "AllExceptSelf",
+            "doOffStage": 1.0
+          },
+          "predicates": [
+            {
+              "$type": "NIMAPECDNKD",
+              "entityTypes": [
+                "Avatar"
+              ]
+            }
+          ],
+          "turnToTargetImmediately": true
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "MPAGCPPAIHJ",
+          "otherTargets": {
+            "$type": "IJOFJOGLDHE",
+            "topLimit": 1,
+            "sortType": "Nearest",
+            "shapeName": "CircleR50",
+            "campTargetType": "AllExceptSelf",
+            "doOffStage": 1.0
+          },
+          "predicates": [
+            {
+              "$type": "NIMAPECDNKD",
+              "entityTypes": [
+                "Avatar"
+              ]
+            }
+          ],
+          "key": "_PTAHUR_PHANTOM_VERTEXATTACK_DRAKE_BLINKPOS_",
+          "born": {
+            "$type": "MPCGPEHJNNH",
+            "bornRandom": {
+              "$type": "OJKHDGHBNKP",
+              "minRandomRange": 0.0,
+              "maxRandomRange": 1.0
+            },
+            "onGround": true,
+            "onGroundRaycastUpDist": 0.800000011920929
+          },
+          "setTarget": false
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Ptahur_Drake_QuakeAttack_Alert_Ground",
+          "born": {
+            "$type": "ICKMMAHFNIM",
+            "onGround": true,
+            "alongGround": true,
+            "positionKey": "_PTAHUR_PHANTOM_VERTEXATTACK_DRAKE_BLINKPOS_",
+            "directionKey": ""
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "HJCPHKDNBOC",
+          "toPos": {
+            "$type": "ICKMMAHFNIM",
+            "onGround": true,
+            "positionKey": "_PTAHUR_PHANTOM_VERTEXATTACK_DRAKE_BLINKPOS_",
+            "directionKey": ""
+          },
+          "maxRange": 40.0,
+          "timeRange": 0.8199999928474426
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Ptahur_Underlings_DrakeAttack_JumpAttack",
+      "onAbilityStart": [
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "GMDIMKKHACA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "onGround": true,
+                "useRotation": true
+              },
+              "height": 3.0,
+              "OAHPDLJIADP": 4.0
+            },
+            "attackInfo": {
+              "attackTag": "Monster_Ptahur_DrakeAttack",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 1.0,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Fire",
+                "IPFJJJGABPL": 10.0,
+                "strikeType": "Blunt",
+                "enBreak": 50.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV4"
+              },
+              "cameraShake": {
+                "shakeType": "CustomVector",
+                "shakeRange": 0.11999999731779099,
+                "shakeTime": 0.23999999463558197,
+                "shakeDir": {
+                  "y": -1.0
+                }
+              }
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Ptahur_Phantom_PantherAttack",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Sacred_Attack04_Loop"
+          ],
+          "modifierName": "LoopEffect",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "LoopEffect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Ptahur_Panther_ChargeAttack_Loop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "MDIAKCCDEAL",
+          "otherTargets": {
+            "$type": "IJOFJOGLDHE",
+            "topLimit": 1,
+            "sortType": "Nearest",
+            "shapeName": "CircleR50",
+            "campTargetType": "AllExceptSelf",
+            "doOffStage": 1.0
+          },
+          "predicates": [
+            {
+              "$type": "NIMAPECDNKD",
+              "entityTypes": [
+                "Avatar"
+              ]
+            }
+          ],
+          "turnToTargetImmediately": true
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "NCFFNDHGCMH"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Ptahur_Underlings_PantherAttack_ChargeAttack01",
+      "onAbilityStart": [
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "JHKEHNJBMOF",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true
+              },
+              "size": {
+                "KGEPIMHBMOL": 2.0,
+                "JEBHCGDPFEJ": 2.0,
+                "LPCHALMFFOD": 2.0
+              }
+            },
+            "attackInfo": {
+              "attackTag": "Monster_Ptahur_Panther_Attack",
+              "attenuationTag": "Monster_Ptahur_Panther_Attack",
+              "attenuationGroup": "Monster_Ptahur_Panther_Attack",
+              "attenuationRedirect": "None",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.5,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Electric",
+                "IPFJJJGABPL": 10.0,
+                "strikeType": "Blunt",
+                "enBreak": 50.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV4"
+              },
+              "cameraShake": {
+                "shakeType": "CustomVector",
+                "shakeRange": 0.11999999731779099,
+                "shakeTime": 0.23999999463558197,
+                "shakeDir": {
+                  "y": -1.0
+                }
+              }
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Ptahur_Underlings_PantherAttack_ChargeAttack02",
+      "onAbilityStart": [
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "JHKEHNJBMOF",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true
+              },
+              "size": {
+                "KGEPIMHBMOL": 2.0,
+                "JEBHCGDPFEJ": 2.0,
+                "LPCHALMFFOD": 2.0
+              }
+            },
+            "attackInfo": {
+              "attackTag": "Monster_Ptahur_Panther_Attack",
+              "attenuationTag": "Monster_Ptahur_Panther_Attack",
+              "attenuationGroup": "Monster_Ptahur_Panther_Attack",
+              "attenuationRedirect": "None",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.5,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Electric",
+                "IPFJJJGABPL": 10.0,
+                "strikeType": "Blunt",
+                "enBreak": 50.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV4"
+              },
+              "cameraShake": {
+                "shakeType": "CustomVector",
+                "shakeRange": 0.11999999731779099,
+                "shakeTime": 0.23999999463558197,
+                "shakeDir": {
+                  "y": -1.0
+                }
+              }
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Ptahur_Phantom_JellyFishAttack",
+      "modifiers": {
+        "AttackDuration": {
+          "modifierName": "",
+          "elementDurability": 2.5999999046325684,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Ptahur_Phantom_VertexAttack_JellyFish_MuiltiBullet_AttackEnd",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "MDIAKCCDEAL",
+          "otherTargets": {
+            "$type": "IJOFJOGLDHE",
+            "topLimit": 1,
+            "sortType": "Nearest",
+            "shapeName": "CircleR50",
+            "campTargetType": "AllExceptSelf",
+            "doOffStage": 1.0
+          },
+          "predicates": [
+            {
+              "$type": "NIMAPECDNKD",
+              "entityTypes": [
+                "Avatar"
+              ]
+            }
+          ],
+          "turnToTargetImmediately": true
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "MDIAKCCDEAL",
+          "otherTargets": {
+            "$type": "IJOFJOGLDHE",
+            "topLimit": 1,
+            "sortType": "Nearest",
+            "shapeName": "CircleR50",
+            "campTargetType": "AllExceptSelf",
+            "doOffStage": 1.0
+          },
+          "predicates": [
+            {
+              "$type": "NIMAPECDNKD",
+              "entityTypes": [
+                "Avatar"
+              ]
+            }
+          ]
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42909003,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "direction": {
+              "$type": "MEADFIJAHPG",
+              "maxAngle": 60.0,
+              "startPoint": ""
+            },
+            "useRotation": true,
+            "attachPointName": "BulletNode"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ptahur_Phantom_Achievement",
+      "abilityMixins": [
+        {
+          "$type": "JCLLHEBBFON",
+          "watcherId": 82195,
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_WATCHER_82195_FAILED",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "Underlings_Hit_Monitor": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "Monster_Ptahur_DrakeAttack",
+                    "Monster_Ptahur_Panther_Attack",
+                    "Monster_Ptahur_JellyFish_Attack"
+                  ]
+                },
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Avatar"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "param3": 1.0,
+                  "key": "_WATCHER_82195_FAILED",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_WATCHER_82195_FAILED",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Underlings_Hit_Monitor"
+        }
+      ]
+    }
+  }
+]

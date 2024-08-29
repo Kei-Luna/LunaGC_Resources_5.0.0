@@ -1,0 +1,485 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Scorpion_None_SteerAttack",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Attack_01"
+          ],
+          "startNormalizedTime": 0.20000000298023224,
+          "endNormalizedTime": 0.6000000238418579,
+          "angularSpeed": 120.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Turn"
+          ],
+          "endNormalizedTime": 10.0,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Scorpion_None_Personality1",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Personality1"
+          ],
+          "modifierName": "Personality1_Effect",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Personality1_Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Scorpion_None_Personality1",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Scorpion_None_SitState",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Sit",
+            "Sit_Alert_BS"
+          ],
+          "modifierName": "Sit_Collider",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Sit_Alert_BS"
+          ],
+          "modifierName": "Sit_Alert_Effect",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Sit_Alert_Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Scorpion_None_DigOut",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Sit_Collider": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider",
+                "PushCollider_Sleep"
+              ]
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox",
+                "HitBox_Sleep"
+              ]
+            },
+            {
+              "$type": "CNMAKBJBODN",
+              "canBeHandledOnRecover": true,
+              "hdMeshKey": "Default"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider_Sleep"
+              ]
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_Sleep"
+              ]
+            },
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CNMAKBJBODN",
+              "enable": true,
+              "hdMeshKey": "Default"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Scorpion_None_SleepState",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Lying",
+            "Sleep_Alert_BS"
+          ],
+          "modifierName": "Sleep_Collider",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Sleep_Collider": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ]
+            },
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider_Sleep"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox"
+              ]
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_Sleep"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CNMAKBJBODN",
+              "canBeHandledOnRecover": true,
+              "hdMeshKey": "Default"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider_Sleep"
+              ]
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_Sleep"
+              ]
+            },
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CNMAKBJBODN",
+              "enable": true,
+              "hdMeshKey": "Default"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Scorpion_None_Disappear",
+      "abilityMixins": [
+        {
+          "$type": "EAKJOFAIAPH",
+          "poseIDs": [
+            105
+          ],
+          "enterActions": [
+            {
+              "$type": "FLJLMOKONMB",
+              "valueRangeMax": 10.0,
+              "valueRangeMin": 6.0,
+              "overrideMapKey": "RandomTimer"
+            },
+            {
+              "$type": "GFFKENEJFFB",
+              "intID": "DigNow"
+            }
+          ]
+        },
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            105
+          ],
+          "modifierName": "Flee"
+        },
+        {
+          "$type": "AOKOIIHJJPJ",
+          "alertness": [
+            2
+          ],
+          "modifierName": "Flee_CountDown"
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Flee",
+          "modifierName": "DisappearTimer",
+          "normalizeStart": 0.5,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Flee",
+          "modifierName": "Flee_ColliderOff",
+          "normalizeStart": 0.5,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Flee"
+          ],
+          "modifierName": "Flee_Effect",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Attack_01"
+          ],
+          "modifierName": "CountAttackTimes",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AOKOIIHJJPJ",
+          "alertness": [
+            0
+          ],
+          "modifierName": "AttackTimesRes"
+        }
+      ],
+      "abilitySpecials": {
+        "FleeTimer": 20.0,
+        "RandomTimer": 8.0
+      },
+      "modifiers": {
+        "Flee_Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Scorpion_None_DigIn",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "CountAttackTimes": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "AttackTimes",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "AttackTimesRes": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "AttackTimes",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Flee_ColliderOff": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider",
+                "PushCollider_Sleep"
+              ]
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox",
+                "HitBox_Sleep"
+              ]
+            },
+            {
+              "$type": "CNMAKBJBODN",
+              "canBeHandledOnRecover": true,
+              "hdMeshKey": "Default"
+            }
+          ]
+        },
+        "Flee_CountDown": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "AttackTimes",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                [
+                  0.0,
+                  1.0,
+                  "SUB",
+                  "FleeTimer",
+                  "ADD"
+                ],
+                "FleeTimer"
+              ],
+              "modifierNameSteps": [
+                "Flee_Now"
+              ]
+            }
+          ]
+        },
+        "Flee_Now": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFFKENEJFFB",
+              "intID": "FleeNow",
+              "value": 1
+            }
+          ]
+        },
+        "Flee": {
+          "modifierName": "",
+          "elementDurability": "RandomTimer",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "GFFKENEJFFB",
+              "intID": "FleeNow",
+              "value": 2
+            },
+            {
+              "$type": "GFFKENEJFFB",
+              "intID": "DigNow",
+              "value": 1
+            }
+          ]
+        },
+        "DisappearTimer": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "Sit",
+              "param3": true
+            },
+            {
+              "$type": "AKJOHBCCCIJ",
+              "dieImmediately": true
+            },
+            {
+              "$type": "AKIIMECIGKE",
+              "duration": 2.0
+            },
+            {
+              "$type": "HBNEMPLJCMB",
+              "hide": true
+            },
+            {
+              "$type": "NCFFNDHGCMH",
+              "duration": 1.0,
+              "killSelfType": "Disappear",
+              "value": true,
+              "banExp": true
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "FLJLMOKONMB",
+          "valueRangeMax": 4.0,
+          "valueRangeMin": 2.0,
+          "overrideMapKey": "FleeTimer",
+          "roundType": "Floor"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  }
+]

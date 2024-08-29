@@ -1,0 +1,2968 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Gargoyle_Ground_Pose",
+      "abilityMixins": [
+        {
+          "$type": "AOKOIIHJJPJ",
+          "alertness": [
+            2
+          ],
+          "modifierName": "Gargoyle_Ground_AlertHandler"
+        }
+      ],
+      "modifiers": {
+        "Gargoyle_Ground_AlertHandler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "_GARGOYLE_GROUND_POSE_",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5,
+                2.5
+              ],
+              "modifierNameSteps": [
+                "Pose_Initial",
+                "Pose_Normal",
+                "Pose_ElementSkill"
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "GJCAPCBELPA",
+              "abilityName": "Monster_Gargoyle_Ground_PoseElement_Begin"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "GJCAPCBELPA",
+              "abilityName": "Monster_Gargoyle_Ground_PoseElement_End"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Gargoyle_Ground_AlertHandler_Delay"
+            }
+          ]
+        },
+        "Gargoyle_Ground_AlertHandler_Delay": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_GARGOYLE_GROUND_ELEMENT_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Pose_Initial": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "UNIQUE_Gargoyle_Ground_InitialTimer"
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "ElementSkill"
+            }
+          ]
+        },
+        "Pose_Normal": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "ElementSkill"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "UNIQUE_Gargoyle_Ground_OtherTimer"
+            }
+          ]
+        },
+        "Pose_ElementSkill": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "ElementSkill",
+              "param3": true
+            },
+            {
+              "$type": "IPMMJGMONCI",
+              "skillIDs": [
+                501
+              ]
+            }
+          ],
+          "onChangeAuthority": [
+            {
+              "$type": "IPMMJGMONCI",
+              "skillIDs": [
+                501
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Gargoyle_Ground_InitialTimer": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 10.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 2.0,
+              "key": "_GARGOYLE_GROUND_POSE_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "UNIQUE_Gargoyle_Ground_OtherTimer": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 20.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 2.0,
+              "key": "_GARGOYLE_GROUND_POSE_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Gargoyle_Ground_PoseElement_Begin",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_GARGOYLE_GROUND_ELEMENT_",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5,
+            2.5,
+            3.5,
+            4.5,
+            5.5,
+            6.5,
+            7.5
+          ],
+          "modifierNameSteps": [
+            "Pose_Element_None",
+            "Pose_Element_Fire",
+            "Pose_Element_Water",
+            "Pose_Element_Grass",
+            "Pose_Element_Electric",
+            "Pose_Element_Ice",
+            "Pose_Element_Wind",
+            "Pose_Element_Rock"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Pose_Element_None": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "ElementTag",
+              "param3": 0.0
+            }
+          ]
+        },
+        "Pose_Element_Fire": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_FireSubHurtDelta": 0.4000000059604645
+          },
+          "onAdded": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "ElementTag",
+              "param3": 1.0
+            }
+          ]
+        },
+        "Pose_Element_Water": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_WaterSubHurtDelta": 0.4000000059604645
+          },
+          "onAdded": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "ElementTag",
+              "param3": 2.0
+            }
+          ]
+        },
+        "Pose_Element_Grass": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_GrassSubHurtDelta": 0.4000000059604645
+          },
+          "onAdded": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "ElementTag",
+              "param3": 3.0
+            }
+          ]
+        },
+        "Pose_Element_Electric": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_ElecSubHurtDelta": 0.4000000059604645
+          },
+          "onAdded": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "ElementTag",
+              "param3": 4.0
+            }
+          ]
+        },
+        "Pose_Element_Ice": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_IceSubHurtDelta": 0.4000000059604645
+          },
+          "onAdded": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "ElementTag",
+              "param3": 5.0
+            }
+          ]
+        },
+        "Pose_Element_Wind": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_WindSubHurtDelta": 0.4000000059604645
+          },
+          "onAdded": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "ElementTag",
+              "param3": 6.0
+            }
+          ]
+        },
+        "Pose_Element_Rock": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_RockSubHurtDelta": 0.4000000059604645
+          },
+          "onAdded": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "ElementTag",
+              "param3": 7.0
+            }
+          ]
+        },
+        "UNIQUE_Gargoyle_Ground_ElementStatistic": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "KAJJEDHGDHE",
+              "damageElementTypeKey": "_GARGOYLE_GROUND_ELEMENT_STATISTICS_",
+              "damageAmountKey": "",
+              "onExitActions": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "_GARGOYLE_GROUND_ELEMENT_STATISTICS_",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "param3": 0.0,
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "_GARGOYLE_GROUND_ELEMENT_STATISTICS_",
+                      "param3": 1.0
+                    }
+                  ],
+                  "param3": 1.0,
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "_GARGOYLE_GROUND_ELEMENT_STATISTICS_",
+                      "param3": 2.0
+                    }
+                  ],
+                  "param3": 2.0,
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "_GARGOYLE_GROUND_ELEMENT_STATISTICS_",
+                      "param3": 3.0
+                    }
+                  ],
+                  "param3": 3.0,
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "_GARGOYLE_GROUND_ELEMENT_STATISTICS_",
+                      "param3": 4.0
+                    }
+                  ],
+                  "param3": 4.0,
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "_GARGOYLE_GROUND_ELEMENT_STATISTICS_",
+                      "param3": 5.0
+                    }
+                  ],
+                  "param3": 5.0,
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "_GARGOYLE_GROUND_ELEMENT_STATISTICS_",
+                      "param3": 7.0
+                    }
+                  ],
+                  "param3": 6.0,
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "_GARGOYLE_GROUND_ELEMENT_STATISTICS_",
+                      "param3": 8.0
+                    }
+                  ],
+                  "param3": 7.0,
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "_GARGOYLE_GROUND_ELEMENT_STATISTICS_",
+                      "param3": -1.0
+                    }
+                  ],
+                  "param3": 0.0,
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Gargoyle_Ground_ElementStatistic"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Gargoyle_Ground_ElementStatistic"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Gargoyle_Ground_PoseElement_End",
+      "onAbilityStart": [
+        {
+          "$type": "KBODPNEEFGD",
+          "modifierName": "UNIQUE_Gargoyle_Ground_ElementStatistic"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Gargoyle_Ground_Alert",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Alert_PowerOff",
+            "Machinery"
+          ],
+          "modifierName": "Gargoyle_Ground_Alert_GVHandler",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "NormalIdle_PowerOff",
+            "NormalIdle_Machinery"
+          ],
+          "modifierName": "Gargoyle_Ground_TexHandler",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            102,
+            111
+          ],
+          "modifierName": "Gargoyle_Ground_Alert_SpecialAlert"
+        }
+      ],
+      "modifiers": {
+        "Gargoyle_Ground_Alert_GVHandler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_GARGOYLE_GROUND_WEAKNESS_HEAD_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_GARGOYLE_GROUND_WEAKNESS_CHEST_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "SleepToNormal",
+              "attachPoint": "",
+              "damageRatio": "Bool",
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_Weakness_Head"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "SleepToNormal",
+              "attachPoint": "",
+              "damageRatio": "Bool",
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_Weakness_Chest"
+            }
+          ]
+        },
+        "Gargoyle_Ground_TexHandler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "PowerOffTag",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "PowerOffTag"
+            }
+          ]
+        },
+        "Gargoyle_Ground_Alert_SpecialAlert": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_GARGOYLE_GROUND_WEAKNESS_HEAD_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_GARGOYLE_GROUND_WEAKNESS_CHEST_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "GFOOGEIKGBI",
+          "parameter": "SleepToNormal",
+          "attachPoint": "",
+          "damageRatio": "Bool",
+          "value": 1,
+          "rotationDampTime": "Eff_Monster_Gargoyle_Ground_Weakness_Head"
+        },
+        {
+          "$type": "GFOOGEIKGBI",
+          "parameter": "SleepToNormal",
+          "attachPoint": "",
+          "damageRatio": "Bool",
+          "value": 1,
+          "rotationDampTime": "Eff_Monster_Gargoyle_Ground_Weakness_Chest"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Gargoyle_Ground_ExitBattle",
+      "abilityMixins": [
+        {
+          "$type": "AOKOIIHJJPJ",
+          "alertness": [
+            2
+          ],
+          "modifierName": "ExitBattle"
+        }
+      ],
+      "modifiers": {
+        "ExitBattle": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_GARGOYLE_GROUND_POSE_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_Gargoyle_Ground_InitialTimer"
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_Gargoyle_Ground_OtherTimer"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_GARGOYLE_GROUND_POSE_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_GARGOYLE_GROUND_WEAKNESS_HEAD_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_GARGOYLE_GROUND_WEAKNESS_CHEST_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Gargoyle_Ground_Steer",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Alert"
+          ],
+          "angularSpeed": 90.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Turn"
+          ],
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "ChargeAtk_BS"
+          ],
+          "startNormalizedTime": 0.6000000238418579,
+          "angularSpeed": 120.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "ChargeAtk_Loop"
+          ],
+          "angularSpeed": 90.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "NormalAtk01"
+          ],
+          "startNormalizedTime": 0.47999998927116394,
+          "endNormalizedTime": 0.7400000095367432,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "NormalAtk02"
+          ],
+          "startNormalizedTime": 0.3199999928474426,
+          "endNormalizedTime": 0.49000000953674316,
+          "angularSpeed": 120.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "ElementAtk"
+          ],
+          "startNormalizedTime": 0.05999999865889549,
+          "endNormalizedTime": 0.17000000178813934,
+          "angularSpeed": 120.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Gargoyle_Ground_HeadControl",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "NormalIdle",
+            "NormalMove",
+            "Turn",
+            "Alert"
+          ],
+          "modifierName": "Gargoyle_Ground_HeadControlEnable",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "JJIHJPCPPGO",
+          "abilityStates": [
+            "ElementFrozen",
+            "ElementPetrifaction"
+          ],
+          "modifierName": "Gargoyle_Ground_HeadControlDisable_AbilityState"
+        }
+      ],
+      "modifiers": {
+        "Gargoyle_Ground_HeadControlEnable": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Gargoyle_Ground_HeadControlDisable"
+            },
+            {
+              "$type": "KGKOLOLDKHH",
+              "partRootNames": [
+                "Neck"
+              ],
+              "enable": true
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_GARGOYLE_GROUND_HEADCONTROL_STATE_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Gargoyle_Ground_HeadControlDisable"
+            }
+          ]
+        },
+        "Gargoyle_Ground_HeadControlDisable": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Gargoyle_Ground_HeadControlEnable"
+            },
+            {
+              "$type": "KGKOLOLDKHH",
+              "partRootNames": [
+                "Neck"
+              ]
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_GARGOYLE_GROUND_HEADCONTROL_STATE_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Gargoyle_Ground_HeadControlDisable_AbilityState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Gargoyle_Ground_HeadControlEnable_AbilityState"
+            },
+            {
+              "$type": "KGKOLOLDKHH",
+              "partRootNames": [
+                "Neck"
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_HEADCONTROL_STATE_",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "modifierName": "Gargoyle_Ground_HeadControlEnable_AbilityState"
+            }
+          ]
+        },
+        "Gargoyle_Ground_HeadControlEnable_AbilityState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Gargoyle_Ground_HeadControlDisable_AbilityState"
+            },
+            {
+              "$type": "KGKOLOLDKHH",
+              "partRootNames": [
+                "Neck"
+              ],
+              "enable": true
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_GARGOYLE_GROUND_HEADCONTROL_STATE_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Gargoyle_Ground_PowerOff",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Born",
+            "NormalIdle_PowerOff",
+            "Alert_PowerOff"
+          ],
+          "modifierName": "UNIQUE_Gargoyle_Ground_PowerOff",
+          "predicates": [
+            {
+              "$type": "NIFDMKMHAGJ",
+              "logic": "Equal",
+              "param3": 102.0,
+              "parameter": "PoseID"
+            }
+          ],
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_Gargoyle_Ground_PowerOff": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Entity_MassRatio": 1000.0,
+            "Entity_WeightRatio": 5.0,
+            "Actor_EndureDelta": 0.0
+          },
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "PowerOff_Invincible"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "PowerOff_IsGhostToAllied"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "PowerOff_IsGhostToEnemy"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "PowerOff_MuteTaunt"
+            },
+            {
+              "$type": "HBNEMPLJCMB",
+              "hide": true
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "PowerOff",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "HBNEMPLJCMB"
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "PowerOff"
+            }
+          ]
+        },
+        "PowerOff_Invincible": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "Invincible"
+        },
+        "PowerOff_IsGhostToAllied": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "IsGhostToAllied"
+        },
+        "PowerOff_IsGhostToEnemy": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "IsGhostToEnemy"
+        },
+        "PowerOff_MuteTaunt": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "MuteTaunt"
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "UNIQUE_Gargoyle_Ground_PowerOff"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Gargoyle_Ground_Weakness_Effect",
+      "modifiers": {
+        "Gargoyle_Ground_Weakness_Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_Weakness_Head",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_Weakness_Chest",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Gargoyle_Ground_Weakness_Effect"
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "Gargoyle_Ground_Weakness_Effect"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Gargoyle_Ground_Weakness_Head",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_GARGOYLE_GROUND_WEAKNESS_HEAD_",
+          "gvInTalk": 1.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5,
+            2.5,
+            3.5
+          ],
+          "modifierNameSteps": [
+            "Weakness_Head_Alert",
+            "Weakness_Head_Normal",
+            "Weakness_Head_Activated",
+            "Weakness_Head_Weak"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Weakness_Head_Alert": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "WeaknessState",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_Weakness_Head"
+            }
+          ]
+        },
+        "Weakness_Head_Normal": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "WeaknessState",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 1,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_Weakness_Head"
+            }
+          ]
+        },
+        "Weakness_Head_Activated": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "WeaknessState",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 2,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_Weakness_Head"
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_HeadWeakness"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "Weakness_Head_BeHit"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_HeadWeakness"
+              ]
+            }
+          ]
+        },
+        "Weakness_Head_BeHit": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onBeingHit": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "OHKJOADLOBB",
+                  "hitBoxNames": [
+                    "HitBox_HeadWeakness"
+                  ]
+                },
+                {
+                  "$type": "KNBFJBFMGLD",
+                  "logic": "GreaterOrEqual",
+                  "enBreak": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "GroundWeakTrigger",
+                  "mpTriggerOnRemote": true
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "param3": 1.0,
+                  "key": "_GARGOYLE_GROUND_POSE_",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "param3": 3.0,
+                  "key": "_GARGOYLE_GROUND_WEAKNESS_HEAD_",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        "Weakness_Head_Weak": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "WeaknessState",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 4,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_Weakness_Head"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Gargoyle_Ground_Weakness_Chest",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_GARGOYLE_GROUND_WEAKNESS_CHEST_",
+          "gvInTalk": 1.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5,
+            2.5,
+            3.5,
+            4.5
+          ],
+          "modifierNameSteps": [
+            "Weakness_Chest_Alert",
+            "Weakness_Chest_Normal",
+            "Weakness_Chest_Activated",
+            "Weakness_Chest_Weak_First",
+            "Weakness_Chest_Weak_Second"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Weakness_Chest_Alert": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "WeaknessState",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_Weakness_Chest"
+            }
+          ]
+        },
+        "Weakness_Chest_Normal": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "WeaknessState",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 1,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_Weakness_Chest"
+            }
+          ]
+        },
+        "Weakness_Chest_Activated": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "WeaknessState",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 2,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_Weakness_Chest"
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_ChestWeakness"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "Weakness_Chest_Activated_BeHit"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_ChestWeakness"
+              ]
+            }
+          ]
+        },
+        "Weakness_Chest_Activated_BeHit": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onBeingHit": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "OHKJOADLOBB",
+                  "hitBoxNames": [
+                    "HitBox_ChestWeakness"
+                  ]
+                },
+                {
+                  "$type": "KNBFJBFMGLD",
+                  "logic": "GreaterOrEqual",
+                  "enBreak": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "HitChestGroundTrigger",
+                  "mpTriggerOnRemote": true
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "param3": 3.0,
+                  "key": "_GARGOYLE_GROUND_WEAKNESS_CHEST_",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        "Weakness_Chest_Weak_First": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "WeaknessState",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 3,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_Weakness_Chest"
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_ChestWeakness"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "Weakness_Chest_Weak_First_BeHit"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_ChestWeakness"
+              ]
+            }
+          ]
+        },
+        "Weakness_Chest_Weak_First_BeHit": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onBeingHit": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "OHKJOADLOBB",
+                  "hitBoxNames": [
+                    "HitBox_ChestWeakness"
+                  ]
+                },
+                {
+                  "$type": "KNBFJBFMGLD",
+                  "logic": "GreaterOrEqual",
+                  "enBreak": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "GroundWeakTrigger",
+                  "mpTriggerOnRemote": true
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "param3": 4.0,
+                  "key": "_GARGOYLE_GROUND_WEAKNESS_CHEST_",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        "Weakness_Chest_Weak_Second": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "WeaknessState",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 4,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_Weakness_Chest"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_GARGOYLE_GROUND_POSE_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Gargoyle_Ground_Weak",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Weak"
+          ],
+          "modifierName": "Gargoyler_Ground_Weak_HitTag",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Hit_HeadGround",
+            "Hit_ChestGround",
+            "Weak_BS",
+            "Weak_Loop"
+          ],
+          "modifierName": "Gargoyler_Ground_Weak_WeaknessRecover",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Hit_ChestGround"
+          ],
+          "modifierName": "Gargoyler_Ground_Weak_ElementSkillRecover",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Weak_BS",
+            "Weak_Loop"
+          ],
+          "modifierName": "Gargoyler_Ground_Weak_Effect",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Gargoyler_Ground_Weak_HitTag": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "canBeHandledOnRecover": true,
+              "boolID": "GroundWeakTag",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "canBeHandledOnRecover": true,
+              "boolID": "GroundWeakTag"
+            }
+          ],
+          "onKill": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "canBeHandledOnRecover": true,
+              "boolID": "GroundWeakDieTag",
+              "param3": true
+            }
+          ]
+        },
+        "Gargoyler_Ground_Weak_WeaknessRecover": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_GARGOYLE_GROUND_WEAKNESS_CHEST_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_GARGOYLE_GROUND_WEAKNESS_HEAD_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_GARGOYLE_GROUND_WEAKNESS_CHEST_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_GARGOYLE_GROUND_WEAKNESS_HEAD_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Gargoyler_Ground_Weak_ElementSkillRecover": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "IPMMJGMONCI",
+              "skillIDs": [
+                501
+              ]
+            }
+          ]
+        },
+        "Gargoyler_Ground_Weak_Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Gargoyle_Airborne_Weak_Loop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider_Weak"
+              ],
+              "setEnable": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider_Weak"
+              ]
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_GARGOYLE_GROUND_ELEMENT_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Gargoyle_Ground_ElementAtk_Settle",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "ElementAtk"
+          ],
+          "modifierName": "Gargoyle_Ground_ElementAtk_Effect",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Gargoyle_Ground_ElementAtk_Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "TankTag",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "TankTag"
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_Gargoyle_Ground_ElementAtk_Effect_Wings"
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_Gargoyle_Ground_ElementAtk_Effect_BS"
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_Gargoyle_Ground_ElementAtk_Effect_Chest"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "GJCAPCBELPA",
+          "abilityName": "Monster_Gargoyle_Ground_PoseElement_End"
+        },
+        {
+          "$type": "GJCAPCBELPA",
+          "abilityName": "Monster_Gargoyle_Ground_PoseElement_Begin"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_GARGOYLE_GROUND_POSE_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Gargoyle_Ground_ElementAtk_Activated",
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 2.0,
+          "key": "_GARGOYLE_GROUND_WEAKNESS_HEAD_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Gargoyle_Ground_ElementAtk_Recover",
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_GARGOYLE_GROUND_WEAKNESS_HEAD_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Gargoyle_Ground_ElementAtk_Effect_BS",
+      "modifiers": {
+        "UNIQUE_Gargoyle_Ground_ElementAtk_Effect_BS": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Gargoyle_Airborne_ElementAtk_BS",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 0.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "rotationDampTime": "Eff_Monster_Gargoyle_Airborne_ElementAtk_BS"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 1.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 1,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Airborne_ElementAtk_BS"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 2.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 2,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Airborne_ElementAtk_BS"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 3.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 3,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Airborne_ElementAtk_BS"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 4.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 4,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Airborne_ElementAtk_BS"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 5.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 5,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Airborne_ElementAtk_BS"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 6.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 6,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Airborne_ElementAtk_BS"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 7.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 7,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Airborne_ElementAtk_BS"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "UNIQUE_Gargoyle_Ground_ElementAtk_Effect_BS"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Gargoyle_Ground_ElementAtk_Effect_Wings",
+      "modifiers": {
+        "UNIQUE_Gargoyle_Ground_ElementAtk_Effect_Wings": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ElementAtk_WingL",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "attachPointName": "WingL"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0,
+              "setSelfAsEffectPluginTarget": true
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ElementAtk_WingR",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "attachPointName": "WingR"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0,
+              "setSelfAsEffectPluginTarget": true
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 0.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ElementAtk_WingL"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 1.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 1,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ElementAtk_WingL"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 2.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 2,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ElementAtk_WingL"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 3.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 3,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ElementAtk_WingL"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 4.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 4,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ElementAtk_WingL"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 5.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 5,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ElementAtk_WingL"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 6.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 6,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ElementAtk_WingL"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 7.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 7,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ElementAtk_WingL"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 0.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ElementAtk_WingR"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 1.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 1,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ElementAtk_WingR"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 2.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 2,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ElementAtk_WingR"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 3.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 3,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ElementAtk_WingR"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 4.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 4,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ElementAtk_WingR"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 5.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 5,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ElementAtk_WingR"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 6.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 6,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ElementAtk_WingR"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 7.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 7,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ElementAtk_WingR"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "UNIQUE_Gargoyle_Ground_ElementAtk_Effect_Wings"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Gargoyle_Ground_ElementAtk_Effect_Chest",
+      "modifiers": {
+        "UNIQUE_Gargoyle_Ground_ElementAtk_Effect_Chest": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ElementAtk_AS_Chest",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 0.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ElementAtk_AS_Chest"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 1.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 1,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ElementAtk_AS_Chest"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 2.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 2,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ElementAtk_AS_Chest"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 3.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 3,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ElementAtk_AS_Chest"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 4.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 4,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ElementAtk_AS_Chest"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 5.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 5,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ElementAtk_AS_Chest"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 6.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 6,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ElementAtk_AS_Chest"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_GARGOYLE_GROUND_ELEMENT_",
+                  "param3": 7.0
+                }
+              ],
+              "parameter": "ElementTag",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 7,
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ElementAtk_AS_Chest"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "UNIQUE_Gargoyle_Ground_ElementAtk_Effect_Chest"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Gargoyle_Ground_ElementAtk_Bullet",
+      "onAbilityStart": [
+        {
+          "$type": "CAKDDHLKOAB",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_GARGOYLE_GROUND_ELEMENT_",
+              "param3": 0.0
+            },
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_GARGOYLE_ABYSSTAG_",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "bulletID": 42403032,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "attachPointName": "ElementAtkPoint"
+          }
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_GARGOYLE_GROUND_ELEMENT_",
+              "param3": 1.0
+            },
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_GARGOYLE_ABYSSTAG_",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "bulletID": 42403033,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "attachPointName": "ElementAtkPoint"
+          }
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_GARGOYLE_GROUND_ELEMENT_",
+              "param3": 2.0
+            },
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_GARGOYLE_ABYSSTAG_",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "bulletID": 42403034,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "attachPointName": "ElementAtkPoint"
+          }
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_GARGOYLE_GROUND_ELEMENT_",
+              "param3": 3.0
+            },
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_GARGOYLE_ABYSSTAG_",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "bulletID": 42403035,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "attachPointName": "ElementAtkPoint"
+          }
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_GARGOYLE_GROUND_ELEMENT_",
+              "param3": 4.0
+            },
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_GARGOYLE_ABYSSTAG_",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "bulletID": 42403036,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "attachPointName": "ElementAtkPoint"
+          }
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_GARGOYLE_GROUND_ELEMENT_",
+              "param3": 5.0
+            },
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_GARGOYLE_ABYSSTAG_",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "bulletID": 42403037,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "attachPointName": "ElementAtkPoint"
+          }
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_GARGOYLE_GROUND_ELEMENT_",
+              "param3": 6.0
+            },
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_GARGOYLE_ABYSSTAG_",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "bulletID": 42403038,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "attachPointName": "ElementAtkPoint"
+          }
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_GARGOYLE_GROUND_ELEMENT_",
+              "param3": 7.0
+            },
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_GARGOYLE_ABYSSTAG_",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "bulletID": 42403039,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "attachPointName": "ElementAtkPoint"
+          }
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_GARGOYLE_GROUND_ELEMENT_",
+              "param3": 0.0
+            },
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_GARGOYLE_ABYSSTAG_",
+              "param3": 1.0
+            }
+          ],
+          "bulletID": 42403032,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "attachPointName": "ElementAtkPoint"
+          },
+          "lifeByOwnerV2": true
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_GARGOYLE_GROUND_ELEMENT_",
+              "param3": 1.0
+            },
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_GARGOYLE_ABYSSTAG_",
+              "param3": 1.0
+            }
+          ],
+          "bulletID": 42403033,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "attachPointName": "ElementAtkPoint"
+          },
+          "lifeByOwnerV2": true
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_GARGOYLE_GROUND_ELEMENT_",
+              "param3": 2.0
+            },
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_GARGOYLE_ABYSSTAG_",
+              "param3": 1.0
+            }
+          ],
+          "bulletID": 42403034,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "attachPointName": "ElementAtkPoint"
+          },
+          "lifeByOwnerV2": true
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_GARGOYLE_GROUND_ELEMENT_",
+              "param3": 3.0
+            },
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_GARGOYLE_ABYSSTAG_",
+              "param3": 1.0
+            }
+          ],
+          "bulletID": 42403035,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "attachPointName": "ElementAtkPoint"
+          },
+          "lifeByOwnerV2": true
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_GARGOYLE_GROUND_ELEMENT_",
+              "param3": 4.0
+            },
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_GARGOYLE_ABYSSTAG_",
+              "param3": 1.0
+            }
+          ],
+          "bulletID": 42403036,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "attachPointName": "ElementAtkPoint"
+          },
+          "lifeByOwnerV2": true
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_GARGOYLE_GROUND_ELEMENT_",
+              "param3": 5.0
+            },
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_GARGOYLE_ABYSSTAG_",
+              "param3": 1.0
+            }
+          ],
+          "bulletID": 42403037,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "attachPointName": "ElementAtkPoint"
+          },
+          "lifeByOwnerV2": true
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_GARGOYLE_GROUND_ELEMENT_",
+              "param3": 6.0
+            },
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_GARGOYLE_ABYSSTAG_",
+              "param3": 1.0
+            }
+          ],
+          "bulletID": 42403038,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "attachPointName": "ElementAtkPoint"
+          },
+          "lifeByOwnerV2": true
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_GARGOYLE_GROUND_ELEMENT_",
+              "param3": 7.0
+            },
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "_GARGOYLE_ABYSSTAG_",
+              "param3": 1.0
+            }
+          ],
+          "bulletID": 42403039,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "attachPointName": "ElementAtkPoint"
+          },
+          "lifeByOwnerV2": true
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Gargoyle_Ground_ChargeAtk_Bullet",
+      "onAbilityStart": [
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42403031,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "attachPointName": "RootNode"
+          },
+          "lifeByOwnerIsAlive": true,
+          "trackTarget": "Self"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Gargoyle_Ground_ChargeAtk_EffectAdd",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "ChargeAtk_BS",
+            "ChargeAtk_Loop"
+          ],
+          "modifierName": "Gargoyle_Ground_ChargeAtk_Handler",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_Gargoyle_Ground_ChargeAtk_LoopEffect": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Gargoyle_Ground_ChargeAtk_Loop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Gargoyle_Ground_ChargeAtk_Handler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_GARGOYLE_GROUND_CHARGEATK_FOLLOWBULLET_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "GJCAPCBELPA",
+              "abilityName": "Monster_Gargoyle_Ground_ElementAtk_Activated"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_GARGOYLE_GROUND_CHARGEATK_FOLLOWBULLET_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_Gargoyle_Ground_ChargeAtk_LoopEffect"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_GARGOYLE_GROUND_WEAKNESS_HEAD_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Gargoyle_Ground_ChargeAtk_LoopEffect"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Gargoyle_Ground_ChargeAtk_FollowBullet_Hit",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_GARGOYLE_GROUND_CHARGEATK_BULLETHIT_",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            0.0,
+            0.5,
+            1.5,
+            2.5
+          ],
+          "modifierNameSteps": [
+            "Empty",
+            "Gargoyle_Ground_ChargeAtk_HitSummon",
+            "Gargoyle_Ground_ChargeAtk_HitAvatar"
+          ]
+        },
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueTarget": "Owner",
+          "globalValueKey": "_GARGOYLE_GROUND_CHARGEATK_FOLLOWBULLET_",
+          "valueSteps": [
+            0.0,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Empty",
+            "Gargoyle_Ground_ChargeAtk_FollowBullet_Kill"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Gargoyle_Ground_ChargeAtk_HitAvatar": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "target": "Owner",
+              "PLLJBINMGJK": "ChargeAtkGroundEnd2"
+            }
+          ]
+        },
+        "Gargoyle_Ground_ChargeAtk_HitSummon": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "target": "Owner",
+              "PLLJBINMGJK": "ChargeAtkGroundEnd1"
+            }
+          ]
+        },
+        "Gargoyle_Ground_ChargeAtk_FollowBullet_Kill": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        },
+        "Kill_Summon_Gadget": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        },
+        "Empty": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JGEBAJLEBMO"
+              },
+              "OAHPDLJIADP": 1.0
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "Gargoyle_Ground_ChargeAtk",
+              "attenuationGroup": "Gargoyle_Ground_ChargeAtk",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.800000011920929,
+                "actorWindSubHurtDelta": 0.0,
+                "IPFJJJGABPL": 50.0,
+                "strikeType": "Blunt",
+                "enBreak": 150.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV4",
+                "overrideHitImpulse": {
+                  "hitLevel": "Heavy",
+                  "IMIJMPGJOGG": 1000.0,
+                  "BPCDKKBKOBM": 200.0
+                },
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "INBCDALOHMP",
+          "target": "Target",
+          "targetPredicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_COMMON_GADGET_ISSUMMON",
+              "param3": 0.0,
+              "compareType": "MoreThan"
+            },
+            {
+              "$type": "NIMAPECDNKD",
+              "target": "TargetOriginOwner",
+              "entityTypes": [
+                "Avatar",
+                "Vehicle",
+                "Partner"
+              ]
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Caster",
+              "param3": 1.0,
+              "key": "_GARGOYLE_GROUND_CHARGEATK_BULLETHIT_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PELJALPANCA",
+              "target": "Target",
+              "modifierName": "Kill_Summon_Gadget"
+            }
+          ]
+        },
+        {
+          "$type": "INBCDALOHMP",
+          "target": "Target",
+          "targetPredicates": [
+            {
+              "$type": "NIMAPECDNKD",
+              "entityTypes": [
+                "Avatar",
+                "Vehicle",
+                "Partner"
+              ]
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Caster",
+              "param3": 2.0,
+              "key": "_GARGOYLE_GROUND_CHARGEATK_BULLETHIT_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Gargoyle_Ground_NormalAtk01_TailOn",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "NormalAtk01"
+          ],
+          "modifierName": "Gargoyle_Ground_Tail",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Gargoyle_Ground_Tail": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "TailTag"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "KJCHPDPBJHL",
+          "boolID": "TailTag",
+          "param3": true
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Gargoyle_Ground_NormalAtk01_TailOff",
+      "onAbilityStart": [
+        {
+          "$type": "KJCHPDPBJHL",
+          "boolID": "TailTag"
+        }
+      ]
+    }
+  }
+]

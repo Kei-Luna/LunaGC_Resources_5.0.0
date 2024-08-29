@@ -1,0 +1,420 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Homeworld_NPCObj_Ani_Djinn_Normal",
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_ABILITY_Djinn_Advance",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Homeworld_NPCObj_Ani_Djinn_Advance",
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_ABILITY_Djinn_Advance",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Homeworld_NPCObj_Ani_Djinn_AdvanceWithCloud",
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_ABILITY_Djinn_Advance",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "KGKOLOLDKHH",
+          "partRootNames": [
+            "CloudRoot"
+          ],
+          "enable": true
+        },
+        {
+          "$type": "GPDAIGICDKI",
+          "otherTargets": {
+            "$type": "PBLNLAENOGB",
+            "tag": "Homeworld_Standard_MainBuilding"
+          },
+          "partRootNames": [
+            "CloudRoot"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Homeworld_NPCObj_Ani_Djinn_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Appear"
+          ],
+          "modifierName": "AppearState",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Idle"
+          ],
+          "modifierName": "IdleState",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Show02Loop"
+          ],
+          "modifierName": "SleepState",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Talk"
+          ],
+          "modifierName": "TalkState",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "AppearState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Djinn_Show",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "SleepState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Djinn_Sleep",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "attachPointName": "DjinnSleepPoint"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "IdleState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 15.0,
+          "onThinkInterval": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_Show_Mode",
+              "useLimitRange": true,
+              "randomInRange": true,
+              "param2": 20.0,
+              "repeatTimes": 1.0
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_Show_Mode",
+                  "param3": 10.0,
+                  "compareType": "LessAndEqual"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ABILITY_Djinn_Advance",
+                  "param3": 0.0
+                }
+              ],
+              "PLLJBINMGJK": "Show01",
+              "mpTriggerOnRemote": true
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_Show_Mode",
+                  "param3": 7.0,
+                  "compareType": "LessAndEqual"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ABILITY_Djinn_Advance",
+                  "param3": 1.0
+                }
+              ],
+              "PLLJBINMGJK": "Show01",
+              "mpTriggerOnRemote": true
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_Show_Mode",
+                  "param3": 7.0,
+                  "param2": 11.0,
+                  "compareType": "Between"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ABILITY_Djinn_Advance",
+                  "param3": 1.0
+                }
+              ],
+              "PLLJBINMGJK": "Show02",
+              "mpTriggerOnRemote": true
+            },
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_Show_Mode",
+                  "param3": 11.0,
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "modifierName": "ShowEmotion"
+            }
+          ]
+        },
+        "TalkState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "ShowEmotion"
+            }
+          ]
+        },
+        "ShowEmotion": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "_ABILITY_Djinn_Comfort",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                0.5,
+                3.5,
+                6.5,
+                9.5,
+                10.5
+              ],
+              "modifierNameSteps": [
+                "Level1",
+                "Level2",
+                "Level3",
+                "Level4"
+              ]
+            }
+          ]
+        },
+        "Level1": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Djinn_Feeling_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Level2": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Djinn_Feeling_02",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Level3": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Djinn_Feeling_03",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Level4": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Djinn_Feeling_04",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_ABILITY_Djinn_Comfort",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "ShowEmotion"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Homeworld_NPCObj_Ani_Djinn_02_Ability",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Appear"
+          ],
+          "modifierName": "AppearState",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Idle"
+          ],
+          "modifierName": "IdleState",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Show02Loop"
+          ],
+          "modifierName": "SleepState",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "AppearState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Djinn_Show",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "SleepState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Djinn_Sleep",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "attachPointName": "DjinnSleepPoint"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "IdleState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 15.0,
+          "onThinkInterval": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_Show_Mode",
+              "useLimitRange": true,
+              "randomInRange": true,
+              "param2": 10.0,
+              "repeatTimes": 1.0
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_Show_Mode",
+                  "param3": 7.0,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "PLLJBINMGJK": "Show01",
+              "mpTriggerOnRemote": true
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_Show_Mode",
+                  "param3": 7.0,
+                  "param2": 11.0,
+                  "compareType": "Between"
+                }
+              ],
+              "PLLJBINMGJK": "Show02",
+              "mpTriggerOnRemote": true
+            }
+          ]
+        }
+      }
+    }
+  }
+]

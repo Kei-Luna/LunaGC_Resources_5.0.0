@@ -1,0 +1,5395 @@
+[
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_ExtraAttack",
+      "abilityMixins": [
+        {
+          "$type": "ButtonHoldChargeMixin",
+          "skillID": 10581,
+          "chargeTime": 0.10000000149011612,
+          "EKKJNADOEMB": 0.10000000149011612,
+          "onBeginUncharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "predicates": [
+                {
+                  "$type": "ALLFFNEOPGA",
+                  "logic": "Equal",
+                  "param3": 0,
+                  "parameter": "ComboCount"
+                }
+              ],
+              "PLLJBINMGJK": "DoSkill"
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "predicates": [
+                {
+                  "$type": "ALLFFNEOPGA",
+                  "logic": "Equal",
+                  "param3": 0,
+                  "parameter": "ComboCount"
+                }
+              ],
+              "intID": "SkillID",
+              "param3": 99.0
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "IsCharging"
+            }
+          ],
+          "onReleaseUncharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "PLLJBINMGJK": "DoSkill"
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "SkillID",
+              "param3": 1.0
+            }
+          ],
+          "onBeginCharged": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "IsCharging",
+              "param3": true
+            }
+          ],
+          "onReleaseCharged": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "IsCharging"
+            },
+            {
+              "$type": "SetAnimatorTrigger",
+              "PLLJBINMGJK": "DoSkill"
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "SkillID",
+              "param3": 1.0
+            }
+          ],
+          "onBeginSecondCharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "PLLJBINMGJK": "DoSkill"
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "predicates": [
+                {
+                  "$type": "BHALEMOHOLJ",
+                  "logic": "GreaterOrEqual",
+                  "stamina": [
+                    "ExtraAttack_Catalyst_Stamina_Cost",
+                    "Flexible_Stamina",
+                    "ADD"
+                  ]
+                }
+              ],
+              "intID": "SkillID",
+              "param3": 6.0
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "predicates": [
+                {
+                  "$type": "BHALEMOHOLJ",
+                  "logic": "Lesser",
+                  "stamina": [
+                    "ExtraAttack_Catalyst_Stamina_Cost",
+                    "Flexible_Stamina",
+                    "ADD"
+                  ]
+                }
+              ],
+              "intID": "SkillID",
+              "param3": 1.0
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "IsCharging"
+            }
+          ],
+          "chargeStateIDs": [
+            "Attack01",
+            "Attack02",
+            "Attack03",
+            "ExtraAttack_BS",
+            "ExtraAttack_Charge",
+            "ExtraAttack",
+            "ExtraAttack_AS"
+          ]
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ExtraAttack_Charge"
+          ],
+          "modifierName": "ExtraAttack_StaminaCost",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "ExtraAttack_Catalyst_Stamina_Cost": 0.0,
+        "Flexible_Stamina": -2.0
+      },
+      "modifiers": {
+        "ExtraAttack_StaminaCost": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AvatarSkillStart",
+              "skillID": 10003,
+              "amountByTargetCurrentHPRatio": 1.0,
+              "costStaminaRatio": "ExtraAttack_Catalyst_Stamina_Cost"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_ExtraAttack_TriggerBullet",
+      "onAbilityStart": [
+        {
+          "$type": "TriggerBullet",
+          "bulletID": 41058004,
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "offset": {
+              "x": 0.0,
+              "y": 0.10000000149011612,
+              "z": 0.0
+            },
+            "direction": {
+              "$type": "AHGNBAPONLA"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_ExtraAttack_Bullet_Material",
+      "abilitySpecials": {
+        "ExtraAttack_Damage": 0.0
+      },
+      "modifiers": {
+        "Yae_ExtraAttack_Bullet_DamageHandler_Timer": {
+          "modifierName": "",
+          "elementDurability": 0.6499999761581421,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ExtraAttack_Group_2",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 4.0
+                },
+                "direction": {
+                  "$type": "DFBFCGKKFJP",
+                  "range": 2
+                }
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "Yae_ExtraAttack_Bullet_DamageHandler"
+            }
+          ]
+        },
+        "Yae_ExtraAttack_Bullet_DamageHandler": {
+          "modifierName": "",
+          "elementDurability": 0.949999988079071,
+          "bonusCritical": 100.0,
+          "thinkInterval": 0.15000000596046448,
+          "onAdded": [
+            {
+              "$type": "TriggerAttackEvent",
+              "target": "OriginOwner",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "JHKEHNJBMOF",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 1.600000023841858,
+                      "z": 0.0
+                    }
+                  },
+                  "size": {
+                    "x": 2.0,
+                    "y": 3.200000047683716,
+                    "z": 2.0
+                  }
+                },
+                "attackInfo": {
+                  "attackTag": "ExtraAttack",
+                  "attenuationTag": "ExtraAttack",
+                  "attenuationGroup": "Yae_ExtraAttack",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "ExtraAttack_Damage",
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Electric",
+                    "bonusCritical": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 80.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.009999999776482582
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "AddGlobalValue",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "_ABILITY_Yae_ExtraAttack_Count",
+              "useLimitRange": true,
+              "param2": 5.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "ApplyModifier",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Yae_ExtraAttack_Count",
+                  "param3": 1.0
+                }
+              ],
+              "modifierName": "Avatar_Yae_ExtraAttack_Damage_1"
+            },
+            {
+              "$type": "ApplyModifier",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Yae_ExtraAttack_Count",
+                  "param3": 2.0
+                }
+              ],
+              "modifierName": "Avatar_Yae_ExtraAttack_Damage_2"
+            },
+            {
+              "$type": "ApplyModifier",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Yae_ExtraAttack_Count",
+                  "param3": 3.0
+                }
+              ],
+              "modifierName": "Avatar_Yae_ExtraAttack_Damage_3"
+            },
+            {
+              "$type": "ApplyModifier",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Yae_ExtraAttack_Count",
+                  "param3": 4.0
+                }
+              ],
+              "modifierName": "Avatar_Yae_ExtraAttack_Damage_4"
+            },
+            {
+              "$type": "ApplyModifier",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Yae_ExtraAttack_Count",
+                  "param3": 5.0
+                }
+              ],
+              "modifierName": "Avatar_Yae_ExtraAttack_Damage_5"
+            }
+          ],
+          "onThinkIntervalIsFixedUpdate": true
+        },
+        "Avatar_Yae_ExtraAttack_Damage_1": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "TriggerAttackEvent",
+              "target": "OriginOwner",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "JHKEHNJBMOF",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 1.600000023841858,
+                      "z": 0.0
+                    }
+                  },
+                  "size": {
+                    "x": 2.0,
+                    "y": 3.200000047683716,
+                    "z": 2.0
+                  }
+                },
+                "attackInfo": {
+                  "attackTag": "ExtraAttack",
+                  "attenuationTag": "ExtraAttack",
+                  "attenuationGroup": "Yae_ExtraAttack",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "ExtraAttack_Damage",
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Electric",
+                    "bonusCritical": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 80.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "Eff_Avatar_Yae_Attack_Hit",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.009999999776482582
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "Avatar_Yae_ExtraAttack_Damage_2": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "TriggerAttackEvent",
+              "target": "OriginOwner",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "JHKEHNJBMOF",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 1.600000023841858,
+                      "z": 0.0
+                    }
+                  },
+                  "size": {
+                    "x": 2.0,
+                    "y": 3.200000047683716,
+                    "z": 2.0
+                  }
+                },
+                "attackInfo": {
+                  "attackTag": "ExtraAttack",
+                  "attenuationTag": "ExtraAttack",
+                  "attenuationGroup": "Yae_ExtraAttack",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "ExtraAttack_Damage",
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Electric",
+                    "bonusCritical": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 80.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "Eff_Avatar_Yae_Attack_Hit",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.009999999776482582
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "Avatar_Yae_ExtraAttack_Damage_3": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "TriggerAttackEvent",
+              "target": "OriginOwner",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "JHKEHNJBMOF",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 1.600000023841858,
+                      "z": 0.0
+                    }
+                  },
+                  "size": {
+                    "x": 2.0,
+                    "y": 3.200000047683716,
+                    "z": 2.0
+                  }
+                },
+                "attackInfo": {
+                  "attackTag": "ExtraAttack",
+                  "attenuationTag": "ExtraAttack",
+                  "attenuationGroup": "Yae_ExtraAttack",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "ExtraAttack_Damage",
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Electric",
+                    "bonusCritical": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 80.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "Eff_Avatar_Yae_Attack_Hit",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.009999999776482582
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "Avatar_Yae_ExtraAttack_Damage_4": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "TriggerAttackEvent",
+              "target": "OriginOwner",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "JHKEHNJBMOF",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 1.600000023841858,
+                      "z": 0.0
+                    }
+                  },
+                  "size": {
+                    "x": 2.0,
+                    "y": 3.200000047683716,
+                    "z": 2.0
+                  }
+                },
+                "attackInfo": {
+                  "attackTag": "ExtraAttack",
+                  "attenuationTag": "ExtraAttack",
+                  "attenuationGroup": "Yae_ExtraAttack",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "ExtraAttack_Damage",
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Electric",
+                    "bonusCritical": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 80.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "Eff_Avatar_Yae_Attack_Hit",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.009999999776482582
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "Avatar_Yae_ExtraAttack_Damage_5": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "TriggerAttackEvent",
+              "target": "OriginOwner",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "JHKEHNJBMOF",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 1.600000023841858,
+                      "z": 0.0
+                    }
+                  },
+                  "size": {
+                    "x": 2.0,
+                    "y": 3.200000047683716,
+                    "z": 2.0
+                  }
+                },
+                "attackInfo": {
+                  "attackTag": "ExtraAttack",
+                  "attenuationTag": "ExtraAttack",
+                  "attenuationGroup": "Yae_ExtraAttack",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "ExtraAttack_Damage",
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Electric",
+                    "bonusCritical": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 80.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "Eff_Avatar_Yae_Attack_Hit",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.009999999776482582
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "ApplyModifier",
+          "modifierName": "Yae_ExtraAttack_Bullet_DamageHandler_Timer"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_Attack01",
+      "abilityMixins": [
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Attack01",
+          "modifierName": "Attack01_Gohei_Appear",
+          "normalizeEnd": 0.3919999897480011,
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Attack01_Gohei_Appear": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_Attack_01",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "CreateGadget",
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "gadgetID": 41058001,
+          "campID": 1001,
+          "campTargetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_Attack02",
+      "abilityMixins": [
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Attack02",
+          "modifierName": "Attack02_Gohei_Appear",
+          "normalizeEnd": 0.335999995470047,
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Attack02_Gohei_Appear": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_Attack_02",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "CreateGadget",
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "gadgetID": 41058002,
+          "campID": 1001,
+          "campTargetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_Attack03",
+      "abilityMixins": [
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Attack03",
+          "modifierName": "Attack03_Gohei_Appear",
+          "normalizeEnd": 0.34299999475479126,
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Attack03_Gohei_Appear": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_Attack_03",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "CreateGadget",
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "gadgetID": 41058003,
+          "campID": 1001,
+          "campTargetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_Attack01_Bullet_Material",
+      "abilitySpecials": {
+        "Attack01_Damage": 0.0
+      },
+      "modifiers": {
+        "NormalAttack_Damage_Handler": {
+          "modifierName": "",
+          "elementDurability": 0.15000000596046448,
+          "bonusCritical": 100.0,
+          "thinkInterval": 0.10000000149011612,
+          "onThinkInterval": [
+            {
+              "$type": "AddGlobalValue",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "_ABILITY_Yae_NormalAttack_Count",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "ApplyModifier",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Yae_NormalAttack_Count",
+                  "param3": 1.0
+                }
+              ],
+              "modifierName": "Avatar_Yae_Attack01_Damage"
+            }
+          ],
+          "onThinkIntervalIsFixedUpdate": true
+        },
+        "NormalAttack_Bullet_Fx": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_Attack_01_Bullet",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "onGround": true,
+                "direction": {
+                  "$type": "DFBFCGKKFJP",
+                  "range": 4
+                }
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Avatar_Yae_Attack01_Damage": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "TriggerAttackEvent",
+              "target": "OriginOwner",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "JHKEHNJBMOF",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "onGround": true,
+                    "direction": {
+                      "$type": "DFBFCGKKFJP",
+                      "range": 4
+                    }
+                  },
+                  "size": {
+                    "x": 2.0,
+                    "y": 4.0,
+                    "z": 8.0
+                  }
+                },
+                "attackInfo": {
+                  "attackTag": "NormalAttack_01",
+                  "attenuationTag": "NormalAttack",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "Attack01_Damage",
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Electric",
+                    "bonusCritical": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 7.435999870300293,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "Eff_Avatar_Yae_Attack_Hit",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV1",
+                    "hitHaltTimeScale": 0.05000000074505806
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "ApplyModifier",
+          "modifierName": "NormalAttack_Damage_Handler"
+        },
+        {
+          "$type": "ApplyModifier",
+          "modifierName": "NormalAttack_Bullet_Fx"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_Attack02_Bullet_Material",
+      "abilitySpecials": {
+        "Attack02_Damage": 0.0
+      },
+      "modifiers": {
+        "NormalAttack_Damage_Handler": {
+          "modifierName": "",
+          "elementDurability": 0.15000000596046448,
+          "bonusCritical": 100.0,
+          "thinkInterval": 0.10000000149011612,
+          "onThinkInterval": [
+            {
+              "$type": "AddGlobalValue",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "_ABILITY_Yae_NormalAttack_Count",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "ApplyModifier",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Yae_NormalAttack_Count",
+                  "param3": 1.0
+                }
+              ],
+              "modifierName": "Avatar_Yae_Attack02_Damage"
+            }
+          ],
+          "onThinkIntervalIsFixedUpdate": true
+        },
+        "NormalAttack_Bullet_Fx": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_Attack_02_Bullet",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "onGround": true,
+                "direction": {
+                  "$type": "DFBFCGKKFJP",
+                  "range": 4
+                }
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Avatar_Yae_Attack02_Damage": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "TriggerAttackEvent",
+              "target": "OriginOwner",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "JHKEHNJBMOF",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "onGround": true,
+                    "direction": {
+                      "$type": "DFBFCGKKFJP",
+                      "range": 4
+                    }
+                  },
+                  "size": {
+                    "x": 2.0,
+                    "y": 4.0,
+                    "z": 8.0
+                  }
+                },
+                "attackInfo": {
+                  "attackTag": "NormalAttack_02",
+                  "attenuationTag": "NormalAttack",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "Attack02_Damage",
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Electric",
+                    "bonusCritical": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 7.2220001220703125,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "Eff_Avatar_Yae_Attack_Hit",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV1",
+                    "hitHaltTimeScale": 0.05000000074505806
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "ApplyModifier",
+          "modifierName": "NormalAttack_Damage_Handler"
+        },
+        {
+          "$type": "ApplyModifier",
+          "modifierName": "NormalAttack_Bullet_Fx"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_Attack03_Bullet_Material",
+      "abilitySpecials": {
+        "Attack03_Damage": 0.0
+      },
+      "modifiers": {
+        "NormalAttack_Damage_Handler": {
+          "modifierName": "",
+          "elementDurability": 0.15000000596046448,
+          "bonusCritical": 100.0,
+          "thinkInterval": 0.10000000149011612,
+          "onThinkInterval": [
+            {
+              "$type": "AddGlobalValue",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "_ABILITY_Yae_NormalAttack_Count",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "ApplyModifier",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Yae_NormalAttack_Count",
+                  "param3": 1.0
+                }
+              ],
+              "modifierName": "Avatar_Yae_Attack03_Damage"
+            }
+          ],
+          "onThinkIntervalIsFixedUpdate": true
+        },
+        "NormalAttack_Bullet_Fx": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_Attack_03_Bullet",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "onGround": true,
+                "direction": {
+                  "$type": "DFBFCGKKFJP",
+                  "range": 4
+                }
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Avatar_Yae_Attack03_Damage": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "TriggerAttackEvent",
+              "target": "OriginOwner",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "JHKEHNJBMOF",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "onGround": true,
+                    "direction": {
+                      "$type": "DFBFCGKKFJP",
+                      "range": 4
+                    }
+                  },
+                  "size": {
+                    "x": 2.0,
+                    "y": 4.0,
+                    "z": 8.0
+                  }
+                },
+                "attackInfo": {
+                  "attackTag": "NormalAttack_03",
+                  "attenuationTag": "NormalAttack",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "Attack03_Damage",
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Electric",
+                    "bonusCritical": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 10.666999816894531,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "Eff_Avatar_Yae_Attack_Hit",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV1",
+                    "hitHaltTimeScale": 0.05000000074505806
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "ApplyModifier",
+          "modifierName": "NormalAttack_Damage_Handler"
+        },
+        {
+          "$type": "ApplyModifier",
+          "modifierName": "NormalAttack_Bullet_Fx"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_ElementalArt_ElderBrain",
+      "modifiers": {
+        "Yae_GenerateElemBall_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "Predicated",
+              "target": "Target",
+              "shieldHP": true,
+              "targetPredicates": [
+                {
+                  "$type": "ByAttackTags",
+                  "attackTags": [
+                    "Elemental_Art"
+                  ]
+                },
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "SetGlobalPos",
+                  "target": "Target",
+                  "shieldHP": true,
+                  "key": "Yae_ElementBall_Pos",
+                  "born": {
+                    "$type": "JHEBKCMEMLN"
+                  },
+                  "setTarget": false
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "shieldHP": true,
+                  "modifierName": "UNIQUE_Yae_ElementBall"
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Yae_ElementBall": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 2.5,
+          "bonusCritical": 100.0,
+          "thinkInterval": 2.5,
+          "onAdded": [
+            {
+              "$type": "Randomed",
+              "shieldHP": true,
+              "chance": 1.0,
+              "successActions": [
+                {
+                  "$type": "GenerateElemBall",
+                  "shieldHP": true,
+                  "configID": 2020,
+                  "born": {
+                    "$type": "ICKMMAHFNIM",
+                    "positionKey": "Yae_ElementBall_Pos",
+                    "directionKey": ""
+                  },
+                  "hpRatio": 1.0,
+                  "baseEnergy": 3.0
+                }
+              ]
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "RemoveUniqueModifier",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_Yae_ElementBall"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "ApplyModifier",
+          "modifierName": "Yae_GenerateElemBall_Handler"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_HideWeaponControl",
+      "abilityMixins": [
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Attack01",
+            "Attack02",
+            "Attack03",
+            "ExtraAttack_BS",
+            "ElementalArt",
+            "ElementalArt_AS",
+            "ElementalArt_Retreat",
+            "ElementalArt_Retreat_AS",
+            "ElementalArt_Cast_Air",
+            "ElementalArt_Cast_Air_Loop",
+            "ElementalArt_Cast_Air_AS",
+            "ElementalBurst",
+            "ElementalBurst_AS"
+          ],
+          "modifierName": "HideWeapon",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "HideWeapon": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "NAAJIHIKECC",
+              "partNames": [
+                "equip01",
+                "equip02",
+                "sheathPoint"
+              ],
+              "modifyAnotherValue": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "NAAJIHIKECC",
+              "shieldHP": true,
+              "KGGEDGKGLDD": true,
+              "partNames": [
+                "equip01",
+                "equip02",
+                "sheathPoint"
+              ],
+              "modifyAnotherValue": true
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_ElementalArt",
+      "abilityMixins": [
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ElementalArt"
+          ],
+          "modifierName": "Yae_ElementalArt_SetVisible",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ElementalArt_Retreat"
+          ],
+          "modifierName": "Yae_ElementalArt_Retreat_SetVisible",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ElementalArt",
+            "ElementalArt_AS",
+            "ElementalArt_Retreat",
+            "ElementalArt_Retreat_AS"
+          ],
+          "modifierName": "Yae_ElementalArt_ForbidNyxSwitch",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Yae_ElementalArt_SetVisible": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElementalArt_Trail",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElementalArt_HideSpark",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "PJENOLFAFMG"
+            },
+            {
+              "$type": "EOBKCKNFHDM",
+              "shieldHP": true,
+              "passThrough": true
+            },
+            {
+              "$type": "CNMAKBJBODN",
+              "hdMeshKey": "Default"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PJENOLFAFMG",
+              "shieldHP": true,
+              "KGGEDGKGLDD": true
+            },
+            {
+              "$type": "EOBKCKNFHDM",
+              "shieldHP": true,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetAnimatorTrigger",
+              "PLLJBINMGJK": "StealthOn"
+            },
+            {
+              "$type": "CNMAKBJBODN",
+              "canBeHandledOnRecover": true,
+              "enable": true,
+              "hdMeshKey": "Default"
+            }
+          ]
+        },
+        "Yae_ElementalArt_Retreat_SetVisible": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElementalArt_ClickTrail",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "PJENOLFAFMG"
+            },
+            {
+              "$type": "EOBKCKNFHDM",
+              "shieldHP": true,
+              "passThrough": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PJENOLFAFMG",
+              "shieldHP": true,
+              "KGGEDGKGLDD": true
+            },
+            {
+              "$type": "EOBKCKNFHDM",
+              "shieldHP": true,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "SetAnimatorTrigger",
+              "PLLJBINMGJK": "StealthOn"
+            }
+          ]
+        },
+        "Yae_ElementalArt_ForbidNyxSwitch": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "DOKFIHMBGFO",
+              "NDFCJBEIKPG": true
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "AvatarSkillStart",
+          "skillID": 10582,
+          "amountByTargetCurrentHPRatio": 1.0,
+          "costStaminaRatio": 1.0
+        },
+        {
+          "$type": "CreateGadget",
+          "lifeByOwnerIsAlive": true,
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "gadgetID": 41058008,
+          "campID": 1001,
+          "campTargetType": "All"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_ElementalArt_Foxtail",
+      "abilityMixins": [
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ElementalArt",
+            "ElementalArt_AS"
+          ],
+          "modifierName": "Yae_ElementalArt_Foxtail_Remover",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_Yae_ElementalArt_Foxtail": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 2.799999952316284,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElementalArt_ShowSpark_Foxtail",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Yae_ElementalArt_Foxtail_Remover": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "RemoveUniqueModifier",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_Yae_ElementalArt_Foxtail"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "ApplyModifier",
+          "modifierName": "UNIQUE_Yae_ElementalArt_Foxtail"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_ElementalArt_Retreat_Foxtail",
+      "abilityMixins": [
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ElementalArt_Retreat",
+            "ElementalArt_Retreat_AS"
+          ],
+          "modifierName": "Yae_ElementalArt_Retreat_Foxtail_Remover",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_Yae_ElementalArt_Retreat_Foxtail": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 2.799999952316284,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElementalArt_ShowSpark_Click_Foxtail",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Yae_ElementalArt_Retreat_Foxtail_Remover": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "RemoveUniqueModifier",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_Yae_ElementalArt_Retreat_Foxtail"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "ApplyModifier",
+          "modifierName": "UNIQUE_Yae_ElementalArt_Retreat_Foxtail"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_ElementalArt_Foxtail_Remover",
+      "modifiers": {
+        "UNIQUE_Yae_ElementalArt_Foxtail": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 2.799999952316284,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElementalArt_ShowSpark_Foxtail",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "UNIQUE_Yae_ElementalArt_Retreat_Foxtail": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 2.799999952316284,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElementalArt_ShowSpark_Click_Foxtail",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "RemoveUniqueModifier",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_Yae_ElementalArt_Foxtail"
+        },
+        {
+          "$type": "RemoveUniqueModifier",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_Yae_ElementalArt_Retreat_Foxtail"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_ElementalArt_Air",
+      "abilityMixins": [
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ElementalArt_Cast_Air",
+            "ElementalArt_Cast_Air_AS"
+          ],
+          "modifierName": "Yae_ElementalArt_Air_LooseWeight",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ElementalArt_Cast_Air",
+            "ElementalArt_Cast_Air_AS"
+          ],
+          "modifierName": "DeYae_ElementalArt_Air_ClearVelocityForce",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Yae_ElementalArt_Air_LooseWeight": {
+          "modifierName": "",
+          "bonusCritical": 100.0
+        },
+        "Yae_ElementalArt_Air_CameraPullBack": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "LJBFFDLKIKL",
+              "cameraParam": {
+                "forceRadius": 5.0,
+                "forceRadiusDuration": 0.0,
+                "shouldKeepForceRadius": true
+              }
+            }
+          ]
+        },
+        "DeYae_ElementalArt_Air_ClearVelocityForce": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "LBLNHEBGPJI",
+              "forces": [
+                "RushMoveType",
+                "InertiaType"
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LBLNHEBGPJI",
+              "forces": [
+                "RushMoveType",
+                "InertiaType"
+              ]
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "AvatarSkillStart",
+          "skillID": 10582,
+          "amountByTargetCurrentHPRatio": 1.0,
+          "costStaminaRatio": 1.0
+        },
+        {
+          "$type": "TriggerBullet",
+          "bulletID": 41058005,
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "offset": {
+              "x": 0.0,
+              "y": 1.2000000476837158,
+              "z": 0.800000011920929
+            },
+            "direction": {
+              "$type": "AHGNBAPONLA"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_ElementalArt_Bullet_HasTarget_Material",
+      "abilitySpecials": {
+        "ElementalArt_Bullet_Damage": 0.0
+      },
+      "modifiers": {
+        "Bullet_FX": {
+          "modifierName": "",
+          "bonusCritical": 100.0
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "Bullet_FX"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "TriggerAttackEvent",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackCircle",
+              "triggerType": "TriggerNoRepeat",
+              "massiveAttackRatio": 0.5,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                }
+              },
+              "height": 3.0,
+              "radius": 6.0
+            },
+            "attackInfo": {
+              "attackTag": "Elemental_Art",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "ElementalArt_Bullet_Damage",
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Electric",
+                "bonusCritical": 25.0,
+                "strikeType": "Default",
+                "enBreak": 100.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV3",
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "CreateGadget",
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            },
+            "direction": {
+              "$type": "FNKDGDKJHPC",
+              "eularAngles": {
+                "x": 0.10000000149011612,
+                "y": 0.10000000149011612,
+                "z": 0.10000000149011612
+              }
+            }
+          },
+          "gadgetID": 41058008,
+          "campID": 1001,
+          "campTargetType": "All"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_ElementalArt_Bullet_Material",
+      "abilitySpecials": {
+        "ElementalArt_Bullet_Damage": 0.0
+      },
+      "modifiers": {
+        "Bullet_FX": {
+          "modifierName": "",
+          "bonusCritical": 100.0
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "Bullet_FX"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "TriggerAttackEvent",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackCircle",
+              "triggerType": "TriggerNoRepeat",
+              "massiveAttackRatio": 0.5,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                }
+              },
+              "height": 3.0,
+              "radius": 6.0
+            },
+            "attackInfo": {
+              "attackTag": "Elemental_Art",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "ElementalArt_Bullet_Damage",
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Electric",
+                "bonusCritical": 25.0,
+                "strikeType": "Default",
+                "enBreak": 100.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV3",
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "CreateGadget",
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            },
+            "direction": {
+              "$type": "FNKDGDKJHPC",
+              "eularAngles": {
+                "x": 0.10000000149011612,
+                "y": 0.10000000149011612,
+                "z": 0.10000000149011612
+              }
+            }
+          },
+          "gadgetID": 41058008,
+          "campID": 1001,
+          "campTargetType": "All"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_ElementalArt_Aim_Bullet_Material",
+      "abilitySpecials": {
+        "ElementalArt_Bullet_Damage": 0.0
+      },
+      "modifiers": {
+        "Bullet_FX": {
+          "modifierName": "",
+          "bonusCritical": 100.0
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "TriggerAttackEvent",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackCircle",
+              "triggerType": "TriggerNoRepeat",
+              "massiveAttackRatio": 0.5,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                }
+              },
+              "height": 3.0,
+              "radius": 6.0
+            },
+            "attackInfo": {
+              "attackTag": "Elemental_Art",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "ElementalArt_Bullet_Damage",
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Electric",
+                "bonusCritical": 25.0,
+                "strikeType": "Default",
+                "enBreak": 100.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV3",
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "CreateGadget",
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "direction": {
+              "$type": "FNKDGDKJHPC",
+              "eularAngles": {
+                "x": 0.10000000149011612,
+                "y": 0.10000000149011612,
+                "z": 0.10000000149011612
+              }
+            }
+          },
+          "gadgetID": 41058008,
+          "campID": 1001,
+          "campTargetType": "All"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_ElementalArt_Bullet_Air_Material",
+      "abilitySpecials": {
+        "ElementalArt_Bullet_Damage": 0.0
+      },
+      "modifiers": {
+        "Bullet_FX": {
+          "modifierName": "",
+          "bonusCritical": 100.0
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "Bullet_FX"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "TriggerAttackEvent",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackCircle",
+              "triggerType": "TriggerNoRepeat",
+              "massiveAttackRatio": 0.5,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                }
+              },
+              "height": 3.0,
+              "radius": 6.0
+            },
+            "attackInfo": {
+              "attackTag": "Elemental_Art",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "ElementalArt_Bullet_Damage",
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Electric",
+                "bonusCritical": 25.0,
+                "strikeType": "Default",
+                "enBreak": 100.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV3",
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "CreateGadget",
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            },
+            "direction": {
+              "$type": "FNKDGDKJHPC",
+              "eularAngles": {
+                "x": 0.10000000149011612,
+                "y": 0.10000000149011612,
+                "z": 0.10000000149011612
+              }
+            }
+          },
+          "gadgetID": 41058008,
+          "campID": 1001,
+          "campTargetType": "All"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_ElementalArt_FoxTower_Material",
+      "abilitySpecials": {
+        "InitLevel": 1.0,
+        "MaxLevel": 3.0,
+        "SizeRatio": 1.0,
+        "FoxTower_Number": 0.0
+      },
+      "modifiers": {
+        "FoxTower_Level_Controller": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CBKLCFKNHGH",
+              "campTargetType": "AllExceptSelf",
+              "targetPredicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_IS_FOXTOWER",
+                  "param3": 1.0
+                }
+              ],
+              "onFieldEnter": [
+                {
+                  "$type": "GCAOJEBHECK",
+                  "srcOtherTargets": {
+                    "$type": "MNOAFODCBLI",
+                    "campTargetType": "AllExceptSelf"
+                  },
+                  "srcPredicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "key": "_ABILITY_IS_FOXTOWER",
+                      "param3": 1.0
+                    },
+                    {
+                      "$type": "IMPNKNCABJD"
+                    }
+                  ],
+                  "dstTarget": "Self",
+                  "key": "_ABILITY_FOXTOWER_NUMBER",
+                  "useLimitRange": true,
+                  "param2": "MaxLevel",
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "LDIAIDLOPEE",
+                  "globalValueKey": "_ABILITY_FOXTOWER_NUMBER",
+                  "overrideMapKey": "FoxTower_Number"
+                },
+                {
+                  "$type": "SetGlobalValue",
+                  "param3": [
+                    "FoxTower_Number",
+                    "InitLevel",
+                    "ADD"
+                  ],
+                  "key": "_ABILITY_FOXTOWER_LEVEL",
+                  "useLimitRange": true,
+                  "param2": "MaxLevel",
+                  "repeatTimes": 1.0
+                }
+              ],
+              "onFieldExit": [
+                {
+                  "$type": "GCAOJEBHECK",
+                  "srcOtherTargets": {
+                    "$type": "MNOAFODCBLI",
+                    "campTargetType": "AllExceptSelf"
+                  },
+                  "srcPredicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "key": "_ABILITY_IS_FOXTOWER",
+                      "param3": 1.0
+                    },
+                    {
+                      "$type": "IMPNKNCABJD"
+                    }
+                  ],
+                  "dstTarget": "Self",
+                  "key": "_ABILITY_FOXTOWER_NUMBER",
+                  "useLimitRange": true,
+                  "param2": "MaxLevel",
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "LDIAIDLOPEE",
+                  "globalValueKey": "_ABILITY_FOXTOWER_NUMBER",
+                  "overrideMapKey": "FoxTower_Number"
+                },
+                {
+                  "$type": "SetGlobalValue",
+                  "param3": [
+                    "FoxTower_Number",
+                    "InitLevel",
+                    "ADD"
+                  ],
+                  "key": "_ABILITY_FOXTOWER_LEVEL",
+                  "useLimitRange": true,
+                  "param2": "MaxLevel",
+                  "repeatTimes": 1.0
+                }
+              ],
+              "simpleCountGlobaValueKey": "",
+              "simpleCountMaxValue": 0.0,
+              "simpleCountMinValue": 0.0
+            }
+          ]
+        },
+        "UNIQUE_FoxTower_Life_Timer": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 14.5,
+          "bonusCritical": 20.0,
+          "thinkInterval": 1.0,
+          "onAdded": [
+            {
+              "$type": "ApplyModifier",
+              "otherTargets": {
+                "$type": "SelectTargetsByShape",
+                "shapeName": "CircleR0_5",
+                "campTargetType": "Alliance",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_IS_FOXTOWER",
+                  "param3": 1.0
+                },
+                {
+                  "$type": "KGBDHDJLELL",
+                  "isSelf": false
+                }
+              ],
+              "modifierName": "FoxTower_Killer"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "MLCJFOMEAJH",
+              "parameter": "Disappear",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower_Line"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Dissappear",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Dissappear",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower_Medium"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Dissappear",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower_High"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Dissappear",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower_Top"
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower_Dissipate",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "KillSelf",
+              "duration": 0.25
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "Predicated",
+              "target": "Owner",
+              "targetPredicates": [
+                {
+                  "$type": "FMBJAJFLDIP",
+                  "param3": 80.0,
+                  "DDALGNLEHOD": ""
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "KillSelf"
+                }
+              ]
+            }
+          ]
+        },
+        "FoxTower_Killer": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "MLCJFOMEAJH",
+              "parameter": "Disappear",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower_Line"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Dissappear",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Dissappear",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower_Medium"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Dissappear",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower_High"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Dissappear",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower_Top"
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower_Dissipate",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "KillSelf",
+              "duration": 0.25,
+              "configIdArray": [
+                41058008
+              ]
+            }
+          ]
+        },
+        "FoxTower_Life_Keeper": {
+          "stacking": "Multiple",
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AddElementDurability",
+              "shieldHP": true,
+              "param3": 5.0,
+              "modifierName": "UNIQUE_FoxTower_Life_Timer",
+              "useLimitRange": true,
+              "param2": 15.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "UNIQUE_FoxTower_InitTimer": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.5,
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "AddGlobalValue",
+              "param3": 1.0,
+              "key": "_ABILITY_FoxTower_Init_Mark",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "FoxTower_LevelChange_FX": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "_ABILITY_FOXTOWER_LEVEL",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                0.0,
+                1.5,
+                2.5,
+                3.5,
+                4.5
+              ],
+              "modifierNameSteps": [
+                "Level_1",
+                "Level_2",
+                "Level_3",
+                "Level_4"
+              ]
+            }
+          ]
+        },
+        "Level_1": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_FoxTower_Init_Mark",
+                  "param3": 1.0
+                }
+              ],
+              "parameter": "LevelUp",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_FoxTower_Init_Mark",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "parameter": "Appear",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower"
+            }
+          ]
+        },
+        "Level_2": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower_Medium",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_FoxTower_Init_Mark",
+                  "param3": 1.0
+                }
+              ],
+              "parameter": "LevelUp",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower_Medium"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_FoxTower_Init_Mark",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "parameter": "Appear",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower_Medium"
+            }
+          ]
+        },
+        "Level_3": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower_High",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_FoxTower_Init_Mark",
+                  "param3": 1.0
+                }
+              ],
+              "parameter": "LevelUp",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower_High"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_FoxTower_Init_Mark",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "parameter": "Appear",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower_High"
+            }
+          ]
+        },
+        "Level_4": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower_Top",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_FoxTower_Init_Mark",
+                  "param3": 1.0
+                }
+              ],
+              "parameter": "LevelUp",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower_Top"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_FoxTower_Init_Mark",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "parameter": "Appear",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower_Top"
+            }
+          ]
+        },
+        "FoxTower_Damage_Handler_Delay": {
+          "modifierName": "",
+          "elementDurability": 0.800000011920929,
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "FoxTower_Damage_Handler"
+            }
+          ]
+        },
+        "FoxTower_Damage_Handler": {
+          "modifierName": "",
+          "elementDurability": 13.0,
+          "bonusCritical": 100.0,
+          "thinkInterval": 3.0,
+          "onAdded": [
+            {
+              "$type": "GCAOJEBHECK",
+              "srcOtherTargets": {
+                "$type": "SelectTargetsByShape",
+                "shapeName": "CircleR12_5H14",
+                "campTargetType": "Enemy",
+                "doOffStage": "SizeRatio"
+              },
+              "srcPredicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster",
+                    "Gadget"
+                  ]
+                }
+              ],
+              "dstTarget": "Self",
+              "key": "_Ability_Yae_FoxTower_AttackeeCount",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "ApplyModifier",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_Ability_Yae_FoxTower_AttackeeCount",
+                  "param3": 0.0,
+                  "forceByCaster": true,
+                  "compareType": "MoreThan"
+                }
+              ],
+              "modifierName": "FoxTower_Charge"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "GCAOJEBHECK",
+              "srcOtherTargets": {
+                "$type": "SelectTargetsByShape",
+                "shapeName": "CircleR12_5H14",
+                "campTargetType": "Enemy",
+                "doOffStage": "SizeRatio"
+              },
+              "srcPredicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster",
+                    "Gadget"
+                  ]
+                }
+              ],
+              "dstTarget": "Self",
+              "key": "_Ability_Yae_FoxTower_AttackeeCount",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "ApplyModifier",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_Ability_Yae_FoxTower_AttackeeCount",
+                  "param3": 0.0,
+                  "forceByCaster": true,
+                  "compareType": "MoreThan"
+                }
+              ],
+              "modifierName": "FoxTower_Charge"
+            }
+          ]
+        },
+        "FoxTower_Charge": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "bonusCritical": 100.0,
+          "thinkInterval": 0.8500000238418579,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_FOXTOWER_LEVEL",
+                  "param3": 2.0,
+                  "forceByCaster": true,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower_Charge",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_FOXTOWER_LEVEL",
+                  "param3": 3.0,
+                  "forceByCaster": true,
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower_Charge_High",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Attack",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Attack",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower_Medium"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Attack",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower_High"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Attack",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower_Top"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "SetGlobalPos",
+              "otherTargets": {
+                "$type": "SelectTargetsByShape",
+                "topLimit": 1,
+                "entityTypePriority": [
+                  "Monster",
+                  "Gadget"
+                ],
+                "sortType": "Random",
+                "shapeName": "CircleR12_5H14",
+                "campTargetType": "Enemy",
+                "doOffStage": "SizeRatio"
+              },
+              "key": "Yae_ElemenalArt_FoxTower_ThunderFall_Pos",
+              "born": {
+                "$type": "AEDBNLGHPNN"
+              },
+              "setTarget": false
+            },
+            {
+              "$type": "CreateGadget",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_FOXTOWER_LEVEL",
+                  "param3": 1.0,
+                  "forceByCaster": true
+                }
+              ],
+              "born": {
+                "$type": "ICKMMAHFNIM",
+                "positionKey": "Yae_ElemenalArt_FoxTower_ThunderFall_Pos",
+                "directionKey": ""
+              },
+              "gadgetID": 41058011,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            },
+            {
+              "$type": "CreateGadget",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_FOXTOWER_LEVEL",
+                  "param3": 2.0,
+                  "forceByCaster": true
+                }
+              ],
+              "born": {
+                "$type": "ICKMMAHFNIM",
+                "positionKey": "Yae_ElemenalArt_FoxTower_ThunderFall_Pos",
+                "directionKey": ""
+              },
+              "gadgetID": 41058012,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            },
+            {
+              "$type": "CreateGadget",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_FOXTOWER_LEVEL",
+                  "param3": 3.0,
+                  "forceByCaster": true
+                }
+              ],
+              "born": {
+                "$type": "ICKMMAHFNIM",
+                "positionKey": "Yae_ElemenalArt_FoxTower_ThunderFall_Pos",
+                "directionKey": ""
+              },
+              "gadgetID": 41058013,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            },
+            {
+              "$type": "CreateGadget",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_FOXTOWER_LEVEL",
+                  "param3": 4.0,
+                  "forceByCaster": true
+                }
+              ],
+              "born": {
+                "$type": "ICKMMAHFNIM",
+                "positionKey": "Yae_ElemenalArt_FoxTower_ThunderFall_Pos",
+                "directionKey": ""
+              },
+              "gadgetID": 41058014,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onThinkIntervalIsFixedUpdate": true
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "SetGlobalValue",
+          "param3": "InitLevel",
+          "key": "_ABILITY_FOXTOWER_LEVEL",
+          "useLimitRange": true,
+          "param2": "MaxLevel",
+          "repeatTimes": 1.0
+        },
+        {
+          "$type": "AttachModifier",
+          "modifierName": "FoxTower_Level_Controller"
+        },
+        {
+          "$type": "AttachModifier",
+          "modifierName": "UNIQUE_FoxTower_Life_Timer"
+        },
+        {
+          "$type": "AttachModifier",
+          "modifierName": "UNIQUE_FoxTower_InitTimer"
+        },
+        {
+          "$type": "AttachModifier",
+          "modifierName": "FoxTower_Damage_Handler_Delay"
+        },
+        {
+          "$type": "AttachModifier",
+          "modifierName": "FoxTower_LevelChange_FX"
+        },
+        {
+          "$type": "AddGlobalValue",
+          "param3": 1.0,
+          "key": "_ABILITY_IS_FOXTOWER",
+          "useLimitRange": true,
+          "param2": 1.0,
+          "repeatTimes": 1.0
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "MLCJFOMEAJH",
+          "parameter": "Disappear",
+          "attachPoint": "",
+          "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalArt_FoxTower_Line"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_FoxTower_ThunderFall_Level1",
+      "abilitySpecials": {
+        "FoxTower_Damage_Level_1": 0.0
+      },
+      "onAdded": [
+        {
+          "$type": "FireEffect",
+          "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElementalArt_Thunderfall_Low",
+          "born": {
+            "$type": "ConfigBornBySelf"
+          },
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "TriggerAttackEvent",
+          "target": "CasterOriginOwner",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackCircle",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": -1.0,
+                  "z": 0.0
+                }
+              },
+              "height": 4.0,
+              "radius": 0.5
+            },
+            "attackInfo": {
+              "attackTag": "Elemental_Art",
+              "attenuationTag": "Elemental_Art",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "FoxTower_Damage_Level_1",
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Electric",
+                "bonusCritical": 25.0,
+                "strikeType": "Default",
+                "enBreak": 25.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV2",
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_FoxTower_ThunderFall_Level2",
+      "abilitySpecials": {
+        "FoxTower_Damage_Level_2": 0.0
+      },
+      "onAdded": [
+        {
+          "$type": "FireEffect",
+          "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElementalArt_Thunderfall_Low",
+          "born": {
+            "$type": "ConfigBornBySelf"
+          },
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "TriggerAttackEvent",
+          "target": "CasterOriginOwner",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackCircle",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": -1.0,
+                  "z": 0.0
+                }
+              },
+              "height": 4.0,
+              "radius": 0.5
+            },
+            "attackInfo": {
+              "attackTag": "Elemental_Art",
+              "attenuationTag": "Elemental_Art",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "FoxTower_Damage_Level_2",
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Electric",
+                "bonusCritical": 25.0,
+                "strikeType": "Default",
+                "enBreak": 25.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV2",
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_FoxTower_ThunderFall_Level3",
+      "abilitySpecials": {
+        "FoxTower_Damage_Level_3": 0.0
+      },
+      "onAdded": [
+        {
+          "$type": "FireEffect",
+          "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElementalArt_Thunderfall",
+          "born": {
+            "$type": "ConfigBornBySelf"
+          },
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "TriggerAttackEvent",
+          "target": "CasterOriginOwner",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackCircle",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": -1.0,
+                  "z": 0.0
+                }
+              },
+              "height": 4.0,
+              "radius": 0.5
+            },
+            "attackInfo": {
+              "attackTag": "Elemental_Art",
+              "attenuationTag": "Elemental_Art",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "FoxTower_Damage_Level_3",
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Electric",
+                "bonusCritical": 25.0,
+                "strikeType": "Default",
+                "enBreak": 25.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV2",
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_FoxTower_ThunderFall_Level4",
+      "abilitySpecials": {
+        "FoxTower_Damage_Level_4": 0.0
+      },
+      "onAdded": [
+        {
+          "$type": "FireEffect",
+          "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElementalArt_Thunderfall",
+          "born": {
+            "$type": "ConfigBornBySelf"
+          },
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "TriggerAttackEvent",
+          "target": "CasterOriginOwner",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackCircle",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": -1.0,
+                  "z": 0.0
+                }
+              },
+              "height": 4.0,
+              "radius": 0.5
+            },
+            "attackInfo": {
+              "attackTag": "Elemental_Art",
+              "attenuationTag": "Elemental_Art",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "FoxTower_Damage_Level_4",
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Electric",
+                "bonusCritical": 25.0,
+                "strikeType": "Default",
+                "enBreak": 25.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV2",
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_ElementalBurst_CameraController",
+      "abilityMixins": [
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ElementalBurst",
+            "ElementalBurst_AS"
+          ],
+          "modifierName": "ElementalBurst_Camera_Protection_Ghost",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ElementalBurst"
+          ],
+          "modifierName": "TriggerSetShadowRamp",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ElementalBurst"
+          ],
+          "modifierName": "ElementalBurst_Camera_Protection_Invincible",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ElementalBurst",
+            "ElementalBurst_AS"
+          ],
+          "modifierName": "ElementalBurst_Windzone_Handler",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ElementalBurst",
+            "ElementalBurst_AS"
+          ],
+          "modifierName": "ElementalBurst_Camera_Remover",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ElementalBurst",
+            "ElementalBurst_AS"
+          ],
+          "modifierName": "ElementalBurst_Camera_Weather",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ElementalBurst",
+            "ElementalBurst_AS"
+          ],
+          "modifierName": "ElementalBurst_FoxTrail",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ElementalBurst",
+            "ElementalBurst_AS"
+          ],
+          "modifierName": "ElementalBurst_HideWeapon",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ElementalBurst",
+            "ElementalBurst_AS"
+          ],
+          "modifierName": "ElementalBurst_ChangeAlpha",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ElementalBurst",
+            "ElementalBurst_AS"
+          ],
+          "modifierName": "ElementalBurst_FogFX01",
+          "predicates": [
+            {
+              "$type": "CEKDKMLPJDC",
+              "attackPattern": {
+                "$type": "ConfigAttackCircle",
+                "triggerType": "TriggerNoRepeat",
+                "born": {
+                  "$type": "ConfigBornBySelf",
+                  "offset": {
+                    "x": 0.0,
+                    "y": 0.5,
+                    "z": 0.0
+                  }
+                },
+                "height": 2.0,
+                "radius": 1.399999976158142
+              },
+              "checkWaterLayer": true
+            },
+            {
+              "$type": "KINBGHMJBBD",
+              "compareType": "LessAndEqual",
+              "depth": 0.5
+            }
+          ],
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "ElementalBurst_Camera_Protection_Ghost": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "OPAOGKPJLIG",
+              "resistanceListID": 11002
+            }
+          ]
+        },
+        "ElementalBurst_Camera_Protection_Invincible": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "state": "Invincible"
+        },
+        "ElementalBurst_Windzone_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EIMGEIJIDNO",
+              "shapeName": "CircleR2",
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                }
+              },
+              "strength": -3.0,
+              "IAELBHDMINN": 2.0,
+              "MMBCLAEOEFB": 0.0,
+              "targetType": "Enemy",
+              "predicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster",
+                    "Grass"
+                  ]
+                },
+                {
+                  "$type": "GDIBFABBADA",
+                  "logic": "LesserOrEqual",
+                  "BHOOHGLJDHM": 250.0
+                }
+              ],
+              "modifierName": ""
+            }
+          ]
+        },
+        "TriggerSetShadowRamp": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANKJOEBHINB",
+              "specialMats": [
+                "Avatar_Lady_Catalyst_Yae_Mat_Body",
+                "Avatar_Lady_Catalyst_Yae_Mat_Dress",
+                "Avatar_Lady_Catalyst_Yae_Mat_Hair"
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ANKJOEBHINB",
+              "shieldHP": true,
+              "useShadowRamp": true,
+              "specialMats": [
+                "Avatar_Lady_Catalyst_Yae_Mat_Body",
+                "Avatar_Lady_Catalyst_Yae_Mat_Dress",
+                "Avatar_Lady_Catalyst_Yae_Mat_Hair"
+              ]
+            }
+          ]
+        },
+        "ElementalBurst_Camera_Remover": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "Predicated",
+              "targetPredicates": [
+                {
+                  "$type": "CEKDKMLPJDC",
+                  "attackPattern": {
+                    "$type": "ConfigAttackCircle",
+                    "triggerType": "TriggerNoRepeat",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 0.0,
+                        "y": 0.5,
+                        "z": 0.0
+                      }
+                    },
+                    "height": 2.0,
+                    "radius": 1.399999976158142
+                  },
+                  "checkWaterLayer": true
+                },
+                {
+                  "$type": "KINBGHMJBBD",
+                  "compareType": "LessAndEqual",
+                  "depth": 0.5
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "OIDCJAEPFPF",
+                  "cameraMoveCfgPath": "Camera_Yae_ElementalBurst"
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "FireEffect",
+                  "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElementalBurst_ThirdParty",
+                  "effectTempleteID": 1.0,
+                  "AJDILHJFNKE": -1.0
+                }
+              ]
+            },
+            {
+              "$type": "GPGGCODEFIF",
+              "blend": false
+            },
+            {
+              "$type": "KGGAJAOJIDL",
+              "toggleEmoSync": false,
+              "toggleBlink": false,
+              "toggleEyeKey": false
+            },
+            {
+              "$type": "SetAnimatorTrigger",
+              "PLLJBINMGJK": "StealthOff"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "GPGGCODEFIF",
+              "shieldHP": true,
+              "enable": true
+            },
+            {
+              "$type": "PEIPIGEMHEK",
+              "shieldHP": true
+            },
+            {
+              "$type": "LJBFFDLKIKL",
+              "shieldHP": true,
+              "cameraParam": {
+                "forceRadius": 6.0,
+                "forceRadiusDuration": 0.0,
+                "shouldKeepForceRadius": true
+              }
+            },
+            {
+              "$type": "KGGAJAOJIDL",
+              "shieldHP": true
+            }
+          ]
+        },
+        "ElementalBurst_Camera_Weather": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "JFFOPFFEBPN",
+              "damageRatio": "Skill",
+              "weatherPattern": "Weather_Yae_ElementalBurst",
+              "duration": 2.5
+            }
+          ]
+        },
+        "ElementalBurst_HideWeapon": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "NAAJIHIKECC",
+              "partNames": [
+                "equip01",
+                "sheathPoint"
+              ],
+              "modifyAnotherValue": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "NAAJIHIKECC",
+              "shieldHP": true,
+              "KGGEDGKGLDD": true,
+              "partNames": [
+                "equip01",
+                "sheathPoint"
+              ],
+              "modifyAnotherValue": true
+            }
+          ]
+        },
+        "ElementalBurst_FoxTrail": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElemenalBurst_GC_Mark",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "ElementalBurst_FogFX01": {
+          "modifierName": "",
+          "elementDurability": 1.7000000476837158,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AKCJLBDMNDE",
+              "muteRemoteAction": true,
+              "predicates": [
+                {
+                  "$type": "CEKDKMLPJDC",
+                  "attackPattern": {
+                    "$type": "ConfigAttackCircle",
+                    "triggerType": "TriggerNoRepeat",
+                    "born": {
+                      "$type": "ConfigBornBySelf",
+                      "offset": {
+                        "x": 0.0,
+                        "y": 0.5,
+                        "z": 0.0
+                      }
+                    },
+                    "height": 2.0,
+                    "radius": 1.399999976158142
+                  },
+                  "checkWaterLayer": true
+                },
+                {
+                  "$type": "KINBGHMJBBD",
+                  "compareType": "LessAndEqual",
+                  "depth": 0.5
+                }
+              ],
+              "enable": true,
+              "cameraFogEffectName": "Eff_Avatar_Lady_Catalyst_Yae_ElementalBurst_Fog01",
+              "playerFogEffectName": ""
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AKCJLBDMNDE",
+              "shieldHP": true,
+              "cameraFogEffectName": "Eff_Avatar_Lady_Catalyst_Yae_ElementalBurst_Fog01",
+              "playerFogEffectName": ""
+            }
+          ]
+        },
+        "ElementalBurst_ChangeAlpha": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "DEEMAMIJENJ",
+              "target": "Team",
+              "startDuration": 0.20000000298023224,
+              "endDuration": 0.30000001192092896,
+              "JPEPPHPPCPH": true
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "SetAnimatorTrigger",
+          "predicates": [
+            {
+              "$type": "CEKDKMLPJDC",
+              "attackPattern": {
+                "$type": "ConfigAttackCircle",
+                "triggerType": "TriggerNoRepeat",
+                "born": {
+                  "$type": "ConfigBornBySelf",
+                  "offset": {
+                    "x": 0.0,
+                    "y": 0.5,
+                    "z": 0.0
+                  }
+                },
+                "height": 2.0,
+                "radius": 1.399999976158142
+              },
+              "checkWaterLayer": true
+            },
+            {
+              "$type": "KINBGHMJBBD",
+              "compareType": "LessAndEqual",
+              "depth": 0.5
+            }
+          ],
+          "PLLJBINMGJK": "ElementalBurst_Skin"
+        },
+        {
+          "$type": "FireEffect",
+          "predicates": [
+            {
+              "$type": "CEKDKMLPJDC",
+              "attackPattern": {
+                "$type": "ConfigAttackCircle",
+                "triggerType": "TriggerNoRepeat",
+                "born": {
+                  "$type": "ConfigBornBySelf",
+                  "offset": {
+                    "x": 0.0,
+                    "y": 0.5,
+                    "z": 0.0
+                  }
+                },
+                "height": 2.0,
+                "radius": 1.399999976158142
+              },
+              "checkWaterLayer": true
+            },
+            {
+              "$type": "KINBGHMJBBD",
+              "compareType": "LessAndEqual",
+              "depth": 0.5
+            }
+          ],
+          "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElementalBurst_LeftEye",
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "FireEffect",
+          "predicates": [
+            {
+              "$type": "CEKDKMLPJDC",
+              "attackPattern": {
+                "$type": "ConfigAttackCircle",
+                "triggerType": "TriggerNoRepeat",
+                "born": {
+                  "$type": "ConfigBornBySelf",
+                  "offset": {
+                    "x": 0.0,
+                    "y": 0.5,
+                    "z": 0.0
+                  }
+                },
+                "height": 2.0,
+                "radius": 1.399999976158142
+              },
+              "checkWaterLayer": true
+            },
+            {
+              "$type": "KINBGHMJBBD",
+              "compareType": "LessAndEqual",
+              "depth": 0.5
+            }
+          ],
+          "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElementalBurst_RightEye",
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_ElementalBurst_PostEffect",
+      "modifiers": {
+        "CameraEffect": {
+          "modifierName": "",
+          "elementDurability": 2.5,
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "COEDOLJOHAK",
+              "postEffectAssetName": "PostEffect_Avatar_Yae_ElementalBurst_ScreenEffect",
+              "duration": 0.5
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "ApplyModifier",
+          "modifierName": "CameraEffect"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_ElementalBurst_Mark_Tower",
+      "abilitySpecials": {
+        "ModifySKill_MaxTimes": 0.0
+      },
+      "modifiers": {
+        "FoxTower_Killer": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "KillSelf",
+              "configIdArray": [
+                41058008
+              ]
+            }
+          ]
+        },
+        "Yae_ModifySKill_Handler": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "bonusCritical": 100.0,
+          "thinkInterval": 0.10000000149011612,
+          "onThinkInterval": [
+            {
+              "$type": "AddGlobalValue",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "_ABILITY_Yae_ModifySKill_Times",
+              "useLimitRange": true,
+              "param2": "ModifySKill_MaxTimes",
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "ApplyModifier",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Yae_ModifySKill_Times",
+                  "param3": 1.0
+                }
+              ],
+              "modifierName": "Yae_ModifySKill_01"
+            },
+            {
+              "$type": "ApplyModifier",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Yae_ModifySKill_Times",
+                  "param3": 2.0
+                }
+              ],
+              "modifierName": "Yae_ModifySKill_02"
+            },
+            {
+              "$type": "ApplyModifier",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Yae_ModifySKill_Times",
+                  "param3": 3.0
+                }
+              ],
+              "modifierName": "Yae_ModifySKill_03"
+            }
+          ],
+          "onThinkIntervalIsFixedUpdate": true
+        },
+        "Yae_ModifySKill_01": {
+          "modifierName": "",
+          "elementDurability": 0.699999988079071,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "CCMOJLPKHDN",
+              "shieldHP": true,
+              "skillID": 10582,
+              "amountByTargetCurrentHPRatio": -1.0
+            }
+          ]
+        },
+        "Yae_ModifySKill_02": {
+          "modifierName": "",
+          "elementDurability": 0.699999988079071,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "CCMOJLPKHDN",
+              "shieldHP": true,
+              "skillID": 10582,
+              "amountByTargetCurrentHPRatio": -1.0
+            }
+          ]
+        },
+        "Yae_ModifySKill_03": {
+          "modifierName": "",
+          "elementDurability": 0.699999988079071,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "CCMOJLPKHDN",
+              "shieldHP": true,
+              "skillID": 10582,
+              "amountByTargetCurrentHPRatio": -1.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "HMKGPFBBDIC",
+          "shieldHP": true,
+          "key": "_ABILITY_Yae_ElementalBurst_TowerCount"
+        },
+        {
+          "$type": "HMKGPFBBDIC",
+          "shieldHP": true,
+          "key": "_ABILITY_Yae_ModifySKill_MaxTimes"
+        },
+        {
+          "$type": "HMKGPFBBDIC",
+          "shieldHP": true,
+          "key": "_ABILITY_Yae_ModifySKill_Times"
+        },
+        {
+          "$type": "AvatarSkillStart",
+          "predicates": [
+            {
+              "$type": "IHLMAOEHHOB",
+              "skillID": 10585
+            }
+          ],
+          "skillID": 10585,
+          "amountByTargetCurrentHPRatio": 1.0,
+          "costStaminaRatio": 1.0
+        },
+        {
+          "$type": "GCAOJEBHECK",
+          "srcOtherTargets": {
+            "$type": "SelectTargetsByShape",
+            "shapeName": "CircleR40",
+            "campTargetType": "All",
+            "doOffStage": 1.0
+          },
+          "srcPredicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_IS_FOXTOWER",
+              "param3": 1.0
+            }
+          ],
+          "dstTarget": "Self",
+          "key": "_ABILITY_Yae_ElementalBurst_TowerCount",
+          "useLimitRange": true,
+          "param2": 3.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "GCAOJEBHECK",
+          "srcOtherTargets": {
+            "$type": "SelectTargetsByShape",
+            "shapeName": "CircleR40",
+            "campTargetType": "All",
+            "doOffStage": 1.0
+          },
+          "srcPredicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_IS_FOXTOWER",
+              "param3": 1.0
+            }
+          ],
+          "dstTarget": "Self",
+          "key": "_ABILITY_Yae_ModifySKill_MaxTimes",
+          "useLimitRange": true,
+          "param2": 3.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "LDIAIDLOPEE",
+          "globalValueKey": "_ABILITY_Yae_ModifySKill_MaxTimes",
+          "overrideMapKey": "ModifySKill_MaxTimes"
+        },
+        {
+          "$type": "ApplyModifier",
+          "otherTargets": {
+            "$type": "SelectTargetsByShape",
+            "shapeName": "CircleR40",
+            "campTargetType": "Alliance",
+            "doOffStage": 1.0
+          },
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_IS_FOXTOWER",
+              "param3": 1.0
+            }
+          ],
+          "modifierName": "FoxTower_Killer"
+        },
+        {
+          "$type": "ApplyModifier",
+          "shieldHP": true,
+          "predicates": [
+            {
+              "$type": "ByUnlockTalentParam",
+              "talentParam": "Yae_PermanentSkill_1"
+            }
+          ],
+          "modifierName": "Yae_ModifySKill_Handler"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_ElementalBurst_Clear_Tower",
+      "onAbilityStart": [
+        {
+          "$type": "CreateGadget",
+          "lifeByOwnerIsAlive": true,
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 5.5
+            }
+          },
+          "gadgetID": 41058009,
+          "campID": 1001,
+          "campTargetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_ElementalBurst_TowerExplosion_Material",
+      "abilitySpecials": {
+        "TowerExplosion_Damage": 0.0,
+        "TowerExplosion_ExtraDamage": 0.0,
+        "Constellation_1_ReviveElemEnergy": 0.0,
+        "TowerExplosion_MaxCount": 0.0
+      },
+      "modifiers": {
+        "TowerExplosion_LifeTimer": {
+          "modifierName": "",
+          "elementDurability": 5.0,
+          "bonusCritical": 100.0,
+          "thinkInterval": 1.0,
+          "onThinkInterval": [
+            {
+              "$type": "Predicated",
+              "target": "Owner",
+              "targetPredicates": [
+                {
+                  "$type": "FMBJAJFLDIP",
+                  "param3": 80.0,
+                  "DDALGNLEHOD": ""
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "KillSelf"
+                }
+              ]
+            }
+          ]
+        },
+        "TowerExplosion_Damage_Timer": {
+          "modifierName": "",
+          "elementDurability": 0.28999999165534973,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElementalBurst_Thunderfall",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "TowerExplosion_Damage_Handler"
+            }
+          ]
+        },
+        "TowerExplosion_Damage_Handler": {
+          "modifierName": "",
+          "elementDurability": 0.4000000059604645,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "TriggerAttackEvent",
+              "target": "OriginOwner",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackCircle",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.0,
+                      "y": -2.0,
+                      "z": 0.0
+                    }
+                  },
+                  "height": 5.0,
+                  "radius": 7.0
+                },
+                "attackInfo": {
+                  "attackTag": "Elemental_Burst",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "TowerExplosion_Damage",
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Electric",
+                    "bonusCritical": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 75.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV3",
+                    "hitHaltTimeScale": 0.009999999776482582
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "JPHLIDGMGBG",
+              "cameraRadialBlur": {
+                "power": 3.0,
+                "blurTime": 0.05999999865889549,
+                "fadeTime": 0.5
+              }
+            },
+            {
+              "$type": "ONALKNNKKLH",
+              "cameraShake": {
+                "shakeType": "CustomVector",
+                "shakeRange": 0.4000000059604645,
+                "shakeTime": 0.4000000059604645,
+                "shakeDistance": 40.0,
+                "shakeDir": {
+                  "y": -1.0
+                },
+                "extension": {
+                  "baseOnCamera": true,
+                  "baseCycle": 0.10000000149011612,
+                  "cycleDamping": -0.03999999910593033,
+                  "rangeAttenuation": 0.20000000298023224
+                }
+              }
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "TowerExplosion_ExtraDamage_Handler"
+            }
+          ]
+        },
+        "TowerExplosion_ExtraDamage_Handler": {
+          "modifierName": "",
+          "elementDurability": 1.2999999523162842,
+          "bonusCritical": 100.0,
+          "thinkInterval": 0.4000000059604645,
+          "onThinkInterval": [
+            {
+              "$type": "AddGlobalValue",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "_ABILITY_Yae_TowerExplosion_AttackCount",
+              "useLimitRange": true,
+              "param2": "TowerExplosion_MaxCount",
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "ApplyModifier",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Yae_TowerExplosion_AttackCount",
+                  "param3": 1.0
+                }
+              ],
+              "modifierName": "TowerExplosion_Damage_01"
+            },
+            {
+              "$type": "ApplyModifier",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Yae_TowerExplosion_AttackCount",
+                  "param3": 2.0
+                }
+              ],
+              "modifierName": "TowerExplosion_Damage_02"
+            },
+            {
+              "$type": "ApplyModifier",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Yae_TowerExplosion_AttackCount",
+                  "param3": 3.0
+                }
+              ],
+              "modifierName": "TowerExplosion_Damage_03"
+            }
+          ],
+          "onThinkIntervalIsFixedUpdate": true
+        },
+        "TowerExplosion_Damage_01": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElementalBurst_Bloom_Fox",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "onGround": true
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "SetGlobalPos",
+              "key": "TowerExplosion_Damage_Pos",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "bornRandom": {
+                  "$type": "OJKHDGHBNKP",
+                  "minRandomRange": 0.5,
+                  "maxRandomRange": 1.0
+                }
+              }
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElementalBurst_Bloom",
+              "born": {
+                "$type": "ICKMMAHFNIM",
+                "onGround": true,
+                "positionKey": "TowerExplosion_Damage_Pos",
+                "directionKey": ""
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "target": "OriginOwner",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackCircle",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.0,
+                      "y": -2.0,
+                      "z": 0.0
+                    }
+                  },
+                  "height": 5.0,
+                  "radius": 7.0
+                },
+                "attackInfo": {
+                  "attackTag": "Elemental_Burst",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "TowerExplosion_ExtraDamage",
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Electric",
+                    "bonusCritical": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 75.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.009999999776482582
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "ReviveElemEnergy",
+              "target": "Owner",
+              "predicates": [
+                {
+                  "$type": "ByUnlockTalentParam",
+                  "talentParam": "Yae_Constellation_1"
+                }
+              ],
+              "param3": "Constellation_1_ReviveElemEnergy"
+            }
+          ]
+        },
+        "TowerExplosion_Damage_02": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElementalBurst_Bloom_Fox",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "onGround": true
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "SetGlobalPos",
+              "key": "TowerExplosion_Damage_Pos",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "bornRandom": {
+                  "$type": "OJKHDGHBNKP",
+                  "minRandomRange": 0.5,
+                  "maxRandomRange": 1.0
+                }
+              }
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElementalBurst_Bloom",
+              "born": {
+                "$type": "ICKMMAHFNIM",
+                "onGround": true,
+                "positionKey": "TowerExplosion_Damage_Pos",
+                "directionKey": ""
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "target": "OriginOwner",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackCircle",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.0,
+                      "y": -2.0,
+                      "z": 0.0
+                    }
+                  },
+                  "height": 5.0,
+                  "radius": 7.0
+                },
+                "attackInfo": {
+                  "attackTag": "Elemental_Burst",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "TowerExplosion_ExtraDamage",
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Electric",
+                    "bonusCritical": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 75.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.009999999776482582
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "ReviveElemEnergy",
+              "target": "Owner",
+              "predicates": [
+                {
+                  "$type": "ByUnlockTalentParam",
+                  "talentParam": "Yae_Constellation_1"
+                }
+              ],
+              "param3": "Constellation_1_ReviveElemEnergy"
+            }
+          ]
+        },
+        "TowerExplosion_Damage_03": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElementalBurst_Bloom_Fox",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "onGround": true
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "SetGlobalPos",
+              "key": "TowerExplosion_Damage_Pos",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "bornRandom": {
+                  "$type": "OJKHDGHBNKP",
+                  "minRandomRange": 0.5,
+                  "maxRandomRange": 1.0
+                }
+              }
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_ElementalBurst_Bloom",
+              "born": {
+                "$type": "ICKMMAHFNIM",
+                "onGround": true,
+                "positionKey": "TowerExplosion_Damage_Pos",
+                "directionKey": ""
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "target": "OriginOwner",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackCircle",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.0,
+                      "y": -2.0,
+                      "z": 0.0
+                    }
+                  },
+                  "height": 5.0,
+                  "radius": 7.0
+                },
+                "attackInfo": {
+                  "attackTag": "Elemental_Burst",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "TowerExplosion_ExtraDamage",
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Electric",
+                    "bonusCritical": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 75.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.009999999776482582
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "ReviveElemEnergy",
+              "target": "Owner",
+              "predicates": [
+                {
+                  "$type": "ByUnlockTalentParam",
+                  "talentParam": "Yae_Constellation_1"
+                }
+              ],
+              "param3": "Constellation_1_ReviveElemEnergy"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BEMPFJGAPHG",
+          "srcTarget": "OriginOwner",
+          "dstTarget": "Self",
+          "srcKey": "_ABILITY_Yae_ElementalBurst_TowerCount",
+          "dstKey": "_ABILITY_TowerExplosion_MaxCount"
+        },
+        {
+          "$type": "LDIAIDLOPEE",
+          "shieldHP": true,
+          "globalValueKey": "_ABILITY_TowerExplosion_MaxCount",
+          "overrideMapKey": "TowerExplosion_MaxCount"
+        },
+        {
+          "$type": "ApplyModifier",
+          "modifierName": "TowerExplosion_Damage_Timer"
+        },
+        {
+          "$type": "ApplyModifier",
+          "modifierName": "TowerExplosion_LifeTimer"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_PermanentSkill_1",
+      "abilityMixins": [
+        {
+          "$type": "DoActionByTeamStatusMixin",
+          "actions": [
+            {
+              "$type": "ApplyModifier",
+              "target": "AllPlayerAvatars",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "HAEOJJJBFBH",
+                  "isCaster": false
+                }
+              ],
+              "modifierName": "Yae_PermanentSkill_1_Handler"
+            }
+          ]
+        }
+      ],
+      "abilitySpecials": {
+        "cdDelta_1": 0.0,
+        "ElementalArt_CD": 0.0,
+        "cdDelta_2": 0.0,
+        "ElementalBurst_CD": 0.0
+      },
+      "modifiers": {
+        "Yae_PermanentSkill_1_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "Predicated",
+              "target": "Other",
+              "shieldHP": true,
+              "targetPredicates": [
+                {
+                  "$type": "ByAttackTags",
+                  "attackTags": [
+                    "Elemental_Art"
+                  ]
+                },
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "target": "Caster",
+                  "shieldHP": true,
+                  "predicates": [
+                    {
+                      "$type": "FMBJAJFLDIP",
+                      "logic": "LesserOrEqual",
+                      "param3": 40.0,
+                      "DDALGNLEHOD": ""
+                    },
+                    {
+                      "$type": "BCFNGJHILAG",
+                      "predicates": [
+                        {
+                          "$type": "IHLMAOEHHOB",
+                          "target": "Caster",
+                          "skillID": 10582
+                        }
+                      ]
+                    }
+                  ],
+                  "modifierName": "UNIQUE_Yae_PermanentSkill_ElementalArt_ModifySkillCD"
+                }
+              ]
+            },
+            {
+              "$type": "Predicated",
+              "target": "Other",
+              "shieldHP": true,
+              "targetPredicates": [
+                {
+                  "$type": "ByAttackTags",
+                  "attackTags": [
+                    "Elemental_Burst"
+                  ]
+                },
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "target": "Caster",
+                  "shieldHP": true,
+                  "predicates": [
+                    {
+                      "$type": "FMBJAJFLDIP",
+                      "logic": "LesserOrEqual",
+                      "param3": 40.0,
+                      "DDALGNLEHOD": ""
+                    },
+                    {
+                      "$type": "BCFNGJHILAG",
+                      "predicates": [
+                        {
+                          "$type": "IHLMAOEHHOB",
+                          "target": "Caster",
+                          "skillID": 10582
+                        }
+                      ]
+                    }
+                  ],
+                  "modifierName": "UNIQUE_Yae_PermanentSkill_ElementalBurst_ModifySkillCD"
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Yae_PermanentSkill_ElementalArt_ModifySkillCD": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "ElementalArt_CD",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "CCMOJLPKHDN",
+              "shieldHP": true,
+              "skillID": 10582,
+              "cdMin": "cdDelta_1"
+            }
+          ]
+        },
+        "UNIQUE_Yae_PermanentSkill_ElementalBurst_ModifySkillCD": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "ElementalBurst_CD",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "CCMOJLPKHDN",
+              "shieldHP": true,
+              "skillID": 10582,
+              "cdMin": "cdDelta_2"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "ApplyModifier",
+          "target": "AllPlayerAvatars",
+          "shieldHP": true,
+          "predicates": [
+            {
+              "$type": "HAEOJJJBFBH",
+              "isCaster": false
+            }
+          ],
+          "modifierName": "Yae_PermanentSkill_1_Handler"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_PermanentSkill_2",
+      "abilityMixins": [
+        {
+          "$type": "ModifyDamageMixin",
+          "attackTags": [
+            "Elemental_Art"
+          ],
+          "actorWindSubHurtDelta": [
+            "Yae_PermanentSkill_2_AttackUpRatio",
+            "FIGHT_PROP_ELEMENT_MASTERY",
+            "MUL"
+          ]
+        }
+      ],
+      "abilitySpecials": {
+        "Yae_PermanentSkill_2_AttackUpRatio": 0.0
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_Constellation_4",
+      "abilitySpecials": {
+        "Yae_ElecAddHurtDelta": 0.0,
+        "ElecAddHurtDown_Duration": 0.009999999776482582
+      },
+      "modifiers": {
+        "Yae_ElecAddHurt_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "Predicated",
+              "target": "Other",
+              "shieldHP": true,
+              "targetPredicates": [
+                {
+                  "$type": "ByAttackTags",
+                  "attackTags": [
+                    "Elemental_Art"
+                  ]
+                },
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "RemoveUniqueModifier",
+                  "target": "AllPlayerAvatars",
+                  "shieldHP": true,
+                  "predicates": [
+                    {
+                      "$type": "FMBJAJFLDIP",
+                      "logic": "LesserOrEqual",
+                      "param3": 40.0,
+                      "DDALGNLEHOD": ""
+                    }
+                  ],
+                  "modifierName": "UNIQUE_Yae_Constellation_ElecAddHurt"
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "target": "AllPlayerAvatars",
+                  "shieldHP": true,
+                  "predicates": [
+                    {
+                      "$type": "FMBJAJFLDIP",
+                      "logic": "LesserOrEqual",
+                      "param3": 40.0,
+                      "DDALGNLEHOD": ""
+                    }
+                  ],
+                  "modifierName": "UNIQUE_Yae_Constellation_ElecAddHurt"
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Yae_Constellation_ElecAddHurt": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "ElecAddHurtDown_Duration",
+          "bonusCritical": 100.0,
+          "properties": {
+            "Actor_ElecAddHurtDelta": "Yae_ElecAddHurtDelta"
+          },
+          "state": "AttackUp",
+          "isLimitedProperties": true
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "ApplyModifier",
+          "shieldHP": true,
+          "modifierName": "Yae_ElecAddHurt_Handler"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_Constellation_6",
+      "abilityMixins": [
+        {
+          "$type": "ModifyDamageMixin",
+          "attackTags": [
+            "Elemental_Art"
+          ],
+          "actorWindSubHurtDelta": 0.0,
+          "bonusCriticalHurt": "DefenseIgnoreRatio"
+        }
+      ],
+      "abilitySpecials": {
+        "DefenseIgnoreRatio": 0.0
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_FallingAnthem_Foxtail",
+      "abilityMixins": [
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_AS_1",
+            "FallingAnthem_AS_2"
+          ],
+          "modifierName": "Yae_FallingAnthem_Foxtail_Remover",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_Yae_FallingAnthem_Foxtail": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 2.799999952316284,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Lady_Catalyst_Yae_FallingAttack_Foxtail",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Yae_FallingAnthem_Foxtail_Remover": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "RemoveUniqueModifier",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_Yae_FallingAnthem_Foxtail"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "ApplyModifier",
+          "modifierName": "UNIQUE_Yae_FallingAnthem_Foxtail"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yae_FallingAnthem",
+      "abilityMixins": [
+        {
+          "$type": "KMPFLHBHBBP",
+          "jumpSkillID": 5058010,
+          "flySkillID": 5058010
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS"
+          ],
+          "modifierName": "FallingAnthem_BS_Material",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "FallingAnthem_BS_2",
+            "FallingAnthem_Loop",
+            "FallingAnthem_Loop_Low"
+          ],
+          "modifierName": "FallingAnthem_LoopDamage",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS"
+          ],
+          "modifierName": "FallingAnthem_BS_VelocityForce_Initialize",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop",
+            "FallingAnthem_AS_1",
+            "FallingAnthem_AS_2"
+          ],
+          "modifierName": "FallingAnthem_Height_Detect",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop",
+            "FallingAnthem_AS_1",
+            "FallingAnthem_AS_2"
+          ],
+          "modifierName": "FallingAnthem_FallingDamageImmune_01",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop"
+          ],
+          "modifierName": "Inertia",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop",
+            "FallingAnthem_AS_1",
+            "FallingAnthem_AS_2"
+          ],
+          "modifierName": "FallingAnthem_OverHead_Camera",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS"
+          ],
+          "modifierName": "FallingAnthem_ClearVelocityForce",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "FallingAnthem_BS_2",
+            "FallingAnthem_Loop",
+            "FallingAnthem_Loop_Low",
+            "FallingAnthem_AS_1"
+          ],
+          "modifierName": "FallingAnthem_Attach_SelfEffect",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "FallingAnthem_AS_1"
+          ],
+          "modifierName": "FallingAnthem_Remove_SelfEffect",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "FallingAnthem_BS_2",
+            "FallingAnthem_Loop"
+          ],
+          "modifierName": "FallingAnthem_SetVisible",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop",
+            "FallingAnthem_AS_1"
+          ],
+          "modifierName": "HideWeapon",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "FallingAnthem_Normal_Loop_Damage": 0.0,
+        "FallingAnthem_Normal_Rank_1_Damage": 0.0,
+        "FallingAnthem_Normal_Rank_2_Damage": 0.0,
+        "FallingAnthem_Altitude_Lv0": 20.0,
+        "FallingAnthem_Altitude_Lv1": 40.0,
+        "FallingAnthem_Altitude_Lv2": 60.0,
+        "FallingAnthem_Altitude_Lv3": 100.0,
+        "FallingAnthem_Altitude_Lv4": 200.0,
+        "FallingAnthem_FallingDamageRatio_Lv0": -1.0,
+        "FallingAnthem_FallingDamageRatio_Lv1": -1.0,
+        "FallingAnthem_FallingDamageRatio_Lv2": -0.8999999761581421,
+        "FallingAnthem_FallingDamageRatio_Lv3": -0.800000011920929,
+        "FallingAnthem_FallingDamageRatio_Lv4": -0.6000000238418579,
+        "FallingAnthem_FallingDamageRatio": 0.0
+      },
+      "modifiers": {
+        "HideWeapon": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "NAAJIHIKECC",
+              "partNames": [
+                "equip01",
+                "equip02",
+                "sheathPoint"
+              ],
+              "modifyAnotherValue": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "NAAJIHIKECC",
+              "KGGEDGKGLDD": true,
+              "partNames": [
+                "equip01",
+                "equip02",
+                "sheathPoint"
+              ],
+              "modifyAnotherValue": true
+            }
+          ]
+        },
+        "FallingAnthem_SetVisible": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "PJENOLFAFMG",
+              "shieldHP": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PJENOLFAFMG",
+              "shieldHP": true,
+              "KGGEDGKGLDD": true
+            }
+          ]
+        },
+        "FallingAnthem_BS_Material": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Catalyst_FallAnthem_BS_Electric",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "FallingAnthem_BSCameraRadialBlur"
+            }
+          ]
+        },
+        "FallingAnthem_BS_VelocityForce_Initialize": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "properties": {
+            "Actor_AddGravityScale": -2.0
+          },
+          "onAdded": [
+            {
+              "$type": "LBLNHEBGPJI",
+              "forces": [
+                "RushMoveType"
+              ]
+            }
+          ]
+        },
+        "FallingAnthem_LoopDamage": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "thinkInterval": 0.30000001192092896,
+          "onThinkInterval": [
+            {
+              "$type": "TriggerAttackEvent",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    }
+                  },
+                  "radius": 1.5
+                },
+                "attackInfo": {
+                  "attackTag": "FallingAttack",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "FallingAnthem_Normal_Loop_Damage",
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Electric",
+                    "bonusCritical": 0.0,
+                    "strikeType": "Default",
+                    "enBreak": 5.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.019999999552965164
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "FallingAnthem_FallingDamageImmune_01": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "HMKGPFBBDIC",
+              "key": "_ABILITY_FallingAttack_Altitude"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": "FallingAnthem_Altitude_Lv0"
+                }
+              ],
+              "param3": "FallingAnthem_FallingDamageRatio_Lv0",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "param2": "FallingAnthem_FallingDamageRatio_Lv0",
+              "repeatTimes": "FallingAnthem_FallingDamageRatio_Lv0"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": "FallingAnthem_Altitude_Lv1"
+                },
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": "FallingAnthem_Altitude_Lv0"
+                }
+              ],
+              "param3": "FallingAnthem_FallingDamageRatio_Lv1",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "param2": "FallingAnthem_FallingDamageRatio_Lv1",
+              "repeatTimes": "FallingAnthem_FallingDamageRatio_Lv1"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": "FallingAnthem_Altitude_Lv2"
+                },
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": "FallingAnthem_Altitude_Lv1"
+                }
+              ],
+              "param3": "FallingAnthem_FallingDamageRatio_Lv2",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "param2": "FallingAnthem_FallingDamageRatio_Lv2",
+              "repeatTimes": "FallingAnthem_FallingDamageRatio_Lv2"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": "FallingAnthem_Altitude_Lv3"
+                },
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": "FallingAnthem_Altitude_Lv2"
+                }
+              ],
+              "param3": "FallingAnthem_FallingDamageRatio_Lv3",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "param2": "FallingAnthem_FallingDamageRatio_Lv3",
+              "repeatTimes": "FallingAnthem_FallingDamageRatio_Lv3"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": "FallingAnthem_Altitude_Lv3"
+                }
+              ],
+              "param3": "FallingAnthem_FallingDamageRatio_Lv4",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "param2": "FallingAnthem_FallingDamageRatio_Lv4",
+              "repeatTimes": "FallingAnthem_FallingDamageRatio_Lv4"
+            },
+            {
+              "$type": "AttachModifier",
+              "modifierName": "FallingAnthem_FallingDamageImmune_02"
+            }
+          ]
+        },
+        "FallingAnthem_FallingDamageImmune_02": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "_ABILITY_FallingAttack_Altitude",
+              "overrideMapKey": "FallingAnthem_FallingDamageRatio"
+            },
+            {
+              "$type": "AttachModifier",
+              "modifierName": "FallingAnthem_FallingDamageImmune_03"
+            }
+          ]
+        },
+        "FallingAnthem_FallingDamageImmune_03": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "properties": {
+            "Actor_FallingDamageRatio": "FallingAnthem_FallingDamageRatio"
+          }
+        },
+        "Inertia": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "KEHPDCODOOC",
+              "useXZ": false,
+              "useY": false
+            }
+          ]
+        },
+        "FallingAnthem_Height_Detect": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": 2.4000000953674316
+                }
+              ],
+              "param3": 0.0,
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "useLimitRange": true,
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": 2.4000000953674316
+                }
+              ],
+              "param3": 5.0,
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "FEKJDLHHOLE",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": 2.4000000953674316
+                }
+              ],
+              "floatID": "FallingAnthem_UseCamera",
+              "param3": 0.0
+            },
+            {
+              "$type": "FEKJDLHHOLE",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": 2.4000000953674316
+                }
+              ],
+              "floatID": "FallingAnthem_UseCamera",
+              "param3": 1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FEKJDLHHOLE",
+              "floatID": "FallingAnthem_UseCamera",
+              "param3": 0.0
+            },
+            {
+              "$type": "AddGlobalValue",
+              "param3": 0.0,
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "useLimitRange": true,
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "FallingAnthem_OverHead_Camera": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "LJBFFDLKIKL",
+              "predicates": [
+                {
+                  "$type": "NIFDMKMHAGJ",
+                  "logic": "Equal",
+                  "param3": 1.0,
+                  "parameter": "FallingAnthem_UseCamera"
+                }
+              ],
+              "cameraParam": {
+                "forceRadius": 4.5,
+                "forceRadiusDuration": 0.20000000298023224,
+                "shouldKeepForceRadius": true
+              }
+            }
+          ]
+        },
+        "FallingAnthem_OverHead_Camera_Remover": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "PEIPIGEMHEK",
+              "shieldHP": true
+            }
+          ]
+        },
+        "FallingAnthem_Landed_Camera": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "LJBFFDLKIKL",
+              "predicates": [
+                {
+                  "$type": "NIFDMKMHAGJ",
+                  "logic": "Equal",
+                  "param3": 1.0,
+                  "parameter": "FallingAnthem_UseCamera"
+                }
+              ],
+              "cameraParam": {
+                "forceRadius": 6.0,
+                "forceRadiusDuration": 0.10000000149011612,
+                "shouldKeepForceRadius": true
+              }
+            }
+          ]
+        },
+        "FallingAnthem_ClearVelocityForce": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "LBLNHEBGPJI",
+              "forces": [
+                "RushMoveType",
+                "InertiaType"
+              ]
+            }
+          ]
+        },
+        "FallingAnthem_Attach_SelfEffect": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Catalyst_FallAnthem_Self_Electric",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "FallingAnthem_Remove_SelfEffect": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "FallingAnthem_Attach_SelfEffect"
+            }
+          ]
+        },
+        "FallingAnthem_BSCameraRadialBlur": {
+          "modifierName": "",
+          "elementDurability": 0.30000001192092896,
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PIEMLPMIDKA",
+              "cameraRadialBlur": {
+                "power": 0.30000001192092896,
+                "fadeTime": 0.15000000596046448
+              }
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "TriggerAttackEvent",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "param3": 0.0,
+              "forceByCaster": true,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackCircle",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "x": 0.0,
+                  "y": -0.5,
+                  "z": 0.0
+                }
+              },
+              "height": 2.0,
+              "radius": 3.0
+            },
+            "attackInfo": {
+              "attackTag": "FallingAttack",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "FallingAnthem_Normal_Rank_1_Damage",
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Electric",
+                "bonusCritical": 25.0,
+                "strikeType": "Default",
+                "enBreak": 50.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "none",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV3",
+                "hitHaltTimeScale": 0.10000000149011612
+              },
+              "forceCameraShake": true,
+              "cameraShake": {
+                "shakeType": "CustomVector",
+                "shakeRange": 0.23999999463558197,
+                "shakeTime": 0.11999999731779099,
+                "shakeDistance": 30.0,
+                "shakeDir": {
+                  "y": 1.0
+                },
+                "extension": {
+                  "baseCycle": 0.23999999463558197,
+                  "cycleDamping": 0.0,
+                  "rangeAttenuation": 0.30000001192092896
+                }
+              }
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "TriggerAttackEvent",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "param3": 1.0,
+              "forceByCaster": true
+            }
+          ],
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackCircle",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "x": 0.0,
+                  "y": -0.5,
+                  "z": 0.0
+                }
+              },
+              "height": 2.0,
+              "radius": 3.5
+            },
+            "attackInfo": {
+              "attackTag": "FallingAttack",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "FallingAnthem_Normal_Rank_2_Damage",
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Electric",
+                "bonusCritical": 25.0,
+                "strikeType": "Default",
+                "enBreak": 100.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "none",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV4",
+                "hitHaltTimeScale": 0.10000000149011612
+              },
+              "forceCameraShake": true,
+              "cameraShake": {
+                "shakeType": "CustomVector",
+                "shakeRange": 0.5,
+                "shakeTime": 0.20000000298023224,
+                "shakeDistance": 30.0,
+                "shakeDir": {
+                  "y": 1.0,
+                  "z": 1.0
+                },
+                "extension": {
+                  "baseCycle": 0.4000000059604645,
+                  "cycleDamping": 0.0,
+                  "rangeAttenuation": 0.30000001192092896
+                }
+              }
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "FireEffect",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "param3": 0.0,
+              "forceByCaster": true,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "rotationDampTime": "Eff_Avatar_Catalyst_FallAnthem_Strike_01_Electric",
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "FireEffect",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "param3": 1.0,
+              "forceByCaster": true
+            }
+          ],
+          "rotationDampTime": "Eff_Avatar_Catalyst_FallAnthem_Strike_02_Electric",
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  }
+]

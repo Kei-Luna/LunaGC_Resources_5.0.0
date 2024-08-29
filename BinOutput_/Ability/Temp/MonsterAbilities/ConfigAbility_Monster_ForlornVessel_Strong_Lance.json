@@ -1,0 +1,566 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_ForlornVessel_Strong_Lance_HitShield",
+      "abilitySpecials": {
+        "ForlornVessel_Heal_Layer": 4.0,
+        "ForlornVessel_Heal": 0.009999999776482582
+      },
+      "modifiers": {
+        "ForlornVessel_Lance_HitShield_Detect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "PDBBDHGEDJH",
+                  "damageRatio": "All"
+                },
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "Monster_ForlornVessel_Attack",
+                    "Monster_ForlornVessel_Lance_ChargeAtk"
+                  ]
+                },
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Avatar"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Caster",
+                  "modifierName": "UNIQUE_ForlornVessel_Lance_HitShield_Succ"
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_ForlornVessel_Lance_HitShield_Succ": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 2.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "DLLGNJPHFDE",
+              "target": "Caster",
+              "GHINLKIEMFA": 0.0,
+              "HFGOEPIEBEE": 0.15000000596046448,
+              "lethal": false,
+              "enableInvincible": true,
+              "enableLockHP": true,
+              "BJKGFBGEFPB": ""
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR5H5",
+                "campTargetType": "All",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "HHHMNCNPBDK",
+                  "predicates": [
+                    {
+                      "$type": "BGMAGODJEMF",
+                      "featureTagIDs": [
+                        4014
+                      ]
+                    },
+                    {
+                      "$type": "BGMAGODJEMF",
+                      "featureTagIDs": [
+                        4013
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "KBFEIHEAMBM",
+                  "rotationDampTime": "Eff_Monster_ForlornVessel_Strong_Lance_HealCircle",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 0.0
+                    },
+                    "alongGround": true
+                  },
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "ForlornVessel_Lance_Heal",
+                      "param3": 3.0,
+                      "compareType": "LessAndEqual"
+                    }
+                  ],
+                  "modifierName": "ForlornVessel_Lance_Hot"
+                }
+              ]
+            }
+          ]
+        },
+        "ForlornVessel_Lance_Hot": {
+          "stacking": "Multiple",
+          "stackingOption": {
+            "abilitySpecialName": "",
+            "maxModifierNumForMultipleType": "ForlornVessel_Heal_Layer"
+          },
+          "modifierName": "",
+          "elementDurability": 10.199999809265137,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "ForlornVessel_Lance_Heal",
+              "useLimitRange": true,
+              "param2": 4.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -1.0,
+              "key": "ForlornVessel_Lance_Heal",
+              "useLimitRange": true,
+              "param2": 4.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "FHGPOFDJDCO",
+              "CKDBFHCIJEK": "ForlornVessel_Heal",
+              "cdRatio": ""
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_ForlornVessel_Strong_Lance_HealTick",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "ForlornVessel_Lance_HitShield_Detect"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_ForlornVessel_Strong_Lance_ExitBattle",
+      "abilityMixins": [
+        {
+          "$type": "AOKOIIHJJPJ",
+          "alertness": [
+            0
+          ],
+          "modifierName": "ExitBattle"
+        }
+      ],
+      "modifiers": {
+        "ExitBattle": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_ForlornVessel_Warbanner_ElementShield_ShieldHandler"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_ForlornVessel_Strong_Lance_Steer",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Turn"
+          ],
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "NormalAtk01"
+          ],
+          "startNormalizedTime": 0.03999999910593033,
+          "endNormalizedTime": 0.07000000029802322,
+          "angularSpeed": 120.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "NormalAtk01"
+          ],
+          "startNormalizedTime": 0.28999999165534973,
+          "endNormalizedTime": 0.3199999928474426,
+          "angularSpeed": 120.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "NormalAtk02"
+          ],
+          "endNormalizedTime": 0.15000000596046448,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "ChargeAtk_BS"
+          ],
+          "endNormalizedTime": 0.25999999046325684,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "ChargeAtk_BS"
+          ],
+          "startNormalizedTime": 0.4099999964237213,
+          "endNormalizedTime": 0.5199999809265137,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "ChargeAtk_Loop"
+          ],
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_ForlornVessel_Strong_Lance_EndureDelta",
+      "abilityMixins": [
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "NormalAtk01",
+          "modifierName": "ForlornVessel_Strong_Lance_EndureDelta",
+          "normalizeEnd": 0.4000000059604645,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "NormalAtk02",
+          "modifierName": "ForlornVessel_Strong_Lance_EndureDelta",
+          "normalizeEnd": 0.3499999940395355,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "ChargeAtk_BS"
+          ],
+          "modifierName": "ForlornVessel_Strong_Lance_EndureDelta",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "ForlornVessel_Strong_Lance_EndureDelta": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GJCAPCBELPA",
+              "abilityName": "Monster_ForlornVessel_EndureDelta_Add"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "GJCAPCBELPA",
+              "abilityName": "Monster_ForlornVessel_EndureDelta_Remove"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_ForlornVessel_Strong_Lance_WeaponHanler",
+      "abilityMixins": [
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "NormalAtk01",
+          "modifierName": "ForlornVessel_Strong_Lance_NormalAtk_WeaponHanler",
+          "normalizeStart": 0.10999999940395355,
+          "normalizeEnd": 0.6800000071525574,
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "ForlornVessel_Strong_Lance_NormalAtk_WeaponHanler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLJCNEBNINA",
+              "partName": "equip01",
+              "realName": "WeaponL"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JLJCNEBNINA",
+              "partName": "equip01",
+              "realName": "WeaponR"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_ForlornVessel_Strong_Lance_ChargeAtk",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "ChargeAtk_Loop"
+          ],
+          "modifierName": "Lance_ChargeAtk_Detect",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "ChargeAtk_BS",
+            "ChargeAtk_Loop"
+          ],
+          "modifierName": "Lance_ChargeAtk_Effect",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Lance_ChargeAtk_Detect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CGANCPEKBPF",
+              "onHittingScene": [
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "ChargeAtkEnd"
+                }
+              ],
+              "animEventIDs": [
+                "ChargeAtk_Route"
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_ForlornVessel_Strong_Lance_ChargeAtk_Route",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onAttackLanded": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Avatar",
+                    "Vehicle",
+                    "Partner"
+                  ],
+                  "useEventSource": true
+                },
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "Monster_ForlornVessel_Lance_ChargeAtk"
+                  ]
+                }
+              ],
+              "PLLJBINMGJK": "ChargeAtkEnd"
+            }
+          ]
+        },
+        "Lance_ChargeAtk_Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_ForlornVessel_Strong_Lance_ChargeAtk_Hand",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_ForlornVessel_Strong_Lance_Alert",
+      "abilityMixins": [
+        {
+          "$type": "AOKOIIHJJPJ",
+          "alertness": [
+            0,
+            1
+          ],
+          "modifierName": "ForlornVessel_Strong_Lance_AlertHandler"
+        }
+      ],
+      "modifiers": {
+        "ForlornVessel_Strong_Lance_AlertHandler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "Leisure"
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "Patrol"
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "Worship"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_ForlornVessel_Strong_Lance_WeaponSpecialElementState",
+      "abilityMixins": [
+        {
+          "$type": "JJIHJPCPPGO",
+          "abilityStates": [
+            "ElementFreeze"
+          ],
+          "modifierName": "WeaponElementFreezeHandler"
+        },
+        {
+          "$type": "JJIHJPCPPGO",
+          "abilityStates": [
+            "ElementPetrifaction"
+          ],
+          "modifierName": "WeaponElementPetrifactionHandler"
+        }
+      ],
+      "modifiers": {
+        "WeaponElementFreezeHandler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "otherTargets": {
+                "$type": "GAPFENEFKKE",
+                "equipPartNames": [
+                  "equip01",
+                  "equip02"
+                ]
+              },
+              "modifierName": "WeaponElementFreeze"
+            }
+          ]
+        },
+        "WeaponElementPetrifactionHandler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "otherTargets": {
+                "$type": "GAPFENEFKKE",
+                "equipPartNames": [
+                  "equip01",
+                  "equip02"
+                ]
+              },
+              "modifierName": "WeaponElementPetrifaction"
+            }
+          ]
+        },
+        "WeaponElementFreeze": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "ElementFreeze"
+        },
+        "WeaponElementPetrifaction": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "ElementPetrifaction"
+        }
+      }
+    }
+  }
+]

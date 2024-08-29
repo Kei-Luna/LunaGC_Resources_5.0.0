@@ -1,0 +1,676 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Vulture_None_MotionPose",
+      "abilityMixins": [
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            101,
+            131
+          ],
+          "modifierName": "GV_Ground"
+        },
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            111
+          ],
+          "modifierName": "GV_LowSky"
+        },
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            121
+          ],
+          "modifierName": "GV_HighSky"
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_VULTURE_MOTION_",
+          "gvInTalk": 1.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Pose_Motion_Ground",
+            "Pose_Motion_Air"
+          ]
+        }
+      ],
+      "modifiers": {
+        "GV_Ground": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_VULTURE_MOTION_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "LowSky",
+              "param3": true
+            }
+          ]
+        },
+        "GV_LowSky": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_VULTURE_MOTION_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "LowSky",
+              "param3": true
+            }
+          ]
+        },
+        "GV_HighSky": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_VULTURE_MOTION_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "HighSky",
+              "param3": true
+            }
+          ]
+        },
+        "Pose_Motion_Ground": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFFKENEJFFB",
+              "intID": "MotionTag"
+            },
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "MotionStateTag",
+              "param3": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_VULTURE_GROUND_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider_Sky"
+              ]
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_Sky"
+              ]
+            }
+          ]
+        },
+        "Pose_Motion_Air": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFFKENEJFFB",
+              "intID": "MotionTag",
+              "value": 1
+            },
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "MotionStateTag",
+              "param3": 1.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_VULTURE_AIR_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider_Sky"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ]
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_Sky"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Vulture_None_GroundPose",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_VULTURE_GROUND_",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Pose_Ground_Normal",
+            "Pose_Ground_MotionChange"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Pose_Ground_Normal": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFFKENEJFFB",
+              "intID": "GroundTag"
+            }
+          ]
+        },
+        "Pose_Ground_MotionChange": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFFKENEJFFB",
+              "intID": "GroundTag",
+              "value": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Vulture_None_AirPose",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_VULTURE_AIR_",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Pose_Air_Normal",
+            "Pose_Air_MotionChange"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Pose_Air_Normal": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFFKENEJFFB",
+              "intID": "AirTag"
+            }
+          ]
+        },
+        "Pose_Air_MotionChange": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFFKENEJFFB",
+              "intID": "AirTag",
+              "value": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Vulture_None_JumpAtk",
+      "abilityMixins": [
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Attack_01",
+          "modifierName": "State_Control",
+          "normalizeStart": 0.2800000011920929,
+          "normalizeEnd": 0.4000000059604645,
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "State_Control": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider_Sky"
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider_Sky"
+              ],
+              "setEnable": true
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Vulture_None_Launch",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Launch_AS",
+            "Alert_AS"
+          ],
+          "modifierName": "Gargoyle_Fafnir_Launch",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Gargoyle_Fafnir_Launch": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_VULTURE_MOTION_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Vulture_None_Land",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Land_AS"
+          ],
+          "modifierName": "Gargoyle_Fafnir_Land",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Gargoyle_Fafnir_Land": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_VULTURE_MOTION_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Vulture_None_Steer",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Attack_01"
+          ],
+          "endNormalizedTime": 0.30000001192092896,
+          "angularSpeed": 120.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Attack_01"
+          ],
+          "startNormalizedTime": 0.30000001192092896,
+          "angularSpeed": 40.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Vulture_None_Flee",
+      "abilityMixins": [
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            131
+          ],
+          "modifierName": "FleeSkillLabel"
+        },
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            101
+          ],
+          "modifierName": "AlertSkillLabel"
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Flee_BS"
+          ],
+          "modifierName": "Flee_Turn",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Flee_Loop"
+          ],
+          "modifierName": "Flee_Launch",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Alert_AS"
+          ],
+          "modifierName": "Flee_High",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "FleeSkillLabel": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "ChangeFleeSkillCD"
+            }
+          ]
+        },
+        "AlertSkillLabel": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "ChangeAlertSkillCD"
+            }
+          ]
+        },
+        "ChangeAlertSkillCD": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "LEOGLBFIELL",
+              "poseIDs": [
+                201
+              ],
+              "modifierName": "RealChangeAlertSkillCD"
+            }
+          ]
+        },
+        "ChangeFleeSkillCD": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "LEOGLBFIELL",
+              "poseIDs": [
+                201
+              ],
+              "modifierName": "RealChangeFleeSkillCD"
+            }
+          ]
+        },
+        "RealChangeAlertSkillCD": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IPMMJGMONCI",
+              "skillIDs": [
+                621
+              ]
+            }
+          ]
+        },
+        "RealChangeFleeSkillCD": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IPMMJGMONCI",
+              "skillIDs": [
+                611
+              ]
+            }
+          ]
+        },
+        "Flee_Turn": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "FleeVulture",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "MPAGCPPAIHJ",
+              "key": "FleeDirection",
+              "born": {
+                "$type": "GMLEDLAGLJM",
+                "linearOffset": -2.0,
+                "linearMin": 0.0,
+                "linearMax": 50.0
+              }
+            },
+            {
+              "$type": "PAMDPDLLAPG",
+              "toPos": {
+                "$type": "ICKMMAHFNIM",
+                "positionKey": "FleeDirection",
+                "directionKey": ""
+              },
+              "maxAngle": 0.6000000238418579
+            }
+          ]
+        },
+        "Flee_Launch": {
+          "modifierName": "",
+          "elementDurability": 4.0,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.10000000149011612,
+          "onRemoved": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "FleeLaunch",
+              "param3": true
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "predicates": [
+                {
+                  "$type": "FMBJAJFLDIP",
+                  "target": "SelfAttackTarget",
+                  "param3": 8.0,
+                  "DDALGNLEHOD": ""
+                }
+              ],
+              "boolID": "FleeLaunch",
+              "param3": true
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "predicates": [
+                {
+                  "$type": "BCFNGJHILAG",
+                  "predicates": [
+                    {
+                      "$type": "IBDEPLJMONN"
+                    }
+                  ]
+                }
+              ],
+              "boolID": "FleeLaunch",
+              "param3": true
+            }
+          ]
+        },
+        "Flee_High": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "FleeVulture",
+                  "param3": 1.0
+                }
+              ],
+              "boolID": "Flee",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "FleeVulture",
+                  "param3": 1.0
+                }
+              ],
+              "modifierName": "Flee_Die"
+            }
+          ]
+        },
+        "Flee_Die": {
+          "modifierName": "",
+          "elementDurability": 4.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "NoDieAnimation",
+              "param3": true
+            },
+            {
+              "$type": "AKJOHBCCCIJ",
+              "dieImmediately": true
+            },
+            {
+              "$type": "AKIIMECIGKE",
+              "duration": 2.0
+            },
+            {
+              "$type": "HBNEMPLJCMB",
+              "hide": true
+            },
+            {
+              "$type": "NCFFNDHGCMH",
+              "duration": 0.10000000149011612,
+              "killSelfType": "Disappear",
+              "value": true,
+              "banExp": true
+            }
+          ]
+        }
+      }
+    }
+  }
+]

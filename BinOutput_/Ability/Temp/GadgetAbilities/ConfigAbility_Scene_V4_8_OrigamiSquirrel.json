@@ -1,0 +1,5239 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_TSkill_Entry",
+      "onAbilityStart": [
+        {
+          "$type": "GJCAPCBELPA",
+          "target": "Team",
+          "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Team_Entrance"
+        },
+        {
+          "$type": "EGJDFNHCFAA",
+          "target": "Target",
+          "otherTargets": {
+            "$type": "GCIMHJEHHAC",
+            "tag": "Activity4_8_MainTag",
+            "EOMGLCGHMEJ": "Flying_Squirrel"
+          },
+          "targetKey": "Flying_Squirrel_Source_Id",
+          "HGCODPCGCAF": "Team"
+        },
+        {
+          "$type": "HPIDNBEGJLL",
+          "target": "Target",
+          "otherTargets": {
+            "$type": "MKAPNKAKCPG",
+            "targetKey": "Flying_Squirrel_Source_Id",
+            "PONIBHCMMOE": "Team"
+          },
+          "state": 202,
+          "configIdArray": [
+            70293151,
+            70293159
+          ]
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "KBODPNEEFGD",
+          "otherTargets": {
+            "$type": "MKAPNKAKCPG",
+            "targetKey": "Shooting_Gadget_Runtime_Id",
+            "PONIBHCMMOE": "Team"
+          },
+          "modifierName": "UNIQUE_EnterShootState_Handler"
+        },
+        {
+          "$type": "KBODPNEEFGD",
+          "target": "Target",
+          "otherTargets": {
+            "$type": "MKAPNKAKCPG",
+            "targetKey": "SquirrelFollow_Gadget_Runtime_Id",
+            "PONIBHCMMOE": "Team"
+          },
+          "modifierName": "UNIQUE_Override_FollowMoveParam"
+        },
+        {
+          "$type": "KBODPNEEFGD",
+          "target": "Team",
+          "modifierName": "UNIQUE_Flying_Squirrel_WaitForReturn"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Team_Entrance",
+      "modifiers": {
+        "Initialize_GV_OrigamiSquirrel": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "target": "AllPlayerAvatars",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_Flying_Squirrel_Keeping",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "UNIQUE_OrigamiSquirrel_Keeper_Team": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "UNIQUE_Avatar_Flying_Squirrel_Keeper_Tri"
+            },
+            {
+              "$type": "EJNMIOFDIGF",
+              "onStageReady": [
+                {
+                  "$type": "GJCAPCBELPA",
+                  "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Exit"
+                }
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 3.0,
+              "key": "Current_Interact_State",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "target": "Team",
+              "param3": 100.0,
+              "key": "OrigamiSquirrel_Exit_Energy",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "target": "Team",
+              "param3": 0.0,
+              "key": "OrigamiSquirrel_Shooting_State",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 1.0,
+              "key": "Is_OrigamiSquirrel_Keeping",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 0.0,
+              "key": "Current_Interact_State",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "GJCAPCBELPA",
+              "target": "Target",
+              "otherTargets": {
+                "$type": "MKAPNKAKCPG",
+                "targetKey": "Shooting_Gadget_Runtime_Id",
+                "PONIBHCMMOE": "Team"
+              },
+              "abilityName": "V4_8_FairyBook_OrigamiSquirrel_ShootingEmptyGadget_killself_01"
+            },
+            {
+              "$type": "GJCAPCBELPA",
+              "target": "Target",
+              "otherTargets": {
+                "$type": "MKAPNKAKCPG",
+                "targetKey": "SquirrelFollow_Gadget_Runtime_Id",
+                "PONIBHCMMOE": "Team"
+              },
+              "abilityName": "V4_8_FairyBook_OrigamiSquirrel_ShootingEmptyGadget_SquirrelFollow_killself_01"
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 0.0,
+              "key": "Is_OrigamiSquirrel_Keeping",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Canel_AVATAR_Aim": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "AimEnd"
+            }
+          ]
+        },
+        "UNIQUE_Avatar_Flying_Squirrel_Keeper_Tri": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EKMDMPGIIEH",
+              "priority": "Playmode"
+            },
+            {
+              "$type": "CCNIOPJEHOE",
+              "globalValueTarget": "Team",
+              "globalValueKey": "OrigamiSquirrel_Shooting_State",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "Switch_To_Shooting_Handler",
+                "Switch_To_Return"
+              ],
+              "NMCLMHFBALJ": true
+            },
+            {
+              "$type": "PGJKGALONGD",
+              "CPCHBGJJGEE": true,
+              "MFIAHPPEEON": true
+            },
+            {
+              "$type": "CBJOLFKNBLC"
+            },
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "Aim",
+                "FastAim"
+              ],
+              "modifierName": "Canel_AVATAR_Aim",
+              "isCheckOnAttach": true,
+              "DGFCLAIDIFI": ""
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "PPDJHLBHCIK",
+              "shieldHP": true,
+              "muteRemoteAction": true,
+              "toPlayMode": "Fairybook"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PPDJHLBHCIK",
+              "shieldHP": true,
+              "canBeHandledOnRecover": true,
+              "muteRemoteAction": true,
+              "JFDCCIECAJB": "Fairybook"
+            }
+          ]
+        },
+        "Switch_To_Shooting_Handler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "Fly"
+              ],
+              "modifierName": "Switch_To_Shooting_Fly",
+              "DGFCLAIDIFI": ""
+            },
+            {
+              "$type": "BBDLKGEJDOJ",
+              "priority": "Playmode",
+              "skillID": 20074
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "target": "Target",
+              "otherTargets": {
+                "$type": "MKAPNKAKCPG",
+                "targetKey": "Flying_Squirrel_Source_Id",
+                "PONIBHCMMOE": "Team"
+              },
+              "param3": 0.0,
+              "key": "OrigamiSquirrel_Carrying_State_Mark",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Switch_To_Shooting_Fly": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "KMPFLHBHBBP",
+              "priority": "PlaymodeExtra1",
+              "jumpSkillID": 20079,
+              "flySkillID": 20079
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "target": "Target",
+              "otherTargets": {
+                "$type": "MKAPNKAKCPG",
+                "targetKey": "Flying_Squirrel_Source_Id",
+                "PONIBHCMMOE": "Team"
+              },
+              "param3": 0.0,
+              "key": "OrigamiSquirrel_Carrying_State_Mark",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Switch_To_Return": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BBDLKGEJDOJ",
+              "priority": "Playmode",
+              "skillID": 20075
+            },
+            {
+              "$type": "KMPFLHBHBBP",
+              "priority": "Playmode",
+              "jumpSkillID": 20085,
+              "flySkillID": 20085
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "target": "Target",
+              "otherTargets": {
+                "$type": "MKAPNKAKCPG",
+                "targetKey": "Flying_Squirrel_Source_Id",
+                "PONIBHCMMOE": "Team"
+              },
+              "param3": 2.0,
+              "key": "OrigamiSquirrel_Carrying_State_Mark",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Initialize_GV_OrigamiSquirrel"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "target": "Team",
+          "modifierName": "UNIQUE_OrigamiSquirrel_Keeper_Team"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Exit",
+      "onAbilityStart": [
+        {
+          "$type": "KBODPNEEFGD",
+          "target": "Team",
+          "modifierName": "UNIQUE_OrigamiSquirrel_Keeper_Team"
+        },
+        {
+          "$type": "KBODPNEEFGD",
+          "target": "Team",
+          "modifierName": "UNIQUE_Flying_Squirrel_WaitForReturn"
+        },
+        {
+          "$type": "GJCAPCBELPA",
+          "target": "Target",
+          "otherTargets": {
+            "$type": "MKAPNKAKCPG",
+            "targetKey": "Flying_Squirrel_Source_Id",
+            "PONIBHCMMOE": "Team"
+          },
+          "abilityName": "V4_8_FairyBook_OrigamiSquirrel_ResetSLC"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Shoot",
+      "abilityMixins": [
+        {
+          "$type": "GODEMHMODCN",
+          "skillID": 20074,
+          "EKKJNADOEMB": 0.11999999731779099,
+          "onReleaseUncharged": [
+            {
+              "$type": "BAKEBEKLLAC",
+              "muteRemoteAction": true,
+              "id": 404379
+            }
+          ],
+          "onReleaseCharged": [
+            {
+              "$type": "BAKEBEKLLAC",
+              "muteRemoteAction": true,
+              "id": 404379
+            }
+          ],
+          "onBeginSecondCharged": [
+            {
+              "$type": "GJCAPCBELPA",
+              "target": "Target",
+              "otherTargets": {
+                "$type": "MKAPNKAKCPG",
+                "targetKey": "Shooting_Gadget_Runtime_Id",
+                "PONIBHCMMOE": "Team"
+              },
+              "abilityName": "V4_8_FairyBook_OrigamiSquirrel_ShootingEmptyGadget_EnterShootState_Handler_01"
+            },
+            {
+              "$type": "GJCAPCBELPA",
+              "target": "Target",
+              "otherTargets": {
+                "$type": "MKAPNKAKCPG",
+                "targetKey": "SquirrelFollow_Gadget_Runtime_Id",
+                "PONIBHCMMOE": "Team"
+              },
+              "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Shooting_Empty_Gadget_SquirrelFollow_01"
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "target": "Team",
+              "param3": 0.0,
+              "key": "OrigamiSquirrel_Exit_Energy",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "UNIQUE_Team_Panel_Controller"
+            }
+          ],
+          "onReleaseSecondCharged": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "OnReleaseSecondChargedOnReleaseSecondChargedOnReleaseSecondChargedOnReleaseSecondCharged"
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "target": "Team",
+              "param3": 1.0,
+              "key": "OrigamiSquirrel_Shooting_State",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "GJCAPCBELPA",
+              "target": "Target",
+              "otherTargets": {
+                "$type": "MKAPNKAKCPG",
+                "targetKey": "Shooting_Gadget_Runtime_Id",
+                "PONIBHCMMOE": "Team"
+              },
+              "abilityName": "V4_8_FairyBook_OrigamiSquirrel_ShootingEmptyGadget_Shooting_Handler_01"
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "target": "Target",
+              "otherTargets": {
+                "$type": "MKAPNKAKCPG",
+                "targetKey": "Shooting_Gadget_Runtime_Id",
+                "PONIBHCMMOE": "Team"
+              },
+              "modifierName": "UNIQUE_EnterShootState_Handler"
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "target": "Target",
+              "otherTargets": {
+                "$type": "MKAPNKAKCPG",
+                "targetKey": "SquirrelFollow_Gadget_Runtime_Id",
+                "PONIBHCMMOE": "Team"
+              },
+              "modifierName": "UNIQUE_Override_FollowMoveParam"
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_Team_Panel_Controller"
+            }
+          ],
+          "onCancelCharged": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "OnCancelChargedOnCancelChargedOnCancelChargedOnCancelChargedOnCancelChargedOnCancelCharged"
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "target": "Team",
+              "param3": 100.0,
+              "key": "OrigamiSquirrel_Exit_Energy",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "target": "Target",
+              "otherTargets": {
+                "$type": "MKAPNKAKCPG",
+                "targetKey": "Flying_Squirrel_Source_Id",
+                "PONIBHCMMOE": "Team"
+              },
+              "param3": 0.0,
+              "key": "OrigamiSquirrel_Carrying_State_Mark",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "target": "Target",
+              "otherTargets": {
+                "$type": "MKAPNKAKCPG",
+                "targetKey": "Shooting_Gadget_Runtime_Id",
+                "PONIBHCMMOE": "Team"
+              },
+              "modifierName": "UNIQUE_EnterShootState_Handler"
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "target": "Target",
+              "otherTargets": {
+                "$type": "MKAPNKAKCPG",
+                "targetKey": "SquirrelFollow_Gadget_Runtime_Id",
+                "PONIBHCMMOE": "Team"
+              },
+              "modifierName": "UNIQUE_Override_FollowMoveParam"
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_Team_Panel_Controller"
+            }
+          ],
+          "chargeStateIDs": [
+            "NormalStandby",
+            "NormalMove",
+            "SprintBS",
+            "Sprint",
+            "Upstairs",
+            "Jump",
+            "Fall",
+            "NormalStandbyWeapon",
+            "NormalMoveWeapon",
+            "NormalMoveWeaponPutaway",
+            "NormalMoveWeaponOver",
+            "JumpWeapon",
+            "FallWeapon",
+            "StandbyShow"
+          ]
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_Team_Panel_Controller": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CFIAMLPCCHJ"
+            }
+          ]
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Return",
+      "onAbilityStart": [
+        {
+          "$type": "ELNHKGAPIBJ",
+          "content": "ReturnReturnReturnReturnReturnReturnReturnReturn"
+        },
+        {
+          "$type": "KBODPNEEFGD",
+          "target": "Team",
+          "predicates": [
+            {
+              "$type": "BHFFBBOLCCP",
+              "modifierName": "UNIQUE_Flying_Squirrel_WaitForReturn"
+            }
+          ],
+          "modifierName": "UNIQUE_Flying_Squirrel_WaitForReturn"
+        },
+        {
+          "$type": "KBODPNEEFGD",
+          "target": "Team",
+          "predicates": [
+            {
+              "$type": "BHFFBBOLCCP",
+              "modifierName": "UNIQUE_Flying_Squirrel_ForceReturn"
+            }
+          ],
+          "modifierName": "UNIQUE_Flying_Squirrel_ForceReturn"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_OutOfRegion",
+      "abilityMixins": [
+        {
+          "$type": "JPPFBGJICKI",
+          "key": "TeamGV_OrigamiSquirrel_Region",
+          "useLimitRange": true,
+          "param2": 1.0,
+          "repeatTimes": -1.0
+        }
+      ],
+      "modifiers": {
+        "LeaveRegion_Check": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PHLKCMFKFIN",
+              "globalValueKey": "TeamGV_OrigamiSquirrel_Region",
+              "valueSteps": [
+                -1.5,
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "Out_Of_Region_noRmd",
+                "NormalState",
+                "Out_Of_Region"
+              ],
+              "NMCLMHFBALJ": true
+            }
+          ]
+        },
+        "NormalState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "Out_Of_Region_noRmd": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GJCAPCBELPA",
+              "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Exit"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 0.0,
+              "key": "TeamGV_OrigamiSquirrel_Region",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Out_Of_Region": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GJCAPCBELPA",
+              "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Exit"
+            },
+            {
+              "$type": "BAKEBEKLLAC",
+              "muteRemoteAction": true,
+              "id": 404380
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 0.0,
+              "key": "TeamGV_OrigamiSquirrel_Region",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "LeaveRegion_Check"
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "TeamGV_OrigamiSquirrel_Region",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Shooting_Empty_Gadget_SquirrelFollow_01",
+      "abilityMixins": [
+        {
+          "$type": "EFDKCGMBIBD",
+          "HEHMNFGBNOP": "RootNode",
+          "OCPGCJAMFJK": "RootNode",
+          "KJELNBILAFG": [
+            "Cannon"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Call_Team": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "EGJDFNHCFAA",
+              "target": "Applier",
+              "targetKey": "SquirrelFollow_Gadget_Runtime_Id",
+              "HGCODPCGCAF": "Team"
+            }
+          ]
+        },
+        "UNIQUE_Override_FollowMoveParam": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "KNAEDIKCLHN",
+              "AOBCPAHHFGD": [
+                "attachPoint",
+                "followRotation",
+                "followPositionSmoothedDampTime",
+                "followPositionSmoothedDampTimeX",
+                "followPositionSmoothedDampTimeY",
+                "followPositionSmoothedDampTimeZ",
+                "followRotationSmoothedDampTime"
+              ],
+              "attachPoint": "CameraLook",
+              "DIKJHCIOJAN": 0.0,
+              "MJFKPBDPEED": 0.0,
+              "GDANHAFGOKO": 0.0,
+              "EHHPCCILEHK": 0.0,
+              "OHFAIGKDKKD": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "EGJDFNHCFAA",
+          "targetKey": "SquirrelFollow_Gadget_Runtime_Id"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "target": "Team",
+          "modifierName": "Call_Team"
+        },
+        {
+          "$type": "EGJDFNHCFAA",
+          "targetKey": "FollowRuntimeID",
+          "HGCODPCGCAF": "Owner"
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "KBODPNEEFGD",
+          "modifierName": "UNIQUE_Override_FollowMoveParam"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "UNIQUE_Override_FollowMoveParam"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_TurnTo_Avatar_By_ScanEntity",
+      "onAbilityStart": [
+        {
+          "$type": "ELNHKGAPIBJ",
+          "content": "V4_8_FairyBook_OrigamiSquirrel_TurnTo_Avatar_By_ScanEntity - onAblityStart"
+        },
+        {
+          "$type": "MPAGCPPAIHJ",
+          "target": "Target",
+          "key": "_Temp_TurnTo_ScanEntityOwner_Pos",
+          "setTarget": false
+        },
+        {
+          "$type": "PAMDPDLLAPG",
+          "toPos": {
+            "$type": "ICKMMAHFNIM",
+            "positionKey": "_Temp_TurnTo_ScanEntityOwner_Pos",
+            "directionKey": ""
+          }
+        },
+        {
+          "$type": "BLCCGIPAOIP",
+          "PLLJBINMGJK": "RubHands",
+          "mpTriggerOnRemote": true
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Shooting_Empty_Gadget_01",
+      "abilityMixins": [
+        {
+          "$type": "EFDKCGMBIBD",
+          "HEHMNFGBNOP": "RootNode",
+          "OCPGCJAMFJK": "RootNode",
+          "KJELNBILAFG": [
+            "Normal",
+            "Cannon",
+            "GadgetAdjust"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Call_Team": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "EGJDFNHCFAA",
+              "target": "Applier",
+              "targetKey": "Shooting_Gadget_Runtime_Id",
+              "HGCODPCGCAF": "Team"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "EGJDFNHCFAA",
+          "targetKey": "Shooting_Gadget_Runtime_Id"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "target": "Team",
+          "modifierName": "Call_Team"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_ShootingEmptyGadget_EnterShootState_Handler_01",
+      "modifiers": {
+        "UNIQUE_EnterShootState_Handler": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "Team",
+              "modifierName": "UNIQUE_Spawn_Camera"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "Team",
+              "modifierName": "UNIQUE_UINotify"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "UNIQUE_Focus_Curve_Eff"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "LaserMixin_Controller"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "Team",
+              "modifierName": "Forbid_Skill_Team_Handler"
+            }
+          ]
+        },
+        "Forbid_Skill_Team_Handler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "Forbid_Skill_20074"
+            }
+          ]
+        },
+        "Forbid_Skill_20074": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "KAMLJIPJMDO",
+              "skillID": 20074
+            }
+          ]
+        },
+        "UNIQUE_UINotify": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "KABKFPPHKFK",
+              "showCrosshair": false,
+              "dragButtonName": "Skill1"
+            }
+          ]
+        },
+        "UNIQUE_Spawn_Camera": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BJAMAIBGOPD",
+              "target": "Applier",
+              "priority": 1,
+              "JLPODGJBMHD": {
+                "$type": "OBILOLCLHFF",
+                "AEAMANCFLLA": "RootNode",
+                "BOLMHHFIMFA": {
+                  "x": 1.0,
+                  "y": 0.6000000238418579
+                },
+                "defaultRadius": 4.0,
+                "fov": 50.0,
+                "HOALMDAEIEN": -55.0,
+                "JOLDBHFJJNP": 35.0,
+                "PGCCOOEDCHL": true,
+                "DJPDGDNAKDO": true,
+                "GEJNMFFGECL": 1.0,
+                "PKGOEJGOCND": 4.411799907684326
+              },
+              "BELLAHDCNEC": {
+                "blendType": 1,
+                "ONMLJJIPBAI": 2,
+                "duration": 0.20000000298023224
+              }
+            }
+          ]
+        },
+        "LaserMixin_Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKENLIHLFPF",
+              "rotationDampTime": "Eff_SceneObj_OrigamiSquirrel_01_Line_01",
+              "onLaserHit": [
+                {
+                  "$type": "INBCDALOHMP",
+                  "target": "Target",
+                  "targetPredicates": [
+                    {
+                      "$type": "JHAJOBAACDP",
+                      "tag": "Is_OrigamiSquirrel_Garland"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "ELNHKGAPIBJ",
+                      "content": "Eff_SceneObj_OrigamiSquirrel_01_Line_01 -> onLaserHit_Garland"
+                    },
+                    {
+                      "$type": "GJCAPCBELPA",
+                      "target": "Target",
+                      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Garland_01_OnLaserHit"
+                    }
+                  ]
+                },
+                {
+                  "$type": "INBCDALOHMP",
+                  "target": "Target",
+                  "targetPredicates": [
+                    {
+                      "$type": "JHAJOBAACDP",
+                      "tag": "Is_Has_OutLine"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "ELNHKGAPIBJ",
+                      "content": "Eff_SceneObj_OrigamiSquirrel_01_Line_01 -> onLaserHit_windmill"
+                    },
+                    {
+                      "$type": "GJCAPCBELPA",
+                      "target": "Target",
+                      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_OutLine_01_OnLaserHit"
+                    }
+                  ]
+                },
+                {
+                  "$type": "INBCDALOHMP",
+                  "target": "Other",
+                  "targetPredicates": [
+                    {
+                      "$type": "JHAJOBAACDP",
+                      "tag": "Is_OrigamiSquirrel_Garland_Fin"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "ELNHKGAPIBJ",
+                      "content": "Eff_SceneObj_OrigamiSquirrel_01_Line_01 -> onLaserHit_Garland_Fin"
+                    },
+                    {
+                      "$type": "GJCAPCBELPA",
+                      "target": "Other",
+                      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Garland_Fin_01_OnLaserHit"
+                    }
+                  ]
+                }
+              ],
+              "onLaserLeave": [
+                {
+                  "$type": "INBCDALOHMP",
+                  "target": "Target",
+                  "targetPredicates": [
+                    {
+                      "$type": "JHAJOBAACDP",
+                      "tag": "Is_OrigamiSquirrel_Garland"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "ELNHKGAPIBJ",
+                      "content": "Eff_SceneObj_OrigamiSquirrel_01_Line_01 -> onLaserLeave_Garland"
+                    },
+                    {
+                      "$type": "GJCAPCBELPA",
+                      "target": "Target",
+                      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Garland_01_OnLaserLeave"
+                    }
+                  ]
+                },
+                {
+                  "$type": "INBCDALOHMP",
+                  "target": "Target",
+                  "targetPredicates": [
+                    {
+                      "$type": "JHAJOBAACDP",
+                      "tag": "Is_Has_OutLine"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "ELNHKGAPIBJ",
+                      "content": "Eff_SceneObj_OrigamiSquirrel_01_Line_01 -> onLaserLeave_windmill"
+                    },
+                    {
+                      "$type": "GJCAPCBELPA",
+                      "target": "Target",
+                      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_OutLine_01_OnLaserLeave"
+                    }
+                  ]
+                },
+                {
+                  "$type": "INBCDALOHMP",
+                  "target": "Other",
+                  "targetPredicates": [
+                    {
+                      "$type": "JHAJOBAACDP",
+                      "tag": "Is_OrigamiSquirrel_Garland_Fin"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "ELNHKGAPIBJ",
+                      "content": "Eff_SceneObj_OrigamiSquirrel_01_Line_01 -> onLaserLeave_Garland_Fin"
+                    },
+                    {
+                      "$type": "GJCAPCBELPA",
+                      "target": "Other",
+                      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Garland_Fin_01_OnLaserLeave"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Focus_Curve_Eff": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_OrigamiSquirrel_01_Line_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MAHNJJFLACM",
+              "followPath": "EffPoint",
+              "rotationDampTime": "Eff_SceneObj_OrigamiSquirrel_01_Line_01",
+              "attachPoint": ""
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "target": "Target",
+              "otherTargets": {
+                "$type": "MKAPNKAKCPG",
+                "targetKey": "Flying_Squirrel_Source_Id",
+                "PONIBHCMMOE": "Team"
+              },
+              "param3": 1.0,
+              "key": "OrigamiSquirrel_Carrying_State_Mark",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onRemoved": [
+        {
+          "$type": "KBODPNEEFGD",
+          "modifierName": "UNIQUE_EnterShootState_Handler"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "UNIQUE_EnterShootState_Handler"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_ShootingEmptyGadget_Shooting_Handler_01",
+      "onAbilityStart": [
+        {
+          "$type": "CAKDDHLKOAB",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Owner",
+              "key": "SGV_Is_Princess",
+              "param3": 0.0
+            }
+          ],
+          "bulletID": 70293153,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "direction": {
+              "$type": "LHBLDEOLGKF",
+              "attachPointName": "ShootPoint",
+              "attachPointTargetType": "Self"
+            },
+            "useRotation": true,
+            "attachPointName": "ShootPoint",
+            "attachPointTargetType": "Self"
+          }
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Owner",
+              "key": "SGV_Is_Princess",
+              "param3": 1.0
+            }
+          ],
+          "bulletID": 70293161,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "direction": {
+              "$type": "LHBLDEOLGKF",
+              "attachPointName": "ShootPoint",
+              "attachPointTargetType": "Self"
+            },
+            "useRotation": true,
+            "attachPointName": "ShootPoint",
+            "attachPointTargetType": "Self"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_ShootingEmptyGadget_killself_01",
+      "modifiers": {
+        "Delay_Killself": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_EnterShootState_Handler"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH",
+              "configIdArray": [
+                70293155
+              ]
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Delay_Killself"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_ShootingEmptyGadget_SquirrelFollow_killself_01",
+      "modifiers": {
+        "Delay_Killself": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_Override_FollowMoveParam"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH",
+              "configIdArray": [
+                70293167
+              ]
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Delay_Killself"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Bullet_02_Target",
+      "modifiers": {
+        "StageReady_Handler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EJNMIOFDIGF",
+              "onStageReady": [
+                {
+                  "$type": "GJCAPCBELPA",
+                  "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Bullet_02_Target"
+                }
+              ]
+            }
+          ]
+        },
+        "Eff_Attach": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_OrigamiSquirrel_01_Ring",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AOOCGNCCAJB",
+          "isAdd": true,
+          "tag": "Is_OrigamiSquirrel_Return_Target"
+        },
+        {
+          "$type": "EGJDFNHCFAA",
+          "targetKey": "Squirrel_ShootBack_Target_RuntimeID",
+          "HGCODPCGCAF": "Team"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Eff_Attach"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "StageReady_Handler"
+        },
+        {
+          "$type": "GJCAPCBELPA",
+          "target": "Target",
+          "otherTargets": {
+            "$type": "MKAPNKAKCPG",
+            "targetKey": "Flying_Squirrel_SkyGadget_Runtime_Id",
+            "PONIBHCMMOE": "Team"
+          },
+          "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Sky_01"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "ELNHKGAPIBJ",
+          "content": "V4_8_FairyBook_OrigamiSquirrel_Bullet_02_Target -> onAbilityStart"
+        },
+        {
+          "$type": "NCFFNDHGCMH",
+          "configIdArray": [
+            70293156
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Tree_01",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "state_201"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 202,
+          "modifierName": "state_202"
+        },
+        {
+          "$type": "APNJOABPEJC",
+          "PJCFINLBDHL": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_OrigamiAlpacat_01_As",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "EffPoint"
+              },
+              "PPPDJGDDOGD": 0.5,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      ],
+      "HKFPCGFFKMJ": [
+        "SGV_ToyRing_Scale"
+      ],
+      "modifiers": {
+        "CreateEff": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_OrigamiAlpacat_01_As",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "EffPoint"
+              },
+              "PPPDJGDDOGD": 0.5,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "state_201": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PHLKCMFKFIN",
+              "globalValueKey": "SGV_OrigamiSquirrel_Region",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                100000000.0
+              ],
+              "modifierNameSteps": [
+                "Empty",
+                "Active_Gadget"
+              ],
+              "NMCLMHFBALJ": true
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Model"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "ColStatic"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "ToyRingModel"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_ToyRing_01_Create",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "ToyRingEff",
+                "attachPointTargetType": "Caster"
+              },
+              "PPPDJGDDOGD": "SGV_ToyRing_Scale",
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MAHNJJFLACM",
+              "followPath": "ToyRingEff",
+              "rotationDampTime": "Eff_SceneObj_ToyRing_01_Create",
+              "attachPoint": ""
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "ToyRingModel"
+              ]
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_ToyRing_01_Create",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "ToyRingEff",
+                "attachPointTargetType": "Caster"
+              },
+              "PPPDJGDDOGD": "SGV_ToyRing_Scale",
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MAHNJJFLACM",
+              "followPath": "ToyRingEff",
+              "rotationDampTime": "Eff_SceneObj_ToyRing_01_Create",
+              "attachPoint": ""
+            }
+          ]
+        },
+        "Active_Gadget": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PMLKDLEHDBC",
+              "tag": "Activity4_8_MainTag",
+              "EOMGLCGHMEJ": "Flying_Squirrel"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "AOOCGNCCAJB",
+              "isAdd": true,
+              "tag": "Origami_Squirrel"
+            },
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "GadgetState",
+              "param3": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AOOCGNCCAJB",
+              "tag": "Origami_Squirrel"
+            }
+          ]
+        },
+        "state_202": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PHLKCMFKFIN",
+              "globalValueKey": "OrigamiSquirrel_Carrying_State_Mark",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5,
+                2.5
+              ],
+              "modifierNameSteps": [
+                "Set_Model_Enable_Float",
+                "Set_Model_Enable_Aim",
+                "Set_Model_Disable"
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "Shooting_Gadget_Creator"
+            },
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "GadgetState",
+              "param3": 201.0
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "ColStatic"
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "GJCAPCBELPA",
+              "target": "Target",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 70293155
+              },
+              "abilityName": "V4_8_FairyBook_OrigamiSquirrel_ShootingEmptyGadget_killself_01"
+            },
+            {
+              "$type": "GJCAPCBELPA",
+              "target": "Target",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 70293167
+              },
+              "abilityName": "V4_8_FairyBook_OrigamiSquirrel_ShootingEmptyGadget_SquirrelFollow_killself_01"
+            }
+          ]
+        },
+        "Set_Model_Enable_Float": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Model"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "GadgetState",
+              "param3": 201.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_OrigamiAlpacat_01_As",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "EffPoint"
+              },
+              "PPPDJGDDOGD": 0.5,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Set_Model_Enable_Aim": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Model"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "GadgetState",
+              "param3": 202.0
+            }
+          ]
+        },
+        "Set_Model_Disable": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Model"
+              ]
+            }
+          ]
+        },
+        "Shooting_Gadget_Creator": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "target": "CurLocalAvatar",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "direction": {
+                  "$type": "JNKPDKHFJJB",
+                  "angleOffset": {
+                    "KGEPIMHBMOL": 0.0,
+                    "JEBHCGDPFEJ": 0.0,
+                    "LPCHALMFFOD": 0.0
+                  }
+                },
+                "useRotation": true,
+                "attachPointName": "RootNode"
+              },
+              "gadgetID": 70293155,
+              "campID": 5001,
+              "campTargetType": "All"
+            },
+            {
+              "$type": "KFCDMIMBBLD",
+              "target": "CurLocalAvatar",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "direction": {
+                  "$type": "JNKPDKHFJJB",
+                  "angleOffset": {
+                    "KGEPIMHBMOL": 0.0,
+                    "JEBHCGDPFEJ": 0.0,
+                    "LPCHALMFFOD": 0.0
+                  }
+                },
+                "useRotation": true,
+                "attachPointName": "CameraLook"
+              },
+              "gadgetID": 70293167,
+              "campID": 5001,
+              "campTargetType": "All"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "OrigamiSquirrel_Carrying_State_Mark",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "CreateEff"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Sky_01",
+      "abilityMixins": [
+        {
+          "$type": "JPPFBGJICKI",
+          "key": "Forbid_Create_ReturnTarget",
+          "useLimitRange": true,
+          "param2": 1.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "HKFPCGFFKMJ": [
+        "SGV_Force_Shoot_back"
+      ],
+      "modifiers": {
+        "UNIQUE_PartControl_Handler": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KGKOLOLDKHH",
+              "shieldHP": true,
+              "partRootNames": [
+                "Model"
+              ],
+              "enable": true
+            },
+            {
+              "$type": "GPDAIGICDKI",
+              "target": "Team",
+              "shieldHP": true,
+              "partRootNames": [
+                "Model"
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KGKOLOLDKHH",
+              "shieldHP": true,
+              "partRootNames": [
+                "Model"
+              ]
+            },
+            {
+              "$type": "GPDAIGICDKI",
+              "shieldHP": true,
+              "partRootNames": [
+                "Model"
+              ]
+            }
+          ]
+        },
+        "LaserMixin_Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKENLIHLFPF",
+              "rotationDampTime": "Eff_SceneObj_OrigamiSquirrel_01_Line_02",
+              "onLaserHit": [
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "Eff_SceneObj_OrigamiSquirrel_01_Line_02 -> LaserHit"
+                },
+                {
+                  "$type": "INBCDALOHMP",
+                  "target": "Other",
+                  "targetPredicates": [
+                    {
+                      "$type": "JHAJOBAACDP",
+                      "tag": "Is_OrigamiSquirrel_Garland"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "ELNHKGAPIBJ",
+                      "content": "Eff_SceneObj_OrigamiSquirrel_01_Line_02 -> Hit Garland"
+                    },
+                    {
+                      "$type": "GJCAPCBELPA",
+                      "target": "Other",
+                      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Garland_01_OnLaserHit"
+                    }
+                  ]
+                },
+                {
+                  "$type": "INBCDALOHMP",
+                  "target": "Other",
+                  "targetPredicates": [
+                    {
+                      "$type": "JHAJOBAACDP",
+                      "tag": "Is_Has_OutLine"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "GJCAPCBELPA",
+                      "target": "Other",
+                      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_OutLine_01_OnLaserHit"
+                    }
+                  ]
+                },
+                {
+                  "$type": "INBCDALOHMP",
+                  "target": "Other",
+                  "targetPredicates": [
+                    {
+                      "$type": "JHAJOBAACDP",
+                      "tag": "Is_OrigamiSquirrel_Garland_Fin"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "GJCAPCBELPA",
+                      "target": "Other",
+                      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Garland_Fin_01_OnLaserHit"
+                    }
+                  ]
+                }
+              ],
+              "onLaserLeave": [
+                {
+                  "$type": "INBCDALOHMP",
+                  "target": "Other",
+                  "targetPredicates": [
+                    {
+                      "$type": "JHAJOBAACDP",
+                      "tag": "Is_OrigamiSquirrel_Garland"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "GJCAPCBELPA",
+                      "target": "Other",
+                      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Garland_01_OnLaserLeave"
+                    }
+                  ]
+                },
+                {
+                  "$type": "INBCDALOHMP",
+                  "target": "Other",
+                  "targetPredicates": [
+                    {
+                      "$type": "JHAJOBAACDP",
+                      "tag": "Is_Has_OutLine"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "GJCAPCBELPA",
+                      "target": "Other",
+                      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_OutLine_01_OnLaserLeave"
+                    }
+                  ]
+                },
+                {
+                  "$type": "INBCDALOHMP",
+                  "target": "Other",
+                  "targetPredicates": [
+                    {
+                      "$type": "JHAJOBAACDP",
+                      "tag": "Is_OrigamiSquirrel_Garland_Fin"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "GJCAPCBELPA",
+                      "target": "Other",
+                      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Garland_Fin_01_OnLaserLeave"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Flying_Squirrel_ForceReturn": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.30000001192092896,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "EGJDFNHCFAA",
+              "target": "Applier",
+              "targetKey": "Flying_Squirrel_SkyGadget_Runtime_Id"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "target": "CurLocalAvatar",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Caster",
+                  "key": "Forbid_Create_ReturnTarget",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Team",
+                  "key": "Current_Interact_State",
+                  "param3": 3.0
+                }
+              ],
+              "ownerIs": "CurLocalAvatar",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true,
+                "attachPointName": "RootNode"
+              },
+              "gadgetID": 70293156,
+              "campID": 5001,
+              "campTargetType": "All"
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "target": "Applier",
+              "modifierName": "UNIQUE_PartControl_Handler"
+            }
+          ]
+        },
+        "UNIQUE_Flying_Squirrel_WaitForReturn": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "Applier",
+              "modifierName": "Flying_Back_TraceLine_Handler"
+            },
+            {
+              "$type": "EGJDFNHCFAA",
+              "target": "Applier",
+              "targetKey": "Flying_Squirrel_SkyGadget_Runtime_Id"
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "target": "Team",
+              "param3": 100.0,
+              "key": "OrigamiSquirrel_Return_Energy",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "target": "CurLocalAvatar",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Caster",
+                  "key": "Forbid_Create_ReturnTarget",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Team",
+                  "key": "Current_Interact_State",
+                  "param3": 3.0
+                }
+              ],
+              "ownerIs": "CurLocalAvatar",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true,
+                "attachPointName": "RootNode"
+              },
+              "gadgetID": 70293156,
+              "campID": 5001,
+              "campTargetType": "All"
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "target": "Applier",
+              "modifierName": "UNIQUE_PartControl_Handler"
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "target": "Team",
+              "param3": 0.0,
+              "key": "OrigamiSquirrel_Return_Energy",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Flying_Back_TraceLine_Handler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "Team",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "SGV_Force_Shoot_back",
+                  "param3": 0.0
+                }
+              ],
+              "modifierName": "Trace_Line_Team"
+            }
+          ]
+        },
+        "Trace_Line_Team": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "Applier",
+              "modifierName": "Trace_Line_Team_Back"
+            }
+          ]
+        },
+        "Trace_Line_Team_Back": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "target": "Applier",
+              "rotationDampTime": "Eff_SceneObj_OrigamiSquirrel_01_Line_02",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0,
+              "setSelfAsEffectPluginTarget": true
+            },
+            {
+              "$type": "MAHNJJFLACM",
+              "followPath": "RootNode",
+              "rotationDampTime": "Eff_SceneObj_OrigamiSquirrel_01_Line_02",
+              "attachPoint": ""
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "Applier",
+              "modifierName": "LaserMixin_Controller"
+            }
+          ]
+        },
+        "ShootBack": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "CAKDDHLKOAB",
+              "target": "Target",
+              "otherTargets": {
+                "$type": "MKAPNKAKCPG",
+                "targetKey": "ShootBack_Target_Runtime_Id",
+                "PONIBHCMMOE": "Team"
+              },
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "SGV_Is_Princess",
+                  "param3": 0.0
+                }
+              ],
+              "bulletID": 70293154,
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "angleOffset": {
+                    "KGEPIMHBMOL": 0.0,
+                    "JEBHCGDPFEJ": 0.0,
+                    "LPCHALMFFOD": 0.0
+                  },
+                  "attachPointName": "Model",
+                  "attachPointTargetType": "Self"
+                },
+                "useRotation": true,
+                "attachPointName": "Model",
+                "attachPointTargetType": "Caster"
+              },
+              "minValue": {
+                "$type": "MKAPNKAKCPG",
+                "targetKey": "ShootBack_Target_Runtime_Id",
+                "PONIBHCMMOE": "Team"
+              }
+            },
+            {
+              "$type": "CAKDDHLKOAB",
+              "otherTargets": {
+                "$type": "MKAPNKAKCPG",
+                "targetKey": "ShootBack_Target_Runtime_Id",
+                "PONIBHCMMOE": "Team"
+              },
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "SGV_Is_Princess",
+                  "param3": 1.0
+                }
+              ],
+              "bulletID": 70293162,
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "angleOffset": {
+                    "KGEPIMHBMOL": 0.0,
+                    "JEBHCGDPFEJ": 0.0,
+                    "LPCHALMFFOD": 0.0
+                  },
+                  "attachPointName": "Model",
+                  "attachPointTargetType": "Self"
+                },
+                "useRotation": true,
+                "attachPointName": "Model",
+                "attachPointTargetType": "Caster"
+              },
+              "minValue": {
+                "$type": "MKAPNKAKCPG",
+                "targetKey": "ShootBack_Target_Runtime_Id",
+                "PONIBHCMMOE": "Team"
+              }
+            },
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "FromGroup",
+              "funcName": "SLC_FlyingSquirrel_Remove",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "UNIQUE_PartControl_Handler"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "SGV_Force_Shoot_back",
+              "param3": 0.0
+            }
+          ],
+          "modifierName": "UNIQUE_Flying_Squirrel_WaitForReturn"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "SGV_Force_Shoot_back",
+              "param3": 1.0
+            }
+          ],
+          "modifierName": "UNIQUE_Flying_Squirrel_ForceReturn"
+        },
+        {
+          "$type": "AKEEDILMOJF",
+          "intID": "GadgetState",
+          "param3": 201.0
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "Forbid_Create_ReturnTarget",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "ELNHKGAPIBJ",
+          "content": "V4_8_FairyBook_OrigamiSquirrel_Sky_01 -> onAbilityStart"
+        },
+        {
+          "$type": "EGJDFNHCFAA",
+          "target": "Target",
+          "targetKey": "ShootBack_Target_Runtime_Id"
+        },
+        {
+          "$type": "EGJDFNHCFAA",
+          "target": "Target",
+          "targetKey": "ShootBack_Target_Runtime_Id",
+          "HGCODPCGCAF": "Team"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "ShootBack"
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 1.0,
+          "key": "Forbid_Create_ReturnTarget",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "NCFFNDHGCMH",
+          "otherTargets": {
+            "$type": "MKAPNKAKCPG",
+            "targetKey": "Squirrel_ShootBack_Target_RuntimeID",
+            "PONIBHCMMOE": "Team"
+          },
+          "configIdArray": [
+            70293156
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Bullet_01",
+      "HKFPCGFFKMJ": [
+        "Force_Shoot_back",
+        "Hit_Target_Global_Pos_0",
+        "Hit_Target_Global_Pos_1",
+        "Hit_Target_Global_Pos_2",
+        "Hit_Target_Global_Dir_0",
+        "Hit_Target_Global_Dir_1",
+        "Hit_Target_Global_Dir_2",
+        "Is_Hit_Garland_Fin"
+      ],
+      "modifiers": {
+        "Line_Eff": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_OrigamiSquirrel_01_Trail",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MAHNJJFLACM",
+              "followPath": "RootNode",
+              "rotationDampTime": "Eff_SceneObj_OrigamiSquirrel_01_Trail",
+              "attachPoint": ""
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_OrigamiAlpacat_01_As",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "EffPoint"
+              },
+              "PPPDJGDDOGD": 0.5,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Flying_Squirrel_Bullet_Hit_01": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "INBCDALOHMP",
+              "predicates": [
+                {
+                  "$type": "JHAJOBAACDP",
+                  "tag": "Is_OrigamiSquirrel_Garland"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "Is_Flying_Squirrel_GarlandIs_Flying_Squirrel_GarlandIs_Flying_Squirrel_GarlandIs_Flying_Squirrel_Garland"
+                },
+                {
+                  "$type": "GJCAPCBELPA",
+                  "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Garland_01"
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "predicates": [
+                {
+                  "$type": "JHAJOBAACDP",
+                  "tag": "Is_OrigamiSquirrel_Garland_Fin"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "Garland_Fin_Garland_Fin_Garland_Fin_Garland_Fin_Garland_Fin_Garland_Fin_Garland_Fin_Garland_Fin"
+                },
+                {
+                  "$type": "GJCAPCBELPA",
+                  "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Garland_01"
+                },
+                {
+                  "$type": "NCFFNDHGCMH",
+                  "target": "Applier",
+                  "configIdArray": [
+                    70293153
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "predicates": [
+                {
+                  "$type": "JHAJOBAACDP",
+                  "tag": "Is_OrigamiWindmill"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "OrigamiWindmill_OrigamiWindmill_OrigamiWindmill_OrigamiWindmill"
+                },
+                {
+                  "$type": "GJCAPCBELPA",
+                  "abilityName": "V4_8_FairyBook_OrigamiWindmill"
+                },
+                {
+                  "$type": "NCFFNDHGCMH",
+                  "target": "Applier",
+                  "configIdArray": [
+                    70293153
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Line_Eff"
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "Global_Pos_Type",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 1.0,
+          "key": "Force_Shoot_back",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "Is_Hit_Garland_Fin",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "INBCDALOHMP",
+          "target": "Target",
+          "targetPredicates": [
+            {
+              "$type": "NIMAPECDNKD",
+              "entityTypes": [
+                "Monster",
+                "Gadget",
+                "Bullet",
+                "Platform",
+                "Avatar"
+              ]
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 0.0,
+              "key": "Global_Pos_Type",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "EGJDFNHCFAA",
+              "target": "Other",
+              "targetKey": "Hit_Target"
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Other",
+              "targetPredicates": [
+                {
+                  "$type": "JHAJOBAACDP",
+                  "tag": "Is_OrigamiSquirrel_Garland_Fin"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "MPAGCPPAIHJ",
+                  "target": "Target",
+                  "otherTargets": {
+                    "$type": "MKAPNKAKCPG",
+                    "targetKey": "Hit_Target"
+                  },
+                  "key": "Hit_Target_Global_Pos",
+                  "born": {
+                    "$type": "KLPANPDGHHA",
+                    "useRotation": true,
+                    "attachPointName": "RootNode"
+                  },
+                  "setTarget": false
+                },
+                {
+                  "$type": "ENBLCDCKLMK",
+                  "target": "Target",
+                  "otherTargets": {
+                    "$type": "MKAPNKAKCPG",
+                    "targetKey": "Hit_Target"
+                  },
+                  "key": "Hit_Target_Global_Dir",
+                  "born": {
+                    "$type": "KLPANPDGHHA",
+                    "useRotation": true,
+                    "attachPointName": "RootNode"
+                  },
+                  "setTarget": false
+                },
+                {
+                  "$type": "FNPMFLOOCDD",
+                  "param3": 1.0,
+                  "key": "Global_Pos_Type",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "FNPMFLOOCDD",
+                  "param3": 0.0,
+                  "key": "Force_Shoot_back",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "FNPMFLOOCDD",
+                  "param3": 1.0,
+                  "key": "Is_Hit_Garland_Fin",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Other",
+              "targetPredicates": [
+                {
+                  "$type": "JHAJOBAACDP",
+                  "tag": "Is_OrigamiWindmill"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "FNPMFLOOCDD",
+                  "param3": 2.0,
+                  "key": "Global_Pos_Type",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "Hit_OrigamiWindmill_Hit_OrigamiWindmill_Hit_OrigamiWindmill_Hit_OrigamiWindmill_Hit_OrigamiWindmill"
+                }
+              ]
+            },
+            {
+              "$type": "PELJALPANCA",
+              "target": "Target",
+              "modifierName": "Flying_Squirrel_Bullet_Hit_01"
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 2.0,
+              "key": "Global_Pos_Type",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "WrongTypeWrongTypeWrongTypeWrongTypeWrongTypeWrongTypeWrongTypeWrongType"
+            },
+            {
+              "$type": "NCFFNDHGCMH",
+              "configIdArray": [
+                70293153
+              ]
+            }
+          ]
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "INBCDALOHMP",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "Global_Pos_Type",
+              "param3": 2.0
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "MPAGCPPAIHJ",
+              "key": "Hit_Target_Global_Pos",
+              "born": {
+                "$type": "JGEBAJLEBMO"
+              }
+            },
+            {
+              "$type": "ENBLCDCKLMK",
+              "key": "Hit_Target_Global_Dir",
+              "born": {
+                "$type": "JGEBAJLEBMO"
+              },
+              "GPFHCOCACKC": true
+            }
+          ]
+        },
+        {
+          "$type": "INBCDALOHMP",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "Global_Pos_Type",
+              "param3": 0.0
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "MPAGCPPAIHJ",
+              "key": "Hit_Target_Global_Pos",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "useRotation": true
+              }
+            },
+            {
+              "$type": "ENBLCDCKLMK",
+              "key": "Hit_Target_Global_Dir",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "useRotation": true
+              },
+              "GPFHCOCACKC": true
+            }
+          ]
+        },
+        {
+          "$type": "AHPEKICBIIL",
+          "target": "Owner",
+          "luaCallType": "OwnerFromGroup",
+          "funcName": "SLC_CreateFlyingSquirrel",
+          "param1": 0.0,
+          "MGAMDEHMCOL": 0.0,
+          "MMHOHAOGPLP": 0.0,
+          "FMNNLONDJLP": true,
+          "ABJNPFIKNJA": {
+            "SquirrelType": 0.0,
+            "ForceShootBack": "Force_Shoot_back",
+            "Need_PlatformMove": 0.0,
+            "PosX": "Hit_Target_Global_Pos_0",
+            "PosY": "Hit_Target_Global_Pos_1",
+            "PosZ": "Hit_Target_Global_Pos_2",
+            "RotX": "Hit_Target_Global_Dir_0",
+            "RotY": "Hit_Target_Global_Dir_1",
+            "RotZ": "Hit_Target_Global_Dir_2",
+            "Windmill_rtID_0": 0.0,
+            "Windmill_rtID_1": 0.0,
+            "Is_Hit_Garland_Fin": "Is_Hit_Garland_Fin"
+          }
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_SceneObj_OrigamiAlpacat_01_As",
+          "born": {
+            "$type": "ICKMMAHFNIM",
+            "positionKey": "Hit_Target_Global_Pos",
+            "directionKey": ""
+          },
+          "PPPDJGDDOGD": 0.5,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Bullet_ShootBack_01",
+      "modifiers": {
+        "Line_Eff": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_OrigamiSquirrel_01_Trail",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MAHNJJFLACM",
+              "followPath": "RootNode",
+              "rotationDampTime": "Eff_SceneObj_OrigamiSquirrel_01_Trail",
+              "attachPoint": ""
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_OrigamiAlpacat_01_As",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "EffPoint"
+              },
+              "PPPDJGDDOGD": 0.5,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Flying_Squirrel_Bullet_Hit_02": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "INBCDALOHMP",
+              "predicates": [
+                {
+                  "$type": "JHAJOBAACDP",
+                  "target": "Self",
+                  "tag": "Is_OrigamiSquirrel_Garland"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "GJCAPCBELPA",
+                  "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Garland_01"
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "predicates": [
+                {
+                  "$type": "JHAJOBAACDP",
+                  "target": "Self",
+                  "tag": "Is_OrigamiSquirrel_Garland_Fin"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "GJCAPCBELPA",
+                  "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Garland_01"
+                },
+                {
+                  "$type": "NCFFNDHGCMH",
+                  "target": "Applier",
+                  "configIdArray": [
+                    70293154
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "predicates": [
+                {
+                  "$type": "JHAJOBAACDP",
+                  "target": "Self",
+                  "tag": "Is_OrigamiWindmill"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "GJCAPCBELPA",
+                  "abilityName": "V4_8_FairyBook_OrigamiWindmill"
+                },
+                {
+                  "$type": "NCFFNDHGCMH",
+                  "target": "Applier",
+                  "configIdArray": [
+                    70293154
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "Energy_Add": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "NCFFNDHGCMH",
+              "otherTargets": {
+                "$type": "MKAPNKAKCPG",
+                "targetKey": "Squirrel_ShootBack_Target_RuntimeID",
+                "PONIBHCMMOE": "Team"
+              },
+              "configIdArray": [
+                70293156
+              ]
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "target": "Team",
+              "param3": 100.0,
+              "key": "OrigamiSquirrel_Exit_Energy",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "target": "Team",
+              "param3": 0.0,
+              "key": "OrigamiSquirrel_Shooting_State",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BGBCLNMIKIF",
+              "skillID": 20070,
+              "shareCDType": 1
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Line_Eff"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "INBCDALOHMP",
+          "target": "Target",
+          "targetPredicates": [
+            {
+              "$type": "NIMAPECDNKD",
+              "entityTypes": [
+                "Monster",
+                "Gadget",
+                "Bullet",
+                "Platform"
+              ]
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "JHAJOBAACDP",
+                  "tag": "Is_OrigamiSquirrel_Return_Target"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "NCFFNDHGCMH",
+                  "otherTargets": {
+                    "$type": "MKAPNKAKCPG",
+                    "targetKey": "Squirrel_ShootBack_Target_RuntimeID",
+                    "PONIBHCMMOE": "Team"
+                  },
+                  "configIdArray": [
+                    70293156
+                  ]
+                },
+                {
+                  "$type": "NCFFNDHGCMH",
+                  "configIdArray": [
+                    70293154
+                  ]
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "modifierName": "Flying_Squirrel_Bullet_Hit_02"
+                }
+              ]
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "WrongTypeWrongTypeWrongTypeWrongTypeWrongTypeWrongTypeWrongTypeWrongType"
+            },
+            {
+              "$type": "NCFFNDHGCMH",
+              "configIdArray": [
+                70293154
+              ]
+            }
+          ]
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_SceneObj_OrigamiAlpacat_01_As",
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "useRotation": true,
+            "attachPointName": "EffPoint"
+          },
+          "PPPDJGDDOGD": 0.5,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "PELJALPANCA",
+          "target": "Team",
+          "modifierName": "Energy_Add"
+        },
+        {
+          "$type": "GJCAPCBELPA",
+          "target": "Team",
+          "abilityName": "V4_8_FairyBook_OrigamiSquirrel_TargetHitCheck_Req"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_ResetSLC",
+      "onAbilityStart": [
+        {
+          "$type": "ELNHKGAPIBJ",
+          "content": "V4_8_FairyBook_OrigamiSquirrel_ResetSLC -> onAbilityStart"
+        },
+        {
+          "$type": "AHPEKICBIIL",
+          "luaCallType": "FromGroup",
+          "funcName": "SLC_ResetSourceSquirrel",
+          "param1": 0.0,
+          "MGAMDEHMCOL": 0.0,
+          "MMHOHAOGPLP": 0.0
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_SceneObj_OrigamiAlpacat_01_Ds",
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "useRotation": true,
+            "attachPointName": "EffPoint"
+          },
+          "PPPDJGDDOGD": 0.5,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "NCFFNDHGCMH",
+          "otherTargets": {
+            "$type": "MKAPNKAKCPG",
+            "targetKey": "Squirrel_ShootBack_Target_RuntimeID",
+            "PONIBHCMMOE": "Team"
+          },
+          "configIdArray": [
+            70293156
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_TargetHitCheck_Req",
+      "modifiers": {
+        "Delay_Send_SLC": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "AHPEKICBIIL",
+              "target": "Target",
+              "otherTargets": {
+                "$type": "MKAPNKAKCPG",
+                "targetKey": "Flying_Squirrel_Source_Id"
+              },
+              "luaCallType": "FromGroup",
+              "isTarget": true,
+              "funcName": "SLC_Target_Hit_Check_Req",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "ELNHKGAPIBJ",
+          "content": "V4_8_FairyBook_OrigamiSquirrel_TargetHitCheck_Req -> onAbilityStart"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Delay_Send_SLC"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Sky_RouteMove_01",
+      "HKFPCGFFKMJ": [
+        "SGV_RouteId_0",
+        "SGV_RouteId_1"
+      ],
+      "modifiers": {
+        "Route_Move": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "INBCDALOHMP",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "SGV_NeedPlatformMove",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "AHPEKICBIIL",
+                  "luaCallType": "FromGroup",
+                  "funcName": "SLC_Squirrel_Route_Move_Req",
+                  "param1": 0.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0,
+                  "FMNNLONDJLP": true,
+                  "ABJNPFIKNJA": {
+                    "route_id_0": "SGV_RouteId_0",
+                    "route_id_1": "SGV_RouteId_1"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Route_Move"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Bullet_Princess_01",
+      "HKFPCGFFKMJ": [
+        "Force_Shoot_back",
+        "Need_PlatformMove",
+        "Hit_Target_Global_Pos_0",
+        "Hit_Target_Global_Pos_1",
+        "Hit_Target_Global_Pos_2",
+        "Hit_Target_Global_Dir_0",
+        "Hit_Target_Global_Dir_1",
+        "Hit_Target_Global_Dir_2",
+        "Hit_Target_0",
+        "Hit_Target_1",
+        "Is_Hit_Garland_Fin"
+      ],
+      "modifiers": {
+        "Line_Eff": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_OrigamiSquirrel_01_Trail",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MAHNJJFLACM",
+              "followPath": "RootNode",
+              "rotationDampTime": "Eff_SceneObj_OrigamiSquirrel_01_Trail",
+              "attachPoint": ""
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_OrigamiAlpacat_01_As",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "EffPoint"
+              },
+              "PPPDJGDDOGD": 0.5,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Flying_Squirrel_Bullet_Hit_01": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "INBCDALOHMP",
+              "predicates": [
+                {
+                  "$type": "JHAJOBAACDP",
+                  "tag": "Is_OrigamiSquirrel_Garland"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "Is_Flying_Squirrel_GarlandIs_Flying_Squirrel_GarlandIs_Flying_Squirrel_GarlandIs_Flying_Squirrel_Garland"
+                },
+                {
+                  "$type": "GJCAPCBELPA",
+                  "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Garland_01"
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "predicates": [
+                {
+                  "$type": "JHAJOBAACDP",
+                  "tag": "Is_OrigamiSquirrel_Garland_Fin"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "Garland_Fin_Garland_Fin_Garland_Fin_Garland_Fin_Garland_Fin_Garland_Fin_Garland_Fin_Garland_Fin"
+                },
+                {
+                  "$type": "GJCAPCBELPA",
+                  "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Garland_01"
+                },
+                {
+                  "$type": "NCFFNDHGCMH",
+                  "target": "Applier",
+                  "configIdArray": [
+                    70293161
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "predicates": [
+                {
+                  "$type": "JHAJOBAACDP",
+                  "tag": "Is_OrigamiWindmill"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "OrigamiWindmill_OrigamiWindmill_OrigamiWindmill_OrigamiWindmill"
+                },
+                {
+                  "$type": "GJCAPCBELPA",
+                  "abilityName": "V4_8_FairyBook_OrigamiWindmill"
+                },
+                {
+                  "$type": "NCFFNDHGCMH",
+                  "target": "Applier",
+                  "configIdArray": [
+                    70293161
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Line_Eff"
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "Global_Pos_Type",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 1.0,
+          "key": "Force_Shoot_back",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "Need_PlatformMove",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "Hit_Target_0",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "Hit_Target_1",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "Is_Hit_Garland_Fin",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "INBCDALOHMP",
+          "target": "Target",
+          "targetPredicates": [
+            {
+              "$type": "NIMAPECDNKD",
+              "entityTypes": [
+                "Monster",
+                "Gadget",
+                "Bullet",
+                "Platform",
+                "Avatar"
+              ]
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 0.0,
+              "key": "Global_Pos_Type",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "EGJDFNHCFAA",
+              "target": "Other",
+              "targetKey": "Hit_Target"
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Other",
+              "targetPredicates": [
+                {
+                  "$type": "JHAJOBAACDP",
+                  "tag": "Is_OrigamiSquirrel_Garland_Fin"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "MPAGCPPAIHJ",
+                  "target": "Target",
+                  "otherTargets": {
+                    "$type": "MKAPNKAKCPG",
+                    "targetKey": "Hit_Target"
+                  },
+                  "key": "Hit_Target_Global_Pos",
+                  "born": {
+                    "$type": "KLPANPDGHHA",
+                    "useRotation": true,
+                    "attachPointName": "RootNode"
+                  },
+                  "setTarget": false
+                },
+                {
+                  "$type": "ENBLCDCKLMK",
+                  "target": "Target",
+                  "otherTargets": {
+                    "$type": "MKAPNKAKCPG",
+                    "targetKey": "Hit_Target"
+                  },
+                  "key": "Hit_Target_Global_Dir",
+                  "born": {
+                    "$type": "KLPANPDGHHA",
+                    "useRotation": true,
+                    "attachPointName": "RootNode"
+                  },
+                  "setTarget": false
+                },
+                {
+                  "$type": "FNPMFLOOCDD",
+                  "param3": 1.0,
+                  "key": "Global_Pos_Type",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "FNPMFLOOCDD",
+                  "param3": 0.0,
+                  "key": "Force_Shoot_back",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "FNPMFLOOCDD",
+                  "param3": 1.0,
+                  "key": "Is_Hit_Garland_Fin",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Other",
+              "targetPredicates": [
+                {
+                  "$type": "JHAJOBAACDP",
+                  "tag": "Is_OrigamiWindmill"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "FNPMFLOOCDD",
+                  "param3": 2.0,
+                  "key": "Global_Pos_Type",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "Hit_OrigamiWindmill_Hit_OrigamiWindmill_Hit_OrigamiWindmill_Hit_OrigamiWindmill_Hit_OrigamiWindmill"
+                },
+                {
+                  "$type": "INBCDALOHMP",
+                  "targetPredicates": [
+                    {
+                      "$type": "LIOLPAJGCDO",
+                      "target": "Self",
+                      "filters": [
+                        "TransparentBrick"
+                      ]
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "ELNHKGAPIBJ",
+                      "content": "Bullet_Hitted_Windmill_WindZone"
+                    },
+                    {
+                      "$type": "INBCDALOHMP",
+                      "otherTargets": {
+                        "$type": "MKAPNKAKCPG",
+                        "targetKey": "Hit_Target"
+                      },
+                      "targetPredicates": [
+                        {
+                          "$type": "HNLCJOPBDLC",
+                          "gadgetState": 202
+                        }
+                      ],
+                      "successActions": [
+                        {
+                          "$type": "FNPMFLOOCDD",
+                          "param3": 0.0,
+                          "key": "Need_PlatformMove",
+                          "param2": 0.0,
+                          "repeatTimes": 0.0
+                        },
+                        {
+                          "$type": "FNPMFLOOCDD",
+                          "param3": 1.0,
+                          "key": "Force_Shoot_back",
+                          "param2": 0.0,
+                          "repeatTimes": 0.0
+                        }
+                      ],
+                      "failActions": [
+                        {
+                          "$type": "FNPMFLOOCDD",
+                          "param3": 1.0,
+                          "key": "Need_PlatformMove",
+                          "param2": 0.0,
+                          "repeatTimes": 0.0
+                        },
+                        {
+                          "$type": "FNPMFLOOCDD",
+                          "param3": 0.0,
+                          "key": "Force_Shoot_back",
+                          "param2": 0.0,
+                          "repeatTimes": 0.0
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "PELJALPANCA",
+              "target": "Target",
+              "modifierName": "Flying_Squirrel_Bullet_Hit_01"
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 2.0,
+              "key": "Global_Pos_Type",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "WrongTypeWrongTypeWrongTypeWrongTypeWrongTypeWrongTypeWrongTypeWrongType"
+            },
+            {
+              "$type": "NCFFNDHGCMH",
+              "configIdArray": [
+                70293161
+              ]
+            }
+          ]
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "INBCDALOHMP",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "Global_Pos_Type",
+              "param3": 2.0
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "MPAGCPPAIHJ",
+              "key": "Hit_Target_Global_Pos",
+              "born": {
+                "$type": "JGEBAJLEBMO"
+              }
+            },
+            {
+              "$type": "ENBLCDCKLMK",
+              "key": "Hit_Target_Global_Dir",
+              "born": {
+                "$type": "JGEBAJLEBMO"
+              },
+              "GPFHCOCACKC": true
+            }
+          ]
+        },
+        {
+          "$type": "INBCDALOHMP",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "Global_Pos_Type",
+              "param3": 0.0
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "MPAGCPPAIHJ",
+              "key": "Hit_Target_Global_Pos",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "useRotation": true
+              }
+            },
+            {
+              "$type": "ENBLCDCKLMK",
+              "key": "Hit_Target_Global_Dir",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "useRotation": true
+              },
+              "GPFHCOCACKC": true
+            }
+          ]
+        },
+        {
+          "$type": "AHPEKICBIIL",
+          "target": "Owner",
+          "luaCallType": "OwnerFromGroup",
+          "funcName": "SLC_CreateFlyingSquirrel",
+          "param1": 0.0,
+          "MGAMDEHMCOL": 0.0,
+          "MMHOHAOGPLP": 0.0,
+          "FMNNLONDJLP": true,
+          "ABJNPFIKNJA": {
+            "SquirrelType": 1.0,
+            "ForceShootBack": "Force_Shoot_back",
+            "Need_PlatformMove": "Need_PlatformMove",
+            "PosX": "Hit_Target_Global_Pos_0",
+            "PosY": "Hit_Target_Global_Pos_1",
+            "PosZ": "Hit_Target_Global_Pos_2",
+            "RotX": "Hit_Target_Global_Dir_0",
+            "RotY": "Hit_Target_Global_Dir_1",
+            "RotZ": "Hit_Target_Global_Dir_2",
+            "Windmill_rtID_0": "Hit_Target_0",
+            "Windmill_rtID_1": "Hit_Target_1",
+            "Is_Hit_Garland_Fin": "Is_Hit_Garland_Fin"
+          }
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_SceneObj_OrigamiAlpacat_01_As",
+          "born": {
+            "$type": "ICKMMAHFNIM",
+            "positionKey": "Hit_Target_Global_Pos",
+            "directionKey": ""
+          },
+          "PPPDJGDDOGD": 0.5,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Bullet_ShootBack_Princess_01",
+      "modifiers": {
+        "Init_TrackTarget": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "EGJDFNHCFAA",
+              "otherTargets": {
+                "$type": "MKAPNKAKCPG",
+                "targetKey": "ShootBack_Target_Runtime_Id",
+                "PONIBHCMMOE": "Team"
+              },
+              "targetKey": "TrackTarget_Runtime_Id"
+            }
+          ]
+        },
+        "Line_Eff": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_OrigamiSquirrel_01_Trail",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MAHNJJFLACM",
+              "followPath": "RootNode",
+              "rotationDampTime": "Eff_SceneObj_OrigamiSquirrel_01_Trail",
+              "attachPoint": ""
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_OrigamiAlpacat_01_As",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "EffPoint"
+              },
+              "PPPDJGDDOGD": 0.5,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Flying_Squirrel_Bullet_Hit_02": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "INBCDALOHMP",
+              "predicates": [
+                {
+                  "$type": "JHAJOBAACDP",
+                  "target": "Self",
+                  "tag": "Is_OrigamiSquirrel_Garland"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "GJCAPCBELPA",
+                  "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Garland_01"
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "predicates": [
+                {
+                  "$type": "JHAJOBAACDP",
+                  "target": "Self",
+                  "tag": "Is_OrigamiSquirrel_Garland_Fin"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "GJCAPCBELPA",
+                  "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Garland_01"
+                },
+                {
+                  "$type": "NCFFNDHGCMH",
+                  "target": "Applier",
+                  "configIdArray": [
+                    70293162
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "predicates": [
+                {
+                  "$type": "JHAJOBAACDP",
+                  "target": "Self",
+                  "tag": "Is_OrigamiWindmill"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "GJCAPCBELPA",
+                  "abilityName": "V4_8_FairyBook_OrigamiWindmill"
+                },
+                {
+                  "$type": "NCFFNDHGCMH",
+                  "target": "Applier",
+                  "configIdArray": [
+                    70293162
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "Energy_Add": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "target": "Team",
+              "param3": 100.0,
+              "key": "OrigamiSquirrel_Exit_Energy",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "target": "Team",
+              "param3": 0.0,
+              "key": "OrigamiSquirrel_Shooting_State",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BGBCLNMIKIF",
+              "skillID": 20070,
+              "shareCDType": 1
+            },
+            {
+              "$type": "NCFFNDHGCMH",
+              "otherTargets": {
+                "$type": "MKAPNKAKCPG",
+                "targetKey": "Squirrel_ShootBack_Target_RuntimeID",
+                "PONIBHCMMOE": "Team"
+              },
+              "configIdArray": [
+                70293156
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Line_Eff"
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "TrackTarget_Runtime_Id_0",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "TrackTarget_Runtime_Id_1",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "Empty_GV",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Init_TrackTarget"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "INBCDALOHMP",
+          "target": "Target",
+          "targetPredicates": [
+            {
+              "$type": "NIMAPECDNKD",
+              "entityTypes": [
+                "Monster",
+                "Gadget",
+                "Bullet",
+                "Platform"
+              ]
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "EGJDFNHCFAA",
+              "target": "Other",
+              "targetKey": "Hit_Target"
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "JHAJOBAACDP",
+                  "tag": "Is_OrigamiWindmill"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "INBCDALOHMP",
+                  "targetPredicates": [
+                    {
+                      "$type": "LIOLPAJGCDO",
+                      "target": "Self",
+                      "filters": [
+                        "TransparentBrick"
+                      ]
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "ELNHKGAPIBJ",
+                      "content": "忽略风场"
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "GJCAPCBELPA",
+                      "otherTargets": {
+                        "$type": "MKAPNKAKCPG",
+                        "targetKey": "Hit_Target"
+                      },
+                      "abilityName": "V4_8_FairyBook_OrigamiWindmill"
+                    },
+                    {
+                      "$type": "NCFFNDHGCMH",
+                      "configIdArray": [
+                        70293162
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "INBCDALOHMP",
+                  "target": "Target",
+                  "targetPredicates": [
+                    {
+                      "$type": "JHAJOBAACDP",
+                      "tag": "Is_OrigamiSquirrel_Return_Target"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "NCFFNDHGCMH",
+                      "otherTargets": {
+                        "$type": "MKAPNKAKCPG",
+                        "targetKey": "Squirrel_ShootBack_Target_RuntimeID",
+                        "PONIBHCMMOE": "Team"
+                      },
+                      "configIdArray": [
+                        70293156
+                      ]
+                    },
+                    {
+                      "$type": "NCFFNDHGCMH",
+                      "configIdArray": [
+                        70293162
+                      ]
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "PELJALPANCA",
+                      "target": "Target",
+                      "modifierName": "Flying_Squirrel_Bullet_Hit_02"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "WrongTypeWrongTypeWrongTypeWrongTypeWrongTypeWrongTypeWrongTypeWrongType"
+            },
+            {
+              "$type": "NCFFNDHGCMH",
+              "configIdArray": [
+                70293162
+              ]
+            }
+          ]
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_SceneObj_OrigamiAlpacat_01_As",
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "useRotation": true,
+            "attachPointName": "EffPoint"
+          },
+          "PPPDJGDDOGD": 0.5,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "PELJALPANCA",
+          "target": "Team",
+          "modifierName": "Energy_Add"
+        },
+        {
+          "$type": "GJCAPCBELPA",
+          "target": "Team",
+          "abilityName": "V4_8_FairyBook_OrigamiSquirrel_TargetHitCheck_Req"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_Origami_ChallengeOp",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "State_0"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "State_201"
+        }
+      ],
+      "modifiers": {
+        "Create_Eff": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_OrigamiTarget_03_Born",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "State_0": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_OrigamiTarget_03_Idle",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "State_201": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_OrigamiTarget_03_Active",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_OrigamiTarget_03_Idle",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Create_Eff"
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_SceneObj_OrigamiTarget_03_Des",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Garland_01",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Tag_Control"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 202,
+          "modifierName": "Open_Col"
+        }
+      ],
+      "modifiers": {
+        "Tag_Control": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AOOCGNCCAJB",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "SGV_Is_Fin_GarLand",
+                  "param3": 0.0
+                }
+              ],
+              "isAdd": true,
+              "tag": "Is_OrigamiSquirrel_Garland"
+            },
+            {
+              "$type": "AOOCGNCCAJB",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "SGV_Is_Fin_GarLand",
+                  "param3": 1.0
+                }
+              ],
+              "isAdd": true,
+              "tag": "Is_OrigamiSquirrel_Garland_Fin"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AOOCGNCCAJB",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "SGV_Is_Fin_GarLand",
+                  "param3": 0.0
+                }
+              ],
+              "tag": "Is_OrigamiSquirrel_Garland"
+            },
+            {
+              "$type": "AOOCGNCCAJB",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "SGV_Is_Fin_GarLand",
+                  "param3": 1.0
+                }
+              ],
+              "tag": "Is_OrigamiSquirrel_Garland_Fin"
+            }
+          ]
+        },
+        "Open_Col": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "ExCol"
+              ],
+              "setEnable": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "ExCol"
+              ]
+            }
+          ]
+        },
+        "Delay_Active_Hitbox": {
+          "modifierName": "",
+          "elementDurability": 0.30000001192092896,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Set_Hitbox_State_On"
+            }
+          ]
+        },
+        "Set_Hitbox_State_On": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 1.0,
+              "key": "HitBox_State",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Delay_Active_Hitbox_Handler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PHLKCMFKFIN",
+              "globalValueKey": "HitBox_State",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "Empty",
+                "Active_Hitbox"
+              ],
+              "NMCLMHFBALJ": true
+            }
+          ]
+        },
+        "Active_Hitbox": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "HitBox"
+              ],
+              "setEnable": true
+            }
+          ]
+        },
+        "Empty": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "SGV_Is_Fin_GarLand",
+              "param3": 0.0
+            }
+          ],
+          "rotationDampTime": "Eff_SceneObj_OrigamiTarget_01_Born",
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "useRotation": true,
+            "attachPointName": "EffPoint"
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "SGV_Is_Fin_GarLand",
+              "param3": 1.0
+            }
+          ],
+          "rotationDampTime": "Eff_SceneObj_OrigamiTarget_02_Born",
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "useRotation": true,
+            "attachPointName": "EffPoint"
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Delay_Active_Hitbox_Handler"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Delay_Active_Hitbox"
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "HitBox_State",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "CLKGEHMNIEF",
+          "transformNames": [
+            "Model"
+          ]
+        },
+        {
+          "$type": "NCFFNDHGCMH",
+          "configIdArray": [
+            70293157,
+            70293158
+          ]
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "SGV_Is_Fin_GarLand",
+              "param3": 0.0
+            }
+          ],
+          "rotationDampTime": "Eff_SceneObj_OrigamiTarget_01_Correct",
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "useRotation": true,
+            "attachPointName": "EffPoint"
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0,
+          "useRemoteSelfPos": true
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "SGV_Is_Fin_GarLand",
+              "param3": 1.0
+            }
+          ],
+          "rotationDampTime": "Eff_SceneObj_OrigamiTarget_02_Correct",
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "useRotation": true,
+            "attachPointName": "EffPoint"
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0,
+          "useRemoteSelfPos": true
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Garland_01_OnLaserHit",
+      "onAbilityStart": [
+        {
+          "$type": "IIGGCBAOAAK",
+          "param3": 1.0,
+          "key": "Lazer_Hit_Count",
+          "useLimitRange": true,
+          "param2": 4.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Garland_01_OnLaserLeave",
+      "onAbilityStart": [
+        {
+          "$type": "IIGGCBAOAAK",
+          "param3": -1.0,
+          "key": "Lazer_Hit_Count",
+          "useLimitRange": true,
+          "param2": 4.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Garland_01_DitherControl",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "Lazer_Hit_Count",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            4.5
+          ],
+          "modifierNameSteps": [
+            "Dither_Off",
+            "Dither_On"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Dither_On": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANNOBMCGOEC",
+              "matName": "ModelMat",
+              "EKHLCLJELIP": "_DitherAlpha",
+              "param3": 0.4000000059604645,
+              "useCurve": true,
+              "lerpCurveIndex": 1,
+              "lerpTime": 0.10000000149011612
+            },
+            {
+              "$type": "ANNOBMCGOEC",
+              "matName": "HighLight",
+              "EKHLCLJELIP": "_Alpha",
+              "param3": 0.18799999356269836,
+              "useCurve": true,
+              "lerpCurveIndex": 1,
+              "lerpTime": 0.10000000149011612
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "MeshMask"
+              ],
+              "setEnable": true
+            }
+          ]
+        },
+        "Dither_Off": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANNOBMCGOEC",
+              "matName": "ModelMat",
+              "EKHLCLJELIP": "_DitherAlpha",
+              "param3": 1.0,
+              "useCurve": true,
+              "lerpCurveIndex": 1,
+              "lerpTime": 0.10000000149011612
+            },
+            {
+              "$type": "ANNOBMCGOEC",
+              "matName": "HighLight",
+              "EKHLCLJELIP": "_Alpha",
+              "param3": 0.0,
+              "useCurve": true,
+              "lerpCurveIndex": 1,
+              "lerpTime": 0.10000000149011612
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "MeshMask"
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "Lazer_Hit_Count",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Garland_Fin_01_OnLaserHit",
+      "onAbilityStart": [
+        {
+          "$type": "ELNHKGAPIBJ",
+          "content": "V4_8_FairyBook_OrigamiSquirrel_Garland_Fin_01_OnLaserHit -> onAbilityStart"
+        },
+        {
+          "$type": "IIGGCBAOAAK",
+          "param3": 1.0,
+          "key": "Lazer_Hit_Count",
+          "useLimitRange": true,
+          "param2": 4.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Garland_Fin_01_OnLaserLeave",
+      "onAbilityStart": [
+        {
+          "$type": "ELNHKGAPIBJ",
+          "content": "V4_8_FairyBook_OrigamiSquirrel_Garland_Fin_01_OnLaserLeave -> onAbilityStart"
+        },
+        {
+          "$type": "IIGGCBAOAAK",
+          "param3": -1.0,
+          "key": "Lazer_Hit_Count",
+          "useLimitRange": true,
+          "param2": 4.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Garland_Fin_OutLine_Control_01",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Lazer_Hit_Listener"
+        }
+      ],
+      "modifiers": {
+        "Lazer_Hit_Listener": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PHLKCMFKFIN",
+              "globalValueKey": "Lazer_Hit_Count",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                4.5
+              ],
+              "modifierNameSteps": [
+                "OutLine_Off",
+                "OutLine_On"
+              ]
+            }
+          ]
+        },
+        "OutLine_On": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_OrigamiTarget_02_Shell",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "OutLineEff",
+                "attachPointTargetType": "Self"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "OutLine_Off": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "Lazer_Hit_Count",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiWindmill",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "On_Being_Hit_Check"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Stop_Close"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "Start_Windmill"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 202,
+          "modifierName": "Stop_Open"
+        }
+      ],
+      "HKFPCGFFKMJ": [
+        "SGV_Init_Length",
+        "Collider_Size_2",
+        "Temp_Length_fix",
+        "Temp_Length_Percent"
+      ],
+      "modifiers": {
+        "Create_Eff": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_OrigamiWindmill_Appear",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "RootNode"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "On_Being_Hit_Check": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Tri_HitBox"
+              ],
+              "setEnable": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Tri_HitBox"
+              ]
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "V4_8_FairyBook_OrigamiWindmill -> onBeingHit"
+            },
+            {
+              "$type": "GJCAPCBELPA",
+              "abilityName": "V4_8_FairyBook_OrigamiWindmill"
+            }
+          ]
+        },
+        "Stop_Close": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "GadgetState",
+              "param3": 0.0
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "RawColParent"
+              ]
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "StateOpen_Col_1",
+                "StateOpen_Col_2"
+              ]
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "StateClose_Col"
+              ],
+              "setEnable": true
+            }
+          ]
+        },
+        "Start_Windmill": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.20000000298023224,
+          "modifierMixins": [
+            {
+              "$type": "KNHJLOKDNBP",
+              "FFGLECFIFJD": true,
+              "speed": 3.0,
+              "rotationDampTime": "Eff_SceneObj_OrigamiWindmill_Wind",
+              "DNMDGFIOAIA": "SGV_Init_Length",
+              "EHCDHBJAGOP": "Empty_None",
+              "OMDMLOJIPGP": "RawCol"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "GadgetState",
+              "param3": 201.0
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "RawColParent"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Tri_HitBox"
+              ]
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_OrigamiWindmill_Wind",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "EffectPoint"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MAHNJJFLACM",
+              "followPath": "EffectPoint",
+              "rotationDampTime": "Eff_SceneObj_OrigamiWindmill_Wind",
+              "attachPoint": ""
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Blend",
+              "attachPoint": "",
+              "damageRatio": "Float",
+              "useDynamicValue": true,
+              "rotationDampTime": "Eff_SceneObj_OrigamiWindmill_Wind",
+              "effectTempleteID": "SGV_Init_Length"
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "StateOpen_Col_1",
+                "StateOpen_Col_2"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "StateClose_Col"
+              ]
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "LOPGDJIDEGD",
+              "NFGGOIMMDCJ": "RawCol",
+              "JFDMKAOGHHF": "Collider_Size"
+            },
+            {
+              "$type": "HNCBFICHKDA",
+              "NFGGOIMMDCJ": "WindSceneCol",
+              "AMAPABFMPJE": {
+                "KGEPIMHBMOL": 1.0,
+                "JEBHCGDPFEJ": 1.0,
+                "LPCHALMFFOD": "Collider_Size_2"
+              }
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": [
+                "Collider_Size_2",
+                4.0,
+                "SUB"
+              ],
+              "key": "Temp_Length_fix",
+              "useLimitRange": true,
+              "param2": 25.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": [
+                "Temp_Length_fix",
+                21.0,
+                "DIV"
+              ],
+              "key": "Temp_Length_Percent",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Blend",
+              "attachPoint": "",
+              "damageRatio": "Float",
+              "useDynamicValue": true,
+              "rotationDampTime": "Eff_SceneObj_OrigamiWindmill_Wind",
+              "effectTempleteID": "Temp_Length_Percent"
+            }
+          ]
+        },
+        "Stop_Open": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "GadgetState",
+              "param3": 202.0
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "StateOpen_Col_1",
+                "StateOpen_Col_2"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "StateClose_Col"
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AOOCGNCCAJB",
+          "isAdd": true,
+          "tag": "Is_OrigamiWindmill"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Create_Eff"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "HPIDNBEGJLL",
+          "predicates": [
+            {
+              "$type": "HNLCJOPBDLC",
+              "target": "Self"
+            }
+          ],
+          "state": 201
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_SceneObj_OrigamiWindmill_Disappear",
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "useRotation": true,
+            "attachPointName": "RootNode"
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_OutLine_01_OnLaserHit",
+      "onAbilityStart": [
+        {
+          "$type": "ELNHKGAPIBJ",
+          "content": "V4_8_FairyBook_OrigamiSquirrel_OutLine_01_OnLaserHit -> onAbilityStart"
+        },
+        {
+          "$type": "IIGGCBAOAAK",
+          "param3": 1.0,
+          "key": "Lazer_Hit_Count",
+          "useLimitRange": true,
+          "param2": 4.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_OutLine_01_OnLaserLeave",
+      "onAbilityStart": [
+        {
+          "$type": "ELNHKGAPIBJ",
+          "content": "V4_8_FairyBook_OrigamiSquirrel_OutLine_01_OnLaserLeave -> onAbilityStart"
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "Lazer_Hit_Count",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_OutLine_Control_01",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Lazer_Hit_Listener"
+        }
+      ],
+      "modifiers": {
+        "Lazer_Hit_Listener": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PHLKCMFKFIN",
+              "globalValueKey": "Lazer_Hit_Count",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                4.5
+              ],
+              "modifierNameSteps": [
+                "OutLine_Off",
+                "OutLine_On"
+              ]
+            }
+          ]
+        },
+        "OutLine_On": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANNOBMCGOEC",
+              "matName": "HighLight",
+              "EKHLCLJELIP": "_Alpha",
+              "param3": 0.18799999356269836,
+              "useCurve": true,
+              "lerpCurveIndex": 1,
+              "lerpTime": 0.10000000149011612
+            }
+          ]
+        },
+        "OutLine_Off": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANNOBMCGOEC",
+              "matName": "HighLight",
+              "EKHLCLJELIP": "_Alpha",
+              "param3": 0.0,
+              "useCurve": true,
+              "lerpCurveIndex": 1,
+              "lerpTime": 0.10000000149011612
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "Lazer_Hit_Count",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "AOOCGNCCAJB",
+          "canBeHandledOnRecover": true,
+          "isAdd": true,
+          "tag": "Is_Has_OutLine"
+        },
+        {
+          "$type": "ANNOBMCGOEC",
+          "matName": "HighLight",
+          "EKHLCLJELIP": "_Alpha",
+          "param3": 0.0,
+          "useCurve": true,
+          "lerpCurveIndex": 1,
+          "lerpTime": 0.10000000149011612
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OrigamiSquirrel_Scene_Moveable_01",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "State_0"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "State_201"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 202,
+          "modifierName": "State_202_Talk"
+        },
+        {
+          "$type": "APNJOABPEJC",
+          "NJFMMPLDHGC": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "SwitchTargetFollowMoveMixin -> onStartMoveState"
+            }
+          ],
+          "PJCFINLBDHL": [
+            {
+              "$type": "HPIDNBEGJLL"
+            },
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "SwitchTargetFollowMoveMixin -> onStartFollowState"
+            }
+          ]
+        }
+      ],
+      "HKFPCGFFKMJ": [
+        "SGV_Fly_Move_TargetSlot"
+      ],
+      "modifiers": {
+        "CreateEff": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_OrigamiAlpacat_01_As",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "EffPoint"
+              },
+              "PPPDJGDDOGD": 0.5,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Landing_Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "FlyBW_Land"
+              ],
+              "modifierName": "FixRot_During_Landing",
+              "DGFCLAIDIFI": ""
+            }
+          ]
+        },
+        "FixRot_During_Landing": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KGKOLOLDKHH",
+              "partRootNames": [
+                "RootNode"
+              ],
+              "enable": true
+            },
+            {
+              "$type": "GPDAIGICDKI",
+              "otherTargets": {
+                "$type": "MKAPNKAKCPG",
+                "targetKey": "FollowRuntimeID"
+              },
+              "partRootNames": [
+                "RootNode"
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KGKOLOLDKHH",
+              "partRootNames": [
+                "RootNode"
+              ]
+            }
+          ]
+        },
+        "State_0": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "GadgetState",
+              "param3": 0.0
+            }
+          ]
+        },
+        "State_201": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "MPAGCPPAIHJ",
+              "target": "Target",
+              "otherTargets": {
+                "$type": "DHIEBMIGAPF",
+                "EFMFHCKOOIL": "SGV_Fly_Move_TargetSlot"
+              },
+              "key": "RushMove_TargetPoint",
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "useRotation": true
+              },
+              "setTarget": false
+            },
+            {
+              "$type": "PAMDPDLLAPG",
+              "toPos": {
+                "$type": "ICKMMAHFNIM",
+                "direction": {
+                  "$type": "AHGNBAPONLA",
+                  "angleOffset": {
+                    "KGEPIMHBMOL": 0.0,
+                    "JEBHCGDPFEJ": 0.0,
+                    "LPCHALMFFOD": 0.0
+                  },
+                  "useCorrectDir": true
+                },
+                "positionKey": "RushMove_TargetPoint",
+                "directionKey": ""
+              }
+            },
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "GadgetState",
+              "param3": 201.0
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "HPIDNBEGJLL"
+            }
+          ]
+        },
+        "Target_Dis_Check": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.10000000149011612,
+          "onAdded": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Target",
+              "otherTargets": {
+                "$type": "DHIEBMIGAPF",
+                "EFMFHCKOOIL": "SGV_Fly_Move_TargetSlot"
+              },
+              "targetPredicates": [
+                {
+                  "$type": "FMBJAJFLDIP",
+                  "logic": "LesserOrEqual",
+                  "param3": 5.0,
+                  "DDALGNLEHOD": ""
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "Target_Dis_Check -> check succ"
+                },
+                {
+                  "$type": "AKEEDILMOJF",
+                  "intID": "GadgetState",
+                  "param3": 0.0
+                },
+                {
+                  "$type": "PFKNEFGOHIH",
+                  "modifierName": "Target_Dis_Check"
+                }
+              ]
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Target",
+              "otherTargets": {
+                "$type": "DHIEBMIGAPF",
+                "EFMFHCKOOIL": "SGV_Fly_Move_TargetSlot"
+              },
+              "targetPredicates": [
+                {
+                  "$type": "FMBJAJFLDIP",
+                  "logic": "LesserOrEqual",
+                  "param3": 5.0,
+                  "DDALGNLEHOD": ""
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "Target_Dis_Check -> check succ"
+                },
+                {
+                  "$type": "AKEEDILMOJF",
+                  "intID": "GadgetState",
+                  "param3": 0.0
+                },
+                {
+                  "$type": "PFKNEFGOHIH",
+                  "modifierName": "Target_Dis_Check"
+                }
+              ]
+            }
+          ]
+        },
+        "State_202_Talk": {
+          "modifierName": "",
+          "elementDurability": 3.299999952316284,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "Talk",
+              "mpTriggerOnRemote": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "HPIDNBEGJLL"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "CreateEff"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Landing_Controller"
+        },
+        {
+          "$type": "KGKOLOLDKHH",
+          "partRootNames": [
+            "RootNode"
+          ]
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "ELNHKGAPIBJ",
+          "content": "V4_8_FairyBook_OrigamiSquirrel_Scene_Moveable_01 -> onAbilityStart"
+        },
+        {
+          "$type": "EGJDFNHCFAA",
+          "otherTargets": {
+            "$type": "DHIEBMIGAPF",
+            "EFMFHCKOOIL": "SGV_Fly_Move_TargetSlot"
+          },
+          "targetKey": "FollowRuntimeID"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Target_Dis_Check"
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_SceneObj_OrigamiAlpacat_01_Ds",
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "useRotation": true,
+            "attachPointName": "EffPoint"
+          },
+          "PPPDJGDDOGD": 0.5,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "V4_8_FairyBook_OceanCurrent_Entrance",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Eff"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "Eff201"
+        }
+      ],
+      "modifiers": {
+        "Eff": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Stages_SceneObj_Hd_THS_OrigamiOceanCurrent_GateEntrance_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Eff201": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Stages_SceneObj_Hd_THS_OrigamiOceanCurrent_GateEntrance_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onFieldEnter": [
+        {
+          "$type": "INBCDALOHMP",
+          "target": "Target",
+          "targetPredicates": [
+            {
+              "$type": "BCFNGJHILAG",
+              "predicates": [
+                {
+                  "$type": "AKNAJELHFHB",
+                  "BINPEMPOLHP": "OCEAN_CURRENT"
+                }
+              ]
+            },
+            {
+              "$type": "BCFNGJHILAG",
+              "predicates": [
+                {
+                  "$type": "HNLCJOPBDLC",
+                  "target": "Self",
+                  "gadgetState": 201
+                }
+              ]
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "AHPEKICBIIL",
+              "target": "TargetTeam",
+              "luaCallType": "FromGroup",
+              "funcName": "SLC_EnterOceanCurrent",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "角色正在洋流中"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

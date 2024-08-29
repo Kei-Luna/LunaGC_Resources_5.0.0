@@ -1,0 +1,778 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Eremite_TurnState_AnimatorSteer",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Turn"
+          ],
+          "endNormalizedTime": 100.0,
+          "angularSpeed": 250.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Eremite_Universal_Alert",
+      "onAbilityStart": [
+        {
+          "$type": "GFFKENEJFFB",
+          "intID": "FreePoseMark"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Eremite_ReturnToBorn",
+      "abilityMixins": [
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            901
+          ],
+          "modifierName": "ReturnToBorn_Start"
+        }
+      ],
+      "modifiers": {
+        "ReturnToBorn_Start": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "SheathWeaponTrigger"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Eremite_Equip_Delay_Destory",
+      "modifiers": {
+        "Weapon_Delay_Disappear": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "NCFFNDHGCMH"
+            },
+            {
+              "$type": "HBNEMPLJCMB",
+              "hide": true
+            }
+          ]
+        }
+      },
+      "onDetach": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Weapon_Delay_Disappear"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Eremite_Equip_Display_Manager",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_EREMITE_SHEATHWEAPON_",
+          "gvInTalk": 1.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_Eremite_ShowWeapon",
+            "UNIQUE_Eremite_SheathWeapon"
+          ]
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Struggle"
+          ],
+          "modifierName": "UNIQUE_Eremite_HideWeapon",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EAKJOFAIAPH",
+          "poseIDs": [
+            1
+          ],
+          "enterActions": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_EREMITE_SHEATHWEAPON_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_Eremite_SheathWeapon": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLJCNEBNINA",
+              "canBeHandledOnRecover": true,
+              "partName": "equip01",
+              "realName": "WeaponSheathPoint"
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "canBeHandledOnRecover": true,
+              "boolID": "WeaponInHand"
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "JLJCNEBNINA",
+              "partName": "equip01",
+              "realName": "WeaponSheathPoint"
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "WeaponInHand"
+            }
+          ],
+          "onChangeAuthority": [
+            {
+              "$type": "JLJCNEBNINA",
+              "partName": "equip01",
+              "realName": "WeaponSheathPoint"
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "WeaponInHand"
+            }
+          ]
+        },
+        "UNIQUE_Eremite_ShowWeapon": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLJCNEBNINA",
+              "partName": "equip01",
+              "realName": ""
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "WeaponInHand",
+              "param3": true
+            }
+          ]
+        },
+        "UNIQUE_Eremite_HideWeapon": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "NAAJIHIKECC",
+              "canBeHandledOnRecover": true,
+              "partNames": [
+                "equip01"
+              ],
+              "modifyAnotherValue": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "NAAJIHIKECC",
+              "KGGEDGKGLDD": true,
+              "partNames": [
+                "equip01"
+              ],
+              "modifyAnotherValue": true
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "NAAJIHIKECC",
+              "partNames": [
+                "equip01"
+              ],
+              "modifyAnotherValue": true
+            }
+          ],
+          "onChangeAuthority": [
+            {
+              "$type": "NAAJIHIKECC",
+              "partNames": [
+                "equip01"
+              ],
+              "modifyAnotherValue": true
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "canBeHandledOnRecover": true,
+          "param3": 1.0,
+          "key": "_EREMITE_SHEATHWEAPON_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_EREMITE_SHEATHWEAPON_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Eremite_Equip_SheathWeapon",
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_EREMITE_SHEATHWEAPON_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Eremite_Endure_Enhanced",
+      "modifiers": {
+        "Eremite_Endure_Enhanced": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_EndureDelta": 0.44999998807907104
+          }
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Eremite_Endure_Enhanced"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Eremite_Gambling_Logic",
+      "abilityMixins": [
+        {
+          "$type": "EAKJOFAIAPH",
+          "poseIDs": [
+            9512
+          ],
+          "enterActions": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_EREMITE_GAMBLING_RESULT_RECEIVER_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "GamblingBanker"
+            }
+          ],
+          "exitActions": [
+            {
+              "$type": "HMKGPFBBDIC",
+              "key": "_EREMITE_GAMBLING_RESULT_RECEIVER_"
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "GamblingBanker",
+              "param3": true
+            }
+          ]
+        },
+        {
+          "$type": "DIDNLIKKLLF",
+          "stateIDs": [
+            "Crossleg_Gambling_Bet_Skill"
+          ],
+          "enterActions": [
+            {
+              "$type": "PELJALPANCA",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "topLimit": 1,
+                "sortType": "Nearest",
+                "shapeName": "CircleR6",
+                "campTargetType": "Alliance",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_EREMITE_GAMBLING_RESULT_RECEIVER_",
+                  "param3": 1.0
+                }
+              ],
+              "modifierName": "Eremite_Gambling_Trigger_GamblingBet"
+            }
+          ],
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Eremite_Gambling_Trigger_GamblingBet": {
+          "modifierName": "",
+          "elementDurability": 5.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "GamblingBet"
+            }
+          ]
+        },
+        "Eremite_Gambling_Trigger_GamblingLose": {
+          "modifierName": "",
+          "elementDurability": 5.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "GamblingLose"
+            }
+          ]
+        },
+        "Eremite_Gambling_Trigger_GamblingWin": {
+          "modifierName": "",
+          "elementDurability": 5.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "GamblingWin"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "BEIEKAHLNED",
+          "chance": 0.5,
+          "successActions": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "GamblingResult",
+              "param3": true
+            },
+            {
+              "$type": "PELJALPANCA",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "topLimit": 1,
+                "sortType": "Nearest",
+                "shapeName": "CircleR6",
+                "campTargetType": "Alliance",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_EREMITE_GAMBLING_RESULT_RECEIVER_",
+                  "param3": 1.0
+                }
+              ],
+              "modifierName": "Eremite_Gambling_Trigger_GamblingLose"
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "GamblingResult"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "topLimit": 1,
+                "sortType": "Nearest",
+                "shapeName": "CircleR6",
+                "campTargetType": "Alliance",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_EREMITE_GAMBLING_RESULT_RECEIVER_",
+                  "param3": 1.0
+                }
+              ],
+              "modifierName": "Eremite_Gambling_Trigger_GamblingWin"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Eremite_FreePose_Display_Manager",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Crossleg_OudIdle",
+            "Crossleg_PlayOud_BS",
+            "Crossleg_PlayOud_Loop",
+            "Crossleg_PlayOud_AS"
+          ],
+          "modifierName": "FreePose_Display_Oud",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Crossleg_PlayDaff_Idle"
+          ],
+          "modifierName": "FreePose_Display_Daff",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EAKJOFAIAPH",
+          "poseIDs": [
+            9555
+          ],
+          "enterActions": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "StopPlayOud"
+            }
+          ]
+        },
+        {
+          "$type": "DIDNLIKKLLF",
+          "stateIDs": [
+            "Crossleg_PlayOud_Loop"
+          ],
+          "exitActions": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "StopPlayOud",
+              "param3": true
+            }
+          ],
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "FreePose_Display_Oud": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Eremite_Freepose_Oud",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Eremite_Weapon_Disappear",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "LPCHALMFFOD": 0.2680000066757202
+                },
+                "attachPointName": "WeaponR"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "FreePose_Display_Daff": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Eremite_Freepose_Daff",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Eremite_Weapon_Disappear",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": -0.16300000250339508,
+                  "LPCHALMFFOD": 0.10599999874830246
+                },
+                "attachPointName": "WeaponL"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Eremite_FreePose_Male_Drinking_Display_Manager",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Crossleg_Drink_Skill_02",
+            "Crossleg_Drink_Skill_04"
+          ],
+          "modifierName": "EremiteDrinkingMark_Plugged",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Crossleg_Drink_Skill_03"
+          ],
+          "modifierName": "EremiteDrinkingMark_Opened",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "EremiteDrinkingMark_Opened": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Eremite_Freepose_WaterSkin",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "EremiteDrinkingMark_Plugged": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Eremite_Freepose_WaterSkin_Plugged",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "EremiteDrinkingMark_Plugged_After": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Eremite_Freepose_WaterSkin_Plugged",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Eremite_FreePose_MuscleMan_Drinking_Display_Manager",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Crossleg_Drink_Skill_02",
+            "Crossleg_Drink_Skill_04"
+          ],
+          "modifierName": "EremiteDrinkingMark_Plugged",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Crossleg_Drink_Skill_03"
+          ],
+          "modifierName": "EremiteDrinkingMark_Opened",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "EremiteDrinkingMark_Opened": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Eremite_Freepose_WaterSkin",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "EremiteDrinkingMark_Plugged": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Eremite_Freepose_WaterSkin_Plugged",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Eremite_FatuiMaranaWell_GlobalValue_Mark",
+      "modifiers": {
+        "SetGlobalValue_FatuiMaranaWell": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "FatuiMaranaWell",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "SetGlobalValue_FatuiMaranaWell"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Eremite_MainWorld_ResetThreatBroadcastRange",
+      "modifiers": {
+        "Affix_ResetAIThreatBroadcastRange": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JMAJPLCBAKM",
+              "range": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Affix_ResetAIThreatBroadcastRange"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_CommonEquip_UnhideWeapon_Logic",
+      "abilityMixins": [
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueTarget": "Owner",
+          "globalValueKey": "_MONSTER_EREMITE_HIDE_WEAPON",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_UnhideWeapon",
+            "UNIQUE_HideWeapon"
+          ]
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_UnhideWeapon": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_HideWeapon"
+            },
+            {
+              "$type": "PJENOLFAFMG",
+              "canBeHandledOnRecover": true,
+              "KGGEDGKGLDD": true
+            }
+          ]
+        },
+        "UNIQUE_HideWeapon": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_UnhideWeapon"
+            },
+            {
+              "$type": "PJENOLFAFMG",
+              "canBeHandledOnRecover": true
+            }
+          ]
+        }
+      }
+    }
+  }
+]

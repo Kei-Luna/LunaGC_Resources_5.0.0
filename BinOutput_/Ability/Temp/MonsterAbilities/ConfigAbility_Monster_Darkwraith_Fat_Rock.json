@@ -1,0 +1,881 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Darkwraith_Fat_Rock_Steer",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Alert_Turn"
+          ],
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "NormalAttack_01"
+          ],
+          "startNormalizedTime": 0.12200000137090683,
+          "endNormalizedTime": 0.18000000715255737,
+          "angularSpeed": 150.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "NormalAttack_02",
+            "NormalAttack_03"
+          ],
+          "startNormalizedTime": 0.36800000071525574,
+          "endNormalizedTime": 0.48500001430511475,
+          "angularSpeed": 240.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "ShieldAttack_BS"
+          ],
+          "startNormalizedTime": 0.7419999837875366,
+          "endNormalizedTime": 0.7919999957084656,
+          "angularSpeed": 300.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "ShieldAttack_BS"
+          ],
+          "startNormalizedTime": 0.7919999957084656,
+          "endNormalizedTime": 0.9670000076293945,
+          "angularSpeed": 40.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "ShieldAttack_BS"
+          ],
+          "startNormalizedTime": 0.9670000076293945,
+          "angularSpeed": 500.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "ShieldAttack_AS"
+          ],
+          "startNormalizedTime": 0.12200000137090683,
+          "endNormalizedTime": 0.18400000035762787,
+          "angularSpeed": 600.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "WhirlAttack"
+          ],
+          "startNormalizedTime": 0.17399999499320984,
+          "endNormalizedTime": 0.2240000069141388,
+          "angularSpeed": 300.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "WhirlAttack"
+          ],
+          "startNormalizedTime": 0.37599998712539673,
+          "endNormalizedTime": 0.48100000619888306,
+          "angularSpeed": 210.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "BEJLNHKNIKK",
+          "steerStateIDs": [
+            "RageAttack01_BS"
+          ],
+          "startNormalizedTime": 0.8379999995231628,
+          "angularSpeed": 300.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "RageAttack01_Loop"
+          ],
+          "endNormalizedTime": 99.0,
+          "angularSpeed": 270.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "RageAttack01_AS"
+          ],
+          "endNormalizedTime": 0.07999999821186066,
+          "angularSpeed": 500.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "RageAttack02"
+          ],
+          "startNormalizedTime": 0.05000000074505806,
+          "endNormalizedTime": 0.26899999380111694,
+          "angularSpeed": 135.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Darkwraith_Fat_Rock_Distance_Calc",
+      "onAbilityStart": [
+        {
+          "$type": "INBCDALOHMP",
+          "target": "SelfAttackTarget",
+          "targetPredicates": [
+            {
+              "$type": "FMBJAJFLDIP",
+              "target": "SelfAttackTarget",
+              "logic": "Lesser",
+              "param3": 7.0,
+              "DDALGNLEHOD": ""
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "TargetClose",
+              "param3": true
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "TargetClose"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Darkwraith_Fat_Rock_Rampage_Controller",
+      "abilityMixins": [
+        {
+          "$type": "APJKOLPHCGH",
+          "stateIDs": [
+            "NormalIdle",
+            "NormalMove",
+            "RageAttack_Exit"
+          ],
+          "enterActions": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Rampage_State_Manager"
+            }
+          ],
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "resistance_increased": 0.5,
+        "attack_enhanced_ratio": 0.20000000298023224
+      },
+      "modifiers": {
+        "Rampage_State_Timer": {
+          "modifierName": "",
+          "elementDurability": 11.0,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EAKJOFAIAPH",
+              "poseIDs": [
+                191,
+                192,
+                193
+              ],
+              "enterActions": [
+                {
+                  "$type": "PFKNEFGOHIH",
+                  "modifierName": "Rampage_State_Timer"
+                }
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "Rampage",
+              "param3": true
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Rampage_State_Manager"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "Rampage"
+            }
+          ],
+          "onKill": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Rampage_State_Manager"
+            }
+          ]
+        },
+        "Rampage_State_Manager": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_EndureDelta": 0.0,
+            "Actor_PhysicalSubHurtDelta": "resistance_increased",
+            "Actor_FireSubHurtDelta": "resistance_increased",
+            "Actor_ElecSubHurtDelta": "resistance_increased",
+            "Actor_IceSubHurtDelta": "resistance_increased",
+            "Actor_WaterSubHurtDelta": "resistance_increased",
+            "Actor_GrassSubHurtDelta": "resistance_increased",
+            "Actor_WindSubHurtDelta": "resistance_increased",
+            "Actor_RockSubHurtDelta": "resistance_increased",
+            "Actor_AttackRatio": "attack_enhanced_ratio"
+          },
+          "onAdded": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "Rampage_Shader",
+              "param3": true
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Darkwraith_Fat_Rock_RageState01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "Rampage_Shader"
+            },
+            {
+              "$type": "CDHOAGHMOEE"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Darkwraith_Fat_Rock_RageBS",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "Rampage_State_Timer"
+        },
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "Rampage_State_Manager"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Rampage_State_Timer"
+        },
+        {
+          "$type": "DLLGNJPHFDE",
+          "target": "Caster",
+          "GHINLKIEMFA": 0.0,
+          "HFGOEPIEBEE": 0.15000000596046448,
+          "lethal": false,
+          "enableInvincible": true,
+          "enableLockHP": true,
+          "BJKGFBGEFPB": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Darkwraith_Fat_Rock_HitShield",
+      "modifiers": {
+        "Darkwraith_Attack_Monitor": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "PDBBDHGEDJH",
+                  "damageRatio": "All"
+                },
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Avatar"
+                  ]
+                },
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "Darkwraith_Rock_Normal"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "CCNPNMMONDO",
+                  "attackInfo": {
+                    "attackTag": "",
+                    "attenuationTag": "",
+                    "attenuationGroup": "default",
+                    "hitPattern": {
+                      "onHitEffectName": "default",
+                      "hitImpulseY": "",
+                      "hitImpulseType": "LV0",
+                      "hitHaltTime": 0.30000001192092896,
+                      "hitHaltTimeScale": 0.029999999329447746
+                    }
+                  }
+                },
+                {
+                  "$type": "CCNPNMMONDO",
+                  "target": "Target",
+                  "attackInfo": {
+                    "attackTag": "",
+                    "attenuationTag": "",
+                    "attenuationGroup": "default",
+                    "hitPattern": {
+                      "onHitEffectName": "default",
+                      "hitImpulseY": "",
+                      "hitImpulseType": "LV0",
+                      "hitHaltTime": 0.30000001192092896,
+                      "hitHaltTimeScale": 0.029999999329447746
+                    }
+                  }
+                },
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "HitShield",
+                  "mpTriggerOnRemote": true
+                },
+                {
+                  "$type": "KBFEIHEAMBM",
+                  "rotationDampTime": "Eff_Monster_Darkwraith_Fat_Rock_HitShield",
+                  "born": {
+                    "$type": "DHDAAHGFPHK"
+                  },
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                },
+                {
+                  "$type": "ONALKNNKKLH",
+                  "cameraShake": {
+                    "shakeType": "CustomVector",
+                    "shakeRange": 2.200000047683716,
+                    "shakeTime": 0.3499999940395355,
+                    "shakeDir": {
+                      "z": 1.0
+                    },
+                    "extension": {
+                      "baseCycle": 0.23999999463558197,
+                      "cycleDamping": 0.23999999463558197,
+                      "rangeAttenuation": 0.6600000262260437
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Darkwraith_Attack_Monitor"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Darkwraith_Fat_Rock_SwitchToShield",
+      "abilityMixins": [
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            201,
+            200
+          ],
+          "modifierName": "EnergyShield_Handler"
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "ShieldAttack"
+          ],
+          "modifierName": "Block_Handler",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "EnergyShield_Handler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.5,
+          "modifierMixins": [
+            {
+              "$type": "CIGJDPCDOEB",
+              "onAdded": [
+                {
+                  "$type": "FDFGJPNDKEA",
+                  "canBeHandledOnRecover": true,
+                  "pushColliderNames": [
+                    "ShieldPushCollider"
+                  ],
+                  "setEnable": true
+                },
+                {
+                  "$type": "FDFGJPNDKEA",
+                  "canBeHandledOnRecover": true,
+                  "pushColliderNames": [
+                    "ShieldPushExtra"
+                  ],
+                  "setEnable": true
+                },
+                {
+                  "$type": "FDFGJPNDKEA",
+                  "canBeHandledOnRecover": true,
+                  "pushColliderNames": [
+                    "PushCollider"
+                  ]
+                }
+              ],
+              "onRemoved": [
+                {
+                  "$type": "FDFGJPNDKEA",
+                  "canBeHandledOnRecover": true,
+                  "pushColliderNames": [
+                    "ShieldPushCollider"
+                  ]
+                },
+                {
+                  "$type": "FDFGJPNDKEA",
+                  "canBeHandledOnRecover": true,
+                  "pushColliderNames": [
+                    "ShieldPushExtra"
+                  ]
+                },
+                {
+                  "$type": "FDFGJPNDKEA",
+                  "canBeHandledOnRecover": true,
+                  "pushColliderNames": [
+                    "PushCollider"
+                  ],
+                  "setEnable": true
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "Actor_EndureDelta": 0.02500000037252903
+          },
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_ENERGY_SHIELD_STATE_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "KFCDMIMBBLD",
+              "canBeHandledOnRecover": true,
+              "lifeByOwnerV2": true,
+              "gadgetID": 42208009
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "Block_Handler"
+            },
+            {
+              "$type": "CDHOAGHMOEE"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ENERGY_SHIELD_STATE_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "CDHOAGHMOEE"
+            }
+          ]
+        },
+        "Block_Handler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "FMCNBDBHNHH",
+              "stateIDs": [
+                "NormalMove",
+                "NormalIdle",
+                "Turn",
+                "ShieldAttack"
+              ],
+              "defendTriggerID": "ShieldHit",
+              "defendAngle": 75.0,
+              "defendProbability": 1.0,
+              "defendProbabilityDelta": 0.0,
+              "defendTimeInterval": 0.0,
+              "KDIOGIHFGIL": 0,
+              "canDefenceWhileEndureFull": true,
+              "onDefendSucceded": [
+                {
+                  "$type": "KBFEIHEAMBM",
+                  "rotationDampTime": "Eff_Monster_Darkwraith_Fat_Rock_Shield_BlockHit",
+                  "born": {
+                    "$type": "KLPANPDGHHA",
+                    "useRotation": true,
+                    "attachPointName": "ShieldPoint"
+                  },
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                }
+              ],
+              "doNotTurnDirection": true
+            },
+            {
+              "$type": "CIGJDPCDOEB",
+              "onAdded": [
+                {
+                  "$type": "AENLGPIPPAK",
+                  "canBeHandledOnRecover": true,
+                  "hitBoxNames": [
+                    "ShieldHitBox"
+                  ],
+                  "setEnable": true
+                }
+              ],
+              "onRemoved": [
+                {
+                  "$type": "AENLGPIPPAK",
+                  "canBeHandledOnRecover": true,
+                  "hitBoxNames": [
+                    "ShieldHitBox"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_ENERGY_SHIELD_STATE_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "IDNGFEEBPAM",
+          "boolID": "ShieldActivated",
+          "param3": true
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Darkwraith_Fat_Rock_SwitchToDualWielding",
+      "abilityMixins": [
+        {
+          "$type": "EAKJOFAIAPH",
+          "poseIDs": [
+            200,
+            202
+          ],
+          "enterActions": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "SwitchToDualWielding"
+            }
+          ]
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "IDNGFEEBPAM",
+          "boolID": "ShieldActivated"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Darkwraith_Fat_Rock_EnergyShield",
+      "abilityMixins": [
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueTarget": "Owner",
+          "globalValueKey": "_ENERGY_SHIELD_STATE_",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Shield_State",
+            "Shield_Destroy"
+          ],
+          "targetRegisterType": "RegisterAlways"
+        }
+      ],
+      "modifiers": {
+        "Shield_VFX": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Darkwraith_Fat_Rock_EnergyShield",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Shield_State": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "Limbo",
+          "onBeingHit": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Darkwraith_Fat_Rock_EnergyShield_Hit",
+              "born": {
+                "$type": "DHDAAHGFPHK"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Shield_Destroy": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "ShieldEnd",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Monster_Darkwraith_Fat_Rock_EnergyShield"
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox"
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Shield_VFX"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Darkwraith_Fat_Rock_Crystallization_ForJSLY",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_DARKWRAITH_ROCK_ENHANCED_",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Darkwraith_Rock_Crystallization_NoEnhanced",
+            "Darkwraith_Rock_Crystallization_AlwaysEnhanced"
+          ]
+        },
+        {
+          "$type": "AOKOIIHJJPJ",
+          "alertness": [
+            0,
+            1
+          ],
+          "modifierName": "Darkwraith_Rock_Crystallization_Alert"
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_Darkwraith_Rock_Crystallization_Shader": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "HGGKNHLBMED",
+              "damageRatio": "DarkwraithCrystallization_Wind"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "OPAOGKPJLIG",
+              "resistanceListID": 13002
+            }
+          ]
+        },
+        "Darkwraith_Rock_Crystallization_NoEnhanced": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "LAPMOOFOPBM",
+              "valueSteps": [
+                0.5
+              ],
+              "modifierNameSteps": [
+                "Blank",
+                "Darkwraith_Rock_Crystallization_HpDetect"
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "AlwaysEnhanced"
+            }
+          ]
+        },
+        "Darkwraith_Rock_Crystallization_AlwaysEnhanced": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "AlwaysEnhanced",
+              "param3": true
+            }
+          ]
+        },
+        "Darkwraith_Rock_Crystallization_HpDetect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_DARKWRAITH_ROCK_ENHANCED_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Blank": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "Darkwraith_Rock_Crystallization_Alert": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_DARKWRAITH_ROCK_ENHANCED_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_DARKWRAITH_ROCK_TAG_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_DARKWRAITH_ROCK_ENHANCED_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "UNIQUE_Darkwraith_Rock_Crystallization_Shader"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "KBODPNEEFGD",
+          "modifierName": "UNIQUE_Darkwraith_Rock_Crystallization_Shader"
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "BAKEBEKLLAC",
+          "id": 1001850020
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  }
+]

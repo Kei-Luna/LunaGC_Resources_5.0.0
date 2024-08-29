@@ -1,0 +1,427 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Xm_Property_Ani_Prop_AkaFesArchaeologyDetector_01",
+      "modifiers": {
+        "UNIQUE_AkaFes_DetectorUsedCall": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "CurGalleryControlGroup",
+              "funcName": "SLC_Activity_AkaFesArchaeology_ScannerUsed",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ]
+        },
+        "EffectMaterial": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "KJDOGGCKOPK",
+              "targetIDs": [
+                70291058,
+                70291060
+              ],
+              "valueSteps": [
+                0.0,
+                6.0
+              ],
+              "modifierNameSteps": [
+                "ShowTreasure"
+              ],
+              "blendParam": "Blend",
+              "blendDistance": [
+                0.0,
+                60.0
+              ],
+              "rotationDampTime": "Eff_SceneObj_AkaFesArchaeology_DetectorExist_01",
+              "setDistanceToGv": true,
+              "distanceGvKey": "ArcheoScannerDistance"
+            },
+            {
+              "$type": "KJDOGGCKOPK",
+              "targetIDs": [
+                70291058,
+                70291060
+              ],
+              "valueSteps": [
+                0.0,
+                6.0
+              ],
+              "modifierNameSteps": [
+                "Blank"
+              ],
+              "blendParam": "Blend",
+              "blendDistance": [
+                0.0,
+                60.0
+              ],
+              "rotationDampTime": "Eff_SceneObj_AkaFesArchaeology_DetectorShow_01",
+              "distanceGvKey": ""
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "ANNOBMCGOEC",
+              "matName": "CoreMat",
+              "EKHLCLJELIP": "_DissolveValue",
+              "param3": 1.0
+            },
+            {
+              "$type": "ANNOBMCGOEC",
+              "matName": "CoreMat",
+              "EKHLCLJELIP": "_DissolveValue",
+              "param3": 0.0,
+              "useCurve": true,
+              "lerpCurveIndex": 1,
+              "lerpTime": 0.5
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_AkaFesArchaeology_DetectorExist_01",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "AttachPoint"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "BornEffect"
+            }
+          ]
+        },
+        "BornEffect": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_AkaFesArchaeology_DetectorShow_01",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "AttachPoint"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "ShowTreasure": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.20000000298023224,
+          "onThinkInterval": [
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "PBLNLAENOGB",
+                "sortType": "Nearest",
+                "tag": "AkaFesArchaeology"
+              },
+              "targetPredicates": [
+                {
+                  "$type": "FMBJAJFLDIP",
+                  "logic": "LesserOrEqual",
+                  "compareType": "XYZ",
+                  "param3": 6.0,
+                  "DDALGNLEHOD": ""
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "modifierName": "UNIQUE_Activity_SetArcheoTargetGV"
+                }
+              ]
+            }
+          ]
+        },
+        "Blank": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "UNIQUE_Activity_SetArcheoTargetGV": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "NeedShow",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "EffectMaterial"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 60.0,
+          "key": "ArcheoScannerDistance",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_AkaFes_DetectorUsedCall"
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "EffectMaterial"
+        },
+        {
+          "$type": "ANNOBMCGOEC",
+          "matName": "CoreMat",
+          "EKHLCLJELIP": "_DissolveValue",
+          "param3": 1.0,
+          "useCurve": true,
+          "lerpCurveIndex": 1,
+          "lerpTime": 0.5
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Common_Property_Ani_Prop_AkaFesArchaeologyNoiseHint_01",
+      "modifiers": {
+        "ShowMark": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CDBKJPGJABH",
+              "prefabName": "Eff_SceneObj_AkaFesArchaeologyNoiseHint_01_Loop",
+              "checkShowByDistance": true,
+              "overrideBillboardDistance": 13.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "ShowMark"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Common_Property_Ani_Prop_AkaFesArchaeologyTreasure_01",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "HideTreasure"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "ShowTreasure"
+        },
+        {
+          "$type": "NDFFAEHJMAL",
+          "globalValueKey": "NeedShow",
+          "actions": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "NeedShow",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "HPIDNBEGJLL",
+                  "state": 201
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "HideTreasure": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "NeedShow",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "ShowTreasure": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "AddEffect"
+            }
+          ]
+        },
+        "AddEffect": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_QuestGuide_Position",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "NeedShow",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "AOOCGNCCAJB",
+          "isAdd": true,
+          "tag": "AkaFesArchaeology"
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Item_SpecialTreasureBox_Born",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Common_Property_Ani_Prop_AkaFesArchaeologyNoisePoint_01",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "HideNoise"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "ShowNoise"
+        },
+        {
+          "$type": "NDFFAEHJMAL",
+          "globalValueKey": "NeedShow",
+          "actions": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "NeedShow",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "HPIDNBEGJLL",
+                  "state": 201
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "HideNoise": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "NeedShow",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "ShowNoise": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "NeedShow",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "NeedShow",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "AOOCGNCCAJB",
+          "isAdd": true,
+          "tag": "AkaFesArchaeology"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Common_Property_Ani_Prop_AkaFesArchaeologyTreasureHint_01",
+      "abilityMixins": [
+        {
+          "$type": "JPPFBGJICKI",
+          "key": "SGV_Server_Show_Range",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,219 @@
+{
+  "common": {
+    "effectAttachShape": {
+      "$type": "FJNPJANPGGC",
+      "mesh": "EffectMesh"
+    },
+    "mass": 20.0,
+    "height": 0.800000011920929,
+    "affectedByWorld": true,
+    "checkInSurface": true,
+    "canTriggerElementReactionText": false
+  },
+  "model": {
+    "bornEffect": "",
+    "attachEffect": "",
+    "canBakeMesh": false,
+    "BKPFGNPLDNJ": ""
+  },
+  "combat": {
+    "property": {
+      "endureType": "Monster_Minion",
+      "weight": 30.0,
+      "isInvincible": true
+    },
+    "beHit": {
+      "hitBloodEffect": "",
+      "muteAllHitText": true
+    },
+    "combatLock": {
+      "lockShape": "CircleLockEnemy",
+      "denyLockOn": true,
+      "lockType": "Default"
+    },
+    "die": {
+      "dieEndTime": 0.009999999776482582,
+      "dieForceDisappearTime": 10.0,
+      "dieDisappearEffect": "Eff_Animal_Common_Die"
+    }
+  },
+  "stateLayers": {
+    "defaultLayer": {
+      "$type": "GBGJJIIEMBD",
+      "layerIndexName": "",
+      "CPAANEIJCGD": "",
+      "stateIDs": {
+        "Born": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Born": []
+          },
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "NormalIdle": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Standby": []
+          },
+          "canSyncMove": true,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "NormalMove": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Walk": [
+              "Animal_Fishable_Maritime_Walk"
+            ],
+            "Run": [
+              "Animal_Fishable_Maritime_Run"
+            ]
+          },
+          "canSyncMove": true,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ],
+          "canSteer": true
+        },
+        "Turn": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Turn_Walk": [
+              "Animal_Fishable_Maritime_Walk"
+            ],
+            "Turn_Run": [
+              "Animal_Fishable_Maritime_Turn_Run"
+            ]
+          },
+          "canSyncMove": true,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ],
+          "canSteer": true
+        },
+        "BeHit": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Hit_L": []
+          },
+          "resetAnimatorTriggerOnEnter": [
+            "BeHit"
+          ],
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "Die": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Die": [
+              "Animal_Fish_Die"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "initialPoses": {
+    "Default": {}
+  },
+  "aibeta": {
+    "enable": true,
+    "friendliness": 1,
+    "decisionArchetype": "Animal_Homeworld",
+    "moveSetting": {
+      "moveCategory": "Water",
+      "useNavMesh": false,
+      "navMeshAgentName": "Undead01"
+    },
+    "sensing": {
+      "settings": {
+        "DefaultSetting": {
+          "enableVision": false,
+          "feelRange": 6.5
+        }
+      }
+    },
+    "neurons": {
+      "DefaultSetting": [
+        "HIT"
+      ]
+    },
+    "threat": {
+      "GHIJMOKOLMB": "",
+      "clearThreatTargetDistance": 10.0,
+      "clearThreatByTargetOutOfZone": true,
+      "clearThreatTimerByDistance": 0.800000011920929,
+      "clearThreatTimerByTargetOutOfZone": 1.0,
+      "viewThreatGrow": 75.0,
+      "feelThreatGrow": 1000.0,
+      "threatBroadcastRange": 5.0
+    },
+    "defendArea": {
+      "defendRange": 9.0
+    },
+    "ui": {
+      "hasDirectionIndicator": false,
+      "HMNNBFDEHLG": ""
+    },
+    "profiling": {
+      "lodStrategy": "MinorAnimal",
+      "moveCullingLevel": 3
+    },
+    "birdCirclingTactic": [
+      {
+        "$type": "ODHNBPJLGHF",
+        "enable": true,
+        "nerveTrigger": [
+          "HIT"
+        ],
+        "JMCOBEPDIGM": {
+          "NBENNEKDIIA": 2.0,
+          "cd": 1.0,
+          "triggerDistance": 1.0,
+          "MMGOBGGLBJO": 360.0,
+          "EMNPEHPCDLB": 4,
+          "CMDFDIPMGKI": 5,
+          "KAIGBDPLNMO": 0.5,
+          "BMIEPFCPFGN": 2.0,
+          "IAGJBJHKMBF": true,
+          "MNPDDAKDHGK": ""
+        }
+      },
+      {
+        "$type": "NNJKLGNPMNN"
+      },
+      {
+        "$type": "FPELBIJFGCE",
+        "enable": true,
+        "GNBDAEHGLHI": [
+          0,
+          1,
+          2
+        ],
+        "JMCOBEPDIGM": {
+          "NBENNEKDIIA": 0.5,
+          "ANMPOPEBDIA": 20.0,
+          "GMJFIMFFOEL": 3.200000047683716,
+          "CHCPFDMADEI": 6.400000095367432,
+          "MNPDDAKDHGK": ""
+        }
+      }
+    ]
+  },
+  "move": {
+    "$type": "IPNMJMHDMPF",
+    "moveOnGround": false,
+    "moveOnWater": true,
+    "moveOnWaterDepth": 0.5,
+    "PKHOMJHFAEE": "RootNode"
+  },
+  "animal": {
+    "hasAbility": false,
+    "tickAbilityElement": false,
+    "hasCharacterRenderering": false
+  }
+}

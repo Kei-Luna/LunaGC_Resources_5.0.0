@@ -1,0 +1,2326 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "TeamAbility_RollerCoaster_WhiteBox",
+      "abilityMixins": [
+        {
+          "$type": "NKEPLGAIEJM",
+          "modifierName": "Mod_Avatar_RollerCoaster_Handler"
+        },
+        {
+          "$type": "JPPFBGJICKI",
+          "key": "GV_IsInCumstomCamera",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "abilitySpecials": {
+        "TEST_GV_0": 0.0,
+        "TEST_GV_1": 0.0,
+        "GV_Speed": 0.0
+      },
+      "modifiers": {
+        "Team_Reset_GV_IsTransfering": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onReconnect": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Team_Delay_Reset_GV_IsTransfering"
+            }
+          ]
+        },
+        "Team_Delay_Reset_GV_IsTransfering": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "CurLocalAvatar",
+              "param3": 0.0,
+              "key": "GV_IsTransfering",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Mod_Avatar_RollerCoaster_Handler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "OPHOIJLIFCL",
+              "tag": "RollerCoaster",
+              "FIOMFMFOABF": [
+                "TEST_GV_0",
+                "TEST_GV_1"
+              ],
+              "OADPFPBHBPM": [
+                "ChangeSpeedByTime",
+                "ChangeSpeedByStep",
+                "ShowTransferButton",
+                "ShowTransferButton_Fast",
+                "TransferCurve",
+                "SetGroupVariable",
+                "ForceTransferCurve",
+                "StartCustomCameraList",
+                "SetCameraOffset",
+                "TriggerStopAnimator",
+                "CreateRail",
+                "ShowTransferButton_AfterTrackMakingCircle",
+                "ShowTransferButton_NotInchallenge",
+                "Disable_Leave_RollerCoaster",
+                "Enable_Leave_RollerCoaster"
+              ],
+              "FBHDNPJFANK": [
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > ChangeSpeedByTime"
+                  },
+                  {
+                    "$type": "INBCDALOHMP",
+                    "targetPredicates": [
+                      {
+                        "$type": "BHFFBBOLCCP",
+                        "modifierName": "StartRollerCoaster_SpeedController"
+                      }
+                    ],
+                    "successActions": [
+                      {
+                        "$type": "ELNHKGAPIBJ",
+                        "content": "LevelCurveMixin > ChangeSpeedByTime 失败：还在起步加速阶段"
+                      }
+                    ],
+                    "failActions": [
+                      {
+                        "$type": "MNJCJLCFFLF",
+                        "JCANGOGMHCP": "TEST_GV_"
+                      },
+                      {
+                        "$type": "LDIAIDLOPEE",
+                        "globalValueKey": "TEST_GV_0",
+                        "overrideMapKey": "TEST_GV_0"
+                      },
+                      {
+                        "$type": "LDIAIDLOPEE",
+                        "globalValueKey": "TEST_GV_1",
+                        "overrideMapKey": "TEST_GV_1"
+                      },
+                      {
+                        "$type": "FDPKBINAHGL",
+                        "GGOOHHBDILB": "ByFrame",
+                        "CIIOMAOBCMD": "TEST_GV_0",
+                        "GNFOCKINHLK": "",
+                        "LKOHJIPLECH": "TEST_GV_1"
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > ChangeSpeedByStep"
+                  },
+                  {
+                    "$type": "INBCDALOHMP",
+                    "targetPredicates": [
+                      {
+                        "$type": "BHFFBBOLCCP",
+                        "modifierName": "StartRollerCoaster_SpeedController"
+                      }
+                    ],
+                    "successActions": [
+                      {
+                        "$type": "ELNHKGAPIBJ",
+                        "content": "LevelCurveMixin > ChangeSpeedByTime 失败：还在起步加速阶段"
+                      }
+                    ],
+                    "failActions": [
+                      {
+                        "$type": "MNJCJLCFFLF",
+                        "JCANGOGMHCP": "TEST_GV_"
+                      },
+                      {
+                        "$type": "LDIAIDLOPEE",
+                        "globalValueKey": "TEST_GV_0",
+                        "overrideMapKey": "TEST_GV_0"
+                      },
+                      {
+                        "$type": "LDIAIDLOPEE",
+                        "globalValueKey": "TEST_GV_1",
+                        "overrideMapKey": "TEST_GV_1"
+                      },
+                      {
+                        "$type": "FDPKBINAHGL",
+                        "CIIOMAOBCMD": "TEST_GV_0",
+                        "GNFOCKINHLK": "TEST_GV_1",
+                        "LKOHJIPLECH": ""
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > ShowTransferButton"
+                  },
+                  {
+                    "$type": "NBJOOJMEDPD",
+                    "uiContextName": "InLevelMainPage",
+                    "message": "TransferRollerCoaster",
+                    "floatParam": 2.0,
+                    "stringParam": ""
+                  },
+                  {
+                    "$type": "MKKBGLDEOPG"
+                  }
+                ],
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > ShowTransferButton_Fast"
+                  },
+                  {
+                    "$type": "NBJOOJMEDPD",
+                    "uiContextName": "InLevelMainPage",
+                    "message": "TransferRollerCoaster",
+                    "floatParam": 1.5,
+                    "stringParam": ""
+                  },
+                  {
+                    "$type": "MKKBGLDEOPG"
+                  }
+                ],
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > TransferCurve"
+                  },
+                  {
+                    "$type": "FCCKDGPIGGG",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "target": "Team",
+                        "key": "GV_QTE_Suc",
+                        "param3": 1.0
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > SetGroupVariable"
+                  },
+                  {
+                    "$type": "MNJCJLCFFLF",
+                    "JCANGOGMHCP": "TEST_GV_"
+                  },
+                  {
+                    "$type": "LDIAIDLOPEE",
+                    "globalValueKey": "TEST_GV_0",
+                    "overrideMapKey": "TEST_GV_0"
+                  },
+                  {
+                    "$type": "LDIAIDLOPEE",
+                    "globalValueKey": "TEST_GV_1",
+                    "overrideMapKey": "TEST_GV_1"
+                  },
+                  {
+                    "$type": "AHPEKICBIIL",
+                    "luaCallType": "SpecificGroup",
+                    "callParamList": [
+                      510010035
+                    ],
+                    "funcName": "SLC_Roller_Coaster_SetVar",
+                    "paramNum": 2,
+                    "param1": "TEST_GV_0",
+                    "MGAMDEHMCOL": "TEST_GV_1",
+                    "MMHOHAOGPLP": 0.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > ForceTransferCurve"
+                  },
+                  {
+                    "$type": "MKKBGLDEOPG"
+                  },
+                  {
+                    "$type": "FCCKDGPIGGG"
+                  }
+                ],
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > StartCustomCameraList"
+                  },
+                  {
+                    "$type": "MNJCJLCFFLF",
+                    "JCANGOGMHCP": "TEST_GV_"
+                  },
+                  {
+                    "$type": "JJPEEOJINDJ",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 1.0
+                      }
+                    ],
+                    "EBACPEHCEND": [
+                      {
+                        "pos": {
+                          "x": 186.6999969482422,
+                          "y": 213.86199951171875,
+                          "z": 1117.011962890625
+                        },
+                        "rot": {
+                          "x": 2.200000047683716,
+                          "y": 195.39999389648438
+                        },
+                        "lerpInTime": 3.5,
+                        "CIJLABMEGDC": 0,
+                        "GKEJCGOCPLN": 0.0
+                      },
+                      {
+                        "pos": {
+                          "x": 152.1999969482422,
+                          "y": 221.60000610351562,
+                          "z": 1119.699951171875
+                        },
+                        "rot": {
+                          "x": 5.0,
+                          "y": 160.0
+                        },
+                        "lerpInTime": 9.0,
+                        "CIJLABMEGDC": 1,
+                        "GKEJCGOCPLN": 0.0
+                      }
+                    ],
+                    "lerpOutTime": 4.5,
+                    "CIJLABMEGDC": 2,
+                    "rot": {
+                      "x": 21.200000762939453,
+                      "y": 250.1999969482422,
+                      "z": 330.1000061035156
+                    },
+                    "globalValueKey": "GV_IsInCumstomCamera"
+                  },
+                  {
+                    "$type": "JJPEEOJINDJ",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 2.0
+                      }
+                    ],
+                    "EBACPEHCEND": [
+                      {
+                        "pos": {
+                          "x": 160.16000366210938,
+                          "y": 176.1999969482422,
+                          "z": 1141.9000244140625
+                        },
+                        "rot": {
+                          "x": 27.299999237060547,
+                          "y": 177.3000030517578
+                        },
+                        "lerpInTime": 4.0,
+                        "GKEJCGOCPLN": 0.0
+                      },
+                      {
+                        "pos": {
+                          "x": 162.60000610351562,
+                          "y": 149.8000030517578,
+                          "z": 1090.719970703125
+                        },
+                        "rot": {
+                          "x": 27.264999389648438,
+                          "y": 177.26499938964844
+                        },
+                        "lerpInTime": 5.5,
+                        "GKEJCGOCPLN": 0.0
+                      }
+                    ],
+                    "lerpOutTime": 1.5,
+                    "CIJLABMEGDC": 1,
+                    "rot": {
+                      "x": 19.299999237060547,
+                      "y": 193.89999389648438,
+                      "z": 251.3000030517578
+                    },
+                    "globalValueKey": "GV_IsInCumstomCamera"
+                  },
+                  {
+                    "$type": "JJPEEOJINDJ",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 3.0
+                      }
+                    ],
+                    "EBACPEHCEND": [
+                      {
+                        "pos": {
+                          "x": 493.0,
+                          "y": 288.0,
+                          "z": 28.0
+                        },
+                        "rot": {
+                          "x": -1.0,
+                          "y": 134.89999389648438
+                        },
+                        "lerpInTime": 4.0,
+                        "CIJLABMEGDC": 0,
+                        "GLHOPEOMEEI": 23,
+                        "GKEJCGOCPLN": 0.0
+                      },
+                      {
+                        "pos": {
+                          "x": 540.5999755859375,
+                          "y": 292.8999938964844,
+                          "z": 51.5
+                        },
+                        "rot": {
+                          "x": -2.815000057220459,
+                          "y": 167.29600524902344
+                        },
+                        "lerpInTime": 8.0,
+                        "CIJLABMEGDC": 1,
+                        "GKEJCGOCPLN": 0.0
+                      }
+                    ],
+                    "lerpOutTime": 2.0,
+                    "CIJLABMEGDC": 0,
+                    "rot": {
+                      "x": 32.29999923706055,
+                      "y": 112.5999984741211,
+                      "z": 46.900001525878906
+                    },
+                    "globalValueKey": "GV_IsInCumstomCamera"
+                  },
+                  {
+                    "$type": "JJPEEOJINDJ",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 4.0
+                      }
+                    ],
+                    "EBACPEHCEND": [
+                      {
+                        "pos": {
+                          "x": 131.0,
+                          "y": 221.0,
+                          "z": 1098.0999755859375
+                        },
+                        "rot": {
+                          "x": 1.2400000095367432,
+                          "y": 134.4499969482422
+                        },
+                        "lerpInTime": 3.5,
+                        "GKEJCGOCPLN": 0.0
+                      },
+                      {
+                        "pos": {
+                          "x": 159.1584014892578,
+                          "y": 218.33819580078125,
+                          "z": 1116.5360107421875
+                        },
+                        "rot": {
+                          "x": 3.13100004196167,
+                          "y": 166.42300415039062
+                        },
+                        "lerpInTime": 7.5,
+                        "CIJLABMEGDC": 1,
+                        "GKEJCGOCPLN": 0.0
+                      }
+                    ],
+                    "lerpOutTime": 4.5,
+                    "CIJLABMEGDC": 2,
+                    "rot": {
+                      "x": 56.099998474121094,
+                      "y": 67.0999984741211,
+                      "z": 38.900001525878906
+                    },
+                    "globalValueKey": "GV_IsInCumstomCamera"
+                  }
+                ],
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > SetCameraOffset"
+                  },
+                  {
+                    "$type": "MNJCJLCFFLF",
+                    "JCANGOGMHCP": "TEST_GV_"
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 0.0
+                      }
+                    ],
+                    "lerpInTime": 2.0,
+                    "CIJLABMEGDC": 0,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 65.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 1.0
+                      }
+                    ],
+                    "lerpInTime": 1.0,
+                    "CIJLABMEGDC": 3,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 70.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 2.0
+                      }
+                    ],
+                    "lerpInTime": 2.0,
+                    "CIJLABMEGDC": 3,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 65.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 3.0
+                      }
+                    ],
+                    "KJLKOGKCGLG": {
+                      "y": 3.0
+                    },
+                    "lerpInTime": 2.0,
+                    "CIJLABMEGDC": 3,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 65.0
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 4.0
+                      }
+                    ],
+                    "GGHMICHNDIL": {
+                      "y": -10.0
+                    },
+                    "lerpInTime": 2.0,
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 65.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 5.0
+                      }
+                    ],
+                    "GGHMICHNDIL": {
+                      "y": -15.0
+                    },
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 0.0,
+                    "AFIGGDOGGLE": 0.0,
+                    "fov": 65.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 6.0
+                      }
+                    ],
+                    "KJLKOGKCGLG": {
+                      "y": 2.0
+                    },
+                    "GGHMICHNDIL": {
+                      "y": -15.0
+                    },
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 75.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 7.0
+                      }
+                    ],
+                    "KJLKOGKCGLG": {
+                      "y": 3.0
+                    },
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 65.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 8.0
+                      }
+                    ],
+                    "GGHMICHNDIL": {
+                      "x": 20.0,
+                      "y": -15.0
+                    },
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 65.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 9.0
+                      }
+                    ],
+                    "lerpInTime": 5.0,
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 70.0,
+                    "BIOKGCDEHFI": 10.0,
+                    "KADCPGPHAIL": 60.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 10.0
+                      }
+                    ],
+                    "KJLKOGKCGLG": {
+                      "x": -6.0
+                    },
+                    "GGHMICHNDIL": {
+                      "x": -89.0,
+                      "y": -25.0
+                    },
+                    "lerpInTime": 5.0,
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 0.0,
+                    "AFIGGDOGGLE": 0.0,
+                    "BIOKGCDEHFI": 18.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 11.0
+                      }
+                    ],
+                    "KJLKOGKCGLG": {
+                      "x": 6.0
+                    },
+                    "GGHMICHNDIL": {
+                      "x": 89.0,
+                      "y": -25.0
+                    },
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 0.0,
+                    "AFIGGDOGGLE": 0.0,
+                    "BIOKGCDEHFI": 18.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 12.0
+                      }
+                    ],
+                    "lerpInTime": 4.0,
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 0.0,
+                    "AFIGGDOGGLE": 0.0,
+                    "BIOKGCDEHFI": 18.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 13.0
+                      }
+                    ],
+                    "KJLKOGKCGLG": {
+                      "x": 8.0,
+                      "y": 4.0
+                    },
+                    "GGHMICHNDIL": {
+                      "x": 89.0,
+                      "y": -25.0
+                    },
+                    "lerpInTime": 1.0,
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 0.0,
+                    "AFIGGDOGGLE": 0.0,
+                    "BIOKGCDEHFI": 23.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 14.0
+                      }
+                    ],
+                    "KJLKOGKCGLG": {
+                      "y": 4.0
+                    },
+                    "GGHMICHNDIL": {
+                      "y": -15.0
+                    },
+                    "lerpInTime": 2.0,
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 65.0,
+                    "BIOKGCDEHFI": 12.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 15.0
+                      }
+                    ],
+                    "GGHMICHNDIL": {
+                      "y": 7.0
+                    },
+                    "lerpInTime": 2.0,
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 65.0,
+                    "BIOKGCDEHFI": 8.5,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 16.0
+                      }
+                    ],
+                    "KJLKOGKCGLG": {
+                      "y": 1.399999976158142
+                    },
+                    "GGHMICHNDIL": {
+                      "y": 28.0
+                    },
+                    "lerpInTime": 2.0,
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 0.0,
+                    "AFIGGDOGGLE": 0.0,
+                    "fov": 60.0,
+                    "BIOKGCDEHFI": 8.5,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 17.0
+                      }
+                    ],
+                    "GGHMICHNDIL": {
+                      "x": 45.0,
+                      "y": -20.0
+                    },
+                    "lerpInTime": 1.5,
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 65.0,
+                    "BIOKGCDEHFI": 7.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 18.0
+                      }
+                    ],
+                    "KJLKOGKCGLG": {
+                      "y": 6.0
+                    },
+                    "GGHMICHNDIL": {
+                      "x": 30.0,
+                      "y": 5.0
+                    },
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 65.0,
+                    "BIOKGCDEHFI": 17.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 19.0
+                      }
+                    ],
+                    "KJLKOGKCGLG": {
+                      "y": 3.0
+                    },
+                    "GGHMICHNDIL": {
+                      "x": 30.0,
+                      "y": 5.0
+                    },
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 65.0,
+                    "BIOKGCDEHFI": 16.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 20.0
+                      }
+                    ],
+                    "GGHMICHNDIL": {
+                      "x": 30.0,
+                      "y": 5.0
+                    },
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 65.0,
+                    "BIOKGCDEHFI": 10.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 21.0
+                      }
+                    ],
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 65.0,
+                    "BIOKGCDEHFI": 10.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 22.0
+                      }
+                    ],
+                    "KJLKOGKCGLG": {
+                      "y": 6.0
+                    },
+                    "GGHMICHNDIL": {
+                      "x": 30.0,
+                      "y": 5.0
+                    },
+                    "lerpInTime": 1.0,
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 65.0,
+                    "BIOKGCDEHFI": 17.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 23.0
+                      }
+                    ],
+                    "KJLKOGKCGLG": {
+                      "y": 6.0
+                    },
+                    "GGHMICHNDIL": {
+                      "x": -30.0,
+                      "y": 5.0
+                    },
+                    "lerpInTime": 2.0,
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 65.0,
+                    "BIOKGCDEHFI": 15.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 24.0
+                      }
+                    ],
+                    "KJLKOGKCGLG": {
+                      "y": 1.0
+                    },
+                    "GGHMICHNDIL": {
+                      "x": -40.0
+                    },
+                    "lerpInTime": 2.0,
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 65.0,
+                    "BIOKGCDEHFI": 16.5,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 25.0
+                      }
+                    ],
+                    "GGHMICHNDIL": {
+                      "y": 15.0
+                    },
+                    "lerpInTime": 2.0,
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 65.0,
+                    "BIOKGCDEHFI": 7.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 26.0
+                      }
+                    ],
+                    "KJLKOGKCGLG": {
+                      "y": 3.0
+                    },
+                    "GGHMICHNDIL": {
+                      "x": 80.0,
+                      "y": 5.0
+                    },
+                    "lerpInTime": 1.0,
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 65.0,
+                    "BIOKGCDEHFI": 12.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 27.0
+                      }
+                    ],
+                    "KJLKOGKCGLG": {
+                      "y": 3.0
+                    },
+                    "GGHMICHNDIL": {
+                      "x": 50.0,
+                      "y": 5.0
+                    },
+                    "lerpInTime": 1.0,
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 65.0,
+                    "BIOKGCDEHFI": 16.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 28.0
+                      }
+                    ],
+                    "GGHMICHNDIL": {
+                      "x": 40.0,
+                      "y": -10.0
+                    },
+                    "lerpInTime": 1.0,
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 65.0,
+                    "BIOKGCDEHFI": 12.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 29.0
+                      }
+                    ],
+                    "GGHMICHNDIL": {
+                      "x": 10.0
+                    },
+                    "lerpInTime": 2.0,
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 65.0,
+                    "BIOKGCDEHFI": 8.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 30.0
+                      }
+                    ],
+                    "lerpInTime": 2.0,
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 70.0,
+                    "BIOKGCDEHFI": 9.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 31.0
+                      }
+                    ],
+                    "GGHMICHNDIL": {
+                      "x": -20.0
+                    },
+                    "lerpInTime": 2.0,
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 70.0,
+                    "BIOKGCDEHFI": 10.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 32.0
+                      }
+                    ],
+                    "GGHMICHNDIL": {
+                      "x": 30.0
+                    },
+                    "lerpInTime": 2.0,
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 70.0,
+                    "BIOKGCDEHFI": 10.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 33.0
+                      }
+                    ],
+                    "GGHMICHNDIL": {
+                      "x": 20.0
+                    },
+                    "lerpInTime": 2.0,
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 70.0,
+                    "BIOKGCDEHFI": 10.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 34.0
+                      }
+                    ],
+                    "GGHMICHNDIL": {
+                      "x": -30.0
+                    },
+                    "lerpInTime": 2.0,
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 70.0,
+                    "BIOKGCDEHFI": 9.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 35.0
+                      }
+                    ],
+                    "GGHMICHNDIL": {
+                      "x": 30.0,
+                      "y": 30.0
+                    },
+                    "lerpInTime": 2.0,
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 65.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 36.0
+                      }
+                    ],
+                    "GGHMICHNDIL": {
+                      "x": 30.0
+                    },
+                    "lerpInTime": 2.0,
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 65.0,
+                    "CJAKKMPCONN": true
+                  },
+                  {
+                    "$type": "OIGCBOKOFAB",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 37.0
+                      }
+                    ],
+                    "GGHMICHNDIL": {
+                      "x": -30.0
+                    },
+                    "lerpInTime": 2.0,
+                    "CIJLABMEGDC": 2,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 65.0,
+                    "CJAKKMPCONN": true
+                  }
+                ],
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > TriggerStopAnimator"
+                  },
+                  {
+                    "$type": "BLCCGIPAOIP",
+                    "otherTargets": {
+                      "$type": "PBLNLAENOGB",
+                      "topLimit": 1,
+                      "sortType": "Nearest",
+                      "tag": "RollerCoaster"
+                    },
+                    "PLLJBINMGJK": "Cancel"
+                  },
+                  {
+                    "$type": "KJCHPDPBJHL",
+                    "otherTargets": {
+                      "$type": "PBLNLAENOGB",
+                      "topLimit": 1,
+                      "sortType": "Nearest",
+                      "tag": "RollerCoaster"
+                    },
+                    "boolID": "Running"
+                  }
+                ],
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > CreateRail"
+                  }
+                ],
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > ShowTransferButton_AfterTrackMakingCircle"
+                  },
+                  {
+                    "$type": "INBCDALOHMP",
+                    "target": "Team",
+                    "targetPredicates": [
+                      {
+                        "$type": "BHFFBBOLCCP",
+                        "target": "CurLocalAvatar",
+                        "modifierName": "_AfterTrackMakingCircle"
+                      }
+                    ],
+                    "successActions": [
+                      {
+                        "$type": "NBJOOJMEDPD",
+                        "uiContextName": "InLevelMainPage",
+                        "message": "TransferRollerCoaster",
+                        "floatParam": 2.0,
+                        "stringParam": ""
+                      },
+                      {
+                        "$type": "MKKBGLDEOPG"
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > ShowTransferButton_NotInchallenge"
+                  },
+                  {
+                    "$type": "INBCDALOHMP",
+                    "target": "Team",
+                    "targetPredicates": [
+                      {
+                        "$type": "BCFNGJHILAG",
+                        "predicates": [
+                          {
+                            "$type": "BHFFBBOLCCP",
+                            "modifierName": "_RollerCoaster_Challenge"
+                          }
+                        ]
+                      }
+                    ],
+                    "successActions": [
+                      {
+                        "$type": "NBJOOJMEDPD",
+                        "uiContextName": "InLevelMainPage",
+                        "message": "TransferRollerCoaster",
+                        "floatParam": 2.0,
+                        "stringParam": ""
+                      },
+                      {
+                        "$type": "MKKBGLDEOPG"
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > Disable_Leave_RollerCoaster"
+                  },
+                  {
+                    "$type": "PELJALPANCA",
+                    "target": "CurLocalAvatar",
+                    "modifierName": "Avatar_Disable_Leave_RollerCoaster"
+                  }
+                ],
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > Enable_Leave_RollerCoaster"
+                  },
+                  {
+                    "$type": "PFKNEFGOHIH",
+                    "target": "CurLocalAvatar",
+                    "modifierName": "Avatar_Disable_Leave_RollerCoaster"
+                  }
+                ]
+              ]
+            },
+            {
+              "$type": "BMJEKLBNOAG",
+              "OAODIDCIAHK": "GV_IsInRollerCoaster",
+              "GFLCOCGOKGH": "GV_IsTransfering",
+              "speed": "GV_Speed"
+            },
+            {
+              "$type": "CCNIOPJEHOE",
+              "globalValueKey": "GV_IsInRollerCoaster",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "GV_IsInRollerCoaster_0",
+                "GV_IsInRollerCoaster_1"
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "GV_IsInRollerCoaster",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "GV_IsTransfering",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "GV_Speed",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Avatar_Disable_Leave_RollerCoaster": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "GV_RollerCoasterDisableLeave",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -1.0,
+              "key": "GV_RollerCoasterDisableLeave",
+              "useLimitRange": true,
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "GV_IsInRollerCoaster_0": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "NBJOOJMEDPD",
+              "uiContextName": "InLevelMainPage",
+              "message": "LeaveRollerCoaster",
+              "stringParam": ""
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "CurLocalAvatar",
+              "param3": 0.0,
+              "key": "GV_IsTransfering",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": 0.0,
+              "key": "Team_GV_IsInRollerCoaster",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "GV_IsInRollerCoaster_1": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.20000000298023224,
+          "modifierMixins": [
+            {
+              "$type": "LLCAHDLGAHO",
+              "reason": "SelfAbility",
+              "disableAudio": true
+            },
+            {
+              "$type": "CCNIOPJEHOE",
+              "globalValueTarget": "Team",
+              "globalValueKey": "GV_IsInCumstomCamera",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "GV_IsInCumstomCamera_0",
+                "GV_IsInCumstomCamera_1"
+              ]
+            }
+          ],
+          "state": "IsGhostToEnemy",
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": 1.0,
+              "key": "Team_GV_IsInRollerCoaster",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "StartRollerCoaster_SpeedController"
+            },
+            {
+              "$type": "NBJOOJMEDPD",
+              "uiContextName": "InLevelMainPage",
+              "message": "EnterRollerCoaster",
+              "floatParam": 0.5,
+              "stringParam": ""
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "otherTargets": {
+                "$type": "PBLNLAENOGB",
+                "topLimit": 1,
+                "sortType": "Nearest",
+                "tag": "RollerCoaster"
+              },
+              "modifierName": "RollerCoaster_Running"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "GV_Ball_Count",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PELJALPANCA",
+              "otherTargets": {
+                "$type": "PBLNLAENOGB",
+                "topLimit": 1,
+                "sortType": "Nearest",
+                "tag": "RollerCoaster"
+              },
+              "modifierName": "_SetGV_Active_1"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "target": "CurLocalAvatar",
+              "modifierName": "Avatar_Disable_Leave_RollerCoaster"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FEKJDLHHOLE",
+              "otherTargets": {
+                "$type": "PBLNLAENOGB",
+                "topLimit": 1,
+                "sortType": "Nearest",
+                "tag": "RollerCoaster"
+              },
+              "floatID": "Speed",
+              "param3": 0.0
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "PBLNLAENOGB",
+                "sortType": "Nearest",
+                "tag": "RollerCoaster"
+              },
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Other",
+                  "modifierName": "_SetGV_Active_0"
+                }
+              ]
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "GV_Speed",
+              "overrideMapKey": "GV_Speed"
+            },
+            {
+              "$type": "FEKJDLHHOLE",
+              "otherTargets": {
+                "$type": "PBLNLAENOGB",
+                "topLimit": 1,
+                "sortType": "Nearest",
+                "tag": "RollerCoaster"
+              },
+              "floatID": "Speed",
+              "param3": "GV_Speed"
+            }
+          ]
+        },
+        "_SetGV_Active_1": {
+          "stacking": "Multiple",
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "GV_RollerCoasterActive",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "_SetGV_Active_0": {
+          "stacking": "Multiple",
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "GV_RollerCoasterActive",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "param3": 0.0,
+                  "key": "GV_RollerCoasterActive",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "GMHBGMIOCAF",
+                  "target": "Applier",
+                  "key": "_Dis"
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "_Dis",
+                      "param3": 5.0,
+                      "compareType": "MoreThan"
+                    }
+                  ],
+                  "modifierName": "_KillSelf"
+                }
+              ]
+            }
+          ]
+        },
+        "_KillSelf": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH",
+              "configIdArray": [
+                70000000
+              ]
+            }
+          ]
+        },
+        "GV_IsInCumstomCamera_0": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CCNIOPJEHOE",
+              "globalValueTarget": "CurLocalAvatar",
+              "globalValueKey": "GV_Speed",
+              "valueSteps": [
+                -0.5,
+                7.0,
+                30.0
+              ],
+              "modifierNameSteps": [
+                "GV_Speed_LessThan5",
+                "GV_Speed_MoreThan5"
+              ]
+            }
+          ]
+        },
+        "GV_Speed_LessThan5": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "GV_Speed_MoreThan5": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.20000000298023224,
+          "modifierMixins": [
+            {
+              "$type": "COEDOLJOHAK",
+              "postEffectAssetName": "PostEffect_RollerCoaster_Sprint",
+              "duration": 0.0,
+              "forceFadeOut": true
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "GEOIEOJCKAK",
+              "postEffectAssetName": "PostEffect_RollerCoaster_Sprint",
+              "NOMEMCDBGIM": "_MaskScale",
+              "param3": [
+                0.05000000074505806,
+                "GV_Speed",
+                "MUL"
+              ],
+              "forceFadeOut": true
+            }
+          ]
+        },
+        "GV_IsInCumstomCamera_1": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "RollerCoaster_Running": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "Running",
+              "param3": true
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "UNIQUE_RunningMark"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "Running"
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "NCFFNDHGCMH",
+              "configIdArray": [
+                70000000
+              ]
+            }
+          ]
+        },
+        "UNIQUE_RunningMark": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NDFFAEHJMAL",
+              "globalValueKey": "RollerCoaster_Arrive_Notify",
+              "actions": [
+                {
+                  "$type": "INBCDALOHMP",
+                  "targetPredicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "RollerCoaster_Arrive_Notify",
+                      "param3": 1.0
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "BOBCOJHOKKD",
+                      "param3": 0.0,
+                      "key": "RollerCoaster_Arrive_Notify",
+                      "param2": 0.0,
+                      "repeatTimes": 0.0
+                    },
+                    {
+                      "$type": "PFKNEFGOHIH",
+                      "modifierName": "UNIQUE_RunningMark"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "RollerCoaster_Arrive_Notify",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "NCFFNDHGCMH",
+              "configIdArray": [
+                70000000
+              ]
+            }
+          ]
+        },
+        "StartRollerCoaster_SpeedController": {
+          "modifierName": "",
+          "elementDurability": 1.0499999523162842,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 6.0,
+              "key": "_targetVelocity",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 2.0,
+              "key": "_duration",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "FDPKBINAHGL",
+              "GGOOHHBDILB": "ByFrame",
+              "CIIOMAOBCMD": "_targetVelocity",
+              "GNFOCKINHLK": "",
+              "LKOHJIPLECH": "_duration"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "GV_IsInCumstomCamera",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "modifierName": "Team_Reset_GV_IsTransfering"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "NBJOOJMEDPD",
+          "uiContextName": "InLevelMainPage",
+          "message": "TransferRollerCoaster",
+          "floatParam": 2.0,
+          "stringParam": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "TeamAbility_Common_RollerCoaster_Leave",
+      "abilityMixins": [
+        {
+          "$type": "NKEPLGAIEJM",
+          "modifierName": "_Avatar_RollerCoasterDisableLeave_Tips_Handler"
+        }
+      ],
+      "modifiers": {
+        "_Notify_KillSelf": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_RollerCoaster_02",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "Eff_Point"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "NCFFNDHGCMH",
+              "hideEntity": true,
+              "configIdArray": [
+                70000000
+              ]
+            }
+          ]
+        },
+        "_Avatar_RollerCoasterDisableLeave_Tips_Handler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NDFFAEHJMAL",
+              "globalValueKey": "GV_RollerCoasterDisableLeave",
+              "actions": [
+                {
+                  "$type": "INBCDALOHMP",
+                  "targetPredicates": [
+                    {
+                      "$type": "BHFFBBOLCCP",
+                      "modifierName": "_RollerCoaster_Task_CurLocalAvatar"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "BOBCOJHOKKD",
+                      "param3": 2.0,
+                      "key": "GV_RollerCoasterDisableLeaveTips",
+                      "param2": 0.0,
+                      "repeatTimes": 0.0
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "INBCDALOHMP",
+                      "targetPredicates": [
+                        {
+                          "$type": "BHFFBBOLCCP",
+                          "modifierName": "_RollerCoaster_Challenge_CurLocalAvatar"
+                        }
+                      ],
+                      "successActions": [
+                        {
+                          "$type": "BOBCOJHOKKD",
+                          "param3": 1.0,
+                          "key": "GV_RollerCoasterDisableLeaveTips",
+                          "param2": 0.0,
+                          "repeatTimes": 0.0
+                        }
+                      ],
+                      "failActions": [
+                        {
+                          "$type": "INBCDALOHMP",
+                          "targetPredicates": [
+                            {
+                              "$type": "BHFFBBOLCCP",
+                              "modifierName": "Avatar_Disable_Leave_RollerCoaster"
+                            }
+                          ],
+                          "successActions": [
+                            {
+                              "$type": "BOBCOJHOKKD",
+                              "param3": 3.0,
+                              "key": "GV_RollerCoasterDisableLeaveTips",
+                              "param2": 0.0,
+                              "repeatTimes": 0.0
+                            }
+                          ],
+                          "failActions": [
+                            {
+                              "$type": "BOBCOJHOKKD",
+                              "param3": 0.0,
+                              "key": "GV_RollerCoasterDisableLeaveTips",
+                              "param2": 0.0,
+                              "repeatTimes": 0.0
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "ELNHKGAPIBJ",
+          "content": "TeamAbility_Common_RollerCoaster_Leave > onAbilityStart"
+        },
+        {
+          "$type": "PJNICGLNNFJ",
+          "target": "CurLocalAvatar",
+          "CFLCJBKOCDH": 2.0
+        },
+        {
+          "$type": "PELJALPANCA",
+          "otherTargets": {
+            "$type": "PBLNLAENOGB",
+            "topLimit": 1,
+            "sortType": "Nearest",
+            "tag": "RollerCoaster"
+          },
+          "modifierName": "_Notify_KillSelf"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "TeamAbility_Common_RollerCoaster_Left_Attack",
+      "modifiers": {
+        "Action_TriggerAttack": {
+          "stacking": "Multiple",
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CAKDDHLKOAB",
+              "bulletID": 70800736,
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": -4.5,
+                  "JEBHCGDPFEJ": 0.75,
+                  "LPCHALMFFOD": -0.6499999761581421
+                },
+                "direction": {
+                  "$type": "IGHNLLKHGOA",
+                  "angleOffset": {
+                    "KGEPIMHBMOL": 0.0,
+                    "JEBHCGDPFEJ": 0.0,
+                    "LPCHALMFFOD": 0.0
+                  }
+                },
+                "useRotation": true
+              }
+            }
+          ]
+        },
+        "State_AttachCheck_Light": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "State_AttachCheck_Light"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "OCLNBBMMIOK",
+          "skillID": 20351,
+          "amountByTargetCurrentHPRatio": 1.0,
+          "costStaminaRatio": 1.0
+        },
+        {
+          "$type": "PELJALPANCA",
+          "target": "CurLocalAvatar",
+          "modifierName": "Action_TriggerAttack"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "TeamAbility_Common_RollerCoaster_Right_Attack",
+      "modifiers": {
+        "Action_TriggerAttack": {
+          "stacking": "Multiple",
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CAKDDHLKOAB",
+              "bulletID": 70800736,
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 4.5,
+                  "JEBHCGDPFEJ": 0.75,
+                  "LPCHALMFFOD": -0.6499999761581421
+                },
+                "direction": {
+                  "$type": "IGHNLLKHGOA",
+                  "angleOffset": {
+                    "KGEPIMHBMOL": 0.0,
+                    "JEBHCGDPFEJ": 0.0,
+                    "LPCHALMFFOD": 0.0
+                  }
+                },
+                "useRotation": true
+              }
+            }
+          ]
+        },
+        "State_AttachCheck_Right": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "State_AttachCheck_Right"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "ELNHKGAPIBJ",
+          "content": "TeamAbility_Common_RollerCoaster_Right_Attack > onAbilityStart"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "target": "CurLocalAvatar",
+          "modifierName": "Action_TriggerAttack"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "TeamAbility_Common_RollerCoaster_Transfer",
+      "modifiers": {
+        "_TrackThruster_FireEffect": {
+          "stacking": "Multiple",
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_TrackThruster_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "HPIDNBEGJLL"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "ELNHKGAPIBJ",
+          "content": "TeamAbility_Common_RollerCoaster_Transfer > onAbilityStart"
+        },
+        {
+          "$type": "FCCKDGPIGGG",
+          "target": "CurLocalAvatar"
+        },
+        {
+          "$type": "INBCDALOHMP",
+          "otherTargets": {
+            "$type": "PBLNLAENOGB",
+            "sortType": "Nearest",
+            "tag": "RollerCoaster_TrackThruster"
+          },
+          "targetPredicates": [
+            {
+              "$type": "HNLCJOPBDLC",
+              "gadgetState": 201
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "PELJALPANCA",
+              "target": "Other",
+              "modifierName": "_TrackThruster_FireEffect"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "TeamAbility_Common_RollerCoaster_Transfer_GM_Speed30",
+      "modifiers": {
+        "_GM_Speed30": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "onThinkInterval": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 30.0,
+              "key": "_GM_targetVelocity",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.10000000149011612,
+              "key": "_GM_duration",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "FDPKBINAHGL",
+              "GGOOHHBDILB": "ByFrame",
+              "CIIOMAOBCMD": "_GM_targetVelocity",
+              "GNFOCKINHLK": "",
+              "LKOHJIPLECH": "_GM_duration"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "CurLocalAvatar",
+          "modifierName": "_GM_Speed30"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "TeamAbility_V3_8_RollerCoaster_Challenge",
+      "modifiers": {
+        "_RollerCoaster_Challenge": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EJNMIOFDIGF",
+              "onStageReady": [
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "StageReadyMixin"
+                },
+                {
+                  "$type": "AHPEKICBIIL",
+                  "luaCallType": "CurChallengeGroup",
+                  "funcName": "SLC_Challenge_Fail",
+                  "param1": 0.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                }
+              ]
+            },
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "_RollerCoaster_Challenge_CurLocalAvatar"
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "_RollerCoaster_Challenge > onReconnect"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "_Reset_GV_Delay"
+            }
+          ]
+        },
+        "_Reset_GV_Delay": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "_Reset_GV_Delay > onRemoved"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "CurLocalAvatar",
+              "param3": 0.0,
+              "key": "GV_RollerCoasterDisableLeave",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "_RollerCoaster_Challenge_CurLocalAvatar": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "GV_RollerCoasterDisableLeave",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -1.0,
+              "key": "GV_RollerCoasterDisableLeave",
+              "useLimitRange": true,
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "_RollerCoaster_Challenge"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "TeamAbility_V3_8_RollerCoaster_Disable_In_Task",
+      "abilityMixins": [
+        {
+          "$type": "NKEPLGAIEJM",
+          "modifierName": "_RollerCoaster_Task_CurLocalAvatar"
+        }
+      ],
+      "modifiers": {
+        "_RollerCoaster_Task_CurLocalAvatar": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "GV_RollerCoasterDisableLeave",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -1.0,
+              "key": "GV_RollerCoasterDisableLeave",
+              "useLimitRange": true,
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "isDynamicAbility": true
+    }
+  }
+]

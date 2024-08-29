@@ -1,0 +1,593 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_AutoMachine_SlimeBalloon_Label",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Standby",
+            "WalkForward"
+          ],
+          "modifierName": "MoveEffect1",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "MoveEffect1": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_SlimeBalloon_Move_01",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "TailEffectPoint"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_SceneObj_SlimeBalloon_Appear_01",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_SlimeBalloon_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "PacMan_Monster_Destroy",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_AutoMachine_FungusBalloon_Label",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Standby",
+            "WalkForward"
+          ],
+          "modifierName": "MoveEffect2",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "MoveEffect2": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_FungusBalloon_Move_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_SceneObj_FungusBalloon_Appear_01",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_FungusBalloon_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_AutoMachine_Balloon_Dither",
+      "modifiers": {
+        "DitherCheck": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.5,
+          "onThinkInterval": [
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "topLimit": 1,
+                "entityTypePriority": [
+                  "Monster"
+                ],
+                "sortType": "Random",
+                "shapeName": "CircleR3",
+                "campTargetType": "AllExceptSelf",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_PacMan_Balloon_",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "modifierName": "UNIQUE_Balloon_Dither"
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "KBODPNEEFGD",
+                  "modifierName": "UNIQUE_Balloon_Dither"
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Balloon_Dither": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AKIIMECIGKE",
+              "duration": 1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AKIIMECIGKE",
+              "duration": 0.10000000149011612,
+              "reverse": true
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_PacMan_Balloon_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "DitherCheck"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_AutoMachine_Balloon_Effect",
+      "abilityMixins": [
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueKey": "SGV_PacMan_Monster_Flee",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Circle_Logic",
+            "Empty"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Circle_Logic": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.20000000298023224,
+          "onAdded": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "PacMan_Monster_Destroy",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_SlimeBalloonBlink_",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "modifierName": "NormalCircleEffect"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "PacMan_Monster_Destroy",
+                  "param3": 1.0
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_SlimeBalloonBlink_",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "modifierName": "SpecialCircleEffect"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "predicates": [
+                {
+                  "$type": "BGOKEHHCFHG",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "PacMan_Monster_Destroy",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_SlimeBalloonBlink_",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ]
+                }
+              ],
+              "modifierName": "NormalCircleEffect"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "predicates": [
+                {
+                  "$type": "HHHMNCNPBDK",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "PacMan_Monster_Destroy",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_SlimeBalloonBlink_",
+                      "param3": 1.0
+                    }
+                  ]
+                }
+              ],
+              "modifierName": "SpecialCircleEffect"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "predicates": [
+                {
+                  "$type": "BGOKEHHCFHG",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "PacMan_Monster_Destroy",
+                      "param3": 1.0
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_SlimeBalloonBlink_",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ]
+                }
+              ],
+              "modifierName": "SpecialCircleEffect"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "predicates": [
+                {
+                  "$type": "HHHMNCNPBDK",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "PacMan_Monster_Destroy",
+                      "param3": 1.0
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_SlimeBalloonBlink_",
+                      "param3": 1.0
+                    }
+                  ]
+                }
+              ],
+              "modifierName": "NormalCircleEffect"
+            }
+          ]
+        },
+        "NormalCircleEffect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_MonsterBalloon_Attack_Appear",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_MonsterBalloon_Attack_Disappear",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "SpecialCircleEffect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_MonsterBalloon_Change_Appear",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_MonsterBalloon_Change_Disappear",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Empty": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ]
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_DestroyLogic"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_AutoMachine_Balloon_Destroy",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "DestroyAtk"
+          ],
+          "modifierName": "DestroySkill",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "DestroySkill": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "UNIQUE_DestroyLogic"
+            }
+          ]
+        },
+        "UNIQUE_DestroyLogic": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 8.0,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.20000000298023224,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "PacMan_Monster_Destroy",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "PacMan_Monster_Destroy",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "topLimit": 10,
+                "entityTypePriority": [
+                  "Gadget"
+                ],
+                "sortType": "Nearest",
+                "shapeName": "CircleR2_2H3",
+                "campTargetType": "AllExceptSelf",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "Is_PacMan_Move_Wall",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "modifierName": "PacMan_Gadget_KillSelf"
+                }
+              ]
+            }
+          ]
+        },
+        "PacMan_Gadget_KillSelf": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "NCFFNDHGCMH",
+              "configIdArray": [
+                70290843
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_AutoMachine_Balloon_Blink",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "NormalAtk"
+          ],
+          "modifierName": "Blink_Control",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "NormalAtk_AS"
+          ],
+          "modifierName": "Blink_Effect",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Blink_Control": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_SlimeBalloonBlink_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BHPDPACKKNI",
+              "target": "SelfAttackTarget",
+              "born": {
+                "$type": "JGJAMOPGDLN",
+                "onGround": true,
+                "predicates": [
+                  {
+                    "$type": "MOICGDHOAPE"
+                  }
+                ],
+                "actionPointType": "PacManBlinkPoint",
+                "selectType": {
+                  "$type": "GFCGAMAMPCO"
+                }
+              },
+              "hitSceneTest": false,
+              "limitY": 2.5
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_MonsterBalloon_Warning",
+              "born": {
+                "$type": "DNEKFAOHKBC"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "IFCMHHHOLCK"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_SlimeBalloonBlink_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Blink_Effect": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_SlimeBalloon_Transform_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      }
+    }
+  }
+]

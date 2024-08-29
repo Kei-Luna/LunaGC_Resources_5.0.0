@@ -1,0 +1,1208 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_BionicFlora_Initialization",
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 2.0,
+          "key": "_GLOBALVALUE_EnigmaType",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_BionicFlora_CoreActive",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "PreyLoop"
+          ],
+          "modifierName": "UNIQUE_Monster_Apparatus_Enigma_BionicFlora_CoreState_Prey",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "ScorchingSandsLoop"
+          ],
+          "modifierName": "UNIQUE_Monster_Apparatus_Enigma_BionicFlora_CoreState_ScorchingSands",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            202
+          ],
+          "modifierName": "Enigma_BionicFlora_Weak"
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_Monster_Apparatus_Enigma_BionicFlora_CoreState_Prey": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "_MONSTER_Apparatus_Enigma_CoreActive",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "PowerStage",
+              "param3": 2.0
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "CoreBox"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "FakeHeadBox",
+                "SpineBox1",
+                "SpineBox2",
+                "SpineBox3",
+                "SpineBox4",
+                "RootBox"
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "CoreBox"
+              ]
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "FakeHeadBox",
+                "SpineBox1",
+                "SpineBox2",
+                "SpineBox3",
+                "SpineBox4",
+                "RootBox"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "AKEEDILMOJF",
+              "predicates": [
+                {
+                  "$type": "ALLFFNEOPGA",
+                  "param3": 0,
+                  "parameter": "PowerStage"
+                }
+              ],
+              "intID": "PowerStage",
+              "param3": 1.0
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -1.0,
+              "key": "_MONSTER_Apparatus_Enigma_CoreActive",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "UNIQUE_Monster_Apparatus_Enigma_BionicFlora_CoreState_ScorchingSands": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "_MONSTER_Apparatus_Enigma_CoreActive",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "PowerStage",
+              "param3": 2.0
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "CoreBox"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "FakeHeadBox"
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "CoreBox"
+              ]
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "FakeHeadBox"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "AKEEDILMOJF",
+              "predicates": [
+                {
+                  "$type": "ALLFFNEOPGA",
+                  "param3": 0,
+                  "parameter": "PowerStage"
+                }
+              ],
+              "intID": "PowerStage",
+              "param3": 1.0
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -1.0,
+              "key": "_MONSTER_Apparatus_Enigma_CoreActive",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Enigma_BionicFlora_Weak": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Owner",
+              "param3": 1.0,
+              "key": "_WATCHER_80104_2",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onKill": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "target": "Owner",
+          "param3": 1.0,
+          "key": "_WATCHER_80105_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_BionicFlora_RangeAtk_TriggerBullet",
+      "onAbilityStart": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicFlora_RangeAtk",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42401006,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "direction": {
+              "$type": "MEADFIJAHPG",
+              "maxAngleType": "Vertical",
+              "maxAngle": 30.0,
+              "startPoint": ""
+            },
+            "attachPointName": "Head"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_BionicFlora_RangeAtk_Bullet",
+      "modifiers": {
+        "Monster_Apparatus_Enigma_BionicFlora_RangeAtk_BulletEffect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicFlora_RangeAtk_Bullet",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicFlora_RangeAtk_Trail",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Monster_Apparatus_Enigma_BionicFlora_RangeAtk_BulletEffect"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JGEBAJLEBMO"
+              },
+              "OAHPDLJIADP": 0.5
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.4000000059604645,
+                "actorWindSubHurtDelta": 0.0,
+                "IPFJJJGABPL": 100.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV1",
+                "hitHaltTimeScale": 0.05000000074505806
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicFlora_RangeAtk_Explode",
+          "born": {
+            "$type": "JGEBAJLEBMO"
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_BionicFlora_Dig",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "DigIn",
+            "UnderGround",
+            "DigOut"
+          ],
+          "modifierName": "Monster_Apparatus_Enigma_BionicFlora_DigState",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "UnderGround"
+          ],
+          "modifierName": "Monster_Apparatus_Enigma_BionicFlora_ModeManager",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "DigOut",
+            "PreyDigOut"
+          ],
+          "modifierName": "Monster_Apparatus_Enigma_BionicFlora_DigOut",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Monster_Apparatus_Enigma_BionicFlora_ModeManager": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KEEOEKPABPN",
+              "target": "CurLocalAvatar"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_MONSTER_Apparatus_Enigma_BionicFlora_DigMode",
+                  "param3": 0.0,
+                  "param2": 1.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "modifierName": "Monster_Apparatus_Enigma_BionicFlora_FindPosition_Near"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_MONSTER_Apparatus_Enigma_BionicFlora_DigMode",
+                  "param3": 1.0,
+                  "param2": 1.0
+                }
+              ],
+              "modifierName": "Monster_Apparatus_Enigma_BionicFlora_FindPosition_Far"
+            }
+          ]
+        },
+        "Monster_Apparatus_Enigma_BionicFlora_DigState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ]
+            },
+            {
+              "$type": "HBNEMPLJCMB",
+              "hide": true
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "UnderGround_Invincible"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "UnderGround_DenyLockOn"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "predicates": [
+                {
+                  "$type": "NIFDMKMHAGJ",
+                  "logic": "LesserOrEqual",
+                  "param3": 400.0,
+                  "parameter": "PoseID"
+                }
+              ],
+              "pushColliderNames": [
+                "PushCollider"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "HBNEMPLJCMB",
+              "predicates": [
+                {
+                  "$type": "HHHMNCNPBDK",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_Enigma_BossFight_Enhanced",
+                      "param3": 1.0
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_Enigma_BossFight",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "UnderGround_Invincible"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "UnderGround_DenyLockOn"
+            }
+          ]
+        },
+        "UnderGround_Invincible": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "Invincible"
+        },
+        "UnderGround_DenyLockOn": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "DenyLockOn"
+        },
+        "Monster_Apparatus_Enigma_BionicFlora_FindPosition_Near": {
+          "modifierName": "",
+          "elementDurability": 0.699999988079071,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "FIFEAMMHOIC",
+              "target": "SelfAttackTarget",
+              "forwardAngle": 360.0,
+              "minRange": 1.0,
+              "maxRange": 2.0,
+              "ignoreWater": true
+            },
+            {
+              "$type": "IFCMHHHOLCK"
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "DigOutTrigger"
+            }
+          ]
+        },
+        "Monster_Apparatus_Enigma_BionicFlora_FindPosition_Far": {
+          "modifierName": "",
+          "elementDurability": 0.800000011920929,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "FIFEAMMHOIC",
+              "target": "SelfAttackTarget",
+              "forwardAngle": 360.0,
+              "minRange": 10.0,
+              "maxRange": 12.0,
+              "ignoreWater": true
+            },
+            {
+              "$type": "IFCMHHHOLCK"
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "DigOutTrigger"
+            }
+          ]
+        },
+        "Monster_Apparatus_Enigma_BionicFlora_DigOut": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "MDIAKCCDEAL",
+              "target": "SelfAttackTarget",
+              "turnToTargetImmediately": true
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_BionicFlora_Prey",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "PreyBS",
+            "PreyLoop"
+          ],
+          "modifierName": "Monster_Apparatus_Enigma_BionicFlora_PreyLoop_Effect",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "PreyBS",
+            "PreyDigIn",
+            "PreyUnderGround",
+            "PreyDigOut",
+            "PreyAS"
+          ],
+          "modifierName": "Monster_Apparatus_Enigma_BionicFlora_DigState",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "PreyUnderGround"
+          ],
+          "modifierName": "Monster_Apparatus_Enigma_BionicFlora_PreyBlink",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "PreyLoop"
+          ],
+          "modifierName": "Monster_Apparatus_Enigma_BionicFlora_PreyLoop_WindZone",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Monster_Apparatus_Enigma_BionicFlora_DigState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ]
+            },
+            {
+              "$type": "HBNEMPLJCMB",
+              "hide": true
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "UnderGround_Invincible"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "UnderGround_DenyLockOn"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "predicates": [
+                {
+                  "$type": "NIFDMKMHAGJ",
+                  "logic": "LesserOrEqual",
+                  "param3": 400.0,
+                  "parameter": "PoseID"
+                }
+              ],
+              "pushColliderNames": [
+                "PushCollider"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "HBNEMPLJCMB",
+              "predicates": [
+                {
+                  "$type": "HHHMNCNPBDK",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_Enigma_BossFight_Enhanced",
+                      "param3": 1.0
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_Enigma_BossFight",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "UnderGround_Invincible"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "UnderGround_DenyLockOn"
+            }
+          ]
+        },
+        "UnderGround_Invincible": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "Invincible"
+        },
+        "UnderGround_DenyLockOn": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "DenyLockOn"
+        },
+        "Monster_Apparatus_Enigma_BionicFlora_PreyBlink": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FIFEAMMHOIC",
+              "target": "SelfAttackTarget",
+              "forwardAngle": 360.0,
+              "minRange": 1.0,
+              "maxRange": 2.0,
+              "ignoreWater": true
+            },
+            {
+              "$type": "IFCMHHHOLCK"
+            }
+          ]
+        },
+        "Monster_Apparatus_Enigma_BionicFlora_PreyLoop_Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicFlora_Prey",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Monster_Apparatus_Enigma_BionicFlora_Prey_AdditionalWindZone": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EIMGEIJIDNO",
+              "shapeName": "CircleR10H10",
+              "born": {
+                "$type": "IAENDIPDFKD"
+              },
+              "strength": 6.0,
+              "IAELBHDMINN": 1.5,
+              "MMBCLAEOEFB": 3.5,
+              "targetType": "Enemy",
+              "predicates": [
+                {
+                  "$type": "GDIBFABBADA",
+                  "logic": "LesserOrEqual",
+                  "BHOOHGLJDHM": 100.0
+                },
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Avatar",
+                    "Partner",
+                    "Vehicle"
+                  ]
+                }
+              ],
+              "modifierName": ""
+            }
+          ]
+        },
+        "Monster_Apparatus_Enigma_BionicFlora_PreyLoop_WindZone": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.4000000059604645,
+          "modifierMixins": [
+            {
+              "$type": "EIMGEIJIDNO",
+              "shapeName": "CircleR8H10",
+              "born": {
+                "$type": "IAENDIPDFKD"
+              },
+              "strength": 5.0,
+              "IAELBHDMINN": 1.2000000476837158,
+              "MMBCLAEOEFB": 2.0,
+              "targetType": "Enemy",
+              "predicates": [
+                {
+                  "$type": "GDIBFABBADA",
+                  "logic": "LesserOrEqual",
+                  "BHOOHGLJDHM": 100.0
+                },
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Avatar",
+                    "Partner",
+                    "Vehicle"
+                  ]
+                }
+              ],
+              "modifierName": ""
+            },
+            {
+              "$type": "BFDNGLAIGLK",
+              "overrideBulletAimPoint": "AimPoint_Prey",
+              "onlyForTrackBullet": true
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Monster_Apparatus_Enigma_BionicFlora_Prey_AdditionalWindZone"
+            },
+            {
+              "$type": "ONPPJAJPCBP",
+              "bulletAimPoint": "AimPoint_Prey"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ONPPJAJPCBP",
+              "bulletAimPoint": "BulletAimPoint"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 0.0
+                    }
+                  },
+                  "height": 3.0,
+                  "OAHPDLJIADP": 8.0
+                },
+                "attackInfo": {
+                  "attackTag": "Apparatus_Enigma_PowerAtk",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.5,
+                    "actorWindSubHurtDelta": 0.0,
+                    "IPFJJJGABPL": 25.0,
+                    "strikeType": "Default",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2"
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Monster_Apparatus_Enigma_BionicFlora_Prey_AdditionalWindZone"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_BionicFlora_ScorchingSands",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "ScorchingSandsBS",
+            "ScorchingSandsLoop"
+          ],
+          "modifierName": "Monster_Apparatus_Enigma_BionicFlora_ScorchingSands_Effect",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "ScorchingSandsLoop"
+          ],
+          "modifierName": "Monster_Apparatus_Enigma_BionicFlora_ScorchingSands_Active",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Monster_Apparatus_Enigma_BionicFlora_ScorchingSands_Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicFlora_ScorchingSands_Cannon",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicFlora_ScorchingSands_Core",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Monster_Apparatus_Enigma_BionicFlora_ScorchingSands_Active": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "JJIHJPCPPGO",
+              "abilityStates": [
+                "ElementFrozen",
+                "ElementPetrifaction"
+              ],
+              "reject": true,
+              "modifierName": "Monster_Apparatus_Enigma_BionicFlora_ScorchingSands_Trigger"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "target": "SelfAttackTarget",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_ENIGMA_Supporter_Tag_",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "lifeByOwnerIsAlive": true,
+              "born": {
+                "$type": "MPCGPEHJNNH",
+                "onGround": true,
+                "timeForPredictive": 0.5
+              },
+              "gadgetID": 42401007,
+              "campID": 4001,
+              "campTargetType": "Alliance"
+            },
+            {
+              "$type": "KFCDMIMBBLD",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "topLimit": 1,
+                "sortType": "Nearest",
+                "shapeName": "CircleR30",
+                "campTargetType": "SelfCamp",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_ENIGMA_Supporter_Tag_",
+                  "param3": 1.0
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_MONSTER_Apparatus_Enigma_SupportPosition",
+                  "param3": 1.0
+                }
+              ],
+              "lifeByOwnerIsAlive": true,
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "direction": {
+                  "$type": "FNKDGDKJHPC",
+                  "eularAngles": {
+                    "x": 90.0
+                  }
+                }
+              },
+              "gadgetID": 42401005,
+              "campID": 4001,
+              "campTargetType": "Alliance"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "sortType": "Reversed",
+                "configID": 42401007
+              },
+              "modifierName": "KillSelf_Latency"
+            }
+          ]
+        },
+        "Monster_Apparatus_Enigma_BionicFlora_ScorchingSands_Trigger": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 42401007
+              },
+              "param3": -1.0,
+              "key": "_IS_Controlled",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 42401007
+              },
+              "param3": 1.0,
+              "key": "_IS_Controlled",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "KillSelf_Latency": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "NCFFNDHGCMH",
+              "configIdArray": [
+                42401007
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_BionicFlora_ScorchingSands_Position",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_IS_Controlled",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5
+          ],
+          "modifierNameSteps": [
+            "Monster_Apparatus_Enigma_BionicFlora_ScorchingSands_Position"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Monster_Apparatus_Enigma_BionicFlora_ScorchingSands_Position": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.4000000059604645,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicFlora_ScorchingSands_DamageArea",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 0.0
+                    }
+                  },
+                  "height": 3.0,
+                  "OAHPDLJIADP": 5.800000190734863
+                },
+                "attackInfo": {
+                  "attackTag": "Apparatus_Enigma_PowerAtk",
+                  "attenuationTag": "Monster_Konungmathr_Attenuation_1",
+                  "attenuationGroup": "Monster_Konungmathr_Attenuation_1",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.4000000059604645,
+                    "actorWindSubHurtDelta": 0.0,
+                    "IPFJJJGABPL": 100.0,
+                    "strikeType": "Default",
+                    "attackType": "Range",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV0",
+                    "retreatType": "ByHitDirection"
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "NCFFNDHGCMH",
+              "predicates": [
+                {
+                  "$type": "BCFNGJHILAG",
+                  "predicates": [
+                    {
+                      "$type": "IMPNKNCABJD",
+                      "target": "Owner"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onKill": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Apparatus_Enigma_BionicFlora_ScorchingSands_DamageArea_AS",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_BionicFlora_FakeDieCollider",
+      "abilityMixins": [
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            402
+          ],
+          "modifierName": "Monster_Apparatus_Enigma_BionicFlora_FakeDieCollider"
+        }
+      ],
+      "modifiers": {
+        "Monster_Apparatus_Enigma_BionicFlora_FakeDieCollider": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CIGJDPCDOEB",
+              "onAdded": [
+                {
+                  "$type": "FDFGJPNDKEA",
+                  "pushColliderNames": [
+                    "PushCollider_FakeDie"
+                  ],
+                  "setEnable": true
+                }
+              ],
+              "onRemoved": [
+                {
+                  "$type": "FDFGJPNDKEA",
+                  "pushColliderNames": [
+                    "PushCollider_FakeDie"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apparatus_Enigma_BionicFlora_Steer",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "NormalIdle"
+          ],
+          "endNormalizedTime": 5.0,
+          "angularSpeed": 45.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Turn"
+          ],
+          "endNormalizedTime": 5.0,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "RangeAtkBS"
+          ],
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "RangeAtkLoop"
+          ],
+          "endNormalizedTime": 5.0,
+          "angularSpeed": 90.0,
+          "attackTrigger": "RangeAtkEnd",
+          "attackDistance": 2.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Swipe"
+          ],
+          "endNormalizedTime": 0.30000001192092896,
+          "angularSpeed": 360.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  }
+]

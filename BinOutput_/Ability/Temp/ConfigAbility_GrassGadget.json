@@ -1,0 +1,236 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Oil_Interact",
+      "modifiers": {
+        "NormalModifier": {
+          "modifierName": "",
+          "elementType": "Wood",
+          "IPFJJJGABPL": 5.0,
+          "isElementDurabilityMutable": false,
+          "onBeingHit": [
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "PNLEEOAGKLD",
+                  "element": "Fire"
+                },
+                {
+                  "$type": "BCFNGJHILAG",
+                  "predicates": [
+                    {
+                      "$type": "NFJHABGCNHE",
+                      "element": "Fire"
+                    }
+                  ]
+                }
+              ],
+              "modifierName": "Burning"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "PNLEEOAGKLD",
+                  "element": "Fire"
+                },
+                {
+                  "$type": "BCFNGJHILAG",
+                  "predicates": [
+                    {
+                      "$type": "NFJHABGCNHE",
+                      "element": "Fire"
+                    }
+                  ]
+                }
+              ],
+              "modifierName": "On_Burning"
+            }
+          ]
+        },
+        "On_Burning": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Delay"
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_FireBasin_Smoke",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "attachPointName": "attachPoint"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "PNLEEOAGKLD",
+                  "element": "Water"
+                }
+              ],
+              "modifierName": "Check_Fire"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "PNLEEOAGKLD",
+                  "element": "Ice"
+                }
+              ],
+              "modifierName": "Check_Fire"
+            }
+          ]
+        },
+        "Check_Fire": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "predicates": [
+                {
+                  "$type": "BCFNGJHILAG",
+                  "predicates": [
+                    {
+                      "$type": "NFJHABGCNHE",
+                      "element": "Fire"
+                    }
+                  ]
+                }
+              ],
+              "modifierName": "On_Burning"
+            }
+          ]
+        },
+        "Check_Around": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "NFJHABGCNHE",
+                  "element": "Fire"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "CCNPNMMONDO",
+                  "target": "Caster",
+                  "attackInfo": {
+                    "attackTag": "",
+                    "attenuationTag": "",
+                    "attenuationGroup": "default",
+                    "attackProperty": {
+                      "actorGrassSubHurtDelta": 0.10000000149011612,
+                      "actorWindSubHurtDelta": 0.0,
+                      "elementType": "Fire",
+                      "IPFJJJGABPL": 40.0,
+                      "strikeType": "Default",
+                      "GLKMCMDJBIK": 0.0
+                    },
+                    "hitPattern": {
+                      "onHitEffectName": "default",
+                      "hitImpulseY": "",
+                      "hitImpulseType": "",
+                      "overrideHitImpulse": {
+                        "hitLevel": "Air",
+                        "IMIJMPGJOGG": 0.0,
+                        "BPCDKKBKOBM": 420.0
+                      },
+                      "hitHaltTimeScale": 0.009999999776482582
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "Delay": {
+          "modifierName": "",
+          "elementDurability": 4.5,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 3.0,
+          "onThinkInterval": [
+            {
+              "$type": "PELJALPANCA",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR5",
+                "campTargetType": "SelfCamp",
+                "doOffStage": 1.0
+              },
+              "modifierName": "Check_Around"
+            }
+          ]
+        },
+        "Burning": {
+          "modifierName": "",
+          "elementDurability": 1.2000000476837158,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "onThinkInterval": [
+            {
+              "$type": "CCNPNMMONDO",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR5",
+                "campTargetType": "SelfCamp",
+                "doOffStage": 1.0
+              },
+              "attackInfo": {
+                "attackTag": "",
+                "attenuationTag": "",
+                "attenuationGroup": "default",
+                "attackProperty": {
+                  "actorGrassSubHurtDelta": 0.10000000149011612,
+                  "actorWindSubHurtDelta": 0.0,
+                  "elementType": "Fire",
+                  "IPFJJJGABPL": 40.0,
+                  "strikeType": "Default",
+                  "GLKMCMDJBIK": 0.0
+                },
+                "hitPattern": {
+                  "onHitEffectName": "default",
+                  "hitImpulseY": "",
+                  "hitImpulseType": "",
+                  "overrideHitImpulse": {
+                    "hitLevel": "Air",
+                    "IMIJMPGJOGG": 0.0,
+                    "BPCDKKBKOBM": 420.0
+                  },
+                  "hitHaltTimeScale": 0.009999999776482582
+                }
+              }
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "NormalModifier"
+        }
+      ]
+    }
+  }
+]

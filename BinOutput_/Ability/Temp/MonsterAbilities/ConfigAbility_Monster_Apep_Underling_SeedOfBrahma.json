@@ -1,0 +1,273 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Apep_Underling_SeedOfBrahma_SupportAttack",
+      "abilityMixins": [
+        {
+          "$type": "NIJGPDECHLC"
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "SupportAttack_BS1",
+          "modifierName": "SupportAttack_Impulse01_Start",
+          "normalizeStart": 0.6610000133514404,
+          "normalizeEnd": 0.800000011920929,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "SupportAttack_BS1",
+          "modifierName": "SupportAttack_Impulse_Start",
+          "normalizeStart": 0.7170000076293945,
+          "normalizeEnd": 0.800000011920929,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "SupportAttack_BS1",
+            "SupportAttack_BS2",
+            "SupportAttack_Loop"
+          ],
+          "modifierName": "SupportAttack_TimeRange",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_SupportAttack_Impulse01_Start",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "SupportAttack_Impulse01_Eff"
+          ]
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_SupportAttack_Impulse_Start",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "SupportAttack_Impulse_Eff"
+          ]
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "SupportAttack_BS2",
+            "SupportAttack_Loop"
+          ],
+          "modifierName": "SupportAttack_FieldActive",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IBPGGPHEDLF",
+          "gadgetIDList": [
+            42908208
+          ],
+          "campID": 4001,
+          "campTargetType": "Enemy"
+        }
+      ],
+      "modifiers": {
+        "SupportAttack_Impulse01_Start": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_SupportAttack_Impulse01_Start",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "SupportAttack_Impulse_Start": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_SupportAttack_Impulse_Start",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "SupportAttack_TimeRange": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_SupportAttack_Impulse01_Start",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "predicates": [
+                {
+                  "$type": "IMPNKNCABJD",
+                  "target": "Self"
+                }
+              ],
+              "param3": 0.0,
+              "key": "_SupportAttack_Impulse_Start",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "SupportAttack_Impulse01_Eff": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Apep_Underling_SeedOfBrahma_Impulse_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "SupportAttack_Impulse_Eff": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Apep_Underling_SeedOfBrahma_Impulse",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "LoopEnd",
+              "attachPoint": "",
+              "damageRatio": "Bool",
+              "value": 1,
+              "rotationDampTime": "Eff_Monster_Apep_Underling_SeedOfBrahma_Impulse"
+            }
+          ]
+        },
+        "SupportAttack_FieldActive": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CBKLCFKNHGH",
+              "campTargetType": "Alliance",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_MONSTER_Apep_Underling_SeedOfKarna_Tag",
+                  "param3": 1.0
+                }
+              ],
+              "onFieldEnter": [
+                {
+                  "$type": "PELJALPANCA",
+                  "otherTargets": {
+                    "$type": "MNOAFODCBLI",
+                    "campTargetType": "Alliance"
+                  },
+                  "modifierName": "UNIQUE_Monster_Apep_Underling_SeedOfBrahma_ChosenOne"
+                }
+              ],
+              "onFieldExit": [
+                {
+                  "$type": "KBODPNEEFGD",
+                  "otherTargets": {
+                    "$type": "IJOFJOGLDHE",
+                    "shapeName": "CircleR30",
+                    "campTargetType": "Alliance",
+                    "doOffStage": 1.0
+                  },
+                  "predicates": [
+                    {
+                      "$type": "FMBJAJFLDIP",
+                      "param3": 10.0,
+                      "DDALGNLEHOD": ""
+                    }
+                  ],
+                  "modifierName": "UNIQUE_Monster_Apep_Underling_SeedOfBrahma_ChosenOne"
+                }
+              ],
+              "simpleCountGlobaValueKey": "",
+              "simpleCountMaxValue": 0.0,
+              "simpleCountMinValue": 0.0
+            }
+          ]
+        },
+        "UNIQUE_Monster_Apep_Underling_SeedOfBrahma_ChosenOne": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_MONSTER_Apep_Underling_SeedOfBrahma_ChosenOne",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_MONSTER_Apep_Underling_SeedOfBrahma_ChosenOne",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onKill": [
+        {
+          "$type": "GFOOGEIKGBI",
+          "parameter": "LoopEnd",
+          "attachPoint": "",
+          "damageRatio": "Bool",
+          "value": 1,
+          "rotationDampTime": "Eff_Monster_Apep_Underling_SeedOfBrahma_Impulse"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Apep_Underling_SeedOfBrahma_RemoveShield",
+      "onAdded": [
+        {
+          "$type": "KBODPNEEFGD",
+          "otherTargets": {
+            "$type": "IJOFJOGLDHE",
+            "shapeName": "CircleR30",
+            "campTargetType": "Alliance",
+            "doOffStage": 1.0
+          },
+          "modifierName": "UNIQUE_Monster_Apep_Underling_SeedOfBrahma_ChosenOne"
+        },
+        {
+          "$type": "NCFFNDHGCMH",
+          "duration": 2.0
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,563 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Fungus_Deux_Alpha_Fire_Steer",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "MeleeAttackNormal_BS"
+          ],
+          "angularSpeed": 720.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "MeleeAttackOverdose_BS"
+          ],
+          "angularSpeed": 720.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "MeleeAttackDecayed_BS"
+          ],
+          "angularSpeed": 720.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "FlyingAttackNormal_BS"
+          ],
+          "startNormalizedTime": 1.0,
+          "endNormalizedTime": 99.0,
+          "angularSpeed": 540.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "FlyingAttackOverdose_BS"
+          ],
+          "startNormalizedTime": 1.0,
+          "endNormalizedTime": 99.0,
+          "angularSpeed": 540.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "FlyingAttackDecay_BS"
+          ],
+          "startNormalizedTime": 1.0,
+          "endNormalizedTime": 99.0,
+          "angularSpeed": 540.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Fungus_Deux_Alpha_Fire_MeleeAttackNormal",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "MeleeAttackDecay_BS",
+            "MeleeAttackDecay_Loop"
+          ],
+          "modifierName": "MeleeAttackBSEffect_Decayed",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "MeleeAttackBSEffect_Decayed": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Fungus_Deux_Beta_Rock_MeleeAttackDecayed_Loop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Fungus_Deux_Alpha_Fire_FlyingAttackNormal",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "FlyingAttackNormal_BS01"
+          ],
+          "modifierName": "FlyingAttackBSEffect_Normal",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "FlyingAttackOverdose_BS01"
+          ],
+          "modifierName": "FlyingAttackBSEffect_Overdose",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "FlyingAttackDecay_BS01"
+          ],
+          "modifierName": "FlyingAttackBSEffect_Decayed",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "FlyingAttackNormal_BS02",
+            "FlyingAttackNormal_Attack"
+          ],
+          "modifierName": "FlyingAttackAttackEffect_Normal",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "FlyingAttackOverdose_BS02",
+            "FlyingAttackOverdose_Attack"
+          ],
+          "modifierName": "FlyingAttackAttackEffect_Overdose",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "FlyingAttackDecay_BS02",
+            "FlyingAttackDecay_Attack"
+          ],
+          "modifierName": "FlyingAttackAttackEffect_Decayed",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "FlyingAttackNormal_BS02",
+            "FlyingAttackNormal_Attack"
+          ],
+          "modifierName": "FlyingAttackAttackEffect_Normal",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Standby",
+            "StandbyFree"
+          ],
+          "modifierName": "FlyingAttackOverdoseStartHandler",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "FlyingAttackOverdose_Attack"
+          ],
+          "modifierName": "FlyingAttackOverdoseHandler",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "FlyingAttackOverdoseCount": 0.0
+      },
+      "modifiers": {
+        "FlyingAttackBSEffect_Normal": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Fungus_Deux_Alpha_Fire_FlyingAttackNormal_Attack_Loop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "FlyingAttackBSEffect_Overdose": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Fungus_Deux_Alpha_Fire_FlyingAttackNormal_Attack_Loop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "FlyingAttackBSEffect_Decayed": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Fungus_Deux_Alpha_Fire_FlyingAttackDecayed_Loop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "FlyingAttackAttackEffect_Normal": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Fungus_Deux_Alpha_Fire_FlyingAttackNormal_Attack",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "FlyingAttackAttackEffect_Overdose": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Fungus_Deux_Alpha_Fire_FlyingAttackNormal_Attack",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "FlyingAttackAttackEffect_Decayed": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Fungus_Deux_Alpha_Fire_FlyingAttackDecayed_Attack",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "FlyingAttackOverdoseStartHandler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_MONSTER_FUNGUS_DEUX_ALPHA_FIRE_FLYINGATTACKOVERDOSECOUNT_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "_MONSTER_FUNGUS_DEUX_ALPHA_FIRE_FLYINGATTACKOVERDOSECOUNT_",
+              "overrideMapKey": "FlyingAttackOverdoseCount"
+            },
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "FlyingAttackOverdoseCount",
+              "param3": "FlyingAttackOverdoseCount"
+            }
+          ]
+        },
+        "FlyingAttackOverdoseHandler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "_MONSTER_FUNGUS_DEUX_ALPHA_FIRE_FLYINGATTACKOVERDOSECOUNT_",
+              "param2": 3.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "_MONSTER_FUNGUS_DEUX_ALPHA_FIRE_FLYINGATTACKOVERDOSECOUNT_",
+              "overrideMapKey": "FlyingAttackOverdoseCount"
+            },
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "FlyingAttackOverdoseCount",
+              "param3": "FlyingAttackOverdoseCount"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Fungus_Deux_Alpha_Fire_FlyingAttack_Alert",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "FlyingAttackNormal_Loop",
+            "FlyingAttackNormal_Attack"
+          ],
+          "modifierName": "FlyingAttackNormal_InAir",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "FlyingAttackOverdose_Loop",
+            "FlyingAttackOverdose_Attack"
+          ],
+          "modifierName": "FlyingAttackOverdose_InAir",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "FlyingAttackDecay_Loop",
+            "FlyingAttackDecay_Attack"
+          ],
+          "modifierName": "FlyingAttackDecay_InAir",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "FlyingAttackNormal_InAir": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PAGFCBCKEBH",
+              "target": "SelfAttackTarget",
+              "toPos": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "onGround": true
+              },
+              "NKPCHMCNNOK": 0.699999988079071,
+              "maxRange": 15.0,
+              "animatorStateIDs": [
+                "FlyingAttackNormal_Loop"
+              ],
+              "overrideMoveCollider": ""
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Fungus_Deux_Alpha_Fire_FlyingAttackNormal_Attack_Warning",
+              "born": {
+                "$type": "HCHAOBKOELI"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "IEJIAEEJHGE"
+            },
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ]
+            },
+            {
+              "$type": "HBNEMPLJCMB",
+              "hide": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "IEJIAEEJHGE",
+              "castShadow": true
+            },
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "HBNEMPLJCMB"
+            }
+          ]
+        },
+        "FlyingAttackOverdose_InAir": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PAGFCBCKEBH",
+              "target": "SelfAttackTarget",
+              "toPos": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "onGround": true
+              },
+              "NKPCHMCNNOK": 0.699999988079071,
+              "maxRange": 15.0,
+              "animatorStateIDs": [
+                "FlyingAttackOverdose_Loop"
+              ],
+              "overrideMoveCollider": ""
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Fungus_Deux_Alpha_Fire_FlyingAttackNormal_Attack_Warning",
+              "born": {
+                "$type": "HCHAOBKOELI"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "IEJIAEEJHGE"
+            },
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ]
+            },
+            {
+              "$type": "HBNEMPLJCMB",
+              "hide": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "IEJIAEEJHGE",
+              "castShadow": true
+            },
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "HBNEMPLJCMB"
+            }
+          ]
+        },
+        "FlyingAttackDecay_InAir": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PAGFCBCKEBH",
+              "target": "SelfAttackTarget",
+              "toPos": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "onGround": true
+              },
+              "NKPCHMCNNOK": 0.699999988079071,
+              "maxRange": 15.0,
+              "animatorStateIDs": [
+                "FlyingAttackDecay_Loop"
+              ],
+              "overrideMoveCollider": ""
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Fungus_Deux_Alpha_Fire_FlyingAttackDecayed_Attack_Warning",
+              "born": {
+                "$type": "HCHAOBKOELI"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "IEJIAEEJHGE"
+            },
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ]
+            },
+            {
+              "$type": "HBNEMPLJCMB",
+              "hide": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "IEJIAEEJHGE",
+              "castShadow": true
+            },
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "HBNEMPLJCMB"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Fungus_Deux_Alpha_Fire_HitThrowDropToGround",
+      "onAbilityStart": [
+        {
+          "$type": "INBCDALOHMP",
+          "targetPredicates": [
+            {
+              "$type": "JFLFAEAHLJM",
+              "filters": [
+                "Water"
+              ]
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Fungus_HitThrowToGround_Water",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0,
+              "useRemoteSelfPos": true
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

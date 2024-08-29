@@ -1,0 +1,382 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Fungus_Deux_BVB_Rock_Taunt",
+      "modifiers": {
+        "RockEndure": {
+          "modifierName": "",
+          "elementDurability": 8.0,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_EndureDelta": 0.33000001311302185
+          },
+          "onAdded": [
+            {
+              "$type": "GKNNJOEDOOF",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR15",
+                "campTargetType": "Enemy",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster",
+                    "Partner"
+                  ]
+                }
+              ],
+              "tauntLevel": "Ability_TauntLevel_4",
+              "careValue": 660.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "GKNNJOEDOOF",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR15",
+                "campTargetType": "Enemy",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster",
+                    "Partner"
+                  ]
+                }
+              ],
+              "tauntLevel": "Ability_TauntLevel_4",
+              "careValue": -410.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Fungus_Deux_Rock_Taunt",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "RockEndure"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Fungus_Deux_BVB_Rock_RockConsuming",
+      "abilityMixins": [
+        {
+          "$type": "APJKOLPHCGH",
+          "stateIDs": [
+            "UnionBurst"
+          ],
+          "enterActions": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "UBShader"
+            }
+          ],
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "RockConsuming_Monitor": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "NFJHABGCNHE",
+                  "element": "Rock"
+                },
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "BVB_FungusRock_UB"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ODHJJKENLPE",
+                  "target": "Target",
+                  "param3": -300.0,
+                  "modifierName": "",
+                  "elementType": "Rock",
+                  "sortModifier": "All",
+                  "param2": 3.4028234663852886e+38
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "NFJHABGCNHE",
+                  "element": "Rock"
+                },
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "BVB_FungusRock_Melee"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ODHJJKENLPE",
+                  "target": "Target",
+                  "param3": -50.0,
+                  "modifierName": "",
+                  "elementType": "Rock",
+                  "sortModifier": "All",
+                  "param2": 3.4028234663852886e+38
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "RockConsuming_Monitor"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Fungus_Deux_BVB_Rock_TeamShield",
+      "abilitySpecials": {
+        "sub_hurt_delta_positive": 0.4000000059604645
+      },
+      "modifiers": {
+        "Shield_Handler": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Fungus_Rock_TeamShield"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Fungus_Rock_TeamShield"
+            }
+          ]
+        },
+        "Fungus_Rock_TeamShield": {
+          "modifierName": "",
+          "elementDurability": 10.0,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BPAECHPGBLP",
+              "shieldType": "default",
+              "DLBHHADKGJN": 360.0,
+              "maxShieldByHPRatio": 0.699999988079071,
+              "costShieldRatioName": "",
+              "showDamageText": ""
+            }
+          ],
+          "properties": {
+            "Actor_EndureDelta": 0.30000001192092896
+          },
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Fungus_Deux_Rock_TeamShield_Buff",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Passive_Resistance": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_PhysicalSubHurtDelta": "sub_hurt_delta_positive",
+            "Actor_FireSubHurtDelta": "sub_hurt_delta_positive",
+            "Actor_ElecSubHurtDelta": "sub_hurt_delta_positive",
+            "Actor_IceSubHurtDelta": "sub_hurt_delta_positive",
+            "Actor_WaterSubHurtDelta": "sub_hurt_delta_positive",
+            "Actor_GrassSubHurtDelta": "sub_hurt_delta_positive",
+            "Actor_WindSubHurtDelta": "sub_hurt_delta_positive",
+            "Actor_RockSubHurtDelta": "sub_hurt_delta_positive"
+          }
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Passive_Resistance"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "otherTargets": {
+            "$type": "IJOFJOGLDHE",
+            "shapeName": "CircleR30H10",
+            "campTargetType": "SelfCamp",
+            "doOffStage": 1.0
+          },
+          "predicates": [
+            {
+              "$type": "NIMAPECDNKD",
+              "entityTypes": [
+                "Partner",
+                "Monster"
+              ]
+            }
+          ],
+          "modifierName": "Shield_Handler"
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Fungus_Deux_Rock_TeamShield",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Fungus_Deux_BVB_Rock_Passive",
+      "abilityMixins": [
+        {
+          "$type": "APJKOLPHCGH",
+          "stateIDs": [
+            "UnionBurst"
+          ],
+          "enterActions": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "UBShader"
+            }
+          ],
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_BURST_HIT_STACK",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "LCOEFEMOHLP",
+          "param3": 1.0,
+          "key": "_BURST_HIT_STACK",
+          "useLimitRange": true,
+          "param2": 4.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Fungus_Deux_BVB_Rock_EarthQuake",
+      "abilitySpecials": {
+        "base_ratio": 10.0,
+        "stack_ratio": 2.0,
+        "stack_count": 0.0
+      },
+      "onAbilityStart": [
+        {
+          "$type": "LDIAIDLOPEE",
+          "globalValueKey": "_BURST_HIT_STACK",
+          "overrideMapKey": "stack_count"
+        },
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "GMDIMKKHACA",
+              "triggerType": "TriggerNoRepeat",
+              "height": 1.399999976158142,
+              "OAHPDLJIADP": 6.0
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": [
+                  "stack_ratio",
+                  "stack_count",
+                  "MUL",
+                  "base_ratio",
+                  "ADD"
+                ],
+                "actorWindSubHurtDelta": 0.0,
+                "IPFJJJGABPL": 100.0,
+                "strikeType": "Blunt",
+                "enBreak": 300.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "",
+                "overrideHitImpulse": {
+                  "hitLevel": "Air",
+                  "IMIJMPGJOGG": 0.0,
+                  "BPCDKKBKOBM": 1360.0
+                }
+              },
+              "forceCameraShake": true,
+              "cameraShake": {
+                "shakeType": "CustomVector",
+                "shakeRange": 0.4000000059604645,
+                "shakeTime": 0.11999999731779099,
+                "shakeDir": {
+                  "y": 1.0
+                },
+                "extension": {
+                  "baseOnCamera": true,
+                  "baseCycle": 0.07999999821186066,
+                  "cycleDamping": 0.30000001192092896
+                }
+              }
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_BURST_HIT_STACK",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  }
+]

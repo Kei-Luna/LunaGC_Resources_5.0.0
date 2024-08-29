@@ -1,0 +1,47 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_TeamMultipleDamage",
+      "abilitySpecials": {
+        "DamageUpRatio": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_TeamMultipleDamage_Team": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurTeamAvatars",
+              "modifierName": "UNIQUE_TeamMultipleDamage_DamageUpRatio"
+            }
+          ]
+        },
+        "UNIQUE_TeamMultipleDamage_DamageUpRatio": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "LDBCDLJECKF",
+              "ignoreEventInfo": true,
+              "actorWindSubHurtDelta": "DamageUpRatio"
+            }
+          ],
+          "state": "AttackUp"
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "modifierName": "UNIQUE_TeamMultipleDamage_Team"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  }
+]

@@ -1,0 +1,290 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_ForlornVessel_EndureDelta_Add",
+      "abilitySpecials": {
+        "ForlornVessel_Endure": 0.5
+      },
+      "modifiers": {
+        "UNIQUE_ForlornVessel_EndureDelta": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_EndureDelta": "ForlornVessel_Endure"
+          }
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "ForlornVessel_ElementShield",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "modifierName": "UNIQUE_ForlornVessel_EndureDelta"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_ForlornVessel_EndureDelta_Remove",
+      "onAbilityStart": [
+        {
+          "$type": "KBODPNEEFGD",
+          "modifierName": "UNIQUE_ForlornVessel_EndureDelta"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_ForlornVessel_BeHitThrow",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "BeHitThrow"
+          ],
+          "modifierName": "ForlornVessel_HitThrowHandler",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "ForlornVessel_HitThrowHandler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CDHOAGHMOEE"
+            },
+            {
+              "$type": "LBLNHEBGPJI",
+              "forces": [
+                "WindZoneType"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_ForlornVessel_BeHeal",
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "ForlornVessel_Lance_Heal",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_ForlornVessel_Strong_Salute",
+      "abilityMixins": [
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            9001
+          ],
+          "modifierName": "ForlornVessel_Strong_Salute_Detect"
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Salute"
+          ],
+          "modifierName": "ForlornVessel_Strong_Salute",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Salute"
+          ],
+          "endNormalizedTime": 0.20000000298023224,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "remoteSteerToLocalTarget": false,
+          "facingTargetTypes": [
+            "BuddyTarget"
+          ],
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "ForlornVessel_Strong_Salute_Detect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 15.0,
+          "onAdded": [
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "sortType": "Nearest",
+                "shapeName": "CircleR10",
+                "campTargetType": "Alliance",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "BGMAGODJEMF",
+                  "featureTagIDs": [
+                    4014
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "param3": 1.0,
+                  "key": "ForlornVessel_Salute",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "modifierName": "ForlornVessel_Strong_Salute_Wait"
+                }
+              ]
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "sortType": "Nearest",
+                "shapeName": "CircleR10",
+                "campTargetType": "Alliance",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "BGMAGODJEMF",
+                  "featureTagIDs": [
+                    4014
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "param3": 1.0,
+                  "key": "ForlornVessel_Salute",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "modifierName": "ForlornVessel_Strong_Salute_Wait"
+                }
+              ]
+            }
+          ]
+        },
+        "ForlornVessel_Strong_Salute_Wait": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "ForlornVessel_Salute",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "ForlornVessel_Strong_Salute": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "sortType": "Nearest",
+                "shapeName": "CircleR15",
+                "campTargetType": "Alliance",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "BGMAGODJEMF",
+                  "featureTagIDs": [
+                    4014
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "modifierName": "ForlornVessel_Strong_Salute_Command"
+                }
+              ]
+            }
+          ]
+        },
+        "ForlornVessel_Strong_Salute_Command": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "elementDurability": 5.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IPMMJGMONCI",
+              "skillIDs": [
+                111
+              ]
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "Darkwraith_Salute",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      }
+    }
+  }
+]

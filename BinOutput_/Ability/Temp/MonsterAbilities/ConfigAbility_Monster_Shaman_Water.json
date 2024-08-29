@@ -1,0 +1,1661 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Shaman_SpecialsState",
+      "abilityMixins": [
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            9012
+          ],
+          "modifierName": "SpecialsState"
+        }
+      ],
+      "modifiers": {
+        "SpecialsState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Entity_MassRatio": 9999.0,
+            "Entity_WeightRatio": 5.0
+          },
+          "onBeingHit": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "Dance"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Shaman_Water_HealRain",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "SupportAttack",
+            "SupportAttack2"
+          ],
+          "modifierName": "HealRain_Monitor",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "HEAL": 0.20000000298023224
+      },
+      "modifiers": {
+        "HealRain_Monitor": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ELITEAFFIX_SUPPORT_ENHANCE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "modifierName": "HealRain_CreatGadget"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ELITEAFFIX_SUPPORT_ENHANCE",
+                  "param3": 1.0
+                }
+              ],
+              "modifierName": "HealRain_FollowTarget"
+            }
+          ]
+        },
+        "HealRain_CreatGadget": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -1.0,
+              "key": "_FINDTAG",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "_LIFETAG",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR25",
+                "campTargetType": "Alliance",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "OFFCGHNCBCD",
+                  "isTarget": false,
+                  "ALBJEAMOFLG": ""
+                },
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "INBCDALOHMP",
+                  "otherTargets": {
+                    "$type": "IJOFJOGLDHE",
+                    "shapeName": "CircleR10",
+                    "centerBasedOn": "SelfAttackTarget",
+                    "campTargetType": "Alliance",
+                    "doOffStage": 1.0
+                  },
+                  "targetPredicates": [
+                    {
+                      "$type": "OFFCGHNCBCD",
+                      "isTarget": false,
+                      "ALBJEAMOFLG": ""
+                    },
+                    {
+                      "$type": "NIMAPECDNKD",
+                      "entityTypes": [
+                        "Monster"
+                      ]
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "KFCDMIMBBLD",
+                      "target": "Target",
+                      "predicates": [
+                        {
+                          "$type": "CNGGLKHONAA",
+                          "key": "_FINDTAG",
+                          "forceByCaster": true
+                        }
+                      ],
+                      "born": {
+                        "$type": "JHEBKCMEMLN",
+                        "onGround": true
+                      },
+                      "gadgetID": 42103002,
+                      "campID": 4001
+                    },
+                    {
+                      "$type": "LCOEFEMOHLP",
+                      "param3": 1.0,
+                      "key": "_FINDTAG",
+                      "useLimitRange": true,
+                      "param2": 1.0,
+                      "repeatTimes": 0.0
+                    }
+                  ]
+                },
+                {
+                  "$type": "KFCDMIMBBLD",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_FINDTAG",
+                      "forceByCaster": true
+                    }
+                  ],
+                  "born": {
+                    "$type": "JHEBKCMEMLN",
+                    "onGround": true
+                  },
+                  "gadgetID": 42103002,
+                  "campID": 4001
+                },
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "param3": 1.0,
+                  "key": "_FINDTAG",
+                  "useLimitRange": true,
+                  "param2": 1.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_FINDTAG",
+                  "forceByCaster": true
+                }
+              ],
+              "PLLJBINMGJK": "SupportAttackExit"
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_FINDTAG",
+                  "forceByCaster": true
+                }
+              ],
+              "PLLJBINMGJK": "SupportAttackExit2"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -1.0,
+              "key": "_LIFETAG",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -1.0,
+              "key": "_FINDTAG",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onKill": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -1.0,
+              "key": "_LIFETAG",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "HealRain_FollowTarget": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -1.0,
+              "key": "_FINDTAG",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "_LIFETAG",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR25",
+                "campTargetType": "Alliance",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "OFFCGHNCBCD",
+                  "isTarget": false,
+                  "ALBJEAMOFLG": ""
+                },
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "modifierName": "Shaman_Water_HP_Monitor"
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR25",
+                "campTargetType": "Alliance",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "OFFCGHNCBCD",
+                  "isTarget": false,
+                  "ALBJEAMOFLG": ""
+                },
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_SHAMAN_WATER_HP_STAGE",
+                  "param3": 5.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_FINDTAG",
+                      "forceByCaster": true
+                    }
+                  ],
+                  "modifierName": "Shaman_Water_Follow_HealRain"
+                },
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "param3": 1.0,
+                  "key": "_FINDTAG",
+                  "useLimitRange": true,
+                  "param2": 1.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR25",
+                "campTargetType": "Alliance",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "OFFCGHNCBCD",
+                  "isTarget": false,
+                  "ALBJEAMOFLG": ""
+                },
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_SHAMAN_WATER_HP_STAGE",
+                  "param3": 4.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_FINDTAG",
+                      "forceByCaster": true
+                    }
+                  ],
+                  "modifierName": "Shaman_Water_Follow_HealRain"
+                },
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "param3": 1.0,
+                  "key": "_FINDTAG",
+                  "useLimitRange": true,
+                  "param2": 1.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR25",
+                "campTargetType": "Alliance",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "OFFCGHNCBCD",
+                  "isTarget": false,
+                  "ALBJEAMOFLG": ""
+                },
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_SHAMAN_WATER_HP_STAGE",
+                  "param3": 3.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_FINDTAG",
+                      "forceByCaster": true
+                    }
+                  ],
+                  "modifierName": "Shaman_Water_Follow_HealRain"
+                },
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "param3": 1.0,
+                  "key": "_FINDTAG",
+                  "useLimitRange": true,
+                  "param2": 1.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR25",
+                "campTargetType": "Alliance",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "OFFCGHNCBCD",
+                  "isTarget": false,
+                  "ALBJEAMOFLG": ""
+                },
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_SHAMAN_WATER_HP_STAGE",
+                  "param3": 2.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_FINDTAG",
+                      "forceByCaster": true
+                    }
+                  ],
+                  "modifierName": "Shaman_Water_Follow_HealRain"
+                },
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "param3": 1.0,
+                  "key": "_FINDTAG",
+                  "useLimitRange": true,
+                  "param2": 1.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR25",
+                "campTargetType": "Alliance",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "OFFCGHNCBCD",
+                  "isTarget": false,
+                  "ALBJEAMOFLG": ""
+                },
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_SHAMAN_WATER_HP_STAGE",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_FINDTAG",
+                      "forceByCaster": true
+                    }
+                  ],
+                  "modifierName": "Shaman_Water_Follow_HealRain"
+                },
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "param3": 1.0,
+                  "key": "_FINDTAG",
+                  "useLimitRange": true,
+                  "param2": 1.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR25",
+                "campTargetType": "Alliance",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "OFFCGHNCBCD",
+                  "isTarget": false,
+                  "ALBJEAMOFLG": ""
+                },
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_FINDTAG",
+                      "forceByCaster": true
+                    }
+                  ],
+                  "modifierName": "Shaman_Water_Follow_HealRain"
+                },
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "param3": 1.0,
+                  "key": "_FINDTAG",
+                  "useLimitRange": true,
+                  "param2": 1.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_FINDTAG",
+                  "forceByCaster": true
+                }
+              ],
+              "PLLJBINMGJK": "SupportAttackExit"
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_FINDTAG",
+                  "forceByCaster": true
+                }
+              ],
+              "PLLJBINMGJK": "SupportAttackExit2"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -1.0,
+              "key": "_LIFETAG",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -1.0,
+              "key": "_FINDTAG",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onKill": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -1.0,
+              "key": "_LIFETAG",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Shaman_Water_HP_Monitor": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "LAPMOOFOPBM",
+              "valueSteps": [
+                0.800000011920929,
+                0.6000000238418579,
+                0.4000000059604645,
+                0.20000000298023224
+              ],
+              "modifierNameSteps": [
+                "Shaman_Water_HP_Stage1",
+                "Shaman_Water_HP_Stage2",
+                "Shaman_Water_HP_Stage3",
+                "Shaman_Water_HP_Stage4",
+                "Shaman_Water_HP_Stage5"
+              ]
+            }
+          ]
+        },
+        "Shaman_Water_HP_Stage1": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "_SHAMAN_WATER_HP_STAGE",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -1.0,
+              "key": "_SHAMAN_WATER_HP_STAGE",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 1.0
+            }
+          ]
+        },
+        "Shaman_Water_HP_Stage2": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 2.0,
+              "key": "_SHAMAN_WATER_HP_STAGE",
+              "useLimitRange": true,
+              "param2": 2.0,
+              "repeatTimes": 1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -2.0,
+              "key": "_SHAMAN_WATER_HP_STAGE",
+              "useLimitRange": true,
+              "param2": 2.0,
+              "repeatTimes": 1.0
+            }
+          ]
+        },
+        "Shaman_Water_HP_Stage3": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 3.0,
+              "key": "_SHAMAN_WATER_HP_STAGE",
+              "useLimitRange": true,
+              "param2": 3.0,
+              "repeatTimes": 1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -3.0,
+              "key": "_SHAMAN_WATER_HP_STAGE",
+              "useLimitRange": true,
+              "param2": 3.0,
+              "repeatTimes": 1.0
+            }
+          ]
+        },
+        "Shaman_Water_HP_Stage4": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 4.0,
+              "key": "_SHAMAN_WATER_HP_STAGE",
+              "useLimitRange": true,
+              "param2": 4.0,
+              "repeatTimes": 1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -4.0,
+              "key": "_SHAMAN_WATER_HP_STAGE",
+              "useLimitRange": true,
+              "param2": 4.0,
+              "repeatTimes": 1.0
+            }
+          ]
+        },
+        "Shaman_Water_HP_Stage5": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 5.0,
+              "key": "_SHAMAN_WATER_HP_STAGE",
+              "useLimitRange": true,
+              "param2": 5.0,
+              "repeatTimes": 1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -5.0,
+              "key": "_SHAMAN_WATER_HP_STAGE",
+              "useLimitRange": true,
+              "param2": 5.0,
+              "repeatTimes": 1.0
+            }
+          ]
+        },
+        "Shaman_Water_Follow_HealRain": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "HealRain_Feild_LifeTime"
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Shaman_Water_SupportAttack_HealRain",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Heal_Buff"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "HealRainDie",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Monster_Shaman_Water_SupportAttack_HealRain"
+            }
+          ],
+          "onKill": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "HealRainDie",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Monster_Shaman_Water_SupportAttack_HealRain"
+            }
+          ]
+        },
+        "HealRain_Feild_LifeTime": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.10000000149011612,
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "HealRain_Feild_Kill"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "HealRainDie",
+              "attachPoint": ""
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Heal_Buff"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_LIFETAG",
+                  "param3": 0.0,
+                  "forceByCaster": true
+                }
+              ],
+              "modifierName": "HealRain_Feild_LifeTime"
+            }
+          ]
+        },
+        "Heal_Buff": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "onThinkInterval": [
+            {
+              "$type": "FHGPOFDJDCO",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR5",
+                "campTargetType": "Alliance",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "CKDBFHCIJEK": "HEAL",
+              "cdRatio": ""
+            },
+            {
+              "$type": "FHGPOFDJDCO",
+              "CKDBFHCIJEK": "HEAL",
+              "cdRatio": ""
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR5",
+                "campTargetType": "Alliance",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "rotationDampTime": "Eff_Monster_Shaman_Water_SupportAttack_Heal",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "attachPointName": "RootNode"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "PELJALPANCA",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR5",
+                "campTargetType": "All",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Equip"
+                  ],
+                  "reject": true
+                }
+              ],
+              "modifierName": "HealRain_WetModifer"
+            }
+          ]
+        },
+        "HealRain_WetModifer": {
+          "modifierName": "",
+          "elementDurability": 8.0,
+          "elementType": "Water",
+          "IPFJJJGABPL": 50.0
+        },
+        "HealRain_Feild_Kill": {
+          "modifierName": "",
+          "elementDurability": 2.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Shaman_Water_Follow_HealRain"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Shaman_HealRain",
+      "abilitySpecials": {
+        "HEAL": 0.10000000149011612,
+        "lifetag": 0.0
+      },
+      "modifiers": {
+        "HealRain_Feild_LifeTime": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.10000000149011612,
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "HealRain_Feild_Kill"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "HealRainDie",
+              "attachPoint": ""
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Heal_Buff"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "LDIAIDLOPEE",
+              "isFromOwner": true,
+              "globalValueKey": "_LIFETAG",
+              "overrideMapKey": "lifetag"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "predicates": [
+                {
+                  "$type": "NDAEDKLADHO",
+                  "target": "Self",
+                  "logic": "Equal",
+                  "targetAbilityName": "",
+                  "targetKey": "lifetag",
+                  "targetValue": 0.0
+                }
+              ],
+              "modifierName": "HealRain_Feild_LifeTime"
+            }
+          ]
+        },
+        "HealRain_Effect_LifeTime": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Shaman_Water_SupportAttack_HealRain",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "HealRainDie",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Monster_Shaman_Water_SupportAttack_HealRain"
+            }
+          ],
+          "onKill": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "HealRainDie",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Monster_Shaman_Water_SupportAttack_HealRain"
+            }
+          ]
+        },
+        "Heal_Buff": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "onThinkInterval": [
+            {
+              "$type": "FHGPOFDJDCO",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR5",
+                "campTargetType": "Alliance",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "CKDBFHCIJEK": "HEAL",
+              "cdRatio": ""
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR5",
+                "campTargetType": "Alliance",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "rotationDampTime": "Eff_Monster_Shaman_Water_SupportAttack_Heal",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "attachPointName": "RootNode"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "PELJALPANCA",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR5",
+                "campTargetType": "AllExceptSelf",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Equip"
+                  ],
+                  "reject": true
+                }
+              ],
+              "modifierName": "HealRain_WetModifer"
+            }
+          ]
+        },
+        "HealRain_WetModifer": {
+          "modifierName": "",
+          "elementDurability": 8.0,
+          "elementType": "Water",
+          "IPFJJJGABPL": 50.0
+        },
+        "HealRain_Feild_Kill": {
+          "modifierName": "",
+          "elementDurability": 2.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "HealRain_Feild_LifeTime"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "HealRain_Effect_LifeTime"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Heal_Buff"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Shaman_Water_CreateTorrent",
+      "onAbilityStart": [
+        {
+          "$type": "KFCDMIMBBLD",
+          "target": "SelfAttackTarget",
+          "born": {
+            "$type": "MPCGPEHJNNH",
+            "onGround": true,
+            "alongGround": true,
+            "timeForPredictive": 0.75
+          },
+          "gadgetID": 42103007,
+          "campID": 4001,
+          "campTargetType": "All"
+        },
+        {
+          "$type": "INBCDALOHMP",
+          "target": "SelfAttackTarget",
+          "targetPredicates": [
+            {
+              "$type": "FMBJAJFLDIP",
+              "logic": "Lesser",
+              "param3": 10.0,
+              "DDALGNLEHOD": ""
+            },
+            {
+              "$type": "FMBJAJFLDIP",
+              "param3": 3.5,
+              "DDALGNLEHOD": ""
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "NormalAttackWave2"
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "NormalAttackWave3"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Shaman_Torrent_Area_Damage",
+      "modifiers": {
+        "Torrent_Damage_Timer": {
+          "modifierName": "",
+          "elementDurability": 1.5,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Torrent_Damage"
+            }
+          ]
+        },
+        "Torrent_Damage": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "JHKEHNJBMOF",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "JHEBKCMEMLN",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 1.25,
+                      "LPCHALMFFOD": -0.75
+                    }
+                  },
+                  "size": {
+                    "KGEPIMHBMOL": 1.25,
+                    "JEBHCGDPFEJ": 2.5,
+                    "LPCHALMFFOD": 1.25
+                  }
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.5,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Water",
+                    "IPFJJJGABPL": 50.0,
+                    "strikeType": "Default",
+                    "enBreak": 50.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV4",
+                    "hitHaltTimeScale": 0.05000000074505806
+                  },
+                  "forceCameraShake": true,
+                  "cameraShake": {
+                    "shakeType": "CustomVector",
+                    "shakeRange": 0.03999999910593033,
+                    "shakeTime": 0.09000000357627869,
+                    "shakeDir": {
+                      "y": 1.0
+                    }
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Shaman_Water_Torrent",
+          "born": {
+            "$type": "JHEBKCMEMLN",
+            "onGround": true,
+            "alongGround": true
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Torrent_Damage_Timer"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Shaman_Water_SetPose",
+      "modifiers": {
+        "Shaman_Water_SetPose": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.10000000149011612,
+          "onThinkInterval": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -10.0,
+              "key": "_ABILITY_SHAMAN_WATER_ALLIANCE_COUNT",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR10",
+                "centerBasedOn": "SelfAttackTarget",
+                "campTargetType": "Alliance",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "OFFCGHNCBCD",
+                  "isTarget": false,
+                  "ALBJEAMOFLG": ""
+                },
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "param3": 1.0,
+                  "key": "_ABILITY_SHAMAN_WATER_ALLIANCE_COUNT",
+                  "useLimitRange": true,
+                  "param2": 1.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ABILITY_SHAMAN_WATER_ALLIANCE_COUNT",
+                  "param3": 0.0,
+                  "compareType": "MoreThan"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "IDNGFEEBPAM",
+                  "boolID": "HasAllianceState",
+                  "param3": true
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "IDNGFEEBPAM",
+                  "boolID": "HasAllianceState"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Shaman_Water_SetPose"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Shaman_Water_DistanceCharge",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "SupportAttack",
+            "NormalAttack",
+            "SupportAttack2"
+          ],
+          "modifierName": "Shaman_Water_DistanceCharge",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Shaman_Water_DistanceCharge": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.20000000298023224,
+          "onThinkInterval": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "SelfAttackTarget",
+              "targetPredicates": [
+                {
+                  "$type": "FMBJAJFLDIP",
+                  "logic": "Lesser",
+                  "param3": 3.5,
+                  "DDALGNLEHOD": ""
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_ELITEAFFIX_SUPPORT_ENHANCE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "SupportAttackExit2"
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "target": "SelfAttackTarget",
+              "targetPredicates": [
+                {
+                  "$type": "FMBJAJFLDIP",
+                  "logic": "Lesser",
+                  "param3": 8.5,
+                  "DDALGNLEHOD": ""
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_ELITEAFFIX_SUPPORT_ENHANCE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "SupportAttackExit"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Shaman_Water_EscapeState",
+      "modifiers": {
+        "Shaman_Water_EscapeState": {
+          "modifierName": "",
+          "elementDurability": 1.75,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "EscapeState",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "canBeHandledOnRecover": true,
+              "boolID": "EscapeState"
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Shaman_Water_EscapeState"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "predicates": [
+            {
+              "$type": "FMBJAJFLDIP",
+              "logic": "Lesser",
+              "param3": 5.0,
+              "DDALGNLEHOD": ""
+            }
+          ],
+          "modifierName": "Shaman_Water_EscapeState"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Shaman_Water_AnimationSteer",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "NormalAttack_BS1"
+          ],
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "attackDistance": 12.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "NormalAttack_BS2"
+          ],
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "attackDistance": 12.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "NormalAttack_BS3"
+          ],
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "attackDistance": 12.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "SupportAttack_BS"
+          ],
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "attackDistance": 12.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "MeleeAttack"
+          ],
+          "endNormalizedTime": 0.15000000596046448,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "attackDistance": 12.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Turn"
+          ],
+          "startNormalizedTime": 0.20000000298023224,
+          "endNormalizedTime": 0.75,
+          "angularSpeed": 120.0,
+          "attackTrigger": "",
+          "attackDistance": 12.0,
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Shaman_Water_WeaponElementEffect",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "SupportAttack",
+            "SupportAttack2",
+            "SupportAttack_BS"
+          ],
+          "modifierName": "Effect_SupportAttack",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "NormalAttack",
+            "NormalAttack_BS"
+          ],
+          "modifierName": "WeaponEffect_NormalAttack",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Effect_SupportAttack": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Shaman_Water_WeaponElement_Rain",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Shaman_SupportAttack_Gather"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "GatherDie",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Monster_Shaman_Water_SupportAttack_Gather"
+            }
+          ],
+          "onKill": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Effect_SupportAttack"
+            }
+          ]
+        },
+        "Shaman_SupportAttack_Gather": {
+          "modifierName": "",
+          "elementDurability": 10.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Shaman_Water_SupportAttack_Gather",
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "onGround": true,
+                "alongGround": true
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "WeaponEffect_NormalAttack": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Shaman_Water_WeaponElement_Up",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onKill": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "WeaponEffect_NormalAttack"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Shaman_Water_WeaponInit",
+      "onAdded": [
+        {
+          "$type": "GJCAPCBELPA",
+          "target": "Owner",
+          "abilityName": "Monster_Shaman_Water_WeaponElementEffect"
+        }
+      ]
+    }
+  }
+]

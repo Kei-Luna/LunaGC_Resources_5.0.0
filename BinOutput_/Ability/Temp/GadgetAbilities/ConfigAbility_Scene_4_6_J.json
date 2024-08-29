@@ -1,0 +1,4227 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Ability_Whale_Cannon_Avatar",
+      "abilityMixins": [
+        {
+          "$type": "AEGLMCMJMLE",
+          "uiMessageId": "RemusMagicDragon_Start_Aim",
+          "actionList": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "#Whale_Cannon# open page"
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "predicates": [
+                {
+                  "$type": "KGMHMHFHGIC",
+                  "isHost": true
+                }
+              ],
+              "param3": 1.0,
+              "key": "GV_Cannon_State",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        {
+          "$type": "AEGLMCMJMLE",
+          "uiMessageId": "RemusMagicDragon_Exit_Aim",
+          "actionList": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "#Whale_Cannon# close page"
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "GV_Cannon_State",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        {
+          "$type": "EJNMIOFDIGF",
+          "onStageReady": [
+            {
+              "$type": "NBJOOJMEDPD",
+              "shieldHP": true,
+              "uiContextName": "InLevelMainPage",
+              "message": "ExitRemusMagicDragon",
+              "stringParam": ""
+            },
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "#Whale_Cannon# n1"
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "GV_Cannon_State",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "Blank": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "PanelControl_Team": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "NBJOOJMEDPD",
+              "shieldHP": true,
+              "uiContextName": "InLevelMainPage",
+              "message": "ExitRemusMagicDragon",
+              "stringParam": ""
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "target": "CurLocalAvatar",
+              "param3": 0.0,
+              "key": "GV_Cannon_State",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "#Whale_Cannon# n3"
+            }
+          ]
+        },
+        "Whale_Cannon_Avatar_Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NIOCCCHDCOO",
+              "globalValueKey": "GV_Cannon_State",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5,
+                2.5
+              ],
+              "modifierNameSteps": [
+                "Blank",
+                "UNIQUE_Whale_Cannon_Prepare",
+                "UNIQUE_Whale_Cannon_ShootPlayer"
+              ],
+              "NMCLMHFBALJ": true,
+              "defaultGlobalValueOnCreate": 0.0
+            },
+            {
+              "$type": "PHLKCMFKFIN",
+              "globalValueKey": "GV_Cannon_State",
+              "valueSteps": [
+                -1.0,
+                0.5,
+                2.5
+              ],
+              "modifierNameSteps": [
+                "BlankState",
+                "AvatarInShoot"
+              ]
+            },
+            {
+              "$type": "PHLKCMFKFIN",
+              "globalValueKey": "GV_Cannon_State",
+              "valueSteps": [
+                -1.0,
+                0.5,
+                2.5
+              ],
+              "modifierNameSteps": [
+                "BlankState",
+                "CheckPaimonArea"
+              ]
+            }
+          ]
+        },
+        "BlankState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "AvatarInShoot": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 3.0,
+          "modifierMixins": [
+            {
+              "$type": "LLCAHDLGAHO",
+              "reason": "Mixin"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_WhaleHookSkill_Step",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PELJALPANCA",
+              "otherTargets": {
+                "$type": "PBLNLAENOGB",
+                "tag": "Whale_Wander"
+              },
+              "modifierName": "UNIQUE_TriggerWhaleStop_InCannon"
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_RemusMagicdragon_Whale_Cannon_Enter_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "Team",
+              "modifierName": "BanWhaleTeleport"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "PELJALPANCA",
+              "otherTargets": {
+                "$type": "PBLNLAENOGB",
+                "tag": "Whale_Wander"
+              },
+              "modifierName": "UNIQUE_TriggerWhaleStop_InCannon"
+            }
+          ]
+        },
+        "BanWhaleTeleport": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "GV_Ban_Whale_Teleport",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "GV_Ban_Whale_Teleport",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "CheckPaimonArea": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.5,
+          "onThinkInterval": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "EMOMPBDEDCN"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "FNPMFLOOCDD",
+                  "shieldHP": true,
+                  "param3": 0.0,
+                  "key": "GV_Cannon_State",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_TriggerWhaleStop_InCannon": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.05999999865889549,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IIGGCBAOAAK",
+              "param3": 1.0,
+              "key": "GV_StopTrigger",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "UNIQUE_Whale_Cannon_Prepare": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_ABILITY_WhaleHookSkill_Step",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "Whale_Log Cannon_Prepare"
+            }
+          ],
+          "onKill": [
+            {
+              "$type": "NBJOOJMEDPD",
+              "shieldHP": true,
+              "uiContextName": "InLevelMainPage",
+              "message": "ExitRemusMagicDragon",
+              "stringParam": ""
+            },
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "#Whale_Cannon# n4"
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "GV_Cannon_State",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "UNIQUE_Whale_Cannon_ShootPlayer": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.30000001192092896,
+          "modifierMixins": [
+            {
+              "$type": "IPBIIJANALM",
+              "onInterrupted": [
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "WhaleCannonStop > CarpJumpSecondMoveMixin"
+                },
+                {
+                  "$type": "FNPMFLOOCDD",
+                  "shieldHP": true,
+                  "param3": 0.0,
+                  "key": "GV_Cannon_State",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "KBODPNEEFGD",
+                  "modifierName": "UNIQUE_Whale_Cannon_ShootPlayer"
+                }
+              ],
+              "FBMBFFNGMMF": true,
+              "IHAHOGGJANK": 0.0,
+              "MGFKLHABNKA": 2.0,
+              "radius": 1.0,
+              "PLAFJIIACEF": 1.0
+            },
+            {
+              "$type": "BJAMAIBGOPD",
+              "JLPODGJBMHD": {
+                "$type": "HJDLHOPOPDD",
+                "AEAMANCFLLA": "CameraLook",
+                "CIGMAPMEPBH": "",
+                "LGEAGJKKDLM": "CameraForward",
+                "PDOLHPKBDGL": 45.0,
+                "fovMin": 45.0,
+                "fovMax": 90.0,
+                "CEHDMCBMOAP": 1.0,
+                "KJLBLEOHDFP": 46001
+              },
+              "BELLAHDCNEC": {
+                "blendType": 2,
+                "CIJLABMEGDC": 4,
+                "ONMLJJIPBAI": 2,
+                "BPJDJMJNIKL": 1,
+                "duration": 0.0
+              }
+            },
+            {
+              "$type": "NDFFAEHJMAL",
+              "globalValueKey": "GV_Cannon_Timer_Trigger",
+              "actions": [
+                {
+                  "$type": "JLDEMMJAMLC",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "GV_Cannon_Timer_Trigger",
+                      "param3": 0.0,
+                      "compareType": "MoreThan"
+                    }
+                  ],
+                  "modifierName": "UNIQUE_Whale_Cannon_Refresh_QTE_Timer"
+                }
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "GV_BoostCount",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "UNIQUE_Whale_Cannon_Refresh_QTE_Timer"
+            },
+            {
+              "$type": "GNFPDHMDNIJ",
+              "turnMode": "OnlyCamera"
+            },
+            {
+              "$type": "PENMIJBLLPF",
+              "canBeHandledOnRecover": true,
+              "actionList": [
+                {
+                  "$type": "ANLOBBMKNIJ",
+                  "predicates": [
+                    {
+                      "$type": "BCFNGJHILAG",
+                      "predicates": [
+                        {
+                          "$type": "JALOOGPAKNF"
+                        }
+                      ]
+                    }
+                  ],
+                  "rotationDampTime": "Eff_RemusMagicdragon_Moving_Remote_01",
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                }
+              ]
+            },
+            {
+              "$type": "CAKDDHLKOAB",
+              "bulletID": 70330821,
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "RootNode"
+              },
+              "trackTarget": "Self",
+              "lifeByOwnerV2": true
+            },
+            {
+              "$type": "MPAGCPPAIHJ",
+              "key": "_ABILITY_Whale_Cannon_Target_Pos",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 100.0
+                },
+                "useRotation": true
+              }
+            },
+            {
+              "$type": "LBLNHEBGPJI",
+              "forces": [
+                "RushMoveType",
+                "InertiaType",
+                "FixedRushMoveType",
+                "RiseType",
+                "AirflowAccType",
+                "AirflowType",
+                "SpeedupType"
+              ]
+            },
+            {
+              "$type": "GJCAPCBELPA",
+              "abilityName": "Ability_Avatar_Whale_Cannon_QTE_Succ"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "GV_Cannon_Timer_Trigger",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "GV_BoostCount",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_Camera_Blur_Cannon_QTE"
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "GV_Cannon_State",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "NBJOOJMEDPD",
+              "shieldHP": true,
+              "uiContextName": "InLevelMainPage",
+              "message": "ExitRemusMagicDragon",
+              "stringParam": ""
+            },
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "#Whale_Cannon# n5"
+            },
+            {
+              "$type": "EAJDJDJMEBH",
+              "shieldHP": true,
+              "key": "_ABILITY_Whale_Cannon_Target_Pos"
+            },
+            {
+              "$type": "JKFLDIKGJEF",
+              "shieldHP": true,
+              "gadgetInfo": {
+                "sortType": "Reversed",
+                "configID": 70330821
+              }
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_RemusMagicdragon_Whale_Cannon_Exit_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "#Whale_Cannon# remove bullet"
+            },
+            {
+              "$type": "LBLNHEBGPJI",
+              "forces": [
+                "RushMoveType",
+                "InertiaType",
+                "FixedRushMoveType",
+                "RiseType",
+                "AirflowAccType",
+                "AirflowType",
+                "SpeedupType"
+              ]
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "NEENJPCBOCI",
+                  "target": "Caster",
+                  "MJECJGNHGCH": true
+                }
+              ],
+              "param3": 0.0,
+              "key": "GV_Cannon_State",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onKill": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "GV_Cannon_State",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "UNIQUE_Whale_Cannon_Refresh_QTE_Timer": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 3.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "INBCDALOHMP",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "GV_BoostCount",
+                  "param3": 4.0,
+                  "compareType": "MoreThan"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "#Whale_Cannon# qte startFinal"
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "modifierName": "UNIQUE_Whale_Cannon_Final_Stop"
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "GV_BoostCount",
+                  "param3": 4.0,
+                  "compareType": "LessAndEqual"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "GV_Cannon_State",
+                  "param3": 2.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "#Whale_Cannon# qte start"
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "modifierName": "UNIQUE_Whale_Cannon_QTE"
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Whale_Cannon_QTE": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 2.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 0.0,
+              "key": "QTE_Cannon_QTE_Succ",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "GV_BoostCount",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "shieldHP": true,
+              "param3": 2.0,
+              "key": "GV_QTE_Perfect_Time",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "NBJOOJMEDPD",
+              "uiContextName": "InLevelMainPage",
+              "message": "BeginRemusMagicDragonQTE",
+              "stringParam": ""
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_Camera_Blur_Cannon_QTE"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "QTE_Cannon_QTE_Succ",
+                  "param3": 0.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "FNPMFLOOCDD",
+                  "shieldHP": true,
+                  "param3": 0.0,
+                  "key": "GV_Cannon_State",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "NBJOOJMEDPD",
+                  "uiContextName": "InLevelMainPage",
+                  "message": "ExitRemusMagicDragon",
+                  "stringParam": ""
+                },
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "#Whale_Cannon# n6"
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Whale_Cannon_Final_Stop": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 2.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBODPNEEFGD",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_Camera_Blur_Cannon_QTE"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "#Whale_Cannon# Final_Stop"
+            },
+            {
+              "$type": "GJCAPCBELPA",
+              "abilityName": "Ability_Avatar_Whale_Cannon_QTE_Fail"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "FNPMFLOOCDD",
+          "shieldHP": true,
+          "param3": 0.0,
+          "key": "GV_Cannon_State",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "shieldHP": true,
+          "param3": 0.0,
+          "key": "GV_Cannon_Timer_Trigger",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Whale_Cannon_Avatar_Controller"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "modifierName": "PanelControl_Team"
+        }
+      ],
+      "onAvatarOut": [
+        {
+          "$type": "NBJOOJMEDPD",
+          "shieldHP": true,
+          "uiContextName": "InLevelMainPage",
+          "message": "ExitRemusMagicDragon",
+          "stringParam": ""
+        },
+        {
+          "$type": "ELNHKGAPIBJ",
+          "content": "#Whale_Cannon# n2"
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "shieldHP": true,
+          "param3": 0.0,
+          "key": "GV_Cannon_State",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Ability_Avatar_Whale_Cannon_Shoot_Start",
+      "onAbilityStart": [
+        {
+          "$type": "FNPMFLOOCDD",
+          "shieldHP": true,
+          "param3": 2.0,
+          "key": "GV_Cannon_State",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Ability_Avatar_Whale_Cannon_QTE_Succ",
+      "modifiers": {
+        "UNIQUE_Camera_Blur_Cannon_QTE": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PIEMLPMIDKA",
+              "cameraRadialBlur": {
+                "power": 0.6499999761581421,
+                "fadeTime": 1.0
+              }
+            },
+            {
+              "$type": "COEDOLJOHAK",
+              "postEffectAssetName": "PostEffect_RemusMagicdragon_Moving",
+              "duration": 0.0
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "HPIHJNIOBBL",
+              "operation": {
+                "$type": "AKCGGGOIJAO",
+                "operation": {
+                  "text": "Play_Vfx_RemusMagicdragon_Moving_CameraPostProcess_01"
+                }
+              }
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "HPIHJNIOBBL",
+              "operation": {
+                "$type": "AKCGGGOIJAO",
+                "operation": {
+                  "text": "Stop_Vfx_RemusMagicdragon_Moving_CameraPostProcess_01"
+                }
+              }
+            }
+          ]
+        },
+        "CameraBlur_WhaleCannon": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 1.0,
+          "key": "QTE_Cannon_QTE_Succ",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "HCLAKBJKPLE",
+          "target": "CurLocalAvatar",
+          "watcherId": 81473
+        },
+        {
+          "$type": "NEPOFLKIEMC",
+          "velocity": 12.0,
+          "forceType": "SpeedupType",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "direction": {
+              "$type": "JNKPDKHFJJB"
+            },
+            "useRotation": true
+          },
+          "attenuation": 2.0,
+          "DENLCFNBPDG": true,
+          "DJEDDKAKJKA": 3.0
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Camera_Blur_Cannon_QTE"
+        },
+        {
+          "$type": "IIGGCBAOAAK",
+          "param3": 1.0,
+          "key": "GV_Cannon_Timer_Trigger",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_RemusMagicdragon_QteFeedback_Local_01",
+          "born": {
+            "$type": "EPICDEIDAMH"
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "PENMIJBLLPF",
+          "canBeHandledOnRecover": true,
+          "actionList": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "predicates": [
+                {
+                  "$type": "BCFNGJHILAG",
+                  "predicates": [
+                    {
+                      "$type": "JALOOGPAKNF"
+                    }
+                  ]
+                }
+              ],
+              "rotationDampTime": "Eff_RemusMagicdragon_QteFeedback_Remote_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Ability_Avatar_Whale_Cannon_QTE_Fail",
+      "onAbilityStart": [
+        {
+          "$type": "ELNHKGAPIBJ",
+          "content": "#Whale_Cannon# QTE_Fail"
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "QTE_Cannon_QTE_Succ",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "shieldHP": true,
+          "param3": 0.0,
+          "key": "GV_Cannon_State",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "NBJOOJMEDPD",
+          "uiContextName": "InLevelMainPage",
+          "message": "ExitRemusMagicDragon",
+          "stringParam": ""
+        },
+        {
+          "$type": "ELNHKGAPIBJ",
+          "content": "#Whale_Cannon# n7"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Ability_Whale_Hook_Avatar",
+      "abilityMixins": [
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueTarget": "Team",
+          "globalValueKey": "_ABILITY_Diving_InDive_Mark",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Blank",
+            "HookControl"
+          ]
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_ABILITY_WhaleHookSkill_Step",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            3.9000000953674316
+          ],
+          "modifierNameSteps": [
+            "Blank",
+            "UNIQUE_WhaleHookSkill_GrassCoreEffect"
+          ]
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_ABILITY_WhaleHookSkill_Step",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            3.9000000953674316
+          ],
+          "modifierNameSteps": [
+            "ExitFirstPerson",
+            "EnterFirstPerson"
+          ]
+        }
+      ],
+      "abilitySpecials": {
+        "recordFishSkill": 0.0
+      },
+      "modifiers": {
+        "Blank": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "HookControl": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CBMFLELNNFG",
+              "tag": "WorldPlay_4_6",
+              "onEnterHookArea": [
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "Ability_Whale_Hook_Avatar > onEnterArea"
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "target": "Team",
+                  "shieldHP": true,
+                  "param3": 1.0,
+                  "key": "InWhaleHookArea",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ],
+              "onExitHookArea": [
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "Ability_Whale_Hook_Avatar > onExitArea"
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "target": "Team",
+                  "shieldHP": true,
+                  "param3": 0.0,
+                  "key": "InWhaleHookArea",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ],
+              "activateSkillKey": "AVATAR_WhaleHookSkill",
+              "DMPKMONDJOG": [
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "Ability_Whale_Hook_Avatar > onSelectStart"
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Team",
+                  "shieldHP": true,
+                  "modifierName": "UNIQUE_WhaleHookSkill_ExtraTeamAbility"
+                }
+              ],
+              "ODIFIJILODN": [
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "Ability_Whale_Hook_Avatar > onSelectEnd"
+                },
+                {
+                  "$type": "KBODPNEEFGD",
+                  "target": "Team",
+                  "shieldHP": true,
+                  "modifierName": "UNIQUE_WhaleHookSkill_ExtraTeamAbility"
+                }
+              ],
+              "EOMGLCGHMEJ": "WorldPlay_Whale_Hook_4_6"
+            }
+          ]
+        },
+        "AddHookSkill": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BBDLKGEJDOJ",
+              "priority": "Playmode",
+              "skillIndex": -1,
+              "skillID": 20076,
+              "JMDDHEHLBGA": true
+            }
+          ]
+        },
+        "AddQuitHookSkill": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BBDLKGEJDOJ",
+              "priority": "Playmode",
+              "skillIndex": 3,
+              "skillID": 20346,
+              "useInAir": true
+            }
+          ]
+        },
+        "UNIQUE_WhaleHookSkill_ExtraTeamAbility": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "LDECLKPNDEB",
+              "priority": "Activity",
+              "NNKIFCNNGJL": 20072
+            }
+          ]
+        },
+        "UNIQUE_WhaleHookSkill_RecoverHandler": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onReconnect": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_WhaleHookSkill_Step",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "UNIQUE_WhaleHookSkill_SkillHandler": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.20000000298023224,
+          "modifierMixins": [
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "ActivitySkill_CustomSkill02"
+              ],
+              "modifierName": "UNIQUE_WhaleHookSkill_SkillHandlerIntern",
+              "DGFCLAIDIFI": ""
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "GV_Cannon_State",
+                  "param3": 0.0,
+                  "compareType": "MoreThan"
+                }
+              ],
+              "param3": 0.0,
+              "key": "_ABILITY_WhaleHookSkill_Step",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_ABILITY_WhaleHookSkill_Step",
+                  "param3": 0.0
+                }
+              ],
+              "modifierName": "UNIQUE_WhaleHookSkill_SkillHandler"
+            }
+          ]
+        },
+        "UNIQUE_WhaleHookSkill_SkillHandlerIntern": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "_ABILITY_WhaleHookSkill_Step",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                0.5,
+                1.5,
+                3.5
+              ],
+              "modifierNameSteps": [
+                "UNIQUE_WhaleHookSkill_PreSkill",
+                "UNIQUE_WhaleHookSkill_ThrowHook"
+              ]
+            },
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "_ABILITY_WhaleHookSkill_Step",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                2.5,
+                4.5
+              ],
+              "modifierNameSteps": [
+                "UNIQUE_WhaleHookSkill_SkillStart"
+              ]
+            },
+            {
+              "$type": "LENFJGPKKHC"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ABILITY_WhaleHookSkill_Step",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ABILITY_WhaleHookSkill_Step",
+                  "param3": 3.0,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "param3": 0.0,
+              "key": "_ABILITY_WhaleHookSkill_Step",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "UNIQUE_TriggerWhaleStop": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.05999999865889549,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IIGGCBAOAAK",
+              "param3": 1.0,
+              "key": "GV_StopTrigger",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "UNIQUE_WhaleHookSkill_PreSkill": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_EndureDelta": 0.0
+          },
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "RushMoveOnGround"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "UNIQUE_WhaleStreamingOptimization"
+            }
+          ]
+        },
+        "RushMoveOnGround": {
+          "modifierName": "",
+          "elementDurability": 0.05999999865889549,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_EndureDelta": 0.0
+          },
+          "onAdded": [
+            {
+              "$type": "GKLDPAJNDOO",
+              "toPos": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.20000000298023224,
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true
+              },
+              "animatorStateIDs": [
+                "ActivitySkill_CustomSkill02"
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LBLNHEBGPJI",
+              "forces": [
+                "RushMoveType",
+                "InertiaType"
+              ]
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "Avatar_HookVisible",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ABILITY_WhaleHookSkill_Step",
+                  "param3": 1.0
+                }
+              ],
+              "param3": 2.0,
+              "key": "_ABILITY_WhaleHookSkill_Step",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "UNIQUE_WhaleHookSkill_ThrowHook": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 1.100000023841858,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PJHDPNPDNEL"
+            }
+          ],
+          "properties": {
+            "Actor_EndureDelta": 0.0
+          },
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ABILITY_WhaleHookSkill_Step",
+                  "param3": 2.0
+                }
+              ],
+              "param3": 3.0,
+              "key": "_ABILITY_WhaleHookSkill_Step",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "UNIQUE_WhaleHookSkill_SkillStart": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "KGLPPDAKGID",
+              "onArrived": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "_ABILITY_WhaleHookSkill_Step",
+                      "param3": 3.0
+                    }
+                  ],
+                  "param3": 4.0,
+                  "key": "_ABILITY_WhaleHookSkill_Step",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "modifierName": "GrapplingHook_ArrivedRushMove"
+                }
+              ],
+              "upForceValue": 0.0,
+              "upForceTime": 0.0,
+              "arriveDistance": 0.5
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "BBPFCJNOGJG",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ABILITY_WhaleHookSkill_Step",
+                  "param3": 3.0
+                }
+              ],
+              "toPos": {
+                "$type": "ICKMMAHFNIM",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": -0.5,
+                  "LPCHALMFFOD": 0.0
+                },
+                "direction": {
+                  "$type": "NNPJOCIHKBI",
+                  "directionKey": "_WhaleHook_TargetDir"
+                },
+                "positionKey": "_WhaleHook_TargetPos",
+                "directionKey": ""
+              },
+              "speed": 10.0,
+              "accSpeed": 10.0,
+              "maxSpeed": 20.0,
+              "animatorStateIDs": [
+                "ActivitySkill_CustomSkill02",
+                "Fly",
+                "Standby",
+                "Run"
+              ],
+              "timeRange": 1
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "UNIQUE_WhaleHook_Cam_Eff_Delay"
+            },
+            {
+              "$type": "HPIHJNIOBBL",
+              "operation": {
+                "$type": "AKCGGGOIJAO",
+                "operation": {
+                  "text": "Play_Unique_Whale_Cannon_ShootPlayer"
+                }
+              }
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "HPIHJNIOBBL",
+              "operation": {
+                "$type": "AKCGGGOIJAO",
+                "operation": {
+                  "text": "Stop_Unique_Whale_Cannon_ShootPlayer"
+                }
+              }
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_WhaleHook_Cam_Eff_Delay"
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_WhaleHook_Cam_Eff"
+            }
+          ]
+        },
+        "UNIQUE_WhaleHook_Cam_Eff_Delay": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "UNIQUE_WhaleHook_Cam_Eff"
+            }
+          ]
+        },
+        "UNIQUE_WhaleHook_Cam_Eff": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "COEDOLJOHAK",
+              "postEffectAssetName": "PostEffect_RemusMagicdragon_Moving",
+              "duration": 0.0
+            },
+            {
+              "$type": "PIEMLPMIDKA",
+              "cameraRadialBlur": {
+                "power": 0.6499999761581421,
+                "fadeTime": 0.30000001192092896
+              }
+            }
+          ]
+        },
+        "UNIQUE_WhaleHookSkill_HookHideHandler": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NDFFAEHJMAL",
+              "globalValueKey": "Avatar_HookVisible",
+              "actions": [
+                {
+                  "$type": "PJENOLFAFMG",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "Avatar_HookVisible",
+                      "param3": 1.0,
+                      "compareType": "MoreThanAndEqual"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "PJENOLFAFMG"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "Avatar_HookVisible",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PJENOLFAFMG",
+              "shieldHP": true,
+              "canBeHandledOnRecover": true,
+              "KGGEDGKGLDD": true
+            }
+          ]
+        },
+        "UNIQUE_WhaleHookSkill_GrassCoreEffect": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "MPOCIADDCFP",
+              "typeList": [
+                "InteePanel"
+              ]
+            }
+          ],
+          "properties": {
+            "Actor_AddGravityScale": -2.0
+          },
+          "onAdded": [
+            {
+              "$type": "PENMIJBLLPF",
+              "canBeHandledOnRecover": true,
+              "actionList": [
+                {
+                  "$type": "ANLOBBMKNIJ",
+                  "predicates": [
+                    {
+                      "$type": "BCFNGJHILAG",
+                      "predicates": [
+                        {
+                          "$type": "JALOOGPAKNF"
+                        }
+                      ]
+                    }
+                  ],
+                  "rotationDampTime": "Eff_RemusMagicdragon_Moving_Remote_01",
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                }
+              ]
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "Team",
+              "modifierName": "BanWhaleTeleport_Hook"
+            },
+            {
+              "$type": "PCDJJDJHPGC",
+              "ignoreAirGY": true
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_RemusMagicdragon_Whale_Cannon_Enter_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "CAKDDHLKOAB",
+              "bulletID": 70330821,
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "RootNode"
+              },
+              "trackTarget": "Self",
+              "lifeByOwnerV2": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "CustomSkill02_End_Drop"
+            },
+            {
+              "$type": "JKFLDIKGJEF",
+              "shieldHP": true,
+              "gadgetInfo": {
+                "sortType": "Reversed",
+                "configID": 70330821
+              }
+            },
+            {
+              "$type": "PCDJJDJHPGC",
+              "shieldHP": true
+            },
+            {
+              "$type": "LBLNHEBGPJI",
+              "shieldHP": true,
+              "forces": [
+                "RushMoveType",
+                "InertiaType"
+              ]
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_RemusMagicdragon_Whale_Cannon_Exit_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "PELJALPANCA",
+              "shieldHP": true,
+              "modifierName": "GrapplingHook_SkillCharge"
+            }
+          ]
+        },
+        "BanWhaleTeleport_Hook": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "GV_Ban_Whale_Teleport",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "GV_Ban_Whale_Teleport",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "EnterFirstPerson": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "ZoomToFirstPerson"
+            },
+            {
+              "$type": "PPDJHLBHCIK",
+              "shieldHP": true,
+              "muteRemoteAction": true,
+              "toPlayMode": "GotoRemusDash"
+            }
+          ]
+        },
+        "ExitFirstPerson": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "PPDJHLBHCIK",
+              "shieldHP": true,
+              "muteRemoteAction": true,
+              "JFDCCIECAJB": "GotoRemusDash"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "shieldHP": true,
+              "modifierName": "ZoomToFirstPerson"
+            }
+          ]
+        },
+        "ZoomToFirstPerson": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BJAMAIBGOPD",
+              "fishtankMap": {
+                "ALBJEAMOFLG": "_TempTarget"
+              },
+              "OCJEOAOHIDI": "TempTarget",
+              "priority": 1,
+              "JLPODGJBMHD": {
+                "$type": "HJDLHOPOPDD",
+                "AEAMANCFLLA": "CameraLook",
+                "CIGMAPMEPBH": "TAimPoint",
+                "LGEAGJKKDLM": "PivotToTarget",
+                "PDOLHPKBDGL": 30.0,
+                "fovMin": 30.0,
+                "fovMax": 100.0,
+                "KJLBLEOHDFP": 46000
+              },
+              "BELLAHDCNEC": {
+                "blendType": 2,
+                "CIJLABMEGDC": 4,
+                "ONMLJJIPBAI": 2,
+                "BPJDJMJNIKL": 1
+              }
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "AddQuitHookSkill"
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_WhaleHookSkill_HookHideHandler"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_WhaleHookSkill_HookHideHandler"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": "recordFishSkill",
+              "key": "_ABILITY_WhiteBox_Dive",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "target": "Team",
+              "shieldHP": true,
+              "param3": "recordFishSkill",
+              "key": "_ABILITY_WhiteBox_Dive_Team",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "GrapplingHook_SkillCharge": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 100.0,
+              "key": "AVATAR_WhaleHookSkill",
+              "useLimitRange": true,
+              "param2": 100.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "GrapplingHook_ArrivedRushMove": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LBLNHEBGPJI",
+              "forces": [
+                "InertiaType",
+                "GrapplingHookMoveType"
+              ]
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "CustomSkill02_End_Drop"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_ABILITY_WhaleHookSkill_Step",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "UNIQUE_WhaleStreamingOptimization": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 10.0,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "OPNEMJIONIN"
+            }
+          ]
+        },
+        "_WhaleHook_Init": {
+          "stacking": "MultipleRefresh",
+          "stackingOption": {
+            "abilitySpecialName": "",
+            "maxModifierNumForMultipleType": 1.0
+          },
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_ABILITY_WhaleHookSkill_Step",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "CustomSkill02_End_Drop"
+            },
+            {
+              "$type": "LBLNHEBGPJI",
+              "forces": [
+                "RushMoveType",
+                "InertiaType",
+                "FixedRushMoveType",
+                "SpeedupType",
+                "GrapplingHookMoveType"
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "FNPMFLOOCDD",
+          "target": "Team",
+          "shieldHP": true,
+          "param3": 0.0,
+          "key": "GV_Ban_Whale_Teleport",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "PDFENCBHHAI",
+          "shieldHP": true,
+          "skillID": 20076
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "AddHookSkill"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "shieldHP": true,
+          "param3": 0.0,
+          "key": "_ABILITY_WhaleHookSkill_Step",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "UNIQUE_WhaleHookSkill_RecoverHandler"
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "KFOBADMAFJF",
+          "shieldHP": true,
+          "skillID": 20076
+        },
+        {
+          "$type": "PPDJHLBHCIK",
+          "shieldHP": true,
+          "muteRemoteAction": true,
+          "JFDCCIECAJB": "GotoRemusDash"
+        },
+        {
+          "$type": "PFKNEFGOHIH",
+          "shieldHP": true,
+          "modifierName": "ZoomToFirstPerson"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "LIAKJHCLFLK"
+        },
+        {
+          "$type": "EAJDJDJMEBH",
+          "key": "_WhaleHook_TargetPos"
+        },
+        {
+          "$type": "INBCDALOHMP",
+          "otherTargets": {
+            "$type": "GCIMHJEHHAC",
+            "topLimit": 1,
+            "tag": "WorldPlay_4_6",
+            "EOMGLCGHMEJ": "WorldPlay_Whale_Hook_4_6"
+          },
+          "targetPredicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "GV_Cannon_State",
+              "param3": 0.0
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "TD:WhaleHook AbilityStart!!!"
+            },
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "Whale_Log hook AbilityStart!!!"
+            },
+            {
+              "$type": "EGJDFNHCFAA",
+              "target": "Target",
+              "targetKey": "_TempTarget"
+            },
+            {
+              "$type": "LGLABADDOCH",
+              "target": "Target",
+              "key": "_WhaleHook_TargetPos",
+              "origin": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 2.0,
+                  "LPCHALMFFOD": 0.25
+                },
+                "direction": {
+                  "$type": "PIKKPLPCLKE",
+                  "namedTransform": "TAimPoint"
+                },
+                "useRotation": true
+              },
+              "raycastLength": 250.0,
+              "setTarget": false,
+              "mask": "BulletTrigger",
+              "FIKMPJHEMCB": true
+            },
+            {
+              "$type": "ENBLCDCKLMK",
+              "target": "Target",
+              "key": "_WhaleHook_TargetDir",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "direction": {
+                  "$type": "PIKKPLPCLKE",
+                  "namedTransform": ""
+                },
+                "useRotation": true
+              },
+              "setTarget": false
+            },
+            {
+              "$type": "PAMDPDLLAPG",
+              "toPos": {
+                "$type": "ICKMMAHFNIM",
+                "positionKey": "_WhaleHook_TargetPos",
+                "directionKey": ""
+              }
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "UNIQUE_WhaleHookSkill_SkillHandler"
+            },
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "_ABILITY_WhiteBox_Dive",
+              "overrideMapKey": "recordFishSkill"
+            },
+            {
+              "$type": "MGJLHCBPOKL",
+              "skillID": 20076
+            },
+            {
+              "$type": "PELJALPANCA",
+              "target": "Target",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_TriggerWhaleStop"
+            },
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "SpecificGroup",
+              "callParamList": [
+                511020035
+              ],
+              "funcName": "SLC_TriggerWhaleStop",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ]
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "_WhaleHook_Init"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Ability_Whale_Hook_Quit_Avatar",
+      "onAdded": [
+        {
+          "$type": "PDFENCBHHAI",
+          "shieldHP": true,
+          "skillID": 20346
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "KFOBADMAFJF",
+          "shieldHP": true,
+          "skillID": 20346
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "ELNHKGAPIBJ",
+          "content": "#WhaleHookQuit#"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "shieldHP": true,
+          "param3": 0.0,
+          "key": "_ABILITY_WhaleHookSkill_Step",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Ability_Team_DragonTheatre_4_6",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "SGV_DragonTheatre_Buff",
+          "valueSteps": [
+            -1.0,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Blank",
+            "ImpactState"
+          ],
+          "NMCLMHFBALJ": true
+        }
+      ],
+      "abilitySpecials": {
+        "Impact_Damage": 50.0,
+        "ElementLevelCo": 0.0
+      },
+      "modifiers": {
+        "Blank": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "ImpactState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 2.0,
+          "onThinkInterval": [
+            {
+              "$type": "PELJALPANCA",
+              "target": "CurLocalAvatar",
+              "modifierName": "Avatar_DragonTheatre_Impact"
+            }
+          ]
+        },
+        "Avatar_DragonTheatre_Impact": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "shieldHP": true,
+              "rotationDampTime": "Eff_Stages_SwirlDoField_DoAttack_02",
+              "born": {
+                "$type": "JHEBKCMEMLN"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "shieldHP": true,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "useRotation": true
+                  },
+                  "OAHPDLJIADP": 10.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorWindSubHurtDelta": 0.0,
+                    "IPFJJJGABPL": 0.0,
+                    "ignoreAttackerProperty": true,
+                    "enBreak": 25.0,
+                    "attackType": "Melee",
+                    "HMBONGBFIAP": [
+                      "Impact_Damage",
+                      "ElementLevelCo",
+                      "MUL"
+                    ],
+                    "trueDamage": true,
+                    "ignoreModifyDamage": true,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.019999999552965164
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "GDHGMAPPGHD",
+          "key": "ElementLevelCo",
+          "damageRatio": "ElementLevelCo"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Whale_Scan_Col_GoldenHall",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Controller"
+        }
+      ],
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AOOCGNCCAJB",
+          "isAdd": true,
+          "tag": "IS_LMS_WHALE_SCAN_TARGET"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Whale_Scan_Col_GoldenHall_Repair",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Controller"
+        }
+      ],
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AOOCGNCCAJB",
+          "isAdd": true,
+          "tag": "IS_LMS_WHALE_SCAN_TARGET"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Whale_Scan_Col_Mural_Entry",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Controller"
+        }
+      ],
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AOOCGNCCAJB",
+          "isAdd": true,
+          "tag": "IS_LMS_WHALE_SCAN_TARGET"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Whale_Scan_Col_Mural",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Controller"
+        }
+      ],
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AOOCGNCCAJB",
+          "isAdd": true,
+          "tag": "IS_LMS_WHALE_SCAN_TARGET"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Ability_Team_FlashBack_CamEffect_4_6",
+      "abilityMixins": [
+        {
+          "$type": "NKEPLGAIEJM",
+          "modifierName": "CamBlur_FlashBack"
+        }
+      ],
+      "modifiers": {
+        "CamBlur_FlashBack": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PIEMLPMIDKA",
+              "cameraRadialBlur": {
+                "power": 0.6499999761581421,
+                "fadeTime": 1.0
+              }
+            }
+          ]
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Ability_Team_FirstPerson_4_6",
+      "abilityMixins": [
+        {
+          "$type": "NKEPLGAIEJM",
+          "modifierName": "FirstPerson"
+        }
+      ],
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "InMove": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PIFIEECBEIK",
+              "KJKCDJGKBCE": [
+                {
+                  "duration": 5.0,
+                  "ICKMNFKCMLC": 1.0,
+                  "PIIFCHEAFHG": 1.0,
+                  "DEMHFCAMFNO": {
+                    "x": 0.5,
+                    "y": 0.699999988079071
+                  },
+                  "KFIDGMODMIJ": {
+                    "x": 0.14000000059604645,
+                    "y": 0.17499999701976776
+                  }
+                },
+                {
+                  "duration": 5.0,
+                  "ICKMNFKCMLC": 1.0,
+                  "PIIFCHEAFHG": 1.0,
+                  "DEMHFCAMFNO": {
+                    "x": 0.5,
+                    "y": 0.6000000238418579
+                  },
+                  "KFIDGMODMIJ": {
+                    "x": 0.5,
+                    "y": 0.4000000059604645
+                  }
+                },
+                {
+                  "duration": 5.0,
+                  "ICKMNFKCMLC": 1.0,
+                  "PIIFCHEAFHG": 1.0,
+                  "DEMHFCAMFNO": {
+                    "x": 1.0,
+                    "y": 0.5
+                  },
+                  "KFIDGMODMIJ": {
+                    "x": 0.800000011920929
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "FirstPerson": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "ActivitySkill_CommonMove"
+              ],
+              "modifierName": "InMove",
+              "DGFCLAIDIFI": ""
+            },
+            {
+              "$type": "BJAMAIBGOPD",
+              "JLPODGJBMHD": {
+                "$type": "HJDLHOPOPDD",
+                "AEAMANCFLLA": "MoveCollider",
+                "CIGMAPMEPBH": "",
+                "FKOKBOHJMJN": 1.7000000476837158,
+                "MBPKGENKOKO": 0.5,
+                "FAIKGDEKKBJ": true,
+                "HOALMDAEIEN": -55.0,
+                "JOLDBHFJJNP": 35.0,
+                "GNOFBNGKEJF": -50.0,
+                "FPLOLJNIKDN": 50.0,
+                "PDOLHPKBDGL": 50.0,
+                "fovMin": 50.0,
+                "fovMax": 50.0,
+                "CEHDMCBMOAP": 1.0
+              },
+              "BELLAHDCNEC": {
+                "blendType": 2,
+                "ONMLJJIPBAI": 2,
+                "BPJDJMJNIKL": 1,
+                "duration": 0.0
+              }
+            }
+          ]
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "FlashBack_Stage_46_01",
+      "abilityMixins": [
+        {
+          "$type": "OPHOIJLIFCL",
+          "tag": "",
+          "FIOMFMFOABF": [
+            "TEST_GV_0",
+            "TEST_GV_1"
+          ],
+          "OADPFPBHBPM": [
+            "SetGroupVariable"
+          ],
+          "FBHDNPJFANK": [
+            [
+              {
+                "$type": "ELNHKGAPIBJ",
+                "content": "LevelCurveMixin > SetGroupVariable"
+              },
+              {
+                "$type": "MNJCJLCFFLF",
+                "JCANGOGMHCP": "TEST_GV_"
+              },
+              {
+                "$type": "LDIAIDLOPEE",
+                "globalValueKey": "TEST_GV_0",
+                "overrideMapKey": "TEST_GV_0"
+              },
+              {
+                "$type": "LDIAIDLOPEE",
+                "globalValueKey": "TEST_GV_1",
+                "overrideMapKey": "TEST_GV_1"
+              },
+              {
+                "$type": "AHPEKICBIIL",
+                "luaCallType": "SpecificGroup",
+                "callParamList": [
+                  220210001
+                ],
+                "funcName": "SLC_FlashBack_SetVar",
+                "paramNum": 2,
+                "param1": "TEST_GV_0",
+                "MGAMDEHMCOL": "TEST_GV_1",
+                "MMHOHAOGPLP": 0.0
+              }
+            ]
+          ]
+        },
+        {
+          "$type": "LLCAHDLGAHO",
+          "reason": "Mixin"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_BigWhale_Interact",
+      "abilityMixins": [
+        {
+          "$type": "LIFCABIDGDI",
+          "pushColliderNames": [
+            "PushCollider"
+          ],
+          "APGFNHOEICB": true
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Move"
+          ],
+          "modifierName": "MoveEffect",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "LNEJGOMCBMO",
+          "succActions": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 1.0,
+              "key": "GV_InTalk",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueKey": "GV_StopMove",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "StopMoveControl"
+          ],
+          "NMCLMHFBALJ": true
+        },
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueKey": "GV_Visible",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Blank",
+            "Visible"
+          ],
+          "NMCLMHFBALJ": true
+        },
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueKey": "GV_InTalk",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "TalkStop"
+          ],
+          "NMCLMHFBALJ": true
+        },
+        {
+          "$type": "NDFFAEHJMAL",
+          "globalValueKey": "SGV_Talk_Done_Trigger",
+          "actions": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 0.0,
+              "key": "GV_InTalk",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        {
+          "$type": "NDFFAEHJMAL",
+          "globalValueKey": "SGV_Bullet_Trigger",
+          "actions": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "shieldHP": true,
+              "PLLJBINMGJK": "AttackTrigger"
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "Blank": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "HookMark": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PMLKDLEHDBC",
+              "tag": "WorldPlay_4_6",
+              "EOMGLCGHMEJ": "WorldPlay_Whale_Hook_4_6"
+            }
+          ]
+        },
+        "Visible": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "HMIDGKNOHJM",
+              "shieldHP": true,
+              "renderNames": [
+                "Body"
+              ],
+              "setEnable": true
+            }
+          ]
+        },
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NDFFAEHJMAL",
+              "globalValueKey": "GV_StopTrigger",
+              "actions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "GV_InTalk",
+                      "param3": 0.0
+                    }
+                  ],
+                  "modifierName": "TriggerStopForAWhile"
+                }
+              ]
+            },
+            {
+              "$type": "NDFFAEHJMAL",
+              "globalValueKey": "SGV_Stop_Trigger",
+              "actions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "GV_InTalk",
+                      "param3": 0.0
+                    }
+                  ],
+                  "modifierName": "TriggerStopForAWhile"
+                }
+              ]
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 0.0,
+              "key": "GV_InTalk",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "DelayAppear": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "GV_Visible",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "TalkStop": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "TriggerStopForAWhile"
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 0.0,
+              "key": "GV_IsLerpStop",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 1.0,
+              "key": "GV_StopMove",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "TriggerStopForAWhile"
+            }
+          ]
+        },
+        "TriggerStopForAWhile": {
+          "modifierName": "",
+          "elementDurability": 15.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 1.0,
+              "key": "GV_StopMove",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "GV_InTalk",
+                  "param3": 0.0
+                }
+              ],
+              "param3": 0.0,
+              "key": "GV_StopMove",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "StopMoveControl": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CCNIOPJEHOE",
+              "globalValueKey": "GV_IsLerpStop",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "StopMove_Instant",
+                "StopMove_Lerp"
+              ],
+              "NMCLMHFBALJ": true
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "FEKJDLHHOLE",
+              "floatID": "BlendSpeed",
+              "param3": 0.0,
+              "transitionTime": 1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FEKJDLHHOLE",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "SGV_Default_Move",
+                  "param3": 1.0
+                }
+              ],
+              "floatID": "BlendSpeed",
+              "param3": 1.0,
+              "transitionTime": 1.0
+            }
+          ]
+        },
+        "StopMove_Instant": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "ILFLCDBHPNO",
+              "lerpInTime": 1.0,
+              "lerpOutTime": 1.0
+            }
+          ]
+        },
+        "StopMove_Lerp": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "ILFLCDBHPNO"
+            }
+          ]
+        },
+        "MoveEffect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Ptahur_Devourer_02_CommonTrail",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "Palm01_L"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MAHNJJFLACM",
+              "followPath": "Palm01_L",
+              "rotationDampTime": "Eff_Monster_Ptahur_Devourer_02_CommonTrail",
+              "attachPoint": "Palm01_L"
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Ptahur_Devourer_02_CommonTrail",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "Palm01_R"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MAHNJJFLACM",
+              "followPath": "Palm01_R",
+              "rotationDampTime": "Eff_Monster_Ptahur_Devourer_02_CommonTrail",
+              "attachPoint": "Palm01_R"
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Ptahur_Devourer_02_CommonTrail",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "Toe01_L"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MAHNJJFLACM",
+              "followPath": "Toe01_L",
+              "rotationDampTime": "Eff_Monster_Ptahur_Devourer_02_CommonTrail",
+              "attachPoint": "Toe01_L"
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Ptahur_Devourer_02_CommonTrail",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "Toe01_R"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MAHNJJFLACM",
+              "followPath": "Toe01_R",
+              "rotationDampTime": "Eff_Monster_Ptahur_Devourer_02_CommonTrail",
+              "attachPoint": "Toe01_R"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AOOCGNCCAJB",
+          "isAdd": true,
+          "tag": "Whale_Wander"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "HookMark"
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "GV_StopTrigger",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Controller"
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "GV_StopMove",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "GV_Visible",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "GV_InTalk",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "GV_IsLerpStop",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "GV_StopSpeed",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "GV_InstantStopTime",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 1.0,
+          "key": "GV_LerpStopTime",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 8.0,
+          "key": "GV_StartMoveSpeed",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 1.0,
+          "key": "GV_StartMoveDur",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Ptahur_Devourer_02_Appear",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "HMIDGKNOHJM",
+          "shieldHP": true,
+          "renderNames": [
+            "Body"
+          ]
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "DelayAppear"
+        },
+        {
+          "$type": "FEKJDLHHOLE",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "SGV_Default_Move",
+              "param3": 1.0
+            }
+          ],
+          "floatID": "BlendSpeed",
+          "param3": 1.0,
+          "transitionTime": 1.0
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "NBJOOJMEDPD",
+          "uiContextName": "InLevelMainPage",
+          "message": "ExitRemusMagicDragon",
+          "stringParam": ""
+        },
+        {
+          "$type": "ELNHKGAPIBJ",
+          "content": "#Whale_Cannon# n8"
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "LEIIOBLDOMP"
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Ptahur_Devourer_02_Disappear",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "BLCCGIPAOIP",
+          "PLLJBINMGJK": "Disappear",
+          "mpTriggerOnRemote": true
+        },
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "HookMark"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Ability_Team_OceanCurveEventHandle_4_6",
+      "abilityMixins": [
+        {
+          "$type": "NKEPLGAIEJM",
+          "modifierName": "OceanCurveEventHandler"
+        }
+      ],
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "OceanCurveEventHandler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "OPHOIJLIFCL",
+              "tag": "OceanCurrent",
+              "FIOMFMFOABF": [
+                "GV_Curve_Key_0"
+              ],
+              "OADPFPBHBPM": [
+                "SetGroupVariable"
+              ],
+              "FBHDNPJFANK": [
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > SetGroupVariable"
+                  },
+                  {
+                    "$type": "MNJCJLCFFLF",
+                    "JCANGOGMHCP": "TEST_GV_"
+                  },
+                  {
+                    "$type": "LDIAIDLOPEE",
+                    "globalValueKey": "TEST_GV_0",
+                    "overrideMapKey": "TEST_GV_0"
+                  },
+                  {
+                    "$type": "LDIAIDLOPEE",
+                    "globalValueKey": "TEST_GV_1",
+                    "overrideMapKey": "TEST_GV_1"
+                  },
+                  {
+                    "$type": "AHPEKICBIIL",
+                    "luaCallType": "SpecificGroup",
+                    "callParamList": [
+                      511010002
+                    ],
+                    "funcName": "SLC_SetGroupVar",
+                    "paramNum": 2,
+                    "param1": "TEST_GV_0",
+                    "MGAMDEHMCOL": "TEST_GV_1",
+                    "MMHOHAOGPLP": 0.0
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Ability_Team_OceanCurveEventHandle_4_6_Scene3",
+      "abilityMixins": [
+        {
+          "$type": "NKEPLGAIEJM",
+          "modifierName": "OceanCurveEventHandler"
+        }
+      ],
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "OceanCurveEventHandler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "OPHOIJLIFCL",
+              "tag": "OceanCurrent",
+              "FIOMFMFOABF": [
+                "GV_Curve_Key_0"
+              ],
+              "OADPFPBHBPM": [
+                "SetGroupVariable"
+              ],
+              "FBHDNPJFANK": [
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > SetGroupVariable"
+                  },
+                  {
+                    "$type": "MNJCJLCFFLF",
+                    "JCANGOGMHCP": "TEST_GV_"
+                  },
+                  {
+                    "$type": "LDIAIDLOPEE",
+                    "globalValueKey": "TEST_GV_0",
+                    "overrideMapKey": "TEST_GV_0"
+                  },
+                  {
+                    "$type": "LDIAIDLOPEE",
+                    "globalValueKey": "TEST_GV_1",
+                    "overrideMapKey": "TEST_GV_1"
+                  },
+                  {
+                    "$type": "AHPEKICBIIL",
+                    "luaCallType": "SpecificGroup",
+                    "callParamList": [
+                      133405057
+                    ],
+                    "funcName": "SLC_SetGroupVar",
+                    "paramNum": 2,
+                    "param1": "TEST_GV_0",
+                    "MGAMDEHMCOL": "TEST_GV_1",
+                    "MMHOHAOGPLP": 0.0
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_LMS_Whale_Howl_Follow",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Controller"
+        }
+      ],
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "HPIHJNIOBBL",
+              "operation": {
+                "$type": "AKCGGGOIJAO",
+                "operation": {
+                  "text": "Play_Sfx_Monster_Ptahur_Devourer_02_Vo_Old_01"
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_DragonTheatre_Talk_Gadget_01",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Controller"
+        }
+      ],
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_DeepSea_Fish_01",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Controller"
+        }
+      ],
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Stages_SceneObj_VABoids_DeepSeaIBlue_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onKill": [
+        {
+          "$type": "GFOOGEIKGBI",
+          "canBeHandledOnRecover": true,
+          "parameter": "FadeOut",
+          "attachPoint": "",
+          "value": 1,
+          "rotationDampTime": "Eff_Stages_SceneObj_VABoids_DeepSeaIBlue_01"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Invisible_Water_Current_Entrance_35",
+      "onFieldEnter": [
+        {
+          "$type": "INBCDALOHMP",
+          "target": "Target",
+          "targetPredicates": [
+            {
+              "$type": "BCFNGJHILAG",
+              "predicates": [
+                {
+                  "$type": "AKNAJELHFHB",
+                  "BINPEMPOLHP": "OCEAN_CURRENT"
+                }
+              ]
+            },
+            {
+              "$type": "BCFNGJHILAG",
+              "predicates": [
+                {
+                  "$type": "HNLCJOPBDLC",
+                  "target": "Self",
+                  "gadgetState": 201
+                }
+              ]
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "AHPEKICBIIL",
+              "target": "TargetTeam",
+              "luaCallType": "FromGroup",
+              "funcName": "SLC_EnterOceanCurrent",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "角色正在洋流中"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Ani_Prop_RemusBookPickup_01",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Controller"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 202,
+          "modifierName": "PickedUp"
+        }
+      ],
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "GPCGHACDPIF",
+              "KJOOHFLCIIK": true,
+              "NLIOHMNJBAM": ""
+            }
+          ]
+        },
+        "PickedUp": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "GPCGHACDPIF",
+              "DPAOMNELPHI": 1,
+              "NLIOHMNJBAM": ""
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Ability_Team_Camera_Check_4_6",
+      "abilityMixins": [
+        {
+          "$type": "NKEPLGAIEJM",
+          "modifierName": "LookCheck"
+        }
+      ],
+      "modifiers": {
+        "ActivateTarget": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "GV_IsActive",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "LookCheck": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CBMFLELNNFG",
+              "tag": "WorldPlay_4_6",
+              "activateSkillKey": "",
+              "DMPKMONDJOG": [
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "Ability_Team_Camera_Check_4_6 > onSelectStart"
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Other",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "GV_IsActive",
+                      "param3": 0.0
+                    }
+                  ],
+                  "modifierName": "ActivateTarget"
+                }
+              ],
+              "ODIFIJILODN": [
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "Ability_Team_Camera_Check_4_6 > onSelectEnd"
+                }
+              ],
+              "EOMGLCGHMEJ": "WorldPlay_CameraLookCheck_4_6"
+            },
+            {
+              "$type": "CBMFLELNNFG",
+              "tag": "WorldPlay_4_6",
+              "activateSkillKey": "",
+              "DMPKMONDJOG": [
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "WorldPlay_CameraLookCheck_4_6_College > onSelectStart"
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Other",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "GV_IsActive",
+                      "param3": 0.0
+                    }
+                  ],
+                  "modifierName": "ActivateTarget"
+                }
+              ],
+              "ODIFIJILODN": [
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "WorldPlay_CameraLookCheck_4_6_College > onSelectEnd"
+                }
+              ],
+              "EOMGLCGHMEJ": "WorldPlay_CameraLookCheck_4_6_College"
+            }
+          ]
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_CamLook_Check_4_6",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "VillageState"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "CollegeState"
+        },
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueKey": "GV_IsActive",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Blank",
+            "Active"
+          ],
+          "NMCLMHFBALJ": true
+        }
+      ],
+      "modifiers": {
+        "VillageState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PMLKDLEHDBC",
+              "EDLGIFNDCMM": true,
+              "tag": "WorldPlay_4_6",
+              "EOMGLCGHMEJ": "WorldPlay_CameraLookCheck_4_6"
+            }
+          ]
+        },
+        "CollegeState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PMLKDLEHDBC",
+              "EDLGIFNDCMM": true,
+              "tag": "WorldPlay_4_6",
+              "EOMGLCGHMEJ": "WorldPlay_CameraLookCheck_4_6_College"
+            }
+          ]
+        },
+        "Blank": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "Active": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "MCOBFPMHMHJ",
+              "luaCallType": "FromGroup",
+              "sourceName": "CamLookTrigger",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "FNPMFLOOCDD",
+          "shieldHP": true,
+          "param3": 0.0,
+          "key": "GV_IsActive",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "AOOCGNCCAJB",
+          "isAdd": true,
+          "tag": "CameraLookCheck_4_6"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Whale_Cannon_Bullet",
+      "modifiers": {
+        "StopCannonMove": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "WhaleCannonStop > BulletHit"
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_Whale_Cannon_ShootPlayer"
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_WhaleHookSkill_Step",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "ELNHKGAPIBJ",
+          "content": "SceneObj_Whale_Cannon_Bullet onAbilityStart"
+        },
+        {
+          "$type": "INBCDALOHMP",
+          "otherTargets": {
+            "$type": "IJOFJOGLDHE",
+            "shapeName": "CircleR6H10",
+            "campTargetType": "AllExceptSelf",
+            "doOffStage": 1.0
+          },
+          "targetPredicates": [
+            {
+              "$type": "NMAEFLLHEII",
+              "configIdArray": [
+                70330487,
+                70291485,
+                70291489
+              ]
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "PELJALPANCA",
+              "target": "OriginOwner",
+              "modifierName": "StopCannonMove"
+            },
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JGEBAJLEBMO"
+              },
+              "OAHPDLJIADP": 0.5
+            },
+            "attackInfo": {
+              "attackTag": "WhaleCannonAttack",
+              "attenuationTag": "LaserAttack",
+              "attenuationGroup": "Skirmisher_Fat_SprayGun_Ice",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 1.0,
+                "actorWindSubHurtDelta": 0.0,
+                "IPFJJJGABPL": 50.0,
+                "strikeType": "Blunt",
+                "enBreak": 20.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV2"
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ],
+      "onFieldEnter": [
+        {
+          "$type": "ELNHKGAPIBJ",
+          "content": "SceneObj_Whale_Cannon_Bullet onFieldEnterIn"
+        },
+        {
+          "$type": "INBCDALOHMP",
+          "target": "Target",
+          "targetPredicates": [
+            {
+              "$type": "NMAEFLLHEII",
+              "configIdArray": [
+                70330487,
+                70291485,
+                70291489
+              ]
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "SceneObj_Whale_Cannon_Bullet onFieldEnterSucc"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "target": "OriginOwner",
+              "modifierName": "StopCannonMove"
+            },
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Whale_Hook_Bullet",
+      "modifiers": {
+        "StopHookMove": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_WhaleHookSkill_Step",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "WhaleCannonStop > BulletHit"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "target": "OriginOwner",
+          "modifierName": "StopHookMove"
+        },
+        {
+          "$type": "NCFFNDHGCMH"
+        }
+      ],
+      "onFieldEnter": [
+        {
+          "$type": "INBCDALOHMP",
+          "target": "Target",
+          "targetPredicates": [
+            {
+              "$type": "NIMAPECDNKD",
+              "entityTypes": [
+                "Gadget",
+                "Field"
+              ]
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "SceneObj_Whale_Hook_Bullet onFieldEnter"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "target": "OriginOwner",
+              "modifierName": "StopHookMove"
+            },
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_RemusChains_Main",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Controller"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 202,
+          "modifierName": "Disappear"
+        }
+      ],
+      "modifiers": {
+        "Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Stages_SceneObj_Fd_PSHY_LightChains_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "Disappear": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "canBeHandledOnRecover": true,
+              "parameter": "FadeOut",
+              "attachPoint": "",
+              "value": 1,
+              "rotationDampTime": "Eff_Stages_SceneObj_Fd_PSHY_LightChains_01"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Effect"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_RemusChains_01",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Controller"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 202,
+          "modifierName": "Disappear"
+        }
+      ],
+      "modifiers": {
+        "Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Stages_SceneObj_Fd_PSHY_BaishatanTrail_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "Disappear": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "canBeHandledOnRecover": true,
+              "parameter": "Fadeout_01",
+              "attachPoint": "",
+              "value": 1,
+              "rotationDampTime": "Eff_Stages_SceneObj_Fd_PSHY_BaishatanTrail_01"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Effect"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_RemusChains_02",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Controller"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 202,
+          "modifierName": "Disappear"
+        }
+      ],
+      "modifiers": {
+        "Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Stages_SceneObj_Fd_PSHY_LightTrail_02",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "Disappear": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "canBeHandledOnRecover": true,
+              "parameter": "Fadeout_02",
+              "attachPoint": "",
+              "value": 1,
+              "rotationDampTime": "Eff_Stages_SceneObj_Fd_PSHY_LightTrail_02"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Effect"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_RemusChains_03",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Controller"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 202,
+          "modifierName": "Disappear"
+        }
+      ],
+      "modifiers": {
+        "Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Stages_SceneObj_Fd_PSHY_LightTrail_03",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "Disappear": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "canBeHandledOnRecover": true,
+              "parameter": "Fadeout_02",
+              "attachPoint": "",
+              "value": 1,
+              "rotationDampTime": "Eff_Stages_SceneObj_Fd_PSHY_LightTrail_03"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Effect"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_RemusChains_Sub_02",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Controller"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 202,
+          "modifierName": "Disappear"
+        }
+      ],
+      "modifiers": {
+        "Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Stages_SceneObj_Fd_PSHY_BaishatanTrail_02",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "Disappear": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "canBeHandledOnRecover": true,
+              "parameter": "Fadeout_01",
+              "attachPoint": "",
+              "value": 1,
+              "rotationDampTime": "Eff_Stages_SceneObj_Fd_PSHY_BaishatanTrail_02"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Effect"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_RemusChains_Sub_03",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Controller"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 202,
+          "modifierName": "Disappear"
+        }
+      ],
+      "modifiers": {
+        "Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Stages_SceneObj_Fd_PSHY_BaishatanTrail_03",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "Disappear": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "canBeHandledOnRecover": true,
+              "parameter": "Fadeout_01",
+              "attachPoint": "",
+              "value": 1,
+              "rotationDampTime": "Eff_Stages_SceneObj_Fd_PSHY_BaishatanTrail_03"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Effect"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_UnderSea_WaterGlideChampOrb_MovePlatform",
+      "modifiers": {
+        "GlideChampOrb_ReviveGlidingEnergy": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "target": "Team",
+              "param3": 20.0,
+              "key": "AVATAR_GLIDING_ENERGY",
+              "useLimitRange": true,
+              "param2": 100.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onFieldEnter": [
+        {
+          "$type": "PELJALPANCA",
+          "target": "Target",
+          "modifierName": "GlideChampOrb_ReviveGlidingEnergy"
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_SceneObj_FontaineGlideChampOrb_01_Smash_Follow",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "NCFFNDHGCMH"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Whale_Cannon_Scan_Route_Hint",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Controller"
+        }
+      ],
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AOOCGNCCAJB",
+          "isAdd": true,
+          "tag": "IS_LMS_WHALE_SCAN_TARGET"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Test_Caster_01",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "BoatRaceV3_IsInVehicle",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Stage1",
+            "Stage2"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "Stage1": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BPIPJFLGPJP",
+              "KDLKEEHLOGD": "",
+              "KAFAMAGABFJ": 1
+            }
+          ]
+        },
+        "Stage2": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BPIPJFLGPJP",
+              "KDLKEEHLOGD": "",
+              "KAFAMAGABFJ": 2
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "StageState",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Test_Receiver_01",
+      "abilityMixins": [
+        {
+          "$type": "LBNFFHKFNPH",
+          "BKHIKMKKBFH": "EventReceiver",
+          "actionQueue": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Oceanid_Frog_DeathWaterBallExplode",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "useRotation": true
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Test_Receiver_02",
+      "abilityMixins": [
+        {
+          "$type": "MIPKGMFHOLN",
+          "BKHIKMKKBFH": "VariableReceiver",
+          "NPPLKJIMPKA": true,
+          "valueSteps": [
+            -1.0,
+            0.5,
+            1.5,
+            2.5,
+            3.5
+          ],
+          "modifierNameSteps": [
+            "TestModifier0",
+            "TestModifier1",
+            "TestModifier2",
+            "TestModifier3"
+          ]
+        }
+      ],
+      "modifiers": {
+        "TestModifier0": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "TestModifier1": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "TestModifier2": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "TestModifier3": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      }
+    }
+  }
+]

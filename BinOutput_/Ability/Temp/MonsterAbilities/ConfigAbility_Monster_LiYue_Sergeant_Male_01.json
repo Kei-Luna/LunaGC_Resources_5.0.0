@@ -1,0 +1,356 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Human_Male_Pole_ResetBackSprintCD",
+      "abilityMixins": [
+        {
+          "$type": "APJKOLPHCGH",
+          "stateIDs": [
+            "GroupAttack01",
+            "GroupAttack02"
+          ],
+          "exitActions": [
+            {
+              "$type": "DOANGHCALGB",
+              "skillIDs": [
+                401
+              ]
+            }
+          ],
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "TestFixedCombatMove",
+      "onAbilityStart": [
+        {
+          "$type": "MPAGCPPAIHJ",
+          "target": "SelfAttackTarget",
+          "shieldHP": true,
+          "key": "_ABILITY_Millelith_Target_Pos",
+          "born": {
+            "$type": "JHEBKCMEMLN"
+          },
+          "setTarget": false
+        },
+        {
+          "$type": "JNOAKAHBIGM",
+          "toPos": {
+            "$type": "ICKMMAHFNIM",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 4.0
+            },
+            "direction": {
+              "$type": "AHGNBAPONLA",
+              "angleOffset": {
+                "KGEPIMHBMOL": 0.0,
+                "JEBHCGDPFEJ": 30.0,
+                "LPCHALMFFOD": 0.0
+              }
+            },
+            "positionKey": "_ABILITY_Millelith_Target_Pos",
+            "directionKey": ""
+          }
+        },
+        {
+          "$type": "IDNGFEEBPAM",
+          "boolID": "Surround",
+          "param3": true
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Human_Male_Pole_ResetSurroundPosition",
+      "onAdded": [
+        {
+          "$type": "LCOEFEMOHLP",
+          "param3": -10.0,
+          "key": "_ABILITY_Millelith_SorroundPositionID",
+          "useLimitRange": true,
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "LCOEFEMOHLP",
+          "param3": -10.0,
+          "key": "_ABILITY_Millelith_SorroundPositionID",
+          "useLimitRange": true,
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Human_Male_Pole_TurnToSurround",
+      "abilityMixins": [
+        {
+          "$type": "APJKOLPHCGH",
+          "stateIDs": [
+            "TurnToSurround"
+          ],
+          "enterActions": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "Surround",
+              "param3": true
+            }
+          ],
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Human_Male_Pole_WaitState",
+      "abilityMixins": [
+        {
+          "$type": "APJKOLPHCGH",
+          "stateIDs": [
+            "Wait"
+          ],
+          "enterActions": [
+            {
+              "$type": "GJCAPCBELPA",
+              "abilityName": "Human_Male_Pole_ResetSurroundPosition"
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "Wait",
+              "param3": true
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "Surround"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "WaitTimer"
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR25",
+                "campTargetType": "AllExceptSelf",
+                "doOffStage": 1.0
+              },
+              "param3": 1.0,
+              "key": "_ABILITY_Count_WaitingSoldiers",
+              "useLimitRange": true,
+              "param2": 4.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "WaitTimer": {
+          "modifierName": "",
+          "elementDurability": 5.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "Wait"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Human_Male_Pole_SetSurroundPosition",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_ABILITY_Millelith_SorroundPositionID",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5,
+            2.5,
+            3.5
+          ],
+          "modifierNameSteps": [
+            "T",
+            "T",
+            "T",
+            "T"
+          ],
+          "actionQueues": [
+            [
+              {
+                "$type": "JNOAKAHBIGM",
+                "setPoint": false
+              }
+            ],
+            [
+              {
+                "$type": "MPAGCPPAIHJ",
+                "target": "SelfAttackTarget",
+                "shieldHP": true,
+                "key": "_ABILITY_Millelith_Target_Pos",
+                "born": {
+                  "$type": "JHEBKCMEMLN",
+                  "offset": {
+                    "KGEPIMHBMOL": 2.4000000953674316,
+                    "JEBHCGDPFEJ": 0.0,
+                    "LPCHALMFFOD": 1.5
+                  }
+                },
+                "setTarget": false
+              },
+              {
+                "$type": "JNOAKAHBIGM",
+                "toPos": {
+                  "$type": "ICKMMAHFNIM",
+                  "positionKey": "_ABILITY_Millelith_Target_Pos",
+                  "directionKey": ""
+                }
+              }
+            ],
+            [
+              {
+                "$type": "MPAGCPPAIHJ",
+                "target": "SelfAttackTarget",
+                "shieldHP": true,
+                "key": "_ABILITY_Millelith_Target_Pos",
+                "born": {
+                  "$type": "JHEBKCMEMLN",
+                  "offset": {
+                    "KGEPIMHBMOL": -2.4000000953674316,
+                    "JEBHCGDPFEJ": 0.0,
+                    "LPCHALMFFOD": 1.5
+                  }
+                },
+                "setTarget": false
+              },
+              {
+                "$type": "JNOAKAHBIGM",
+                "toPos": {
+                  "$type": "ICKMMAHFNIM",
+                  "positionKey": "_ABILITY_Millelith_Target_Pos",
+                  "directionKey": ""
+                }
+              }
+            ],
+            [
+              {
+                "$type": "MPAGCPPAIHJ",
+                "target": "SelfAttackTarget",
+                "shieldHP": true,
+                "key": "_ABILITY_Millelith_Target_Pos",
+                "born": {
+                  "$type": "JHEBKCMEMLN",
+                  "offset": {
+                    "KGEPIMHBMOL": 0.0,
+                    "JEBHCGDPFEJ": 0.0,
+                    "LPCHALMFFOD": -3.0
+                  }
+                },
+                "setTarget": false
+              },
+              {
+                "$type": "JNOAKAHBIGM",
+                "toPos": {
+                  "$type": "ICKMMAHFNIM",
+                  "positionKey": "_ABILITY_Millelith_Target_Pos",
+                  "directionKey": ""
+                }
+              }
+            ]
+          ],
+          "removeAppliedModifier": false
+        }
+      ],
+      "modifiers": {
+        "T": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Millelith_TurnToOrdered",
+      "abilityMixins": [
+        {
+          "$type": "APJKOLPHCGH",
+          "stateIDs": [
+            "TurnToOrdered"
+          ],
+          "enterActions": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "UNIQUE_OrderedState"
+            }
+          ],
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_OrderedState": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 5.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "Ordered",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "Ordered"
+            },
+            {
+              "$type": "DOANGHCALGB",
+              "skillIDs": [
+                201,
+                202
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Millelith_OutOfOrdered",
+      "onAbilityStart": [
+        {
+          "$type": "KBODPNEEFGD",
+          "modifierName": "UNIQUE_OrderedState"
+        }
+      ]
+    }
+  }
+]

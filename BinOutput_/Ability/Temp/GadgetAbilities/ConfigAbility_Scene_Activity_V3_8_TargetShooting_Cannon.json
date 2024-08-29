@@ -1,0 +1,855 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "TargetShooting_Cannon_Init",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_CURRENT_AMMO_NUMBER",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            30.5
+          ],
+          "modifierNameSteps": [
+            "Reload_Listener"
+          ]
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_CURRENT_AMMO_NUMBER",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            5.5,
+            30.5
+          ],
+          "modifierNameSteps": [
+            "TargetShooting_MaterialStateSwitch_LackAmmo",
+            "TargetShooting_MaterialStateSwitch_EnoughAmmoMaterial"
+          ]
+        },
+        {
+          "$type": "EFDKCGMBIBD",
+          "HEHMNFGBNOP": "VerticalRotateBone",
+          "OKGKJKDNHFL": -12.0,
+          "OCPGCJAMFJK": "HorizontalRotateBone",
+          "KJELNBILAFG": [
+            "Cannon"
+          ]
+        }
+      ],
+      "modifiers": {
+        "TargetShooting_MaterialStateSwitch_LackAmmo": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "GPCGHACDPIF",
+              "DPAOMNELPHI": 1,
+              "NLIOHMNJBAM": ""
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Cannon_09",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "TargetShooting_MaterialStateSwitch_EnoughAmmoMaterial": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "GPCGHACDPIF",
+              "NLIOHMNJBAM": ""
+            }
+          ]
+        },
+        "Reload_Listener": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "_CURRENT_AMMO_NUMBER",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                -0.5,
+                0.5
+              ],
+              "modifierNameSteps": [
+                "Auto_Trigger_Reload"
+              ]
+            }
+          ]
+        },
+        "Auto_Trigger_Reload": {
+          "modifierName": "",
+          "elementDurability": 1.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GJCAPCBELPA",
+              "abilityName": "TargetShooting_Reload"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "INBCDALOHMP",
+          "targetPredicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_LOCAL_MAX_AMMO",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 10.0,
+              "key": "_LOCAL_MAX_AMMO",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 10.0,
+              "key": "_CURRENT_AMMO_NUMBER",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_AMMO_RELOADING",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "TargetShooting_MaterialStateSwitch_EnoughAmmoMaterial"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "TargetShooting_Reload",
+      "abilityMixins": [
+        {
+          "$type": "JPPFBGJICKI",
+          "key": "SGV_TARGETSHOOTING_BUFF_ACTIVE",
+          "useLimitRange": true,
+          "param2": 1.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueTarget": "Team",
+          "globalValueKey": "SGV_TARGETSHOOTING_BUFF_ACTIVE",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "TARGETSHOOTING_BURSTBUFF_ACTIVE"
+          ],
+          "NMCLMHFBALJ": true
+        }
+      ],
+      "modifiers": {
+        "Reload_Cannon_Ball": {
+          "modifierName": "",
+          "elementDurability": 1.5,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "_LOCAL_MAX_AMMO",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                -0.5,
+                10.5,
+                15.5,
+                20.5,
+                25.5,
+                30.5
+              ],
+              "modifierNameSteps": [
+                "Basic_Reload",
+                "Reload_1_Extra_Mag",
+                "Reload_2_Extra_Mag",
+                "Reload_3_Extra_Mag",
+                "Reload_Full_Extra_Mag"
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_AMMO_RELOADING",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Cannon_08",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_AMMO_RELOADING",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "TargetShooting_Remove_Burst_Delay": {
+          "modifierName": "",
+          "elementDurability": 0.44999998807907104,
+          "IPFJJJGABPL": 100.0
+        },
+        "TARGETSHOOTING_BURSTBUFF_ACTIVE": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "_LOCAL_MAX_AMMO",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                -0.5,
+                10.5,
+                15.5,
+                20.5,
+                25.5,
+                30.5
+              ],
+              "modifierNameSteps": [
+                "Basic_Reload",
+                "Reload_1_Extra_Mag",
+                "Reload_2_Extra_Mag",
+                "Reload_3_Extra_Mag",
+                "Reload_Full_Extra_Mag"
+              ]
+            },
+            {
+              "$type": "GPCGHACDPIF",
+              "NLIOHMNJBAM": ""
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Cannon_05",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_AMMO_RELOADING",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "TargetShooting_Remove_Burst_Delay"
+            }
+          ]
+        },
+        "Basic_Reload": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 10.0,
+              "key": "_CURRENT_AMMO_NUMBER",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Reload_1_Extra_Mag": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 15.0,
+              "key": "_CURRENT_AMMO_NUMBER",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Reload_2_Extra_Mag": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 20.0,
+              "key": "_CURRENT_AMMO_NUMBER",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Reload_3_Extra_Mag": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 25.0,
+              "key": "_CURRENT_AMMO_NUMBER",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Reload_Full_Extra_Mag": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 30.0,
+              "key": "_CURRENT_AMMO_NUMBER",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Reload_Cannon_Ball"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "TargetShooting_Extra_Magzine",
+      "abilityMixins": [
+        {
+          "$type": "JPPFBGJICKI",
+          "key": "SGV_TARGETSHOOTING_BULLET_MAX",
+          "useLimitRange": true,
+          "param2": 30.0,
+          "repeatTimes": 10.0
+        },
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueTarget": "Team",
+          "globalValueKey": "SGV_TARGETSHOOTING_BULLET_MAX",
+          "valueSteps": [
+            9.5,
+            10.5,
+            15.5,
+            20.5,
+            25.5,
+            30.5
+          ],
+          "modifierNameSteps": [
+            "Base_Magzine",
+            "One_Extra_Mag",
+            "Two_Extra_Mag",
+            "Three_Extra_Mag",
+            "Full_Magzine"
+          ],
+          "NMCLMHFBALJ": true
+        }
+      ],
+      "modifiers": {
+        "Base_Magzine": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 10.0,
+              "key": "_LOCAL_MAX_AMMO",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "One_Extra_Mag": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 15.0,
+              "key": "_LOCAL_MAX_AMMO",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 5.0,
+              "key": "_CURRENT_AMMO_NUMBER",
+              "useLimitRange": true,
+              "param2": 15.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Two_Extra_Mag": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 20.0,
+              "key": "_LOCAL_MAX_AMMO",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 5.0,
+              "key": "_CURRENT_AMMO_NUMBER",
+              "useLimitRange": true,
+              "param2": 20.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Three_Extra_Mag": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 25.0,
+              "key": "_LOCAL_MAX_AMMO",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 5.0,
+              "key": "_CURRENT_AMMO_NUMBER",
+              "useLimitRange": true,
+              "param2": 25.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Full_Magzine": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 30.0,
+              "key": "_LOCAL_MAX_AMMO",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 5.0,
+              "key": "_CURRENT_AMMO_NUMBER",
+              "useLimitRange": true,
+              "param2": 30.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "TargetShooting_Cannon_Shot",
+      "abilitySpecials": {
+        "Auto_Reload_CD": 1.5,
+        "Manual_Reload_CD": 1.5
+      },
+      "modifiers": {
+        "TargetShooting_ExplosiveShootDelay": {
+          "modifierName": "",
+          "elementDurability": 0.009999999776482582,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Cannon_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Cannon_02",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ONALKNNKKLH",
+              "cameraShake": {
+                "shakeType": "CustomVector",
+                "shakeRange": 0.5,
+                "shakeTime": 0.3499999940395355,
+                "shakeDistance": 30.0,
+                "shakeDir": {
+                  "y": 1.0
+                },
+                "extension": {
+                  "baseCycle": 0.5,
+                  "cycleDamping": 0.0,
+                  "rangeAttenuation": 0.30000001192092896
+                }
+              }
+            },
+            {
+              "$type": "CAKDDHLKOAB",
+              "bulletID": 70291152,
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.10000000149011612
+                },
+                "direction": {
+                  "$type": "JBJMPEHPIDI"
+                },
+                "useRotation": true,
+                "attachPointName": "ShootPoint"
+              },
+              "ownerIs": "CurLocalAvatar",
+              "propOwnerIs": "CurLocalAvatar"
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "ExplosiveShot"
+            }
+          ]
+        },
+        "TargetShooting_ShootDelay": {
+          "modifierName": "",
+          "elementDurability": 0.009999999776482582,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Cannon_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Cannon_02",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -1.0,
+              "key": "_CURRENT_AMMO_NUMBER",
+              "useLimitRange": true,
+              "param2": 30.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "ONALKNNKKLH",
+              "cameraShake": {
+                "shakeType": "CustomVector",
+                "shakeRange": 0.5,
+                "shakeTime": 0.3499999940395355,
+                "shakeDistance": 30.0,
+                "shakeDir": {
+                  "y": 1.0
+                },
+                "extension": {
+                  "baseCycle": 0.5,
+                  "cycleDamping": 0.0,
+                  "rangeAttenuation": 0.30000001192092896
+                }
+              }
+            },
+            {
+              "$type": "CAKDDHLKOAB",
+              "bulletID": 70291151,
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.10000000149011612
+                },
+                "direction": {
+                  "$type": "JBJMPEHPIDI"
+                },
+                "useRotation": true,
+                "attachPointName": "ShootPoint"
+              },
+              "ownerIs": "OriginOwner",
+              "propOwnerIs": "OriginOwner"
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "Shot"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "INBCDALOHMP",
+          "targetPredicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_AMMO_RELOADING",
+              "param3": 0.0
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_CURRENT_AMMO_NUMBER",
+                  "param3": 0.0,
+                  "compareType": "MoreThan"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "INBCDALOHMP",
+                  "target": "Team",
+                  "targetPredicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "key": "SGV_TARGETSHOOTING_BUFF_ACTIVE",
+                      "param3": 0.0,
+                      "compareType": "MoreThan"
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "PELJALPANCA",
+                      "modifierName": "TargetShooting_ExplosiveShootDelay"
+                    }
+                  ],
+                  "failActions": [
+                    {
+                      "$type": "PELJALPANCA",
+                      "modifierName": "TargetShooting_ShootDelay"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Bullet_TargetShooting_CannonBall",
+      "abilitySpecials": {
+        "DamagePercentage": 0.0,
+        "LevelEntity_AvatarDot_SystemValue": 1.0
+      },
+      "modifiers": {
+        "BulletEffect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Cannon_03",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "BulletEffect"
+        },
+        {
+          "$type": "GDHGMAPPGHD",
+          "key": "LevelEntity_AvatarDot_SystemValue",
+          "damageRatio": "ElementLevelCo"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JGEBAJLEBMO"
+              },
+              "OAHPDLJIADP": 3.299999952316284
+            },
+            "attackInfo": {
+              "attackTag": "TargetShootingCannon",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.0,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Water",
+                "IPFJJJGABPL": 0.0,
+                "ignoreAttackerProperty": true,
+                "strikeType": "Blunt",
+                "enBreak": 0.0,
+                "HMBONGBFIAP": [
+                  "LevelEntity_AvatarDot_SystemValue",
+                  "DamagePercentage",
+                  "MUL"
+                ],
+                "trueDamage": true,
+                "ignoreModifyDamage": true,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV4",
+                "hitHaltTimeScale": 0.05000000074505806,
+                "muteHitText": true
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "AllExceptSelf"
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_SceneObj_Cannon_04",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Bullet_TargetShooting_ExplosiveCannonBall",
+      "abilitySpecials": {
+        "DamagePercentage": 0.0,
+        "LevelEntity_AvatarDot_SystemValue": 1.0
+      },
+      "modifiers": {
+        "BulletEffect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Cannon_06",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "BulletEffect"
+        },
+        {
+          "$type": "GDHGMAPPGHD",
+          "key": "LevelEntity_AvatarDot_SystemValue",
+          "damageRatio": "ElementLevelCo"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JGEBAJLEBMO"
+              },
+              "OAHPDLJIADP": 15.0
+            },
+            "attackInfo": {
+              "attackTag": "TargetShootingCannonMax",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.0,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Water",
+                "IPFJJJGABPL": 0.0,
+                "ignoreAttackerProperty": true,
+                "strikeType": "Blunt",
+                "enBreak": 0.0,
+                "HMBONGBFIAP": [
+                  "LevelEntity_AvatarDot_SystemValue",
+                  "DamagePercentage",
+                  "MUL"
+                ],
+                "trueDamage": true,
+                "ignoreModifyDamage": true,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV4",
+                "hitHaltTimeScale": 0.05000000074505806,
+                "muteHitText": true
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "AllExceptSelf"
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_SceneObj_Cannon_07",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  }
+]

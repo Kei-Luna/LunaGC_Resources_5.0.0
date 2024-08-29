@@ -1,0 +1,5394 @@
+[
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yoimiya_PressShoot",
+      "abilityMixins": [
+        {
+          "$type": "ButtonHoldChargeMixin",
+          "skillID": 10491,
+          "chargeTime": 0.20000000298023224,
+          "EKKJNADOEMB": 999999.0,
+          "onBeginUncharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "PLLJBINMGJK": "DoSkill"
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "SkillID",
+              "param3": 100.0
+            }
+          ],
+          "onReleaseUncharged": [
+            {
+              "$type": "EFGFKOBOFJL",
+              "lockTime": 0.30000001192092896
+            },
+            {
+              "$type": "SetAnimatorTrigger",
+              "PLLJBINMGJK": "DoSkill"
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "SkillID",
+              "param3": 1.0
+            }
+          ],
+          "onBeginCharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "PLLJBINMGJK": "DoSkill"
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "SkillID",
+              "param3": 101.0
+            }
+          ],
+          "onReleaseCharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "PLLJBINMGJK": "DoSkill"
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "SkillID",
+              "param3": 1.0
+            }
+          ],
+          "chargeStateIDs": [
+            "ShootBS",
+            "Shoot",
+            "FastAim",
+            "FastAimShoot"
+          ]
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FastAim",
+            "FastAimShoot"
+          ],
+          "modifierName": "KeepFastAiming",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FastAimShoot"
+          ],
+          "modifierName": "SetFastAimShooting",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ShootBS",
+            "FastAim",
+            "FastAimShoot"
+          ],
+          "modifierName": "SetNeedAimEndStates",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "KeepFastAiming": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "FastAiming",
+              "param3": true
+            },
+            {
+              "$type": "AvatarEnterFocus",
+              "cameraFollowLower": {
+                "x": 0.7549999952316284,
+                "y": 0.17000000178813934,
+                "z": -1.899999976158142
+              },
+              "cameraFollowUpper": {
+                "x": 0.7549999952316284,
+                "y": 0.3700000047683716,
+                "z": -1.600000023841858
+              },
+              "cameraFastFocusMode": true,
+              "faceToTarget": true,
+              "faceToTargetAngleThreshold": 360.0,
+              "dragButtonName": "Skill1",
+              "assistance": {
+                "ps4": {
+                  "useFocusSticky": true
+                },
+                "ps5": {
+                  "useFocusSticky": true
+                },
+                "other": {
+                  "useFocusSticky": true,
+                  "useGyro": true
+                }
+              },
+              "vcamFov": 30.0,
+              "OMHGAKJIEFB": ""
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "FastAiming"
+            },
+            {
+              "$type": "AvatarExitFocus",
+              "keepRotation": true
+            }
+          ]
+        },
+        "SetFastAimShooting": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "FastAimShooting",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "FastAimShooting"
+            },
+            {
+              "$type": "SetAnimatorTrigger",
+              "predicates": [
+                {
+                  "$type": "COMDBBNFCIJ",
+                  "param3": true,
+                  "parameter": "FastAiming"
+                }
+              ],
+              "PLLJBINMGJK": "AimEnd"
+            }
+          ]
+        },
+        "SetNeedAimEndStates": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "InStatesNeedAimEnd",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "InStatesNeedAimEnd"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yoimiya_AimPressShoot",
+      "abilityMixins": [
+        {
+          "$type": "ButtonHoldChargeMixin",
+          "skillID": 10493,
+          "EKKJNADOEMB": 999999.0,
+          "onReleaseCharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "PLLJBINMGJK": "DoSkill"
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "SkillID",
+              "param3": 1.0
+            }
+          ],
+          "chargeStateIDs": [
+            "Aim",
+            "AimShoot"
+          ]
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Aim",
+            "AimShoot"
+          ],
+          "modifierName": "KeepAiming",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "AimShoot"
+          ],
+          "modifierName": "SetAimShooting",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Aim",
+            "AimShoot"
+          ],
+          "modifierName": "SetNeedAimEndStates",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "KeepAiming": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "Aiming",
+              "param3": true
+            },
+            {
+              "$type": "AvatarEnterFocus",
+              "cameraFollowLower": {
+                "x": 0.7549999952316284,
+                "y": 0.17000000178813934,
+                "z": -1.899999976158142
+              },
+              "cameraFollowUpper": {
+                "x": 0.7549999952316284,
+                "y": 0.3700000047683716,
+                "z": -1.600000023841858
+              },
+              "cameraFastFocusMode": true,
+              "faceToTarget": true,
+              "faceToTargetAngleThreshold": 360.0,
+              "dragButtonName": "Skill1",
+              "assistance": {
+                "ps4": {
+                  "useFocusSticky": true
+                },
+                "ps5": {
+                  "useFocusSticky": true
+                },
+                "other": {
+                  "useFocusSticky": true,
+                  "useGyro": true
+                }
+              },
+              "vcamFov": 30.0,
+              "OMHGAKJIEFB": ""
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "Aiming"
+            },
+            {
+              "$type": "AvatarExitFocus",
+              "keepRotation": true
+            }
+          ]
+        },
+        "SetAimShooting": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "AimShooting",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "AimShooting"
+            }
+          ]
+        },
+        "SetNeedAimEndStates": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "InStatesNeedAimEnd",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "InStatesNeedAimEnd"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yoimiya_ShootArrow_01",
+      "onAbilityStart": [
+        {
+          "$type": "Predicated",
+          "targetPredicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Avatar_Yoimiya_FireShoot_State",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "TriggerBullet",
+              "bulletID": 41049001,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "attachPointName": "WeaponL"
+              }
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ShootArrow_Small",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "WeaponL"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "TriggerBullet",
+              "bulletID": 41049021,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "attachPointName": "WeaponL"
+              }
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_Bullet_Particle_Shoot_Small",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "WeaponL"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_Attack",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "Point1"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_Attack",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "Point2"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_Attack",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "Point3"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yoimiya_ShootArrow_01_01",
+      "onAbilityStart": [
+        {
+          "$type": "Predicated",
+          "targetPredicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Avatar_Yoimiya_FireShoot_State",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "TriggerBullet",
+              "bulletID": 41049001,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "attachPointName": "WeaponL"
+              }
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ShootArrow_Small",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "WeaponL"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "TriggerBullet",
+              "bulletID": 41049021,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "attachPointName": "WeaponL"
+              }
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_Bullet_Particle_Shoot_Small",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "WeaponL"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_Attack",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "Point1"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_Attack",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "Point2"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_Attack",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "Point3"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yoimiya_ShootArrow_02",
+      "onAbilityStart": [
+        {
+          "$type": "Predicated",
+          "targetPredicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Avatar_Yoimiya_FireShoot_State",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "TriggerBullet",
+              "bulletID": 41049002,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "attachPointName": "WeaponL"
+              }
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ShootArrow_Small",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "WeaponL"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "TriggerBullet",
+              "bulletID": 41049022,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "attachPointName": "WeaponL"
+              }
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_Bullet_Particle_Shoot_Small",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "WeaponL"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_Attack",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "Point1"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_Attack",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "Point2"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_Attack",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "Point3"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yoimiya_ShootArrow_03",
+      "onAbilityStart": [
+        {
+          "$type": "Predicated",
+          "targetPredicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Avatar_Yoimiya_FireShoot_State",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "TriggerBullet",
+              "bulletID": 41049003,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "attachPointName": "WeaponL"
+              }
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ShootArrow_Big",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "WeaponL"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "TriggerBullet",
+              "bulletID": 41049023,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "attachPointName": "WeaponL"
+              }
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_Bullet_Particle_Shoot_Big",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "WeaponL"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_Attack",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "Point1"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_Attack",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "Point2"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_Attack",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "Point3"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yoimiya_ShootArrow_04",
+      "onAbilityStart": [
+        {
+          "$type": "Predicated",
+          "targetPredicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Avatar_Yoimiya_FireShoot_State",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "TriggerBullet",
+              "bulletID": 41049004,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "attachPointName": "WeaponL"
+              }
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ShootArrow_Small",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "WeaponL"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "TriggerBullet",
+              "bulletID": 41049024,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "attachPointName": "WeaponL"
+              }
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_Bullet_Particle_Shoot_Small",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "WeaponL"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_Attack",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "Point1"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_Attack",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "Point2"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_Attack",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "Point3"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yoimiya_ShootArrow_04_01",
+      "onAbilityStart": [
+        {
+          "$type": "Predicated",
+          "targetPredicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Avatar_Yoimiya_FireShoot_State",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "TriggerBullet",
+              "bulletID": 41049004,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "attachPointName": "WeaponL"
+              }
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ShootArrow_Small",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "WeaponL"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "TriggerBullet",
+              "bulletID": 41049024,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "attachPointName": "WeaponL"
+              }
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_Bullet_Particle_Shoot_Small",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "WeaponL"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_Attack",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "Point1"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_Attack",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "Point2"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_Attack",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "Point3"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yoimiya_ShootArrow_05",
+      "onAbilityStart": [
+        {
+          "$type": "Predicated",
+          "targetPredicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Avatar_Yoimiya_FireShoot_State",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "TriggerBullet",
+              "bulletID": 41049005,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "attachPointName": "WeaponL"
+              }
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ShootArrow_Last",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "WeaponL"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "TriggerBullet",
+              "bulletID": 41049025,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "attachPointName": "WeaponL"
+              }
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_Bullet_Particle_Shoot_Last",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "WeaponL"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_Attack",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "Point1"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_Attack",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "Point2"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_Attack",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "Point3"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yoimiya_ShootAimingArrow_Charge",
+      "abilityMixins": [
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Aim",
+            "FastAim"
+          ],
+          "modifierName": "Yoimiya_Arrow_FX",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Aim",
+            "FastAim"
+          ],
+          "modifierName": "ShootAimingArrow_ChargeMark",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "AimLoop",
+          "modifierName": "Aim_ChangeAlpha",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "FastAimLoop",
+          "modifierName": "FastAim_ChangeAlpha",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Aim",
+            "FastAim",
+            "AimShoot",
+            "FastAimShoot"
+          ],
+          "modifierName": "ShowAimingEffect",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Yoimiya_Arrow_FX": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Bow_Arrow",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "ShootAimingArrow_ChargeMark": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "thinkInterval": 0.30000001192092896,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "param3": 0.0,
+              "key": "_Enchanted_Time",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "AddGlobalValue",
+              "param3": 1.0,
+              "key": "_Enchanted_Time",
+              "useLimitRange": true,
+              "param2": 10.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Aim_ChangeAlpha": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "DEEMAMIJENJ",
+              "target": "Team",
+              "startDuration": 0.20000000298023224,
+              "endDuration": 0.30000001192092896,
+              "JPEPPHPPCPH": true
+            }
+          ]
+        },
+        "FastAim_ChangeAlpha": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "DEEMAMIJENJ",
+              "target": "Team",
+              "startDuration": 0.20000000298023224,
+              "endDuration": 0.30000001192092896,
+              "JPEPPHPPCPH": true
+            }
+          ]
+        },
+        "ShowAimingEffect": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "thinkInterval": 0.10000000149011612,
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "modifierName": "Aiming_Arrow_Glow_WithoutElement_Loop"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "param3": 0.0,
+              "key": "_Enchanted_Time",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "AttachModifier",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_Enchanted_Time",
+                  "param3": 1.0,
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "modifierName": "Aiming_Arrow_Glow_WithoutElement_Loop"
+            },
+            {
+              "$type": "AttachModifier",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_Enchanted_Time",
+                  "param3": 4.0,
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "modifierName": "Aiming_Arrow_Glow_Loop"
+            },
+            {
+              "$type": "AttachModifier",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_Enchanted_Time",
+                  "param3": 5.0,
+                  "compareType": "MoreThanAndEqual"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Avatar_Yoimiya_FireShoot_State",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "modifierName": "Aiming_Arrow_Gold_Fish_1"
+            },
+            {
+              "$type": "AttachModifier",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_Enchanted_Time",
+                  "param3": 6.0,
+                  "compareType": "MoreThanAndEqual"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Avatar_Yoimiya_FireShoot_State",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "modifierName": "Aiming_Arrow_Gold_Fish_2"
+            },
+            {
+              "$type": "AttachModifier",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_Enchanted_Time",
+                  "param3": 7.0,
+                  "compareType": "MoreThanAndEqual"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Avatar_Yoimiya_FireShoot_State",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "modifierName": "Aiming_Arrow_Gold_Fish_3"
+            }
+          ]
+        },
+        "Aiming_Arrow_Glow_WithoutElement_Loop": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_FireArrow_Glow_Once_01",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_FireArrow_Glow_Loop_01",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Aiming_Arrow_Glow_Loop": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_FireArrow_Glow_Once_02",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_FireArrow_Glow_Loop_02",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Aiming_Arrow_Gold_Fish_1": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_Aimshoot_GoldFish_In",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.4000000059604645,
+                  "y": 0.5,
+                  "z": 0.0
+                },
+                "attachPointName": "FocusAnchor"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_Aimshoot_GoldFish",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.4000000059604645,
+                  "y": 0.5,
+                  "z": 0.0
+                },
+                "attachPointName": "FocusAnchor"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Aiming_Arrow_Gold_Fish_2": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_Aimshoot_GoldFish_In",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": -0.4000000059604645,
+                  "y": 0.30000001192092896,
+                  "z": 0.0
+                },
+                "attachPointName": "FocusAnchor"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_Aimshoot_GoldFish",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": -0.4000000059604645,
+                  "y": 0.30000001192092896,
+                  "z": 0.0
+                },
+                "attachPointName": "FocusAnchor"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Aiming_Arrow_Gold_Fish_3": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_Aimshoot_GoldFish_In",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.30000001192092896,
+                  "y": -0.10000000149011612,
+                  "z": 0.0
+                },
+                "attachPointName": "FocusAnchor"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_Aimshoot_GoldFish",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.30000001192092896,
+                  "y": -0.10000000149011612,
+                  "z": 0.0
+                },
+                "attachPointName": "FocusAnchor"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "Aiming_Arrow_Glow_WithoutElement_Loop"
+        },
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "Aiming_Arrow_Glow_Loop"
+        },
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "Aiming_Arrow_Gold_Fish_1"
+        },
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "Aiming_Arrow_Gold_Fish_2"
+        },
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "Aiming_Arrow_Gold_Fish_3"
+        },
+        {
+          "$type": "SetGlobalValue",
+          "param3": 0.0,
+          "key": "_Enchanted_Time",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yoimiya_ShootArrow_Aiming",
+      "onAbilityStart": [
+        {
+          "$type": "Predicated",
+          "targetPredicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_Enchanted_Time",
+              "param3": 4.0,
+              "compareType": "MoreThanAndEqual"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_Aimshoot_ShotWithFire",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.8999999761581421
+                },
+                "attachPointName": "WeaponR"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "TriggerBullet",
+              "bulletID": 41049008,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "attachPointName": "WeaponL"
+              }
+            },
+            {
+              "$type": "ONALKNNKKLH",
+              "cameraShake": {
+                "shakeRange": 0.20000000298023224,
+                "shakeTime": 0.11999999731779099,
+                "shakeDistance": 30.0,
+                "extension": {
+                  "baseOnCamera": true
+                }
+              }
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_Aimshoot_ShotNoFire",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.8999999761581421
+                },
+                "attachPointName": "WeaponR"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "TriggerBullet",
+              "bulletID": 41049007,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "attachPointName": "WeaponL"
+              }
+            }
+          ]
+        },
+        {
+          "$type": "Predicated",
+          "targetPredicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_Enchanted_Time",
+              "param3": 5.0,
+              "compareType": "MoreThanAndEqual"
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Avatar_Yoimiya_FireShoot_State",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_Aimshoot_GoldFish_Out",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.4000000059604645,
+                  "y": 0.5,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "attachPointName": "FocusAnchor",
+                "attachPointTargetType": "Self"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MDIAKCCDEAL",
+              "otherTargets": {
+                "$type": "SelectTargetsByShape",
+                "topLimit": 1,
+                "entityTypePriority": [
+                  "Monster",
+                  "Gadget"
+                ],
+                "sortType": "Random",
+                "shapeName": "SectorYoimiyaShoot",
+                "campTargetType": "Enemy",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster",
+                    "Gadget"
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "TriggerBullet",
+              "bulletID": 41049011,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.4000000059604645,
+                  "y": 0.5,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "angleOffset": {
+                    "x": -2.0,
+                    "y": 2.0,
+                    "z": 0.0
+                  },
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "attachPointName": "FocusAnchor",
+                "attachPointTargetType": "Self"
+              }
+            }
+          ]
+        },
+        {
+          "$type": "Predicated",
+          "targetPredicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_Enchanted_Time",
+              "param3": 6.0,
+              "compareType": "MoreThanAndEqual"
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Avatar_Yoimiya_FireShoot_State",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_Aimshoot_GoldFish_Out",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": -0.4000000059604645,
+                  "y": 0.30000001192092896,
+                  "z": 0.0
+                },
+                "attachPointName": "FocusAnchor",
+                "attachPointTargetType": "Self"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MDIAKCCDEAL",
+              "otherTargets": {
+                "$type": "SelectTargetsByShape",
+                "topLimit": 1,
+                "entityTypePriority": [
+                  "Monster",
+                  "Gadget"
+                ],
+                "sortType": "Random",
+                "shapeName": "SectorYoimiyaShoot",
+                "campTargetType": "Enemy",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster",
+                    "Gadget"
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "TriggerBullet",
+              "bulletID": 41049011,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": -0.4000000059604645,
+                  "y": 0.30000001192092896,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "angleOffset": {
+                    "x": 0.0,
+                    "y": -2.0,
+                    "z": 0.0
+                  },
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "attachPointName": "FocusAnchor",
+                "attachPointTargetType": "Self"
+              }
+            }
+          ]
+        },
+        {
+          "$type": "Predicated",
+          "targetPredicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_Enchanted_Time",
+              "param3": 7.0,
+              "compareType": "MoreThanAndEqual"
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Avatar_Yoimiya_FireShoot_State",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_Aimshoot_GoldFish_Out",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.30000001192092896,
+                  "y": -0.10000000149011612,
+                  "z": 0.0
+                },
+                "attachPointName": "FocusAnchor",
+                "attachPointTargetType": "Self"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MDIAKCCDEAL",
+              "otherTargets": {
+                "$type": "SelectTargetsByShape",
+                "topLimit": 1,
+                "entityTypePriority": [
+                  "Monster",
+                  "Gadget"
+                ],
+                "sortType": "Random",
+                "shapeName": "SectorYoimiyaShoot",
+                "campTargetType": "Enemy",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster",
+                    "Gadget"
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "TriggerBullet",
+              "bulletID": 41049011,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.30000001192092896,
+                  "y": -0.10000000149011612,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "angleOffset": {
+                    "x": 2.0,
+                    "y": 2.0,
+                    "z": 0.0
+                  },
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "attachPointName": "FocusAnchor",
+                "attachPointTargetType": "Self"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Bullet_Yoimiya_Arrow_Material_Small",
+      "onAdded": [
+        {
+          "$type": "AttachEffect",
+          "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_Arrow_Small",
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "GFANIJMFNOJ",
+          "hitEntity": "",
+          "hitScene": {
+            "defaultEffect": "Eff_Arrow_Hit_Earth",
+            "surfaceEffect": {
+              "Water": "Eff_Arrow_Hit_Water"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Bullet_Yoimiya_Arrow_Material_Big",
+      "onAdded": [
+        {
+          "$type": "AttachEffect",
+          "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_Arrow_Big",
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "GFANIJMFNOJ",
+          "hitEntity": "",
+          "hitScene": {
+            "defaultEffect": "Eff_Arrow_Hit_Earth",
+            "surfaceEffect": {
+              "Water": "Eff_Arrow_Hit_Water"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Bullet_Yoimiya_Arrow_NoFire_Material",
+      "abilitySpecials": {
+        "NoFireDamage": 0.0
+      },
+      "onAdded": [
+        {
+          "$type": "AttachEffect",
+          "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_Arrow_Big",
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "GFANIJMFNOJ",
+          "hitEntity": "",
+          "hitScene": {
+            "defaultEffect": "Eff_Arrow_Hit_Earth",
+            "surfaceEffect": {
+              "Water": "Eff_Arrow_Hit_Water"
+            }
+          }
+        },
+        {
+          "$type": "TriggerAttackEvent",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "JHKEHNJBMOF",
+              "triggerType": "TriggerNoRepeat",
+              "checkHitLayerType": "Both",
+              "born": {
+                "$type": "ConfigBornByCollisionPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": -0.5
+                }
+              },
+              "size": {
+                "x": 0.10000000149011612,
+                "y": 0.10000000149011612,
+                "z": 1.0
+              }
+            },
+            "attackInfo": {
+              "attackTag": "ExtraAttack",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "NoFireDamage",
+                "actorWindSubHurtDelta": 0.0,
+                "bonusCritical": 100.0,
+                "strikeType": "Pierce",
+                "enBreak": 10.0,
+                "enHeadBreak": 30.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV2",
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "canHitHead": true,
+              "hitHeadPattern": {
+                "onHitEffectName": "Eff_Arrow_Hit_Head",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV5",
+                "hitHaltTime": 0.11999999731779099,
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "bulletWane": {
+                "waneDelay": 0.699999988079071,
+                "damageWaneInterval": 0.05000000074505806,
+                "damageWaneRatio": 0.10000000149011612,
+                "damageWaneMinRatio": 0.10000000149011612,
+                "elementDurabilityWaneInterval": 0.05000000074505806,
+                "elementDurabilityWaneRatio": 0.10000000149011612,
+                "elementDurabilityWaneMinRatio": 0.10000000149011612,
+                "hitLevelWaneInterval": 0.10000000149011612,
+                "hitLevelWaneMin": "Mute"
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Bullet_Yoimiya_Arrow_WithFire_Material",
+      "abilitySpecials": {
+        "NoFireDamage": 0.0,
+        "WithFireDamage": 0.0
+      },
+      "modifiers": {
+        "FireEffectModifier": {
+          "modifierName": "",
+          "elementType": "Fire",
+          "bonusCritical": 40.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_Arrow_Fire_Particle",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_Arrow_Fire_Trail",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "FireEffectModifier"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "Predicated",
+          "targetPredicates": [
+            {
+              "$type": "NFJHABGCNHE",
+              "element": "Fire"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "GFANIJMFNOJ",
+              "hitEntity": "",
+              "hitScene": {
+                "defaultEffect": "Eff_Avatar_Girl_Bow_Yoimiya_Arrow_Fire_OnHitting",
+                "surfaceEffect": {
+                  "Water": "Eff_Arrow_Fire_Hit_Water"
+                }
+              }
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "JHKEHNJBMOF",
+                  "triggerType": "TriggerNoRepeat",
+                  "checkHitLayerType": "Both",
+                  "born": {
+                    "$type": "ConfigBornByCollisionPoint",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": -0.5
+                    }
+                  },
+                  "size": {
+                    "x": 0.10000000149011612,
+                    "y": 0.10000000149011612,
+                    "z": 1.0
+                  }
+                },
+                "attackInfo": {
+                  "attackTag": "ExtraAttack",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "WithFireDamage",
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Fire",
+                    "bonusCritical": 25.0,
+                    "strikeType": "Pierce",
+                    "enBreak": 20.0,
+                    "enHeadBreak": 60.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "Eff_Avatar_Girl_Bow_Yoimiya_Arrow_Fire_OnHitting",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.009999999776482582
+                  },
+                  "canHitHead": true,
+                  "hitHeadPattern": {
+                    "onHitEffectName": "Eff_Arrow_Hit_Head_Fire",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV5",
+                    "hitHaltTime": 0.11999999731779099,
+                    "hitHaltTimeScale": 0.009999999776482582
+                  },
+                  "bulletWane": {
+                    "waneDelay": 0.699999988079071,
+                    "damageWaneInterval": 0.05000000074505806,
+                    "damageWaneRatio": 0.10000000149011612,
+                    "damageWaneMinRatio": 0.10000000149011612,
+                    "elementDurabilityWaneInterval": 0.05000000074505806,
+                    "elementDurabilityWaneRatio": 0.10000000149011612,
+                    "elementDurabilityWaneMinRatio": 0.10000000149011612,
+                    "hitLevelWaneInterval": 0.10000000149011612,
+                    "hitLevelWaneMin": "Mute"
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "GFANIJMFNOJ",
+              "hitEntity": "",
+              "hitScene": {
+                "defaultEffect": "Eff_Arrow_Hit_Earth",
+                "surfaceEffect": {
+                  "Water": "Eff_Arrow_Hit_Water"
+                }
+              }
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "JHKEHNJBMOF",
+                  "triggerType": "TriggerNoRepeat",
+                  "checkHitLayerType": "Both",
+                  "born": {
+                    "$type": "ConfigBornByCollisionPoint",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": -0.5
+                    }
+                  },
+                  "size": {
+                    "x": 0.10000000149011612,
+                    "y": 0.10000000149011612,
+                    "z": 1.0
+                  }
+                },
+                "attackInfo": {
+                  "attackTag": "ExtraAttack",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "NoFireDamage",
+                    "actorWindSubHurtDelta": 0.0,
+                    "bonusCritical": 100.0,
+                    "strikeType": "Pierce",
+                    "enBreak": 10.0,
+                    "enHeadBreak": 30.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.009999999776482582
+                  },
+                  "canHitHead": true,
+                  "hitHeadPattern": {
+                    "onHitEffectName": "Eff_Arrow_Hit_Head",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV5",
+                    "hitHaltTime": 0.11999999731779099,
+                    "hitHaltTimeScale": 0.009999999776482582
+                  },
+                  "bulletWane": {
+                    "waneDelay": 0.699999988079071,
+                    "damageWaneInterval": 0.05000000074505806,
+                    "damageWaneRatio": 0.10000000149011612,
+                    "damageWaneMinRatio": 0.10000000149011612,
+                    "elementDurabilityWaneInterval": 0.05000000074505806,
+                    "elementDurabilityWaneRatio": 0.10000000149011612,
+                    "elementDurabilityWaneMinRatio": 0.10000000149011612,
+                    "hitLevelWaneInterval": 0.10000000149011612,
+                    "hitLevelWaneMin": "Mute"
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Bullet_Yoimiya_GoldFish_Material",
+      "abilitySpecials": {
+        "GoldFish_Damage": 0.0
+      },
+      "modifiers": {
+        "Timer": {
+          "modifierName": "",
+          "elementDurability": 0.30000001192092896,
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "AngularVelocityUp"
+            }
+          ]
+        },
+        "AngularVelocityUp": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "properties": {
+            "Actor_BulletMoveAngularVelocityRatio": 10.0
+          }
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachEffect",
+          "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_Aimshoot_GoldFish_Bullet",
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "ApplyModifier",
+          "modifierName": "Timer"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "FireEffect",
+          "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_Aimshoot_GoldFish_Bullet_Dissipate",
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "TriggerAttackEvent",
+          "shieldHP": true,
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackSphere",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "ConfigBornByCollisionPoint"
+              },
+              "radius": 0.6000000238418579
+            },
+            "attackInfo": {
+              "attackTag": "ExtraAttack",
+              "attenuationTag": "ExtraAttack",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "GoldFish_Damage",
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Fire",
+                "bonusCritical": 25.0,
+                "strikeType": "Pierce",
+                "enBreak": 20.0,
+                "attackType": "Range",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV2",
+                "hitHaltTimeScale": 0.05000000074505806
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Bullet_Yoimiya_ElementalArt_Material",
+      "modifiers": {
+        "Yoimiya_Arrow_GenerateBall_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "Predicated",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "TriggerAbility",
+                  "target": "Owner",
+                  "abilityName": "Avatar_Yoimiya_ElementalArt_DropBall"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachEffect",
+          "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_Bullet_Particle",
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "AttachModifier",
+          "modifierName": "Yoimiya_Arrow_GenerateBall_Handler"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "GFANIJMFNOJ",
+          "hitEntity": "",
+          "hitScene": {
+            "defaultEffect": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_Bullet_Dissipate",
+            "surfaceEffect": {
+              "Water": "Eff_Arrow_Fire_Hit_Water"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Bullet_Yoimiya_ExtraBullet_Material",
+      "modifiers": {
+        "Yoimiya_Arrow_GenerateBall_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "Predicated",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "TriggerAbility",
+                  "target": "Owner",
+                  "abilityName": "Avatar_Yoimiya_ElementalArt_DropBall"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachEffect",
+          "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ExtraBullet_Particle",
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "AttachModifier",
+          "modifierName": "Yoimiya_Arrow_GenerateBall_Handler"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "GFANIJMFNOJ",
+          "hitEntity": "",
+          "hitScene": {
+            "defaultEffect": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_Bullet_Dissipate",
+            "surfaceEffect": {
+              "Water": "Eff_Arrow_Fire_Hit_Water"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yoimiya_ElementalArt",
+      "abilityMixins": [
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "ElementalArt",
+          "modifierName": "Yoimiya_Kill_FireRing",
+          "normalizeStart": 0.10000000149011612,
+          "normalizeEnd": 0.5,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "ElementalArt",
+          "modifierName": "Yoimiya_SkillStart",
+          "normalizeStart": 0.3499999940395355,
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "ElementalArt_Buff": 0.0,
+        "Skill_Dura": 0.0,
+        "PermanentSkill_Dura": 0.0,
+        "ExtendTime": 0.0,
+        "ExtendCishu": 0.0,
+        "Talent_AttackUp": 0.0,
+        "Current_StackNum": 0.0
+      },
+      "modifiers": {
+        "Yoimiya_SkillStart": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AvatarSkillStart",
+              "skillID": 10492,
+              "amountByTargetCurrentHPRatio": 1.0,
+              "costStaminaRatio": 1.0
+            },
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "Yoimiya_FireShootState"
+            },
+            {
+              "$type": "TriggerBullet",
+              "bulletID": 41049010,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "AHGNBAPONLA"
+                },
+                "attachPointName": "RootNode"
+              },
+              "lifeByOwnerIsAlive": true
+            }
+          ]
+        },
+        "Yoimiya_Kill_FireRing": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Yoimiya_FireShootState"
+            },
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 41049010
+              }
+            }
+          ]
+        },
+        "Yoimiya_FireShootState": {
+          "modifierName": "",
+          "elementDurability": "Skill_Dura",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "param3": 1.0,
+              "key": "_ABILITY_Avatar_Yoimiya_FireShoot_State",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "AttachModifier",
+              "predicates": [
+                {
+                  "$type": "ByUnlockTalentParam",
+                  "talentParam": "Yoimiya_PermanentSkill_1"
+                }
+              ],
+              "modifierName": "Yoimiya_FireShootState_PermanentSkill_1_Handler"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "shieldHP": true,
+              "modifierName": "Yoimiya_FireShootState_PermanentSkill_1_Handler"
+            },
+            {
+              "$type": "RemoveUniqueModifier",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "shieldHP": true,
+              "modifierName": "UNIQUE_Yoimiya_Gadget_Fx"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Avatar_Yoimiya_FireShoot_State",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "JKFLDIKGJEF",
+              "shieldHP": true,
+              "gadgetInfo": {
+                "configID": 41049010
+              }
+            }
+          ],
+          "onKill": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "shieldHP": true,
+              "modifierName": "Yoimiya_FireShootState"
+            }
+          ],
+          "onAvatarOut": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "shieldHP": true,
+              "modifierName": "Yoimiya_FireShootState"
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "TriggerBullet",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "BFEBPNBHHBC",
+                  "configIdArray": [
+                    41049010
+                  ],
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "bulletID": 41049010,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "AHGNBAPONLA"
+                },
+                "attachPointName": "RootNode"
+              },
+              "lifeByOwnerIsAlive": true
+            }
+          ]
+        },
+        "Yoimiya_FireShootState_PermanentSkill_1_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "_ABILITY_Avatar_Yoimiya_Stack_Num",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                3.9000000953674316,
+                6.900000095367432,
+                9.899999618530273,
+                100.0
+              ],
+              "modifierNameSteps": [
+                "Yoimiya_FireRing_Eff1",
+                "Yoimiya_FireRing_Eff2",
+                "Yoimiya_FireRing_Eff3"
+              ]
+            }
+          ],
+          "onAttackLanded": [
+            {
+              "$type": "Predicated",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "ByAttackTags",
+                  "attackTags": [
+                    "NormalAttack_01",
+                    "NormalAttack_02",
+                    "NormalAttack_03",
+                    "NormalAttack_04",
+                    "NormalAttack_05"
+                  ]
+                },
+                {
+                  "$type": "PNLEEOAGKLD",
+                  "element": "Fire"
+                },
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "AddGlobalValue",
+                  "param3": 1.0,
+                  "key": "_ABILITY_Avatar_Yoimiya_Stack_Num",
+                  "useLimitRange": true,
+                  "param2": 10.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "LDIAIDLOPEE",
+                  "globalValueKey": "_ABILITY_Avatar_Yoimiya_Stack_Num",
+                  "overrideMapKey": "Current_StackNum"
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "modifierName": "Yoimiya_ElementalArt_BuffTime"
+                },
+                {
+                  "$type": "PFKNEFGOHIH",
+                  "modifierName": "Yoimiya_FireShootState_PermanentSkill_1_Buff"
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "modifierName": "Yoimiya_FireShootState_PermanentSkill_1_Buff"
+                }
+              ]
+            }
+          ]
+        },
+        "Yoimiya_ElementalArt_BuffTime": {
+          "modifierName": "",
+          "elementDurability": "PermanentSkill_Dura",
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "AddGlobalValue",
+              "shieldHP": true,
+              "param3": -100.0,
+              "key": "_ABILITY_Avatar_Yoimiya_Stack_Num",
+              "useLimitRange": true,
+              "param2": 10.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "SetOverrideMapValue",
+              "shieldHP": true,
+              "param3": 0.0,
+              "overrideMapKey": "Current_StackNum",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Yoimiya_FireShootState_PermanentSkill_1_Buff": {
+          "modifierName": "",
+          "elementDurability": "PermanentSkill_Dura",
+          "bonusCritical": 100.0,
+          "properties": {
+            "Actor_FireAddHurtDelta": [
+              "ElementalArt_Buff",
+              "Current_StackNum",
+              "MUL"
+            ]
+          },
+          "state": "AttackUp",
+          "isLimitedProperties": true
+        },
+        "Yoimiya_FireRing_Eff1": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_1_Up",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Yoimiya_FireRing_Eff2": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_1_Up",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AttachEffect",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_2_Up",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Yoimiya_FireRing_Eff3": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_1_Up",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AttachEffect",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_2_Up",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AttachEffect",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41049010
+              },
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_3_Up",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "SetGlobalValue",
+          "shieldHP": true,
+          "param3": 0.0,
+          "key": "_ABILITY_Avatar_Yoimiya_FireShoot_State",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "TriggerAttackEvent",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackCircle",
+              "triggerType": "TriggerNoRepeat",
+              "radius": 2.0
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.0,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Fire",
+                "bonusCritical": 0.0,
+                "strikeType": "Default",
+                "enBreak": 60.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV3",
+                "hitHaltTimeScale": 0.05000000074505806
+              },
+              "cameraShake": {
+                "shakeRange": 0.11999999731779099,
+                "shakeTime": 0.09000000357627869,
+                "extension": {
+                  "baseCycle": 0.07999999821186066,
+                  "cycleDamping": -0.03999999910593033
+                }
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yoimiya_ElementalArt_DropBall",
+      "modifiers": {
+        "Ball": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "elementDurability": 2.0,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "Randomed",
+              "shieldHP": true,
+              "chance": 1.0,
+              "successActions": [
+                {
+                  "$type": "GenerateElemBall",
+                  "shieldHP": true,
+                  "configID": 2017,
+                  "born": {
+                    "$type": "JHEBKCMEMLN",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 1.0
+                    }
+                  },
+                  "hpRatio": 1.0,
+                  "baseEnergy": 3.0
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "ApplyModifier",
+          "shieldHP": true,
+          "modifierName": "Ball"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Bullet_Yoimiya_FireRing_Material",
+      "modifiers": {
+        "UNIQUE_Yoimiya_Gadget_Fx": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_1",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_2",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_3",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_Die",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "Point1"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_Die",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "Point2"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalArt_LoopBuff_Spark_Die",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "attachPointName": "Point3"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "UNIQUE_Yoimiya_Gadget_Fx"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yoimiya_ElementalBurst_Camera",
+      "abilityMixins": [
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ElementalBurst",
+            "ElementalBurst_AS_Begin",
+            "ElementalBurst_AS_Loop"
+          ],
+          "modifierName": "Camera_Handler",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ElementalBurst",
+            "ElementalBurst_AS_Begin",
+            "ElementalBurst_AS_Loop"
+          ],
+          "modifierName": "EmotionControl",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ElementalBurst",
+            "ElementalBurst_AS_Begin",
+            "ElementalBurst_AS_Loop"
+          ],
+          "modifierName": "ElementalBurst_Protection",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ElementalBurst",
+            "ElementalBurst_AS_Begin"
+          ],
+          "modifierName": "GravityAdjust",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "Dura": 0.0,
+        "Base_Buff": 0.0,
+        "Stack_Buff": 0.0,
+        "Avatar_Yoimiya_Stack_Num": 0.0
+      },
+      "modifiers": {
+        "ElementalBurst_Protection": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "state": "Invincible",
+          "onAdded": [
+            {
+              "$type": "OPAOGKPJLIG",
+              "resistanceListID": 11002
+            }
+          ]
+        },
+        "Camera_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EIMGEIJIDNO",
+              "shapeName": "CircleR3",
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                }
+              },
+              "strength": -3.0,
+              "IAELBHDMINN": 2.0,
+              "MMBCLAEOEFB": 0.0,
+              "targetType": "Enemy",
+              "predicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster",
+                    "Grass"
+                  ]
+                },
+                {
+                  "$type": "GDIBFABBADA",
+                  "logic": "LesserOrEqual",
+                  "BHOOHGLJDHM": 250.0
+                }
+              ],
+              "modifierName": ""
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "AvatarSkillStart",
+              "skillID": 10495,
+              "amountByTargetCurrentHPRatio": 1.0,
+              "costStaminaRatio": 1.0
+            },
+            {
+              "$type": "Predicated",
+              "targetPredicates": [
+                {
+                  "$type": "ByUnlockTalentParam",
+                  "talentParam": "Yoimiya_PermanentSkill_2"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "LDIAIDLOPEE",
+                  "globalValueKey": "_ABILITY_Avatar_Yoimiya_Stack_Num",
+                  "overrideMapKey": "Avatar_Yoimiya_Stack_Num"
+                },
+                {
+                  "$type": "RemoveUniqueModifier",
+                  "target": "AllPlayerAvatars",
+                  "predicates": [
+                    {
+                      "$type": "FMBJAJFLDIP",
+                      "logic": "LesserOrEqual",
+                      "param3": 40.0,
+                      "DDALGNLEHOD": ""
+                    },
+                    {
+                      "$type": "KGBDHDJLELL",
+                      "isSelf": false
+                    }
+                  ],
+                  "modifierName": "UNIQUE_Yoimiya_ElementalBurst_TeamBuff"
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "target": "AllPlayerAvatars",
+                  "predicates": [
+                    {
+                      "$type": "FMBJAJFLDIP",
+                      "logic": "LesserOrEqual",
+                      "param3": 40.0,
+                      "DDALGNLEHOD": ""
+                    },
+                    {
+                      "$type": "KGBDHDJLELL",
+                      "isSelf": false
+                    }
+                  ],
+                  "modifierName": "UNIQUE_Yoimiya_ElementalBurst_TeamBuff"
+                }
+              ]
+            },
+            {
+              "$type": "AttachModifier",
+              "modifierName": "Weather_ChangeMixin"
+            },
+            {
+              "$type": "GPGGCODEFIF",
+              "blend": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LJBFFDLKIKL",
+              "cameraParam": {
+                "forceRadius": 6.0,
+                "forceRadiusDuration": 0.30000001192092896,
+                "shouldKeepForceRadius": true
+              }
+            },
+            {
+              "$type": "PEIPIGEMHEK",
+              "shieldHP": true
+            },
+            {
+              "$type": "GPGGCODEFIF",
+              "enable": true
+            }
+          ],
+          "onAvatarOut": [
+            {
+              "$type": "LJBFFDLKIKL",
+              "cameraParam": {
+                "forceRadius": 6.0,
+                "forceRadiusDuration": 0.30000001192092896,
+                "shouldKeepForceRadius": true
+              }
+            },
+            {
+              "$type": "PEIPIGEMHEK",
+              "shieldHP": true
+            },
+            {
+              "$type": "GPGGCODEFIF",
+              "shieldHP": true,
+              "enable": true
+            }
+          ]
+        },
+        "EmotionControl": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "KGGAJAOJIDL",
+              "toggleEmoSync": false,
+              "toggleBlink": false,
+              "toggleEyeKey": false
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KGGAJAOJIDL",
+              "shieldHP": true
+            }
+          ],
+          "onAvatarOut": [
+            {
+              "$type": "KGGAJAOJIDL",
+              "shieldHP": true
+            }
+          ]
+        },
+        "Weather_ChangeMixin": {
+          "modifierName": "",
+          "elementDurability": 3.5,
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "JFFOPFFEBPN",
+              "damageRatio": "Skill",
+              "weatherPattern": "Weather_Yoimiya_ElementalBurst",
+              "transDuration": 0.30000001192092896,
+              "duration": 3.0
+            }
+          ]
+        },
+        "GravityAdjust": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "properties": {
+            "Actor_AddGravityScale": -2.0
+          },
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Yoimiya_ElementalBurst_TeamBuff": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "Dura",
+          "bonusCritical": 100.0,
+          "properties": {
+            "Actor_AttackRatio": [
+              "Base_Buff",
+              "Avatar_Yoimiya_Stack_Num",
+              "Stack_Buff",
+              "MUL",
+              "ADD"
+            ]
+          },
+          "state": "AttackUp",
+          "isLimitedProperties": true
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "AttachEffect",
+          "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalBurst_ArrowModel",
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "Predicated",
+          "targetPredicates": [
+            {
+              "$type": "CEKDKMLPJDC",
+              "attackPattern": {
+                "$type": "ConfigAttackCircle",
+                "triggerType": "TriggerNoRepeat",
+                "born": {
+                  "$type": "ConfigBornBySelf",
+                  "offset": {
+                    "x": 0.0,
+                    "y": 0.6000000238418579,
+                    "z": 0.6000000238418579
+                  }
+                },
+                "height": 3.0,
+                "radius": 2.0
+              }
+            },
+            {
+              "$type": "CEKDKMLPJDC",
+              "attackPattern": {
+                "$type": "ConfigAttackCircle",
+                "triggerType": "TriggerNoRepeat",
+                "born": {
+                  "$type": "ConfigBornBySelf",
+                  "offset": {
+                    "x": 0.0,
+                    "y": 3.5,
+                    "z": 0.0
+                  },
+                  "direction": {
+                    "$type": "AHGNBAPONLA",
+                    "angleOffset": {
+                      "x": 0.0,
+                      "y": 120.0,
+                      "z": 0.0
+                    }
+                  }
+                },
+                "height": 2.0,
+                "fanAngle": 60.0,
+                "radius": 3.5
+              }
+            },
+            {
+              "$type": "KINBGHMJBBD",
+              "compareType": "LessAndEqual",
+              "depth": 0.5
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "OIDCJAEPFPF",
+              "cameraMoveCfgPath": "Camera_Yoimiya_ElementalBurst"
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalBurst_ShowEffect",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalBurst_ShowEffect_Thirdparty",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yoimiya_ElementalBurst",
+      "onAbilityStart": [
+        {
+          "$type": "TriggerBullet",
+          "bulletID": 41049014,
+          "born": {
+            "$type": "ConfigBornByAttachPoint",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "direction": {
+              "$type": "LHBLDEOLGKF",
+              "angleOffset": {
+                "x": 46.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "maxAngleType": "Vertical",
+              "maxAngle": 50.0,
+              "attachPointName": "FocusAnchor",
+              "attachPointTargetType": "Self"
+            },
+            "attachPointName": "WeaponL",
+            "attachPointTargetType": "Self"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Bullet_Yoimiya_ElementalBurst_Material",
+      "abilitySpecials": {
+        "ElementalBurst_Damage": 0.0
+      },
+      "onAdded": [
+        {
+          "$type": "AttachEffect",
+          "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalBurst_Bullet",
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "SetGlobalDir",
+          "target": "Owner",
+          "key": "_ABILITY_Yoimiya_ElementalBurstBullet_Dir",
+          "born": {
+            "$type": "JHEBKCMEMLN",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "setTarget": false
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "SetGlobalPos",
+          "key": "_ABILITY_Yoimiya_ElementalBurstBullet_Pos",
+          "born": {
+            "$type": "ConfigBornByCollisionPoint"
+          }
+        },
+        {
+          "$type": "FireEffect",
+          "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalBurst_Explode",
+          "born": {
+            "$type": "ICKMMAHFNIM",
+            "positionKey": "_ABILITY_Yoimiya_ElementalBurstBullet_Pos",
+            "directionKey": "_ABILITY_Yoimiya_ElementalBurstBullet_Dir"
+          },
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "TriggerAttackEvent",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackSphere",
+              "triggerType": "TriggerNoRepeat",
+              "ignoreMassive": true,
+              "born": {
+                "$type": "ConfigBornByCollisionPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                }
+              },
+              "radius": 6.0,
+              "detectDirection": "CenterToSide"
+            },
+            "attackInfo": {
+              "attackTag": "Elemental_Burst",
+              "attenuationTag": "Elemental_Burst",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "ElementalBurst_Damage",
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Fire",
+                "bonusCritical": 50.0,
+                "strikeType": "Blunt",
+                "enBreak": 220.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV7",
+                "overrideHitImpulse": {
+                  "hitLevel": "Air",
+                  "IMIJMPGJOGG": 200.0,
+                  "BPCDKKBKOBM": 800.0
+                },
+                "retreatType": "ByOriginOwner",
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "forceCameraShake": true,
+              "cameraShake": {
+                "shakeRange": 0.3499999940395355,
+                "shakeTime": 0.20000000298023224
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yoimiya_ElementalBurst_SetTag",
+      "abilitySpecials": {
+        "Duration_count": 0.0,
+        "Duration_Max": 0.800000011920929,
+        "Damage_Perhit": 0.0,
+        "Damage_Interval": 0.0,
+        "CdDelta": 0.0
+      },
+      "modifiers": {
+        "Yoimiya_ElementalBurst_Hit_And_AddTag": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onHittingOther": [
+            {
+              "$type": "Predicated",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "ByAttackTags",
+                  "attackTags": [
+                    "Elemental_Burst"
+                  ]
+                },
+                {
+                  "$type": "KNBFJBFMGLD",
+                  "enBreak": 200.0
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Avatar_Yoimiya_ElementalBurst_MonsterInTag",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Self",
+                  "key": "_ABILITY_Avatar_Yoimiya_ElementalBurst_Count",
+                  "param3": 1.0,
+                  "compareType": "MoreThanAndEqual"
+                },
+                {
+                  "$type": "AFCIHEABHEL",
+                  "ratio": 0.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "SetOverrideMapValue",
+                  "shieldHP": true,
+                  "param3": "Duration_Max",
+                  "overrideMapKey": "Duration_count",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "AttachModifier",
+                  "target": "Target",
+                  "shieldHP": true,
+                  "modifierName": "UNIQUE_Avatar_Yoimiya_ElementalBurst_Tag"
+                },
+                {
+                  "$type": "SetGlobalValue",
+                  "shieldHP": true,
+                  "param3": 0.0,
+                  "key": "_ABILITY_Avatar_Yoimiya_ElementalBurst_Count",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "AttachModifier",
+                  "shieldHP": true,
+                  "modifierName": "UNIQUE_Avatar_Yoimiya_ElementalBurst_TimeCount"
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Avatar_Yoimiya_ElementalBurst_TimeCount": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "Duration_Max",
+          "bonusCritical": 100.0,
+          "thinkInterval": 0.20000000298023224,
+          "onThinkInterval": [
+            {
+              "$type": "SetOverrideMapValue",
+              "shieldHP": true,
+              "param3": [
+                "Duration_count",
+                0.20000000298023224,
+                "SUB"
+              ],
+              "overrideMapKey": "Duration_count",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkIntervalIsFixedUpdate": true
+        },
+        "UNIQUE_Avatar_Yoimiya_ElementalBurst_Tag": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "Duration_count",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalBurst_Tag_Loop",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "SetGlobalValue",
+              "param3": 1.0,
+              "key": "_ABILITY_Avatar_Yoimiya_ElementalBurst_MonsterInTag",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Avatar_Yoimiya_ElementalBurst_EffectDone",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalBurst_Tag_LifeEnd",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "SetGlobalValue",
+              "param3": 0.0,
+              "key": "_ABILITY_Avatar_Yoimiya_ElementalBurst_EffectDone",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "SetGlobalValue",
+              "param3": 0.0,
+              "key": "_ABILITY_Avatar_Yoimiya_ElementalBurst_MonsterInTag",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "Predicated",
+              "target": "Other",
+              "targetPredicates": [
+                {
+                  "$type": "ByAttackTags",
+                  "attackTags": [
+                    "NormalAttack_01",
+                    "NormalAttack_02",
+                    "NormalAttack_03",
+                    "NormalAttack_04",
+                    "NormalAttack_05",
+                    "NormalAttack_06",
+                    "FallingAttack",
+                    "ExtraAttack",
+                    "Elemental_Art",
+                    "Elemental_Art_Hold",
+                    "Elemental_Art_Extra",
+                    "Elemental_Burst"
+                  ]
+                },
+                {
+                  "$type": "BCFNGJHILAG",
+                  "predicates": [
+                    {
+                      "$type": "OFFCGHNCBCD",
+                      "targetType": "Caster",
+                      "ALBJEAMOFLG": ""
+                    }
+                  ]
+                },
+                {
+                  "$type": "BCFNGJHILAG",
+                  "predicates": [
+                    {
+                      "$type": "OFFCGHNCBCD",
+                      "target": "TargetOriginOwner",
+                      "targetType": "Caster",
+                      "ALBJEAMOFLG": ""
+                    }
+                  ]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Caster",
+                  "key": "_ABILITY_Avatar_Yoimiya_ElementalBurst_InTriggerCD",
+                  "param3": 0.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "target": "Caster",
+                  "modifierName": "UNIQUE_Avatar_Yoimiya_ElementalBurst_BombAttackCD"
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "modifierName": "UNIQUE_Avatar_Yoimiya_ElementalBurst_BombAttackEvent"
+                }
+              ]
+            }
+          ],
+          "onKill": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalBurst_Tag_EndAndFindAnother",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ApplyModifier",
+              "target": "Caster",
+              "modifierName": "Avatar_Yoimiya_ElementalBurst_WhenMonsterOnKill"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "param3": 1.0,
+              "key": "_ABILITY_Avatar_Yoimiya_ElementalBurst_EffectDone",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "RemoveUniqueModifier",
+              "modifierName": "UNIQUE_Avatar_Yoimiya_ElementalBurst_Tag"
+            }
+          ]
+        },
+        "UNIQUE_Avatar_Yoimiya_ElementalBurst_BombAttackCD": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "Damage_Interval",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "_ABILITY_Avatar_Yoimiya_ElementalBurst_InTriggerCD",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Avatar_Yoimiya_ElementalBurst_InTriggerCD",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "UNIQUE_Avatar_Yoimiya_ElementalBurst_BombAttackEvent": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.30000001192092896,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Yoimiya_ElementalBurst_Tag_Trigger",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": 1.0,
+                  "z": 0.0
+                }
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "target": "Caster",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "triggerType": "TriggerNoRepeat",
+                  "ignoreMassive": true,
+                  "born": {
+                    "$type": "ConfigBornByAttachPoint",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "attachPointName": "Fx_ChestNode",
+                    "attachPointTargetType": "Self"
+                  },
+                  "radius": 3.0
+                },
+                "attackInfo": {
+                  "attackTag": "Elemental_Burst",
+                  "attenuationTag": "Elemental_Burst",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "Damage_Perhit",
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Fire",
+                    "bonusCritical": 25.0,
+                    "strikeType": "Blunt",
+                    "enBreak": 60.0,
+                    "attackType": "Range",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV3",
+                    "hitHaltTimeScale": 0.009999999776482582
+                  },
+                  "cameraShake": {
+                    "shakeType": "CustomVector",
+                    "shakeRange": 0.20000000298023224,
+                    "shakeTime": 0.30000001192092896,
+                    "shakeDir": {
+                      "z": -1.0
+                    }
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "ApplyModifier",
+              "target": "Caster",
+              "shieldHP": true,
+              "modifierName": "Avatar_Yoimiya_ElementalBurst_TalentMinuseSkillCD"
+            }
+          ]
+        },
+        "Avatar_Yoimiya_ElementalBurst_TalentMinuseSkillCD": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "CCMOJLPKHDN",
+              "target": "Caster",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "ByUnlockTalentParam",
+                  "talentParam": "Yoimiya_Talent_4"
+                }
+              ],
+              "skillSlot": [
+                2
+              ],
+              "cdMin": "CdDelta"
+            }
+          ]
+        },
+        "Avatar_Yoimiya_ElementalBurst_WhenMonsterOnKill": {
+          "stacking": "MultipleRefresh",
+          "stackingOption": {
+            "abilitySpecialName": "",
+            "maxModifierNumForMultipleType": 2.0
+          },
+          "modifierName": "",
+          "elementDurability": "Duration_Max",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "otherTargets": {
+                "$type": "SelectTargetsByShape",
+                "topLimit": 1,
+                "sortType": "Nearest",
+                "shapeName": "CircleR15",
+                "centerBasedOn": "Applier",
+                "campTargetType": "Enemy",
+                "doOffStage": 1.0
+              },
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "NDAEDKLADHO",
+                  "target": "Caster",
+                  "targetAbilityName": "Avatar_Yoimiya_ElementalBurst_SetTag",
+                  "targetKey": "Duration_count",
+                  "targetValue": 0.0
+                },
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Avatar_Yoimiya_ElementalBurst_MonsterInTag",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "AFCIHEABHEL",
+                  "ratio": 0.0
+                }
+              ],
+              "modifierName": "UNIQUE_Avatar_Yoimiya_ElementalBurst_Tag"
+            },
+            {
+              "$type": "TriggerAbility",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "ByUnlockTalentParam",
+                  "talentParam": "Yoimiya_Talent_1"
+                }
+              ],
+              "abilityName": "Avatar_Yoimiya_Talent_KillAndAdd"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "Yoimiya_ElementalBurst_Hit_And_AddTag"
+        },
+        {
+          "$type": "SetGlobalValue",
+          "param3": 0.0,
+          "key": "_ABILITY_Avatar_Yoimiya_ElementalBurst_InTriggerCD",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "SetGlobalValue",
+          "param3": 1.0,
+          "key": "_ABILITY_Avatar_Yoimiya_ElementalBurst_Count",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "Yoimiya_ElementalBurst_Hit_And_AddTag"
+        },
+        {
+          "$type": "AttachModifier",
+          "modifierName": "Yoimiya_ElementalBurst_Hit_And_AddTag"
+        },
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "Avatar_Yoimiya_ElementalBurst_WhenMonsterOnKill"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Bullet_Yoimiya_NormalAttack_Handler",
+      "abilityMixins": [
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "Arrow_ATK01"
+          ],
+          "actorGrassSubHurtDelta": "NormalAttack_01",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "Arrow_ATK02"
+          ],
+          "actorGrassSubHurtDelta": "NormalAttack_02",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "Arrow_ATK03"
+          ],
+          "actorGrassSubHurtDelta": "NormalAttack_03",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "Arrow_ATK04"
+          ],
+          "actorGrassSubHurtDelta": "NormalAttack_04",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "Arrow_ATK05"
+          ],
+          "actorGrassSubHurtDelta": "NormalAttack_05",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "FireArrow_ATK01"
+          ],
+          "actorGrassSubHurtDelta": [
+            "NormalAttack_01",
+            "ElementalArtRaito",
+            "MUL"
+          ],
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "FireArrow_ATK02"
+          ],
+          "actorGrassSubHurtDelta": [
+            "NormalAttack_02",
+            "ElementalArtRaito",
+            "MUL"
+          ],
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "FireArrow_ATK03"
+          ],
+          "actorGrassSubHurtDelta": [
+            "NormalAttack_03",
+            "ElementalArtRaito",
+            "MUL"
+          ],
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "FireArrow_ATK04"
+          ],
+          "actorGrassSubHurtDelta": [
+            "NormalAttack_04",
+            "ElementalArtRaito",
+            "MUL"
+          ],
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "FireArrow_ATK05"
+          ],
+          "actorGrassSubHurtDelta": [
+            "NormalAttack_05",
+            "ElementalArtRaito",
+            "MUL"
+          ],
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "TalentArrow_ATK01"
+          ],
+          "actorGrassSubHurtDelta": [
+            "NormalAttack_01",
+            "ElementalArtRaito",
+            "MUL",
+            "TalentArrowRatio",
+            "MUL",
+            2.0,
+            "MUL"
+          ],
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "TalentArrow_ATK02"
+          ],
+          "actorGrassSubHurtDelta": [
+            "NormalAttack_02",
+            "ElementalArtRaito",
+            "MUL",
+            "TalentArrowRatio",
+            "MUL"
+          ],
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "TalentArrow_ATK03"
+          ],
+          "actorGrassSubHurtDelta": [
+            "NormalAttack_03",
+            "ElementalArtRaito",
+            "MUL",
+            "TalentArrowRatio",
+            "MUL"
+          ],
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "TalentArrow_ATK04"
+          ],
+          "actorGrassSubHurtDelta": [
+            "NormalAttack_04",
+            "ElementalArtRaito",
+            "MUL",
+            "TalentArrowRatio",
+            "MUL",
+            2.0,
+            "MUL"
+          ],
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "TalentArrow_ATK05"
+          ],
+          "actorGrassSubHurtDelta": [
+            "NormalAttack_05",
+            "ElementalArtRaito",
+            "MUL",
+            "TalentArrowRatio",
+            "MUL"
+          ],
+          "actorWindSubHurtDelta": 0.0
+        }
+      ],
+      "abilitySpecials": {
+        "NormalAttack_01": 0.0,
+        "NormalAttack_02": 0.0,
+        "NormalAttack_03": 0.0,
+        "NormalAttack_04": 0.0,
+        "NormalAttack_05": 0.0,
+        "ElementalArtRaito": 1.0,
+        "TalentArrowRatio": 0.0
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yoimiya_Talent_KillAndAdd",
+      "abilitySpecials": {
+        "Rate": 0.0,
+        "Time": 0.0
+      },
+      "modifiers": {
+        "Yoimiya_Talent_KillAndAttackup": {
+          "modifierName": "",
+          "elementDurability": "Time",
+          "bonusCritical": 100.0,
+          "properties": {
+            "Actor_AttackRatio": "Rate"
+          },
+          "state": "AttackUp",
+          "isLimitedProperties": true
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "ApplyModifier",
+          "shieldHP": true,
+          "modifierName": "Yoimiya_Talent_KillAndAttackup"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yoimiya_Talent_FireUpWhenCritic",
+      "abilitySpecials": {
+        "FireUp": 0.0,
+        "Dura": 0.0
+      },
+      "modifiers": {
+        "Yoimiya_Check_Critic": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "Predicated",
+              "target": "Target",
+              "shieldHP": true,
+              "targetPredicates": [
+                {
+                  "$type": "FOBBIDODMCM"
+                },
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "PNLEEOAGKLD",
+                  "element": "Fire"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "shieldHP": true,
+                  "modifierName": "UNIQUE_Yoimiya_Talent_FireUpWhenCritic"
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Yoimiya_Talent_FireUpWhenCritic": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "Dura",
+          "bonusCritical": 100.0,
+          "properties": {
+            "Actor_FireAddHurtDelta": "FireUp"
+          },
+          "state": "AttackUp",
+          "isLimitedProperties": true
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "Yoimiya_Check_Critic"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yoimiya_Talent_ExtraBullet",
+      "abilityMixins": [
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Attack01",
+          "modifierName": "Yoimiya_ExtraBullet1",
+          "normalizeStart": 0.0729999989271164,
+          "normalizeEnd": 0.20000000298023224,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Attack02",
+          "modifierName": "Yoimiya_ExtraBullet2",
+          "normalizeStart": 0.054999999701976776,
+          "normalizeEnd": 0.20000000298023224,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Attack03",
+          "modifierName": "Yoimiya_ExtraBullet3",
+          "normalizeStart": 0.08699999749660492,
+          "normalizeEnd": 0.20000000298023224,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Attack04",
+          "modifierName": "Yoimiya_ExtraBullet4",
+          "normalizeStart": 0.07400000095367432,
+          "normalizeEnd": 0.20000000298023224,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Attack05",
+          "modifierName": "Yoimiya_ExtraBullet5",
+          "normalizeStart": 0.05700000002980232,
+          "normalizeEnd": 0.20000000298023224,
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "Chance": 0.0
+      },
+      "modifiers": {
+        "Yoimiya_ExtraBullet1": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "Predicated",
+              "targetPredicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Avatar_Yoimiya_FireShoot_State",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "Randomed",
+                  "chance": "Chance",
+                  "successActions": [
+                    {
+                      "$type": "TriggerBullet",
+                      "bulletID": 41049026,
+                      "born": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                          "x": 0.0,
+                          "y": -0.20000000298023224,
+                          "z": 0.0
+                        },
+                        "direction": {
+                          "$type": "LHBLDEOLGKF",
+                          "attachPointName": "FocusAnchor",
+                          "attachPointTargetType": "Self"
+                        },
+                        "attachPointName": "WeaponL"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "Yoimiya_ExtraBullet2": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "Predicated",
+              "targetPredicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Avatar_Yoimiya_FireShoot_State",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "Randomed",
+                  "chance": "Chance",
+                  "successActions": [
+                    {
+                      "$type": "TriggerBullet",
+                      "bulletID": 41049027,
+                      "born": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                          "x": 0.0,
+                          "y": -0.20000000298023224,
+                          "z": 0.0
+                        },
+                        "direction": {
+                          "$type": "LHBLDEOLGKF",
+                          "attachPointName": "FocusAnchor",
+                          "attachPointTargetType": "Self"
+                        },
+                        "attachPointName": "WeaponL"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "Yoimiya_ExtraBullet3": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "Predicated",
+              "targetPredicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Avatar_Yoimiya_FireShoot_State",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "Randomed",
+                  "chance": "Chance",
+                  "successActions": [
+                    {
+                      "$type": "TriggerBullet",
+                      "bulletID": 41049028,
+                      "born": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                          "x": 0.0,
+                          "y": -0.20000000298023224,
+                          "z": 0.0
+                        },
+                        "direction": {
+                          "$type": "LHBLDEOLGKF",
+                          "attachPointName": "FocusAnchor",
+                          "attachPointTargetType": "Self"
+                        },
+                        "attachPointName": "WeaponL"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "Yoimiya_ExtraBullet4": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "Predicated",
+              "targetPredicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Avatar_Yoimiya_FireShoot_State",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "Randomed",
+                  "chance": "Chance",
+                  "successActions": [
+                    {
+                      "$type": "TriggerBullet",
+                      "bulletID": 41049029,
+                      "born": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                          "x": 0.0,
+                          "y": -0.20000000298023224,
+                          "z": 0.0
+                        },
+                        "direction": {
+                          "$type": "LHBLDEOLGKF",
+                          "attachPointName": "FocusAnchor",
+                          "attachPointTargetType": "Self"
+                        },
+                        "attachPointName": "WeaponL"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "Yoimiya_ExtraBullet5": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "Predicated",
+              "targetPredicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Avatar_Yoimiya_FireShoot_State",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "Randomed",
+                  "chance": "Chance",
+                  "successActions": [
+                    {
+                      "$type": "TriggerBullet",
+                      "bulletID": 41049030,
+                      "born": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                          "x": 0.0,
+                          "y": -0.20000000298023224,
+                          "z": 0.0
+                        },
+                        "direction": {
+                          "$type": "LHBLDEOLGKF",
+                          "attachPointName": "FocusAnchor",
+                          "attachPointTargetType": "Self"
+                        },
+                        "attachPointName": "WeaponL"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Yoimiya_FallingAnthem",
+      "abilityMixins": [
+        {
+          "$type": "KMPFLHBHBBP",
+          "jumpSkillID": 5049010,
+          "flySkillID": 5049010
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS"
+          ],
+          "modifierName": "FallingAnthem_BS_Material",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_Loop"
+          ],
+          "modifierName": "FallingAnthem_Loop_Normal",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "FallingAnthem_BS_2",
+            "FallingAnthem_Loop",
+            "FallingAnthem_Loop_Low"
+          ],
+          "modifierName": "FallingAnthem_LoopDamage",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS"
+          ],
+          "modifierName": "FallingAnthem_BS_VelocityForce_Initialize",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop",
+            "FallingAnthem_AS_1",
+            "FallingAnthem_AS_2"
+          ],
+          "modifierName": "FallingAnthem_Height_Detect",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop",
+            "FallingAnthem_AS_1",
+            "FallingAnthem_AS_2"
+          ],
+          "modifierName": "FallingAnthem_FallingDamageImmune_01",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop"
+          ],
+          "modifierName": "Inertia",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop",
+            "FallingAnthem_AS_1",
+            "FallingAnthem_AS_2"
+          ],
+          "modifierName": "FallingAnthem_OverHead_Camera",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS"
+          ],
+          "modifierName": "FallingAnthem_ClearVelocityForce",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop"
+          ],
+          "modifierName": "FallingAnthem_AttachEffect_BS_01",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "FallingAnthem_Normal_Loop_Damage": 0.0,
+        "FallingAnthem_Normal_Rank_1_Damage": 0.0,
+        "FallingAnthem_Normal_Rank_2_Damage": 0.0,
+        "FallingAnthem_Altitude_Lv0": 20.0,
+        "FallingAnthem_Altitude_Lv1": 40.0,
+        "FallingAnthem_Altitude_Lv2": 60.0,
+        "FallingAnthem_Altitude_Lv3": 100.0,
+        "FallingAnthem_Altitude_Lv4": 200.0,
+        "FallingAnthem_FallingDamageRatio_Lv0": -1.0,
+        "FallingAnthem_FallingDamageRatio_Lv1": -1.0,
+        "FallingAnthem_FallingDamageRatio_Lv2": -0.8999999761581421,
+        "FallingAnthem_FallingDamageRatio_Lv3": -0.800000011920929,
+        "FallingAnthem_FallingDamageRatio_Lv4": -0.6000000238418579,
+        "FallingAnthem_FallingDamageRatio": 0.0
+      },
+      "modifiers": {
+        "FallingAnthem_AttachEffect_BS_01": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Bow_FallAnthem_BS_01",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "FallingAnthem_BS_Material": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Bow_FallAnthem_BS",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JPHLIDGMGBG",
+              "cameraRadialBlur": {
+                "power": 0.30000001192092896,
+                "blurTime": 0.30000001192092896,
+                "fadeTime": 0.15000000596046448
+              }
+            }
+          ]
+        },
+        "FallingAnthem_BS_VelocityForce_Initialize": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "properties": {
+            "Actor_AddGravityScale": -2.0
+          },
+          "onAdded": [
+            {
+              "$type": "LBLNHEBGPJI",
+              "forces": [
+                "RushMoveType"
+              ]
+            }
+          ]
+        },
+        "FallingAnthem_LoopDamage": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "thinkInterval": 0.30000001192092896,
+          "onThinkInterval": [
+            {
+              "$type": "TriggerAttackEvent",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    }
+                  },
+                  "radius": 1.0
+                },
+                "attackInfo": {
+                  "attackTag": "FallingAttack",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "FallingAnthem_Normal_Loop_Damage",
+                    "actorWindSubHurtDelta": 0.0,
+                    "bonusCritical": 0.0,
+                    "strikeType": "Pierce",
+                    "enBreak": 10.0,
+                    "attackType": "Melee",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.019999999552965164
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "FallingAnthem_FallingDamageImmune_01": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "HMKGPFBBDIC",
+              "key": "_ABILITY_FallingAttack_Altitude"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": "FallingAnthem_Altitude_Lv0"
+                }
+              ],
+              "param3": "FallingAnthem_FallingDamageRatio_Lv0",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "param2": "FallingAnthem_FallingDamageRatio_Lv0",
+              "repeatTimes": "FallingAnthem_FallingDamageRatio_Lv0"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": "FallingAnthem_Altitude_Lv1"
+                },
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": "FallingAnthem_Altitude_Lv0"
+                }
+              ],
+              "param3": "FallingAnthem_FallingDamageRatio_Lv1",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "param2": "FallingAnthem_FallingDamageRatio_Lv1",
+              "repeatTimes": "FallingAnthem_FallingDamageRatio_Lv1"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": "FallingAnthem_Altitude_Lv2"
+                },
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": "FallingAnthem_Altitude_Lv1"
+                }
+              ],
+              "param3": "FallingAnthem_FallingDamageRatio_Lv2",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "param2": "FallingAnthem_FallingDamageRatio_Lv2",
+              "repeatTimes": "FallingAnthem_FallingDamageRatio_Lv2"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": "FallingAnthem_Altitude_Lv3"
+                },
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": "FallingAnthem_Altitude_Lv2"
+                }
+              ],
+              "param3": "FallingAnthem_FallingDamageRatio_Lv3",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "param2": "FallingAnthem_FallingDamageRatio_Lv3",
+              "repeatTimes": "FallingAnthem_FallingDamageRatio_Lv3"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": "FallingAnthem_Altitude_Lv3"
+                }
+              ],
+              "param3": "FallingAnthem_FallingDamageRatio_Lv4",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "param2": "FallingAnthem_FallingDamageRatio_Lv4",
+              "repeatTimes": "FallingAnthem_FallingDamageRatio_Lv4"
+            },
+            {
+              "$type": "AttachModifier",
+              "modifierName": "FallingAnthem_FallingDamageImmune_02"
+            }
+          ]
+        },
+        "FallingAnthem_FallingDamageImmune_02": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "_ABILITY_FallingAttack_Altitude",
+              "overrideMapKey": "FallingAnthem_FallingDamageRatio"
+            },
+            {
+              "$type": "AttachModifier",
+              "modifierName": "FallingAnthem_FallingDamageImmune_03"
+            }
+          ]
+        },
+        "FallingAnthem_FallingDamageImmune_03": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "properties": {
+            "Actor_FallingDamageRatio": "FallingAnthem_FallingDamageRatio"
+          }
+        },
+        "FallingAnthem_Loop_Normal": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_FallingAnthem_UseCamera",
+                  "param3": 1.0,
+                  "forceByCaster": true
+                }
+              ],
+              "rotationDampTime": "Eff_Avatar_Bow_FallAnthem_Loop_02",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Inertia": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "KEHPDCODOOC",
+              "useXZ": false,
+              "useY": false
+            }
+          ]
+        },
+        "FallingAnthem_Height_Detect": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": 2.4000000953674316
+                }
+              ],
+              "param3": 0.0,
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "useLimitRange": true,
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": 2.4000000953674316
+                }
+              ],
+              "param3": 5.0,
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "FEKJDLHHOLE",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": 2.4000000953674316
+                }
+              ],
+              "floatID": "FallingAnthem_UseCamera",
+              "param3": 0.0
+            },
+            {
+              "$type": "FEKJDLHHOLE",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": 2.4000000953674316
+                }
+              ],
+              "floatID": "FallingAnthem_UseCamera",
+              "param3": 1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FEKJDLHHOLE",
+              "floatID": "FallingAnthem_UseCamera",
+              "param3": 0.0
+            },
+            {
+              "$type": "AddGlobalValue",
+              "param3": 0.0,
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "useLimitRange": true,
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "FallingAnthem_OverHead_Camera": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "LJBFFDLKIKL",
+              "predicates": [
+                {
+                  "$type": "NIFDMKMHAGJ",
+                  "logic": "Equal",
+                  "param3": 1.0,
+                  "parameter": "FallingAnthem_UseCamera"
+                }
+              ],
+              "cameraParam": {
+                "forceRadius": 4.5,
+                "forceRadiusDuration": 0.20000000298023224,
+                "shouldKeepForceRadius": true
+              }
+            }
+          ]
+        },
+        "FallingAnthem_OverHead_Camera_Remover": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "PEIPIGEMHEK",
+              "shieldHP": true
+            }
+          ]
+        },
+        "FallingAnthem_Landed_Camera": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "LJBFFDLKIKL",
+              "predicates": [
+                {
+                  "$type": "NIFDMKMHAGJ",
+                  "logic": "Equal",
+                  "param3": 1.0,
+                  "parameter": "FallingAnthem_UseCamera"
+                }
+              ],
+              "cameraParam": {
+                "forceRadius": 6.0,
+                "forceRadiusDuration": 0.10000000149011612,
+                "shouldKeepForceRadius": true
+              }
+            }
+          ]
+        },
+        "FallingAnthem_ClearVelocityForce": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "LBLNHEBGPJI",
+              "forces": [
+                "RushMoveType",
+                "InertiaType"
+              ]
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "TriggerAttackEvent",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "param3": 0.0,
+              "forceByCaster": true,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackCircle",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "x": 0.0,
+                  "y": -0.5,
+                  "z": 0.0
+                }
+              },
+              "height": 2.0,
+              "radius": 3.0
+            },
+            "attackInfo": {
+              "attackTag": "FallingAttack",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "FallingAnthem_Normal_Rank_1_Damage",
+                "actorWindSubHurtDelta": 0.0,
+                "bonusCritical": 25.0,
+                "strikeType": "Pierce",
+                "enBreak": 50.0,
+                "attackType": "Melee",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "none",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV2",
+                "hitHaltTimeScale": 0.10000000149011612
+              }
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "TriggerAttackEvent",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "param3": 1.0,
+              "forceByCaster": true
+            }
+          ],
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackCircle",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "x": 0.0,
+                  "y": -0.5,
+                  "z": 0.0
+                }
+              },
+              "height": 2.0,
+              "radius": 3.5
+            },
+            "attackInfo": {
+              "attackTag": "FallingAttack",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "FallingAnthem_Normal_Rank_2_Damage",
+                "actorWindSubHurtDelta": 0.0,
+                "bonusCritical": 25.0,
+                "strikeType": "Pierce",
+                "enBreak": 100.0,
+                "attackType": "Melee",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "none",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV3",
+                "hitHaltTimeScale": 0.10000000149011612
+              }
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "FireEffect",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "param3": 0.0,
+              "forceByCaster": true,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "rotationDampTime": "Eff_Avatar_Bow_FallAnthem_Strike_01",
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "FireEffect",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "param3": 1.0,
+              "forceByCaster": true
+            }
+          ],
+          "rotationDampTime": "Eff_Avatar_Bow_FallAnthem_Strike_02",
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  }
+]

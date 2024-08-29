@@ -1,0 +1,2154 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Ability_BigWhale_Play_KPM",
+      "abilityMixins": [
+        {
+          "$type": "NKEPLGAIEJM",
+          "modifierName": "Avatar_BigWhale_Fly_Play_KPM"
+        }
+      ],
+      "abilitySpecials": {
+        "TEST_GV_0": 0.0,
+        "TEST_GV_1": 0.0,
+        "Curve_ID": 0.0,
+        "QTE_ID": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_DisableSpeedLine": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NDKHJINNOMI",
+              "blendDuration": 1.0,
+              "EKCPOGHJLKI": 1.0
+            }
+          ]
+        },
+        "Avatar_BigWhale_Fly_Play_KPM": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "OPHOIJLIFCL",
+              "tag": "OceanCurrent",
+              "FIOMFMFOABF": [
+                "GV_Curve_Key_0"
+              ],
+              "OADPFPBHBPM": [
+                "Trigger_BGM_KPM_4_6"
+              ],
+              "FBHDNPJFANK": [
+                [
+                  {
+                    "$type": "KFCDMIMBBLD",
+                    "born": {
+                      "$type": "IAENDIPDFKD",
+                      "offset": {
+                        "KGEPIMHBMOL": 0.0,
+                        "JEBHCGDPFEJ": 0.0,
+                        "LPCHALMFFOD": 0.0
+                      },
+                      "useRotation": true
+                    },
+                    "gadgetID": 70331508,
+                    "campID": 1001
+                  }
+                ]
+              ]
+            },
+            {
+              "$type": "OPHOIJLIFCL",
+              "tag": "OceanCurrent",
+              "OADPFPBHBPM": [
+                "StartWhaleSwimByPlay_4_6",
+                "SetSpeedLine_SwimByPlay_4_6",
+                "TriggerFinalBee_KPM",
+                "TriggerBeeGroup_KPM"
+              ],
+              "FBHDNPJFANK": [
+                [
+                  {
+                    "$type": "AHPEKICBIIL",
+                    "luaCallType": "FromGroup",
+                    "funcName": "SLC_StartWhaleSwimPlay",
+                    "param1": 0.0,
+                    "MGAMDEHMCOL": 0.0,
+                    "MMHOHAOGPLP": 0.0
+                  },
+                  {
+                    "$type": "PELJALPANCA",
+                    "modifierName": "SwimByUI"
+                  }
+                ],
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > SetSpeedLine_SwimByPlay_4_6"
+                  },
+                  {
+                    "$type": "MNJCJLCFFLF",
+                    "JCANGOGMHCP": "TEST_GV_"
+                  },
+                  {
+                    "$type": "JLDEMMJAMLC",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 0.0
+                      }
+                    ],
+                    "modifierName": "UNIQUE_DisableSpeedLine"
+                  },
+                  {
+                    "$type": "KBODPNEEFGD",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "TEST_GV_0",
+                        "param3": 1.0
+                      }
+                    ],
+                    "modifierName": "UNIQUE_DisableSpeedLine"
+                  }
+                ],
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > TriggerFinalBee_KPM"
+                  },
+                  {
+                    "$type": "MNJCJLCFFLF",
+                    "JCANGOGMHCP": "TEST_GV_"
+                  },
+                  {
+                    "$type": "LDIAIDLOPEE",
+                    "globalValueKey": "TEST_GV_0",
+                    "overrideMapKey": "TEST_GV_0"
+                  },
+                  {
+                    "$type": "INBCDALOHMP",
+                    "otherTargets": {
+                      "$type": "PBLNLAENOGB",
+                      "sortType": "Nearest",
+                      "tag": "KPM_Final_Surround_Bee"
+                    },
+                    "targetPredicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "SGV_Active_ID",
+                        "param3": "TEST_GV_0"
+                      }
+                    ],
+                    "successActions": [
+                      {
+                        "$type": "PELJALPANCA",
+                        "target": "Other",
+                        "modifierName": "EnableFinalBeeFly"
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > TriggerFinalBee_KPM"
+                  },
+                  {
+                    "$type": "MNJCJLCFFLF",
+                    "JCANGOGMHCP": "TEST_GV_"
+                  },
+                  {
+                    "$type": "LDIAIDLOPEE",
+                    "globalValueKey": "TEST_GV_0",
+                    "overrideMapKey": "TEST_GV_0"
+                  },
+                  {
+                    "$type": "INBCDALOHMP",
+                    "otherTargets": {
+                      "$type": "PBLNLAENOGB",
+                      "sortType": "Nearest",
+                      "tag": "KPM_Bee_Group"
+                    },
+                    "targetPredicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "SGV_Active_ID",
+                        "param3": "TEST_GV_0"
+                      }
+                    ],
+                    "successActions": [
+                      {
+                        "$type": "PELJALPANCA",
+                        "target": "Other",
+                        "modifierName": "EnableBeeGroupFly"
+                      }
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "$type": "OPHOIJLIFCL",
+              "tag": "OceanCurrent",
+              "FIOMFMFOABF": [
+                "GV_Curve_Key_0"
+              ],
+              "OADPFPBHBPM": [
+                "SetGroupVariable",
+                "TriggerWhaleSwim_4_2",
+                "ShowQTE_Whale",
+                "TriggerTimeLineCamera",
+                "TriggerOceanCurrentOffset_4_6"
+              ],
+              "FBHDNPJFANK": [
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > SetGroupVariable"
+                  },
+                  {
+                    "$type": "MNJCJLCFFLF",
+                    "JCANGOGMHCP": "TEST_GV_"
+                  },
+                  {
+                    "$type": "LDIAIDLOPEE",
+                    "globalValueKey": "TEST_GV_0",
+                    "overrideMapKey": "TEST_GV_0"
+                  },
+                  {
+                    "$type": "LDIAIDLOPEE",
+                    "globalValueKey": "TEST_GV_1",
+                    "overrideMapKey": "TEST_GV_1"
+                  },
+                  {
+                    "$type": "AHPEKICBIIL",
+                    "luaCallType": "SpecificGroup",
+                    "callParamList": [
+                      511020053
+                    ],
+                    "funcName": "SLC_Whale_SwimBy_SetVar",
+                    "paramNum": 2,
+                    "param1": "TEST_GV_0",
+                    "MGAMDEHMCOL": "TEST_GV_1",
+                    "MMHOHAOGPLP": 0.0
+                  }
+                ],
+                [
+                  {
+                    "$type": "MNJCJLCFFLF",
+                    "JCANGOGMHCP": "GV_Curve_Key_"
+                  },
+                  {
+                    "$type": "LDIAIDLOPEE",
+                    "globalValueKey": "GV_Curve_Key_0",
+                    "overrideMapKey": "Curve_ID"
+                  },
+                  {
+                    "$type": "PELJALPANCA",
+                    "otherTargets": {
+                      "$type": "PBLNLAENOGB",
+                      "tag": "Whale_KPM"
+                    },
+                    "modifierName": "StartWhaleMove"
+                  },
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "触发鲸鱼伴游"
+                  }
+                ],
+                [
+                  {
+                    "$type": "MNJCJLCFFLF",
+                    "JCANGOGMHCP": "QTE_ID_"
+                  },
+                  {
+                    "$type": "LDIAIDLOPEE",
+                    "globalValueKey": "QTE_ID_0",
+                    "overrideMapKey": "QTE_ID"
+                  },
+                  {
+                    "$type": "INBCDALOHMP",
+                    "otherTargets": {
+                      "$type": "PBLNLAENOGB",
+                      "tag": "IS_QTE_Chord"
+                    },
+                    "targetPredicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "SGV_QTE_ID",
+                        "param3": "QTE_ID"
+                      }
+                    ],
+                    "successActions": [
+                      {
+                        "$type": "PELJALPANCA",
+                        "target": "Other",
+                        "modifierName": "EnableMagicChordQTE"
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > TriggerTimeLineCamera"
+                  },
+                  {
+                    "$type": "MNJCJLCFFLF",
+                    "JCANGOGMHCP": "Event_Param_"
+                  },
+                  {
+                    "$type": "LDIAIDLOPEE",
+                    "globalValueKey": "Event_Param_0",
+                    "overrideMapKey": "tempGV_key_0"
+                  },
+                  {
+                    "$type": "BOBCOJHOKKD",
+                    "shieldHP": true,
+                    "param3": "tempGV_key_0",
+                    "key": "Cam_ID_KPM",
+                    "param2": 0.0,
+                    "repeatTimes": 0.0
+                  },
+                  {
+                    "$type": "OIDCJAEPFPF",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "Cam_ID_KPM",
+                        "param3": 1.0
+                      }
+                    ],
+                    "cameraMoveCfgPath": "Camera_Gadget_WhaleSwim_1",
+                    "shotType": "LEVEL"
+                  }
+                ],
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > TriggerOceanCurrentOffset_4_6"
+                  },
+                  {
+                    "$type": "MNJCJLCFFLF",
+                    "JCANGOGMHCP": "OceanCurrentOffset_GV_"
+                  },
+                  {
+                    "$type": "AHHHIAIFAHJ",
+                    "predicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "OceanCurrentOffset_GV_0",
+                        "param3": 1.0
+                      }
+                    ],
+                    "GGHMICHNDIL": {
+                      "x": -89.0
+                    },
+                    "lerpInTime": 1.0,
+                    "CIJLABMEGDC": 3,
+                    "AMHMIBBMEPM": 60.0,
+                    "AFIGGDOGGLE": 60.0,
+                    "fov": 70.0,
+                    "CJAKKMPCONN": true
+                  }
+                ]
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 0.0,
+              "key": "QTE_Trigger_KPM",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 0.0,
+              "key": "Cam_ID_KPM",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "sortType": "Reversed",
+                "configID": 70331508
+              }
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "sortType": "Reversed",
+                "configID": 70331508
+              }
+            }
+          ]
+        },
+        "SwimByUI": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "AFKJBKENIAG",
+              "EBCKPIMEJJH": {
+                "$type": "GGIHANKFOIB",
+                "JCBNFAAONMJ": "WhaleParade",
+                "KOJKAGOFPLL": "SceneObj_WhaleSwim_QTE_Magic_Chord",
+                "IKHINPHGFKH": "SceneObj_WhaleSwim_QTE_Magic_Chord_Fail"
+              }
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AHPEKICBIIL",
+              "shieldHP": true,
+              "luaCallType": "SpecificGroup",
+              "callParamList": [
+                511020053
+              ],
+              "funcName": "SLC_ResetPlay",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ]
+        },
+        "StartWhaleMove": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": "Curve_ID",
+              "key": "GV_CurveMove_KPM",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "EnableMagicChordQTE": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 1.0,
+              "key": "GV_QTE_Start",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "EnableFinalBeeFly": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 1.0,
+              "key": "GV_Active",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "EnableBeeGroupFly": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 1.0,
+              "key": "GV_In_Fly",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 1.0,
+              "key": "GV_ShowEff",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_BigWahle_Fly_Play_Test",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Controller"
+        }
+      ],
+      "abilitySpecials": {
+        "GV_Whale_Speed_Key_0": 0.0,
+        "GV_Whale_Speed_Key_1": 0.0,
+        "QTE_ID": 0.0
+      },
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "OPHOIJLIFCL",
+              "tag": "OceanShip",
+              "FIOMFMFOABF": [
+                "GV_Whale_Speed_Key_0",
+                "GV_Whale_Speed_Key_1"
+              ],
+              "OADPFPBHBPM": [
+                "ChangeSpeedByTime",
+                "ReadyQTE_KPM_Whale"
+              ],
+              "FBHDNPJFANK": [
+                [
+                  {
+                    "$type": "MNJCJLCFFLF",
+                    "JCANGOGMHCP": "GV_Whale_Speed_Key_"
+                  },
+                  {
+                    "$type": "LDIAIDLOPEE",
+                    "globalValueKey": "GV_Whale_Speed_Key_0",
+                    "overrideMapKey": "GV_Whale_Speed_Key_0"
+                  },
+                  {
+                    "$type": "LDIAIDLOPEE",
+                    "globalValueKey": "GV_Whale_Speed_Key_1",
+                    "overrideMapKey": "GV_Whale_Speed_Key_1"
+                  },
+                  {
+                    "$type": "FDPKBINAHGL",
+                    "GGOOHHBDILB": "ByFrame",
+                    "CIIOMAOBCMD": "GV_Whale_Speed_Key_0",
+                    "GNFOCKINHLK": "",
+                    "LKOHJIPLECH": "GV_Whale_Speed_Key_1"
+                  },
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "触发鲸鱼变速"
+                  }
+                ],
+                [
+                  {
+                    "$type": "MNJCJLCFFLF",
+                    "JCANGOGMHCP": "QTE_ID_"
+                  },
+                  {
+                    "$type": "LDIAIDLOPEE",
+                    "globalValueKey": "QTE_ID_0",
+                    "overrideMapKey": "QTE_ID"
+                  },
+                  {
+                    "$type": "INBCDALOHMP",
+                    "otherTargets": {
+                      "$type": "PBLNLAENOGB",
+                      "tag": "IS_QTE_Chord"
+                    },
+                    "targetPredicates": [
+                      {
+                        "$type": "CNGGLKHONAA",
+                        "key": "SGV_QTE_ID",
+                        "param3": "QTE_ID"
+                      }
+                    ],
+                    "successActions": [
+                      {
+                        "$type": "PELJALPANCA",
+                        "target": "Other",
+                        "modifierName": "ShowQTEEff"
+                      }
+                    ]
+                  },
+                  {
+                    "$type": "AHPEKICBIIL",
+                    "luaCallType": "FromGroup",
+                    "funcName": "SLC_QTE_Ready",
+                    "paramNum": 1,
+                    "param1": "QTE_ID",
+                    "MGAMDEHMCOL": 0.0,
+                    "MMHOHAOGPLP": 0.0
+                  }
+                ]
+              ]
+            },
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "GV_CurveMove_KPM",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                0.5,
+                1.5,
+                2.5,
+                3.5,
+                4.5,
+                5.5,
+                6.5,
+                7.5,
+                8.5,
+                9.5,
+                10.5,
+                11.5
+              ],
+              "modifierNameSteps": [
+                "Curve1",
+                "Curve2",
+                "Curve3",
+                "Curve4",
+                "Curve5",
+                "Curve6",
+                "Curve7",
+                "Curve8",
+                "Curve9",
+                "Curve10",
+                "Curve11"
+              ]
+            }
+          ]
+        },
+        "ShowQTEEff": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 1.0,
+              "key": "Enabled",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Curve1": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AOKLILFNBJI",
+              "DNLHFPJECBC": 901102035,
+              "EGFIDIJEKAJ": 0.0,
+              "speed": 12.0
+            }
+          ]
+        },
+        "Curve2": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AOKLILFNBJI",
+              "DNLHFPJECBC": 901102031,
+              "EGFIDIJEKAJ": 0.0,
+              "speed": 12.0
+            }
+          ]
+        },
+        "Curve3": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AOKLILFNBJI",
+              "DNLHFPJECBC": 901102032,
+              "EGFIDIJEKAJ": 0.0,
+              "speed": 12.0
+            }
+          ]
+        },
+        "Curve4": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AOKLILFNBJI",
+              "DNLHFPJECBC": 901102033,
+              "EGFIDIJEKAJ": 0.0,
+              "speed": 12.0
+            }
+          ]
+        },
+        "Curve5": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AOKLILFNBJI",
+              "DNLHFPJECBC": 901102034,
+              "EGFIDIJEKAJ": 0.0,
+              "speed": 12.0
+            }
+          ]
+        },
+        "Curve6": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AOKLILFNBJI",
+              "DNLHFPJECBC": 901102040,
+              "EGFIDIJEKAJ": 0.0,
+              "speed": 12.0
+            }
+          ]
+        },
+        "Curve7": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AOKLILFNBJI",
+              "DNLHFPJECBC": 901102041,
+              "EGFIDIJEKAJ": 0.0,
+              "speed": 12.0
+            }
+          ]
+        },
+        "Curve8": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AOKLILFNBJI",
+              "DNLHFPJECBC": 901102042,
+              "EGFIDIJEKAJ": 0.0,
+              "speed": 12.0
+            }
+          ]
+        },
+        "Curve9": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AOKLILFNBJI",
+              "DNLHFPJECBC": 901102043,
+              "EGFIDIJEKAJ": 0.0,
+              "speed": 12.0
+            }
+          ]
+        },
+        "Curve10": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AOKLILFNBJI",
+              "DNLHFPJECBC": 901102044,
+              "EGFIDIJEKAJ": 0.0,
+              "speed": 12.0
+            }
+          ]
+        },
+        "Curve11": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AOKLILFNBJI",
+              "DNLHFPJECBC": 901102073,
+              "EGFIDIJEKAJ": 0.0,
+              "speed": 12.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "GV_CurveMove_KPM",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "AOOCGNCCAJB",
+          "isAdd": true,
+          "tag": "Whale_KPM"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_WhaleSwim_Timeline_Cam_Control",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Controller"
+        },
+        {
+          "$type": "NDFFAEHJMAL",
+          "globalValueKey": "Cam_Trigger",
+          "actions": [
+            {
+              "$type": "OIDCJAEPFPF",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "Cam_ID",
+                  "param3": 1.0
+                }
+              ],
+              "cameraMoveCfgPath": "Camera_Gadget_WhaleSwim_1",
+              "shotType": "LEVEL"
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "Cam_ID",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "Cam_Trigger",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "AOOCGNCCAJB",
+          "isAdd": true,
+          "tag": "WhaleSwimTimelineCam"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_WhaleSwim_QTE_Magic_Chord",
+      "abilitySpecials": {
+        "local_QTE_ID": 0.0
+      },
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "Enabled",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "Active"
+              ]
+            },
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "GV_QTE_Start",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "QTE"
+              ]
+            }
+          ]
+        },
+        "QTE": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "NBJOOJMEDPD",
+              "uiContextName": "WhaleParade",
+              "message": "show",
+              "stringParam": ""
+            }
+          ]
+        },
+        "Active": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_MMBubble_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Controller"
+        },
+        {
+          "$type": "AOOCGNCCAJB",
+          "isAdd": true,
+          "tag": "IS_QTE_Chord"
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "GV_QTE_Start",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "Enabled",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "shieldHP": true,
+          "param3": 1.5,
+          "key": "GV_QTE_Perfect_Time",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "GFOOGEIKGBI",
+          "canBeHandledOnRecover": true,
+          "parameter": "GadgetState",
+          "attachPoint": "",
+          "damageRatio": "Int",
+          "value": 201,
+          "rotationDampTime": "Eff_SceneObj_MMBubble_01"
+        },
+        {
+          "$type": "LDIAIDLOPEE",
+          "globalValueKey": "SGV_QTE_ID",
+          "overrideMapKey": "local_QTE_ID"
+        },
+        {
+          "$type": "AHPEKICBIIL",
+          "luaCallType": "FromGroup",
+          "funcName": "SLC_QTE_Succ",
+          "paramNum": 1,
+          "param1": "local_QTE_ID",
+          "MGAMDEHMCOL": 0.0,
+          "MMHOHAOGPLP": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_WhaleSwim_QTE_Magic_Chord_Fail",
+      "abilitySpecials": {
+        "local_QTE_ID": 0.0
+      },
+      "onAbilityStart": [
+        {
+          "$type": "GFOOGEIKGBI",
+          "canBeHandledOnRecover": true,
+          "parameter": "GadgetState",
+          "attachPoint": "",
+          "damageRatio": "Int",
+          "value": 202,
+          "rotationDampTime": "Eff_SceneObj_MMBubble_01"
+        },
+        {
+          "$type": "LDIAIDLOPEE",
+          "globalValueKey": "SGV_QTE_ID",
+          "overrideMapKey": "local_QTE_ID"
+        },
+        {
+          "$type": "AHPEKICBIIL",
+          "luaCallType": "FromGroup",
+          "funcName": "SLC_QTE_Fail",
+          "paramNum": 1,
+          "param1": "local_QTE_ID",
+          "MGAMDEHMCOL": 0.0,
+          "MMHOHAOGPLP": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_KMP_Chord_Eff",
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BPKALFNJLIG",
+              "modifierName": "Normal"
+            },
+            {
+              "$type": "BPKALFNJLIG",
+              "gadgetState": 201,
+              "modifierName": "Active"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Stages_SceneObj_MiracleWaterString_Hint_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Normal": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "State",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "rotationDampTime": "Eff_Stages_SceneObj_MiracleWaterString_Hint_01"
+            }
+          ]
+        },
+        "Active": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "State",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 201,
+              "rotationDampTime": "Eff_Stages_SceneObj_MiracleWaterString_Hint_01"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Controller"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Whale_Ripple_Eff",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Controller"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "Active"
+        }
+      ],
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "Active": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Stages_SceneObj_MiracleWaterString_Wave_Devourer_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_KPM_Chord_Bee_Ghost_Group",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Controller"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "Active"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 202,
+          "modifierName": "Disappear"
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "GV_ShowEff",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Effect"
+          ],
+          "NMCLMHFBALJ": true
+        },
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "GV_In_Fly",
+          "valueSteps": [
+            -10.0,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Blank",
+            "FlyState"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Stages_SceneObj_VABoids_BeeGhostGroupKPM_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Active": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CBKLCFKNHGH",
+              "campTargetType": "AllExceptSelf",
+              "targetPredicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Avatar"
+                  ]
+                }
+              ],
+              "simpleCountGlobaValueKey": "EntityCount",
+              "simpleCountUseLimitRange": true,
+              "simpleCountMaxValue": 10.0,
+              "simpleCountMinValue": 0.0
+            },
+            {
+              "$type": "PHLKCMFKFIN",
+              "globalValueKey": "EntityCount",
+              "valueSteps": [
+                -10.0,
+                0.5,
+                4.5
+              ],
+              "modifierNameSteps": [
+                "Blank",
+                "TriggerFly"
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "GV_ShowEff",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Disappear": {
+          "modifierName": "",
+          "elementDurability": 1.2000000476837158,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "canBeHandledOnRecover": true,
+              "parameter": "FadeState",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 1,
+              "rotationDampTime": "Eff_Stages_SceneObj_VABoids_BeeGhostGroupKPM_01"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        },
+        "Blank": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "TriggerFly": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "GV_In_Fly",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "FlyState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "canBeHandledOnRecover": true,
+              "parameter": "IdleState",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 3,
+              "rotationDampTime": "Eff_Stages_SceneObj_VABoids_BeeGhostGroupKPM_01"
+            },
+            {
+              "$type": "AOKLILFNBJI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "SGV_Active_ID",
+                  "param3": 8.0
+                }
+              ],
+              "DNLHFPJECBC": 901102054,
+              "EGFIDIJEKAJ": 0.0,
+              "speed": 12.0
+            },
+            {
+              "$type": "AOKLILFNBJI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "SGV_Active_ID",
+                  "param3": 1.0
+                }
+              ],
+              "DNLHFPJECBC": 901102053,
+              "EGFIDIJEKAJ": 0.0,
+              "speed": 12.0
+            },
+            {
+              "$type": "AOKLILFNBJI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "SGV_Active_ID",
+                  "param3": 2.0
+                }
+              ],
+              "DNLHFPJECBC": 901102055,
+              "EGFIDIJEKAJ": 0.0,
+              "speed": 12.0
+            },
+            {
+              "$type": "AOKLILFNBJI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "SGV_Active_ID",
+                  "param3": 6.0
+                }
+              ],
+              "DNLHFPJECBC": 901102056,
+              "EGFIDIJEKAJ": 0.0,
+              "speed": 12.0
+            },
+            {
+              "$type": "AOKLILFNBJI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "SGV_Active_ID",
+                  "param3": 11.0
+                }
+              ],
+              "DNLHFPJECBC": 901102062,
+              "EGFIDIJEKAJ": 0.0,
+              "speed": 12.0
+            },
+            {
+              "$type": "AOKLILFNBJI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "SGV_Active_ID",
+                  "param3": 12.0
+                }
+              ],
+              "DNLHFPJECBC": 901102063,
+              "EGFIDIJEKAJ": 0.0,
+              "speed": 12.0
+            },
+            {
+              "$type": "AOKLILFNBJI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "SGV_Active_ID",
+                  "param3": 13.0
+                }
+              ],
+              "DNLHFPJECBC": 901102064,
+              "EGFIDIJEKAJ": 0.0,
+              "speed": 12.0
+            },
+            {
+              "$type": "AOKLILFNBJI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "SGV_Active_ID",
+                  "param3": 15.0
+                }
+              ],
+              "DNLHFPJECBC": 901102065,
+              "EGFIDIJEKAJ": 0.0,
+              "speed": 12.0
+            },
+            {
+              "$type": "AOKLILFNBJI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "SGV_Active_ID",
+                  "param3": 16.0
+                }
+              ],
+              "DNLHFPJECBC": 901102066,
+              "EGFIDIJEKAJ": 0.0,
+              "speed": 12.0
+            },
+            {
+              "$type": "AOKLILFNBJI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "SGV_Active_ID",
+                  "param3": 17.0
+                }
+              ],
+              "DNLHFPJECBC": 901102067,
+              "EGFIDIJEKAJ": 0.0,
+              "speed": 12.0
+            },
+            {
+              "$type": "AOKLILFNBJI",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "SGV_Active_ID",
+                  "param3": 18.0
+                }
+              ],
+              "DNLHFPJECBC": 901102068,
+              "EGFIDIJEKAJ": 0.0,
+              "speed": 12.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "FNPMFLOOCDD",
+          "shieldHP": true,
+          "param3": 0.0,
+          "key": "GV_In_Fly",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "AOOCGNCCAJB",
+          "isAdd": true,
+          "tag": "KPM_Bee_Group"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_KPM_Along_Bee_Ghost_Group",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "GV_Active",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Blank",
+            "Active"
+          ],
+          "NMCLMHFBALJ": true
+        }
+      ],
+      "modifiers": {
+        "Blank": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "Active": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Stages_SceneObj_VABoids_BeeGhostGroupKPM_02",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AOOCGNCCAJB",
+          "isAdd": true,
+          "tag": "KPM_Final_Surround_Bee"
+        },
+        {
+          "$type": "FNPMFLOOCDD",
+          "param3": 0.0,
+          "key": "GV_Active",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_WhaleSwim_Chord",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Controller"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "KPM_State"
+        }
+      ],
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Stages_SceneObj_MiracleWaterString_Trigger_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "KPM_State": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Stages_SceneObj_MiracleWaterString_KPM_Trigger_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_KPM_OceanCurrent_SpeedUp_12",
+      "modifiers": {
+        "OceanCurrentBoost_Avatar_Eff": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_SpeedUp_Ring_Dash",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onFieldEnter": [
+        {
+          "$type": "PELJALPANCA",
+          "target": "Target",
+          "modifierName": "OceanCurrentBoost_Avatar_Eff"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_BigWhale_Ghost",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Controller"
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Move"
+          ],
+          "modifierName": "MoveEffect",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "MoveEffect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Ptahur_Devourer_02_CommonTrail_02",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "Palm01_L"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MAHNJJFLACM",
+              "followPath": "Palm01_L",
+              "rotationDampTime": "Eff_Monster_Ptahur_Devourer_02_CommonTrail_02",
+              "attachPoint": "Palm01_L"
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Ptahur_Devourer_02_CommonTrail_02",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "Palm01_R"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MAHNJJFLACM",
+              "followPath": "Palm01_R",
+              "rotationDampTime": "Eff_Monster_Ptahur_Devourer_02_CommonTrail_02",
+              "attachPoint": "Palm01_R"
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Ptahur_Devourer_02_CommonTrail_02",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "Toe01_L"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MAHNJJFLACM",
+              "followPath": "Toe01_L",
+              "rotationDampTime": "Eff_Monster_Ptahur_Devourer_02_CommonTrail_02",
+              "attachPoint": "Toe01_L"
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Ptahur_Devourer_02_CommonTrail_02",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "Toe01_R"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MAHNJJFLACM",
+              "followPath": "Toe01_R",
+              "rotationDampTime": "Eff_Monster_Ptahur_Devourer_02_CommonTrail_02",
+              "attachPoint": "Toe01_R"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "FEKJDLHHOLE",
+          "floatID": "BlendSpeed",
+          "param3": 1.0,
+          "transitionTime": 1.0
+        },
+        {
+          "$type": "IEJIAEEJHGE"
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Ptahur_Devourer_02_Appear",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Ptahur_Devourer_02_Disappear",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "BLCCGIPAOIP",
+          "PLLJBINMGJK": "Disappear"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Whale_Trench_Gate",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Close"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "Open"
+        },
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "SGV_Effect_On",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Blank",
+            "EffOn"
+          ],
+          "NMCLMHFBALJ": true
+        }
+      ],
+      "modifiers": {
+        "Blank": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "EffOn": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NDFFAEHJMAL",
+              "globalValueKey": "SGV_QTE_Succ_Count",
+              "actions": [
+                {
+                  "$type": "GFOOGEIKGBI",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "SGV_QTE_Succ_Count",
+                      "param3": 0.0
+                    }
+                  ],
+                  "parameter": "QTE_Succ_Count",
+                  "attachPoint": "",
+                  "damageRatio": "Int",
+                  "rotationDampTime": "Eff_SceneObj_TunnelGate_Loop"
+                },
+                {
+                  "$type": "GFOOGEIKGBI",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "SGV_QTE_Succ_Count",
+                      "param3": 1.0
+                    }
+                  ],
+                  "parameter": "QTE_Succ_Count",
+                  "attachPoint": "",
+                  "damageRatio": "Int",
+                  "value": 1,
+                  "rotationDampTime": "Eff_SceneObj_TunnelGate_Loop"
+                },
+                {
+                  "$type": "GFOOGEIKGBI",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "SGV_QTE_Succ_Count",
+                      "param3": 2.0
+                    }
+                  ],
+                  "parameter": "QTE_Succ_Count",
+                  "attachPoint": "",
+                  "damageRatio": "Int",
+                  "value": 2,
+                  "rotationDampTime": "Eff_SceneObj_TunnelGate_Loop"
+                },
+                {
+                  "$type": "GFOOGEIKGBI",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "SGV_QTE_Succ_Count",
+                      "param3": 3.0
+                    }
+                  ],
+                  "parameter": "QTE_Succ_Count",
+                  "attachPoint": "",
+                  "damageRatio": "Int",
+                  "value": 3,
+                  "rotationDampTime": "Eff_SceneObj_TunnelGate_Loop"
+                },
+                {
+                  "$type": "KBFEIHEAMBM",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "SGV_QTE_Succ_Count",
+                      "param3": 1.0,
+                      "compareType": "MoreThanAndEqual"
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "SGV_QTE_Succ_Count",
+                      "param3": 2.0,
+                      "compareType": "LessAndEqual"
+                    }
+                  ],
+                  "rotationDampTime": "Eff_Monster_Ptahur_Devourer_02_CastAttack_02_Hit",
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                },
+                {
+                  "$type": "KBFEIHEAMBM",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "SGV_QTE_Succ_Count",
+                      "param3": 3.0
+                    }
+                  ],
+                  "rotationDampTime": "Eff_Monster_Ptahur_Devourer_02_CastAttack_02_HitStrong",
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                },
+                {
+                  "$type": "AIFPLABJNMA",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "SGV_QTE_Succ_Count",
+                      "param3": 1.0,
+                      "compareType": "MoreThanAndEqual"
+                    },
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "SGV_QTE_Succ_Count",
+                      "param3": 3.0,
+                      "compareType": "LessAndEqual"
+                    }
+                  ],
+                  "attackEvent": {
+                    "attackPattern": {
+                      "$type": "BELNOFAKNBA",
+                      "triggerType": "TriggerNoRepeat",
+                      "born": {
+                        "$type": "IAENDIPDFKD",
+                        "useRotation": true
+                      },
+                      "OAHPDLJIADP": 1.0
+                    },
+                    "attackInfo": {
+                      "attackTag": "",
+                      "attenuationTag": "",
+                      "attenuationGroup": "default",
+                      "attackProperty": {
+                        "actorGrassSubHurtDelta": 0.0,
+                        "actorWindSubHurtDelta": 0.0,
+                        "IPFJJJGABPL": 0.0,
+                        "enBreak": 0.0,
+                        "GLKMCMDJBIK": 0.0
+                      },
+                      "forceCameraShake": true,
+                      "cameraShake": {
+                        "shakeType": "CustomVector",
+                        "shakeRange": 6.0,
+                        "shakeTime": 2.0,
+                        "shakeDistance": 60.0,
+                        "shakeDir": {
+                          "z": -1.0
+                        },
+                        "extension": {
+                          "baseOnCamera": true
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_TunnelGate_Active",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_TunnelGate_Loop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Close": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_TunnelGate_Open",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Open": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_TunnelGate_Close",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Fish_Group_01",
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "OPHOIJLIFCL",
+              "tag": "OceanShip",
+              "FIOMFMFOABF": [
+                "GV_Curve_Key_0"
+              ],
+              "OADPFPBHBPM": [
+                "ChangeSpeedByTime",
+                "ChangeSpeedByStep",
+                "SetGroupVariable"
+              ],
+              "FBHDNPJFANK": [
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > ChangeSpeedByTime"
+                  },
+                  {
+                    "$type": "MNJCJLCFFLF",
+                    "JCANGOGMHCP": "TEST_GV_"
+                  },
+                  {
+                    "$type": "LDIAIDLOPEE",
+                    "globalValueKey": "TEST_GV_0",
+                    "overrideMapKey": "TEST_GV_0"
+                  },
+                  {
+                    "$type": "LDIAIDLOPEE",
+                    "globalValueKey": "TEST_GV_1",
+                    "overrideMapKey": "TEST_GV_1"
+                  },
+                  {
+                    "$type": "FDPKBINAHGL",
+                    "GGOOHHBDILB": "ByFrame",
+                    "CIIOMAOBCMD": "TEST_GV_0",
+                    "GNFOCKINHLK": "",
+                    "LKOHJIPLECH": "TEST_GV_1"
+                  }
+                ],
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > ChangeSpeedByStep"
+                  },
+                  {
+                    "$type": "MNJCJLCFFLF",
+                    "JCANGOGMHCP": "TEST_GV_"
+                  },
+                  {
+                    "$type": "LDIAIDLOPEE",
+                    "globalValueKey": "TEST_GV_0",
+                    "overrideMapKey": "TEST_GV_0"
+                  },
+                  {
+                    "$type": "LDIAIDLOPEE",
+                    "globalValueKey": "TEST_GV_1",
+                    "overrideMapKey": "TEST_GV_1"
+                  },
+                  {
+                    "$type": "FDPKBINAHGL",
+                    "CIIOMAOBCMD": "TEST_GV_0",
+                    "GNFOCKINHLK": "TEST_GV_1",
+                    "LKOHJIPLECH": ""
+                  }
+                ],
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > SetGroupVariable"
+                  },
+                  {
+                    "$type": "MNJCJLCFFLF",
+                    "JCANGOGMHCP": "TEST_GV_"
+                  },
+                  {
+                    "$type": "LDIAIDLOPEE",
+                    "globalValueKey": "TEST_GV_0",
+                    "overrideMapKey": "TEST_GV_0"
+                  },
+                  {
+                    "$type": "LDIAIDLOPEE",
+                    "globalValueKey": "TEST_GV_1",
+                    "overrideMapKey": "TEST_GV_1"
+                  },
+                  {
+                    "$type": "AHPEKICBIIL",
+                    "luaCallType": "FromGroup",
+                    "funcName": "SLC_GoldenHall_SetVar",
+                    "paramNum": 2,
+                    "param1": "TEST_GV_0",
+                    "MGAMDEHMCOL": "TEST_GV_1",
+                    "MMHOHAOGPLP": 0.0
+                  }
+                ]
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Stages_SceneObj_VABoids_PigeonGhostGroup_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Stages_VABoids_PigeonGhostGroup_Trail_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Controller"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Bee_Group_01",
+      "modifiers": {
+        "Controller": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "OPHOIJLIFCL",
+              "tag": "OceanCurrent",
+              "FIOMFMFOABF": [
+                "GV_Curve_Key_0"
+              ],
+              "OADPFPBHBPM": [
+                "ChangeSpeedByTime",
+                "ChangeSpeedByStep"
+              ],
+              "FBHDNPJFANK": [
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > ChangeSpeedByTime"
+                  },
+                  {
+                    "$type": "MNJCJLCFFLF",
+                    "JCANGOGMHCP": "TEST_GV_"
+                  },
+                  {
+                    "$type": "LDIAIDLOPEE",
+                    "globalValueKey": "TEST_GV_0",
+                    "overrideMapKey": "TEST_GV_0"
+                  },
+                  {
+                    "$type": "LDIAIDLOPEE",
+                    "globalValueKey": "TEST_GV_1",
+                    "overrideMapKey": "TEST_GV_1"
+                  },
+                  {
+                    "$type": "FDPKBINAHGL",
+                    "GGOOHHBDILB": "ByFrame",
+                    "CIIOMAOBCMD": "TEST_GV_0",
+                    "GNFOCKINHLK": "",
+                    "LKOHJIPLECH": "TEST_GV_1"
+                  }
+                ],
+                [
+                  {
+                    "$type": "ELNHKGAPIBJ",
+                    "content": "LevelCurveMixin > ChangeSpeedByStep"
+                  },
+                  {
+                    "$type": "MNJCJLCFFLF",
+                    "JCANGOGMHCP": "TEST_GV_"
+                  },
+                  {
+                    "$type": "LDIAIDLOPEE",
+                    "globalValueKey": "TEST_GV_0",
+                    "overrideMapKey": "TEST_GV_0"
+                  },
+                  {
+                    "$type": "LDIAIDLOPEE",
+                    "globalValueKey": "TEST_GV_1",
+                    "overrideMapKey": "TEST_GV_1"
+                  },
+                  {
+                    "$type": "FDPKBINAHGL",
+                    "CIIOMAOBCMD": "TEST_GV_0",
+                    "GNFOCKINHLK": "TEST_GV_1",
+                    "LKOHJIPLECH": ""
+                  }
+                ]
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Stages_SceneObj_VABoids_BeeGhostGroupKPM_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "canBeHandledOnRecover": true,
+              "parameter": "IdleState",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 3,
+              "rotationDampTime": "Eff_Stages_SceneObj_VABoids_BeeGhostGroupKPM_01"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Controller"
+        }
+      ]
+    }
+  }
+]

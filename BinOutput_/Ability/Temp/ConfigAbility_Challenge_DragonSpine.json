@@ -1,0 +1,144 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ChallengeAbility_DragonSpine_MoveSpeed",
+      "abilitySpecials": {
+        "MoveSpeedRatio": 0.25
+      },
+      "modifiers": {
+        "UNIQUE_ChallengeAbility_DragonSpine_MoveSpeed": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Animator_MoveSpeedRatio": "MoveSpeedRatio"
+          },
+          "state": "SpeedUp"
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ChallengeAbility_DragonSpine_MoveSpeed"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ChallengeAbility_DragonSpine_HealHp",
+      "abilitySpecials": {
+        "BuffDuration": 120.0,
+        "HpRatio": 0.10000000149011612
+      },
+      "modifiers": {
+        "UNIQUE_ChallengeAbility_DragonSpine_HealHp": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "BuffDuration",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 5.0,
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "target": "CurLocalAvatar",
+              "modifierName": "Heal"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "PELJALPANCA",
+              "target": "CurLocalAvatar",
+              "modifierName": "Heal"
+            }
+          ]
+        },
+        "Heal": {
+          "stacking": "Multiple",
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FHGPOFDJDCO",
+              "CKDBFHCIJEK": "HpRatio",
+              "cdRatio": ""
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "modifierName": "UNIQUE_ChallengeAbility_DragonSpine_HealHp"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ChallengeAbility_DragonSpine_AttackUp",
+      "abilitySpecials": {
+        "AttackRatio": 0.4000000059604645
+      },
+      "modifiers": {
+        "UNIQUE_ChallengeAbility_DragonSpine_AttackUp": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_AttackRatio": "AttackRatio"
+          },
+          "state": "AttackUp"
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ChallengeAbility_DragonSpine_AttackUp"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ChallengeAbility_DragonSpine_AttackSpeed",
+      "abilitySpecials": {
+        "AttackSpeedRatio": 0.25
+      },
+      "modifiers": {
+        "UNIQUE_ChallengeAbility_DragonSpine_AttackSpeed": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Animator_AttackSpeedRatio": "AttackSpeedRatio"
+          },
+          "state": "SpeedUp"
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ChallengeAbility_DragonSpine_AttackSpeed"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  }
+]

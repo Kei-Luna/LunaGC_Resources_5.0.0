@@ -1,0 +1,4783 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_HideSeek_StateHandle_PlayerState_V4",
+      "abilityMixins": [
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueTarget": "Team",
+          "globalValueKey": "SGV_HideAndSeek_PlayerState_Dead",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "PlayerState_Avatar_Ghost"
+          ],
+          "NMCLMHFBALJ": true
+        },
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueTarget": "Team",
+          "globalValueKey": "SGV_HideAndSeek_PlayerState_OnMap",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "SGV_HideAndSeek_PlayerState_OnMap_Blank"
+          ],
+          "NMCLMHFBALJ": true
+        },
+        {
+          "$type": "CCNIOPJEHOE",
+          "globalValueTarget": "Team",
+          "globalValueKey": "SGV_HideAndSeek_PlayerState_Moveable",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "SGV_HideAndSeek_PlayerState_Moveable_Blank"
+          ],
+          "NMCLMHFBALJ": true
+        }
+      ],
+      "modifiers": {
+        "SGV_HideAndSeek_PlayerState_OnMap_Blank": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "SGV_HideAndSeek_PlayerState_Moveable_Blank": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "UNIQUE_ActivityAbility_HideSeek_StateHandle_PlayerState_Team": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PHLKCMFKFIN",
+              "globalValueKey": "SGV_HideAndSeek_PlayerState_Play",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5,
+                2.5,
+                4.5
+              ],
+              "modifierNameSteps": [
+                "PlayerState_Team_0",
+                "PlayerState_Team_1",
+                "PlayerState_Team_2",
+                "PlayerState_Team_3"
+              ],
+              "NMCLMHFBALJ": true
+            }
+          ]
+        },
+        "PlayerState_Team_0": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "PlayerState_Team_1": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "PlayerState_Team_2": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurLocalAvatar",
+              "modifierName": "PlayerState_Avatar_2"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurLocalAvatar",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Team",
+                  "key": "SGV_HideAndSeek_PlayerState_Dead",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "modifierName": "PlayerState_Avatar_Trap"
+            }
+          ]
+        },
+        "PlayerState_Team_3": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 10.0,
+          "onThinkInterval": [
+            {
+              "$type": "PELJALPANCA",
+              "target": "CurLocalAvatar",
+              "modifierName": "Avatar_SLCAction_HideAndSeek_Skill_Init"
+            }
+          ]
+        },
+        "Avatar_SLCAction_HideAndSeek_Skill_Init": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AHPEKICBIIL",
+              "target": "CurLocalAvatar",
+              "shieldHP": true,
+              "luaCallType": "AbilityGroupSourceGroup",
+              "funcName": "HideAndSeek_Skill_Init",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            },
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "SLC:HideAndSeek_Skill_Init!!!!!!!!!!!"
+            }
+          ]
+        },
+        "PlayerState_Avatar_2": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "PlayerState_Avatar_2 > onAdded！！"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_LocalState_Is_ShowMark",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "PlayerState_Avatar_Trap": {
+          "modifierName": "",
+          "elementDurability": 2.6500000953674316,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "PlayerState_Avatar_Trap > onAdded"
+            },
+            {
+              "$type": "KFCDMIMBBLD",
+              "target": "Caster",
+              "shieldHP": true,
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true
+              },
+              "gadgetID": 44000591,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "target": "CurTeamAvatars",
+              "shieldHP": true,
+              "gadgetInfo": {
+                "configID": 44000591
+              }
+            }
+          ]
+        },
+        "PlayerState_Avatar_Ghost": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "LLCAHDLGAHO",
+              "predicates": [
+                {
+                  "$type": "BCFNGJHILAG",
+                  "predicates": [
+                    {
+                      "$type": "JALOOGPAKNF"
+                    }
+                  ]
+                }
+              ],
+              "reason": "Gallary",
+              "disableAudio": true
+            },
+            {
+              "$type": "LCFEOMJJGBF",
+              "predicates": [
+                {
+                  "$type": "JALOOGPAKNF"
+                }
+              ],
+              "ditherValue": 0.5,
+              "cutInTime": 0.10000000149011612,
+              "cutOutTime": 0.20000000298023224
+            },
+            {
+              "$type": "COEDOLJOHAK",
+              "postEffectAssetName": "PostEffect_Activity_HideSeek_ScreenEffect",
+              "duration": 0.0
+            }
+          ],
+          "properties": {
+            "Actor_FallingDamageRatio": -1.0
+          },
+          "onAdded": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "PlayerState_Avatar_Dead_1 > onAdded!"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_LocalState_Is_ShowMark",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "EOBKCKNFHDM",
+              "shieldHP": true,
+              "passThrough": true
+            },
+            {
+              "$type": "PPDJHLBHCIK",
+              "shieldHP": true,
+              "canBeHandledOnRecover": true,
+              "muteRemoteAction": true,
+              "toPlayMode": "HideAndSeek_Ghost"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "PlayerState_Avatar_Dead_1 > onRemoved!"
+            },
+            {
+              "$type": "EOBKCKNFHDM",
+              "shieldHP": true,
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "PPDJHLBHCIK",
+              "shieldHP": true,
+              "muteRemoteAction": true,
+              "JFDCCIECAJB": "HideAndSeek_Ghost"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_StateHandle_PlayerState_Team"
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "PFKNEFGOHIH",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_StateHandle_PlayerState_Team"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_HideSeek_CanInteract",
+      "modifiers": {
+        "UNIQUE_ActivityAbility_HideSeek_CanInteract_Team": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PHLKCMFKFIN",
+              "globalValueKey": "SGV_HideAndSeek_PlayerState_Cannot_Interact",
+              "valueSteps": [
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "UNIQUE_ActivityAbility_HideSeek_Can_Interact_Handler"
+              ],
+              "NMCLMHFBALJ": true
+            }
+          ]
+        },
+        "UNIQUE_ActivityAbility_HideSeek_Can_Interact_Handler": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "MPOCIADDCFP",
+              "typeList": [
+                "InteePanel"
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_CanInteract_Team"
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "PFKNEFGOHIH",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_CanInteract_Team"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_HideSeek_Hider_FixMachine",
+      "modifiers": {
+        "UNIQUE_ActivityAbility_HideSeek_Hider_FixMachine_Team": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PHLKCMFKFIN",
+              "globalValueKey": "SGV_HideAndSeek_PlayerState_StartFix",
+              "valueSteps": [
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "UNIQUE_ActivityAbility_HideSeek_Hider_FixMachine_Handler"
+              ],
+              "NMCLMHFBALJ": true
+            },
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "UNIQUE_ActivityAbility_HideSeek_NotFix_Handler"
+            }
+          ]
+        },
+        "UNIQUE_ActivityAbility_HideSeek_Hider_FixMachine_Handler": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "UNIQUE_ActivityAbility_HideSeek_Hider_FixMachine"
+            },
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "UNIQUE_ActivityAbility_HideSeek_Forbid_Move"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "GNAEJNBIFAC",
+              "target": "CurLocalAvatar",
+              "PLLJBINMGJK": "EndChannelTrigger"
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "target": "CurLocalAvatar",
+              "PLLJBINMGJK": "StartChannelTrigger"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "target": "CurLocalAvatar",
+              "PLLJBINMGJK": "EndChannelTrigger"
+            }
+          ]
+        },
+        "UNIQUE_ActivityAbility_HideSeek_Forbid_Move": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "PBLNLAENOGB",
+                "topLimit": 1,
+                "sortType": "Nearest",
+                "tag": "IS_CODEMACHINE"
+              },
+              "successActions": [
+                {
+                  "$type": "MDIAKCCDEAL",
+                  "target": "Target",
+                  "turnToTargetImmediately": true
+                }
+              ]
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "LockMotionFlagExitChannel",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "LockMotionFlagExitChannel"
+            }
+          ]
+        },
+        "UNIQUE_ActivityAbility_HideSeek_NotFix_Handler": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "UNIQUE_ActivityAbility_HideSeek_NotFix"
+            }
+          ]
+        },
+        "UNIQUE_ActivityAbility_HideSeek_Hider_FixMachine": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "Channel_Loop",
+                "Channel_AS",
+                "Channel_BS"
+              ],
+              "modifierName": "AvatarInChannel",
+              "isCheckOnAttach": true,
+              "DGFCLAIDIFI": ""
+            },
+            {
+              "$type": "LDDNKABEHEF",
+              "maxDistance": 8.0,
+              "resetToMaxOnStart": true,
+              "useNormalLerping": true,
+              "lerpOutDuration": 1.5
+            }
+          ]
+        },
+        "UNIQUE_ActivityAbility_HideSeek_NotFix": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "Standby",
+                "NormalStandby",
+                "NormalMove",
+                "Sprint",
+                "SprintBS",
+                "NormalStandbyWeapon",
+                "NormalMoveWeapon",
+                "NormalMoveWeaponPutaway",
+                "NormalMoveWeaponStandByPutaway",
+                "NormalMoveWeaponOver",
+                "Swim",
+                "Dive",
+                "Fly",
+                "Fall"
+              ],
+              "modifierName": "AvatarNotInChannel",
+              "isCheckOnAttach": true,
+              "DGFCLAIDIFI": ""
+            }
+          ]
+        },
+        "AvatarInChannel": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.5,
+          "onRemoved": [
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "AbilityGroupSourceGroup",
+              "funcName": "SLC_Break_channel",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "CurLocalAvatar",
+              "targetPredicates": [
+                {
+                  "$type": "BCFNGJHILAG",
+                  "predicates": [
+                    {
+                      "$type": "BHFFBBOLCCP",
+                      "modifierName": "AvatarNotInChannel"
+                    }
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "AHPEKICBIIL",
+                  "luaCallType": "AbilityGroupSourceGroup",
+                  "funcName": "SLC_Increase_FixVal",
+                  "param1": 0.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        "AvatarNotInChannel": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.5,
+          "onThinkInterval": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "BGOKEHHCFHG",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Team",
+                      "key": "SGV_HideAndSeek_PlayerState_StartFix",
+                      "param3": 1.0
+                    },
+                    {
+                      "$type": "BCFNGJHILAG",
+                      "predicates": [
+                        {
+                          "$type": "BHFFBBOLCCP",
+                          "target": "CurLocalAvatar",
+                          "modifierName": "UNIQUE_ActivityAbility_HideSeek_Forbid_Move"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "AHPEKICBIIL",
+                  "luaCallType": "AbilityGroupSourceGroup",
+                  "funcName": "SLC_Break_channel",
+                  "param1": 0.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_Hider_FixMachine_Team"
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "PFKNEFGOHIH",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_Hider_FixMachine_Team"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_HideSeek_Hider_Disable_Skill",
+      "modifiers": {
+        "UNIQUE_ActivityAbility_HideSeek_Disable_Skill_Team": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PHLKCMFKFIN",
+              "globalValueKey": "SGV_HideAndSeek_PlayerState_Disable_Skill",
+              "valueSteps": [
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "UNIQUE_ActivityAbility_HideSeek_Disable_Skill_Handler"
+              ],
+              "NMCLMHFBALJ": true
+            },
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "UNIQUE_ActivityAbility_HideSeek_Disable_Skill_StateDecider"
+            }
+          ]
+        },
+        "UNIQUE_ActivityAbility_HideSeek_Disable_Skill_StateDecider": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "Fly",
+                "Climb"
+              ],
+              "modifierName": "ClimbState",
+              "isCheckOnAttach": true,
+              "DGFCLAIDIFI": ""
+            }
+          ]
+        },
+        "ClimbState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "HideSeek_Hider_Disable_Skill_Avatar_IsInClimb",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "HideSeek_Hider_Disable_Skill_Avatar_IsInClimb",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "UNIQUE_ActivityAbility_HideSeek_Disable_Skill_Handler": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "UNIQUE_ActivityAbility_HideSeek_Disable_Skill"
+            }
+          ]
+        },
+        "UNIQUE_ActivityAbility_HideSeek_Disable_Skill": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PHLKCMFKFIN",
+              "globalValueKey": "HideSeek_Hider_Disable_Skill_Avatar_IsInClimb",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "DisableSkill_Normal",
+                "DisableSkill_Climb"
+              ],
+              "NMCLMHFBALJ": true
+            }
+          ]
+        },
+        "DisableSkill_Normal": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "KAIOONFFNHC",
+              "slotType": "Slot1"
+            },
+            {
+              "$type": "KAIOONFFNHC",
+              "slotType": "Slot2"
+            },
+            {
+              "$type": "KAIOONFFNHC",
+              "slotType": "Slot5"
+            }
+          ]
+        },
+        "DisableSkill_Climb": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "KAIOONFFNHC",
+              "slotType": "Slot2"
+            },
+            {
+              "$type": "KAIOONFFNHC",
+              "slotType": "Slot5"
+            }
+          ]
+        },
+        "UNIQUE_ActivityAbility_HideSeek_Visible_Prison_Team": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PHLKCMFKFIN",
+              "globalValueKey": "SGV_HideAndSeek_PlayerState_Visible_Prison",
+              "valueSteps": [
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "UNIQUE_ActivityAbility_HideSeek_Visible_Prison_Eff_Handler"
+              ],
+              "NMCLMHFBALJ": true
+            }
+          ]
+        },
+        "UNIQUE_ActivityAbility_HideSeek_Visible_Prison_Eff_Handler": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "UNIQUE_ActivityAbility_HideSeek_Visible_Prison_Eff_Handler_Avatar"
+            }
+          ]
+        },
+        "UNIQUE_ActivityAbility_HideSeek_Visible_Prison_Eff_Handler_Avatar": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 2.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "muteRemoteAction": true,
+              "rotationDampTime": "Eff_Activity_HideSeek_Invisibility_CountDown",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_Disable_Skill_Team"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_Visible_Prison_Team"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "HideSeek_Hider_Disable_Skill_Avatar_IsInClimb",
+          "useLimitRange": true,
+          "param2": 1.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "PFKNEFGOHIH",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_Disable_Skill_Team"
+        },
+        {
+          "$type": "PFKNEFGOHIH",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_Visible_Prison_Team"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_HideSeek_Seeker_WardHere_SwitchSkill",
+      "modifiers": {
+        "UNIQUE_ActivityAbility_HideSeek_Seeker_WardHere_SwitchSkill": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PDFENCBHHAI",
+              "shieldHP": true,
+              "skillID": 20532
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "shieldHP": true,
+              "modifierName": "Seeker_WardHere_SwitchSKill"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "shieldHP": true,
+              "modifierName": "Seeker_WardHere_SwitchSKill"
+            },
+            {
+              "$type": "KFOBADMAFJF",
+              "shieldHP": true,
+              "skillID": 20532
+            }
+          ]
+        },
+        "Seeker_WardHere_SwitchSKill": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BBDLKGEJDOJ",
+              "priority": "Playmode",
+              "skillID": 20532
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_Seeker_WardHere_SwitchSkill"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_HideSeek_Seeker_WardHere",
+      "modifiers": {
+        "UNIQUE_ActivityAbility_HideSeek_Seeker_WardHere_Team": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_Seeker_WardHere_Team"
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "PFKNEFGOHIH",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_Seeker_WardHere_Team"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "INBCDALOHMP",
+          "target": "Caster",
+          "targetPredicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Team",
+              "key": "SGV_HideAndSeek_PlayerState_Play",
+              "param3": 0.0
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "SLC:HideAndSeek_Skill_WardHere!!!!!!!!!!!"
+            },
+            {
+              "$type": "OCLNBBMMIOK",
+              "shieldHP": true,
+              "skillID": 20532,
+              "amountByTargetCurrentHPRatio": 1.0,
+              "costStaminaRatio": 1.0
+            },
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "AbilityGroupSourceGroup",
+              "funcName": "SLC_HideAndSeek_Skill_WardHere_Place",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "SGV_HideAndSeek_PlayerState_Play不匹配!!!!!!!!!!!"
+            }
+          ]
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_HideSeek_Hider_WardHere",
+      "modifiers": {
+        "UNIQUE_ActivityAbility_HideSeek_WardHere_Searcher_V4": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "ActivityAbility_HideSeek_WardHere_Searcher_Avatar_V4"
+            }
+          ]
+        },
+        "ActivityAbility_HideSeek_WardHere_Searcher_Avatar_V4": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.30000001192092896,
+          "onAdded": [
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR6H3",
+                "campTargetType": "All",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "HideAndSeek_Seeker_WardHere_Gadget",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "AHPEKICBIIL",
+                  "luaCallType": "AbilityGroupSourceGroup",
+                  "funcName": "SLC_HideAndSeek_Skill_WardHere_Check",
+                  "param1": 0.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                }
+              ]
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR6H3",
+                "campTargetType": "All",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "HideAndSeek_Seeker_WardHere_Gadget",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "AHPEKICBIIL",
+                  "luaCallType": "AbilityGroupSourceGroup",
+                  "funcName": "SLC_HideAndSeek_Skill_WardHere_Check",
+                  "param1": 0.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_ActivityAbility_HideSeek_WardHere_forbid_disguise_V4": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PHLKCMFKFIN",
+              "globalValueKey": "SGV_Is_In_WardDetected",
+              "valueSteps": [
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "UNIQUE_ActivityAbility_HideSeek_WardHere_forbid_disguise_handler"
+              ],
+              "NMCLMHFBALJ": true
+            }
+          ]
+        },
+        "UNIQUE_ActivityAbility_HideSeek_WardHere_forbid_disguise_handler": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "target": "Caster",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "_ActivityAbility_HideSeek_Hider_Disguise_SwitchSkill_State",
+              "useLimitRange": true,
+              "param2": 100.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "target": "Caster",
+              "shieldHP": true,
+              "param3": -1.0,
+              "key": "_ActivityAbility_HideSeek_Hider_Disguise_SwitchSkill_State",
+              "useLimitRange": true,
+              "param2": 100.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_WardHere_Searcher_V4"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_WardHere_forbid_disguise_V4"
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "PFKNEFGOHIH",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_WardHere_Searcher_V4"
+        },
+        {
+          "$type": "PFKNEFGOHIH",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_WardHere_forbid_disguise_V4"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_HideSeek_Hunter_RadarMark",
+      "modifiers": {
+        "UNIQUE_ActivityAbility_HideSeek_Hunter_RadarMark_Team": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "JACDJMGFGDP",
+              "radarHintID": 37,
+              "disable": true
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000585,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000585
+              }
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000585,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_Hunter_RadarMark_Team"
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "PFKNEFGOHIH",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_Hunter_RadarMark_Team"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_HideSeek_Seeker_RadarFade_SwitchSkill",
+      "modifiers": {
+        "UNIQUE_ActivityAbility_HideSeek_Seeker_RadarFade_SwitchSkill": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PDFENCBHHAI",
+              "shieldHP": true,
+              "skillID": 20533
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "shieldHP": true,
+              "modifierName": "Seeker_RadarFade_SwitchSKill"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "shieldHP": true,
+              "modifierName": "Seeker_RadarFade_SwitchSKill"
+            },
+            {
+              "$type": "KFOBADMAFJF",
+              "shieldHP": true,
+              "skillID": 20533
+            }
+          ]
+        },
+        "Seeker_RadarFade_SwitchSKill": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BBDLKGEJDOJ",
+              "priority": "Playmode",
+              "skillIndex": 4,
+              "skillID": 20533
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_Seeker_RadarFade_SwitchSkill"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_HideSeek_Seeker_RadarFade",
+      "modifiers": {
+        "UNIQUE_ActivityAbility_HideSeek_Seeker_RadarFade_Team": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BENCAFPNENE",
+              "effects": [
+                "Eff_Activity_HideAndSeekV4_01_Guide_Target",
+                "Eff_Activity_HideAndSeekV4_01_Guide_Target",
+                "Eff_Activity_HideAndSeekV4_01_Guide_Target"
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_Seeker_RadarFade_Team"
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "PFKNEFGOHIH",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_Seeker_RadarFade_Team"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "INBCDALOHMP",
+          "target": "Caster",
+          "targetPredicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Team",
+              "key": "SGV_HideAndSeek_PlayerState_Play",
+              "param3": 0.0
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "SLC:HideAndSeek_Skill_RadarFade!!!!!!!!!!!"
+            },
+            {
+              "$type": "OCLNBBMMIOK",
+              "shieldHP": true,
+              "skillID": 20533,
+              "amountByTargetCurrentHPRatio": 1.0,
+              "costStaminaRatio": 1.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": 0.0,
+              "key": "AVATAR_SEEKANDHIDE_ENERGY",
+              "useLimitRange": true,
+              "param2": 50.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "AbilityGroupSourceGroup",
+              "funcName": "SLC_HideAndSeek_Skill_RadarFade",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "SGV_HideAndSeek_PlayerState_Play不匹配!!!!!!!!!!!"
+            }
+          ]
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_HideSeek_StateHandle_RespondHunterRadarFade",
+      "modifiers": {
+        "UNIQUE_ActivityAbility_HideSeek_Hider_RespondHunterRadarFade_Team": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PHLKCMFKFIN",
+              "globalValueKey": "SGV_Is_In_RespondHunterRadarFade",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "UNIQUE_ActivityAbility_HideSeek_Hider_RadarNotFade",
+                "UNIQUE_ActivityAbility_HideSeek_Hider_RadarFade"
+              ],
+              "NMCLMHFBALJ": true
+            }
+          ]
+        },
+        "UNIQUE_ActivityAbility_HideSeek_Hider_RadarNotFade": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "JACDJMGFGDP",
+              "radarHintID": 37
+            }
+          ]
+        },
+        "UNIQUE_ActivityAbility_HideSeek_Hider_RadarFade": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "JACDJMGFGDP",
+              "radarHintID": 37,
+              "disable": true
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_Hider_RespondHunterRadarFade_Team"
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "PFKNEFGOHIH",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_Hider_RespondHunterRadarFade_Team"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_HideSeek_StateHandle_SuperPrison_V4",
+      "abilitySpecials": {
+        "Value_SuperPrison_TargetDuration": 40.0
+      },
+      "modifiers": {
+        "UNIQUE_ActivityAbility_HideSeek_StateHandle_SuperPrison_Team_V4": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "JPPFBGJICKI",
+              "key": "SGV_Is_In_SuperPrison",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PHLKCMFKFIN",
+              "globalValueKey": "SGV_Is_In_SuperPrison",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "SuperPrison_False_Team",
+                "SuperPrison_True_Team"
+              ],
+              "NMCLMHFBALJ": true
+            }
+          ]
+        },
+        "SuperPrison_False_Team": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "SuperPrison_True_Team": {
+          "modifierName": "",
+          "elementDurability": "Value_SuperPrison_TargetDuration",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "onAdded": [
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "AbilityGroupSourceGroup",
+              "funcName": "SLC_Break_channel",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            },
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "SuperPrison_True_Team > onAdded"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "target": "Caster",
+              "shieldHP": true,
+              "modifierName": "SuperPrisonState_Avatar_Freeze"
+            },
+            {
+              "$type": "KFCDMIMBBLD",
+              "target": "Caster",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true,
+                "attachPointName": "RootNode",
+                "attachPointTargetType": "Self"
+              },
+              "gadgetID": 44000590,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "target": "CurLocalAvatar",
+              "modifierName": "Avatar_SLCCaller_Out_SuperPrison"
+            },
+            {
+              "$type": "JKFLDIKGJEF",
+              "target": "CurTeamAvatars",
+              "shieldHP": true,
+              "gadgetInfo": {
+                "configID": 44000590
+              }
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "AbilityGroupSourceGroup",
+              "funcName": "SLC_Break_channel",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 44000590
+              },
+              "targetPredicates": [
+                {
+                  "$type": "FMBJAJFLDIP",
+                  "compareType": "XYZ",
+                  "param3": 2.0,
+                  "DDALGNLEHOD": ""
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "successActions:逃脱重新禁锢"
+                },
+                {
+                  "$type": "JKFLDIKGJEF",
+                  "target": "CurTeamAvatars",
+                  "shieldHP": true,
+                  "gadgetInfo": {
+                    "configID": 44000590
+                  }
+                },
+                {
+                  "$type": "KFCDMIMBBLD",
+                  "target": "Caster",
+                  "born": {
+                    "$type": "KLPANPDGHHA",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 0.0
+                    },
+                    "useRotation": true,
+                    "attachPointName": "RootNode",
+                    "attachPointTargetType": "Self"
+                  },
+                  "gadgetID": 44000590,
+                  "campID": 1001,
+                  "campTargetType": "Enemy"
+                }
+              ]
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "AbilityGroupSourceGroup",
+              "funcName": "SLC_Break_channel",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            },
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "SuperPrison_True_Team > onReconnect"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "target": "Caster",
+              "shieldHP": true,
+              "modifierName": "SuperPrisonState_Avatar_Freeze"
+            },
+            {
+              "$type": "KFCDMIMBBLD",
+              "target": "Caster",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true,
+                "attachPointName": "RootNode",
+                "attachPointTargetType": "Self"
+              },
+              "gadgetID": 44000590,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ]
+        },
+        "SuperPrisonState_Avatar_Freeze": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "state": "ElementFreeze"
+        },
+        "Avatar_SLCCaller_Out_SuperPrison": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "AbilityGroupSourceGroup",
+              "funcName": "HideAndSeek_Out_SuperPrison",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_StateHandle_SuperPrison_Team_V4"
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "PFKNEFGOHIH",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_StateHandle_SuperPrison_Team_V4"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_HideSeek_Hider_Disguise_SwitchSkill_V4",
+      "modifiers": {
+        "UNIQUE_ActivityAbility_HideSeek_Hider_Disguise_SwitchSkill_V4": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PDFENCBHHAI",
+              "shieldHP": true,
+              "skillID": 20534
+            },
+            {
+              "$type": "PDFENCBHHAI",
+              "shieldHP": true,
+              "skillID": 20535
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "shieldHP": true,
+              "modifierName": "Hider_Disguise_SwitchSkill"
+            },
+            {
+              "$type": "PPDJHLBHCIK",
+              "shieldHP": true,
+              "canBeHandledOnRecover": true,
+              "muteRemoteAction": true,
+              "toPlayMode": "HideAndSeek_AliveV2"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "shieldHP": true,
+              "modifierName": "Hider_Disguise_SwitchSkill"
+            },
+            {
+              "$type": "KFOBADMAFJF",
+              "shieldHP": true,
+              "skillID": 20534
+            },
+            {
+              "$type": "KFOBADMAFJF",
+              "shieldHP": true,
+              "skillID": 20535
+            },
+            {
+              "$type": "PPDJHLBHCIK",
+              "shieldHP": true,
+              "muteRemoteAction": true,
+              "JFDCCIECAJB": "HideAndSeek_AliveV2"
+            }
+          ]
+        },
+        "Hider_Disguise_SwitchSkill": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "_ActivityAbility_HideSeek_Hider_Disguise_SwitchSkill_State",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                -0.5,
+                0.5,
+                100.0
+              ],
+              "modifierNameSteps": [
+                "Hider_Disguise_SwitchSkill_State_True_Skill",
+                "Hider_Disguise_SwitchSkill_State_False_Skill"
+              ]
+            },
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "Swim",
+                "Fly"
+              ],
+              "modifierName": "HideAndSeek_PlayerState_Transfer_Quit_Swim",
+              "isCheckOnAttach": true,
+              "DGFCLAIDIFI": ""
+            }
+          ]
+        },
+        "Hider_Disguise_SwitchSkill_State_False": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "target": "Caster",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "_ActivityAbility_HideSeek_Hider_Disguise_SwitchSkill_State",
+              "useLimitRange": true,
+              "param2": 100.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "target": "Caster",
+              "shieldHP": true,
+              "param3": -1.0,
+              "key": "_ActivityAbility_HideSeek_Hider_Disguise_SwitchSkill_State",
+              "useLimitRange": true,
+              "param2": 100.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Hider_Disguise_SwitchSkill_State_True_Skill": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BBDLKGEJDOJ",
+              "priority": "Playmode",
+              "skillIndex": 1,
+              "skillID": 20534
+            }
+          ]
+        },
+        "Hider_Disguise_SwitchSkill_State_False_Skill": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BBDLKGEJDOJ",
+              "priority": "Playmode",
+              "skillIndex": 1,
+              "skillID": 20535
+            }
+          ]
+        },
+        "HideAndSeek_PlayerState_Transfer_Quit_Swim": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "AbilityGroupSourceGroup",
+              "funcName": "HideAndSeek_Skill_Transfer_Quit",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "predicates": [
+            {
+              "$type": "BCFNGJHILAG",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Team",
+                  "key": "SGV_HideAndSeek_PlayerState_Play",
+                  "param3": 2.0
+                }
+              ]
+            }
+          ],
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_Hider_Disguise_SwitchSkill_V4"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "shieldHP": true,
+          "param3": 0.0,
+          "key": "_ActivityAbility_HideSeek_Hider_Disguise_SwitchSkill_State",
+          "useLimitRange": true,
+          "param2": 100.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_HideSeek_Hider_DisguiseHandler_V4",
+      "abilityMixins": [
+        {
+          "$type": "GODEMHMODCN",
+          "skillID": 20534,
+          "chargeTime": 0.20000000298023224,
+          "EKKJNADOEMB": 0.4000000059604645,
+          "onReleaseUncharged": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "准备发动短按技能效果"
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Caster",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Team",
+                  "key": "SGV_Is_In_UltraMark",
+                  "param3": 0.0
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Team",
+                  "key": "SGV_Is_In_GlobalSight",
+                  "param3": 0.0
+                },
+                {
+                  "$type": "BCFNGJHILAG",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Team",
+                      "key": "SGV_HideAndSeek_PlayerState_Play",
+                      "param3": 2.0
+                    }
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "OCLNBBMMIOK",
+                  "skillID": 20534,
+                  "amountByTargetCurrentHPRatio": 1.0,
+                  "costStaminaRatio": 1.0
+                },
+                {
+                  "$type": "AHPEKICBIIL",
+                  "luaCallType": "AbilityGroupSourceGroup",
+                  "funcName": "HideAndSeek_Skill_Transfer",
+                  "param1": 0.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                },
+                {
+                  "$type": "ELNHKGAPIBJ",
+                  "content": "开始变身"
+                }
+              ]
+            }
+          ],
+          "onBeginCharged": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "UNIQUE_HideAndSeek_Skill_Transfer_Quit_Modifier_V4"
+            },
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "退出变身"
+            }
+          ],
+          "onReleaseCharged": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "准备发动长按技能效果"
+            },
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "AbilityGroupSourceGroup",
+              "funcName": "HideAndSeek_Skill_Transfer_Quit",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_ActivityAbility_HideSeek_Hider_DisguiseHandler_Team_V4": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "JPPFBGJICKI",
+              "key": "SGV_HideAndSeek_PlayerState_Transfer",
+              "useLimitRange": true,
+              "param2": 46.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "JPPFBGJICKI",
+              "key": "SGV_HideAndSeek_PlayerState_TransferCache",
+              "useLimitRange": true,
+              "param2": 46.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PHLKCMFKFIN",
+              "globalValueKey": "SGV_HideAndSeek_PlayerState_Transfer",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5,
+                2.5,
+                3.5,
+                4.5,
+                5.5,
+                6.5,
+                7.5,
+                8.5,
+                9.5,
+                10.5,
+                11.5,
+                12.5,
+                13.5,
+                14.5,
+                15.5,
+                16.5,
+                17.5,
+                18.5,
+                19.5,
+                20.5,
+                21.5,
+                22.5,
+                23.5,
+                24.5,
+                25.5,
+                26.5,
+                27.5,
+                28.5,
+                29.5,
+                30.5,
+                31.5,
+                32.5,
+                33.5,
+                34.5,
+                35.5,
+                36.5,
+                37.5,
+                38.5,
+                39.5,
+                40.5,
+                41.5,
+                42.5,
+                43.5,
+                44.5,
+                45.5,
+                46.5
+              ],
+              "modifierNameSteps": [
+                "Blank_Team",
+                "HideType_A_Style_1_Team_1",
+                "HideType_A_Style_2_Team_2",
+                "HideType_A_Style_3_Team_3",
+                "HideType_B_Style_1_Team_4",
+                "HideType_B_Style_2_Team_5",
+                "HideType_C_Style_1_Team_6",
+                "HideType_D_Style_1_Team_7",
+                "HideType_D_Style_2_Team_8",
+                "HideType_E_Style_1_Team_9",
+                "HideType_E_Style_2_Team_10",
+                "HideType_Team_1",
+                "HideType_Team_2",
+                "HideType_Team_3",
+                "HideType_Team_4",
+                "HideType_Team_5",
+                "HideType_Team_6",
+                "HideType_Team_7",
+                "HideType_Team_8",
+                "HideType_Team_9",
+                "HideType_Team_10",
+                "HideType_Team_11",
+                "HideType_Team_12",
+                "HideType_Team_13",
+                "HideType_Team_24",
+                "HideType_Team_25",
+                "HideType_Team_26",
+                "HideType_Team_27",
+                "HideType_Team_28",
+                "HideType_Team_29",
+                "HideType_Team_30",
+                "HideType_Team_31",
+                "HideType_Team_32",
+                "HideType_Team_33",
+                "HideType_Team_34",
+                "HideType_Team_35",
+                "HideType_Team_36",
+                "HideType_Team_37",
+                "HideType_Team_38",
+                "HideType_Team_39",
+                "HideType_Team_40",
+                "HideType_Team_41",
+                "HideType_Team_42",
+                "HideType_Team_43",
+                "HideType_Team_44",
+                "HideType_Team_45",
+                "HideType_Team_46"
+              ],
+              "NMCLMHFBALJ": true
+            }
+          ]
+        },
+        "Blank_Team": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "HideType_A_Style_1_Team_1": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000200,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000200
+              }
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "UNIQUE_SetDisguiseGlobalValue_V4"
+            }
+          ]
+        },
+        "HideType_A_Style_2_Team_2": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000201,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000201
+              }
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "UNIQUE_SetDisguiseGlobalValue_V4"
+            }
+          ]
+        },
+        "HideType_A_Style_3_Team_3": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000202,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000202
+              }
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "UNIQUE_SetDisguiseGlobalValue_V4"
+            }
+          ]
+        },
+        "HideType_B_Style_1_Team_4": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000203,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000203
+              }
+            },
+            {
+              "$type": "ELNHKGAPIBJ",
+              "shieldHP": true,
+              "content": "退出变身时执行了吗11111"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "UNIQUE_SetDisguiseGlobalValue_V4"
+            }
+          ]
+        },
+        "HideType_B_Style_2_Team_5": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000204,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000204
+              }
+            }
+          ]
+        },
+        "HideType_C_Style_1_Team_6": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000205,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000205
+              }
+            }
+          ]
+        },
+        "HideType_D_Style_1_Team_7": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000206,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000206
+              }
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "UNIQUE_SetDisguiseGlobalValue_V4"
+            }
+          ]
+        },
+        "HideType_D_Style_2_Team_8": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000207,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000207
+              }
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "UNIQUE_SetDisguiseGlobalValue_V4"
+            }
+          ]
+        },
+        "HideType_E_Style_1_Team_9": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000208,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000208
+              }
+            }
+          ]
+        },
+        "HideType_E_Style_2_Team_10": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000209,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000209
+              }
+            }
+          ]
+        },
+        "HideType_Team_1": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000400,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000400
+              }
+            }
+          ]
+        },
+        "HideType_Team_2": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000401,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000401
+              }
+            }
+          ]
+        },
+        "HideType_Team_3": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000402,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000402
+              }
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "UNIQUE_SetDisguiseGlobalValue_V4"
+            }
+          ]
+        },
+        "HideType_Team_4": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000403,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000403
+              }
+            },
+            {
+              "$type": "ELNHKGAPIBJ",
+              "shieldHP": true,
+              "content": "退出变身时执行了吗11111"
+            }
+          ]
+        },
+        "HideType_Team_5": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000404,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000404
+              }
+            }
+          ]
+        },
+        "HideType_Team_6": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000405,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000405
+              }
+            }
+          ]
+        },
+        "HideType_Team_7": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000406,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000406
+              }
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "UNIQUE_SetDisguiseGlobalValue_V4"
+            }
+          ]
+        },
+        "HideType_Team_8": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000407,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000407
+              }
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "UNIQUE_SetDisguiseGlobalValue_V4"
+            }
+          ]
+        },
+        "HideType_Team_9": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000408,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000408
+              }
+            }
+          ]
+        },
+        "HideType_Team_10": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000409,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000409
+              }
+            }
+          ]
+        },
+        "HideType_Team_11": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000410,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000410
+              }
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "UNIQUE_SetDisguiseGlobalValue_V4"
+            }
+          ]
+        },
+        "HideType_Team_12": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000411,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000411
+              }
+            }
+          ]
+        },
+        "HideType_Team_13": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000412,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000412
+              }
+            }
+          ]
+        },
+        "HideType_Team_24": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000521,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000521
+              }
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "UNIQUE_SetDisguiseGlobalValue_V4"
+            }
+          ]
+        },
+        "HideType_Team_25": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000522,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000522
+              }
+            }
+          ]
+        },
+        "HideType_Team_26": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000523,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000523
+              }
+            }
+          ]
+        },
+        "HideType_Team_27": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000524,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000524
+              }
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "UNIQUE_SetDisguiseGlobalValue_V4"
+            }
+          ]
+        },
+        "HideType_Team_28": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000525,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000525
+              }
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "UNIQUE_SetDisguiseGlobalValue_V4"
+            }
+          ]
+        },
+        "HideType_Team_29": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000526,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000526
+              }
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "UNIQUE_SetDisguiseGlobalValue_V4"
+            }
+          ]
+        },
+        "HideType_Team_30": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000527,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000527
+              }
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "UNIQUE_SetDisguiseGlobalValue_V4"
+            }
+          ]
+        },
+        "HideType_Team_31": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000528,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000528
+              }
+            }
+          ]
+        },
+        "HideType_Team_32": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000529,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000529
+              }
+            }
+          ]
+        },
+        "HideType_Team_33": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000530,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000530
+              }
+            }
+          ]
+        },
+        "HideType_Team_34": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000531,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000531
+              }
+            }
+          ]
+        },
+        "HideType_Team_35": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000532,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000532
+              }
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "UNIQUE_SetDisguiseGlobalValue_V4"
+            }
+          ]
+        },
+        "HideType_Team_36": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000533,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000533
+              }
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "UNIQUE_SetDisguiseGlobalValue_V4"
+            }
+          ]
+        },
+        "HideType_Team_37": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000534,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000534
+              }
+            }
+          ]
+        },
+        "HideType_Team_38": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000535,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000535
+              }
+            }
+          ]
+        },
+        "HideType_Team_39": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000536,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000536
+              }
+            }
+          ]
+        },
+        "HideType_Team_40": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000537,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000537
+              }
+            }
+          ]
+        },
+        "HideType_Team_41": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000538,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000538
+              }
+            }
+          ]
+        },
+        "HideType_Team_42": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000539,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000539
+              }
+            }
+          ]
+        },
+        "HideType_Team_43": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000540,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000540
+              }
+            }
+          ]
+        },
+        "HideType_Team_44": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000586,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000586
+              }
+            }
+          ]
+        },
+        "HideType_Team_45": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000587,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000587
+              }
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "UNIQUE_SetDisguiseGlobalValue_V4"
+            }
+          ]
+        },
+        "HideType_Team_46": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 44000588,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JKFLDIKGJEF",
+              "gadgetInfo": {
+                "configID": 44000588
+              }
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "UNIQUE_SetDisguiseGlobalValue_V4"
+            }
+          ]
+        },
+        "UNIQUE_SetDisguiseGlobalValue_V4": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 44000406
+              },
+              "param3": 3.0,
+              "key": "GV_HideAndSeek_DisguiseObject_Size",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 44000587
+              },
+              "param3": 3.0,
+              "key": "GV_HideAndSeek_DisguiseObject_Size",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 44000588
+              },
+              "param3": 3.0,
+              "key": "GV_HideAndSeek_DisguiseObject_Size",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 44000521
+              },
+              "param3": 3.0,
+              "key": "GV_HideAndSeek_DisguiseObject_Size",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 44000524
+              },
+              "param3": 3.0,
+              "key": "GV_HideAndSeek_DisguiseObject_Size",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 44000525
+              },
+              "param3": 3.0,
+              "key": "GV_HideAndSeek_DisguiseObject_Size",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 44000526
+              },
+              "param3": 3.0,
+              "key": "GV_HideAndSeek_DisguiseObject_Size",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 44000527
+              },
+              "param3": 3.0,
+              "key": "GV_HideAndSeek_DisguiseObject_Size",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 44000532
+              },
+              "param3": 1.0,
+              "key": "GV_HideAndSeek_DisguiseObject_Size",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 44000533
+              },
+              "param3": 3.0,
+              "key": "GV_HideAndSeek_DisguiseObject_Size",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 44000200
+              },
+              "param3": 3.0,
+              "key": "GV_HideAndSeek_DisguiseObject_Size",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 44000201
+              },
+              "param3": 3.0,
+              "key": "GV_HideAndSeek_DisguiseObject_Size",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 44000202
+              },
+              "param3": 3.0,
+              "key": "GV_HideAndSeek_DisguiseObject_Size",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 44000203
+              },
+              "param3": 3.0,
+              "key": "GV_HideAndSeek_DisguiseObject_Size",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 44000206
+              },
+              "param3": 1.0,
+              "key": "GV_HideAndSeek_DisguiseObject_Size",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 44000207
+              },
+              "param3": 3.0,
+              "key": "GV_HideAndSeek_DisguiseObject_Size",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 44000402
+              },
+              "param3": 1.0,
+              "key": "GV_HideAndSeek_DisguiseObject_Size",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 44000407
+              },
+              "param3": 3.0,
+              "key": "GV_HideAndSeek_DisguiseObject_Size",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 44000410
+              },
+              "param3": 3.0,
+              "key": "GV_HideAndSeek_DisguiseObject_Size",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "HideType_A_Style_1_Avatar": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "UNIQUE_Hider_Transfer_Invisible_V4"
+            },
+            {
+              "$type": "EOBKCKNFHDM",
+              "shieldHP": true,
+              "passThrough": true
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "UNIQUE_Hider_MoveSpeedDown_V4"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "UNIQUE_Hider_Transfer_Invisible_V4"
+            },
+            {
+              "$type": "EOBKCKNFHDM",
+              "shieldHP": true
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "UNIQUE_Hider_MoveSpeedDown_V4"
+            },
+            {
+              "$type": "ELNHKGAPIBJ",
+              "shieldHP": true,
+              "content": "退出变身时执行了吗"
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Team",
+                  "key": "SGV_HideAndSeek_PlayerState_Transfer",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "modifierName": "HideType_A_Style_1_Avatar"
+            }
+          ]
+        },
+        "UNIQUE_Hider_MoveSpeedDown_V4": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Animator_MoveSpeedRatio": -0.5
+          },
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Hider_Transfer_Invisible_V4": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "LLCAHDLGAHO",
+              "reason": "Mixin",
+              "disableAudio": true
+            }
+          ]
+        },
+        "UNIQUE_HideAndSeek_Skill_Transfer_Quit_Modifier_V4": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "OCLNBBMMIOK",
+              "skillID": 20534,
+              "amountByTargetCurrentHPRatio": 1.0,
+              "costStaminaRatio": 1.0
+            },
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "AbilityGroupSourceGroup",
+              "funcName": "HideAndSeek_Skill_Transfer_Quit",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            },
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "退出变身调用1111"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "muteRemoteAction": true,
+              "rotationDampTime": "Eff_Activity_HideSeek_Disguise_Quit",
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                }
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_Hider_DisguiseHandler_Team_V4"
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "PFKNEFGOHIH",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_Hider_DisguiseHandler_Team_V4"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_HideSeek_Seeker_SuperLockon_SwitchSkill_V4",
+      "modifiers": {
+        "UNIQUE_ActivityAbility_HideSeek_Seeker_SuperLockon_SwitchSkill_V4": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PDFENCBHHAI",
+              "shieldHP": true,
+              "skillID": 20538
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "shieldHP": true,
+              "modifierName": "Seeker_SuperLockon_SwitchSkill"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "shieldHP": true,
+              "modifierName": "Seeker_SuperLockon_SwitchSkill"
+            },
+            {
+              "$type": "KFOBADMAFJF",
+              "shieldHP": true,
+              "skillID": 20538
+            }
+          ]
+        },
+        "Seeker_SuperLockon_SwitchSkill": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BBDLKGEJDOJ",
+              "priority": "Playmode",
+              "skillIndex": 4,
+              "skillID": 20538
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_Seeker_SuperLockon_SwitchSkill_V4"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_HideSeek_Seeker_SuperLockon_V4",
+      "modifiers": {
+        "UNIQUE_ActivityAbility_HideSeek_StateHandle_SuperPrison_Seeker_Team_V4": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "JPPFBGJICKI",
+              "key": "SGV_Is_In_SuperPrison",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PHLKCMFKFIN",
+              "globalValueKey": "SGV_Is_In_SuperPrison",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "SuperPrisonState_False_Team",
+                "SuperPrisonState_True_Team"
+              ],
+              "NMCLMHFBALJ": true
+            }
+          ]
+        },
+        "SuperPrisonState_False_Team": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "SuperPrisonState_True_Team": {
+          "modifierName": "",
+          "elementDurability": 45.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "target": "Caster",
+              "shieldHP": true,
+              "modifierName": "SuperPrisonState_Avatar_Freeze"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "target": "CurLocalAvatar",
+              "modifierName": "Avatar_SLCCaller_Out_SuperPrison"
+            }
+          ]
+        },
+        "Avatar_SLCCaller_Out_SuperPrison": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "AbilityGroupSourceGroup",
+              "funcName": "HideAndSeek_Out_SuperPrison",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ]
+        },
+        "SuperPrisonState_Avatar_Freeze": {
+          "modifierName": "",
+          "elementDurability": 10.0,
+          "IPFJJJGABPL": 100.0,
+          "state": "ElementFreeze"
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_StateHandle_SuperPrison_Seeker_Team_V4"
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "PFKNEFGOHIH",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_StateHandle_SuperPrison_Seeker_Team_V4"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "INBCDALOHMP",
+          "target": "Caster",
+          "targetPredicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Team",
+              "key": "SGV_HideAndSeek_PlayerState_Play",
+              "param3": 0.0
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "SCL:HideAndSeek_Skill_SuperPrison!!!!!!!!!!!"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": 0.0,
+              "key": "AVATAR_SEEKANDHIDE_ENERGY",
+              "useLimitRange": true,
+              "param2": 50.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "OCLNBBMMIOK",
+              "skillID": 20538,
+              "amountByTargetCurrentHPRatio": 1.0,
+              "costStaminaRatio": 1.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Activity_HideAndSeekV4_01_SuperPrison",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "AbilityGroupSourceGroup",
+              "funcName": "HideAndSeek_Skill_SuperPrison",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "SGV_HideAndSeek_PlayerState_Play不匹配!!!!!!!!!!!"
+            }
+          ]
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_HideSeek_Seeker_Execution_SwitchSkill_V4",
+      "modifiers": {
+        "UNIQUE_ActivityAbility_HideSeek_Seeker_Execution_SwitchSkill_V4": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Animator_MoveSpeedRatio": 0.15000000596046448
+          },
+          "onAdded": [
+            {
+              "$type": "PDFENCBHHAI",
+              "shieldHP": true,
+              "skillID": 20539
+            },
+            {
+              "$type": "PDFENCBHHAI",
+              "shieldHP": true,
+              "skillID": 20540
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "shieldHP": true,
+              "modifierName": "Seeker_Execution_SwitchSkill_Handle"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "shieldHP": true,
+              "modifierName": "Seeker_Execution_SwitchSkill_Handle"
+            },
+            {
+              "$type": "KFOBADMAFJF",
+              "shieldHP": true,
+              "skillID": 20539
+            },
+            {
+              "$type": "KFOBADMAFJF",
+              "shieldHP": true,
+              "skillID": 20540
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "Seeker_Execution_SwitchSkill_Handle": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "_ActivityAbility_HideSeek_Seeker_Execution_SwitchSkill_State",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "Seeker_Execution_SwitchSkill_Default",
+                "Seeker_Execution_SwitchSkill_Fly"
+              ]
+            },
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "Jump",
+                "Fly",
+                "Fall"
+              ],
+              "modifierName": "Seeker_Execution_SwitchSkill_State_Fly",
+              "DGFCLAIDIFI": ""
+            },
+            {
+              "$type": "NAAIKIOFBPA",
+              "skillList": [
+                20539
+              ],
+              "stateList": [
+                "Climb",
+                "Swim",
+                "LiquidStrike_BS",
+                "LiquidStrike_BS1",
+                "LiquidStrike_Move",
+                "LiquidStrike_MoveStandby"
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "PPDJHLBHCIK",
+              "shieldHP": true,
+              "canBeHandledOnRecover": true,
+              "muteRemoteAction": true,
+              "toPlayMode": "HideAndSeek_AliveV2"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PPDJHLBHCIK",
+              "shieldHP": true,
+              "muteRemoteAction": true,
+              "JFDCCIECAJB": "HideAndSeek_AliveV2"
+            }
+          ]
+        },
+        "Seeker_Execution_SwitchSkill_State_Fly": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "_ActivityAbility_HideSeek_Seeker_Execution_SwitchSkill_State",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ActivityAbility_HideSeek_Seeker_Execution_SwitchSkill_State",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Seeker_Execution_SwitchSkill_Default": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BBDLKGEJDOJ",
+              "priority": "Playmode",
+              "skillIndex": 1,
+              "skillID": 20539
+            }
+          ]
+        },
+        "Seeker_Execution_SwitchSkill_Fly": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "KMPFLHBHBBP",
+              "index": 1,
+              "priority": "Playmode",
+              "jumpSkillID": 20540,
+              "flySkillID": 20540,
+              "changeOnAdd": true
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_Seeker_Execution_SwitchSkill_V4"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_HideSeek_Seeker_Execution_V4",
+      "onAbilityStart": [
+        {
+          "$type": "INBCDALOHMP",
+          "target": "Team",
+          "targetPredicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Team",
+              "key": "SGV_HideAndSeek_PlayerState_Play",
+              "param3": 0.0
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "SCL:HideAndSeek_Skill_CatchPrey!!!!!!!!!!!"
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Team",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Team",
+                  "key": "SGV_Is_In_Rampage",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "OCLNBBMMIOK",
+                  "target": "CurTeamAvatars",
+                  "shieldHP": true,
+                  "skillID": 20539,
+                  "amountByTargetCurrentHPRatio": 1.0,
+                  "costStaminaRatio": 1.0
+                },
+                {
+                  "$type": "OCLNBBMMIOK",
+                  "target": "CurTeamAvatars",
+                  "shieldHP": true,
+                  "skillID": 20540,
+                  "amountByTargetCurrentHPRatio": 1.0,
+                  "costStaminaRatio": 1.0
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "OCLNBBMMIOK",
+                  "target": "CurTeamAvatars",
+                  "shieldHP": true,
+                  "skillID": 20539,
+                  "amountByTargetCurrentHPRatio": 0.5,
+                  "costStaminaRatio": 1.0
+                },
+                {
+                  "$type": "OCLNBBMMIOK",
+                  "target": "CurTeamAvatars",
+                  "shieldHP": true,
+                  "skillID": 20540,
+                  "amountByTargetCurrentHPRatio": 0.5,
+                  "costStaminaRatio": 1.0
+                }
+              ]
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Activity_HideAndSeekV4_01_Execution",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "AbilityGroupSourceGroup",
+              "funcName": "HideAndSeek_Skill_CatchPrey",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "SGV_HideAndSeek_PlayerState_Play不匹配!!!!!!!!!!!"
+            }
+          ]
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_HideSeek_Seeker_Guide_SwitchSkill_V4",
+      "modifiers": {
+        "UNIQUE_ActivityAbility_HideSeek_Seeker_Guide_SwitchSkill_V4": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PDFENCBHHAI",
+              "shieldHP": true,
+              "skillID": 20541
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "shieldHP": true,
+              "modifierName": "Seeker_Guide_SwitchSKill_V4"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "shieldHP": true,
+              "modifierName": "Seeker_Guide_SwitchSKill_V4"
+            },
+            {
+              "$type": "KFOBADMAFJF",
+              "shieldHP": true,
+              "skillID": 20541
+            }
+          ]
+        },
+        "Seeker_Guide_SwitchSKill_V4": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BBDLKGEJDOJ",
+              "priority": "Playmode",
+              "skillID": 20541
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_Seeker_Guide_SwitchSkill_V4"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_HideSeek_Seeker_Guide_V4",
+      "HKFPCGFFKMJ": [
+        "HideSeek_Seeker_CDcontroller_Guide_Avatar_CDTimer"
+      ],
+      "modifiers": {
+        "UNIQUE_ActivityAbility_HideSeek_Seeker_Guide_Team_V4": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BENCAFPNENE",
+              "effects": [
+                "Eff_Activity_HideAndSeekV4_01_Guide_Target",
+                "Eff_Activity_HideAndSeekV4_01_Guide_Target",
+                "Eff_Activity_HideAndSeekV4_01_Guide_Target"
+              ]
+            }
+          ]
+        },
+        "UNIQUE_ActivityAbility_HideSeek_Seeker_CDcontroller_Guide_Avatar_V4": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 40.0,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 40.0,
+              "key": "HideSeek_Seeker_CDcontroller_Guide_Avatar_CDTimer",
+              "useLimitRange": true,
+              "param2": 40.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "IIGGCBAOAAK",
+              "param3": -1.0,
+              "key": "HideSeek_Seeker_CDcontroller_Guide_Avatar_CDTimer",
+              "useLimitRange": true,
+              "param2": 40.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "CCMOJLPKHDN",
+              "shieldHP": true,
+              "skillID": 20541,
+              "ENLDECLMOOD": "HideSeek_Seeker_CDcontroller_Guide_Avatar_CDTimer",
+              "IPGBMELIMCM": true
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_Seeker_Guide_Team_V4"
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "PFKNEFGOHIH",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_Seeker_Guide_Team_V4"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "INBCDALOHMP",
+          "target": "Caster",
+          "targetPredicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Team",
+              "key": "SGV_HideAndSeek_PlayerState_Play",
+              "param3": 0.0
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "target": "Caster",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_ActivityAbility_HideSeek_Seeker_CDcontroller_Guide_Avatar_V4"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "Caster",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_ActivityAbility_HideSeek_Seeker_CDcontroller_Guide_Avatar_V4"
+            },
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "SLC:HideAndSeek_Skill_Guide!!!!!!!!!!!"
+            },
+            {
+              "$type": "OCLNBBMMIOK",
+              "shieldHP": true,
+              "skillID": 20541,
+              "amountByTargetCurrentHPRatio": 1.0,
+              "costStaminaRatio": 1.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Activity_HideSeek_Guide",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "AbilityGroupSourceGroup",
+              "funcName": "HideAndSeek_Skill_Guide",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "ELNHKGAPIBJ",
+              "content": "SGV_HideAndSeek_PlayerState_Play不匹配!!!!!!!!!!!"
+            }
+          ]
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "ActivityAbility_HideSeek_StateHandle_Is_Detected_V4",
+      "modifiers": {
+        "UNIQUE_ActivityAbility_HideSeek_StateHandle_Is_Detected_Team_V4": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PHLKCMFKFIN",
+              "globalValueKey": "SGV_HideAndSeek_PlayerState_Is_Detected",
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "Is_Detected_Blank_Team",
+                "Is_Detected_Team"
+              ],
+              "NMCLMHFBALJ": true
+            }
+          ]
+        },
+        "Is_Detected_Blank_Team": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "Is_Detected_Team": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "Is_Detected_Avatar"
+            }
+          ]
+        },
+        "Is_Detected_Avatar": {
+          "modifierName": "",
+          "elementDurability": 5.0,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "AGLPEBEMGIA",
+              "actionList": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Team",
+                  "modifierName": "EffectModifier"
+                },
+                {
+                  "$type": "PFKNEFGOHIH",
+                  "modifierName": "Is_Detected_Avatar"
+                }
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "AbilityGroupSourceGroup",
+              "funcName": "HideAndSeek_Skill_Is_Detected_Quit",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ]
+        },
+        "EffectModifier": {
+          "stacking": "Multiple",
+          "modifierName": "",
+          "elementDurability": 5.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Activity_HideAndSeekV4_01_Detect_Move",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_StateHandle_Is_Detected_Team_V4"
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "PFKNEFGOHIH",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_ActivityAbility_HideSeek_StateHandle_Is_Detected_Team_V4"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  }
+]

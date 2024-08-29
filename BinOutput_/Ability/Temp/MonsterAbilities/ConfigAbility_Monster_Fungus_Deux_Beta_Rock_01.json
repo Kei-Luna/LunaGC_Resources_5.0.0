@@ -1,0 +1,259 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Fungus_Deux_Beta_Rock_Steer",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "FlyingBashNormal_BS"
+          ],
+          "endNormalizedTime": 3.0,
+          "angularSpeed": 540.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "FlyingBashOverdose_BS"
+          ],
+          "endNormalizedTime": 3.0,
+          "angularSpeed": 540.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "FlyingBashDecay_BS"
+          ],
+          "endNormalizedTime": 3.0,
+          "angularSpeed": 540.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "FlyingBash"
+          ],
+          "endNormalizedTime": 99.0,
+          "angularSpeed": 30.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Fungus_Deux_Beta_Rock_MeleeAttackNormal",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "MeleeAttackDecay_BS",
+            "MeleeAttackDecay_Loop"
+          ],
+          "modifierName": "MeleeAttackBSEffect_Decayed",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "MeleeAttackBSEffect_Decayed": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Fungus_Deux_Beta_Rock_MeleeAttackDecayed_Loop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Fungus_Deux_Beta_Rock_FlyingBashNormal",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "FlyingBashDecay_BS",
+            "FlyingBashDecay_Loop"
+          ],
+          "modifierName": "FlyingBashBSEffect_Decayed",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Standby",
+            "StandbyFree"
+          ],
+          "modifierName": "FlyingBashOverdoseStartHandler",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "FlyingBashOverdose_Attack"
+          ],
+          "modifierName": "FlyingBashOverdoseHandler",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "FlyingBashNormal_Attack",
+            "FlyingBashNormal_AS",
+            "FlyingBashOverdose_Attack",
+            "FlyingBashOverdose_AS"
+          ],
+          "modifierName": "FlyingBashAttackEffect_Normal",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "FlyingBashDecay_Attack",
+            "FlyingBashDecay_AS"
+          ],
+          "modifierName": "FlyingBashAttackEffect_Decayed",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "FlyingBashOverdoseCount": 0.0
+      },
+      "modifiers": {
+        "FlyingBashBSEffect_Decayed": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Fungus_Deux_Beta_Rock_FlyingBashDecayed_Loop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "FlyingBashOverdoseStartHandler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_MONSTER_FUNGUS_DEUX_BETA_ROCK_FLYINGBASHOVERDOSECOUNT_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "_MONSTER_FUNGUS_DEUX_BETA_ROCK_FLYINGBASHOVERDOSECOUNT_",
+              "overrideMapKey": "FlyingBashOverdoseCount"
+            },
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "FlyingBashOverdoseCount",
+              "param3": "FlyingBashOverdoseCount"
+            }
+          ]
+        },
+        "FlyingBashOverdoseHandler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "_MONSTER_FUNGUS_DEUX_BETA_ROCK_FLYINGBASHOVERDOSECOUNT_",
+              "param2": 3.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "_MONSTER_FUNGUS_DEUX_BETA_ROCK_FLYINGBASHOVERDOSECOUNT_",
+              "overrideMapKey": "FlyingBashOverdoseCount"
+            },
+            {
+              "$type": "AKEEDILMOJF",
+              "intID": "FlyingBashOverdoseCount",
+              "param3": "FlyingBashOverdoseCount"
+            }
+          ]
+        },
+        "FlyingBashAttackEffect_Normal": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Fungus_Deux_Beta_Rock_FlyingBashNormal_Attack",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "FlyingBashAttackEffect_Decayed": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Fungus_Deux_Beta_Rock_FlyingBashDecayed_Attack",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Fungus_Deux_Beta_Rock_HitThrowDropToGround",
+      "onAbilityStart": [
+        {
+          "$type": "INBCDALOHMP",
+          "targetPredicates": [
+            {
+              "$type": "JFLFAEAHLJM",
+              "filters": [
+                "Water"
+              ]
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Fungus_HitThrowToGround_Water",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0,
+              "useRemoteSelfPos": true
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Fungus_Deux_Beta_Rock_HitThrowToGround",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0,
+              "useRemoteSelfPos": true
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

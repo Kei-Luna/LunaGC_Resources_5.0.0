@@ -1,0 +1,299 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Hound_Riftstalker_RunState",
+      "modifiers": {
+        "Run_RandomValue": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BEIEKAHLNED",
+              "chance": 0.30000001192092896,
+              "successActions": [
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "RunRandom"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Run_RandomValue"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Hound_Corruption_LoseHP",
+      "modifiers": {
+        "Hound_Corruption_LoseHP_AttackCheck": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Avatar"
+                  ]
+                },
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "Hound_Corruption_Tag"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "TargetTeam",
+                  "predicates": [
+                    {
+                      "$type": "BCFNGJHILAG",
+                      "predicates": [
+                        {
+                          "$type": "GEODPIOLLCI"
+                        }
+                      ]
+                    }
+                  ],
+                  "modifierName": "Hound_Corruption_LoseHP_Logic"
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "TargetTeam",
+                  "predicates": [
+                    {
+                      "$type": "BCFNGJHILAG",
+                      "predicates": [
+                        {
+                          "$type": "GEODPIOLLCI"
+                        }
+                      ]
+                    }
+                  ],
+                  "modifierName": "UNIQUE_Hound_Corruption_LoseHP_Effect_LocalHandler"
+                }
+              ]
+            }
+          ]
+        },
+        "Hound_Corruption_LoseHP_Logic": {
+          "timeScale": "Level",
+          "stacking": "Multiple",
+          "modifierName": "",
+          "elementDurability": 9.5,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "state": "UnlockFrequencyLimit",
+          "onAdded": [
+            {
+              "$type": "DLLGNJPHFDE",
+              "target": "CurTeamAvatars",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "BCFNGJHILAG",
+                  "predicates": [
+                    {
+                      "$type": "JALOOGPAKNF"
+                    }
+                  ]
+                },
+                {
+                  "$type": "AFCIHEABHEL",
+                  "ratio": 0.15000000596046448
+                },
+                {
+                  "$type": "INGPMALFKLK"
+                }
+              ],
+              "GHINLKIEMFA": 0.0,
+              "CKDBFHCIJEK": 0.004999999888241291,
+              "lethal": false,
+              "enableInvincible": true,
+              "enableLockHP": true,
+              "disableWhenLoading": true,
+              "useMeta": true,
+              "BJKGFBGEFPB": ""
+            },
+            {
+              "$type": "DLLGNJPHFDE",
+              "target": "CurTeamAvatars",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "JALOOGPAKNF"
+                },
+                {
+                  "$type": "INGPMALFKLK"
+                }
+              ],
+              "GHINLKIEMFA": 0.0,
+              "CKDBFHCIJEK": 0.004999999888241291,
+              "enableInvincible": true,
+              "enableLockHP": true,
+              "disableWhenLoading": true,
+              "useMeta": true,
+              "BJKGFBGEFPB": ""
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "DLLGNJPHFDE",
+              "target": "CurTeamAvatars",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "BCFNGJHILAG",
+                  "predicates": [
+                    {
+                      "$type": "JALOOGPAKNF"
+                    }
+                  ]
+                },
+                {
+                  "$type": "AFCIHEABHEL",
+                  "ratio": 0.15000000596046448
+                },
+                {
+                  "$type": "INGPMALFKLK"
+                }
+              ],
+              "GHINLKIEMFA": 0.0,
+              "CKDBFHCIJEK": 0.004999999888241291,
+              "lethal": false,
+              "enableInvincible": true,
+              "enableLockHP": true,
+              "disableWhenLoading": true,
+              "useMeta": true,
+              "BJKGFBGEFPB": ""
+            },
+            {
+              "$type": "DLLGNJPHFDE",
+              "target": "CurTeamAvatars",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "JALOOGPAKNF"
+                },
+                {
+                  "$type": "INGPMALFKLK"
+                }
+              ],
+              "GHINLKIEMFA": 0.0,
+              "CKDBFHCIJEK": 0.004999999888241291,
+              "enableInvincible": true,
+              "enableLockHP": true,
+              "disableWhenLoading": true,
+              "useMeta": true,
+              "BJKGFBGEFPB": ""
+            }
+          ],
+          "onThinkIntervalIsFixedUpdate": true,
+          "modifierTags": [
+            "Corruption"
+          ]
+        },
+        "UNIQUE_Hound_Corruption_LoseHP_Effect_LocalHandler": {
+          "stacking": "RefreshUniqueDurability",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 9.5,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "Hound_Corruption_LoseHP_Effect"
+            },
+            {
+              "$type": "EEPKCGMKKJC",
+              "modifierName": "Hound_Corruption_LoseHP_Icon"
+            }
+          ],
+          "modifierTags": [
+            "Corruption"
+          ]
+        },
+        "Hound_Corruption_LoseHP_Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Common_Corruption_LoseHP",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Stage",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 2,
+              "rotationDampTime": "Eff_Monster_Common_Corruption_LoseHP"
+            }
+          ]
+        },
+        "Hound_Corruption_LoseHP_Icon": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "buffID": 90005
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Hound_Corruption_LoseHP_AttackCheck"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Hound_Riftstalker_ExitBattle",
+      "abilityMixins": [
+        {
+          "$type": "AOKOIIHJJPJ",
+          "alertness": [
+            0
+          ],
+          "modifierName": "ExitBattle"
+        }
+      ],
+      "modifiers": {
+        "ExitBattle": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_Riftstalker_POSE_TAG_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "FEJJABGNGHA",
+              "param3": 0.0
+            }
+          ]
+        }
+      }
+    }
+  }
+]

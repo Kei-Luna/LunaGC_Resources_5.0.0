@@ -1,0 +1,1687 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Sylph_Electric_PoseHandler",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_SYLPH_POSE_TAG_",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Pose_None",
+            "Pose_Activated"
+          ]
+        },
+        {
+          "$type": "PDIMAGBFBIE",
+          "valueSteps": [
+            0.019999999552965164
+          ],
+          "modifierNameSteps": [
+            "Sylph_Empty",
+            "Sylph_DyingPoseState"
+          ]
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_Sylph_Limbo": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_HpThresholdRatio": 0.0
+          },
+          "state": "Limbo"
+        },
+        "Empty": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "Achieve_Moniter": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onKill": [
+            {
+              "$type": "HCLAKBJKPLE",
+              "watcherId": 82125,
+              "inThreatListOnly": true
+            }
+          ]
+        },
+        "UNIQUE_Sylph_ChargeBar": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "HBPDEMIJCDL",
+              "chargeBarIconID": 2,
+              "initialValue": 0.0,
+              "param2": 100.0
+            },
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "_CHARGEBAR_VALUE",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                -0.5,
+                0.5,
+                99.5,
+                100.5
+              ],
+              "modifierNameSteps": [
+                "Achieve_Moniter",
+                "Empty",
+                "ChargeActivated"
+              ]
+            },
+            {
+              "$type": "OPOICDPJIPL",
+              "valueMin": 0.1875,
+              "valueMax": 0.3125,
+              "actionQueue": [
+                {
+                  "$type": "PMJJNECJCLE",
+                  "param3": 20.0,
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            },
+            {
+              "$type": "OPOICDPJIPL",
+              "valueMin": 0.3125,
+              "valueMax": 0.4375,
+              "actionQueue": [
+                {
+                  "$type": "PMJJNECJCLE",
+                  "param3": 40.0,
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            },
+            {
+              "$type": "OPOICDPJIPL",
+              "valueMin": 0.4375,
+              "valueMax": 0.5625,
+              "actionQueue": [
+                {
+                  "$type": "PMJJNECJCLE",
+                  "param3": 70.0,
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            },
+            {
+              "$type": "OPOICDPJIPL",
+              "valueMin": 0.5625,
+              "valueMax": 3.4028234663852886e+38,
+              "actionQueue": [
+                {
+                  "$type": "PMJJNECJCLE",
+                  "param3": 100.0,
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "FEJJABGNGHA",
+              "param3": 0.0
+            }
+          ]
+        },
+        "ChargeActivated": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_SYLPH_POSE_TAG_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "NormalToActivated"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_SYLPH_POSE_TAG_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "GNAEJNBIFAC",
+              "PLLJBINMGJK": "NormalToActivated"
+            }
+          ]
+        },
+        "Pose_None": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "ActivatedTag"
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "ActivatedTag"
+            }
+          ]
+        },
+        "Pose_Activated": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CIBMLJJLANN",
+              "excludeForces": [
+                "WindZoneType",
+                "AirflowType",
+                "RetreatAirType"
+              ]
+            }
+          ],
+          "properties": {
+            "Entity_WeightRatio": 2.0
+          },
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "ActivatedTag",
+              "param3": true
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "ActivatedTag",
+              "param3": true
+            },
+            {
+              "$type": "IPMMJGMONCI",
+              "skillIDs": [
+                601
+              ]
+            },
+            {
+              "$type": "DOANGHCALGB",
+              "skillIDs": [
+                601
+              ]
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBoxBody"
+              ]
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBoxBody_Activated"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ]
+            },
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider_Activated"
+              ],
+              "setEnable": true
+            }
+          ]
+        },
+        "Sylph_DyingPoseState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_EndureDelta": 0.0,
+            "Actor_SubHurtDelta": 1.0
+          },
+          "state": "DenyLockOn",
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "DyingState",
+              "param3": true
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBoxBody"
+              ]
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBoxBody_Activated"
+              ]
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_SYLPH_DEATH_TAG_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "Dying_IsGhostToAllied"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "Dying_IsGhostToEnemy"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "Dying_LockHP"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "Dying_NoHeal"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "DyingState"
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_SYLPH_POSE_TAG_",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "hitBoxNames": [
+                "HitBoxBody"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_SYLPH_POSE_TAG_",
+                  "param3": 1.0
+                }
+              ],
+              "hitBoxNames": [
+                "HitBoxBody_Activated"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_SYLPH_DEATH_TAG_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Dying_IsGhostToAllied": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "IsGhostToAllied"
+        },
+        "Dying_IsGhostToEnemy": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "IsGhostToEnemy"
+        },
+        "Dying_LockHP": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "LockHP"
+        },
+        "Dying_NoHeal": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "NoHeal"
+        },
+        "Sylph_Empty": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onKill": [
+            {
+              "$type": "AHPEKICBIIL",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_MONSTER_RoleCombat_MonsterTag",
+                  "param3": 1.0
+                }
+              ],
+              "luaCallType": "CurGalleryControlGroup",
+              "funcName": "SLC_RoleCombatET_PROCESS_Sylph_Die_Peacefuly",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "UNIQUE_Sylph_Limbo"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "UNIQUE_Sylph_ChargeBar"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_SYLPH_DEATH_TAG_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Sylph_Electric_PoseAction",
+      "abilityMixins": [
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            211,
+            311
+          ],
+          "modifierName": "Sylph_DyingAnimState"
+        }
+      ],
+      "modifiers": {
+        "Sylph_DyingAnimState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.20000000298023224,
+          "onAdded": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_SYLPH_POSE_TAG_",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "boolID": "DeathTag",
+              "param3": true
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_SYLPH_POSE_TAG_",
+                  "param3": 1.0
+                }
+              ],
+              "boolID": "ActivatedDeathTag",
+              "param3": true
+            },
+            {
+              "$type": "GOKILMDLLJD",
+              "resistanceListID": 13002
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_SYLPH_POSE_TAG_",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "boolID": "DeathTag"
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_SYLPH_POSE_TAG_",
+                  "param3": 1.0
+                }
+              ],
+              "boolID": "ActivatedDeathTag"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "GOKILMDLLJD",
+              "resistanceListID": 13002
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Sylph_Electric_Steer",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Activated_Standby"
+          ],
+          "angularSpeed": 240.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Warning"
+          ],
+          "angularSpeed": 150.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "ElectricBullet"
+          ],
+          "endNormalizedTime": 0.11999999731779099,
+          "angularSpeed": 120.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "ElectricBullet"
+          ],
+          "startNormalizedTime": 0.25,
+          "endNormalizedTime": 0.4399999976158142,
+          "angularSpeed": 90.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "FlyHor_BS"
+          ],
+          "endNormalizedTime": 0.5,
+          "angularSpeed": 360.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "FlyHor_AS"
+          ],
+          "startNormalizedTime": 0.5,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Activated_JumpAtk_BS"
+          ],
+          "endNormalizedTime": 0.3199999928474426,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Activated_JumpAtk_BS"
+          ],
+          "startNormalizedTime": 0.49000000953674316,
+          "endNormalizedTime": 0.550000011920929,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Activated_JumpAtk_BS"
+          ],
+          "startNormalizedTime": 0.8299999833106995,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Activated_JumpAtk_Loop"
+          ],
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Activated_JumpAtk_AS"
+          ],
+          "endNormalizedTime": 0.30000001192092896,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Activated_Deathrattle_Loop"
+          ],
+          "endNormalizedTime": 20.0,
+          "angularSpeed": 180.0,
+          "attackTrigger": "ActivatedDeathEnd",
+          "attackDistance": 3.0,
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Sylph_Electric_ExitBattle",
+      "abilityMixins": [
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            901
+          ],
+          "modifierName": "ExitBattle"
+        }
+      ],
+      "modifiers": {
+        "ExitBattle": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_SYLPH_POSE_TAG_",
+                  "param3": 1.0
+                }
+              ],
+              "PLLJBINMGJK": "ActivatedToNormal"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_SYLPH_POSE_TAG_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "DyingState"
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "ActivatedTag"
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "ActivatedTag"
+            },
+            {
+              "$type": "FEJJABGNGHA",
+              "param3": 0.0
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_Sylph_Face"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Sylph_Electric_ElectricBullet1_BS",
+      "onAbilityStart": [
+        {
+          "$type": "MPAGCPPAIHJ",
+          "target": "SelfAttackTarget",
+          "key": "ThunderPos1",
+          "born": {
+            "$type": "JHEBKCMEMLN",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "onGround": true
+          },
+          "setTarget": false
+        },
+        {
+          "$type": "MPAGCPPAIHJ",
+          "target": "SelfAttackTarget",
+          "key": "ThunderPos2",
+          "born": {
+            "$type": "JHEBKCMEMLN",
+            "offset": {
+              "KGEPIMHBMOL": 1.5,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 1.5
+            },
+            "bornRandom": {
+              "$type": "OJKHDGHBNKP",
+              "minRandomRange": 0.0,
+              "maxRandomRange": 0.5
+            },
+            "onGround": true
+          },
+          "setTarget": false
+        },
+        {
+          "$type": "MPAGCPPAIHJ",
+          "target": "SelfAttackTarget",
+          "key": "ThunderPos3",
+          "born": {
+            "$type": "JHEBKCMEMLN",
+            "offset": {
+              "KGEPIMHBMOL": -1.5,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 1.5
+            },
+            "bornRandom": {
+              "$type": "OJKHDGHBNKP",
+              "minRandomRange": 0.0,
+              "maxRandomRange": 0.5
+            },
+            "onGround": true
+          },
+          "setTarget": false
+        },
+        {
+          "$type": "EDNOMJCBPIM",
+          "rotationDampTime": "Eff_Monster_Sylph_Electric_ElectricBullet_Hit_Alert",
+          "born": {
+            "$type": "ICKMMAHFNIM",
+            "positionKey": "ThunderPos1",
+            "directionKey": ""
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Sylph_Electric_ElectricBullet1_AS",
+      "onAbilityStart": [
+        {
+          "$type": "EDNOMJCBPIM",
+          "rotationDampTime": "Eff_Monster_Sylph_Electric_ElectricBullet_Hit",
+          "born": {
+            "$type": "ICKMMAHFNIM",
+            "positionKey": "ThunderPos1",
+            "directionKey": ""
+          }
+        },
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "GMDIMKKHACA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "ICKMMAHFNIM",
+                "positionKey": "ThunderPos1",
+                "directionKey": ""
+              },
+              "height": 2.0,
+              "OAHPDLJIADP": 0.6499999761581421
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.5,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Electric",
+                "IPFJJJGABPL": 30.0,
+                "strikeType": "Blunt",
+                "enBreak": 10.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "none",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV2",
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Sylph_Electric_ElectricBullet2_BS",
+      "onAbilityStart": [
+        {
+          "$type": "EDNOMJCBPIM",
+          "rotationDampTime": "Eff_Monster_Sylph_Electric_ElectricBullet_Hit_Alert",
+          "born": {
+            "$type": "ICKMMAHFNIM",
+            "positionKey": "ThunderPos2",
+            "directionKey": ""
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Sylph_Electric_ElectricBullet2_AS",
+      "onAbilityStart": [
+        {
+          "$type": "EDNOMJCBPIM",
+          "rotationDampTime": "Eff_Monster_Sylph_Electric_ElectricBullet_Hit",
+          "born": {
+            "$type": "ICKMMAHFNIM",
+            "positionKey": "ThunderPos2",
+            "directionKey": ""
+          }
+        },
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "GMDIMKKHACA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "ICKMMAHFNIM",
+                "positionKey": "ThunderPos2",
+                "directionKey": ""
+              },
+              "height": 2.0,
+              "OAHPDLJIADP": 0.6499999761581421
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.5,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Electric",
+                "IPFJJJGABPL": 30.0,
+                "strikeType": "Blunt",
+                "enBreak": 10.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "none",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV2",
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Sylph_Electric_ElectricBullet3_BS",
+      "onAbilityStart": [
+        {
+          "$type": "EDNOMJCBPIM",
+          "rotationDampTime": "Eff_Monster_Sylph_Electric_ElectricBullet_Hit_Alert",
+          "born": {
+            "$type": "ICKMMAHFNIM",
+            "positionKey": "ThunderPos3",
+            "directionKey": ""
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Sylph_Electric_ElectricBullet3_AS",
+      "onAbilityStart": [
+        {
+          "$type": "EDNOMJCBPIM",
+          "rotationDampTime": "Eff_Monster_Sylph_Electric_ElectricBullet_Hit",
+          "born": {
+            "$type": "ICKMMAHFNIM",
+            "positionKey": "ThunderPos3",
+            "directionKey": ""
+          }
+        },
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "GMDIMKKHACA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "ICKMMAHFNIM",
+                "positionKey": "ThunderPos3",
+                "directionKey": ""
+              },
+              "height": 2.0,
+              "OAHPDLJIADP": 0.6499999761581421
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.5,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Electric",
+                "IPFJJJGABPL": 30.0,
+                "strikeType": "Blunt",
+                "enBreak": 10.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "none",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV2",
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Sylph_Electric_FlyHor",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "FlyHor_Loop"
+          ],
+          "modifierName": "FlyHor_FollowBullet",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "FlyHor_FollowBullet": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CAKDDHLKOAB",
+              "bulletID": 42006501,
+              "born": {
+                "$type": "IAENDIPDFKD"
+              },
+              "trackTarget": "Self",
+              "lifeByOwnerV2": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 42006501
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Sylph_Electric_FlyHor_RushMove",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "FlyHor_Loop"
+          ],
+          "modifierName": "FlyHor_EffHandler",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Collision_Control": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ],
+              "setEnable": true
+            }
+          ]
+        },
+        "FlyHor_EffHandler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "FlyHor_Eff"
+            }
+          ]
+        },
+        "FlyHor_Eff": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Sylph_Electric_FlyDash_Shoot",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "INBCDALOHMP",
+          "target": "SelfAttackTarget",
+          "targetPredicates": [
+            {
+              "$type": "FMBJAJFLDIP",
+              "logic": "LesserOrEqual",
+              "param3": 8.0,
+              "DDALGNLEHOD": ""
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "PAMDPDLLAPG",
+              "target": "SelfAttackTarget",
+              "toPos": {
+                "$type": "JHEBKCMEMLN"
+              }
+            },
+            {
+              "$type": "BHPDPACKKNI",
+              "target": "SelfAttackTarget",
+              "born": {
+                "$type": "GMLEDLAGLJM",
+                "onGround": true,
+                "linearOffset": 3.5,
+                "linearMin": 0.0,
+                "linearMax": 10.0
+              },
+              "hitSceneType": "BlinkHitSceneTestByThreeSegments",
+              "limitY": 2.5
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Collision_Control"
+            },
+            {
+              "$type": "PAGFCBCKEBH",
+              "toPos": {
+                "$type": "DNEKFAOHKBC"
+              },
+              "NKPCHMCNNOK": 0.5,
+              "animatorStateIDs": [
+                "FlyHor_Loop"
+              ],
+              "overrideMoveCollider": "",
+              "isInAir": true
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "PAMDPDLLAPG",
+              "target": "SelfAttackTarget",
+              "toPos": {
+                "$type": "JHEBKCMEMLN"
+              }
+            },
+            {
+              "$type": "BHPDPACKKNI",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 8.0
+                }
+              },
+              "hitSceneType": "BlinkHitSceneTestByThreeSegments",
+              "limitY": 2.5
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Collision_Control"
+            },
+            {
+              "$type": "PAGFCBCKEBH",
+              "toPos": {
+                "$type": "DNEKFAOHKBC"
+              },
+              "NKPCHMCNNOK": 1.0,
+              "animatorStateIDs": [
+                "FlyHor_Loop"
+              ],
+              "overrideMoveCollider": "",
+              "isInAir": true
+            }
+          ]
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "FlyHor_Eff"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Sylph_Electric_FlyHor_FollowBullet_Hit",
+      "onAbilityStart": [
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JGEBAJLEBMO"
+              },
+              "OAHPDLJIADP": 1.0
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.625,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Electric",
+                "IPFJJJGABPL": 50.0,
+                "strikeType": "Blunt",
+                "enBreak": 100.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV4",
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "NCFFNDHGCMH"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Sylph_Electric_Deathrattle",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Deathrattle"
+          ],
+          "modifierName": "Deathrattle_Pos",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Deathrattle_Pos": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "attachPointName": "RootNode"
+              },
+              "gadgetID": 42006503,
+              "campID": 4001,
+              "byServer": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_Sylph_Limbo"
+            },
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Sylph_Electric_DeathPosAction",
+      "modifiers": {
+        "Deathrattle_Timer": {
+          "modifierName": "",
+          "elementDurability": 1.2000000476837158,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Sylph_Electric_Deathrattle",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Deathrattle_Actions"
+            }
+          ]
+        },
+        "Deathrattle_Actions": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "KLPANPDGHHA",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 0.0
+                    },
+                    "attachPointName": "RootNode"
+                  },
+                  "OAHPDLJIADP": 2.5
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.625,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Electric",
+                    "IPFJJJGABPL": 25.0,
+                    "strikeType": "Blunt",
+                    "enBreak": 100.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV4",
+                    "hitHaltTimeScale": 0.009999999776482582
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "Deathrattle_LifeHandler": {
+          "modifierName": "",
+          "elementDurability": 5.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Deathrattle_Timer"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Deathrattle_LifeHandler"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Sylph_Electric_Activated_JumpAtk",
+      "modifiers": {
+        "Blink_Control": {
+          "modifierName": "",
+          "elementDurability": 0.06700000166893005,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PJENOLFAFMG"
+            },
+            {
+              "$type": "HBNEMPLJCMB",
+              "hide": true
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "UnderGround_Invincible"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "UnderGround_DenyLockOn"
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Sylph_Electric_Activated_Jump_Down_Warning",
+              "born": {
+                "$type": "DNEKFAOHKBC"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "IFCMHHHOLCK"
+            },
+            {
+              "$type": "PJENOLFAFMG",
+              "KGGEDGKGLDD": true
+            },
+            {
+              "$type": "HBNEMPLJCMB"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "UnderGround_Invincible"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "UnderGround_DenyLockOn"
+            }
+          ]
+        },
+        "Collision_Control": {
+          "modifierName": "",
+          "elementDurability": 0.6000000238418579,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ],
+              "setEnable": true
+            }
+          ]
+        },
+        "UnderGround_Invincible": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "Invincible"
+        },
+        "UnderGround_DenyLockOn": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "DenyLockOn"
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "BHPDPACKKNI",
+          "target": "SelfAttackTarget",
+          "born": {
+            "$type": "GMLEDLAGLJM",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 2.5,
+              "LPCHALMFFOD": 0.0
+            },
+            "linearOffset": 0.0,
+            "linearMin": 0.0,
+            "linearMax": 20.0
+          },
+          "hitSceneType": "BlinkHitSceneTestByThreeSegments",
+          "limitY": 10.0
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Collision_Control"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Blink_Control"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Sylph_Electric_Activated_Deathrattle",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Activated_Deathrattle_AS"
+          ],
+          "modifierName": "Activated_Deathrattle_Pos",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Activated_Deathrattle_BS",
+            "Activated_Deathrattle_Loop"
+          ],
+          "modifierName": "Activated_Deathrattle_Effect",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            311
+          ],
+          "modifierName": "Activated_Deathrattle_Reconnect"
+        },
+        {
+          "$type": "APJKOLPHCGH",
+          "stateIDs": [
+            "Activated_Deathrattle_Loop"
+          ],
+          "enterActions": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Activated_Deathrattle_CountDown"
+            }
+          ],
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Activated_Deathrattle_Reconnect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onReconnect": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "ActivatedDeathEnd_RC"
+            }
+          ]
+        },
+        "Activated_Deathrattle_Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Sylph_Electric_Activated_Deathrattle_Rush",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Activated_Deathrattle_CountDown": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "elementDurability": 2.0,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.10000000149011612,
+          "onRemoved": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "ActivatedDeathEnd"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "SelfAttackTarget",
+              "targetPredicates": [
+                {
+                  "$type": "FMBJAJFLDIP",
+                  "logic": "LesserOrEqual",
+                  "param3": 1.0,
+                  "DDALGNLEHOD": ""
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "ActivatedDeathEnd"
+                }
+              ]
+            }
+          ]
+        },
+        "Activated_Deathrattle_Pos": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "attachPointName": "RootNode"
+              },
+              "gadgetID": 42006502,
+              "campID": 4001,
+              "byServer": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_Sylph_Limbo"
+            },
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Sylph_Electric_Activated_DeathPosAction",
+      "modifiers": {
+        "Activated_Deathrattle_Timer": {
+          "modifierName": "",
+          "elementDurability": 0.6200000047683716,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Sylph_Electric_Activated_Deathrattle",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Activated_Deathrattle_Actions"
+            }
+          ]
+        },
+        "Activated_Deathrattle_Actions": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "KLPANPDGHHA",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 0.0
+                    },
+                    "attachPointName": "RootNode"
+                  },
+                  "OAHPDLJIADP": 6.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.75,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Electric",
+                    "IPFJJJGABPL": 25.0,
+                    "strikeType": "Blunt",
+                    "enBreak": 150.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV5",
+                    "hitHaltTimeScale": 0.009999999776482582
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "Activated_Deathrattle_LifeHandler": {
+          "modifierName": "",
+          "elementDurability": 5.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Activated_Deathrattle_Timer"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Activated_Deathrattle_LifeHandler"
+        }
+      ]
+    }
+  }
+]

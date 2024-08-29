@@ -1,0 +1,410 @@
+{
+  "common": {
+    "effectAttachShape": {
+      "$type": "FJNPJANPGGC",
+      "mesh": "EffectMesh"
+    },
+    "mass": 20.0,
+    "height": 0.800000011920929,
+    "affectedByWorld": true,
+    "checkInSurface": true,
+    "canTriggerElementReactionText": false,
+    "clearAnimatorOnSetLightDeactive": true,
+    "clearAIOnSetLightDeactive": true
+  },
+  "model": {
+    "bornEffect": "",
+    "attachEffect": "",
+    "canBakeMesh": false,
+    "BKPFGNPLDNJ": ""
+  },
+  "combat": {
+    "property": {
+      "endureType": "Monster_Minion",
+      "weight": 30.0,
+      "isInvincible": true
+    },
+    "beHit": {
+      "hitBloodEffect": "",
+      "muteAllHitEffect": true,
+      "muteAllHitText": true
+    },
+    "combatLock": {
+      "lockShape": "CircleLockEnemy",
+      "denyLockOn": true,
+      "lockType": "Default"
+    },
+    "die": {
+      "hasAnimatorDie": true,
+      "dieEndTime": 1.0,
+      "dieForceDisappearTime": 1.0,
+      "dieDisappearEffect": ""
+    }
+  },
+  "stateLayers": {
+    "defaultLayer": {
+      "$type": "GBGJJIIEMBD",
+      "layerIndexName": "",
+      "CPAANEIJCGD": "",
+      "stateIDs": {
+        "Born": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Born": []
+          },
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "NormalIdle": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Standby": []
+          },
+          "canDoSkill": true,
+          "canSyncMove": true,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "NormalMove": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Walk": [
+              "Animal_Fishable_Maritime_Walk"
+            ],
+            "Run": [
+              "Animal_Fishable_Maritime_Run"
+            ]
+          },
+          "canDoSkill": true,
+          "canSyncMove": true,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ],
+          "canSteer": true
+        },
+        "Turn": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Turn_Run": [],
+            "Turn_Run_Reverse": [
+              "Animal_Fishable_Maritime_Turn_Run"
+            ]
+          },
+          "canDoSkill": true,
+          "canSyncMove": true,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ],
+          "canSteer": true
+        },
+        "BeHit": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Hit_L": []
+          },
+          "resetAnimatorTriggerOnEnter": [
+            "BeHit"
+          ],
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ]
+        },
+        "Die": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Die": [
+              "Animal_Fish_Die"
+            ]
+          },
+          "resetAnimatorTriggerOnEnter": [
+            "DoSkill"
+          ]
+        },
+        "Escape": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Escape": [
+              "Animal_Fishable_Maritime_Escape"
+            ]
+          },
+          "canSyncMove": true,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ],
+          "canSteer": true
+        },
+        "QTE": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "QTE_Idle": [
+              "Animal_Fishable_Maritime_Hooked_Idle"
+            ],
+            "QTE_StruggleLevel01": [
+              "Animal_Fishable_Maritime_Hooked_StruggleLevel01_Large"
+            ],
+            "QTE_StruggleLevel02": [
+              "Animal_Fishable_Maritime_Hooked_StruggleLevel02_Large"
+            ],
+            "QTE_StruggleLevel03": [
+              "Animal_Fishable_Maritime_Hooked_StruggleLevel03_Large"
+            ]
+          },
+          "canSyncMove": true,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ],
+          "canSteer": true
+        },
+        "QTESuccess": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "QTESuccess": [
+              "Animal_Fishable_Maritime_Hooked_Lifted"
+            ]
+          },
+          "canSyncMove": true,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ],
+          "canSteer": true
+        },
+        "LowEnergy": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "LowEnergy": [
+              "Animal_Fishable_Maritime_Hooked_LowEnergy"
+            ]
+          },
+          "canSyncMove": true,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ],
+          "canSteer": true
+        },
+        "TeaseBait": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "TeaseBait": [
+              "Animal_Fishable_Maritime_TeaseBait_Large"
+            ]
+          },
+          "canSyncMove": true,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ],
+          "canSteer": true
+        },
+        "BiteBait": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "BiteBait": [
+              "Animal_Fishable_Maritime_BiteBait_Large"
+            ],
+            "BiteBait_AS": [
+              "Animal_Fishable_Maritime_Hooked_Idle"
+            ]
+          },
+          "canSyncMove": true,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ],
+          "canSteer": true
+        },
+        "IdleFree": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "IdleFree01": [
+              "Animal_Fishable_Maritime_IdleFree01_Large"
+            ]
+          },
+          "canSyncMove": true,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ],
+          "canSteer": true
+        }
+      }
+    }
+  },
+  "initialPoses": {
+    "Default": {},
+    "Normal": {
+      "initialPoseID": 1,
+      "initialPoseParams": {
+        "boolParams": {
+          "isSpecial": "false"
+        }
+      }
+    },
+    "Special": {
+      "initialPoseID": 2,
+      "initialPoseParams": {
+        "boolParams": {
+          "isSpecial": "true"
+        }
+      }
+    }
+  },
+  "aibeta": {
+    "enable": true,
+    "friendliness": 1,
+    "decisionArchetype": "Animal_Fishable",
+    "moveSetting": {
+      "moveCategory": "Water",
+      "useNavMesh": false,
+      "navMeshAgentName": "Undead01"
+    },
+    "sensing": {
+      "settings": {
+        "DefaultSetting": {
+          "viewRange": 0.0,
+          "hearAttractionRange": 0.0,
+          "feelRange": 0.0
+        }
+      }
+    },
+    "neurons": {
+      "DefaultSetting": [
+        "HIT"
+      ]
+    },
+    "threat": {
+      "GHIJMOKOLMB": "",
+      "clearThreatTargetDistance": 10.0,
+      "clearThreatTimerByDistance": 0.800000011920929,
+      "viewThreatGrow": 0.0,
+      "feelThreatGrow": 0.0,
+      "threatBroadcastRange": 0.0
+    },
+    "defendArea": {
+      "defendRange": 50.0
+    },
+    "ui": {
+      "hasDirectionIndicator": false,
+      "HMNNBFDEHLG": ""
+    },
+    "profiling": {
+      "lodStrategy": "MinorAnimal",
+      "moveCullingLevel": 3
+    },
+    "skills": {
+      "1": {
+        "name": "IdleFree01_SpecialIdle",
+        "skillType": "Free",
+        "castCondition": {
+          "pose": [
+            2
+          ],
+          "needReInitCD": true
+        },
+        "cd": 2.0,
+        "cdUpperRange": 5.0,
+        "initialCD": 2.0,
+        "initialCDUpperRange": 5.0,
+        "publicCDGroup": "",
+        "ignoreGCD": true,
+        "triggerGCD": false,
+        "HHAGODJIAPE": "",
+        "stateIDs": [
+          "IdleFree"
+        ],
+        "flagTargetReachable": "10",
+        "flagSelfOnTemplateCollider": "01",
+        "flagSelfInZone": "10",
+        "flagTargetInZone": "11"
+      },
+      "101": {
+        "name": "IdleFree01_SpecialCombat",
+        "castCondition": {
+          "pose": [
+            102
+          ],
+          "needReInitCD": true
+        },
+        "cd": 2.0,
+        "cdUpperRange": 5.0,
+        "initialCD": 2.0,
+        "initialCDUpperRange": 5.0,
+        "publicCDGroup": "",
+        "ignoreGCD": true,
+        "triggerGCD": false,
+        "HHAGODJIAPE": "",
+        "stateIDs": [
+          "IdleFree"
+        ],
+        "flagTargetReachable": "10",
+        "flagSelfOnTemplateCollider": "01",
+        "flagSelfInZone": "10",
+        "flagTargetInZone": "11"
+      }
+    },
+    "birdCirclingTactic": [
+      {
+        "$type": "MMMPIDFJHJH",
+        "enable": true,
+        "JMCOBEPDIGM": {
+          "ANLAAGAMIKF": 1,
+          "NBENNEKDIIA": 2.0
+        }
+      },
+      {
+        "$type": "CMIAOAPCKOF",
+        "enable": true,
+        "JMCOBEPDIGM": {
+          "NBENNEKDIIA": 1.25,
+          "MMGOBGGLBJO": 180.0,
+          "KAIGBDPLNMO": 2.0,
+          "BMIEPFCPFGN": 4.0,
+          "IAGJBJHKMBF": true
+        }
+      },
+      {
+        "$type": "ENBALFFOHDJ",
+        "enable": true,
+        "JMCOBEPDIGM": {
+          "ANLAAGAMIKF": 1,
+          "NBENNEKDIIA": 2.0,
+          "NFNPEBADJPP": 0.5,
+          "HPJHMNDOOBG": 0.75
+        }
+      },
+      {
+        "$type": "NNJKLGNPMNN"
+      },
+      {
+        "$type": "FPELBIJFGCE",
+        "enable": true,
+        "JMCOBEPDIGM": {
+          "NBENNEKDIIA": 1.0,
+          "KPNDPKIOPJM": 5.0,
+          "PINAFKEDDLL": 3.0,
+          "ANMPOPEBDIA": 7.0,
+          "GMJFIMFFOEL": 3.200000047683716,
+          "CHCPFDMADEI": 6.400000095367432,
+          "MNPDDAKDHGK": ""
+        }
+      }
+    ]
+  },
+  "inputKeys": [
+    {
+      "keyID": 1,
+      "inputKeyCode": 257,
+      "abilityName": ""
+    }
+  ],
+  "move": {
+    "$type": "IPNMJMHDMPF",
+    "moveOnGround": false,
+    "moveOnWater": true,
+    "moveOnWaterDepth": 0.5,
+    "PKHOMJHFAEE": "RootNode"
+  },
+  "animal": {
+    "hasAbility": false,
+    "tickAbilityElement": false,
+    "hasCharacterRenderering": false
+  }
+}

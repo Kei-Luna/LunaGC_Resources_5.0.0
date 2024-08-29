@@ -1,0 +1,1350 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ovacua_Order_01_Steer",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Order_Charge_BS"
+          ],
+          "endNormalizedTime": 99.0,
+          "angularSpeed": 90.0,
+          "attackTrigger": "",
+          "attackDistance": 12.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Order_Charge_Loop01"
+          ],
+          "startNormalizedTime": 0.8999999761581421,
+          "angularSpeed": 1440.0,
+          "attackTrigger": "ChargeEndTrigger",
+          "attackDistance": 5.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Order_Charge_Loop02"
+          ],
+          "startNormalizedTime": 0.8999999761581421,
+          "angularSpeed": 1440.0,
+          "attackTrigger": "ChargeEndTrigger",
+          "attackDistance": 5.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Order_Charge_Loop03"
+          ],
+          "startNormalizedTime": 0.8999999761581421,
+          "angularSpeed": 1440.0,
+          "attackTrigger": "ChargeEndTrigger",
+          "attackDistance": 5.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Order_Charge_Loop01"
+          ],
+          "startNormalizedTime": 0.10000000149011612,
+          "attackTrigger": "ChargeEndTrigger",
+          "attackDistance": 5.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Order_Charge_Loop02"
+          ],
+          "startNormalizedTime": 0.10000000149011612,
+          "attackTrigger": "ChargeEndTrigger",
+          "attackDistance": 5.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Order_Charge_Loop03"
+          ],
+          "startNormalizedTime": 0.10000000149011612,
+          "attackTrigger": "ChargeEndTrigger",
+          "attackDistance": 5.0,
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ovacua_Order_OuterRing_Order_Idle01",
+      "onAbilityStart": [
+        {
+          "$type": "AKEEDILMOJF",
+          "otherTargets": {
+            "$type": "GAPFENEFKKE",
+            "equipPartNames": [
+              "equip01"
+            ]
+          },
+          "intID": "SkillID",
+          "param3": 11.0
+        },
+        {
+          "$type": "BLCCGIPAOIP",
+          "otherTargets": {
+            "$type": "GAPFENEFKKE",
+            "equipPartNames": [
+              "equip01"
+            ]
+          },
+          "PLLJBINMGJK": "DoSkill",
+          "mpTriggerOnRemote": true
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ovacua_Order_01_HeavyShoot",
+      "abilityMixins": [
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Chaos_HeavyShoot",
+          "modifierName": "HeavyShoot_BulletHandler",
+          "normalizeStart": 0.22200000286102295,
+          "normalizeEnd": 0.800000011920929,
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "HeavyShoot_BulletHandler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CAKDDHLKOAB",
+              "bulletID": 42211006,
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "HeavyShootBulletSource"
+              }
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "GCHLGDKBHCC",
+              "gadgetInfo": {
+                "configID": 42211006
+              },
+              "forceKillTime": 1.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ovacua_Order_01_Charge_RushMove",
+      "onAbilityStart": [
+        {
+          "$type": "PAGFCBCKEBH",
+          "toPos": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 15.0
+            },
+            "useRotation": true
+          },
+          "NKPCHMCNNOK": 2.0,
+          "maxRange": 4.0,
+          "animatorStateIDs": [
+            "Order_Charge_Loop01",
+            "Order_Charge_Loop02",
+            "Order_Charge_Loop03"
+          ],
+          "overrideMoveCollider": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ovacua_Order_01_Charge_HitBoxManager",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Order_Charge_BS",
+            "Order_Charge",
+            "Order_Charge_Loop01",
+            "Order_Charge_Loop02",
+            "Order_Charge_Loop03",
+            "Order_Charge_AS"
+          ],
+          "modifierName": "ChargeHitBox",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "ChargeHitBox": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox"
+              ]
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_Core"
+              ],
+              "setEnable": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_Core"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ovacua_Order_01_Growth_RushMove",
+      "onAbilityStart": [
+        {
+          "$type": "PAGFCBCKEBH",
+          "target": "SelfAttackTarget",
+          "NKPCHMCNNOK": 1.5,
+          "maxRange": 8.0,
+          "animatorStateIDs": [
+            "Order_Growth_BS",
+            "Order_Growth_Loop"
+          ],
+          "overrideMoveCollider": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ovacua_Order_01_GrowthState",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_MONSTER_OVACUA_ORDER_GROWTHSTATE",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5,
+            2.5
+          ],
+          "modifierNameSteps": [
+            "Ovacua_Order_GrowthState_Off",
+            "Ovacua_Order_GrowthState_On",
+            "Ovacua_Order_GrowthState_Break"
+          ]
+        }
+      ],
+      "abilitySpecials": {
+        "GrowthShieldDurability": 150.0
+      },
+      "modifiers": {
+        "Ovacua_Order_GrowthState_Off": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "Faint"
+            }
+          ]
+        },
+        "Ovacua_Order_GrowthState_On": {
+          "modifierName": "",
+          "elementType": "Rock",
+          "IPFJJJGABPL": "GrowthShieldDurability",
+          "modifierMixins": [
+            {
+              "$type": "BKAAGFNKMLF",
+              "onShieldBroken": [
+                {
+                  "$type": "AIFPLABJNMA",
+                  "attackEvent": {
+                    "attackPattern": {
+                      "$type": "JHKEHNJBMOF",
+                      "triggerType": "TriggerNoRepeat",
+                      "ignoreMassive": true,
+                      "born": {
+                        "$type": "IAENDIPDFKD",
+                        "useRotation": true
+                      },
+                      "size": {
+                        "KGEPIMHBMOL": 0.10000000149011612,
+                        "JEBHCGDPFEJ": 0.10000000149011612,
+                        "LPCHALMFFOD": 0.10000000149011612
+                      }
+                    },
+                    "attackInfo": {
+                      "attackTag": "",
+                      "attenuationTag": "",
+                      "attenuationGroup": "default",
+                      "attackProperty": {
+                        "actorGrassSubHurtDelta": 0.0,
+                        "actorWindSubHurtDelta": 0.0,
+                        "IPFJJJGABPL": 100.0,
+                        "GLKMCMDJBIK": 0.0
+                      },
+                      "hitPattern": {
+                        "onHitEffectName": "none",
+                        "hitImpulseY": "",
+                        "hitImpulseType": "LV0",
+                        "muteHitText": true
+                      },
+                      "cameraShake": {
+                        "shakeType": "CustomVector",
+                        "shakeRange": 1.0,
+                        "shakeTime": 2.0,
+                        "shakeDistance": 35.0,
+                        "shakeDir": {
+                          "z": 2.0
+                        },
+                        "extension": {
+                          "baseOnCamera": true,
+                          "rangeAttenuation": 0.0
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "GrowthBreakTrigger"
+                },
+                {
+                  "$type": "DLEIPBPNAIM",
+                  "paramList": [
+                    1,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "param3": 2.0,
+                  "key": "_MONSTER_OVACUA_ORDER_GROWTHSTATE",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ],
+              "showDamageText": "",
+              "useMutiPlayerFixData": true
+            },
+            {
+              "$type": "CIBMLJJLANN",
+              "excludeForces": [
+                "RetreatAirType",
+                "WindZoneType",
+                "RetreatType"
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "Faint"
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Ovacua_Chaos_MH",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ]
+            },
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider_Growth"
+              ],
+              "setEnable": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider_Growth"
+              ]
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "HHHMNCNPBDK",
+                  "predicates": [
+                    {
+                      "$type": "LBCGJFGOKMP"
+                    },
+                    {
+                      "$type": "LBCGJFGOKMP",
+                      "logic": "Lesser"
+                    }
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "HCLAKBJKPLE",
+                  "watcherId": 82176,
+                  "inThreatListOnly": true
+                },
+                {
+                  "$type": "AIFPLABJNMA",
+                  "attackEvent": {
+                    "attackPattern": {
+                      "$type": "JHKEHNJBMOF",
+                      "triggerType": "TriggerNoRepeat",
+                      "ignoreMassive": true,
+                      "born": {
+                        "$type": "IAENDIPDFKD",
+                        "useRotation": true
+                      },
+                      "size": {
+                        "KGEPIMHBMOL": 0.10000000149011612,
+                        "JEBHCGDPFEJ": 0.10000000149011612,
+                        "LPCHALMFFOD": 0.10000000149011612
+                      }
+                    },
+                    "attackInfo": {
+                      "attackTag": "",
+                      "attenuationTag": "",
+                      "attenuationGroup": "default",
+                      "attackProperty": {
+                        "actorGrassSubHurtDelta": 0.0,
+                        "actorWindSubHurtDelta": 0.0,
+                        "IPFJJJGABPL": 100.0,
+                        "GLKMCMDJBIK": 0.0
+                      },
+                      "hitPattern": {
+                        "onHitEffectName": "none",
+                        "hitImpulseY": "",
+                        "hitImpulseType": "LV0",
+                        "muteHitText": true
+                      },
+                      "cameraShake": {
+                        "shakeType": "CustomVector",
+                        "shakeRange": 1.0,
+                        "shakeTime": 2.0,
+                        "shakeDistance": 35.0,
+                        "shakeDir": {
+                          "z": 2.0
+                        },
+                        "extension": {
+                          "baseOnCamera": true,
+                          "rangeAttenuation": 0.0
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "$type": "KBFEIHEAMBM",
+                  "rotationDampTime": "Eff_Monster_MachinaIustitia_Fusion",
+                  "born": {
+                    "$type": "KLPANPDGHHA",
+                    "useRotation": true,
+                    "attachPointName": "Core"
+                  },
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                },
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "GrowthBreakTrigger"
+                },
+                {
+                  "$type": "DLEIPBPNAIM",
+                  "paramList": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "param3": 2.0,
+                  "key": "_MONSTER_OVACUA_ORDER_GROWTHSTATE",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        "Ovacua_Order_GrowthState_Break": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "Faint",
+              "param3": true
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox"
+              ]
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_Core"
+              ],
+              "setEnable": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox_Core"
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AENLGPIPPAK",
+          "hitBoxNames": [
+            "HitBox"
+          ],
+          "setEnable": true
+        },
+        {
+          "$type": "AENLGPIPPAK",
+          "hitBoxNames": [
+            "HitBox_Core"
+          ]
+        },
+        {
+          "$type": "FDFGJPNDKEA",
+          "pushColliderNames": [
+            "PushCollider"
+          ],
+          "setEnable": true
+        },
+        {
+          "$type": "FDFGJPNDKEA",
+          "pushColliderNames": [
+            "PushCollider_Growth"
+          ]
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "LDIAIDLOPEE",
+          "globalValueKey": "_MONSTER_OVACUA_GROWTH_ELEMENTDURABILITY",
+          "overrideMapKey": "GrowthShieldDurability"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_MONSTER_OVACUA_ORDER_GROWTHSTATE",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ovacua_Order_01_GrowthState_Off",
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_MONSTER_OVACUA_ORDER_GROWTHSTATE",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ovacua_Order_01_Growth_ChargeEffect_Core_On",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_MONSTER_OVACUA_GROWTHCHARGEFX_CORE_ON",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Ovacua_Growth_ChargeEffect_Core_Off",
+            "Ovacua_Growth_ChargeEffect_Core_On"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Ovacua_Growth_ChargeEffect_Core_On": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Ovacua_Order_01_Growth_Charging",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Ovacua_Growth_ChargeEffect_Core_Off": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_MONSTER_OVACUA_GROWTHCHARGEFX_CORE_ON",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ovacua_Order_01_Growth_ChargeEffect_Core_Off",
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_MONSTER_OVACUA_GROWTHCHARGEFX_CORE_ON",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ovacua_Order_01_Growth_ChargeEffect_On",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_MONSTER_OVACUA_GROWTHCHARGEFX_ON",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Ovacua_Growth_ChargeEffect_Off",
+            "Ovacua_Growth_ChargeEffect_On"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Ovacua_Growth_ChargeEffect_On": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Ovacua_Order_01_Growth_Charging_Ground",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Ovacua_Growth_ChargeEffect_Off": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_MONSTER_OVACUA_GROWTHCHARGEFX_ON",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ovacua_Order_01_Growth_ChargeEffect_Off",
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_MONSTER_OVACUA_GROWTHCHARGEFX_ON",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ovacua_Order_01_Growth_ChargeEffect02_On",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_MONSTER_OVACUA_GROWTHCHARGEFX02_ON",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Ovacua_Growth_ChargeEffect02_Off",
+            "Ovacua_Growth_ChargeEffect02_On"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Ovacua_Growth_ChargeEffect02_On": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Ovacua_Order_01_Growth_Charging_Ground02",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Ovacua_Growth_ChargeEffect02_Off": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_MONSTER_OVACUA_GROWTHCHARGEFX02_ON",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ovacua_Order_01_Growth_ChargeEffect02_Off",
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_MONSTER_OVACUA_GROWTHCHARGEFX02_ON",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ovacua_Order_01_GrowthTrailHandler",
+      "abilityMixins": [
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Order_Growth_BS",
+          "modifierName": "Growth_Trail01",
+          "normalizeStart": 0.2590000033378601,
+          "normalizeEnd": 0.44999998807907104,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Order_Growth_BS",
+          "modifierName": "Growth_Trail02",
+          "normalizeStart": 0.2590000033378601,
+          "normalizeEnd": 0.44999998807907104,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Order_Growth_BS",
+          "modifierName": "Growth_Trail03",
+          "normalizeStart": 0.2590000033378601,
+          "normalizeEnd": 0.44999998807907104,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Order_Growth_BS",
+          "modifierName": "Growth_Trail04",
+          "normalizeStart": 0.2590000033378601,
+          "normalizeEnd": 0.44999998807907104,
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Growth_Trail01": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Ovacua_Order_01_Growth_Trail",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "Growth_TrailPoint01"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MAHNJJFLACM",
+              "followPath": "Growth_TrailPoint01",
+              "rotationDampTime": "Eff_Monster_Ovacua_Order_01_Growth_Trail",
+              "attachPoint": "Growth_TrailPoint01"
+            }
+          ]
+        },
+        "Growth_Trail02": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Ovacua_Order_01_Growth_Trail",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "Growth_TrailPoint02"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MAHNJJFLACM",
+              "followPath": "Growth_TrailPoint02",
+              "rotationDampTime": "Eff_Monster_Ovacua_Order_01_Growth_Trail",
+              "attachPoint": "Growth_TrailPoint02"
+            }
+          ]
+        },
+        "Growth_Trail03": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Ovacua_Order_01_Growth_Trail",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "Growth_TrailPoint03"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MAHNJJFLACM",
+              "followPath": "Growth_TrailPoint03",
+              "rotationDampTime": "Eff_Monster_Ovacua_Order_01_Growth_Trail",
+              "attachPoint": "Growth_TrailPoint03"
+            }
+          ]
+        },
+        "Growth_Trail04": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Ovacua_Order_01_Growth_Trail",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "Growth_TrailPoint04"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MAHNJJFLACM",
+              "followPath": "Growth_TrailPoint04",
+              "rotationDampTime": "Eff_Monster_Ovacua_Order_01_Growth_Trail",
+              "attachPoint": "Growth_TrailPoint04"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ovacua_Order_02_Growth_ChargeEffect_Core_On",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_MONSTER_OVACUA_GROWTHCHARGEFX_CORE_ON",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Ovacua_Growth_ChargeEffect_Core_Off",
+            "Ovacua_Growth_ChargeEffect_Core_On"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Ovacua_Growth_ChargeEffect_Core_On": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Ovacua_Order_02_Growth_Charging",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Ovacua_Growth_ChargeEffect_Core_Off": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_MONSTER_OVACUA_GROWTHCHARGEFX_CORE_ON",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ovacua_Order_02_Growth_ChargeEffect_Core_Off",
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_MONSTER_OVACUA_GROWTHCHARGEFX_CORE_ON",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ovacua_Order_02_Growth_ChargeEffect_On",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_MONSTER_OVACUA_GROWTHCHARGEFX_ON",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Ovacua_Growth_ChargeEffect_Off",
+            "Ovacua_Growth_ChargeEffect_On"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Ovacua_Growth_ChargeEffect_On": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Ovacua_Order_02_Growth_Charging_Ground",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Ovacua_Growth_ChargeEffect_Off": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_MONSTER_OVACUA_GROWTHCHARGEFX_ON",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ovacua_Order_02_Growth_ChargeEffect_Off",
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_MONSTER_OVACUA_GROWTHCHARGEFX_ON",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ovacua_Order_02_Growth_ChargeEffect02_On",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_MONSTER_OVACUA_GROWTHCHARGEFX02_ON",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Ovacua_Growth_ChargeEffect02_Off",
+            "Ovacua_Growth_ChargeEffect02_On"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Ovacua_Growth_ChargeEffect02_On": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Ovacua_Order_02_Growth_Charging_Ground02",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Ovacua_Growth_ChargeEffect02_Off": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_MONSTER_OVACUA_GROWTHCHARGEFX02_ON",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ovacua_Order_02_Growth_ChargeEffect02_Off",
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_MONSTER_OVACUA_GROWTHCHARGEFX02_ON",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ovacua_Order_02_GrowthTrailHandler",
+      "abilityMixins": [
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Order_Growth_BS",
+          "modifierName": "Growth_Trail01",
+          "normalizeStart": 0.25,
+          "normalizeEnd": 0.4000000059604645,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Order_Growth_BS",
+          "modifierName": "Growth_Trail02",
+          "normalizeStart": 0.25,
+          "normalizeEnd": 0.4000000059604645,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Order_Growth_BS",
+          "modifierName": "Growth_Trail03",
+          "normalizeStart": 0.25,
+          "normalizeEnd": 0.4000000059604645,
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Growth_Trail01": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Ovacua_Order_02_Growth_Trail",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "Growth_TrailPoint01"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MAHNJJFLACM",
+              "followPath": "Growth_TrailPoint01",
+              "rotationDampTime": "Eff_Monster_Ovacua_Order_02_Growth_Trail",
+              "attachPoint": "Growth_TrailPoint01"
+            }
+          ]
+        },
+        "Growth_Trail02": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Ovacua_Order_02_Growth_Trail",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "Growth_TrailPoint02"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MAHNJJFLACM",
+              "followPath": "Growth_TrailPoint02",
+              "rotationDampTime": "Eff_Monster_Ovacua_Order_02_Growth_Trail",
+              "attachPoint": "Growth_TrailPoint02"
+            }
+          ]
+        },
+        "Growth_Trail03": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Ovacua_Order_02_Growth_Trail",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "Growth_TrailPoint03"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MAHNJJFLACM",
+              "followPath": "Growth_TrailPoint03",
+              "rotationDampTime": "Eff_Monster_Ovacua_Order_02_Growth_Trail",
+              "attachPoint": "Growth_TrailPoint03"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ovacua_Order_01_HeavyShoot_Bullet",
+      "onAbilityStart": [
+        {
+          "$type": "EDNOMJCBPIM",
+          "rotationDampTime": "Eff_Monster_Ovacua_Order_HeavyShoot_Bullet_Hit",
+          "born": {
+            "$type": "JGEBAJLEBMO"
+          }
+        },
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JGEBAJLEBMO"
+              },
+              "OAHPDLJIADP": 0.75
+            },
+            "attackInfo": {
+              "attackTag": "Ovacua_Chaos_HeavyShoot",
+              "attenuationTag": "Ovacua_Chaos_HeavyShoot",
+              "attenuationGroup": "Ovacua_Chaos_HeavyShoot",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.5,
+                "actorWindSubHurtDelta": 0.0,
+                "IPFJJJGABPL": 100.0,
+                "strikeType": "Blunt",
+                "enBreak": 100.0,
+                "attackType": "Range",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV3",
+                "hitHaltTimeScale": 0.05000000074505806
+              }
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Ovacua_Order_01_Growth_Bullet",
+      "onAbilityStart": [
+        {
+          "$type": "EDNOMJCBPIM",
+          "rotationDampTime": "Eff_Monster_Sandworm_01_Stage02_FlyingAttack_MultiBullet_Hit_Dungeon",
+          "born": {
+            "$type": "JGEBAJLEBMO"
+          }
+        },
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JGEBAJLEBMO"
+              },
+              "OAHPDLJIADP": 3.0
+            },
+            "attackInfo": {
+              "attackTag": "Sandworm_Stage02_FlyingAttackBullet",
+              "attenuationTag": "Sandworm_Stage02_FlyingAttackBullet",
+              "attenuationGroup": "Sandworm_Stage02_FlyingAttackBullet",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 1.0,
+                "actorWindSubHurtDelta": 0.0,
+                "IPFJJJGABPL": 100.0,
+                "strikeType": "Blunt",
+                "enBreak": 50.0,
+                "attackType": "Range",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV3",
+                "hitHaltTimeScale": 0.05000000074505806
+              }
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  }
+]

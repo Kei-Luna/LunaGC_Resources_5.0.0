@@ -1,0 +1,109 @@
+[
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_DefaultAbility_VisionReplaceDieInvincible",
+      "abilityMixins": [
+        {
+          "$type": "OLGJDKOJBGC",
+          "onReviveActions": [
+            {
+              "$type": "ApplyModifier",
+              "target": "CurLocalAvatar",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_VisionReplaceDieInvincible_Invincible"
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_VisionReplaceDieInvincible_Invincible": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 2.5,
+          "bonusCritical": 100.0,
+          "state": "Invincible"
+        }
+      },
+      "onAvatarIn": [
+        {
+          "$type": "ApplyModifier",
+          "predicates": [
+            {
+              "$type": "ByAny",
+              "predicates": [
+                {
+                  "$type": "LPCDAHPFOPO",
+                  "visionType": "VisionReborn"
+                },
+                {
+                  "$type": "LPCDAHPFOPO",
+                  "visionType": "VisionReplaceDie"
+                }
+              ]
+            }
+          ],
+          "modifierName": "UNIQUE_VisionReplaceDieInvincible_Invincible"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_DefaultAbility_AvartarInShaderChange",
+      "modifiers": {
+        "ShaderLerp": {
+          "modifierName": "",
+          "elementDurability": 1.2999999523162842,
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "HGGKNHLBMED",
+              "damageRatio": "CharacterDissolve"
+            }
+          ]
+        },
+        "UNIQUE_Special_ShaderLerp": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 1.2999999523162842,
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "HGGKNHLBMED",
+              "damageRatio": "CharacterDissolve",
+              "forceStopWhenRemoved": true
+            }
+          ]
+        }
+      },
+      "onAvatarIn": [
+        {
+          "$type": "Predicated",
+          "targetPredicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_AvartarInShaderChange_Special",
+              "param3": 1.0
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "UNIQUE_Special_ShaderLerp"
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "ShaderLerp"
+            }
+          ]
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  }
+]

@@ -1,0 +1,495 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Fungus_Trois_BVB_Fire_FlameStorm_Backup",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "FlameStorm_BS",
+            "FlameStorm_Loop"
+          ],
+          "modifierName": "ExplodeLoopEffect_UB",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "APJKOLPHCGH",
+          "stateIDs": [
+            "UnionBurst"
+          ],
+          "enterActions": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "UBShader"
+            }
+          ],
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "sub_hurt_delta_negative": -0.15000000596046448
+      },
+      "modifiers": {
+        "FlameStorm_Attack_Monitor": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "FlameStorm"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "predicates": [
+                    {
+                      "$type": "NIMAPECDNKD",
+                      "entityTypes": [
+                        "Monster",
+                        "Partner"
+                      ]
+                    }
+                  ],
+                  "modifierName": "FlameStorm_Vulnerable"
+                }
+              ]
+            }
+          ]
+        },
+        "FlameStorm_Vulnerable": {
+          "modifierName": "",
+          "elementDurability": 8.0,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_PhysicalSubHurtDelta": "sub_hurt_delta_negative",
+            "Actor_FireSubHurtDelta": "sub_hurt_delta_negative",
+            "Actor_ElecSubHurtDelta": "sub_hurt_delta_negative",
+            "Actor_IceSubHurtDelta": "sub_hurt_delta_negative",
+            "Actor_WaterSubHurtDelta": "sub_hurt_delta_negative",
+            "Actor_GrassSubHurtDelta": "sub_hurt_delta_negative",
+            "Actor_WindSubHurtDelta": "sub_hurt_delta_negative",
+            "Actor_RockSubHurtDelta": "sub_hurt_delta_negative"
+          },
+          "state": "DefenseDown"
+        },
+        "ExplodeLoopEffect_UB": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EIMGEIJIDNO",
+              "shapeName": "CircleR8",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": -0.5,
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true,
+                "attachPointName": "RootNode"
+              },
+              "strength": 3.75,
+              "IAELBHDMINN": 2.700000047683716,
+              "MMBCLAEOEFB": 1.2000000476837158,
+              "targetType": "Enemy",
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster",
+                    "Partner"
+                  ]
+                },
+                {
+                  "$type": "GDIBFABBADA",
+                  "logic": "LesserOrEqual",
+                  "BHOOHGLJDHM": 140.0
+                }
+              ],
+              "modifierName": ""
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Fungus_Trois_Fire_FlameStorm_WindZone",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "ExplodeLoopEffect_Camera"
+            }
+          ]
+        },
+        "ExplodeLoopEffect_Camera": {
+          "modifierName": "",
+          "elementDurability": 1.25,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.20000000298023224,
+          "onThinkInterval": [
+            {
+              "$type": "ONALKNNKKLH",
+              "cameraShake": {
+                "shakeRange": 0.33000001311302185,
+                "shakeTime": 0.25,
+                "shakeDistance": 25.0,
+                "extension": {
+                  "afterShake": false,
+                  "rangeAttenuation": 0.20000000298023224
+                }
+              }
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "FlameStorm_Attack_Monitor"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "useRotation": true
+              },
+              "OAHPDLJIADP": 5.0
+            },
+            "attackInfo": {
+              "attackTag": "FlameStorm",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 5.119999885559082,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Fire",
+                "IPFJJJGABPL": 100.0,
+                "enBreak": 150.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV6"
+              }
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Fungus_Trois_Fire_FlameStorm",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "ONALKNNKKLH",
+          "cameraShake": {
+            "shakeType": "CustomVector",
+            "shakeRange": 2.0999999046325684,
+            "shakeTime": 0.4000000059604645,
+            "shakeDistance": 30.0,
+            "shakeDir": {
+              "z": 1.0
+            },
+            "extension": {
+              "baseCycle": 0.25,
+              "cycleDamping": 0.6000000238418579,
+              "rangeAttenuation": 0.10000000149011612
+            }
+          }
+        },
+        {
+          "$type": "JPHLIDGMGBG",
+          "cameraRadialBlur": {
+            "power": 0.20000000298023224,
+            "blurTime": 0.10000000149011612,
+            "fadeTime": 0.15000000596046448
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Fungus_Trois_BVB_Fire_FireRing",
+      "abilitySpecials": {
+        "defence_ratio_enhanced": 2.0
+      },
+      "modifiers": {
+        "FireDance_Gen_FireRing": {
+          "modifierName": "",
+          "elementDurability": 9.0,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.6660000085830688,
+          "properties": {
+            "Actor_DefenceRatio": "defence_ratio_enhanced"
+          },
+          "state": "DefenseUp",
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Fungus_Trois_Fire_FireRing",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "useRotation": true
+                  },
+                  "OAHPDLJIADP": 2.700000047683716
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "FireRing",
+                  "attenuationGroup": "FungusFight_Trois_FireRing",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.10899999737739563,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Fire",
+                    "IPFJJJGABPL": 25.0,
+                    "enBreak": 6.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV0"
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "FireDance_Gen_FireRing"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Fungus_Trois_BVB_Fire_Explode",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Explode_BS",
+            "Explode_Loop"
+          ],
+          "modifierName": "ExplodeLoopEffect_Normal",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "ExplodeLoopEffect_Normal": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Fungus_Trois_Gamma_Fire_ExplodeDecayed_Loop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "useRotation": true
+              },
+              "OAHPDLJIADP": 3.5
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 3.0,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Fire",
+                "IPFJJJGABPL": 25.0,
+                "enBreak": 45.0,
+                "attackType": "Range",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV4"
+              }
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Fungus_Trois_Gamma_Fire_ExplodeDecayed_Attack",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Fungus_Trois_BVB_Fire_FlameStorm",
+      "abilitySpecials": {
+        "sub_hurt_delta_positive": 0.699999988079071
+      },
+      "modifiers": {
+        "FlameStorm_State": {
+          "modifierName": "",
+          "elementDurability": 8.0,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.5,
+          "properties": {
+            "Actor_PhysicalSubHurtDelta": "sub_hurt_delta_positive",
+            "Actor_FireSubHurtDelta": "sub_hurt_delta_positive",
+            "Actor_ElecSubHurtDelta": "sub_hurt_delta_positive",
+            "Actor_IceSubHurtDelta": "sub_hurt_delta_positive",
+            "Actor_WaterSubHurtDelta": "sub_hurt_delta_positive",
+            "Actor_GrassSubHurtDelta": "sub_hurt_delta_positive",
+            "Actor_WindSubHurtDelta": "sub_hurt_delta_positive",
+            "Actor_RockSubHurtDelta": "sub_hurt_delta_positive"
+          },
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "InFlameStorm",
+              "param3": true
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Fungus_Trois_Fire_VortexOfFire",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "useRotation": true
+                  },
+                  "OAHPDLJIADP": 3.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "FireRing",
+                  "attenuationGroup": "FungusFightV2_Seq1",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.8999999761581421,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Fire",
+                    "IPFJJJGABPL": 25.0,
+                    "enBreak": 15.0,
+                    "attackType": "Range",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV1"
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "InFlameStorm"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "useRotation": true
+                  },
+                  "OAHPDLJIADP": 3.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "FireRing",
+                  "attenuationGroup": "FungusFightV2_Seq1",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.8999999761581421,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Fire",
+                    "IPFJJJGABPL": 25.0,
+                    "enBreak": 15.0,
+                    "attackType": "Range",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV1"
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "FlameStorm_State"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,2614 @@
+[
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Noel_ExtraAttack",
+      "abilityMixins": [
+        {
+          "$type": "ButtonHoldChargeMixin",
+          "skillID": 10341,
+          "chargeTime": 0.25,
+          "EKKJNADOEMB": "ExtraAttack_Claymore_MaxTime",
+          "onBeginUncharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "PLLJBINMGJK": "DoSkill"
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "SkillID",
+              "param3": 1.0
+            },
+            {
+              "$type": "GNAEJNBIFAC",
+              "PLLJBINMGJK": "EndHoldTrigger"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "SetTrigger"
+            }
+          ],
+          "onBeginCharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "PLLJBINMGJK": "DoSkill"
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "SkillID",
+              "param3": 6.0
+            }
+          ],
+          "onReleaseCharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "PLLJBINMGJK": "EndHoldTrigger"
+            },
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "SetTrigger"
+            }
+          ],
+          "onBeginSecondCharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "PLLJBINMGJK": "EndHoldTrigger"
+            }
+          ],
+          "chargeStateIDs": [
+            "Attack01_BS",
+            "Attack01",
+            "Attack02",
+            "Attack03",
+            "Attack04",
+            "ExtraAttack",
+            "ExtraAttack1"
+          ]
+        },
+        {
+          "$type": "OMINBOKBKOB",
+          "stateIDs": [
+            "ExtraAttack1"
+          ],
+          "PBLEFEPFBPH": "",
+          "LBOBGGPJOOP": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ExtraAttack",
+            "ExtraAttack1",
+            "ExtraAttack2",
+            "ExtraAttack3"
+          ],
+          "modifierName": "Camera",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ExtraAttack1"
+          ],
+          "modifierName": "Cost",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "ExtraAttack_Claymore_Stamina_Cost": 0.0,
+        "ExtraAttack_Claymore_MaxTime": 0.0
+      },
+      "modifiers": {
+        "SetTrigger": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "PLLJBINMGJK": "EndHoldTrigger"
+            }
+          ]
+        },
+        "Camera": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "PEIPIGEMHEK",
+              "shieldHP": true
+            }
+          ],
+          "onAvatarOut": [
+            {
+              "$type": "PEIPIGEMHEK",
+              "shieldHP": true
+            }
+          ]
+        },
+        "Cost": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "ALFJHNOMEFL",
+              "costStaminaDelta": "ExtraAttack_Claymore_Stamina_Cost",
+              "onStaminaEmpty": [
+                {
+                  "$type": "SetAnimatorTrigger",
+                  "PLLJBINMGJK": "EndHoldTrigger"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Noel_Talent_ChangeExtraAttackCost",
+      "abilityMixins": [
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ExtraAttack",
+            "ExtraAttack1",
+            "ExtraAttack2",
+            "ExtraAttack3",
+            "ExtraAttack_BS"
+          ],
+          "modifierName": "UNIQUE_Avatar_Noel_Talent_EnhanceExtraAttack",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "ExtraAttack_Claymore_Stamina_Cost_Talent_342": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_Avatar_Noel_Talent_EnhanceExtraAttack": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "bonusCritical": 100.0,
+          "properties": {
+            "Actor_CostStaminaRatio": "ExtraAttack_Claymore_Stamina_Cost_Talent_342"
+          },
+          "isLimitedProperties": true
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Noel_Skill_S",
+      "abilitySpecials": {
+        "AS_Skill_S_ShieldHp_DefRate_PS32_P1": 0.0,
+        "AS_Skill_S_HealHp_DefRate_PS32_P2": 0.0,
+        "AS_Skill_S_HealthRate_Base_PS32_P3": 0.0,
+        "AS_Skill_S_Time_PS32_P4": 0.0,
+        "AS_Skill_S_OnceAttack_PS32_P6": 0.0,
+        "AS_Skill_S_ShieldHp_Value_PS32_P7": 0.0,
+        "AS_Skill_S_HealHp_Value_PS32_P8": 0.0,
+        "AS_Skill_S_HealthRate_Talent_341": 0.0,
+        "AS_Skill_S_ShieldBrokenDamage_Talent_334": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_Noel_Skill_S_Shield": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "AS_Skill_S_Time_PS32_P4",
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PLJLDPCFKKJ",
+              "shieldType": "Avatar_Rock",
+              "DLBHHADKGJN": 360.0,
+              "HOBPOPLIMAC": [
+                "AS_Skill_S_ShieldHp_DefRate_PS32_P1",
+                "FIGHT_PROP_CUR_DEFENSE",
+                "MUL",
+                "AS_Skill_S_ShieldHp_Value_PS32_P7",
+                "ADD"
+              ],
+              "costShieldRatioName": "",
+              "showDamageText": "INFO_ELITE_DEFENCE",
+              "onShieldBroken": [
+                {
+                  "$type": "RemoveUniqueModifier",
+                  "target": "Team",
+                  "modifierName": "UNIQUE_Noel_Skill_S_Shield"
+                }
+              ],
+              "rotationDampTime": "Eff_Avatar_Girl_Claymore_Noel_Skill_S_Loop",
+              "childShieldModifierName": "UNIQUE_Noel_Skill_S_Shield_Child"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "target": "Caster",
+              "modifierName": "AttackHealth"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "Predicated",
+              "targetPredicates": [
+                {
+                  "$type": "ByUnlockTalentParam",
+                  "talentParam": "Avatar_Noel_Talent_334"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "target": "CurLocalAvatar",
+                  "modifierName": "ShieldBrokenEevet"
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "FireEffect",
+                  "target": "CurLocalAvatar",
+                  "rotationDampTime": "Eff_Avatar_Girl_Claymore_Noel_Skill_S_NormalBreak",
+                  "effectTempleteID": 1.0,
+                  "AJDILHJFNKE": -1.0
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Noel_Skill_S_Shield_Child": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "FPGALFBAHMD",
+              "mainShieldModifierName": "UNIQUE_Noel_Skill_S_Shield"
+            }
+          ],
+          "properties": {
+            "Actor_EndureDelta": 0.0
+          },
+          "onBeingHit": [
+            {
+              "$type": "Predicated",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "KNBFJBFMGLD",
+                  "enBreak": 0.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "GFOOGEIKGBI",
+                  "target": "Team",
+                  "parameter": "Eff_Ani_Noel_Skill_S_Loop_BeAttack",
+                  "attachPoint": "",
+                  "rotationDampTime": "Eff_Avatar_Girl_Claymore_Noel_Skill_S_Loop"
+                }
+              ]
+            }
+          ]
+        },
+        "AttackHealth": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "Predicated",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "ByAttackTags",
+                  "attackTags": [
+                    "NormalAttack_01",
+                    "NormalAttack_02",
+                    "NormalAttack_03",
+                    "NormalAttack_04",
+                    "NormalAttack_05",
+                    "NormalAttack_06",
+                    "ExtraAttack",
+                    "Elemental_Art",
+                    "Elemental_Burst"
+                  ]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "modifierName": "UNIQUE_Noel_Skill_E_OnAttackLanded"
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Noel_Skill_E_OnAttackLanded": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.10000000149011612,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FLJLMOKONMB",
+              "valueRangeMax": 1.0,
+              "overrideMapKey": "OnAttack_HealthRate"
+            },
+            {
+              "$type": "Predicated",
+              "targetPredicates": [
+                {
+                  "$type": "ByUnlockTalentParam",
+                  "talentParam": "Avatar_Noel_Talent_341"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Applier",
+                  "key": "_NOEL_IS_SKILL_E",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "predicates": [
+                    {
+                      "$type": "NDAEDKLADHO",
+                      "target": "Caster",
+                      "logic": "LesserOrEqual",
+                      "targetAbilityName": "",
+                      "targetKey": "OnAttack_HealthRate",
+                      "targetValue": "AS_Skill_S_HealthRate_Talent_341"
+                    }
+                  ],
+                  "modifierName": "DoHealth"
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "predicates": [
+                    {
+                      "$type": "NDAEDKLADHO",
+                      "target": "Caster",
+                      "logic": "LesserOrEqual",
+                      "targetAbilityName": "",
+                      "targetKey": "OnAttack_HealthRate",
+                      "targetValue": "AS_Skill_S_HealthRate_Base_PS32_P3"
+                    }
+                  ],
+                  "modifierName": "DoHealth"
+                }
+              ]
+            }
+          ]
+        },
+        "Skill_S_OnceAttack": {
+          "modifierName": "",
+          "elementDurability": 0.07800000160932541,
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "TriggerAttackEvent",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackCircle",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    }
+                  },
+                  "height": 2.0,
+                  "radius": 2.0,
+                  "detectDirection": "Clockwise"
+                },
+                "attackInfo": {
+                  "attackTag": "Elemental_Art",
+                  "attenuationTag": "Elemental_Art",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Rock",
+                    "bonusCritical": 50.0,
+                    "strikeType": "Blunt",
+                    "enBreak": 100.0,
+                    "attackType": "Melee",
+                    "damageExtra": [
+                      "AS_Skill_S_OnceAttack_PS32_P6",
+                      "FIGHT_PROP_CUR_DEFENSE",
+                      "MUL"
+                    ],
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV3",
+                    "canBeDefenceHalt": true
+                  },
+                  "cameraShake": {
+                    "shakeType": "CustomVector",
+                    "shakeRange": 0.18000000715255737,
+                    "shakeTime": 0.15000000596046448,
+                    "shakeDistance": 15.0,
+                    "shakeDir": {
+                      "x": 1.0,
+                      "y": -0.20000000298023224
+                    }
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "DoHealth": {
+          "stacking": "Multiple",
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "ApplyModifier",
+              "target": "AllPlayerAvatars",
+              "predicates": [
+                {
+                  "$type": "FMBJAJFLDIP",
+                  "logic": "LesserOrEqual",
+                  "param3": 40.0,
+                  "DDALGNLEHOD": ""
+                }
+              ],
+              "modifierName": "Heal"
+            }
+          ]
+        },
+        "Heal": {
+          "stacking": "Multiple",
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FHGPOFDJDCO",
+              "shieldHP": true,
+              "GHINLKIEMFA": [
+                "AS_Skill_S_HealHp_DefRate_PS32_P2",
+                "FIGHT_PROP_CUR_DEFENSE",
+                "MUL",
+                "AS_Skill_S_HealHp_Value_PS32_P8",
+                "ADD"
+              ],
+              "cdRatio": ""
+            }
+          ]
+        },
+        "ShieldBrokenEevet": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "TriggerAttackEvent",
+              "target": "Caster",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackCircle",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    }
+                  },
+                  "height": 2.0,
+                  "radius": 4.0,
+                  "detectDirection": "Clockwise"
+                },
+                "attackInfo": {
+                  "attackTag": "Elemental_Art",
+                  "attenuationTag": "Elemental_Art",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "AS_Skill_S_ShieldBrokenDamage_Talent_334",
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Rock",
+                    "bonusCritical": 50.0,
+                    "strikeType": "Blunt",
+                    "enBreak": 100.0,
+                    "attackType": "Melee",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV3",
+                    "hitHaltTime": 0.15000000596046448,
+                    "hitHaltTimeScale": 0.009999999776482582,
+                    "canBeDefenceHalt": true
+                  },
+                  "cameraShake": {
+                    "shakeType": "CustomVector",
+                    "shakeRange": 0.36000001430511475,
+                    "shakeTime": 0.30000001192092896,
+                    "shakeDistance": 30.0,
+                    "shakeDir": {
+                      "x": 1.0,
+                      "y": -0.20000000298023224
+                    }
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Claymore_Noel_Skill_S_TalentBreak",
+              "born": {
+                "$type": "JHEBKCMEMLN"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "AvatarSkillStart",
+          "skillID": 10342,
+          "amountByTargetCurrentHPRatio": 1.0,
+          "costStaminaRatio": 1.0
+        },
+        {
+          "$type": "FireEffect",
+          "rotationDampTime": "Eff_Avatar_Girl_Claymore_Noel_Skill_S_Once",
+          "born": {
+            "$type": "ConfigBornByAttachPoint",
+            "attachPointName": "FocusAnchor"
+          },
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "RemoveUniqueModifier",
+          "target": "Team",
+          "modifierName": "UNIQUE_Noel_Skill_S_Shield"
+        },
+        {
+          "$type": "AttachModifier",
+          "target": "Team",
+          "modifierName": "UNIQUE_Noel_Skill_S_Shield"
+        },
+        {
+          "$type": "GFOOGEIKGBI",
+          "target": "Team",
+          "parameter": "Eff_Ani_Noel_Skill_S_Loop_Show",
+          "attachPoint": "",
+          "rotationDampTime": "Eff_Avatar_Girl_Claymore_Noel_Skill_S_Loop"
+        },
+        {
+          "$type": "ApplyModifier",
+          "modifierName": "Skill_S_OnceAttack"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Noel_Skill_E",
+      "abilitySpecials": {
+        "AS_Skill_E_OnceAttackDamage_Art_PS33_P1": 0.0,
+        "AS_Skill_E_OnceAttackDamage_PS33_P2": 0.0,
+        "AS_Skill_E_AttackUp_PS33_P3": 0.0,
+        "AS_Skill_E_Time_PS33_P4": 0.0,
+        "AS_Skill_E_TimeUp_Talent_P1": 1.0,
+        "AS_Skill_E_MaxTimeUp_Talent_334_P2": 0.0,
+        "AS_DelayTime": 1.0499999523162842,
+        "AS_DelayTime_Art": 0.30000001192092896,
+        "OverrideMapVal_BuffRunTime": 0.0
+      },
+      "modifiers": {
+        "Effect_Delay": {
+          "modifierName": "",
+          "elementDurability": 0.2199999988079071,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "AttackEvent"
+            },
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "AttackEvent_Art"
+            },
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "AttackEffect"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ONALKNNKKLH",
+              "cameraShake": {
+                "shakeRange": 0.30000001192092896,
+                "shakeTime": 0.18000000715255737,
+                "shakeDistance": 30.0,
+                "extension": {
+                  "baseOnCamera": true
+                }
+              }
+            }
+          ]
+        },
+        "AttackEvent": {
+          "modifierName": "",
+          "elementDurability": "AS_DelayTime",
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "TriggerAttackEvent",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackCircle",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    }
+                  },
+                  "height": 1.5,
+                  "radius": 6.5,
+                  "detectDirection": "Clockwise"
+                },
+                "attackInfo": {
+                  "attackTag": "Elemental_Burst",
+                  "attenuationTag": "Elemental_Burst",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "AS_Skill_E_OnceAttackDamage_PS33_P2",
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Rock",
+                    "bonusCritical": 25.0,
+                    "strikeType": "Blunt",
+                    "enBreak": 150.0,
+                    "attackType": "Melee",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV4",
+                    "hitHaltTime": 0.15000000596046448,
+                    "hitHaltTimeScale": 0.009999999776482582,
+                    "canBeDefenceHalt": true
+                  },
+                  "forceCameraShake": true,
+                  "cameraShake": {
+                    "shakeType": "CustomVector",
+                    "shakeRange": 0.36000001430511475,
+                    "shakeTime": 0.30000001192092896,
+                    "shakeDistance": 45.0,
+                    "shakeDir": {
+                      "x": 1.0,
+                      "y": -0.20000000298023224
+                    }
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "AttackEvent_Art": {
+          "modifierName": "",
+          "elementDurability": "AS_DelayTime_Art",
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "TriggerAttackEvent",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackCircle",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    }
+                  },
+                  "height": 1.5,
+                  "radius": 4.0,
+                  "detectDirection": "Clockwise"
+                },
+                "attackInfo": {
+                  "attackTag": "Elemental_Burst",
+                  "attenuationTag": "Elemental_Burst",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "AS_Skill_E_OnceAttackDamage_Art_PS33_P1",
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Rock",
+                    "bonusCritical": 25.0,
+                    "strikeType": "Blunt",
+                    "enBreak": 150.0,
+                    "attackType": "Melee",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV4",
+                    "hitHaltTime": 0.15000000596046448,
+                    "hitHaltTimeScale": 0.009999999776482582,
+                    "canBeDefenceHalt": true
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "AttackEffect": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "Weather"
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Claymore_Noel_Skill_E",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ENPKLOKAGDL",
+              "materialType": "Weapon",
+              "value": 4.0,
+              "duration": 0.15000000596046448
+            }
+          ]
+        },
+        "Invincible": {
+          "modifierName": "",
+          "elementDurability": 1.600000023841858,
+          "bonusCritical": 100.0,
+          "state": "Invincible",
+          "onAdded": [
+            {
+              "$type": "OPAOGKPJLIG",
+              "resistanceListID": 11002
+            }
+          ]
+        },
+        "Weather": {
+          "stacking": "Multiple",
+          "modifierName": "",
+          "elementDurability": 2.0,
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "JFFOPFFEBPN",
+              "damageRatio": "Skill",
+              "weatherPattern": "Weather_Beidou_ThunderCounter",
+              "transDuration": 0.30000001192092896,
+              "duration": 1.5
+            }
+          ]
+        },
+        "Buff": {
+          "modifierName": "",
+          "elementDurability": [
+            "AS_Skill_E_Time_PS33_P4",
+            "AS_Skill_E_MaxTimeUp_Talent_334_P2",
+            "ADD"
+          ],
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "MFCOIAIMHEL",
+              "detectWindow": 0.5,
+              "onKill": [
+                {
+                  "$type": "AddGlobalValue",
+                  "predicates": [
+                    {
+                      "$type": "ByUnlockTalentParam",
+                      "talentParam": "Avatar_Noel_Talent_346"
+                    }
+                  ],
+                  "param3": "AS_Skill_E_TimeUp_Talent_P1",
+                  "key": "_NOEL_SKILL_E_BUFF_MAXTIME",
+                  "useLimitRange": true,
+                  "param2": [
+                    "AS_Skill_E_Time_PS33_P4",
+                    "AS_Skill_E_MaxTimeUp_Talent_334_P2",
+                    "ADD"
+                  ],
+                  "repeatTimes": "AS_Skill_E_Time_PS33_P4"
+                }
+              ]
+            },
+            {
+              "$type": "HCCJNFOGEKI",
+              "oldPatterns": [
+                "Noel_Attack01_BS",
+                "Noel_Attack01",
+                "Noel_Attack02",
+                "Noel_Attack03",
+                "Noel_Attack04",
+                "Noel_ExtraAttack",
+                "Noel_ExtraAttack1",
+                "Noel_ExtraAttack2",
+                "Audio_Girl_Claymore_Noel_Attack01",
+                "Audio_Girl_Claymore_Noel_Attack02",
+                "Audio_Girl_Claymore_Noel_Attack03",
+                "Audio_Girl_Claymore_Noel_Attack04",
+                "Audio_Girl_Noel_ExtraAttack",
+                "Audio_Girl_Noel_ExtraAttack1",
+                "Audio_Girl_Noel_ExtraAttack2",
+                "Audio_Girl_Noel_ExtraAttack3"
+              ],
+              "newPatterns": [
+                "Noel_Attack01_BS_Skill_E",
+                "Noel_Attack01_Skill_E",
+                "Noel_Attack02_Skill_E",
+                "Noel_Attack03_Skill_E",
+                "Noel_Attack04_Skill_E",
+                "Noel_ExtraAttack_Skill_E",
+                "Noel_ExtraAttack1_Skill_E",
+                "Noel_ExtraAttack2_Skill_E",
+                "Audio_Girl_Claymore_Noel_Skill_E_Attack01",
+                "Audio_Girl_Claymore_Noel_Skill_E_Attack02",
+                "Audio_Girl_Claymore_Noel_Skill_E_Attack03",
+                "Audio_Girl_Claymore_Noel_Skill_E_Attack04",
+                "Audio_Girl_Noel_Skill_E_ExtraAttack",
+                "Audio_Girl_Noel_Skill_E_ExtraAttack1",
+                "Audio_Girl_Noel_Skill_E_ExtraAttack2",
+                "Audio_Girl_Noel_Skill_E_ExtraAttack3"
+              ]
+            }
+          ],
+          "properties": {
+            "Actor_AttackExtraDelta": [
+              "AS_Skill_E_AttackUp_PS33_P3",
+              "FIGHT_PROP_NONEXTRA_DEFENSE",
+              "MUL"
+            ]
+          },
+          "onAdded": [
+            {
+              "$type": "AddGlobalValue",
+              "param3": 1.0,
+              "key": "_NOEL_IS_SKILL_E",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 1.0
+            },
+            {
+              "$type": "AddGlobalValue",
+              "param3": "AS_Skill_E_Time_PS33_P4",
+              "key": "_NOEL_SKILL_E_BUFF_TIME",
+              "useLimitRange": true,
+              "param2": [
+                "AS_Skill_E_Time_PS33_P4",
+                "AS_Skill_E_MaxTimeUp_Talent_334_P2",
+                "ADD"
+              ],
+              "repeatTimes": "AS_Skill_E_Time_PS33_P4"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "param3": "AS_Skill_E_Time_PS33_P4",
+              "key": "_NOEL_SKILL_E_BUFF_MAXTIME",
+              "useLimitRange": true,
+              "param2": [
+                "AS_Skill_E_Time_PS33_P4",
+                "AS_Skill_E_MaxTimeUp_Talent_334_P2",
+                "ADD"
+              ],
+              "repeatTimes": "AS_Skill_E_Time_PS33_P4"
+            },
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "Buff_BaseTime"
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Claymore_Noel_Skill_E_Weapon_Once",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AttachModifier",
+              "modifierName": "Rock_Enhancement_Weapon_Checker"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AddGlobalValue",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_NOEL_IS_SKILL_E",
+              "useLimitRange": true,
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "shieldHP": true,
+              "modifierName": "Buff_BaseTime"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "shieldHP": true,
+              "modifierName": "Buff_RemoveTimeCheck_1"
+            },
+            {
+              "$type": "HMKGPFBBDIC",
+              "shieldHP": true,
+              "key": "_NOEL_SKILL_E_BUFF_TIME"
+            },
+            {
+              "$type": "HMKGPFBBDIC",
+              "shieldHP": true,
+              "key": "_NOEL_SKILL_E_BUFF_MAXTIME"
+            }
+          ]
+        },
+        "Rock_Enhancement_Weapon_Delay": {
+          "modifierName": "",
+          "elementDurability": 0.17000000178813934,
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "Rock_Enhancement_Weapon_Checker"
+            }
+          ]
+        },
+        "Rock_Enhancement_Weapon": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "elementDurability": [
+            "AS_Skill_E_Time_PS33_P4",
+            "AS_Skill_E_MaxTimeUp_Talent_334_P2",
+            "ADD",
+            0.20000000298023224,
+            "ADD"
+          ],
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Claymore_Noel_Skill_E_Weapon",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Claymore_Noel_Skill_E_Weapon_AS",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Rock_Enhancement_Weapon_Checker": {
+          "modifierName": "",
+          "elementDurability": [
+            "AS_Skill_E_Time_PS33_P4",
+            "AS_Skill_E_MaxTimeUp_Talent_334_P2",
+            "ADD",
+            0.20000000298023224,
+            "ADD"
+          ],
+          "bonusCritical": 100.0,
+          "thinkInterval": 0.5,
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "otherTargets": {
+                "$type": "GAPFENEFKKE",
+                "equipPartNames": [
+                  "equip01",
+                  "sheathPoint"
+                ]
+              },
+              "modifierName": "Rock_Enhancement_Weapon"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ENPKLOKAGDL",
+              "target": "Caster",
+              "shieldHP": true,
+              "materialType": "Weapon",
+              "value": -1.0,
+              "duration": 0.30000001192092896
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "otherTargets": {
+                "$type": "GAPFENEFKKE",
+                "equipPartNames": [
+                  "equip01",
+                  "sheathPoint"
+                ]
+              },
+              "modifierName": "Rock_Enhancement_Weapon"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "ENPKLOKAGDL",
+              "materialType": "Weapon",
+              "value": 4.0,
+              "duration": 0.009999999776482582
+            },
+            {
+              "$type": "ApplyModifier",
+              "otherTargets": {
+                "$type": "GAPFENEFKKE",
+                "equipPartNames": [
+                  "equip01",
+                  "sheathPoint"
+                ]
+              },
+              "modifierName": "Rock_Enhancement_Weapon"
+            }
+          ]
+        },
+        "Buff_BaseTime": {
+          "modifierName": "",
+          "elementDurability": "AS_Skill_E_Time_PS33_P4",
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "Buff_RemoveTimeCheck_1"
+            }
+          ]
+        },
+        "Buff_RemoveTimeCheck_1": {
+          "modifierName": "",
+          "elementDurability": "AS_Skill_E_MaxTimeUp_Talent_334_P2",
+          "bonusCritical": 100.0,
+          "thinkInterval": 1.0,
+          "onThinkInterval": [
+            {
+              "$type": "AddGlobalValue",
+              "param3": 1.0,
+              "key": "_NOEL_SKILL_E_BUFF_TIME",
+              "useLimitRange": true,
+              "param2": [
+                "AS_Skill_E_Time_PS33_P4",
+                "AS_Skill_E_MaxTimeUp_Talent_334_P2",
+                "ADD"
+              ],
+              "repeatTimes": "AS_Skill_E_Time_PS33_P4"
+            },
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "_NOEL_SKILL_E_BUFF_TIME",
+              "overrideMapKey": "OverrideMapVal_BuffRunTime"
+            },
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "Buff_RemoveTimeCheck_2"
+            }
+          ]
+        },
+        "Buff_RemoveTimeCheck_2": {
+          "modifierName": "",
+          "elementDurability": 0.009999999776482582,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "Predicated",
+              "targetPredicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_NOEL_SKILL_E_BUFF_MAXTIME",
+                  "param3": "OverrideMapVal_BuffRunTime",
+                  "forceByCaster": true,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PFKNEFGOHIH",
+                  "shieldHP": true,
+                  "modifierName": "Buff"
+                }
+              ]
+            }
+          ]
+        },
+        "DoNormalAttack": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Claymore_Noel_Skill_E_Weapon_OnAttack_01",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "AvatarSkillStart",
+          "skillID": 10343,
+          "amountByTargetCurrentHPRatio": 1.0,
+          "costStaminaRatio": 1.0
+        },
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "Buff"
+        },
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "Rock_Enhancement_Weapon_Checker"
+        },
+        {
+          "$type": "ApplyModifier",
+          "modifierName": "Buff"
+        },
+        {
+          "$type": "ApplyModifier",
+          "modifierName": "Effect_Delay"
+        },
+        {
+          "$type": "ApplyModifier",
+          "modifierName": "Invincible"
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "PEIPIGEMHEK",
+          "shieldHP": true
+        },
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "Buff"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Noel_Skill_E_ExitCamera",
+      "modifiers": {
+        "ExitCamera": {
+          "modifierName": "",
+          "elementDurability": 0.4000000059604645,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "OIDCJAEPFPF",
+              "cameraMoveCfgPath": "CameraElementalBurst_Out_Noel"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PEIPIGEMHEK",
+              "shieldHP": true
+            },
+            {
+              "$type": "LJBFFDLKIKL",
+              "cameraParam": {
+                "forceRadius": 6.0,
+                "shouldKeepForceRadius": true
+              }
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "ApplyModifier",
+          "modifierName": "ExitCamera"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Noel_ProudSkill_NormalAttack_DamageHandler",
+      "abilityMixins": [
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "ATK01"
+          ],
+          "actorGrassSubHurtDelta": "NormalAttack_01_P1_DamagePercentage",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "ATK02"
+          ],
+          "actorGrassSubHurtDelta": "NormalAttack_02_P2_DamagePercentage",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "ATK03"
+          ],
+          "actorGrassSubHurtDelta": "NormalAttack_03_P3_DamagePercentage",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "ATK04"
+          ],
+          "actorGrassSubHurtDelta": "NormalAttack_04_P4_DamagePercentage",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "ExtraAttack1"
+          ],
+          "actorGrassSubHurtDelta": "ExtraAttack_Loop_P5_DamagePercentage",
+          "actorWindSubHurtDelta": "ExtraAttack_DamagePercentage_Talent_342_P2"
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "ExtraAttack2"
+          ],
+          "actorGrassSubHurtDelta": "ExtraAttack_End_P6_DamagePercentage",
+          "actorWindSubHurtDelta": "ExtraAttack_DamagePercentage_Talent_342_P2"
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "ATK01_Skill_E"
+          ],
+          "actorGrassSubHurtDelta": "NormalAttack_01_P1_DamagePercentage",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "ATK02_Skill_E"
+          ],
+          "actorGrassSubHurtDelta": "NormalAttack_02_P2_DamagePercentage",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "ATK03_Skill_E"
+          ],
+          "actorGrassSubHurtDelta": "NormalAttack_03_P3_DamagePercentage",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "ATK04_Skill_E"
+          ],
+          "actorGrassSubHurtDelta": "NormalAttack_04_P4_DamagePercentage",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "ExtraAttack1_Skill_E"
+          ],
+          "actorGrassSubHurtDelta": "ExtraAttack_Loop_P5_DamagePercentage",
+          "actorWindSubHurtDelta": "ExtraAttack_DamagePercentage_Talent_342_P2"
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "ExtraAttack2_Skill_E"
+          ],
+          "actorGrassSubHurtDelta": "ExtraAttack_End_P6_DamagePercentage",
+          "actorWindSubHurtDelta": "ExtraAttack_DamagePercentage_Talent_342_P2"
+        }
+      ],
+      "abilitySpecials": {
+        "NormalAttack_01_P1_DamagePercentage": 0.0,
+        "NormalAttack_02_P2_DamagePercentage": 0.0,
+        "NormalAttack_03_P3_DamagePercentage": 0.0,
+        "NormalAttack_04_P4_DamagePercentage": 0.0,
+        "ExtraAttack_Loop_P5_DamagePercentage": 0.0,
+        "ExtraAttack_End_P6_DamagePercentage": 0.0,
+        "ExtraAttack_DamagePercentage_Talent_342_P2": 0.0
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Noel_ProudSkill_21",
+      "abilitySpecials": {
+        "AS_ProudSkill_21_TriggerHPRate_PS21_P1": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_Noel_ProudSkill_21_TeamHandler": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "IJKJKFHPENC",
+              "modifierName": "Noel_ProudSkill_21_BeHit_Check"
+            }
+          ]
+        },
+        "Noel_ProudSkill_21_BeHit_Check": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CLJDJFBAPFM",
+              "damageRatio": "Current",
+              "onEvent": "HPDown",
+              "actions": [
+                {
+                  "$type": "Predicated",
+                  "targetPredicates": [
+                    {
+                      "$type": "AFCIHEABHEL",
+                      "logic": "LesserOrEqual",
+                      "ratio": "AS_ProudSkill_21_TriggerHPRate_PS21_P1"
+                    },
+                    {
+                      "$type": "BCFNGJHILAG",
+                      "predicates": [
+                        {
+                          "$type": "ByTargetGlobalValue",
+                          "key": "_NOEL_IS_PROUDSKILL_21_SELF",
+                          "param3": 1.0
+                        }
+                      ]
+                    }
+                  ],
+                  "successActions": [
+                    {
+                      "$type": "TriggerAbility",
+                      "target": "Caster",
+                      "predicates": [
+                        {
+                          "$type": "IMPNKNCABJD"
+                        },
+                        {
+                          "$type": "IHLMAOEHHOB",
+                          "target": "Caster",
+                          "skillID": 10344
+                        }
+                      ],
+                      "abilityName": "Avatar_Noel_ProudSkill_21_Shield"
+                    }
+                  ]
+                }
+              ],
+              "costEnergyDeltaName": ""
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AddGlobalValue",
+          "shieldHP": true,
+          "param3": 1.0,
+          "key": "_NOEL_IS_PROUDSKILL_21_SELF",
+          "useLimitRange": true,
+          "param2": 1.0,
+          "repeatTimes": 1.0
+        },
+        {
+          "$type": "AttachModifier",
+          "target": "Team",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_Noel_ProudSkill_21_TeamHandler"
+        }
+      ],
+      "onRemoved": [
+        {
+          "$type": "HMKGPFBBDIC",
+          "shieldHP": true,
+          "key": "_NOEL_IS_PROUDSKILL_21_SELF"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Noel_ProudSkill_21_Shield",
+      "abilitySpecials": {
+        "AS_ProudSkill_21_ShieldHp_DefRate_PS21_P2": 0.0,
+        "AS_ProudSkill_21_Dura_PS21_P3": 0.0,
+        "AS_ProudSkill_21_CD_PS21_P4": 0.0,
+        "AS_ProudSkill_21_ShieldHp": 0.0
+      },
+      "modifiers": {
+        "Noel_ProudSkill_21_Shield": {
+          "modifierName": "",
+          "elementDurability": "AS_ProudSkill_21_Dura_PS21_P3",
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BPAECHPGBLP",
+              "shieldType": "Avatar_Rock",
+              "DLBHHADKGJN": 360.0,
+              "HOBPOPLIMAC": "AS_ProudSkill_21_ShieldHp",
+              "costShieldRatioName": "",
+              "showDamageText": "INFO_ELITE_DEFENCE",
+              "onShieldBroken": [
+                {
+                  "$type": "PFKNEFGOHIH",
+                  "shieldHP": true,
+                  "modifierName": "Noel_ProudSkill_21_Shield"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "Actor_EndureDelta": 0.0
+          },
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "shieldHP": true,
+              "rotationDampTime": "Eff_Avatar_Girl_Claymore_Noel_Talent_Shield",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "shieldHP": true,
+              "parameter": "Eff_Ani_Noel_Talent_Shield_Show",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Girl_Claymore_Noel_Talent_Shield"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Claymore_Noel_Talent_Shield_Break",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "Predicated",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "KNBFJBFMGLD",
+                  "enBreak": 0.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "GFOOGEIKGBI",
+                  "parameter": "Eff_Ani_Noel_Talent_Shield_BeAttack",
+                  "attachPoint": "",
+                  "rotationDampTime": "Eff_Avatar_Girl_Claymore_Noel_Talent_Shield"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "HMKGPFBBDIC",
+          "shieldHP": true,
+          "key": "_ABILITY_Noel_ProudSkill_21_ShieldHp"
+        },
+        {
+          "$type": "AddGlobalValue",
+          "shieldHP": true,
+          "param3": [
+            "AS_ProudSkill_21_ShieldHp_DefRate_PS21_P2",
+            "FIGHT_PROP_CUR_DEFENSE",
+            "MUL"
+          ],
+          "key": "_ABILITY_Noel_ProudSkill_21_ShieldHp",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "LDIAIDLOPEE",
+          "target": "Caster",
+          "shieldHP": true,
+          "globalValueKey": "_ABILITY_Noel_ProudSkill_21_ShieldHp",
+          "overrideMapKey": "AS_ProudSkill_21_ShieldHp"
+        },
+        {
+          "$type": "AttachModifier",
+          "target": "CurLocalAvatar",
+          "shieldHP": true,
+          "modifierName": "Noel_ProudSkill_21_Shield"
+        },
+        {
+          "$type": "AvatarSkillStart",
+          "shieldHP": true,
+          "skillID": 10344,
+          "amountByTargetCurrentHPRatio": "AS_ProudSkill_21_CD_PS21_P4",
+          "costStaminaRatio": 1.0
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Noel_ProudSkill_22",
+      "abilityMixins": [
+        {
+          "$type": "IIMLDKKNLGN",
+          "targetType": "Self",
+          "modifierName": "ChangeCD",
+          "skillID": 10342,
+          "cdMin": "AS_ProudSkill_22_CD_PS22_P1"
+        }
+      ],
+      "abilitySpecials": {
+        "AS_ProudSkill_22_CD_PS22_P1": 0.0
+      },
+      "modifiers": {
+        "CheckNormalAttack": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "Predicated",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "ByAttackTags",
+                  "attackTags": [
+                    "NormalAttack_01",
+                    "NormalAttack_02",
+                    "NormalAttack_03",
+                    "NormalAttack_04",
+                    "NormalAttack_05",
+                    "NormalAttack_06",
+                    "ExtraAttack"
+                  ]
+                },
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "modifierName": "UNIQUE_Noel_ProudSkill_22_OnAttackLanded"
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Noel_ProudSkill_22_OnAttackLanded": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.10000000149011612,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AddGlobalValue",
+              "param3": 1.0,
+              "key": "_NOEL_ATTACK_COUNT",
+              "useLimitRange": true,
+              "param2": 4.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "Predicated",
+              "targetPredicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_NOEL_ATTACK_COUNT",
+                  "param3": 4.0,
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "HMKGPFBBDIC",
+                  "key": "_NOEL_ATTACK_COUNT"
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "modifierName": "ChangeCD"
+                }
+              ]
+            }
+          ]
+        },
+        "ChangeCD": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "bonusCritical": 100.0,
+          "fireEventWhenApply": true
+        },
+        "AutoClearAttackCountCheck": {
+          "modifierName": "",
+          "elementDurability": 10.0,
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "HMKGPFBBDIC",
+              "key": "_NOEL_ATTACK_COUNT"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "CheckNormalAttack"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Noel_FallingAnthem",
+      "abilityMixins": [
+        {
+          "$type": "KMPFLHBHBBP",
+          "jumpSkillID": 5034010,
+          "flySkillID": 5034010
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS"
+          ],
+          "modifierName": "FallingAnthem_BS_Material",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_Loop"
+          ],
+          "modifierName": "FallingAnthem_Loop_Normal",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "FallingAnthem_BS_2",
+            "FallingAnthem_Loop",
+            "FallingAnthem_Loop_Low"
+          ],
+          "modifierName": "FallingAnthem_LoopDamage",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS"
+          ],
+          "modifierName": "FallingAnthem_BS_VelocityForce_Initialize",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop",
+            "FallingAnthem_AS_1",
+            "FallingAnthem_AS_2"
+          ],
+          "modifierName": "FallingAnthem_Height_Detect",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop",
+            "FallingAnthem_AS_1",
+            "FallingAnthem_AS_2"
+          ],
+          "modifierName": "FallingAnthem_FallingDamageImmune_01",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop"
+          ],
+          "modifierName": "Inertia",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop",
+            "FallingAnthem_AS_1",
+            "FallingAnthem_AS_2"
+          ],
+          "modifierName": "FallingAnthem_OverHead_Camera",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS"
+          ],
+          "modifierName": "FallingAnthem_ClearVelocityForce",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop"
+          ],
+          "modifierName": "FallingAnthem_AttachSelfEffect",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "FallingAnthem_Normal_Loop_Damage": 0.0,
+        "FallingAnthem_Normal_Rank_1_Damage": 0.0,
+        "FallingAnthem_Normal_Rank_2_Damage": 0.0,
+        "FallingAnthem_Altitude_Lv0": 20.0,
+        "FallingAnthem_Altitude_Lv1": 40.0,
+        "FallingAnthem_Altitude_Lv2": 60.0,
+        "FallingAnthem_Altitude_Lv3": 100.0,
+        "FallingAnthem_Altitude_Lv4": 200.0,
+        "FallingAnthem_FallingDamageRatio_Lv0": -1.0,
+        "FallingAnthem_FallingDamageRatio_Lv1": -1.0,
+        "FallingAnthem_FallingDamageRatio_Lv2": -0.8999999761581421,
+        "FallingAnthem_FallingDamageRatio_Lv3": -0.800000011920929,
+        "FallingAnthem_FallingDamageRatio_Lv4": -0.6000000238418579,
+        "FallingAnthem_FallingDamageRatio": 0.0
+      },
+      "modifiers": {
+        "FallingAnthem_AttachSelfEffect": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Claymore_FallAnthem_Self_02",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "FallingAnthem_BS_Material": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Claymore_FallAnthem_Self",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Claymore_FallAnthem_BS",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "FallingAnthem_BS_VelocityForce_Initialize": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "properties": {
+            "Actor_AddGravityScale": -2.0
+          },
+          "onAdded": [
+            {
+              "$type": "LBLNHEBGPJI",
+              "forces": [
+                "RushMoveType"
+              ]
+            }
+          ]
+        },
+        "FallingAnthem_LoopDamage": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "thinkInterval": 0.30000001192092896,
+          "onThinkInterval": [
+            {
+              "$type": "TriggerAttackEvent",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_NOEL_IS_SKILL_E",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 1.0
+                    }
+                  },
+                  "radius": 1.0
+                },
+                "attackInfo": {
+                  "attackTag": "FallingAttack",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "FallingAnthem_Normal_Loop_Damage",
+                    "actorWindSubHurtDelta": 0.0,
+                    "bonusCritical": 0.0,
+                    "overrideByWeapon": true,
+                    "strikeType": "Slash",
+                    "enBreak": 35.0,
+                    "attackType": "Melee",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.019999999552965164
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_NOEL_IS_SKILL_E",
+                  "param3": 1.0
+                }
+              ],
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 1.0
+                    }
+                  },
+                  "radius": 1.0
+                },
+                "attackInfo": {
+                  "attackTag": "FallingAttack",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "FallingAnthem_Normal_Loop_Damage",
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Rock",
+                    "bonusCritical": 0.0,
+                    "strikeType": "Slash",
+                    "enBreak": 35.0,
+                    "attackType": "Melee",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.019999999552965164
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "FallingAnthem_FallingDamageImmune_01": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "HMKGPFBBDIC",
+              "key": "_ABILITY_FallingAttack_Altitude"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": "FallingAnthem_Altitude_Lv0"
+                }
+              ],
+              "param3": "FallingAnthem_FallingDamageRatio_Lv0",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "param2": "FallingAnthem_FallingDamageRatio_Lv0",
+              "repeatTimes": "FallingAnthem_FallingDamageRatio_Lv0"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": "FallingAnthem_Altitude_Lv1"
+                },
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": "FallingAnthem_Altitude_Lv0"
+                }
+              ],
+              "param3": "FallingAnthem_FallingDamageRatio_Lv1",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "param2": "FallingAnthem_FallingDamageRatio_Lv1",
+              "repeatTimes": "FallingAnthem_FallingDamageRatio_Lv1"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": "FallingAnthem_Altitude_Lv2"
+                },
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": "FallingAnthem_Altitude_Lv1"
+                }
+              ],
+              "param3": "FallingAnthem_FallingDamageRatio_Lv2",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "param2": "FallingAnthem_FallingDamageRatio_Lv2",
+              "repeatTimes": "FallingAnthem_FallingDamageRatio_Lv2"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": "FallingAnthem_Altitude_Lv3"
+                },
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": "FallingAnthem_Altitude_Lv2"
+                }
+              ],
+              "param3": "FallingAnthem_FallingDamageRatio_Lv3",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "param2": "FallingAnthem_FallingDamageRatio_Lv3",
+              "repeatTimes": "FallingAnthem_FallingDamageRatio_Lv3"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": "FallingAnthem_Altitude_Lv3"
+                }
+              ],
+              "param3": "FallingAnthem_FallingDamageRatio_Lv4",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "param2": "FallingAnthem_FallingDamageRatio_Lv4",
+              "repeatTimes": "FallingAnthem_FallingDamageRatio_Lv4"
+            },
+            {
+              "$type": "AttachModifier",
+              "modifierName": "FallingAnthem_FallingDamageImmune_02"
+            }
+          ]
+        },
+        "FallingAnthem_FallingDamageImmune_02": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "_ABILITY_FallingAttack_Altitude",
+              "overrideMapKey": "FallingAnthem_FallingDamageRatio"
+            },
+            {
+              "$type": "AttachModifier",
+              "modifierName": "FallingAnthem_FallingDamageImmune_03"
+            }
+          ]
+        },
+        "FallingAnthem_FallingDamageImmune_03": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "properties": {
+            "Actor_FallingDamageRatio": "FallingAnthem_FallingDamageRatio"
+          }
+        },
+        "FallingAnthem_Loop_Normal": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "_ABILITY_FallingAnthem_UseCamera",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                -1.0,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "FallingAnthem_Loop_Normal_Rank_1",
+                "FallingAnthem_Loop_Normal_Rank_2"
+              ]
+            }
+          ]
+        },
+        "FallingAnthem_Loop_Normal_Rank_1": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Claymore_FallAnthem_Loop_01",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "FallingAnthem_Loop_Normal_Rank_2": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Claymore_FallAnthem_Loop_02",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Inertia": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "KEHPDCODOOC",
+              "useXZ": false,
+              "useY": false
+            }
+          ]
+        },
+        "FallingAnthem_Height_Detect": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": 2.4000000953674316
+                }
+              ],
+              "param3": 0.0,
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "useLimitRange": true,
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": 2.4000000953674316
+                }
+              ],
+              "param3": 5.0,
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "FEKJDLHHOLE",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": 2.4000000953674316
+                }
+              ],
+              "floatID": "FallingAnthem_UseCamera",
+              "param3": 0.0
+            },
+            {
+              "$type": "FEKJDLHHOLE",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": 2.4000000953674316
+                }
+              ],
+              "floatID": "FallingAnthem_UseCamera",
+              "param3": 1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FEKJDLHHOLE",
+              "floatID": "FallingAnthem_UseCamera",
+              "param3": 0.0
+            },
+            {
+              "$type": "AddGlobalValue",
+              "param3": 0.0,
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "useLimitRange": true,
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "FallingAnthem_OverHead_Camera": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "LJBFFDLKIKL",
+              "predicates": [
+                {
+                  "$type": "NIFDMKMHAGJ",
+                  "logic": "Equal",
+                  "param3": 1.0,
+                  "parameter": "FallingAnthem_UseCamera"
+                }
+              ],
+              "cameraParam": {
+                "forceRadius": 4.5,
+                "forceRadiusDuration": 0.20000000298023224,
+                "shouldKeepForceRadius": true
+              }
+            }
+          ]
+        },
+        "FallingAnthem_OverHead_Camera_Remover": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "PEIPIGEMHEK",
+              "shieldHP": true
+            }
+          ]
+        },
+        "FallingAnthem_Landed_Camera": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "LJBFFDLKIKL",
+              "predicates": [
+                {
+                  "$type": "NIFDMKMHAGJ",
+                  "logic": "Equal",
+                  "param3": 1.0,
+                  "parameter": "FallingAnthem_UseCamera"
+                }
+              ],
+              "cameraParam": {
+                "forceRadius": 6.0,
+                "forceRadiusDuration": 0.10000000149011612,
+                "shouldKeepForceRadius": true
+              }
+            }
+          ]
+        },
+        "FallingAnthem_ClearVelocityForce": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "LBLNHEBGPJI",
+              "forces": [
+                "RushMoveType",
+                "InertiaType"
+              ]
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "TriggerAttackEvent",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_NOEL_IS_SKILL_E",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "param3": 0.0,
+              "forceByCaster": true,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackCircle",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "x": 0.0,
+                  "y": -0.5,
+                  "z": 1.0
+                }
+              },
+              "height": 2.0,
+              "radius": 3.0
+            },
+            "attackInfo": {
+              "attackTag": "FallingAttack",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "FallingAnthem_Normal_Rank_1_Damage",
+                "actorWindSubHurtDelta": 0.0,
+                "bonusCritical": 25.0,
+                "overrideByWeapon": true,
+                "strikeType": "Blunt",
+                "enBreak": 150.0,
+                "attackType": "Melee",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "none",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV4",
+                "hitHaltTimeScale": 0.10000000149011612
+              },
+              "forceCameraShake": true,
+              "cameraShake": {
+                "shakeType": "CustomVector",
+                "shakeRange": 0.23999999463558197,
+                "shakeTime": 0.11999999731779099,
+                "shakeDistance": 30.0,
+                "shakeDir": {
+                  "y": 1.0
+                },
+                "extension": {
+                  "baseCycle": 0.23999999463558197,
+                  "cycleDamping": 0.0,
+                  "rangeAttenuation": 0.30000001192092896
+                }
+              }
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "TriggerAttackEvent",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_NOEL_IS_SKILL_E",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "param3": 1.0,
+              "forceByCaster": true
+            }
+          ],
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackCircle",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "x": 0.0,
+                  "y": -0.5,
+                  "z": 1.0
+                }
+              },
+              "height": 2.0,
+              "radius": 5.0
+            },
+            "attackInfo": {
+              "attackTag": "FallingAttack",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "FallingAnthem_Normal_Rank_2_Damage",
+                "actorWindSubHurtDelta": 0.0,
+                "bonusCritical": 25.0,
+                "overrideByWeapon": true,
+                "strikeType": "Blunt",
+                "enBreak": 200.0,
+                "attackType": "Melee",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "none",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV7",
+                "hitHaltTimeScale": 0.10000000149011612
+              },
+              "forceCameraShake": true,
+              "cameraShake": {
+                "shakeType": "CustomVector",
+                "shakeRange": 0.5,
+                "shakeTime": 0.20000000298023224,
+                "shakeDistance": 30.0,
+                "shakeDir": {
+                  "y": 1.0,
+                  "z": 1.0
+                },
+                "extension": {
+                  "baseCycle": 0.4000000059604645,
+                  "cycleDamping": 0.0,
+                  "rangeAttenuation": 0.30000001192092896
+                }
+              }
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "TriggerAttackEvent",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_NOEL_IS_SKILL_E",
+              "param3": 1.0
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "param3": 0.0,
+              "forceByCaster": true,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackCircle",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "x": 0.0,
+                  "y": -0.5,
+                  "z": 1.0
+                }
+              },
+              "height": 2.0,
+              "radius": 3.0
+            },
+            "attackInfo": {
+              "attackTag": "FallingAttack",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "FallingAnthem_Normal_Rank_1_Damage",
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Rock",
+                "bonusCritical": 25.0,
+                "strikeType": "Blunt",
+                "enBreak": 150.0,
+                "attackType": "Melee",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "none",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV4",
+                "hitHaltTimeScale": 0.10000000149011612
+              },
+              "forceCameraShake": true,
+              "cameraShake": {
+                "shakeType": "CustomVector",
+                "shakeRange": 0.23999999463558197,
+                "shakeTime": 0.11999999731779099,
+                "shakeDistance": 30.0,
+                "shakeDir": {
+                  "y": 1.0
+                },
+                "extension": {
+                  "baseCycle": 0.23999999463558197,
+                  "cycleDamping": 0.0,
+                  "rangeAttenuation": 0.30000001192092896
+                }
+              }
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "TriggerAttackEvent",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_NOEL_IS_SKILL_E",
+              "param3": 1.0
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "param3": 1.0,
+              "forceByCaster": true
+            }
+          ],
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackCircle",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "x": 0.0,
+                  "y": -0.5,
+                  "z": 1.0
+                }
+              },
+              "height": 2.0,
+              "radius": 5.0
+            },
+            "attackInfo": {
+              "attackTag": "FallingAttack",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "FallingAnthem_Normal_Rank_2_Damage",
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Rock",
+                "bonusCritical": 25.0,
+                "strikeType": "Blunt",
+                "enBreak": 200.0,
+                "attackType": "Melee",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "none",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV7",
+                "hitHaltTimeScale": 0.10000000149011612
+              },
+              "forceCameraShake": true,
+              "cameraShake": {
+                "shakeType": "CustomVector",
+                "shakeRange": 0.5,
+                "shakeTime": 0.20000000298023224,
+                "shakeDistance": 30.0,
+                "shakeDir": {
+                  "y": 1.0,
+                  "z": 1.0
+                },
+                "extension": {
+                  "baseCycle": 0.4000000059604645,
+                  "cycleDamping": 0.0,
+                  "rangeAttenuation": 0.30000001192092896
+                }
+              }
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "FireEffect",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "param3": 0.0,
+              "forceByCaster": true,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "rotationDampTime": "Eff_Avatar_Claymore_FallAnthem_Strike_01",
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "FireEffect",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "param3": 1.0,
+              "forceByCaster": true
+            }
+          ],
+          "rotationDampTime": "Eff_Avatar_Claymore_FallAnthem_Strike_02",
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  }
+]

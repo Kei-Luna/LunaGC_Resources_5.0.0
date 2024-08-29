@@ -1,0 +1,319 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Thoarder_Male_Crossbow_SteerAttack",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Dodge"
+          ],
+          "endNormalizedTime": 0.10000000149011612,
+          "angularSpeed": 240.0,
+          "attackTrigger": "",
+          "attackDistance": 3.75,
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Thoarder_Male_Crossbow_ShootArrow_WithRandom",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Aim"
+          ],
+          "angularSpeed": 120.0,
+          "attackTrigger": "",
+          "attackDistance": 3.75,
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42101006,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.20000000298023224,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.10000000149011612
+            },
+            "direction": {
+              "$type": "MEADFIJAHPG",
+              "randomAngleHor": 0.30000001192092896,
+              "randomAngleVer": 0.5,
+              "maxAngle": 60.0,
+              "startPoint": ""
+            },
+            "attachPointName": "WeaponR"
+          }
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Thoarder_Male_Crossbow_Shoot_01",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Thoarder_Male_Crossbow_Shoot_Enhanced01",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Aim",
+            "Aim_Enhanced"
+          ],
+          "angularSpeed": 120.0,
+          "attackTrigger": "",
+          "attackDistance": 3.75,
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42101003,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.20000000298023224,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.10000000149011612
+            },
+            "direction": {
+              "$type": "MEADFIJAHPG",
+              "randomAngleHor": 0.30000001192092896,
+              "randomAngleVer": 0.5,
+              "maxAngle": 60.0,
+              "startPoint": ""
+            },
+            "attachPointName": "WeaponR"
+          }
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Thoarder_Male_Crossbow_Shoot_Fire_01",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Thoarder_Male_Crossbow_FireEnchanted_Start",
+      "modifiers": {
+        "EnhancedCrossbow": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "Aim_Enhanced",
+                "Shoot_Enhanced01"
+              ],
+              "modifierName": "UNIQUE_EnhancedCrossbow_Effect",
+              "DGFCLAIDIFI": ""
+            }
+          ]
+        },
+        "UNIQUE_EnhancedCrossbow_Effect": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Thoarder_Male_Crossbow_FireEnchanted_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Thoarder_Male_Crossbow_FireEnchanted_01_End",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "EnhancedCrossbow"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Thoarder_Male_Crossbow_FireEnchanted_End",
+      "onAbilityStart": [
+        {
+          "$type": "KBODPNEEFGD",
+          "modifierName": "UNIQUE_EnhancedCrossbow_Effect"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Thoarder_Male_Crossbow_Dodge",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Dodge"
+          ],
+          "modifierName": "Dodge",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            1001
+          ],
+          "modifierName": "GetUpDodge"
+        }
+      ],
+      "modifiers": {
+        "GetUpDodge": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "FMCNBDBHNHH",
+              "stateIDs": [
+                "BeHit",
+                "BeHitThrow"
+              ],
+              "defendTriggerID": "DodgeTrigger",
+              "defendProbability": 0.8999999761581421,
+              "defendProbabilityDelta": 0.15000000596046448,
+              "defendTimeInterval": 3.75,
+              "KDIOGIHFGIL": 0,
+              "onDefendSucceded": [
+                {
+                  "$type": "PELJALPANCA",
+                  "modifierName": "Dodge"
+                }
+              ],
+              "randomDirection": true
+            }
+          ]
+        },
+        "Dodge": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "DodgeInvincible"
+            }
+          ]
+        },
+        "DodgeInvincible": {
+          "modifierName": "",
+          "elementDurability": 0.75,
+          "IPFJJJGABPL": 100.0,
+          "state": "Invincible"
+        },
+        "DodgeDenyLockOn": {
+          "modifierName": "",
+          "elementDurability": 1.75,
+          "IPFJJJGABPL": 100.0,
+          "state": "DenyLockOn"
+        },
+        "DodgeSpeedup": {
+          "modifierName": "",
+          "elementDurability": 2.25,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Animator_MoveSpeedRatio": 1.0499999523162842
+          }
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Thoarder_Male_Crossbow_DodgeShootCDManager",
+      "abilityMixins": [
+        {
+          "$type": "APJKOLPHCGH",
+          "stateIDs": [
+            "DodgeAttack"
+          ],
+          "enterActions": [
+            {
+              "$type": "DOANGHCALGB",
+              "skillIDs": [
+                401,
+                402
+              ]
+            }
+          ],
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Thoarder_Male_Crossbow_DodgeShootCDManager_ByPose",
+      "abilityMixins": [
+        {
+          "$type": "EAKJOFAIAPH",
+          "poseIDs": [
+            1002
+          ],
+          "enterActions": [
+            {
+              "$type": "DOANGHCALGB",
+              "skillIDs": [
+                402
+              ]
+            }
+          ]
+        },
+        {
+          "$type": "APJKOLPHCGH",
+          "stateIDs": [
+            "BeHit",
+            "BeHitThrow",
+            "Struggle"
+          ],
+          "exitActions": [
+            {
+              "$type": "DOANGHCALGB",
+              "skillIDs": [
+                402
+              ]
+            }
+          ],
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  }
+]

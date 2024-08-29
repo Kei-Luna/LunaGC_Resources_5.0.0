@@ -1,0 +1,896 @@
+{
+  "common": {
+    "effectAttachShape": {
+      "$type": "FJNPJANPGGC",
+      "mesh": "EffectMesh"
+    },
+    "mass": 30.0,
+    "height": 0.6000000238418579,
+    "reconnectSupport": true,
+    "recoverByInitPose": true
+  },
+  "model": {
+    "bornEffect": "",
+    "attachEffect": "",
+    "BKPFGNPLDNJ": ""
+  },
+  "dither": {
+    "showDitherDuration": 2.0
+  },
+  "combat": {
+    "property": {
+      "endureType": "Monster_Slime",
+      "weight": 80.0
+    },
+    "beHit": {
+      "hitBloodEffect": "",
+      "IEKJNLDFOCL": true
+    },
+    "combatLock": {
+      "lockShape": "CircleLockEnemy",
+      "lockType": "Avatar&Monster_Lv4"
+    },
+    "die": {
+      "hasAnimatorDie": true,
+      "fallWhenAirDie": false,
+      "dieEndTime": 1.0,
+      "dieForceDisappearTime": 4.0,
+      "dieDisappearEffect": "Eff_Death_InWater_Common",
+      "dieShaderData": "MonsterDieInWater",
+      "dieShaderEnableDurationTime": 0.5,
+      "dieModelFadeDelay": 0.5,
+      "muteHitBox": true,
+      "dieDenyLockOn": true,
+      "dieIsGhostToEnemy": true,
+      "dieIgnoreTriggerBullet": true,
+      "muteBillboard": true,
+      "mutePushCollider": true
+    }
+  },
+  "abilities": [
+    {
+      "abilityID": "",
+      "abilityName": "FauneAbyssale_MantaRay_Larva_Born",
+      "abilityOverride": ""
+    },
+    {
+      "abilityID": "",
+      "abilityName": "FauneAbyssale_MantaRay_Larva_FreeSkillsBinding",
+      "abilityOverride": ""
+    },
+    {
+      "abilityID": "",
+      "abilityName": "Monster_FauneAbyssale_MantaRay_TriggerBullet",
+      "abilityOverride": ""
+    },
+    {
+      "abilityID": "",
+      "abilityName": "FauneAbyssale_MantaRay_HideUIBillBoard",
+      "abilityOverride": ""
+    }
+  ],
+  "stateLayers": {
+    "defaultLayer": {
+      "$type": "GBGJJIIEMBD",
+      "layerIndexName": "",
+      "CPAANEIJCGD": "",
+      "stateIDs": {
+        "Born": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Born": []
+          }
+        },
+        "NormalIdle": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Standby": []
+          },
+          "canDoSkill": true,
+          "canSyncMove": true,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ],
+          "canSteer": true
+        },
+        "NormalMove": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Run": [],
+            "Walk": [],
+            "WalkForLarge": [],
+            "WalkForEnormous": [],
+            "RunForLarge": [],
+            "RunForEnormous": []
+          },
+          "canDoSkill": true,
+          "canSyncMove": true,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ],
+          "canSteer": true,
+          "blendMove": "BlendMove"
+        },
+        "CirClingWalk": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "CirClingWalk": []
+          },
+          "canDoSkill": true,
+          "canSyncMove": true,
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ],
+          "canSteer": true,
+          "blendMove": "BlendMove"
+        },
+        "BeHit": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Hit_H": [
+              "Audio_Monster_FauneAbyssale_MantaRay_Larva_Hit_H"
+            ]
+          },
+          "resetAnimatorTriggerOnEnter": [
+            "BeHit"
+          ],
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ],
+          "airMoveFollowAnimation": true
+        },
+        "Struggle": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Struggle": []
+          },
+          "resetAnimatorTriggerOnEnter": [
+            "BeHit",
+            "HitAir2HitDrop"
+          ],
+          "resetAnimatorTriggerOnExit": [
+            "DoSkill"
+          ],
+          "airMoveFollowAnimation": true
+        },
+        "Die": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Die": [
+              "Monster_FauneAbyssale_MantaRay_Die",
+              "Audio_Monster_FauneAbyssale_MantaRay_Larva_Die"
+            ]
+          },
+          "resetAnimatorTriggerOnEnter": [
+            "BeHit",
+            "DoSkill",
+            "BeHit"
+          ]
+        },
+        "NormalAttack": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "NormalAttack": [
+              "Monster_FauneAbyssale_MantaRay_TriggerBullet",
+              "Audio_Monster_FauneAbyssale_MantaRay_Larva_NormalAttack"
+            ]
+          },
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ],
+          "canSteer": true
+        },
+        "Alert": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Alert": [
+              "Monster_FauneAbyssale_MantaRay_Alert",
+              "Audio_Monster_FauneAbyssale_MantaRay_Larva_Alert"
+            ]
+          },
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ],
+          "canSteer": true
+        },
+        "Personality1": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Personality1": [
+              "Monster_FauneAbyssale_MantaRay_Larva_DancePartner",
+              "Audio_Monster_FauneAbyssale_MantaRay_Larva_Personality1"
+            ]
+          },
+          "canDoSkill": true,
+          "canSyncMove": true,
+          "cullingModelAlwaysAnimate": true,
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ],
+          "canSteer": true,
+          "airMoveFollowAnimation": true
+        },
+        "Personality2": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Personality2": [
+              "Audio_Monster_FauneAbyssale_MantaRay_Larva_Personality2"
+            ]
+          },
+          "canDoSkill": true,
+          "canSyncMove": true,
+          "cullingModelAlwaysAnimate": true,
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ],
+          "canSteer": true,
+          "airMoveFollowAnimation": true
+        },
+        "Personality3": {
+          "$type": "NEDIFAKEGCO",
+          "animatorStates": {
+            "Personality3": [
+              "Audio_Monster_FauneAbyssale_MantaRay_Larva_Personality3"
+            ]
+          },
+          "canDoSkill": true,
+          "resetAnimatorTriggerOnExit": [
+            "BeHit",
+            "DoSkill"
+          ],
+          "canSteer": true
+        }
+      }
+    }
+  },
+  "billboard": {
+    "$type": "DNGNMAJBCNP",
+    "attachPoint": "BillboardAttach",
+    "offset": {
+      "y": 0.5
+    },
+    "radiusOffset": 1.0,
+    "enableSelfAdapt": true,
+    "showHPBar": true,
+    "forceShowDistance": 15.0
+  },
+  "initialPoses": {
+    "Mute": {
+      "initialPoseID": 99,
+      "initialPoseParams": {
+        "intParams": {
+          "FreeState": "99"
+        }
+      }
+    },
+    "Default": {
+      "initialPoseID": 11,
+      "initialPoseParams": {
+        "intParams": {
+          "FreeState": "0"
+        }
+      }
+    },
+    "Dance": {
+      "initialPoseID": 12,
+      "initialPoseParams": {
+        "intParams": {
+          "FreeState": "1"
+        }
+      }
+    },
+    "DancePartner": {
+      "initialPoseID": 13,
+      "initialPoseParams": {
+        "intParams": {
+          "FreeState": "2"
+        }
+      }
+    },
+    "Circling": {
+      "initialPoseID": 14,
+      "initialPoseParams": {
+        "intParams": {
+          "FreeState": "3"
+        }
+      }
+    }
+  },
+  "aibeta": {
+    "enable": true,
+    "decisionArchetype": "EnableCastSkillWhenCircling",
+    "moveSetting": {
+      "moveCategory": "Dive",
+      "useNavMesh": false,
+      "useToTheMoon": true,
+      "navMeshAgentName": "Undead01"
+    },
+    "sensing": {
+      "settings": {
+        "DefaultSetting": {
+          "viewRange": 25.0,
+          "horizontalFov": 150.0,
+          "verticalFov": 100.0,
+          "hearAttractionRange": 5.0,
+          "feelRange": 0.0
+        },
+        "NeverCombat": {
+          "enableVision": false,
+          "hearAttractionRange": 0.0,
+          "feelRange": 0.0
+        },
+        "NormalAlert": {
+          "viewPanoramic": true,
+          "hearAttractionRange": 5.0,
+          "feelRange": 17.5
+        }
+      },
+      "templates": {
+        "DefaultTemplate": {
+          "DefaultPoses": "DefaultSetting",
+          "201": "NormalAlert"
+        },
+        "NeverCombatTemplate": {
+          "DefaultPoses": "NeverCombat",
+          "201": "NormalAlert"
+        },
+        "NormalAlertTemplate": {
+          "DefaultPoses": "NormalAlert"
+        }
+      }
+    },
+    "neurons": {
+      "DefaultSetting": [
+        "HIT"
+      ],
+      "NeverCombat": []
+    },
+    "threat": {
+      "GHIJMOKOLMB": "",
+      "clearThreatTargetDistance": 25.0,
+      "viewThreatGrow": 25.0,
+      "feelThreatGrow": 150.0,
+      "threatDecreaseSpeed": 45.0,
+      "threatBroadcastRange": 8.0,
+      "viewAttenuation": [
+        {
+          "x": 4.5,
+          "y": 1.0
+        },
+        {
+          "x": 8.0,
+          "y": 0.5
+        },
+        {
+          "x": 15.0,
+          "y": 0.20000000298023224
+        },
+        {
+          "x": 22.5,
+          "y": 0.10000000149011612
+        }
+      ]
+    },
+    "defendArea": {
+      "defendRange": 120.0
+    },
+    "fly": {
+      "enable": true,
+      "IPJLPEHKCJA": [
+        11,
+        12,
+        13,
+        14,
+        99,
+        201,
+        901
+      ]
+    },
+    "skills": {
+      "201": {
+        "name": "NormalAttack",
+        "combatSkillType": "RangedAttack",
+        "priority": 2,
+        "castCondition": {
+          "pose": [
+            201
+          ],
+          "BNLDGHLANLI": [
+            2
+          ],
+          "maxTargetAngleY": 45.0,
+          "minTargetAngleY": -45.0,
+          "pickRangeMax": 35.0
+        },
+        "cd": 7.5,
+        "cdUpperRange": 2.0,
+        "publicCDGroup": "",
+        "HHAGODJIAPE": "",
+        "stateIDs": [
+          "NormalAttack"
+        ],
+        "flagTargetReachable": "11",
+        "flagSelfOnTemplateCollider": "11",
+        "flagSelfInZone": "11",
+        "flagTargetInZone": "11"
+      },
+      "100": {
+        "name": "OnAlert",
+        "skillType": "OnAlert",
+        "faceTarget": true,
+        "publicCDGroup": "",
+        "triggerGCD": false,
+        "HHAGODJIAPE": "",
+        "stateIDs": [
+          "Alert"
+        ],
+        "skillQueryingTime": 3.0,
+        "flagTargetReachable": "10",
+        "flagSelfOnTemplateCollider": "01",
+        "flagSelfInZone": "10",
+        "flagTargetInZone": "11",
+        "nerveTrigger": [
+          "HIT"
+        ]
+      },
+      "101": {
+        "name": "Personality1",
+        "skillType": "Free",
+        "priority": 2,
+        "canUseCombatSkillCondition": true,
+        "castCondition": {
+          "pose": [
+            12
+          ],
+          "skillAnchorRangeMin": -1.0,
+          "targetSkillAnchorRangeMin": -1.0,
+          "EELFCDOLLPM": 5.0
+        },
+        "cd": 15.0,
+        "cdUpperRange": 2.0,
+        "initialCD": 5.0,
+        "publicCDGroup": "",
+        "HHAGODJIAPE": "",
+        "stateIDs": [
+          "Personality1"
+        ],
+        "flagTargetReachable": "11",
+        "flagSelfOnTemplateCollider": "11",
+        "flagSelfInZone": "11",
+        "flagTargetInZone": "11"
+      },
+      "103": {
+        "name": "Personality3",
+        "skillType": "Free",
+        "priority": 2,
+        "canUseCombatSkillCondition": true,
+        "castCondition": {
+          "pose": [
+            11
+          ],
+          "skillAnchorRangeMin": -1.0,
+          "targetSkillAnchorRangeMin": -1.0,
+          "pickRangeByRaycast": [
+            {
+              "min": 5.0,
+              "max": -1.0,
+              "raycastType": "DownToGroundOnlyInWater"
+            }
+          ]
+        },
+        "cd": 15.0,
+        "cdUpperRange": 2.0,
+        "initialCD": 5.0,
+        "publicCDGroup": "",
+        "HHAGODJIAPE": "",
+        "stateIDs": [
+          "Personality3"
+        ],
+        "flagTargetReachable": "11",
+        "flagSelfOnTemplateCollider": "11",
+        "flagSelfInZone": "11",
+        "flagTargetInZone": "11"
+      }
+    },
+    "skillGCD": 3.5,
+    "aidingTactic": {
+      "Temp1": {
+        "KBHAIMODNGL": 0.30000001192092896,
+        "IKCMKBHPKMA": 0.699999988079071,
+        "GINJMMLNHIA": 30.0,
+        "HIFACMDKHHK": -30.0
+      },
+      "Temp2": {
+        "DFOBCOJHJHD": false,
+        "DMIEPEEDPDJ": 30.0,
+        "GINJMMLNHIA": 90.0,
+        "HIFACMDKHHK": -90.0
+      },
+      "Temp3": {
+        "DFOBCOJHJHD": false,
+        "DMIEPEEDPDJ": 30.0,
+        "GINJMMLNHIA": 30.0,
+        "HIFACMDKHHK": -30.0
+      }
+    },
+    "birdCirclingTactic": [
+      {
+        "$type": "ALAPAEDAFML",
+        "enable": true,
+        "condition": {
+          "pose": [
+            14,
+            12,
+            13
+          ]
+        },
+        "JMCOBEPDIGM": {
+          "radius": 5.0
+        },
+        "PIOCBHLFLJP": {
+          "12": {
+            "radius": 1.0,
+            "GILNINLDIAJ": false
+          },
+          "13": {
+            "radius": 1.0,
+            "GILNINLDIAJ": false
+          }
+        }
+      },
+      {
+        "$type": "MCDGOJLCMBM",
+        "JMCOBEPDIGM": {
+          "DMGAHPPFMPK": 2.0,
+          "FLENLLDBFGP": 2.0,
+          "ACOBCFCMBOC": "Auto",
+          "MNPDDAKDHGK": "",
+          "GJDMDHIBCME": "Temp1"
+        }
+      },
+      {
+        "$type": "COLLJLNKMLC",
+        "JMCOBEPDIGM": {
+          "ANLAAGAMIKF": 1,
+          "MNPDDAKDHGK": "",
+          "GJDMDHIBCME": "Temp1",
+          "ACOBCFCMBOC": "Auto",
+          "PLLHMGHOAPB": "",
+          "KPIJNGFNAEF": "",
+          "GDPHPLKJGAJ": "",
+          "KKKOAABEHEP": ""
+        }
+      },
+      {
+        "$type": "GPEMIAJPPJG",
+        "enable": true,
+        "condition": {
+          "pose": [
+            99
+          ]
+        },
+        "JMCOBEPDIGM": {
+          "ACOBCFCMBOC": "Auto",
+          "MNPDDAKDHGK": "",
+          "GJDMDHIBCME": "Temp2"
+        }
+      },
+      {
+        "$type": "NNJKLGNPMNN",
+        "enable": true,
+        "JMCOBEPDIGM": {
+          "NBENNEKDIIA": 5.0,
+          "ACOBCFCMBOC": "Auto",
+          "MNPDDAKDHGK": "",
+          "GJDMDHIBCME": "Temp2"
+        }
+      },
+      {
+        "$type": "MJJFBALNDCH",
+        "JMCOBEPDIGM": {
+          "ANLAAGAMIKF": 1,
+          "DDFIKIJKKOE": true,
+          "MNPDDAKDHGK": "",
+          "GJDMDHIBCME": "Temp1"
+        }
+      },
+      {
+        "$type": "EPPOBBAEPED",
+        "condition": {
+          "pose": [
+            201
+          ]
+        },
+        "JMCOBEPDIGM": {
+          "ANLAAGAMIKF": 2,
+          "FAKGFIDPCFL": 13.5,
+          "GHCEDMEHKLN": 5.5,
+          "ONFAMCFCNFM": 0.0,
+          "KLODEFMNFIC": 1.0,
+          "MNPDDAKDHGK": "",
+          "GJDMDHIBCME": "Temp3"
+        }
+      },
+      {
+        "$type": "AFPKJOCDEIF",
+        "enable": true,
+        "condition": {
+          "pose": [
+            11,
+            201
+          ]
+        },
+        "JMCOBEPDIGM": {
+          "ANLAAGAMIKF": 1,
+          "OODBIGLAFGG": {
+            "OJLPFPNFMDJ": 3.5,
+            "JFBDDDBIHDE": 7.5,
+            "EHLPOCLAEFO": 2.0,
+            "APHHENPJNLO": 5.0,
+            "AKMJKEIJEHM": 3.0,
+            "PELOBMPBAJF": 7.0,
+            "BLOIJOGPILM": 3.0,
+            "GNFCHLHAPNI": 7.0,
+            "DFHLPPNLGIE": 2.0,
+            "CLDDLKFCODO": 6.0,
+            "GNJEAKAKLHD": 2.0,
+            "EHAGCHIFFHA": 6.0
+          },
+          "NBENNEKDIIA": 2.0,
+          "NNMEJAFDPEJ": 10.0,
+          "KPNDPKIOPJM": 0.20000000298023224,
+          "PINAFKEDDLL": 0.10000000149011612,
+          "MNPDDAKDHGK": "",
+          "GJDMDHIBCME": "",
+          "KHJGKBJCNLM": 1.5,
+          "DNEGGCDNMKL": 120.0,
+          "OPPALPGLBJI": 60.0,
+          "BHEHHOJOGEI": 0.20000000298023224,
+          "OIGAJIFCDMI": 3.0,
+          "BMDNOGNPICH": 3.0,
+          "EIGFLPCINME": 3.0,
+          "IGPFOHBHOCM": true,
+          "LGEJMHHKDHD": 1.5,
+          "LDOEAHKEMMH": 0.5,
+          "FJELCNEOPLE": 0.33000001311302185,
+          "BKPKJEDPJCK": -0.5,
+          "CMCKJBFDDDM": 0.5,
+          "JJGCFCNPKAD": 0.6600000262260437
+        },
+        "PIOCBHLFLJP": {
+          "201": {
+            "OODBIGLAFGG": {
+              "OJLPFPNFMDJ": 4.5,
+              "JFBDDDBIHDE": 7.5,
+              "EHLPOCLAEFO": 0.0,
+              "APHHENPJNLO": 0.0,
+              "AKMJKEIJEHM": 4.5,
+              "PELOBMPBAJF": 7.0,
+              "BLOIJOGPILM": 4.5,
+              "GNFCHLHAPNI": 7.0,
+              "DFHLPPNLGIE": 2.5,
+              "CLDDLKFCODO": 4.5,
+              "GNJEAKAKLHD": 2.5,
+              "EHAGCHIFFHA": 4.5
+            },
+            "NBENNEKDIIA": 2.0,
+            "NNMEJAFDPEJ": 5.0,
+            "KPNDPKIOPJM": 0.0,
+            "PINAFKEDDLL": 0.0,
+            "MNPDDAKDHGK": "",
+            "GJDMDHIBCME": "Temp1",
+            "KHJGKBJCNLM": 3.0,
+            "OIGAJIFCDMI": 3.0,
+            "BMDNOGNPICH": 3.0,
+            "EIGFLPCINME": 3.0
+          }
+        }
+      }
+    ]
+  },
+  "inputKeys": [
+    {
+      "keyID": 101,
+      "inputKeyCode": 257,
+      "abilityName": ""
+    },
+    {
+      "keyID": 102,
+      "inputKeyCode": 258,
+      "abilityName": ""
+    },
+    {
+      "keyID": 103,
+      "inputKeyCode": 259,
+      "abilityName": ""
+    },
+    {
+      "keyID": 201,
+      "inputKeyCode": 260,
+      "abilityName": ""
+    },
+    {
+      "keyID": 100,
+      "inputKeyCode": 261,
+      "abilityName": ""
+    }
+  ],
+  "move": {
+    "$type": "IPNMJMHDMPF",
+    "velocityForce": {
+      "excludeForces": [
+        "RetreatType",
+        "RetreatAirType"
+      ]
+    },
+    "handleCombatTaskImmediately": true,
+    "initWithGroundHitCheckV2": false,
+    "moveOnWater": true,
+    "raycasts": [
+      {
+        "raycastLength": 5.0,
+        "raycastType": "DownToGroundOnlyInWater",
+        "startPoint": ""
+      }
+    ],
+    "yawSpeedRatio": 0.5,
+    "positionModifyExtra": true,
+    "rotationModifyExtra": true,
+    "PKHOMJHFAEE": "RootNode",
+    "NIDFEFPEKAI": 30.0,
+    "JNAPCJLHJDO": true
+  },
+  "audio": {
+    "overrideEmitterName": "",
+    "animAudio": {
+      "onTransitionIn": [
+        {
+          "currentStateName": "Run",
+          "audioEvent": {
+            "text": "Play_Sfx_Monster_FauneAbyssale_MantaRay_Larva_Walk_LP"
+          },
+          "otherStateNames": [
+            "Run"
+          ],
+          "usage": "Except"
+        },
+        {
+          "currentStateName": "Walk",
+          "audioEvent": {
+            "text": "Play_Sfx_Monster_FauneAbyssale_MantaRay_Larva_Walk_LP"
+          },
+          "otherStateNames": [
+            "Walk"
+          ],
+          "usage": "Except"
+        },
+        {
+          "currentStateName": "WalkForEnormous",
+          "audioEvent": {
+            "text": "Play_Sfx_Monster_FauneAbyssale_MantaRay_Larva_Walk_LP"
+          },
+          "otherStateNames": [
+            "WalkForEnormous"
+          ],
+          "usage": "Except"
+        },
+        {
+          "currentStateName": "RunForEnormous",
+          "audioEvent": {
+            "text": "Play_Sfx_Monster_FauneAbyssale_MantaRay_Larva_Walk_LP"
+          },
+          "otherStateNames": [
+            "RunForEnormous"
+          ],
+          "usage": "Except"
+        },
+        {
+          "currentStateName": "RunForLarge",
+          "audioEvent": {
+            "text": "Play_Sfx_Monster_FauneAbyssale_MantaRay_Larva_Walk_LP"
+          },
+          "otherStateNames": [
+            "RunForLarge"
+          ],
+          "usage": "Except"
+        },
+        {
+          "currentStateName": "RunForLarge",
+          "audioEvent": {
+            "text": "Play_Sfx_Monster_FauneAbyssale_MantaRay_Larva_Walk_LP"
+          },
+          "otherStateNames": [
+            "RunForLarge"
+          ],
+          "usage": "Except"
+        },
+        {
+          "currentStateName": "CirClingWalk",
+          "audioEvent": {
+            "text": "Play_Sfx_Monster_FauneAbyssale_MantaRay_Larva_Walk_LP"
+          },
+          "otherStateNames": [
+            "CirClingWalk"
+          ],
+          "usage": "Except"
+        }
+      ],
+      "onTransitionOut": [
+        {
+          "currentStateName": "Run",
+          "audioEvent": {
+            "text": "Stop_Sfx_Monster_FauneAbyssale_MantaRay_Larva_Walk_LP"
+          },
+          "otherStateNames": [
+            "Run"
+          ],
+          "usage": "Except"
+        },
+        {
+          "currentStateName": "Walk",
+          "audioEvent": {
+            "text": "Stop_Sfx_Monster_FauneAbyssale_MantaRay_Larva_Walk_LP"
+          },
+          "otherStateNames": [
+            "Walk"
+          ],
+          "usage": "Except"
+        },
+        {
+          "currentStateName": "WalkForEnormous",
+          "audioEvent": {
+            "text": "Stop_Sfx_Monster_FauneAbyssale_MantaRay_Larva_Walk_LP"
+          },
+          "otherStateNames": [
+            "WalkForEnormous"
+          ],
+          "usage": "Except"
+        },
+        {
+          "currentStateName": "RunForEnormous",
+          "audioEvent": {
+            "text": "Stop_Sfx_Monster_FauneAbyssale_MantaRay_Larva_Walk_LP"
+          },
+          "otherStateNames": [
+            "RunForEnormous"
+          ],
+          "usage": "Except"
+        },
+        {
+          "currentStateName": "RunForLarge",
+          "audioEvent": {
+            "text": "Stop_Sfx_Monster_FauneAbyssale_MantaRay_Larva_Walk_LP"
+          },
+          "otherStateNames": [
+            "RunForLarge"
+          ],
+          "usage": "Except"
+        },
+        {
+          "currentStateName": "RunForLarge",
+          "audioEvent": {
+            "text": "Stop_Sfx_Monster_FauneAbyssale_MantaRay_Larva_Walk_LP"
+          },
+          "otherStateNames": [
+            "RunForLarge"
+          ],
+          "usage": "Except"
+        },
+        {
+          "currentStateName": "CirClingWalk",
+          "audioEvent": {
+            "text": "Stop_Sfx_Monster_FauneAbyssale_MantaRay_Larva_Walk_LP"
+          },
+          "otherStateNames": [
+            "CirClingWalk"
+          ],
+          "usage": "Except"
+        }
+      ]
+    }
+  }
+}

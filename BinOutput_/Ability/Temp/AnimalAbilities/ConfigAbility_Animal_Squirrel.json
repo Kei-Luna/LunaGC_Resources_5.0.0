@@ -1,0 +1,143 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Squirrel_AIStateInitial",
+      "abilityMixins": [
+        {
+          "$type": "EAKJOFAIAPH",
+          "poseIDs": [
+            1
+          ],
+          "enterActions": [
+            {
+              "$type": "DOANGHCALGB",
+              "skillIDs": [
+                103,
+                202
+              ]
+            }
+          ]
+        },
+        {
+          "$type": "EAKJOFAIAPH",
+          "poseIDs": [
+            2
+          ],
+          "enterActions": [
+            {
+              "$type": "DOANGHCALGB",
+              "skillIDs": [
+                101,
+                102,
+                201
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Squirrel_IntoWander",
+      "onAbilityStart": [
+        {
+          "$type": "IDNGFEEBPAM",
+          "boolID": "WanderState",
+          "param3": true
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Squirrel_IntoIdle",
+      "onAbilityStart": [
+        {
+          "$type": "IDNGFEEBPAM",
+          "boolID": "WanderState"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Squirrel_Random",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Run",
+            "Disappear"
+          ],
+          "modifierName": "Random_MoveSpeedRatio",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "RandomSpeed": 0.0
+      },
+      "modifiers": {
+        "Random_MoveSpeedRatio": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Animator_MoveSpeedRatio": "RandomSpeed"
+          }
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "FLJLMOKONMB",
+          "valueRangeMax": 0.15000000596046448,
+          "valueRangeMin": -0.15000000596046448,
+          "overrideMapKey": "RandomSpeed"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Animal_Squirrel_Disappear",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "Disappear"
+          ],
+          "modifierName": "DisappearTimer",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "DisappearTimer": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AKIIMECIGKE",
+              "duration": 2.0
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "Disappear",
+              "param3": true
+            },
+            {
+              "$type": "NCFFNDHGCMH",
+              "duration": 1.5,
+              "killSelfType": "Disappear",
+              "value": true,
+              "banExp": true
+            }
+          ]
+        }
+      }
+    }
+  }
+]

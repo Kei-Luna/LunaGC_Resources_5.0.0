@@ -1,0 +1,1721 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Xm_Property_Ani_Flower_PlantDrawStart_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "BudState"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "OverState"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 902,
+          "modifierName": "EndState"
+        }
+      ],
+      "modifiers": {
+        "BudState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "ShowYellowGrass"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "HideFlower"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "Enable",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Flower_PlantDraw_01_Elf_Stay",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "OverState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "ShowGreenGrass"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "ShowFlower"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "Enable",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Flower_PlantDraw_01_Elf_Dis",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Flower_PlantDraw_01_Flower",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "EndState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "GrassFail"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "HideFlower"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "HideFarm"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "Enable",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "ShowYellowGrass": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANNOBMCGOEC",
+              "canBeHandledOnRecover": true,
+              "matName": "Grass",
+              "EKHLCLJELIP": "_StateChangeValue",
+              "param3": 0.0,
+              "useCurve": true,
+              "lerpTime": 1.0
+            },
+            {
+              "$type": "ANNOBMCGOEC",
+              "canBeHandledOnRecover": true,
+              "matName": "Grass",
+              "EKHLCLJELIP": "_ColorChange",
+              "param3": 1.0
+            }
+          ]
+        },
+        "ShowGreenGrass": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANNOBMCGOEC",
+              "canBeHandledOnRecover": true,
+              "matName": "Grass",
+              "EKHLCLJELIP": "_StateChangeValue",
+              "param3": 0.0
+            },
+            {
+              "$type": "ANNOBMCGOEC",
+              "canBeHandledOnRecover": true,
+              "matName": "Grass",
+              "EKHLCLJELIP": "_ColorChange",
+              "param3": 0.0,
+              "useCurve": true,
+              "lerpTime": 1.0
+            }
+          ]
+        },
+        "ShowFlower": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomSuccessFlower",
+                  "param3": 1.0,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "transformNames": [
+                "Success01"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomSuccessFlower",
+                  "param3": 1.0,
+                  "compareType": "MoreThan"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomSuccessFlower",
+                  "param3": 2.0,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "transformNames": [
+                "Success02"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomSuccessFlower",
+                  "param3": 2.0,
+                  "compareType": "MoreThan"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomSuccessFlower",
+                  "param3": 3.0,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "transformNames": [
+                "Success03"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomSuccessFlower",
+                  "param3": 3.0,
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "transformNames": [
+                "Success04"
+              ],
+              "setEnable": true
+            }
+          ]
+        },
+        "HideFlower": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Success01"
+              ]
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Success02"
+              ]
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Success03"
+              ]
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Success04"
+              ]
+            }
+          ]
+        },
+        "GrassFail": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANNOBMCGOEC",
+              "canBeHandledOnRecover": true,
+              "matName": "Grass",
+              "EKHLCLJELIP": "_StateChangeValue",
+              "param3": 1.0,
+              "useCurve": true,
+              "lerpTime": 1.0
+            },
+            {
+              "$type": "ANNOBMCGOEC",
+              "canBeHandledOnRecover": true,
+              "matName": "Grass",
+              "EKHLCLJELIP": "_ColorChange",
+              "param3": 1.0,
+              "useCurve": true,
+              "lerpTime": 1.0
+            }
+          ]
+        },
+        "ShowFarm": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "RandomFarmBase",
+              "useLimitRange": true,
+              "randomInRange": true,
+              "param2": 4.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "RandomSuccessFlower",
+              "useLimitRange": true,
+              "randomInRange": true,
+              "param2": 4.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "RandomFarmBud",
+              "useLimitRange": true,
+              "randomInRange": true,
+              "param2": 3.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomFarmBase",
+                  "param3": 1.0,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "transformNames": [
+                "Farm01"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomFarmBase",
+                  "param3": 1.0,
+                  "compareType": "MoreThan"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomFarmBase",
+                  "param3": 2.0,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "transformNames": [
+                "Farm02"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomFarmBase",
+                  "param3": 2.0,
+                  "compareType": "MoreThan"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomFarmBase",
+                  "param3": 3.0,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "transformNames": [
+                "Farm03"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomFarmBase",
+                  "param3": 3.0,
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "transformNames": [
+                "Farm04"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomFarmBud",
+                  "param3": 1.0,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "transformNames": [
+                "Bud01"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomFarmBud",
+                  "param3": 1.0,
+                  "compareType": "MoreThan"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomFarmBud",
+                  "param3": 2.0,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "transformNames": [
+                "Bud02"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomFarmBud",
+                  "param3": 2.0,
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "transformNames": [
+                "Bud03"
+              ],
+              "setEnable": true
+            }
+          ]
+        },
+        "HideFarm": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Farm01"
+              ]
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Farm02"
+              ]
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Farm03"
+              ]
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Farm04"
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "ShowFarm"
+        }
+      ],
+      "onFieldEnter": [
+        {
+          "$type": "INBCDALOHMP",
+          "target": "Target",
+          "targetPredicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "Enable",
+              "param3": 1.0
+            },
+            {
+              "$type": "AHEDBPEIDHJ"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "HPIDNBEGJLL",
+              "state": 201
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Xm_Property_Ani_Flower_PlantDraw_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "HideState"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "BudState"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 202,
+          "modifierName": "ButterFleeState"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 203,
+          "modifierName": "ButterFlyState"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 204,
+          "modifierName": "FailState"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 901,
+          "modifierName": "SuccessState"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 902,
+          "modifierName": "EndState"
+        }
+      ],
+      "modifiers": {
+        "HideState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "HideFlower"
+            },
+            {
+              "$type": "ANNOBMCGOEC",
+              "canBeHandledOnRecover": true,
+              "matName": "Grass",
+              "EKHLCLJELIP": "_StateChangeValue",
+              "param3": 1.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "Enable",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "BudState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "ShowYellowGrass"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "HideFlower"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "Enable",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Flower_PlantDraw_01_Grass",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "ButterFleeState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "ShowYellowGrass"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "HideFlower"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "Enable",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Flower_PlantDraw_01_Grass",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Flower_PlantDraw_01_Elf_Dis01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "ButterFlyState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "HideFlower"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "Enable",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Flower_PlantDraw_01_Elf_Stay01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Flower_PlantDraw_01_Grass_Elf",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "FailState": {
+          "modifierName": "",
+          "elementDurability": 1.100000023841858,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "Enable",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "GrassFail"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "HideFlower"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "HPIDNBEGJLL",
+              "predicates": [
+                {
+                  "$type": "HNLCJOPBDLC",
+                  "gadgetState": 204
+                }
+              ]
+            }
+          ]
+        },
+        "EndState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "GrassFail"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "HideFlower"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "HideFarm"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "Enable",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "SuccessState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "ShowGreenGrass"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "ShowFlower"
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Flower_PlantDraw_01_Flower",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "Enable",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "ShowFarm": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "RandomFarmBase",
+              "useLimitRange": true,
+              "randomInRange": true,
+              "param2": 4.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "RandomSuccessFlower",
+              "useLimitRange": true,
+              "randomInRange": true,
+              "param2": 4.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "RandomFarmBud",
+              "useLimitRange": true,
+              "randomInRange": true,
+              "param2": 3.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomFarmBase",
+                  "param3": 1.0,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "transformNames": [
+                "Farm01"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomFarmBase",
+                  "param3": 1.0,
+                  "compareType": "MoreThan"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomFarmBase",
+                  "param3": 2.0,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "transformNames": [
+                "Farm02"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomFarmBase",
+                  "param3": 2.0,
+                  "compareType": "MoreThan"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomFarmBase",
+                  "param3": 3.0,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "transformNames": [
+                "Farm03"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomFarmBase",
+                  "param3": 3.0,
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "transformNames": [
+                "Farm04"
+              ],
+              "setEnable": true
+            }
+          ]
+        },
+        "HideFarm": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Farm01"
+              ]
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Farm02"
+              ]
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Farm03"
+              ]
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Farm04"
+              ]
+            }
+          ]
+        },
+        "ShowBud": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomFarmBud",
+                  "param3": 1.0,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "transformNames": [
+                "Bud01"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomFarmBud",
+                  "param3": 1.0,
+                  "compareType": "MoreThan"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomFarmBud",
+                  "param3": 2.0,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "transformNames": [
+                "Bud02"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomFarmBud",
+                  "param3": 2.0,
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "transformNames": [
+                "Bud03"
+              ],
+              "setEnable": true
+            }
+          ]
+        },
+        "ShowFlower": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomSuccessFlower",
+                  "param3": 1.0,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "transformNames": [
+                "Success01"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomSuccessFlower",
+                  "param3": 1.0,
+                  "compareType": "MoreThan"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomSuccessFlower",
+                  "param3": 2.0,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "transformNames": [
+                "Success02"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomSuccessFlower",
+                  "param3": 2.0,
+                  "compareType": "MoreThan"
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomSuccessFlower",
+                  "param3": 3.0,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "transformNames": [
+                "Success03"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "RandomSuccessFlower",
+                  "param3": 3.0,
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "transformNames": [
+                "Success04"
+              ],
+              "setEnable": true
+            }
+          ]
+        },
+        "HideFlower": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Success01"
+              ]
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Success02"
+              ]
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Success03"
+              ]
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Success04"
+              ]
+            }
+          ]
+        },
+        "ShowYellowGrass": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANNOBMCGOEC",
+              "canBeHandledOnRecover": true,
+              "matName": "Grass",
+              "EKHLCLJELIP": "_ColorChange",
+              "param3": 1.0
+            },
+            {
+              "$type": "ANNOBMCGOEC",
+              "canBeHandledOnRecover": true,
+              "matName": "Grass",
+              "EKHLCLJELIP": "_StateChangeValue",
+              "param3": 0.0,
+              "useCurve": true,
+              "lerpTime": 1.0
+            }
+          ]
+        },
+        "ShowGreenGrass": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANNOBMCGOEC",
+              "canBeHandledOnRecover": true,
+              "matName": "Grass",
+              "EKHLCLJELIP": "_StateChangeValue",
+              "param3": 0.0
+            },
+            {
+              "$type": "ANNOBMCGOEC",
+              "canBeHandledOnRecover": true,
+              "matName": "Grass",
+              "EKHLCLJELIP": "_ColorChange",
+              "param3": 1.0
+            },
+            {
+              "$type": "ANNOBMCGOEC",
+              "canBeHandledOnRecover": true,
+              "matName": "Grass",
+              "EKHLCLJELIP": "_ColorChange",
+              "param3": 0.0,
+              "useCurve": true,
+              "lerpTime": 1.0
+            }
+          ]
+        },
+        "GrassFail": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANNOBMCGOEC",
+              "canBeHandledOnRecover": true,
+              "matName": "Grass",
+              "EKHLCLJELIP": "_StateChangeValue",
+              "param3": 1.0,
+              "useCurve": true,
+              "lerpTime": 1.0
+            },
+            {
+              "$type": "ANNOBMCGOEC",
+              "canBeHandledOnRecover": true,
+              "matName": "Grass",
+              "EKHLCLJELIP": "_ColorChange",
+              "param3": 1.0,
+              "useCurve": true,
+              "lerpTime": 1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "ShowFarm"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "ShowBud"
+        }
+      ],
+      "onFieldEnter": [
+        {
+          "$type": "INBCDALOHMP",
+          "target": "Target",
+          "targetPredicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "target": "Self",
+              "key": "Enable",
+              "param3": 1.0
+            },
+            {
+              "$type": "AHEDBPEIDHJ"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "AHPEKICBIIL",
+              "luaCallType": "FromGroup",
+              "funcName": "SLC_EnterFloor",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Xm_Property_Ani_Flower_PlantDrawTree_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "HideState"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "BudState"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 202,
+          "modifierName": "FruitState"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 203,
+          "modifierName": "OverState"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 901,
+          "modifierName": "SuccessState"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 204,
+          "modifierName": "FailState"
+        },
+        {
+          "$type": "LNEJGOMCBMO",
+          "succActions": [
+            {
+              "$type": "MCOBFPMHMHJ",
+              "predicates": [
+                {
+                  "$type": "HNLCJOPBDLC",
+                  "target": "Self",
+                  "gadgetState": 202
+                }
+              ],
+              "luaCallType": "FromGroup",
+              "sourceName": "PlayEnd",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "HideState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JPAAAOLNENF",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Flower01"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Flower02"
+              ]
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Flower03"
+              ]
+            }
+          ]
+        },
+        "BudState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Flower_PlantDraw_01_Tree_Grow",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "JPAAAOLNENF",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Flower01"
+              ]
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Flower02"
+              ],
+              "setEnable": true
+            }
+          ]
+        },
+        "FruitState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JPAAAOLNENF",
+              "canBeHandledOnRecover": true,
+              "enable": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Flower02"
+              ]
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Flower03"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "FruitEffect"
+            }
+          ]
+        },
+        "FruitEffect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Flower_PlantDraw_01_Tree_Ripe",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "OverState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JPAAAOLNENF",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "gadgetState",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 201,
+              "rotationDampTime": "Eff_SceneObj_Flower_PlantDraw_01_Tree_Ripe"
+            }
+          ]
+        },
+        "SuccessState": {
+          "modifierName": "",
+          "elementDurability": 2.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JPAAAOLNENF"
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Flower03"
+              ]
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "predicates": [
+                {
+                  "$type": "BHFFBBOLCCP",
+                  "target": "Self",
+                  "modifierName": "FruitEffect"
+                }
+              ],
+              "modifierName": "FruitEffect"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        },
+        "FailState": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Flower_PlantDraw_01_Tree_Grow",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "HPIDNBEGJLL"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Xm_Property_Ani_Prop_Whiteballet_01_Special_Ability",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "ShowState"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "HideState"
+        }
+      ],
+      "modifiers": {
+        "ShowState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "IIKGIEJPIKN",
+                  "levelTag": "",
+                  "levelTagId": 39
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "CLKGEHMNIEF",
+                  "transformNames": [
+                    "Flower"
+                  ],
+                  "setEnable": true
+                },
+                {
+                  "$type": "ANLOBBMKNIJ",
+                  "rotationDampTime": "Eff_Item_Hint_Small",
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                },
+                {
+                  "$type": "LBINHEFBJMN"
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "CLKGEHMNIEF",
+                  "transformNames": [
+                    "Flower"
+                  ]
+                },
+                {
+                  "$type": "LBINHEFBJMN",
+                  "param1": 201
+                }
+              ]
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "IIKGIEJPIKN",
+                  "levelTag": "",
+                  "levelTagId": 39
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "CLKGEHMNIEF",
+                  "transformNames": [
+                    "Flower"
+                  ],
+                  "setEnable": true
+                },
+                {
+                  "$type": "ANLOBBMKNIJ",
+                  "rotationDampTime": "Eff_Item_Hint_Small",
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                },
+                {
+                  "$type": "LBINHEFBJMN"
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "CLKGEHMNIEF",
+                  "transformNames": [
+                    "Flower"
+                  ]
+                },
+                {
+                  "$type": "LBINHEFBJMN",
+                  "param1": 201
+                }
+              ]
+            }
+          ]
+        },
+        "HideState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Flower"
+              ]
+            },
+            {
+              "$type": "LBINHEFBJMN",
+              "param1": 201
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Xm_Property_Ani_Prop_XmFarm_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "FarmState"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "SeedlingState"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 202,
+          "modifierName": "HideState"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 203,
+          "modifierName": "NoInteeFarm"
+        }
+      ],
+      "modifiers": {
+        "CheckIsDream": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "IIKGIEJPIKN",
+                  "levelTag": "",
+                  "levelTagId": 38
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "JPAAAOLNENF",
+                  "predicates": [
+                    {
+                      "$type": "HNLCJOPBDLC"
+                    }
+                  ],
+                  "enable": true
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "JPAAAOLNENF",
+                  "predicates": [
+                    {
+                      "$type": "HNLCJOPBDLC"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "IIKGIEJPIKN",
+                  "levelTag": "",
+                  "levelTagId": 38
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "JPAAAOLNENF",
+                  "predicates": [
+                    {
+                      "$type": "HNLCJOPBDLC"
+                    }
+                  ],
+                  "enable": true
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "JPAAAOLNENF",
+                  "predicates": [
+                    {
+                      "$type": "HNLCJOPBDLC"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "FarmState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Farm"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Seedling"
+              ]
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "CheckIsDream"
+            }
+          ]
+        },
+        "SeedlingState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Farm"
+              ]
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Seedling"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "JPAAAOLNENF",
+              "canBeHandledOnRecover": true
+            }
+          ]
+        },
+        "HideState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Farm"
+              ]
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Seedling"
+              ]
+            },
+            {
+              "$type": "JPAAAOLNENF",
+              "canBeHandledOnRecover": true
+            }
+          ]
+        },
+        "NoInteeFarm": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JPAAAOLNENF",
+              "canBeHandledOnRecover": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Farm"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Seedling"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Xm_Property_Unique_PlantDraw_02_Ability",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "FireEffect"
+        }
+      ],
+      "modifiers": {
+        "FireEffect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Flower_PlantDraw_01_Tree_Final",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      }
+    }
+  }
+]

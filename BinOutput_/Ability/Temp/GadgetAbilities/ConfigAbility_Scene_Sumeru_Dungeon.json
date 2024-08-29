@@ -1,0 +1,1782 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Level_Xm_Property_Unique_TwoDObj_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "HideState"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "ActiveState"
+        }
+      ],
+      "modifiers": {
+        "HideState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Root"
+              ]
+            }
+          ]
+        },
+        "ActiveState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Root"
+              ],
+              "setEnable": true
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Level_Xm_Property_Prop_BubblePlatform_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "KillBySelf"
+        }
+      ],
+      "modifiers": {
+        "Bubble": {
+          "modifierName": "",
+          "elementDurability": 3.0,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_AddGravityScale": -2.0
+          },
+          "state": "Struggle",
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_BubbleShoot_01_Bubble",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_BubbleShoot_01_Bubble_Die",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "KillBySelf": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_BubbleShoot_01_Bubble_Die",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "NCFFNDHGCMH",
+              "hideEntity": true
+            }
+          ]
+        }
+      },
+      "onFieldEnter": [
+        {
+          "$type": "INBCDALOHMP",
+          "target": "Target",
+          "targetPredicates": [
+            {
+              "$type": "NIMAPECDNKD",
+              "entityTypes": [
+                "Avatar"
+              ]
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "PELJALPANCA",
+              "target": "Target",
+              "modifierName": "Bubble"
+            },
+            {
+              "$type": "NCFFNDHGCMH",
+              "duration": 1.0,
+              "hideEntity": true
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Level_Xm_Property_Ani_Prop_DungeonMushroom_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "DefaultState"
+        }
+      ],
+      "modifiers": {
+        "DefaultState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "HNBPIFIDPIP",
+              "abilityName": "Avatar_Trampoline_Jump_Controller",
+              "isExcitedState": false,
+              "selfAbilityName": ""
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_BouncingMushroom_01_Appear",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onKill": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_SceneObj_BouncingMushroom_01_Disappear",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Level_Xm_Property_Ani_Prop_DungeonMushroom_02_Ability",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "DefaultState"
+        }
+      ],
+      "modifiers": {
+        "DefaultState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 2.0,
+          "modifierMixins": [
+            {
+              "$type": "HNBPIFIDPIP",
+              "abilityName": "Avatar_Trampoline_Jump_Controller",
+              "selfAbilityName": ""
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_BouncingMushroom_01_Appear",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "BreathLight01"
+            }
+          ]
+        },
+        "BreathLight01": {
+          "modifierName": "",
+          "elementDurability": 1.100000023841858,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "onAdded": [
+            {
+              "$type": "ANNOBMCGOEC",
+              "matName": "Mat",
+              "EKHLCLJELIP": "_EmissionStrength",
+              "param3": 2.0
+            },
+            {
+              "$type": "ANNOBMCGOEC",
+              "canBeHandledOnRecover": true,
+              "matName": "Mat",
+              "EKHLCLJELIP": "_EmissionStrength",
+              "param3": 6.0,
+              "useCurve": true,
+              "lerpTime": 1.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "BreathLight02"
+            }
+          ]
+        },
+        "BreathLight02": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANNOBMCGOEC",
+              "matName": "Mat",
+              "EKHLCLJELIP": "_EmissionStrength",
+              "param3": 6.0
+            },
+            {
+              "$type": "ANNOBMCGOEC",
+              "canBeHandledOnRecover": true,
+              "matName": "Mat",
+              "EKHLCLJELIP": "_EmissionStrength",
+              "param3": 2.0,
+              "useCurve": true,
+              "lerpTime": 1.0
+            }
+          ]
+        }
+      },
+      "onKill": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_SceneObj_BouncingMushroom_01_Disappear",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Level_Xm_Property_Prop_SmrEnigmaticSeal_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "Dissolve"
+        }
+      ],
+      "modifiers": {
+        "Dissolve": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANNOBMCGOEC",
+              "matName": "Mat",
+              "EKHLCLJELIP": "_DissolveValue",
+              "param3": 1.0,
+              "useCurve": true,
+              "lerpTime": 1.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Level_Xm_Property_Prop_Woodenpile_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "APPKPNCENAH",
+          "gadgetStates": [
+            0,
+            201
+          ],
+          "modifierNames": [
+            [
+              "Alive"
+            ],
+            [
+              "Disappear"
+            ]
+          ]
+        },
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "_IsDelete",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "DeleteHandle"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Alive": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_IsDelete",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "ANNOBMCGOEC",
+              "canBeHandledOnRecover": true,
+              "matName": "Mat",
+              "EKHLCLJELIP": "_DitherAlpha",
+              "param3": 1.0
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Collider"
+              ],
+              "setEnable": true
+            }
+          ]
+        },
+        "DeleteHandle": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "HPIDNBEGJLL",
+              "state": 201
+            }
+          ]
+        },
+        "Disappear": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANNOBMCGOEC",
+              "matName": "Mat",
+              "EKHLCLJELIP": "_DitherAlpha",
+              "param3": 0.0,
+              "useCurve": true,
+              "lerpTime": 1.5
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Collider"
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "ANNOBMCGOEC",
+          "predicates": [
+            {
+              "$type": "HNLCJOPBDLC",
+              "gadgetState": 201
+            }
+          ],
+          "matName": "Mat",
+          "EKHLCLJELIP": "_DitherAlpha",
+          "param3": 0.0
+        },
+        {
+          "$type": "AOOCGNCCAJB",
+          "isAdd": true,
+          "tag": "DeleteHanaTarget"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Level_Xm_Property_Ani_Prop_TighnariBlankDoor_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "APPKPNCENAH",
+          "gadgetStates": [
+            0,
+            201
+          ],
+          "modifierNames": [
+            [
+              "Close"
+            ],
+            [
+              "Open"
+            ]
+          ]
+        }
+      ],
+      "modifiers": {
+        "Close": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANNOBMCGOEC",
+              "canBeHandledOnRecover": true,
+              "matName": "Mat",
+              "EKHLCLJELIP": "_DitherAlpha",
+              "param3": 1.0
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Airwall"
+              ],
+              "setEnable": true
+            }
+          ]
+        },
+        "Open": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANNOBMCGOEC",
+              "matName": "Mat",
+              "EKHLCLJELIP": "_DitherAlpha",
+              "param3": 0.0,
+              "useCurve": true,
+              "lerpTime": 1.0
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Airwall"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Xm_Property_Ani_Prop_Flying_Orb_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "StartPlay"
+        }
+      ],
+      "modifiers": {
+        "StartPlay": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "KODOFEHIIGE",
+              "moveModifiers": [
+                "State_Moving"
+              ],
+              "stopModifiers": [
+                "State_Stop"
+              ]
+            }
+          ]
+        },
+        "State_Moving": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Moving",
+              "attachPoint": "",
+              "damageRatio": "Bool",
+              "value": 1,
+              "rotationDampTime": "Eff_SceneObj_Flying_Orb"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "State",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "rotationDampTime": "Eff_SceneObj_Flying_Orb"
+            }
+          ]
+        },
+        "State_Stop": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Flying_Orb_Ridicule",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Moving",
+              "attachPoint": "",
+              "damageRatio": "Bool",
+              "rotationDampTime": "Eff_SceneObj_Flying_Orb"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "State",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 201,
+              "rotationDampTime": "Eff_SceneObj_Flying_Orb"
+            }
+          ]
+        }
+      },
+      "onFieldEnter": [
+        {
+          "$type": "INBCDALOHMP",
+          "target": "Target",
+          "targetPredicates": [
+            {
+              "$type": "NIMAPECDNKD",
+              "entityTypes": [
+                "Avatar"
+              ]
+            },
+            {
+              "$type": "AHEDBPEIDHJ"
+            },
+            {
+              "$type": "HNLCJOPBDLC",
+              "target": "Self",
+              "gadgetState": 201
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "State",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 203,
+              "rotationDampTime": "Eff_SceneObj_Flying_Orb"
+            },
+            {
+              "$type": "HPIDNBEGJLL",
+              "state": 202
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Level_Xm_Property_Ani_Prop_VineDoor_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "APPKPNCENAH",
+          "gadgetStates": [
+            0,
+            201
+          ],
+          "modifierNames": [
+            [
+              "Close"
+            ],
+            [
+              "Open"
+            ]
+          ]
+        }
+      ],
+      "modifiers": {
+        "Close": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Airwall"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "gadgetState",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "rotationDampTime": "Eff_SceneObj_VineDoor_02_Default_Full"
+            }
+          ]
+        },
+        "Open": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Airwall"
+              ]
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "gadgetState",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 201,
+              "rotationDampTime": "Eff_SceneObj_VineDoor_02_Default_Full"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Level_Xm_Property_Ani_Prop_VineDoor_02_Ability",
+      "abilityMixins": [
+        {
+          "$type": "APPKPNCENAH",
+          "gadgetStates": [
+            0,
+            201
+          ],
+          "modifierNames": [
+            [
+              "Close"
+            ],
+            [
+              "Open"
+            ]
+          ]
+        }
+      ],
+      "modifiers": {
+        "Close": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Airwall"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "gadgetState",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "rotationDampTime": "Eff_SceneObj_VineDoor_02_Default"
+            }
+          ]
+        },
+        "Open": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "gadgetState",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 201,
+              "rotationDampTime": "Eff_SceneObj_VineDoor_02_Default"
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Airwall"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Level_Xm_Property_Prop_FlowerPortal_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "NKEPLGAIEJM",
+          "modifierName": "FlowerPortal_AvatarState"
+        }
+      ],
+      "modifiers": {
+        "FlowerPortal_AvatarState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "DOGKIMOLHLC",
+              "onEnter": [
+                {
+                  "$type": "FNPMFLOOCDD",
+                  "param3": 1.0,
+                  "key": "_FlowerPortal_AvatarRouteMove",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ],
+              "onExit": [
+                {
+                  "$type": "FNPMFLOOCDD",
+                  "shieldHP": true,
+                  "param3": 0.0,
+                  "key": "_FlowerPortal_AvatarRouteMove",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            },
+            {
+              "$type": "PHLKCMFKFIN",
+              "globalValueKey": "_FlowerPortal_AvatarRouteMove",
+              "valueSteps": [
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "FlowerPortal_StandbyState"
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "param3": 0.0,
+              "key": "_FlowerPortal_AvatarRouteMove",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "FNPMFLOOCDD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_FlowerPortal_AvatarRouteMove",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "FlowerPortal_StandbyState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "onAdded": [
+            {
+              "$type": "AKCJLBDMNDE",
+              "shieldHP": true,
+              "enable": true,
+              "cameraFogEffectName": "Eff_SceneObj_FlowerPortal_CameraAbsorbIn",
+              "playerFogEffectName": ""
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "AKCJLBDMNDE",
+              "shieldHP": true,
+              "cameraFogEffectName": "",
+              "playerFogEffectName": ""
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "PAMDPDLLAPG",
+              "otherTargets": {
+                "$type": "PBLNLAENOGB",
+                "topLimit": 1,
+                "sortType": "Nearest",
+                "tag": "SceneLook"
+              },
+              "toPos": {
+                "$type": "JHEBKCMEMLN"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Level_Xm_Property_Prop_PlantOperator_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Idle"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "Active"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 202,
+          "modifierName": "Lock"
+        }
+      ],
+      "modifiers": {
+        "Idle": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_PlantOperator_01_Stay",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANNOBMCGOEC",
+              "canBeHandledOnRecover": true,
+              "matName": "Gadget",
+              "EKHLCLJELIP": "_EmissionStrength",
+              "param3": 2.0
+            }
+          ]
+        },
+        "Active": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_PlantOperator_01_Active",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANNOBMCGOEC",
+              "canBeHandledOnRecover": true,
+              "matName": "Gadget",
+              "EKHLCLJELIP": "_EmissionStrength",
+              "param3": 4.0
+            }
+          ]
+        },
+        "Lock": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_PlantOperator_01_Idle",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANNOBMCGOEC",
+              "canBeHandledOnRecover": true,
+              "matName": "Gadget",
+              "EKHLCLJELIP": "_EmissionStrength",
+              "param3": 0.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Level_Xm_Property_Ani_Prop_NutTransformPlatform_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Hide"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "Show"
+        },
+        {
+          "$type": "LNEJGOMCBMO",
+          "succActions": [
+            {
+              "$type": "HPIDNBEGJLL",
+              "predicates": [
+                {
+                  "$type": "HNLCJOPBDLC",
+                  "target": "Self",
+                  "gadgetState": 201
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "modifiers": {
+        "Hide": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Object"
+              ]
+            },
+            {
+              "$type": "JPAAAOLNENF"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_NutTransformPlatform_Appear",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Show": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Object"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "JPAAAOLNENF",
+              "enable": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_NutTransformPlatform_Disappear",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Level_Xm_Property_Ani_Prop_NutTransformPlatform_02_Ability",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Hide"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "Show"
+        }
+      ],
+      "modifiers": {
+        "Show": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Object"
+              ]
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_NutTransformPlatform_Disappear",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Hide": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Object"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_NutTransformPlatform_Appear",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Level_Xm_Property_Prop_ThornsTrap_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Disactive"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "Active"
+        }
+      ],
+      "abilitySpecials": {
+        "ElementLevelCo": 1.0,
+        "DamageRatio": 0.6000000238418579
+      },
+      "modifiers": {
+        "Disactive": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "State",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "rotationDampTime": "Eff_SceneObj_ThornsTrap_05"
+            }
+          ]
+        },
+        "Active": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.5,
+          "modifierMixins": [
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "ThornsTrapRate",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                -0.6000000238418579,
+                1.600000023841858,
+                6.099999904632568,
+                7.099999904632568
+              ],
+              "modifierNameSteps": [
+                "Ready",
+                "Fire",
+                "Disappear"
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": -1.0,
+              "key": "ThornsTrapRate",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 0.5,
+              "key": "ThornsTrapRate",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Ready": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "State",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 1,
+              "rotationDampTime": "Eff_SceneObj_ThornsTrap_05"
+            }
+          ]
+        },
+        "Disappear": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": -1.0,
+              "key": "ThornsTrapRate",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Fire": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.5,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "State",
+              "attachPoint": "",
+              "damageRatio": "Int",
+              "value": 2,
+              "rotationDampTime": "Eff_SceneObj_ThornsTrap_05"
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "JHKEHNJBMOF",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": -2.5
+                    }
+                  },
+                  "size": {
+                    "KGEPIMHBMOL": 2.5,
+                    "JEBHCGDPFEJ": 2.0,
+                    "LPCHALMFFOD": 5.0
+                  }
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "ExtraAttack",
+                  "attenuationGroup": "SceneObj_ThunderFloor",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.0,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Grass",
+                    "IPFJJJGABPL": 25.0,
+                    "ignoreAttackerProperty": true,
+                    "strikeType": "Default",
+                    "enBreak": 0.0,
+                    "attackType": "Range",
+                    "HMBONGBFIAP": [
+                      "ElementLevelCo",
+                      "DamageRatio",
+                      "MUL"
+                    ],
+                    "trueDamage": true,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV3"
+                  }
+                }
+              },
+              "targetType": "AllExceptSelf"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "JHKEHNJBMOF",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": -2.5
+                    }
+                  },
+                  "size": {
+                    "KGEPIMHBMOL": 2.5,
+                    "JEBHCGDPFEJ": 2.0,
+                    "LPCHALMFFOD": 5.0
+                  }
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "ExtraAttack",
+                  "attenuationGroup": "SceneObj_ThunderFloor",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.0,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Grass",
+                    "IPFJJJGABPL": 25.0,
+                    "ignoreAttackerProperty": true,
+                    "strikeType": "Default",
+                    "enBreak": 0.0,
+                    "attackType": "Range",
+                    "HMBONGBFIAP": [
+                      "ElementLevelCo",
+                      "DamageRatio",
+                      "MUL"
+                    ],
+                    "trueDamage": true,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV3"
+                  }
+                }
+              },
+              "targetType": "AllExceptSelf"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "GDHGMAPPGHD",
+          "shieldHP": true,
+          "key": "ElementLevelCo",
+          "damageRatio": "ElementLevelCo"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Level_Xm_Property_Prop_PlantSeal_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Show"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "Hide"
+        },
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "HasBall",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Ball_Show"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Ball_Show": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_PlantSeal_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Show": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "HasBall",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Collider"
+              ],
+              "setEnable": true
+            }
+          ]
+        },
+        "Hide": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "HasBall",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_PlantSeal_01_Disappear",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Collider"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Level_Xm_Property_Prop_PlantSeal_02_Ability",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Show"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "Hide"
+        },
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "HasBall",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Ball_Show"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Ball_Show": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_PlantSeal_02",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Show": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "HasBall",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Collider"
+              ],
+              "setEnable": true
+            }
+          ]
+        },
+        "Hide": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "HasBall",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_PlantSeal_02_Disappear",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Collider"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Level_Xm_Property_Prop_PlantSeal_03_Ability",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "Show"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "Hide"
+        },
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "HasBall",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Ball_Show"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Ball_Show": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_PlantSeal_03",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Show": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "HasBall",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Collider"
+              ],
+              "setEnable": true
+            }
+          ]
+        },
+        "Hide": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "HasBall",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_PlantSeal_03_Disappear",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Collider"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Level_Xm_Property_Ani_Prop_DestructibleVine_01_Ability",
+      "modifiers": {
+        "DestroyOnBeHit": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onBeingHit": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "DestroyOnBeHit"
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_SceneObj_DestructibleVine_01",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Level_Xm_Property_Ani_Prop_DestructiblePavement_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "BPKALFNJLIG",
+          "modifierName": "ShowFloor"
+        },
+        {
+          "$type": "BPKALFNJLIG",
+          "gadgetState": 201,
+          "modifierName": "DestroyFloor"
+        }
+      ],
+      "modifiers": {
+        "ShowFloor": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Floor"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Collider"
+              ],
+              "setEnable": true
+            }
+          ]
+        },
+        "DestroyFloor": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_DestructiblePavement_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Floor"
+              ]
+            },
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Collider"
+              ]
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "HPIDNBEGJLL",
+          "state": 201
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Level_Xm_Property_Ani_Prop_PlantMovingPlatform_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "APPKPNCENAH",
+          "gadgetStates": [
+            0,
+            201
+          ],
+          "modifierNames": [
+            [
+              "Alive"
+            ],
+            [
+              "Disappear"
+            ]
+          ]
+        }
+      ],
+      "modifiers": {
+        "Moving": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 3.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_PlantMovingPlatform_Move",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ANNOBMCGOEC",
+              "matName": "Mat",
+              "EKHLCLJELIP": "_EmissionStrength",
+              "param3": 1.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "BreathLight01"
+            }
+          ]
+        },
+        "BreathLight01": {
+          "modifierName": "",
+          "elementDurability": 1.600000023841858,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.5,
+          "onAdded": [
+            {
+              "$type": "ANNOBMCGOEC",
+              "matName": "Mat",
+              "EKHLCLJELIP": "_EmissionStrength",
+              "param3": 1.0
+            },
+            {
+              "$type": "ANNOBMCGOEC",
+              "canBeHandledOnRecover": true,
+              "matName": "Mat",
+              "EKHLCLJELIP": "_EmissionStrength",
+              "param3": 3.5,
+              "useCurve": true,
+              "lerpTime": 1.5
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "BreathLight02"
+            }
+          ]
+        },
+        "BreathLight02": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANNOBMCGOEC",
+              "matName": "Mat",
+              "EKHLCLJELIP": "_EmissionStrength",
+              "param3": 3.5
+            },
+            {
+              "$type": "ANNOBMCGOEC",
+              "canBeHandledOnRecover": true,
+              "matName": "Mat",
+              "EKHLCLJELIP": "_EmissionStrength",
+              "param3": 1.0,
+              "useCurve": true,
+              "lerpTime": 1.5
+            }
+          ]
+        },
+        "Alive": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "KODOFEHIIGE",
+              "moveModifiers": [
+                "Moving"
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Collider"
+              ],
+              "setEnable": true
+            }
+          ]
+        },
+        "Disappear": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "canBeHandledOnRecover": true,
+              "transformNames": [
+                "Collider"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+]

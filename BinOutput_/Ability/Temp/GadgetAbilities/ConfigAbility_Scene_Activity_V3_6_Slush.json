@@ -1,0 +1,1686 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Xm_Property_Ani_Prop_SlushaHitmanShooterFlower_01_Ability",
+      "modifiers": {
+        "BeHitState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onBeingHit": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "Sorush_Hitman_Bomb_Attack"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "Attack"
+                }
+              ]
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "ANNOBMCGOEC",
+              "canBeHandledOnRecover": true,
+              "matName": "Dissolve",
+              "EKHLCLJELIP": "_DissolveVal",
+              "param3": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "BeHitState"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 101.0,
+          "key": "_ACTIVITY_SORUSHTRIAL_TEACH_VALUE_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_SceneObj_Bouncing_Ball_Shooter_Fire",
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "useRotation": true,
+            "attachPointName": "RootNode"
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 70290966,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.5,
+              "LPCHALMFFOD": 0.0
+            },
+            "onGround": true,
+            "direction": {
+              "$type": "LHBLDEOLGKF",
+              "attachPointName": "ShootPoint",
+              "attachPointTargetType": "Self"
+            },
+            "useRotation": true,
+            "attachPointName": "ShootPoint"
+          }
+        },
+        {
+          "$type": "MCOBFPMHMHJ",
+          "luaCallType": "FromGroup",
+          "sourceName": "SorushHitmanTri",
+          "param1": 0.0,
+          "MGAMDEHMCOL": 0.0,
+          "MMHOHAOGPLP": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Xm_Property_Ani_Prop_SlushaHitmanShooterFlower_01_Bullet_Ability",
+      "modifiers": {
+        "SpiningBall_Trail": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Bouncing_Ball_Slusha_Move",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "BulletTriggerCD": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "CanTriggerBullet",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "CanTriggerBullet",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "SpiningBall_Trail"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "CanTriggerBullet",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "INBCDALOHMP",
+          "target": "Target",
+          "targetPredicates": [
+            {
+              "$type": "HHHMNCNPBDK",
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Level"
+                  ]
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "CanTriggerBullet",
+                  "param3": 0.0
+                }
+              ]
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "OnAction"
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "CanTriggerBullet",
+                  "param3": 1.0
+                }
+              ],
+              "rotationDampTime": "Eff_SceneObj_Bouncing_Ball_Slusha_Hit",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "direction": {
+                  "$type": "OANIBLLHFGH"
+                },
+                "useRotation": true
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "BulletTriggerCD"
+            }
+          ]
+        },
+        {
+          "$type": "INBCDALOHMP",
+          "target": "Target",
+          "targetPredicates": [
+            {
+              "$type": "JHAJOBAACDP",
+              "tag": "SlushaHitmanBrambleWall"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "ignoreMassive": true,
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.5,
+                      "LPCHALMFFOD": 0.0
+                    },
+                    "useRotation": true
+                  },
+                  "OAHPDLJIADP": 4.0
+                },
+                "attackInfo": {
+                  "attackTag": "SorushtrialAttackNoFire",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorWindSubHurtDelta": 0.0,
+                    "IPFJJJGABPL": 100.0,
+                    "enBreak": 9999999.0,
+                    "attackType": "None",
+                    "HMBONGBFIAP": 0.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV6",
+                    "hitHaltTimeScale": 0.05000000074505806
+                  },
+                  "forceCameraShake": true,
+                  "cameraShake": {
+                    "shakeRange": 0.36000001430511475,
+                    "shakeTime": 0.36000001430511475
+                  }
+                }
+              },
+              "targetType": "All"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Xm_Property_Ani_Prop_SlushaHitmanWoodenBox_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "Destory_Enable",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "BombBoxLoop",
+            "DestoryState"
+          ]
+        }
+      ],
+      "modifiers": {
+        "BombBoxLoop": {
+          "modifierName": "",
+          "elementType": "Wood",
+          "IPFJJJGABPL": 30.0,
+          "state": "Limbo",
+          "onBeingHit": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "Destory_Enable",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "DestoryState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_WoodenObject_BurnOut",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.75,
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "Destory_Enable",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 102.0,
+          "key": "_ACTIVITY_SORUSHTRIAL_TEACH_VALUE_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Xm_Property_Ani_Prop_SlushaHitmanWoodenBarrel_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "Destory_Enable",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "BombBoxLoop",
+            "DestoryState"
+          ]
+        }
+      ],
+      "modifiers": {
+        "BombBoxLoop": {
+          "modifierName": "",
+          "elementType": "Wood",
+          "IPFJJJGABPL": 30.0,
+          "state": "Limbo",
+          "onBeingHit": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "Destory_Enable",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "DestoryState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_WoodenObject_BurnOut",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.75,
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "Destory_Enable",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 103.0,
+          "key": "_ACTIVITY_SORUSHTRIAL_TEACH_VALUE_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Xm_Property_Ani_Prop_SlushaHitmanBonfire_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "BeHitByFire",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Fire_Off",
+            "Fire_On"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Fire_Off": {
+          "modifierName": "",
+          "elementType": "Wood",
+          "IPFJJJGABPL": 30.0,
+          "state": "Limbo",
+          "onBeingHit": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "predicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "SorushtrialAttackWithFire",
+                    "Sorush_Hitman_Bomb_Attack"
+                  ]
+                }
+              ],
+              "param3": 1.0,
+              "key": "BeHitByFire",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "NoticeMonster": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ACTIVITY_SORUSHTRIAL_ACTION_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ACTIVITY_SORUSHTRIAL_EMOJI_VALUE_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Fire_On": {
+          "modifierName": "",
+          "elementType": "Fire",
+          "IPFJJJGABPL": 25.0,
+          "thinkInterval": 1.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Fire_Camp_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MCOBFPMHMHJ",
+              "luaCallType": "FromGroup",
+              "sourceName": "SorushHitmanTri",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_FireBasin_Smoke",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "attachPoint"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "BeHitByFire",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR15",
+                "campTargetType": "All",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "modifierName": "NoticeMonster"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "BeHitByFire",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 104.0,
+          "key": "_ACTIVITY_SORUSHTRIAL_TEACH_VALUE_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Xm_Property_Ani_Prop_SlushaHitmanCookingPot_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "BeHitByFire",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Fire_Off",
+            "Fire_On"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Fire_Off": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onBeingHit": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "predicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "SorushtrialAttackWithFire",
+                    "Sorush_Hitman_Bomb_Attack"
+                  ]
+                }
+              ],
+              "param3": 1.0,
+              "key": "BeHitByFire",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "NoticeMonster": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 2.0,
+              "key": "_ACTIVITY_SORUSHTRIAL_ACTION_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ACTIVITY_SORUSHTRIAL_EMOJI_VALUE_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Fire_On": {
+          "modifierName": "",
+          "elementType": "Fire",
+          "IPFJJJGABPL": 25.0,
+          "thinkInterval": 1.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Cooking_01_Fire",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_SceneObj_Cooking_01_Smoke",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true,
+                "attachPointName": "RootNode"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MCOBFPMHMHJ",
+              "luaCallType": "FromGroup",
+              "sourceName": "SorushHitmanTri",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_FireBasin_Smoke",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "attachPoint"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "BeHitByFire",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR15",
+                "campTargetType": "All",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "modifierName": "NoticeMonster"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 105.0,
+          "key": "_ACTIVITY_SORUSHTRIAL_TEACH_VALUE_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "BeHitByFire",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Xm_Property_Ani_Prop_SlushaHitmanAmberWater_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "BeHit",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "NoBorken",
+            "Broken"
+          ]
+        }
+      ],
+      "modifiers": {
+        "NoBorken": {
+          "modifierName": "",
+          "elementType": "Water",
+          "IPFJJJGABPL": 50.0,
+          "onBeingHit": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "BeHit",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "SteamBangWet": {
+          "modifierName": "",
+          "elementDurability": 8.0,
+          "elementType": "Water",
+          "IPFJJJGABPL": 30.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 2.0,
+              "key": "_ACTIVITY_SORUSHTRIAL_ACTION_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 2.0,
+              "key": "_ACTIVITY_SORUSHTRIAL_EMOJI_VALUE_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Broken": {
+          "modifierName": "",
+          "elementDurability": 25.0,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.5,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "RootNode"
+              ]
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Amber_Water_Mist",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Amber_Water_Hit",
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.30000001192092896,
+                  "LPCHALMFFOD": 0.0
+                }
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MCOBFPMHMHJ",
+              "luaCallType": "FromGroup",
+              "sourceName": "SorushHitmanTri",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "PELJALPANCA",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR10",
+                "campTargetType": "All",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "BCFNGJHILAG",
+                  "predicates": [
+                    {
+                      "$type": "NIMAPECDNKD",
+                      "entityTypes": [
+                        "Equip"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "modifierName": "SteamBangWet"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR10",
+                "campTargetType": "All",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "MonsterEquip"
+                  ]
+                }
+              ],
+              "modifierName": "SteamBangWet"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 106.0,
+          "key": "_ACTIVITY_SORUSHTRIAL_TEACH_VALUE_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Xm_Property_Ani_Prop_SlushaHitmanBrambleWall_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "BeHitByFire",
+          "valueSteps": [
+            0.5,
+            1.5,
+            2.5
+          ],
+          "modifierNameSteps": [
+            "Fire_On",
+            "BurnOut"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Fire_Off": {
+          "modifierName": "",
+          "elementType": "Wood",
+          "IPFJJJGABPL": 30.0,
+          "state": "Limbo",
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 2.0,
+              "key": "BeHitByFire",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "predicates": [
+                {
+                  "$type": "NNEHDJHMING",
+                  "attackTags": [
+                    "SorushtrialAttackWithFire",
+                    "Sorush_Hitman_Bomb_Attack"
+                  ]
+                }
+              ],
+              "param3": 1.0,
+              "key": "BeHitByFire",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "BurnOut": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_WoodenObject_BurnOut",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "AttachPoint1"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_WoodenObject_BurnOut",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "AttachPoint2"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        },
+        "Fire_On": {
+          "modifierName": "",
+          "elementDurability": 2.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Element_Burning",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MCOBFPMHMHJ",
+              "luaCallType": "FromGroup",
+              "sourceName": "SorushHitmanTri",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_WoodenObject_BurnOut",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "AttachPoint1"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_WoodenObject_BurnOut",
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "useRotation": true,
+                "attachPointName": "AttachPoint2"
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Fire_Off"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 107.0,
+          "key": "_ACTIVITY_SORUSHTRIAL_TEACH_VALUE_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "AOOCGNCCAJB",
+          "isAdd": true,
+          "tag": "SlushaHitmanBrambleWall"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Xm_Property_Ani_Prop_SlushaHitmanBombBarrel_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "Destory_Enable",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "DestoryState"
+          ]
+        }
+      ],
+      "modifiers": {
+        "BombBoxLoop": {
+          "modifierName": "",
+          "elementType": "Fire",
+          "IPFJJJGABPL": 1.0,
+          "onBeingHit": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "Destory_Enable",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "DestoryState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Collider"
+              ]
+            },
+            {
+              "$type": "MCOBFPMHMHJ",
+              "luaCallType": "FromGroup",
+              "sourceName": "SorushHitmanTri",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_BombBarrel_01_Explode",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "IIDNEOBNEJI"
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "ignoreMassive": true,
+                  "born": {
+                    "$type": "JHEBKCMEMLN",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.5,
+                      "LPCHALMFFOD": 0.0
+                    }
+                  },
+                  "OAHPDLJIADP": 6.0
+                },
+                "attackInfo": {
+                  "attackTag": "SorushtrialAttackWithFire",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Fire",
+                    "IPFJJJGABPL": 50.0,
+                    "enBreak": 9999999.0,
+                    "attackType": "None",
+                    "HMBONGBFIAP": 0.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV6",
+                    "hitHaltTimeScale": 0.05000000074505806
+                  },
+                  "forceCameraShake": true,
+                  "cameraShake": {
+                    "shakeRange": 0.36000001430511475,
+                    "shakeTime": 0.36000001430511475
+                  }
+                }
+              },
+              "targetType": "All"
+            },
+            {
+              "$type": "NCFFNDHGCMH",
+              "duration": 1.0,
+              "hideEntity": true
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "BombBoxLoop"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 108.0,
+          "key": "_ACTIVITY_SORUSHTRIAL_TEACH_VALUE_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Xm_Property_Ani_Prop_SlushaHitmanThunerBarrel_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "Destory_Enable",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "DestoryState"
+          ]
+        }
+      ],
+      "modifiers": {
+        "BombBoxLoop": {
+          "modifierName": "",
+          "elementType": "Electric",
+          "IPFJJJGABPL": 1.0,
+          "onBeingHit": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "Destory_Enable",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "DestoryState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "CLKGEHMNIEF",
+              "transformNames": [
+                "Collider"
+              ]
+            },
+            {
+              "$type": "MCOBFPMHMHJ",
+              "luaCallType": "FromGroup",
+              "sourceName": "SorushHitmanTri",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_Property_Ani_Prop_XMBombbarrel_02_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "IIDNEOBNEJI"
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "ignoreMassive": true,
+                  "born": {
+                    "$type": "JHEBKCMEMLN",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.5,
+                      "LPCHALMFFOD": 0.0
+                    }
+                  },
+                  "OAHPDLJIADP": 6.0
+                },
+                "attackInfo": {
+                  "attackTag": "SorushtrialAttackNoFire",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Electric",
+                    "IPFJJJGABPL": 50.0,
+                    "enBreak": 9999999.0,
+                    "attackType": "None",
+                    "HMBONGBFIAP": 0.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV6",
+                    "hitHaltTimeScale": 0.05000000074505806
+                  },
+                  "forceCameraShake": true,
+                  "cameraShake": {
+                    "shakeRange": 0.36000001430511475,
+                    "shakeTime": 0.36000001430511475
+                  }
+                }
+              },
+              "targetType": "All"
+            },
+            {
+              "$type": "NCFFNDHGCMH",
+              "duration": 1.0,
+              "hideEntity": true
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "BombBoxLoop"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 109.0,
+          "key": "_ACTIVITY_SORUSHTRIAL_TEACH_VALUE_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Xm_Property_Ani_Prop_SlushaHitmanPumpkinBomb_01_Ability",
+      "modifiers": {
+        "PumpkinBomb": {
+          "modifierName": "",
+          "elementType": "Wood",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "BeHitFire",
+              "param3": true
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "PumpkinBomb_Explode"
+            }
+          ],
+          "onBeingHit": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "Destory_Enable",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "PumpkinBomb_Explode": {
+          "modifierName": "",
+          "elementDurability": 3.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_BombPlant_Ignite",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "MCOBFPMHMHJ",
+              "luaCallType": "FromGroup",
+              "sourceName": "SorushHitmanTri",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_BombPlant_Explode",
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 1.399999976158142,
+                  "LPCHALMFFOD": 0.0
+                }
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "IIDNEOBNEJI"
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "triggerType": "TriggerNoRepeat",
+                  "ignoreMassive": true,
+                  "born": {
+                    "$type": "JHEBKCMEMLN",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.800000011920929,
+                      "LPCHALMFFOD": 0.0
+                    }
+                  },
+                  "OAHPDLJIADP": 4.0
+                },
+                "attackInfo": {
+                  "attackTag": "SorushtrialAttackWithFire",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Fire",
+                    "IPFJJJGABPL": 50.0,
+                    "enBreak": 9999999.0,
+                    "attackType": "None",
+                    "HMBONGBFIAP": 0.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV5",
+                    "hitHaltTimeScale": 0.05000000074505806
+                  },
+                  "forceCameraShake": true,
+                  "cameraShake": {
+                    "shakeRange": 0.36000001430511475,
+                    "shakeTime": 0.36000001430511475
+                  }
+                }
+              },
+              "targetType": "All"
+            },
+            {
+              "$type": "NCFFNDHGCMH",
+              "duration": 1.0,
+              "hideEntity": true
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "PumpkinBomb"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 110.0,
+          "key": "_ACTIVITY_SORUSHTRIAL_TEACH_VALUE_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Xm_Property_Ani_Prop_SlushaHitmanOreElectricRock_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "Destory_Enable",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "DestoryState"
+          ]
+        }
+      ],
+      "modifiers": {
+        "BombBoxLoop": {
+          "modifierName": "",
+          "elementType": "Electric",
+          "IPFJJJGABPL": 1.0,
+          "onBeingHit": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "Destory_Enable",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "NoticeMonster": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 2.0,
+              "key": "_ACTIVITY_SORUSHTRIAL_ACTION_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 3.0,
+              "key": "_ACTIVITY_SORUSHTRIAL_EMOJI_VALUE_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "DestoryState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR15",
+                "campTargetType": "All",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Target",
+                  "modifierName": "NoticeMonster"
+                }
+              ]
+            },
+            {
+              "$type": "MCOBFPMHMHJ",
+              "luaCallType": "FromGroup",
+              "sourceName": "SorushHitmanTri",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_SceneObj_ElectricRock_01_Destroy",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "IIDNEOBNEJI"
+            },
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "BombBoxLoop"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 111.0,
+          "key": "_ACTIVITY_SORUSHTRIAL_TEACH_VALUE_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Xm_Property_Ani_Prop_SlushaHitmanTotem_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "Destory_Enable",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "BombBoxLoop",
+            "DestoryState"
+          ]
+        }
+      ],
+      "modifiers": {
+        "BombBoxLoop": {
+          "modifierName": "",
+          "elementType": "Wood",
+          "IPFJJJGABPL": 30.0,
+          "state": "Limbo",
+          "onBeingHit": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "Destory_Enable",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "DestoryState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_QQTotem_Destroy",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "Destory_Enable",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "SceneObj_Area_Xm_Property_Ani_Prop_SlushaHitmanRoadBlock_01_Ability",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "Destory_Enable",
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "BombBoxLoop",
+            "DestoryState"
+          ]
+        }
+      ],
+      "modifiers": {
+        "BombBoxLoop": {
+          "modifierName": "",
+          "elementType": "Wood",
+          "IPFJJJGABPL": 30.0,
+          "state": "Limbo",
+          "onBeingHit": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "Destory_Enable",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "DestoryState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Build_Hili_House_10_Destory",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "Destory_Enable",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  }
+]

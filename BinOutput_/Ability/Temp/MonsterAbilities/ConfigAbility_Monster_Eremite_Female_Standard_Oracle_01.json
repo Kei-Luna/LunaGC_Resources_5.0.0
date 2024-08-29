@@ -1,0 +1,2605 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_StreeController",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "TurnLeft"
+          ],
+          "angularSpeed": 150.0,
+          "attackTrigger": "",
+          "attackDistance": 2.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "TurnRight"
+          ],
+          "angularSpeed": 150.0,
+          "attackTrigger": "",
+          "attackDistance": 2.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "RangeAttack01"
+          ],
+          "endNormalizedTime": 0.550000011920929,
+          "angularSpeed": 150.0,
+          "attackTrigger": "",
+          "attackDistance": 2.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Blink_RangeAttack01"
+          ],
+          "endNormalizedTime": 0.550000011920929,
+          "angularSpeed": 150.0,
+          "attackTrigger": "",
+          "attackDistance": 2.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "LaserAttack01_BS"
+          ],
+          "angularSpeed": 360.0,
+          "attackTrigger": "",
+          "attackDistance": 2.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "LaserAttack02_BS"
+          ],
+          "angularSpeed": 360.0,
+          "attackTrigger": "",
+          "attackDistance": 2.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "RangeAttack02"
+          ],
+          "endNormalizedTime": 0.3499999940395355,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "attackDistance": 2.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Blink"
+          ],
+          "endNormalizedTime": 0.20000000298023224,
+          "angularSpeed": 150.0,
+          "attackTrigger": "",
+          "attackDistance": 2.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Blink"
+          ],
+          "startNormalizedTime": 0.4300000071525574,
+          "endNormalizedTime": 0.8999999761581421,
+          "angularSpeed": 150.0,
+          "attackTrigger": "",
+          "attackDistance": 2.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "MeleeAttack01"
+          ],
+          "endNormalizedTime": 0.5600000023841858,
+          "angularSpeed": 150.0,
+          "attackTrigger": "",
+          "attackDistance": 2.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "ComboAttack01"
+          ],
+          "endNormalizedTime": 0.3499999940395355,
+          "angularSpeed": 150.0,
+          "attackTrigger": "",
+          "attackDistance": 2.0,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Alert"
+          ],
+          "startNormalizedTime": 0.27000001072883606,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "attackDistance": 2.0,
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_FightController",
+      "abilityMixins": [
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            1,
+            2,
+            901,
+            902,
+            903
+          ],
+          "modifierName": "Eremite_OutFightState"
+        },
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            101,
+            102,
+            111,
+            201,
+            301
+          ],
+          "modifierName": "Eremite_InFightState"
+        }
+      ],
+      "modifiers": {
+        "Eremite_OutFightState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": -10.0,
+              "key": "_MONSTER_EREMITE_ISINFIGHT_",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Eremite_InFightState"
+            }
+          ]
+        },
+        "Eremite_InFightState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 10.0,
+              "key": "_MONSTER_EREMITE_ISINFIGHT_",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Eremite_OutFightState"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_MONSTER_EREMITE_IMPROVED_",
+          "useLimitRange": true,
+          "param2": 1.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_EREMITE_WEAK_TIMES_",
+          "useLimitRange": true,
+          "param2": 100.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_MONSTER_EREMITE_OUTIMPROVED",
+          "useLimitRange": true,
+          "param2": 1.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_MONSTER_EREMITE_IMPROVED_COUNT_",
+          "useLimitRange": true,
+          "param2": 99.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_MONSTER_EREMITE_ISINFIGHT_",
+          "useLimitRange": true,
+          "param2": 1.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_MONSTER_EREMITE_WEAK_",
+          "useLimitRange": true,
+          "param2": 1.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_MONSTER_EREMITE_RETURNTOBORN_",
+          "useLimitRange": true,
+          "param2": 1.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_Improve",
+      "abilityMixins": [
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_MONSTER_EREMITE_IMPROVED_",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Eremite_NormalState",
+            "Eremite_ImproveState"
+          ]
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_MONSTER_EREMITE_WEAK_",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Eremite_IsNotWeak",
+            "Eremite_IsWeak"
+          ]
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_EREMITE_SLAVE_DIE_",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Empty",
+            "Eremite_RemoveImprove"
+          ]
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_MONSTER_EREMITE_OUTIMPROVED",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Eremite_ISNotOutImproved",
+            "Eremite_IsOutImproved"
+          ]
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_MONSTER_EREMITE_HP_PERCENT_",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -1.0,
+            0.10000000149011612,
+            1.0
+          ],
+          "modifierNameSteps": [
+            "Eremite_NormalState_Handle",
+            "Eremite_EliteState_Handle"
+          ]
+        },
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            111,
+            201
+          ],
+          "modifierName": "Improve_AddEndure"
+        },
+        {
+          "$type": "APJKOLPHCGH",
+          "stateIDs": [
+            "Die",
+            "Die_RagDoll"
+          ],
+          "enterActions": [
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_Monster_Eremite_Female_Standard_Oracle_Improve_LoopEffect"
+            }
+          ],
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            102
+          ],
+          "modifierName": "WeakEnd_AddEndureHandle"
+        }
+      ],
+      "abilitySpecials": {
+        "hppercent": 0.0
+      },
+      "modifiers": {
+        "Eremite_NormalState_Handle": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "LAPMOOFOPBM",
+              "valueSteps": [
+                0.699999988079071
+              ],
+              "modifierNameSteps": [
+                "Empty",
+                "UNIQUE_Eremite_Orecle_Force_ImproveState"
+              ]
+            }
+          ]
+        },
+        "Eremite_EliteState_Handle": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EAKJOFAIAPH",
+              "poseIDs": [
+                1,
+                2
+              ],
+              "enterActions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "_MONSTER_EREMITE_HP_PERCENT_",
+                      "param3": 0.0,
+                      "compareType": "MoreThan"
+                    }
+                  ],
+                  "modifierName": "UNIQUE_Eremite_Orecle_Force_ImproveState"
+                }
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "UNIQUE_Eremite_Orecle_Force_ImproveState"
+            }
+          ]
+        },
+        "Improve_AddEndure": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_EndureDelta": 0.0,
+            "Entity_WeightRatio": 5.0
+          }
+        },
+        "Empty": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "Eremite_RemoveImprove": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_Eremite_Oracle_ImproveState_Properties"
+            }
+          ]
+        },
+        "UNIQUE_Eremite_Orecle_Force_ImproveState": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "canBeHandledOnRecover": true,
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_MONSTER_EREMITE_IMPROVED_COUNT_",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "boolID": "ForceImprove",
+              "param3": true
+            },
+            {
+              "$type": "IPMMJGMONCI",
+              "skillIDs": [
+                401
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "ForceImprove"
+            }
+          ]
+        },
+        "Eremite_NormalState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "canBeHandledOnRecover": true,
+              "boolID": "ImproveState"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Eremite_ImproveState"
+            }
+          ]
+        },
+        "Eremite_ImproveState": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "canBeHandledOnRecover": true,
+              "boolID": "ImproveState",
+              "param3": true
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Eremite_NormalState"
+            }
+          ]
+        },
+        "Eremite_IsNotWeak": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "canBeHandledOnRecover": true,
+              "boolID": "WeakState"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Eremite_IsWeak"
+            }
+          ]
+        },
+        "Eremite_IsWeak": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "canBeHandledOnRecover": true,
+              "boolID": "WeakState",
+              "param3": true
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Eremite_IsNotWeak"
+            }
+          ]
+        },
+        "Eremite_IsOutImproved": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "canBeHandledOnRecover": true,
+              "boolID": "OutImproved",
+              "param3": true
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Eremite_ISNotOutImproved"
+            }
+          ]
+        },
+        "Eremite_ISNotOutImproved": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "canBeHandledOnRecover": true,
+              "boolID": "OutImproved"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Eremite_IsOutImproved"
+            }
+          ]
+        },
+        "UNIQUE_Eremite_Oracle_ImproveState_Properties": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_EndureDelta": 0.0,
+            "Entity_WeightRatio": 5.0,
+            "Actor_PhysicalSubHurtDelta": 0.5,
+            "Actor_FireSubHurtDelta": 0.5,
+            "Actor_ElecSubHurtDelta": 0.5,
+            "Actor_WaterSubHurtDelta": 0.5,
+            "Actor_GrassSubHurtDelta": 0.5,
+            "Actor_WindSubHurtDelta": 0.5,
+            "Actor_IceSubHurtDelta": 0.5,
+            "Actor_RockSubHurtDelta": 0.5
+          },
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "canBeHandledOnRecover": true,
+              "param3": 10.0,
+              "key": "_MONSTER_EREMITE_IMPROVED_",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "canBeHandledOnRecover": true,
+              "param3": -10.0,
+              "key": "_MONSTER_EREMITE_RECOVER_",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "_MONSTER_EREMITE_IMPROVED_COUNT_",
+              "useLimitRange": true,
+              "param2": 99.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "OHPMBBJIJFG",
+              "value": 5.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_Monster_Eremite_Female_Standard_Oracle_Improve_LoopEffect"
+            },
+            {
+              "$type": "NCFFNDHGCMH",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 25110301
+              }
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "canBeHandledOnRecover": true,
+              "param3": 1.0,
+              "key": "_EREMITE_WEAK_TIMES_",
+              "useLimitRange": true,
+              "param2": 100.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_MONSTER_EREMITE_RETURNTOBORN_",
+                  "param3": 0.0
+                }
+              ],
+              "PLLJBINMGJK": "Weak"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Eremite_Out_Imporve"
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_Eremite_Orecle_Force_ImproveState"
+            }
+          ]
+        },
+        "WeakEnd_AddEndureHandle": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_EndureDelta": 5.0
+          }
+        },
+        "Eremite_Out_Imporve": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_MONSTER_EREMITE_OUTIMPROVED",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "canBeHandledOnRecover": true,
+              "param3": -10.0,
+              "key": "_MONSTER_EREMITE_IMPROVED_",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "canBeHandledOnRecover": true,
+              "param3": 10.0,
+              "key": "_MONSTER_EREMITE_WEAK_",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Eremite_Oracle_ImproveState_Properties"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_Summon",
+      "modifiers": {
+        "Summon_Eremite_Scorpion_Fire_01": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "DCKBKHHAFNO",
+              "monsterID": 25110301,
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "useRotation": true
+              },
+              "summonTag": 25110301,
+              "aliveByOwner": true,
+              "sightGroupWithOwner": true,
+              "PCOICDDOAOP": true
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 0.0,
+          "key": "_EREMITE_SLAVE_DIE_",
+          "useLimitRange": true,
+          "param2": 1.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Summon_Eremite_Scorpion_Fire_01"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_Improve_LoopEffect",
+      "modifiers": {
+        "UNIQUE_Monster_Eremite_Female_Standard_Oracle_Improve_LoopEffect": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Eremite_Female_Standard_Oracle_Fire_Improve_Loop_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Monster_Eremite_Female_Standard_Oracle_Improve_LoopEffect"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_Weak",
+      "abilityMixins": [
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            301
+          ],
+          "modifierName": "WeakState"
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_MONSTER_EREMITE_RECOVER_",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Empty",
+            "Recover"
+          ]
+        }
+      ],
+      "abilitySpecials": {
+        "Eremite_Cur_HP": 0.0
+      },
+      "modifiers": {
+        "WeakState": {
+          "modifierName": "",
+          "elementDurability": 10.0,
+          "IPFJJJGABPL": 100.0,
+          "properties": {
+            "Actor_EndureDelta": 0.0,
+            "Actor_FireSubHurtDelta": -0.6000000238418579
+          },
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Avatar_Properties_Defense_Down",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "PELJALPANCA",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_EREMITE_WEAK_TIMES_",
+                  "param3": 1.0
+                }
+              ],
+              "modifierName": "WeakState_Damage"
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "canBeHandledOnRecover": true,
+              "param3": 10.0,
+              "key": "_MONSTER_EREMITE_WEAK_",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "canBeHandledOnRecover": true,
+              "param3": -10.0,
+              "key": "_MONSTER_EREMITE_RECOVER_",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "canBeHandledOnRecover": true,
+              "param3": -10.0,
+              "key": "_MONSTER_EREMITE_WEAK_",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "canBeHandledOnRecover": true,
+              "param3": 10.0,
+              "key": "_MONSTER_EREMITE_RECOVER_",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Empty": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        },
+        "Recover": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "Recover"
+            }
+          ]
+        },
+        "WeakState_Damage": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PPHLJOONDFG",
+              "shieldHP": true,
+              "fightProp": "FIGHT_PROP_CUR_HP",
+              "globalValueKey": "_MONSTER_CUR_HP_"
+            },
+            {
+              "$type": "LDIAIDLOPEE",
+              "shieldHP": true,
+              "globalValueKey": "_MONSTER_CUR_HP_",
+              "overrideMapKey": "Eremite_Cur_HP"
+            },
+            {
+              "$type": "CCNPNMMONDO",
+              "attackInfo": {
+                "attackTag": "",
+                "attenuationTag": "",
+                "attenuationGroup": "default",
+                "attackProperty": {
+                  "actorGrassSubHurtDelta": 0.0,
+                  "actorWindSubHurtDelta": 0.0,
+                  "elementType": "Fire",
+                  "IPFJJJGABPL": 100.0,
+                  "ignoreAttackerProperty": true,
+                  "enBreak": 0.0,
+                  "HMBONGBFIAP": [
+                    0.375,
+                    "Eremite_Cur_HP",
+                    "MUL"
+                  ],
+                  "trueDamage": true,
+                  "GLKMCMDJBIK": 0.0
+                }
+              }
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Eremite_Female_Standard_Oracle_Fire_Weak_BS",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_ReturnToBorn",
+      "abilityMixins": [
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            901
+          ],
+          "modifierName": "ReturnToBorn_Start"
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "SheathWeapon"
+          ],
+          "modifierName": "ReturnToBornHandler",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "ReturnToBorn_Start": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "SheathWeaponTrigger"
+            }
+          ]
+        },
+        "ReturnToBornHandler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_MONSTER_EREMITE_IMPROVED_",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_MONSTER_EREMITE_RETURNTOBORN_",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_MONSTER_EREMITE_WEAK_",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_MONSTER_EREMITE_IMPROVED_COUNT_",
+              "useLimitRange": true,
+              "param2": 99.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_Eremite_Oracle_ImproveState_Properties"
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_Eremite_Orecle_Force_ImproveState"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_MONSTER_EREMITE_IMPROVED_",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_EREMITE_WEAK_TIMES_",
+              "useLimitRange": true,
+              "param2": 100.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_MONSTER_EREMITE_IMPROVED_COUNT_",
+              "useLimitRange": true,
+              "param2": 99.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_MONSTER_EREMITE_ISINFIGHT_",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_MONSTER_EREMITE_WEAK_",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_MONSTER_EREMITE_RETURNTOBORN_",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_MONSTER_EREMITE_OUTIMPROVED",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PELJALPANCA",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 25110301
+              },
+              "modifierName": "Slave_ReturnToBorn"
+            },
+            {
+              "$type": "NCFFNDHGCMH",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 25110301
+              }
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_EREMITE_SLAVE_DIE_",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Slave_ReturnToBorn": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "param3": 1.0,
+              "key": "_EREMITE_SLAVE_RETURNTOBORN_",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "otherTargets": {
+            "$type": "MEOIGEJCJLB",
+            "configID": 25110301
+          },
+          "modifierName": "Slave_ReturnToBorn"
+        },
+        {
+          "$type": "NCFFNDHGCMH",
+          "otherTargets": {
+            "$type": "MEOIGEJCJLB",
+            "configID": 25110301
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_RangeAttack01",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "RangeAttack01",
+            "Blink_RangeAttack01"
+          ],
+          "modifierName": "Monster_Eremite_Female_Standard_Oracle_RangeAttack01_Effect",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Monster_Eremite_Female_Standard_Oracle_RangeAttack01": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "DOGDNJHJADD"
+            },
+            {
+              "$type": "CAKDDHLKOAB",
+              "bulletID": 42570001,
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true,
+                "attachPointName": "LaserPartControl"
+              },
+              "trackTarget": "SelfAttackActiveTarget"
+            }
+          ]
+        },
+        "Monster_Eremite_Female_Standard_Oracle_RangeAttack01_Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Eremite_Female_Standard_Oracle_Fire_RangeAttack01_BS",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Monster_Eremite_Female_Standard_Oracle_RangeAttack01"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_StingersLogic",
+      "onAbilityStart": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Eremite_Female_Standard_Oracle_Fire_RangeAttack01_Damage",
+          "born": {
+            "$type": "JGEBAJLEBMO",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            }
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JGEBAJLEBMO",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                }
+              },
+              "OAHPDLJIADP": 0.5
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.25,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Fire",
+                "IPFJJJGABPL": 25.0,
+                "strikeType": "Default",
+                "enBreak": 100.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV2"
+              }
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_TriggerFunnel",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "RangeAttack02"
+          ],
+          "modifierName": "Monster_Eremite_Female_Standard_Oracle_FunnelAttack_Effect_01",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "RangeAttack02"
+          ],
+          "modifierName": "Kill_Gadget",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "RangeAttack02",
+          "modifierName": "Monster_Eremite_Female_Standard_Oracle_FunnelAttack_Effect_02",
+          "normalizeStart": 0.19699999690055847,
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Monster_Eremite_Female_Standard_Oracle_FunnelAttack_Effect_01": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Eremite_Female_Standard_Oracle_Fire_RangeAttack02_Effect",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Monster_Eremite_Female_Standard_Oracle_FunnelAttack_Effect_02": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Eremite_Female_Standard_Oracle_Fire_RangeAttack02_Effect_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Monster_Eremite_Female_Standard_Oracle_FunnelAttack_CreateGadget": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "MPAGCPPAIHJ",
+              "target": "SelfAttackTarget",
+              "key": "_FUNELATTACK_POS_",
+              "setTarget": false
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "CreateGadget_Part1"
+            }
+          ]
+        },
+        "CreateGadget_Part1": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "ICKMMAHFNIM",
+                "offset": {
+                  "KGEPIMHBMOL": -1.399999976158142,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": -1.399999976158142
+                },
+                "onGround": true,
+                "positionKey": "_FUNELATTACK_POS_",
+                "directionKey": ""
+              },
+              "lifeByOwnerV2": true,
+              "gadgetID": 42570004,
+              "campID": 4001
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "CreateGadget_Part2"
+            }
+          ]
+        },
+        "CreateGadget_Part2": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "ICKMMAHFNIM",
+                "offset": {
+                  "KGEPIMHBMOL": 1.399999976158142,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": -1.399999976158142
+                },
+                "onGround": true,
+                "positionKey": "_FUNELATTACK_POS_",
+                "directionKey": ""
+              },
+              "lifeByOwnerV2": true,
+              "gadgetID": 42570004,
+              "campID": 4001
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "CreateGadget_Part3"
+            }
+          ]
+        },
+        "CreateGadget_Part3": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "ICKMMAHFNIM",
+                "offset": {
+                  "KGEPIMHBMOL": 1.399999976158142,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 1.399999976158142
+                },
+                "onGround": true,
+                "positionKey": "_FUNELATTACK_POS_",
+                "directionKey": ""
+              },
+              "lifeByOwnerV2": true,
+              "gadgetID": 42570004,
+              "campID": 4001
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "CreateGadget_Part4"
+            }
+          ]
+        },
+        "CreateGadget_Part4": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "ICKMMAHFNIM",
+                "offset": {
+                  "KGEPIMHBMOL": -1.399999976158142,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 1.399999976158142
+                },
+                "onGround": true,
+                "positionKey": "_FUNELATTACK_POS_",
+                "directionKey": ""
+              },
+              "lifeByOwnerV2": true,
+              "gadgetID": 42570004,
+              "campID": 4001
+            }
+          ]
+        },
+        "Kill_Gadget": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 42570004
+              },
+              "modifierName": "killself"
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "PELJALPANCA",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 42570004
+              },
+              "modifierName": "killself"
+            }
+          ]
+        },
+        "killself": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "NCFFNDHGCMH",
+              "configIdArray": [
+                42570004
+              ]
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Monster_Eremite_Female_Standard_Oracle_FunnelAttack_CreateGadget"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_FunneAttack_DamageLogic",
+      "modifiers": {
+        "Monster_Eremite_Female_Standard_Oracle_FunneAttack_Alert": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "Monster_Eremite_Female_Standard_Oracle_FunneAttack_AlertEffect"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Monster_Eremite_Female_Standard_Oracle_FunneAttack_DamageLogic"
+            }
+          ]
+        },
+        "Monster_Eremite_Female_Standard_Oracle_FunneAttack_DamageLogic": {
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "EDNOMJCBPIM",
+              "rotationDampTime": "Eff_Monster_Eremite_Female_Standard_Oracle_Fire_RangeAttack02_Damage",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              }
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "EDNOMJCBPIM",
+              "rotationDampTime": "Eff_Monster_Eremite_Female_Standard_Oracle_Fire_RangeAttack02_Damage_01",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              }
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "BELNOFAKNBA",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "onGround": true,
+                    "useRotation": true
+                  },
+                  "OAHPDLJIADP": 1.600000023841858
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "Eremite_Oracle_FunneAttack",
+                  "attenuationGroup": "Eremite_Oracle_FunneAttack",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.800000011920929,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Fire",
+                    "IPFJJJGABPL": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 100.0,
+                    "attackType": "Range",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV3"
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "Monster_Eremite_Female_Standard_Oracle_FunneAttack_AlertEffect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "EDNOMJCBPIM",
+              "rotationDampTime": "Eff_Monster_Eremite_Female_Standard_Oracle_Fire_RangeAttack02_Alert",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "useRotation": true
+              }
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Monster_Eremite_Female_Standard_Oracle_FunneAttack_Alert"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_FindBlinkPoint_Away",
+      "modifiers": {
+        "Monster_Eremite_Female_Standard_Oracle_FindBlinkPoint_Away": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BHPDPACKKNI",
+              "target": "SelfAttackTarget",
+              "born": {
+                "$type": "GMLEDLAGLJM",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "bornRandom": {
+                  "$type": "OJKHDGHBNKP",
+                  "minRandomRange": 0.0,
+                  "maxRandomRange": 3.0
+                },
+                "onGround": true,
+                "linearOffset": -12.0,
+                "linearMin": 0.0,
+                "linearMax": 25.0
+              },
+              "hitSceneType": "BlinkHitSceneTestByThreeSegments",
+              "limitY": 2.5,
+              "ignoreWater": true
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "NIAMHNEDDIE",
+                  "findPointSuccess": false
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BHPDPACKKNI",
+                  "born": {
+                    "$type": "JHEBKCMEMLN",
+                    "bornRandom": {
+                      "$type": "OJKHDGHBNKP",
+                      "minRandomRange": 12.0,
+                      "maxRandomRange": 15.0
+                    },
+                    "onGround": true
+                  },
+                  "hitSceneType": "BlinkHitSceneTestByThreeSegments",
+                  "limitY": 2.5,
+                  "ignoreWater": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Monster_Eremite_Female_Standard_Oracle_FindBlinkPoint_Away"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_FindBlinkPoint_MeleeAttack",
+      "modifiers": {
+        "Monster_Eremite_Female_Standard_Oracle_FindBlinkPoint_MeleeAttack": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BHPDPACKKNI",
+              "target": "SelfAttackTarget",
+              "born": {
+                "$type": "GMLEDLAGLJM",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "onGround": true,
+                "linearOffset": -2.0,
+                "linearMin": 0.0,
+                "linearMax": 25.0
+              },
+              "hitSceneType": "BlinkHitSceneTestByThreeSegments",
+              "limitY": 2.5,
+              "ignoreWater": true
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "NIAMHNEDDIE",
+                  "findPointSuccess": false
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BHPDPACKKNI",
+                  "born": {
+                    "$type": "JHEBKCMEMLN",
+                    "bornRandom": {
+                      "$type": "OJKHDGHBNKP",
+                      "minRandomRange": 1.0,
+                      "maxRandomRange": 2.0
+                    },
+                    "onGround": true
+                  },
+                  "hitSceneType": "BlinkHitSceneTestByThreeSegments",
+                  "limitY": 2.5,
+                  "ignoreWater": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Monster_Eremite_Female_Standard_Oracle_FindBlinkPoint_MeleeAttack"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_Invisable",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Blink",
+            "MeleeAttack01"
+          ],
+          "modifierName": "Monster_Eremite_Female_Standard_Oracle_Visable",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Monster_Eremite_Female_Standard_Oracle_Visable": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_Monster_Eremite_Female_Standard_Oracle_Invisable"
+            }
+          ]
+        },
+        "UNIQUE_Monster_Eremite_Female_Standard_Oracle_Invisable": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CIGJDPCDOEB",
+              "onAdded": [
+                {
+                  "$type": "HBNEMPLJCMB",
+                  "hide": true
+                },
+                {
+                  "$type": "AENLGPIPPAK",
+                  "hitBoxNames": [
+                    "HitBox",
+                    "HeadBox"
+                  ]
+                },
+                {
+                  "$type": "FDFGJPNDKEA",
+                  "pushColliderNames": [
+                    "PushCollider"
+                  ]
+                }
+              ],
+              "onRemoved": [
+                {
+                  "$type": "AENLGPIPPAK",
+                  "canBeHandledOnRecover": true,
+                  "hitBoxNames": [
+                    "HitBox",
+                    "HeadBox"
+                  ],
+                  "setEnable": true
+                },
+                {
+                  "$type": "FDFGJPNDKEA",
+                  "canBeHandledOnRecover": true,
+                  "pushColliderNames": [
+                    "PushCollider"
+                  ],
+                  "setEnable": true
+                },
+                {
+                  "$type": "HBNEMPLJCMB",
+                  "canBeHandledOnRecover": true
+                }
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "Blink_Invincible"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "Blink_DenyLockOn"
+            },
+            {
+              "$type": "PJENOLFAFMG"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "SetVisible_Ture"
+            },
+            {
+              "$type": "AKIIMECIGKE",
+              "duration": 0.20000000298023224
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "PJENOLFAFMG",
+              "canBeHandledOnRecover": true,
+              "KGGEDGKGLDD": true
+            }
+          ]
+        },
+        "Blink_Invincible": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "Invincible"
+        },
+        "Blink_DenyLockOn": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "state": "DenyLockOn"
+        },
+        "SetVisible_Ture": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PJENOLFAFMG",
+              "canBeHandledOnRecover": true,
+              "KGGEDGKGLDD": true
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Monster_Eremite_Female_Standard_Oracle_Invisable"
+        },
+        {
+          "$type": "KEEOEKPABPN",
+          "target": "CurLocalAvatar"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_DoBlink",
+      "onAbilityStart": [
+        {
+          "$type": "IFCMHHHOLCK"
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Eremite_Female_Standard_Oracle_Fire_Blink_AS",
+          "born": {
+            "$type": "DNEKFAOHKBC"
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "PAMDPDLLAPG",
+          "target": "SelfAttackTarget",
+          "toPos": {
+            "$type": "JHEBKCMEMLN"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_Visable",
+      "onAbilityStart": [
+        {
+          "$type": "KBODPNEEFGD",
+          "modifierName": "UNIQUE_Monster_Eremite_Female_Standard_Oracle_Invisable"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_LaserAttack01_GetTargetPos",
+      "onAbilityStart": [
+        {
+          "$type": "MPAGCPPAIHJ",
+          "target": "SelfAttackTarget",
+          "key": "_EREMITE_ORACLE_LASERATTACK_POS_",
+          "born": {
+            "$type": "JHEBKCMEMLN"
+          },
+          "setTarget": false
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_LaserAttack01_Cross",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "LaserAttack01_BS",
+            "LaserAttack01",
+            "LaserAttack02_BS",
+            "LaserAttack02"
+          ],
+          "modifierName": "Monster_Eremite_Female_Standard_Oracle_LaserAttack01_Effcet",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Monster_Eremite_Female_Standard_Oracle_LaserAttack01_Effcet": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Eremite_Female_Standard_Oracle_Fire_LaserAttack01_BS",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "DOGDNJHJADD"
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42570002,
+          "born": {
+            "$type": "ICKMMAHFNIM",
+            "onGround": true,
+            "positionKey": "_EREMITE_ORACLE_LASERATTACK_POS_",
+            "directionKey": ""
+          },
+          "lifeByOwnerV2": true
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_LaserAttack01_Killed",
+      "modifiers": {
+        "Kill_Self": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "NCFFNDHGCMH",
+              "configIdArray": [
+                42570002
+              ]
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "otherTargets": {
+            "$type": "MEOIGEJCJLB",
+            "configID": 42570002
+          },
+          "modifierName": "Kill_Self"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_LaserAttack01_LaserStart",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "LaserAttack01",
+            "LaserAttack02"
+          ],
+          "modifierName": "Monster_Eremite_Female_Standard_Oracle_LaserAttack01_Effect",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Monster_Eremite_Female_Standard_Oracle_LaserAttack01_Effect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_Monster_Eremite_Female_Standard_Oracle_LaserAttack01_LaserEffect"
+            }
+          ]
+        },
+        "UNIQUE_Monster_Eremite_Female_Standard_Oracle_LaserAttack01_LaserEffect": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Eremite_Female_Standard_Oracle_Fire_LaserAttack01_LaserLine",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Monster_Eremite_Female_Standard_Oracle_LaserAttack01_LaserEffect"
+        },
+        {
+          "$type": "GJCAPCBELPA",
+          "abilityName": "Monster_Eremite_Female_Standard_Oracle_LaserAttack01_RayBullet"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_LaserAttack01_LaserEnd",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "LaserAttack01_BS",
+            "LaserAttack01",
+            "LaserAttack02_BS",
+            "LaserAttack02"
+          ],
+          "modifierName": "Mark_Handle",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Set_MarKValue": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_LASER_ATTACK_BULLET_",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "killself": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "NCFFNDHGCMH",
+              "configIdArray": [
+                42570002
+              ]
+            }
+          ]
+        },
+        "Mark_Handle": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onReconnect": [
+            {
+              "$type": "PELJALPANCA",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 42570002
+              },
+              "modifierName": "killself"
+            }
+          ],
+          "onChangeAuthority": [
+            {
+              "$type": "PELJALPANCA",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 42570002
+              },
+              "modifierName": "killself"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "KBODPNEEFGD",
+          "modifierName": "UNIQUE_Monster_Eremite_Female_Standard_Oracle_LaserAttack01_LaserEffect"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "otherTargets": {
+            "$type": "MEOIGEJCJLB",
+            "configID": 42570002
+          },
+          "modifierName": "Set_MarKValue"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_LaserAttack01_PartControlBullet_Disable",
+      "onAbilityStart": [
+        {
+          "$type": "KGKOLOLDKHH",
+          "partRootNames": [
+            "WaeponRotation"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_LaserAttack01_PartControlBullet_Enable",
+      "onAbilityStart": [
+        {
+          "$type": "INBCDALOHMP",
+          "otherTargets": {
+            "$type": "MEOIGEJCJLB",
+            "configID": 42570002
+          },
+          "targetPredicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_LASER_ATTACK_BULLET_",
+              "param3": 1.0
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "GPDAIGICDKI",
+              "target": "Target",
+              "partRootNames": [
+                "WaeponRotation"
+              ]
+            }
+          ]
+        },
+        {
+          "$type": "KGKOLOLDKHH",
+          "partRootNames": [
+            "WaeponRotation"
+          ],
+          "enable": true
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_LaserAttack01_PartControl_Bullet",
+      "modifiers": {
+        "Monster_Eremite_Female_Standard_Oracle_LaserAttack01_PartControl_BulletLogic": {
+          "modifierName": "",
+          "elementDurability": 0.800000011920929,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Eremite_Female_Standard_Oracle_Fire_LaserAttack01_Alert",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "onGround": true,
+                "alongGround": true,
+                "useRotation": true
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Monster_Eremite_Female_Standard_Oracle_LaserAttack01_PartControl_BulletLogic"
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_LASER_ATTACK_BULLET_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_LaserAttack01_RayBullet",
+      "onAbilityStart": [
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42570009,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "direction": {
+              "$type": "LHBLDEOLGKF",
+              "attachPointName": "WaeponRotation"
+            },
+            "useRotation": true,
+            "attachPointName": "WaeponRotation"
+          },
+          "lifeByOwnerV2": true
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_LaserAttack01_RayBulletDamage",
+      "onAbilityStart": [
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JGEBAJLEBMO",
+                "onGround": true
+              },
+              "OAHPDLJIADP": 2.0
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 1.0,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Fire",
+                "IPFJJJGABPL": 25.0,
+                "strikeType": "Default",
+                "enBreak": 100.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV4",
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "NCFFNDHGCMH"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_NormalAttack01",
+      "modifiers": {
+        "Monster_Eremite_Female_Standard_Oracle_NormalAttack01": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Eremite_Female_Standard_Oracle_Fire_MeleeAttack_Damage",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 2.0
+                },
+                "onGround": true,
+                "alongGround": true,
+                "useRotation": true
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.0,
+                      "LPCHALMFFOD": 2.0
+                    },
+                    "onGround": true,
+                    "alongGround": true,
+                    "useRotation": true
+                  },
+                  "height": 2.0,
+                  "OAHPDLJIADP": 1.5
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.800000011920929,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Fire",
+                    "IPFJJJGABPL": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 200.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV3",
+                    "hitHaltTimeScale": 0.05000000074505806
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Monster_Eremite_Female_Standard_Oracle_NormalAttack01"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_ComboAttack01",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "ComboAttack01"
+          ],
+          "modifierName": "Monster_Eremite_Female_Standard_Oracle_ComboAttack01_Effect_BS",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "APJKOLPHCGH",
+          "stateIDs": [
+            "ComboAttack01"
+          ],
+          "enterActions": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Monster_Eremite_Female_Standard_Oracle_ComboAttack01_Make_Scorpion_Blink"
+            }
+          ],
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Monster_Eremite_Female_Standard_Oracle_ComboAttack01_Effect_BS": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Eremite_Female_Standard_Oracle_Fire_ComboAttack01_Effect",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Monster_Eremite_Female_Standard_Oracle_ComboAttack01_Make_Scorpion_Blink": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "target": "SelfAttackTarget",
+              "born": {
+                "$type": "JHEBKCMEMLN"
+              },
+              "lifeByOwnerV2": true,
+              "gadgetID": 42570008,
+              "campID": 4001
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 25110301
+              },
+              "modifierName": "Monster_Eremite_Female_Standard_Oracle_ComboAttack01_Scorpion_Trigger"
+            }
+          ]
+        },
+        "Monster_Eremite_Female_Standard_Oracle_ComboAttack01_Scorpion_Trigger": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "ComboAttackTrigger",
+              "mpTriggerOnRemote": true
+            }
+          ]
+        },
+        "Monster_Combo_State": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_ComboAttack_Gadget_Mark",
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "IS_COMBOATTACK_POS_",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Eremite_Female_Standard_Oracle_Blink_RunAway",
+      "abilityMixins": [
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Flee",
+          "modifierName": "killself",
+          "normalizeStart": 0.4000000059604645,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Flee",
+          "modifierName": "Remove_limbo",
+          "normalizeStart": 0.30000001192092896,
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Elite_Skill": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "HNGKOKDJKDL",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_MONSTER_EREMITE_WORLDQUEST_",
+                  "param3": 1.0
+                }
+              ],
+              "skillEliteSetID": 1
+            }
+          ]
+        },
+        "killself": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        },
+        "Death_EFFect": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NAOEBBPINOO",
+              "muteAllShaderDieEff": true,
+              "dieForceDisappearTime": 0.0,
+              "dieDisappearEffect": "",
+              "startDieEndAtOnce": true,
+              "notSendDieTrigger": true,
+              "ignoreElementDie": true
+            }
+          ]
+        },
+        "Remove_limbo": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBox",
+                "HeadBox"
+              ]
+            },
+            {
+              "$type": "KBODPNEEFGD",
+              "modifierName": "UNIQUE_WorldQuest_limbo"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "predicates": [
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_MONSTER_EREMITE_WORLDQUEST_",
+              "param3": 1.0
+            }
+          ],
+          "modifierName": "Death_EFFect"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Elite_Skill"
+        }
+      ]
+    }
+  }
+]

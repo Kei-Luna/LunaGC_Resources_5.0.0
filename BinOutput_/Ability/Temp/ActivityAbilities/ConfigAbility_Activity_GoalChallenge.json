@@ -1,0 +1,2614 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_GoalChallenge_Level01_HpChangeCounter",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "SGV_Ability_GoalStatus",
+          "valueSteps": [
+            -0.5,
+            0.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_Activity_GoalChallenge_Level01_HpChangeCounter_Handler"
+          ],
+          "NMCLMHFBALJ": true
+        }
+      ],
+      "abilitySpecials": {
+        "Goal": 100.0
+      },
+      "modifiers": {
+        "UNIQUE_Activity_GoalChallenge_Level01_HpChangeCounter_Handler": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurTeamAvatars",
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level01_HpChangeCounter"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurTeamAvatars",
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level01_HpChangeCounter"
+            }
+          ]
+        },
+        "UNIQUE_Activity_GoalChallenge_Level01_HpChangeCounter": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CLJDJFBAPFM",
+              "onEvent": "HPChange",
+              "actions": [
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "target": "Caster",
+                  "shieldHP": true,
+                  "param3": 1.0,
+                  "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+                  "useLimitRange": true,
+                  "param2": "Goal",
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "AHPEKICBIIL",
+                  "shieldHP": true,
+                  "luaCallType": "CurGalleryControlGroup",
+                  "funcName": "SLC_Sync_GoalCounterGV",
+                  "param1": 0.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                }
+              ],
+              "costEnergyDeltaName": ""
+            }
+          ]
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_GoalChallenge_Level01_WaterReactionCounter",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "SGV_Ability_GoalStatus",
+          "valueSteps": [
+            -0.5,
+            0.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_Activity_GoalChallenge_Level01_WaterReactionCounter_Handler"
+          ],
+          "NMCLMHFBALJ": true
+        }
+      ],
+      "abilitySpecials": {
+        "Goal": 100.0
+      },
+      "modifiers": {
+        "UNIQUE_Activity_GoalChallenge_Level01_WaterReactionCounter_Handler": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurTeamAvatars",
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level01_WaterReactionCounter"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurTeamAvatars",
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level01_WaterReactionCounter"
+            }
+          ]
+        },
+        "UNIQUE_Activity_GoalChallenge_Level01_WaterReactionCounter": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "GEICHMDHPHI",
+              "range": 40.0,
+              "entityTypes": [
+                "Monster"
+              ],
+              "reactionTypes": [
+                "Stream",
+                "Freeze",
+                "Shock",
+                "SwirlWater",
+                "Overgrow",
+                "CrystallizeWater"
+              ],
+              "actions": [
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "target": "Caster",
+                  "shieldHP": true,
+                  "param3": 1.0,
+                  "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+                  "useLimitRange": true,
+                  "param2": "Goal",
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "AHPEKICBIIL",
+                  "shieldHP": true,
+                  "luaCallType": "CurGalleryControlGroup",
+                  "funcName": "SLC_Sync_GoalCounterGV",
+                  "param1": 0.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_GoalChallenge_Level01_Buff",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "SGV_Ability_GoalStatus",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_Activity_GoalChallenge_Level01_Buff_Handler"
+          ],
+          "NMCLMHFBALJ": true
+        }
+      ],
+      "abilitySpecials": {
+        "BuffDuration": 0.0,
+        "AoeCD": 0.0,
+        "AoeDamage": 0.0,
+        "DamageSystemValue": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_Activity_GoalChallenge_Level01_Buff_Handler": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level01_Buff"
+            },
+            {
+              "$type": "CIGJDPCDOEB",
+              "onAdded": [
+                {
+                  "$type": "NBFEIIOBAPA",
+                  "shieldHP": true,
+                  "canBeHandledOnRecover": true,
+                  "muteRemoteAction": true,
+                  "enable": true,
+                  "effectName": "Eff_UI_GoalChallenge_ScreenEffect"
+                }
+              ],
+              "onRemoved": [
+                {
+                  "$type": "NBFEIIOBAPA",
+                  "shieldHP": true,
+                  "canBeHandledOnRecover": true,
+                  "muteRemoteAction": true,
+                  "effectName": "Eff_UI_GoalChallenge_ScreenEffect"
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Activity_GoalChallenge_Level01_Buff": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onBeingHealed": [
+            {
+              "$type": "PELJALPANCA",
+              "target": "Caster",
+              "shieldHP": true,
+              "modifierName": "Activity_GoalChallenge_Level01_Aoe_Trigger"
+            }
+          ]
+        },
+        "Activity_GoalChallenge_Level01_Aoe_Trigger": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "elementDurability": "AoeCD",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "target": "CurLocalAvatar",
+              "shieldHP": true,
+              "modifierName": "Activity_GoalChallenge_Level01_Aoe"
+            }
+          ]
+        },
+        "Activity_GoalChallenge_Level01_Aoe": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Activity_Muqadas_Potion_Water_Explode_Big_01",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.20000000298023224,
+                      "LPCHALMFFOD": 0.0
+                    },
+                    "useRotation": true
+                  },
+                  "height": 2.0,
+                  "OAHPDLJIADP": 12.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Water",
+                    "IPFJJJGABPL": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 15.0,
+                    "HMBONGBFIAP": [
+                      "AoeDamage",
+                      "DamageSystemValue",
+                      "MUL"
+                    ],
+                    "GLKMCMDJBIK": 0.0
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "GDHGMAPPGHD",
+          "shieldHP": true,
+          "key": "DamageSystemValue",
+          "damageRatio": "ElementLevelCo"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_GoalChallenge_Level02_RockReactionCounter",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "SGV_Ability_GoalStatus",
+          "valueSteps": [
+            -0.5,
+            0.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_Activity_GoalChallenge_Level02_RockReactionCounter_Handler"
+          ],
+          "NMCLMHFBALJ": true
+        }
+      ],
+      "abilitySpecials": {
+        "Goal": 100.0
+      },
+      "modifiers": {
+        "UNIQUE_Activity_GoalChallenge_Level02_RockReactionCounter_Handler": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurTeamAvatars",
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level02_RockReactionCounter"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurTeamAvatars",
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level02_RockReactionCounter"
+            }
+          ]
+        },
+        "UNIQUE_Activity_GoalChallenge_Level02_RockReactionCounter": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "GEICHMDHPHI",
+              "range": 40.0,
+              "entityTypes": [
+                "Monster"
+              ],
+              "reactionTypes": [
+                "CrystallizeFire",
+                "CrystallizeWater",
+                "CrystallizeElectric",
+                "CrystallizeIce"
+              ],
+              "actions": [
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "target": "Caster",
+                  "shieldHP": true,
+                  "param3": 1.0,
+                  "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+                  "useLimitRange": true,
+                  "param2": "Goal",
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "AHPEKICBIIL",
+                  "shieldHP": true,
+                  "luaCallType": "CurGalleryControlGroup",
+                  "funcName": "SLC_Sync_GoalCounterGV",
+                  "param1": 0.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_GoalChallenge_Level02_KillCounter",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "SGV_Ability_GoalStatus",
+          "valueSteps": [
+            -0.5,
+            0.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_Activity_GoalChallenge_Level02_KillCounter_Handler"
+          ],
+          "NMCLMHFBALJ": true
+        }
+      ],
+      "abilitySpecials": {
+        "Goal": 100.0
+      },
+      "modifiers": {
+        "UNIQUE_Activity_GoalChallenge_Level02_KillCounter_Handler": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurTeamAvatars",
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level02_KillCounter"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurTeamAvatars",
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level02_KillCounter"
+            }
+          ]
+        },
+        "UNIQUE_Activity_GoalChallenge_Level02_KillCounter": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onHittingOther": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "Other",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level02_KillCounter_OnMonster"
+            }
+          ]
+        },
+        "UNIQUE_Activity_GoalChallenge_Level02_KillCounter_OnMonster": {
+          "stacking": "RefreshUniqueDurability",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onKill": [
+            {
+              "$type": "PELJALPANCA",
+              "target": "Caster",
+              "modifierName": "Activity_GoalChallenge_Level02_KillCounter_Add"
+            }
+          ]
+        },
+        "Activity_GoalChallenge_Level02_KillCounter_Add": {
+          "stacking": "Multiple",
+          "modifierName": "",
+          "elementDurability": 0.30000001192092896,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "target": "Caster",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "PBDKHMAHJPJ",
+                  "target": "CurLocalAvatar",
+                  "damageRatio": "All"
+                }
+              ],
+              "param3": 1.0,
+              "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+              "useLimitRange": true,
+              "param2": "Goal",
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "AHPEKICBIIL",
+              "shieldHP": true,
+              "luaCallType": "CurGalleryControlGroup",
+              "funcName": "SLC_Sync_GoalCounterGV",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ]
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_GoalChallenge_Level02_Buff",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "SGV_Ability_GoalStatus",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_Activity_GoalChallenge_Level02_Buff_Handler"
+          ],
+          "NMCLMHFBALJ": true
+        }
+      ],
+      "abilitySpecials": {
+        "BuffDuration": 0.0,
+        "AoeCD": 0.0,
+        "AoeDamage": 0.0,
+        "AoeDamage2": 0.0,
+        "ExtraAttackCount": 0.0,
+        "DamageSystemValue": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_Activity_GoalChallenge_Level02_Buff_Handler": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "modifierMixins": [
+            {
+              "$type": "CIGJDPCDOEB",
+              "onAdded": [
+                {
+                  "$type": "NBFEIIOBAPA",
+                  "shieldHP": true,
+                  "canBeHandledOnRecover": true,
+                  "muteRemoteAction": true,
+                  "enable": true,
+                  "effectName": "Eff_UI_GoalChallenge_ScreenEffect"
+                }
+              ],
+              "onRemoved": [
+                {
+                  "$type": "NBFEIIOBAPA",
+                  "shieldHP": true,
+                  "canBeHandledOnRecover": true,
+                  "muteRemoteAction": true,
+                  "effectName": "Eff_UI_GoalChallenge_ScreenEffect"
+                }
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Activity_GoalChallenge_Level02_RockWaveCount",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurTeamAvatars",
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level02_Buff"
+            }
+          ]
+        },
+        "UNIQUE_Activity_GoalChallenge_Level02_Buff": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "GEICHMDHPHI",
+              "range": 40.0,
+              "entityTypes": [
+                "Monster"
+              ],
+              "reactionTypes": [
+                "CrystallizeFire",
+                "CrystallizeWater",
+                "CrystallizeElectric",
+                "CrystallizeIce"
+              ],
+              "actions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Caster",
+                  "shieldHP": true,
+                  "modifierName": "Activity_GoalChallenge_Level02_Aoe_Trigger"
+                }
+              ]
+            }
+          ]
+        },
+        "Activity_GoalChallenge_Level02_Aoe_Trigger": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "elementDurability": "AoeCD",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "target": "CurLocalAvatar",
+              "shieldHP": true,
+              "modifierName": "Activity_GoalChallenge_Level02_Aoe_01"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Activity_GoalChallenge_Level02_RockWaveCount",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Activity_GoalChallenge_Level02_Aoe_01": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Activity_Muqadas_Potion_Rock_Explode_Big",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.20000000298023224,
+                      "LPCHALMFFOD": 0.0
+                    },
+                    "useRotation": true
+                  },
+                  "height": 2.0,
+                  "OAHPDLJIADP": 12.5
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Rock",
+                    "IPFJJJGABPL": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 15.0,
+                    "HMBONGBFIAP": [
+                      "AoeDamage",
+                      "DamageSystemValue",
+                      "MUL"
+                    ],
+                    "GLKMCMDJBIK": 0.0
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "sortType": "Nearest",
+                "shapeName": "CircleR12_5H10",
+                "campTargetType": "AllExceptSelf",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Gadget",
+                    "Bullet",
+                    "Field"
+                  ]
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_COMMON_GADGET_ISSUMMON",
+                  "param3": 1.0
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_COMMON_GADGET_ISSUMMON_NOT_ROCK",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "modifierName": "Activity_GoalChallenge_Level02_Aoe_02"
+            }
+          ]
+        },
+        "Activity_GoalChallenge_Level02_Aoe_02": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Caster",
+                  "key": "_ABILITY_Activity_GoalChallenge_Level02_RockWaveCount",
+                  "param3": [
+                    "ExtraAttackCount",
+                    1.0,
+                    "SUB"
+                  ],
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "rotationDampTime": "Eff_Activity_Muqadas_Potion_Rock_Explode_Big",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Caster",
+                  "key": "_ABILITY_Activity_GoalChallenge_Level02_RockWaveCount",
+                  "param3": [
+                    "ExtraAttackCount",
+                    1.0,
+                    "SUB"
+                  ],
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.20000000298023224,
+                      "LPCHALMFFOD": 0.0
+                    },
+                    "useRotation": true
+                  },
+                  "height": 2.0,
+                  "OAHPDLJIADP": 12.5
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Rock",
+                    "IPFJJJGABPL": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 15.0,
+                    "HMBONGBFIAP": [
+                      "AoeDamage2",
+                      "DamageSystemValue",
+                      "MUL"
+                    ],
+                    "GLKMCMDJBIK": 0.0
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "LCOEFEMOHLP",
+              "target": "Caster",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Caster",
+                  "key": "_ABILITY_Activity_GoalChallenge_Level02_RockWaveCount",
+                  "param3": [
+                    "ExtraAttackCount",
+                    1.0,
+                    "SUB"
+                  ],
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "param3": 1.0,
+              "key": "_ABILITY_Activity_GoalChallenge_Level02_RockWaveCount",
+              "useLimitRange": true,
+              "param2": "ExtraAttackCount",
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "GDHGMAPPGHD",
+          "shieldHP": true,
+          "key": "DamageSystemValue",
+          "damageRatio": "ElementLevelCo"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_GoalChallenge_Level03_ExplodeReactionCounter",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "SGV_Ability_GoalStatus",
+          "valueSteps": [
+            -0.5,
+            0.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_Activity_GoalChallenge_Level03_ExplodeReactionCounter_Handler"
+          ],
+          "NMCLMHFBALJ": true
+        }
+      ],
+      "abilitySpecials": {
+        "Goal": 100.0
+      },
+      "modifiers": {
+        "UNIQUE_Activity_GoalChallenge_Level03_ExplodeReactionCounter_Handler": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurTeamAvatars",
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level03_ExplodeReactionCounter"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurTeamAvatars",
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level03_ExplodeReactionCounter"
+            }
+          ]
+        },
+        "UNIQUE_Activity_GoalChallenge_Level03_ExplodeReactionCounter": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "GEICHMDHPHI",
+              "range": 40.0,
+              "entityTypes": [
+                "Monster"
+              ],
+              "reactionTypes": [
+                "Explode"
+              ],
+              "actions": [
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "target": "Caster",
+                  "shieldHP": true,
+                  "param3": 1.0,
+                  "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+                  "useLimitRange": true,
+                  "param2": "Goal",
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "AHPEKICBIIL",
+                  "shieldHP": true,
+                  "luaCallType": "CurGalleryControlGroup",
+                  "funcName": "SLC_Sync_GoalCounterGV",
+                  "param1": 0.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_GoalChallenge_Level03_FireElectricReactionCounter",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "SGV_Ability_GoalStatus",
+          "valueSteps": [
+            -0.5,
+            0.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_Activity_GoalChallenge_Level03_FireElectricReactionCounter_Handler"
+          ],
+          "NMCLMHFBALJ": true
+        }
+      ],
+      "abilitySpecials": {
+        "Goal": 100.0
+      },
+      "modifiers": {
+        "UNIQUE_Activity_GoalChallenge_Level03_FireElectricReactionCounter_Handler": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurTeamAvatars",
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level03_FireElectricReactionCounter"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurTeamAvatars",
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level03_FireElectricReactionCounter"
+            }
+          ]
+        },
+        "UNIQUE_Activity_GoalChallenge_Level03_FireElectricReactionCounter": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "GEICHMDHPHI",
+              "range": 40.0,
+              "entityTypes": [
+                "Monster"
+              ],
+              "reactionTypes": [
+                "Explode",
+                "Stream",
+                "Burning",
+                "Melt",
+                "SwirlFire",
+                "CrystallizeFire",
+                "OvergrowMushroomFire",
+                "Shock",
+                "Superconductor",
+                "SwirlElectric",
+                "CrystallizeElectric",
+                "Overdose",
+                "OverdoseElectric",
+                "OvergrowMushroomElectric"
+              ],
+              "actions": [
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "target": "Caster",
+                  "shieldHP": true,
+                  "param3": 1.0,
+                  "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+                  "useLimitRange": true,
+                  "param2": "Goal",
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "AHPEKICBIIL",
+                  "shieldHP": true,
+                  "luaCallType": "CurGalleryControlGroup",
+                  "funcName": "SLC_Sync_GoalCounterGV",
+                  "param1": 0.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_GoalChallenge_Level03_Buff",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "SGV_Ability_GoalStatus",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_Activity_GoalChallenge_Level03_Buff_Handler"
+          ],
+          "NMCLMHFBALJ": true
+        }
+      ],
+      "abilitySpecials": {
+        "BuffDuration": 0.0,
+        "AoeCD": 0.0,
+        "ExplodeDamageUp": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_Activity_GoalChallenge_Level03_Buff_Handler": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "modifierMixins": [
+            {
+              "$type": "CIGJDPCDOEB",
+              "onAdded": [
+                {
+                  "$type": "NBFEIIOBAPA",
+                  "shieldHP": true,
+                  "canBeHandledOnRecover": true,
+                  "muteRemoteAction": true,
+                  "enable": true,
+                  "effectName": "Eff_UI_GoalChallenge_ScreenEffect"
+                }
+              ],
+              "onRemoved": [
+                {
+                  "$type": "NBFEIIOBAPA",
+                  "shieldHP": true,
+                  "canBeHandledOnRecover": true,
+                  "muteRemoteAction": true,
+                  "effectName": "Eff_UI_GoalChallenge_ScreenEffect"
+                }
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurTeamAvatars",
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level03_Buff"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Activity_GoalChallenge_Level03_RockWaveCount",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Activity_GoalChallenge_Level03_Buff_CD",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurTeamAvatars",
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level03_Buff"
+            }
+          ]
+        },
+        "UNIQUE_Activity_GoalChallenge_Level03_Buff": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "GEICHMDHPHI",
+              "range": 40.0,
+              "entityTypes": [
+                "Monster"
+              ],
+              "reactionTypes": [
+                "Explode",
+                "Burning",
+                "CrystallizeElectric",
+                "CrystallizeFire",
+                "Melt",
+                "OvergrowMushroomFire",
+                "Superconductor",
+                "Shock",
+                "Overdose",
+                "OverdoseElectric",
+                "OvergrowMushroomElectric",
+                "SwirlElectric",
+                "SwirlFire",
+                "Stream"
+              ],
+              "actions": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Other",
+                  "shieldHP": true,
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Caster",
+                      "key": "_ABILITY_Activity_GoalChallenge_Level03_Buff_CD",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "modifierName": "Activity_GoalChallenge_Level03_Aoe_01"
+                },
+                {
+                  "$type": "JLDEMMJAMLC",
+                  "target": "Caster",
+                  "shieldHP": true,
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Caster",
+                      "key": "_ABILITY_Activity_GoalChallenge_Level03_Buff_CD",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "modifierName": "Activity_GoalChallenge_Level03_Aoe_CD"
+                },
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "target": "Caster",
+                  "shieldHP": true,
+                  "param3": 1.0,
+                  "key": "_ABILITY_Activity_GoalChallenge_Level03_Buff_CD",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "Actor_ElecAddHurtDelta": "ExplodeDamageUp",
+            "Actor_FireAddHurtDelta": "ExplodeDamageUp"
+          },
+          "isLimitedProperties": true
+        },
+        "Activity_GoalChallenge_Level03_Aoe_CD": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "elementDurability": "AoeCD",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Caster",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Activity_GoalChallenge_Level03_Buff_CD",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Activity_GoalChallenge_Level03_Aoe_01": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 420000031,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_GoalChallenge_Level03_WindZone",
+      "abilitySpecials": {
+        "AoeDuration": 0.0
+      },
+      "modifiers": {
+        "Activity_GoalChallenge_Level03_Aoe_01": {
+          "modifierName": "",
+          "elementDurability": "AoeDuration",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EIMGEIJIDNO",
+              "shapeName": "CircleR10H10",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 2.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true
+              },
+              "strength": 6.0,
+              "IAELBHDMINN": 2.0,
+              "MMBCLAEOEFB": 0.5,
+              "reverse": true,
+              "targetType": "All",
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "GDIBFABBADA",
+                  "logic": "Lesser",
+                  "BHOOHGLJDHM": 100.0
+                }
+              ],
+              "modifierName": ""
+            },
+            {
+              "$type": "EIMGEIJIDNO",
+              "shapeName": "CircleR6",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 2.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true
+              },
+              "strength": 15.0,
+              "IAELBHDMINN": 3.0,
+              "MMBCLAEOEFB": 0.5,
+              "reverse": true,
+              "targetType": "All",
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "GDIBFABBADA",
+                  "logic": "LesserOrEqual",
+                  "BHOOHGLJDHM": 150.0
+                },
+                {
+                  "$type": "GDIBFABBADA",
+                  "logic": "GreaterOrEqual",
+                  "BHOOHGLJDHM": 100.0
+                }
+              ],
+              "modifierName": ""
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Activity_GoalChallenge_WindZone",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Activity_GoalChallenge_Level03_Aoe_01"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_GoalChallenge_Level04_OverdoseKillCounter",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "SGV_Ability_GoalStatus",
+          "valueSteps": [
+            -0.5,
+            0.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_Activity_GoalChallenge_Level04_OverdoseKillCounter_Handler"
+          ],
+          "NMCLMHFBALJ": true
+        }
+      ],
+      "abilitySpecials": {
+        "Goal": 100.0
+      },
+      "modifiers": {
+        "UNIQUE_Activity_GoalChallenge_Level04_OverdoseKillCounter_Handler": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurTeamAvatars",
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level04_OverdoseKillCounter_Applier"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurTeamAvatars",
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level04_OverdoseKillCounter_Applier"
+            }
+          ]
+        },
+        "Activity_GoalChallenge_Level04_Sync": {
+          "stacking": "MultipleAllRefresh",
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "target": "Caster",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+              "useLimitRange": true,
+              "param2": "Goal",
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "AHPEKICBIIL",
+              "shieldHP": true,
+              "luaCallType": "CurGalleryControlGroup",
+              "funcName": "SLC_Sync_GoalCounterGV",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ]
+        },
+        "UNIQUE_Activity_GoalChallenge_Level04_OverdoseKillCounter_Applier": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "Other",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "NFJHABGCNHE",
+                  "element": "Overdose"
+                }
+              ],
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level04_OverdoseKillCounter_OnMonster"
+            }
+          ],
+          "onHittingOther": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "Other",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "NFJHABGCNHE",
+                  "element": "Overdose"
+                }
+              ],
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level04_OverdoseKillCounter_OnMonster"
+            }
+          ]
+        },
+        "UNIQUE_Activity_GoalChallenge_Level04_OverdoseKillCounter_OnMonster": {
+          "stacking": "RefreshUniqueDurability",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onKill": [
+            {
+              "$type": "PELJALPANCA",
+              "target": "Caster",
+              "shieldHP": true,
+              "modifierName": "Activity_GoalChallenge_Level04_Sync"
+            }
+          ]
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_GoalChallenge_Level04_OvergrowReactionCounter",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "SGV_Ability_GoalStatus",
+          "valueSteps": [
+            -0.5,
+            0.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_Activity_GoalChallenge_Level04_OvergrowReactionCounter_Handler"
+          ],
+          "NMCLMHFBALJ": true
+        }
+      ],
+      "abilitySpecials": {
+        "Goal": 100.0
+      },
+      "modifiers": {
+        "UNIQUE_Activity_GoalChallenge_Level04_OvergrowReactionCounter_Handler": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurTeamAvatars",
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level04_OvergrowReactionCounter"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurTeamAvatars",
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level04_OvergrowReactionCounter"
+            }
+          ]
+        },
+        "UNIQUE_Activity_GoalChallenge_Level04_OvergrowReactionCounter": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "GEICHMDHPHI",
+              "range": 40.0,
+              "entityTypes": [
+                "Monster"
+              ],
+              "reactionTypes": [
+                "Overgrow"
+              ],
+              "actions": [
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "target": "Caster",
+                  "shieldHP": true,
+                  "param3": 1.0,
+                  "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+                  "useLimitRange": true,
+                  "param2": "Goal",
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "AHPEKICBIIL",
+                  "shieldHP": true,
+                  "luaCallType": "CurGalleryControlGroup",
+                  "funcName": "SLC_Sync_GoalCounterGV",
+                  "param1": 0.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_GoalChallenge_Level04_Buff",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "SGV_Ability_GoalStatus",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_Activity_GoalChallenge_Level04_Buff_Handler"
+          ],
+          "NMCLMHFBALJ": true
+        }
+      ],
+      "abilitySpecials": {
+        "BuffDuration": 0.0,
+        "AoeCD": 0.0,
+        "RainZoneCD": 0.0,
+        "AoeDamage": 0.0,
+        "DamageSystemValue": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_Activity_GoalChallenge_Level04_Buff_Handler": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": "RainZoneCD",
+          "modifierMixins": [
+            {
+              "$type": "NKEPLGAIEJM",
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level04_Buff"
+            },
+            {
+              "$type": "CIGJDPCDOEB",
+              "onAdded": [
+                {
+                  "$type": "NBFEIIOBAPA",
+                  "shieldHP": true,
+                  "canBeHandledOnRecover": true,
+                  "muteRemoteAction": true,
+                  "enable": true,
+                  "effectName": "Eff_UI_GoalChallenge_ScreenEffect"
+                }
+              ],
+              "onRemoved": [
+                {
+                  "$type": "NBFEIIOBAPA",
+                  "shieldHP": true,
+                  "canBeHandledOnRecover": true,
+                  "muteRemoteAction": true,
+                  "effectName": "Eff_UI_GoalChallenge_ScreenEffect"
+                }
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "target": "CurLocalAvatar",
+              "shieldHP": true,
+              "modifierName": "Create_Rain_Zone_Init"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "PELJALPANCA",
+              "target": "CurLocalAvatar",
+              "shieldHP": true,
+              "modifierName": "Create_Rain_Zone"
+            }
+          ]
+        },
+        "Create_Rain_Zone_Init": {
+          "stacking": "Multiple",
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KFCDMIMBBLD",
+              "shieldHP": true,
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "bornRandom": {
+                  "$type": "OJKHDGHBNKP",
+                  "minRandomRange": 1.0,
+                  "maxRandomRange": 6.0
+                },
+                "onGround": true,
+                "useRotation": true
+              },
+              "gadgetID": 420000032,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ]
+        },
+        "Create_Rain_Zone": {
+          "stacking": "Multiple",
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "IBDEPLJMONN"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "MPAGCPPAIHJ",
+                  "target": "SelfAttackTarget",
+                  "key": "_Activity_GoalChallenge_RainZonePos",
+                  "born": {
+                    "$type": "AEDBNLGHPNN"
+                  },
+                  "setTarget": false
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "MPAGCPPAIHJ",
+                  "key": "_Activity_GoalChallenge_RainZonePos",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "useRotation": true
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "KFCDMIMBBLD",
+              "born": {
+                "$type": "ICKMMAHFNIM",
+                "onGround": true,
+                "useRotation": true,
+                "positionKey": "_Activity_GoalChallenge_RainZonePos",
+                "directionKey": ""
+              },
+              "gadgetID": 420000032,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ]
+        },
+        "UNIQUE_Activity_GoalChallenge_Level04_Buff": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "LFDMBLDKNMK",
+              "onTriggerSkill": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Caster",
+                  "modifierName": "Activity_GoalChallenge_Level04_Aoe_Trigger"
+                }
+              ],
+              "onTriggerUltimateSkill": [
+                {
+                  "$type": "PELJALPANCA",
+                  "target": "Caster",
+                  "modifierName": "Activity_GoalChallenge_Level04_Aoe_Trigger"
+                }
+              ],
+              "clearSkillIdDelay": 0.20000000298023224
+            }
+          ]
+        },
+        "Activity_GoalChallenge_Level04_Aoe_Trigger": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "elementDurability": "AoeCD",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "target": "CurLocalAvatar",
+              "modifierName": "Activity_GoalChallenge_Level04_Aoe"
+            }
+          ]
+        },
+        "Activity_GoalChallenge_Level04_Aoe": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Activity_Muqadas_Potion_Grass_Explode_Big",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.20000000298023224,
+                      "LPCHALMFFOD": 0.0
+                    },
+                    "useRotation": true
+                  },
+                  "height": 2.0,
+                  "OAHPDLJIADP": 12.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Grass",
+                    "IPFJJJGABPL": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 15.0,
+                    "HMBONGBFIAP": [
+                      "AoeDamage",
+                      "DamageSystemValue",
+                      "MUL"
+                    ],
+                    "GLKMCMDJBIK": 0.0
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "GDHGMAPPGHD",
+          "shieldHP": true,
+          "key": "DamageSystemValue",
+          "damageRatio": "ElementLevelCo"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_GoalChallenge_Level04_RainZone",
+      "abilitySpecials": {
+        "AoeDuration": 0.0,
+        "AttackInterval": 0.0
+      },
+      "modifiers": {
+        "Activity_GoalChallenge_Level04_RainZone": {
+          "modifierName": "",
+          "elementDurability": "AoeDuration",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": "AttackInterval",
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Activity_GoalChallenge_Sustained_Water",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "IAENDIPDFKD",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": 0.20000000298023224,
+                      "LPCHALMFFOD": 0.0
+                    },
+                    "useRotation": true
+                  },
+                  "height": 2.0,
+                  "OAHPDLJIADP": 4.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Water",
+                    "IPFJJJGABPL": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 15.0,
+                    "HMBONGBFIAP": 0.0,
+                    "GLKMCMDJBIK": 0.0
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Activity_GoalChallenge_Level04_RainZone"
+        },
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "GMDIMKKHACA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.20000000298023224,
+                  "LPCHALMFFOD": 0.0
+                },
+                "useRotation": true
+              },
+              "height": 2.0,
+              "OAHPDLJIADP": 4.0
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Water",
+                "IPFJJJGABPL": 25.0,
+                "strikeType": "Default",
+                "enBreak": 15.0,
+                "HMBONGBFIAP": 0.0,
+                "GLKMCMDJBIK": 0.0
+              }
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_GoalChallenge_Level05_FreezeTimeCounter",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "SGV_Ability_GoalStatus",
+          "valueSteps": [
+            -0.5,
+            0.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_Activity_GoalChallenge_Level05_FreezeTimeCounter_Handler"
+          ],
+          "NMCLMHFBALJ": true
+        }
+      ],
+      "abilitySpecials": {
+        "Goal": 100.0
+      },
+      "modifiers": {
+        "UNIQUE_Activity_GoalChallenge_Level05_FreezeTimeCounter_Handler": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurTeamAvatars",
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level05_FreezeTimeCounter_Applier"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurTeamAvatars",
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level05_FreezeTimeCounter_Applier"
+            }
+          ]
+        },
+        "UNIQUE_Activity_GoalChallenge_Level05_FreezeTimeCounter_Applier": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onHittingOther": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "Other",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level05_FreezeTimeCounter_OnMonster"
+            }
+          ]
+        },
+        "UNIQUE_Activity_GoalChallenge_Level05_FreezeTimeCounter_OnMonster": {
+          "stacking": "GlobalUnique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.25,
+          "onThinkInterval": [
+            {
+              "$type": "LCOEFEMOHLP",
+              "target": "Caster",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "NFJHABGCNHE",
+                  "target": "Self",
+                  "element": "Frozen"
+                }
+              ],
+              "param3": 0.25,
+              "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+              "useLimitRange": true,
+              "param2": "Goal",
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "AHPEKICBIIL",
+              "shieldHP": true,
+              "luaCallType": "CurGalleryControlGroup",
+              "funcName": "SLC_Sync_GoalCounterGV",
+              "param1": 0.0,
+              "MGAMDEHMCOL": 0.0,
+              "MMHOHAOGPLP": 0.0
+            }
+          ]
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_GoalChallenge_Level05_IceCrtiCounter",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "SGV_Ability_GoalStatus",
+          "valueSteps": [
+            -0.5,
+            0.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_Activity_GoalChallenge_Level05_IceCrtiCounter_Handler"
+          ],
+          "NMCLMHFBALJ": true
+        }
+      ],
+      "abilitySpecials": {
+        "Goal": 100.0
+      },
+      "modifiers": {
+        "UNIQUE_Activity_GoalChallenge_Level05_IceCrtiCounter_Handler": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurTeamAvatars",
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level05_IceCrtiCounter"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurTeamAvatars",
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level05_IceCrtiCounter"
+            }
+          ]
+        },
+        "UNIQUE_Activity_GoalChallenge_Level05_IceCrtiCounter": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Other",
+              "shieldHP": true,
+              "targetPredicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "GAGDDICMFEH",
+                  "damage": 0.0
+                },
+                {
+                  "$type": "HHHMNCNPBDK",
+                  "predicates": [
+                    {
+                      "$type": "NFJHABGCNHE",
+                      "element": "Ice"
+                    },
+                    {
+                      "$type": "NFJHABGCNHE",
+                      "element": "Frozen"
+                    }
+                  ]
+                },
+                {
+                  "$type": "FOBBIDODMCM"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "LCOEFEMOHLP",
+                  "target": "Caster",
+                  "shieldHP": true,
+                  "param3": 1.0,
+                  "key": "_ABILITY_Activity_GoalChallenge_GoalCounter",
+                  "useLimitRange": true,
+                  "param2": "Goal",
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "AHPEKICBIIL",
+                  "shieldHP": true,
+                  "luaCallType": "CurGalleryControlGroup",
+                  "funcName": "SLC_Sync_GoalCounterGV",
+                  "param1": 0.0,
+                  "MGAMDEHMCOL": 0.0,
+                  "MMHOHAOGPLP": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Activity_GoalChallenge_Level05_Buff",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "SGV_Ability_GoalStatus",
+          "valueSteps": [
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_Activity_GoalChallenge_Level05_Buff_Handler"
+          ],
+          "NMCLMHFBALJ": true
+        }
+      ],
+      "abilitySpecials": {
+        "BuffDuration": 0.0,
+        "DamageInterval": 0.0,
+        "Damage": 0.0,
+        "DamageSystemValue": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_Activity_GoalChallenge_Level05_Buff_Handler": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "modifierMixins": [
+            {
+              "$type": "CIGJDPCDOEB",
+              "onAdded": [
+                {
+                  "$type": "NBFEIIOBAPA",
+                  "shieldHP": true,
+                  "canBeHandledOnRecover": true,
+                  "muteRemoteAction": true,
+                  "enable": true,
+                  "effectName": "Eff_UI_GoalChallenge_ScreenEffect"
+                }
+              ],
+              "onRemoved": [
+                {
+                  "$type": "NBFEIIOBAPA",
+                  "shieldHP": true,
+                  "canBeHandledOnRecover": true,
+                  "muteRemoteAction": true,
+                  "effectName": "Eff_UI_GoalChallenge_ScreenEffect"
+                }
+              ]
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurTeamAvatars",
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level05_Buff"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "CurTeamAvatars",
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level05_Buff"
+            }
+          ]
+        },
+        "UNIQUE_Activity_GoalChallenge_Level05_Buff": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "onHittingOther": [
+            {
+              "$type": "GDHGMAPPGHD",
+              "shieldHP": true,
+              "key": "DamageSystemValue",
+              "damageRatio": "ElementLevelCo"
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "Other",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "modifierName": "UNIQUE_Activity_GoalChallenge_Level05_Buff_OnMonster"
+            }
+          ]
+        },
+        "UNIQUE_Activity_GoalChallenge_Level05_Buff_OnMonster": {
+          "stacking": "GlobalUnique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 15.0,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": "DamageInterval",
+          "onAdded": [
+            {
+              "$type": "INBCDALOHMP",
+              "shieldHP": true,
+              "targetPredicates": [
+                {
+                  "$type": "HHHMNCNPBDK",
+                  "predicates": [
+                    {
+                      "$type": "NFJHABGCNHE",
+                      "element": "Ice"
+                    },
+                    {
+                      "$type": "NFJHABGCNHE",
+                      "element": "Frozen"
+                    }
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "AIFPLABJNMA",
+                  "attackEvent": {
+                    "attackPattern": {
+                      "$type": "BELNOFAKNBA",
+                      "triggerType": "TriggerNoRepeat",
+                      "born": {
+                        "$type": "KLPANPDGHHA",
+                        "offset": {
+                          "KGEPIMHBMOL": 0.0,
+                          "JEBHCGDPFEJ": 0.20000000298023224,
+                          "LPCHALMFFOD": 0.0
+                        },
+                        "useRotation": true,
+                        "attachPointName": "RootNode"
+                      },
+                      "OAHPDLJIADP": 0.20000000298023224
+                    },
+                    "attackInfo": {
+                      "attackTag": "",
+                      "attenuationTag": "",
+                      "attenuationGroup": "default",
+                      "attackProperty": {
+                        "actorWindSubHurtDelta": 0.0,
+                        "elementType": "Ice",
+                        "IPFJJJGABPL": 25.0,
+                        "strikeType": "Default",
+                        "enBreak": 1.0,
+                        "HMBONGBFIAP": [
+                          "Damage",
+                          "DamageSystemValue",
+                          "MUL"
+                        ],
+                        "GLKMCMDJBIK": 0.0
+                      }
+                    }
+                  },
+                  "targetType": "Self"
+                },
+                {
+                  "$type": "ANLOBBMKNIJ",
+                  "rotationDampTime": "Eff_Activity_GoalChallenge_IceHit",
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                }
+              ]
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "INBCDALOHMP",
+              "shieldHP": true,
+              "targetPredicates": [
+                {
+                  "$type": "HHHMNCNPBDK",
+                  "predicates": [
+                    {
+                      "$type": "NFJHABGCNHE",
+                      "element": "Ice"
+                    },
+                    {
+                      "$type": "NFJHABGCNHE",
+                      "element": "Frozen"
+                    }
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "AIFPLABJNMA",
+                  "attackEvent": {
+                    "attackPattern": {
+                      "$type": "BELNOFAKNBA",
+                      "triggerType": "TriggerNoRepeat",
+                      "born": {
+                        "$type": "KLPANPDGHHA",
+                        "offset": {
+                          "KGEPIMHBMOL": 0.0,
+                          "JEBHCGDPFEJ": 0.20000000298023224,
+                          "LPCHALMFFOD": 0.0
+                        },
+                        "useRotation": true,
+                        "attachPointName": "RootNode"
+                      },
+                      "OAHPDLJIADP": 0.20000000298023224
+                    },
+                    "attackInfo": {
+                      "attackTag": "",
+                      "attenuationTag": "",
+                      "attenuationGroup": "default",
+                      "attackProperty": {
+                        "actorWindSubHurtDelta": 0.0,
+                        "elementType": "Ice",
+                        "IPFJJJGABPL": 25.0,
+                        "strikeType": "Default",
+                        "enBreak": 1.0,
+                        "HMBONGBFIAP": [
+                          "Damage",
+                          "DamageSystemValue",
+                          "MUL"
+                        ],
+                        "GLKMCMDJBIK": 0.0
+                      }
+                    }
+                  },
+                  "targetType": "Self"
+                },
+                {
+                  "$type": "ANLOBBMKNIJ",
+                  "rotationDampTime": "Eff_Activity_GoalChallenge_IceHit",
+                  "PPPDJGDDOGD": 1.0,
+                  "AJDILHJFNKE": -1.0
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "isDynamicAbility": true
+    }
+  }
+]

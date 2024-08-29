@@ -1,0 +1,5269 @@
+[
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_PressShoot",
+      "abilityMixins": [
+        {
+          "$type": "ButtonHoldChargeMixin",
+          "skillID": 10761,
+          "chargeTime": 0.20000000298023224,
+          "EKKJNADOEMB": 999999.0,
+          "onBeginUncharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "PLLJBINMGJK": "DoSkill"
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "SkillID",
+              "param3": 100.0
+            }
+          ],
+          "onReleaseUncharged": [
+            {
+              "$type": "EFGFKOBOFJL",
+              "lockTime": 0.30000001192092896
+            },
+            {
+              "$type": "SetAnimatorTrigger",
+              "PLLJBINMGJK": "DoSkill"
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "SkillID",
+              "param3": 1.0
+            }
+          ],
+          "onBeginCharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "PLLJBINMGJK": "DoSkill"
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "SkillID",
+              "param3": 101.0
+            }
+          ],
+          "onReleaseCharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "PLLJBINMGJK": "DoSkill"
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "SkillID",
+              "param3": 1.0
+            }
+          ],
+          "chargeStateIDs": [
+            "ShootBS",
+            "Shoot",
+            "FastAim",
+            "FastAimShoot"
+          ]
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FastAim",
+            "FastAimShoot"
+          ],
+          "modifierName": "KeepFastAiming",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FastAimShoot"
+          ],
+          "modifierName": "SetFastAimShooting",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ShootBS",
+            "FastAim",
+            "FastAimShoot"
+          ],
+          "modifierName": "SetNeedAimEndStates",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "KeepFastAiming": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "FastAiming",
+              "param3": true
+            },
+            {
+              "$type": "AvatarEnterFocus",
+              "cameraFollowLower": {
+                "x": 0.7549999952316284,
+                "y": 0.17000000178813934,
+                "z": -1.899999976158142
+              },
+              "cameraFollowUpper": {
+                "x": 0.7549999952316284,
+                "y": 0.3700000047683716,
+                "z": -1.600000023841858
+              },
+              "cameraFastFocusMode": true,
+              "faceToTarget": true,
+              "faceToTargetAngleThreshold": 360.0,
+              "dragButtonName": "Skill1",
+              "assistance": {
+                "ps4": {
+                  "useFocusSticky": true
+                },
+                "ps5": {
+                  "useFocusSticky": true
+                },
+                "other": {
+                  "useFocusSticky": true,
+                  "useGyro": true
+                }
+              },
+              "vcamFov": 30.0,
+              "OMHGAKJIEFB": ""
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "FastAiming"
+            },
+            {
+              "$type": "AvatarExitFocus",
+              "keepRotation": true
+            }
+          ]
+        },
+        "SetFastAimShooting": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "FastAimShooting",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "FastAimShooting"
+            },
+            {
+              "$type": "SetAnimatorTrigger",
+              "predicates": [
+                {
+                  "$type": "COMDBBNFCIJ",
+                  "param3": true,
+                  "parameter": "FastAiming"
+                }
+              ],
+              "PLLJBINMGJK": "AimEnd"
+            }
+          ]
+        },
+        "SetNeedAimEndStates": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "InStatesNeedAimEnd",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "InStatesNeedAimEnd"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_AimPressShoot",
+      "abilityMixins": [
+        {
+          "$type": "ButtonHoldChargeMixin",
+          "skillID": 10764,
+          "EKKJNADOEMB": 999999.0,
+          "onReleaseCharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "PLLJBINMGJK": "DoSkill"
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "SkillID",
+              "param3": 1.0
+            }
+          ],
+          "chargeStateIDs": [
+            "Aim",
+            "AimShoot"
+          ]
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Aim",
+            "AimShoot"
+          ],
+          "modifierName": "KeepAiming",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "AimShoot"
+          ],
+          "modifierName": "SetAimShooting",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Aim",
+            "AimShoot"
+          ],
+          "modifierName": "SetNeedAimEndStates",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "KeepAiming": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "Aiming",
+              "param3": true
+            },
+            {
+              "$type": "AvatarEnterFocus",
+              "cameraFollowLower": {
+                "x": 0.7549999952316284,
+                "y": 0.17000000178813934,
+                "z": -1.899999976158142
+              },
+              "cameraFollowUpper": {
+                "x": 0.7549999952316284,
+                "y": 0.3700000047683716,
+                "z": -1.600000023841858
+              },
+              "cameraFastFocusMode": true,
+              "faceToTarget": true,
+              "faceToTargetAngleThreshold": 360.0,
+              "dragButtonName": "Skill1",
+              "assistance": {
+                "ps4": {
+                  "useFocusSticky": true
+                },
+                "ps5": {
+                  "useFocusSticky": true
+                },
+                "other": {
+                  "useFocusSticky": true,
+                  "useGyro": true
+                }
+              },
+              "vcamFov": 30.0,
+              "OMHGAKJIEFB": ""
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "Aiming"
+            },
+            {
+              "$type": "AvatarExitFocus",
+              "keepRotation": true
+            }
+          ]
+        },
+        "SetAimShooting": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "AimShooting",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "AimShooting"
+            }
+          ]
+        },
+        "SetNeedAimEndStates": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "InStatesNeedAimEnd",
+              "param3": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "InStatesNeedAimEnd"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_ShootAimingArrow_Charge",
+      "abilityMixins": [
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Aim",
+            "FastAim"
+          ],
+          "modifierName": "ShootAimingArrow_Charge_Handler",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "AimLoop",
+          "modifierName": "Aim_ChangeAlpha",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "FastAimLoop",
+          "modifierName": "FastAim_ChangeAlpha",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FastAim",
+            "FastAimShoot"
+          ],
+          "modifierName": "ShowAimingEffect",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Aim",
+            "FastAim",
+            "FastAimShoot",
+            "AimShoot"
+          ],
+          "modifierName": "ShootAimingArrow_Charge_Remove",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Aim",
+            "AimShoot"
+          ],
+          "modifierName": "ShowAimingEffect",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "Enchanted_Time": 4.0,
+        "Faruzan_AimShoot_Enchanted_Ratio": 1.0
+      },
+      "modifiers": {
+        "ShootAimingArrow_Charge_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "thinkInterval": 0.30000001192092896,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "param3": 0.0,
+              "key": "_Enchanted_Time",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "AttachModifier",
+              "modifierName": "AimChargeMark"
+            }
+          ]
+        },
+        "Aim_ChangeAlpha": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "DEEMAMIJENJ",
+              "target": "Team",
+              "startDuration": 0.20000000298023224,
+              "endDuration": 0.30000001192092896,
+              "JPEPPHPPCPH": true
+            }
+          ]
+        },
+        "FastAim_ChangeAlpha": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "DEEMAMIJENJ",
+              "target": "Team",
+              "startDuration": 0.20000000298023224,
+              "endDuration": 0.30000001192092896,
+              "JPEPPHPPCPH": true
+            }
+          ]
+        },
+        "ShootAimingArrow_Charge_Remove": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AddGlobalValue",
+              "param3": -5.0,
+              "key": "_Enchanted_Time",
+              "useLimitRange": true,
+              "param2": 5.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "AimChargeMark"
+            }
+          ]
+        },
+        "AimChargeMark": {
+          "stacking": "MultipleRefreshNoRemove",
+          "stackingOption": {
+            "abilitySpecialName": "",
+            "maxModifierNumForMultipleType": 5.0
+          },
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AddGlobalValue",
+              "param3": 1.0,
+              "key": "_Enchanted_Time",
+              "useLimitRange": true,
+              "param2": 5.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "ShowAimingEffect": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "thinkInterval": 0.10000000149011612,
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "modifierName": "WindMagic_Arrow_Glow_WithoutWind_Once"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "WindMagic_Arrow_Glow_Once"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "WindMagic_Arrow_Glow_WithoutWind_Once"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "AttachModifier",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_Enchanted_Time",
+                  "param3": 0.0,
+                  "forceByCaster": true
+                }
+              ],
+              "modifierName": "WindMagic_Arrow_Glow_WithoutWind_Once"
+            },
+            {
+              "$type": "Predicated",
+              "targetPredicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Faruzan_ElementalArt_COUNT",
+                  "param3": 1.0,
+                  "forceByCaster": true,
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "AttachModifier",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "key": "_Enchanted_Time",
+                      "param3": [
+                        "Enchanted_Time",
+                        "Faruzan_AimShoot_Enchanted_Ratio",
+                        "MUL"
+                      ],
+                      "forceByCaster": true,
+                      "compareType": "MoreThanAndEqual"
+                    }
+                  ],
+                  "modifierName": "Faruzan_KarasShoot_Glow"
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "PFKNEFGOHIH",
+                  "modifierName": "Faruzan_KarasShoot_Glow"
+                },
+                {
+                  "$type": "AttachModifier",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "key": "_Enchanted_Time",
+                      "param3": 4.0,
+                      "forceByCaster": true,
+                      "compareType": "MoreThanAndEqual"
+                    }
+                  ],
+                  "modifierName": "WindMagic_Arrow_Glow_Once"
+                }
+              ]
+            }
+          ]
+        },
+        "WindMagic_Arrow_Glow_WithoutWind_Once": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Faruzan_ElementalArt_COUNT",
+                  "param3": 1.0,
+                  "forceByCaster": true,
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "param3": "Faruzan_AimShoot_Enchanted_Ratio",
+              "key": "_ABILITY_Faruzan_AimShoot_Enchanted_Ratio",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "AttachEffect",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Faruzan_AimShoot_Enchanted_Ratio",
+                  "param3": 1.0
+                }
+              ],
+              "rotationDampTime": "Eff_WindMagic_Arrow_Glow_Once_05",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AttachEffect",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Faruzan_AimShoot_Enchanted_Ratio",
+                  "param3": 1.0
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Faruzan_ElementalArt_COUNT",
+                  "param3": 0.0,
+                  "forceByCaster": true,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "rotationDampTime": "Eff_WindMagic_Arrow_Glow_Loop_05",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AttachEffect",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Faruzan_AimShoot_Enchanted_Ratio",
+                  "param3": 1.0
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Faruzan_ElementalArt_COUNT",
+                  "param3": 1.0,
+                  "forceByCaster": true,
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "rotationDampTime": "Eff_WindMagic_Arrow_Glow_Loop_05",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AttachEffect",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Faruzan_AimShoot_Enchanted_Ratio",
+                  "param3": 0.8999999761581421,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "rotationDampTime": "Eff_Faruzan_HurricaneArrow_Glow_Once",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AttachEffect",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Faruzan_AimShoot_Enchanted_Ratio",
+                  "param3": 0.8999999761581421,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "rotationDampTime": "Eff_WindMagic_Arrow_Glow_Loop_03",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Faruzan_ElementalArt_COUNT",
+                  "param3": 0.0,
+                  "forceByCaster": true
+                }
+              ],
+              "param3": 1.0,
+              "key": "_ABILITY_Faruzan_AimShoot_Enchanted_Ratio",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "WindMagic_Arrow_Glow_Once": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_WindMagic_Arrow_Glow_Once_04",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_WindMagic_Arrow_Glow_Loop_04",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Faruzan_KarasShoot_Glow": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Faruzan_HurricaneArrow_Burst",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Faruzan_HurricaneArrow_Loop",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Avatar_Faruzan_ShootArrow_ResetGlobalValue": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AddGlobalValue",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Faruzan_ElementalArt_COUNT",
+                  "param3": 0.0,
+                  "forceByCaster": true,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "param3": 1.0,
+              "key": "_ABILITY_Faruzan_AimShoot_Enchanted_Ratio",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Faruzan_ElementalArt_COUNT",
+                  "param3": 0.0,
+                  "forceByCaster": true,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "param3": 1.0,
+              "key": "_ABILITY_Faruzan_AimShoot_Enchanted_Ratio",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "ApplyModifier",
+          "shieldHP": true,
+          "modifierName": "Avatar_Faruzan_ShootArrow_ResetGlobalValue"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "AimChargeMark"
+        },
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "Faruzan_KarasShoot_Glow"
+        },
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "WindMagic_Arrow_Glow_Once"
+        },
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "WindMagic_Arrow_Glow_WithoutWind_Once"
+        },
+        {
+          "$type": "SetGlobalValue",
+          "param3": -1.0,
+          "key": "_Enchanted_Time",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_Arrow_FX",
+      "abilityMixins": [
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Aim",
+            "FastAim"
+          ],
+          "modifierName": "Faruzan_Arrow_FX",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Faruzan_Arrow_FX": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Bow_Arrow",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_ShootArrow_Aiming",
+      "abilitySpecials": {
+        "Enchanted_Time": 4.0,
+        "Faruzan_AimShoot_Enchanted_Ratio": 1.0,
+        "Faruzan_HurricaneArrow_MaxCount": 1.0
+      },
+      "onAbilityStart": [
+        {
+          "$type": "Predicated",
+          "targetPredicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Faruzan_ElementalArt_COUNT",
+              "param3": 1.0,
+              "forceByCaster": true,
+              "compareType": "MoreThanAndEqual"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "Predicated",
+              "targetPredicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_Enchanted_Time",
+                  "param3": [
+                    "Enchanted_Time",
+                    "Faruzan_AimShoot_Enchanted_Ratio",
+                    "MUL"
+                  ],
+                  "forceByCaster": true,
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "TriggerBullet",
+                  "bulletID": 41076010,
+                  "born": {
+                    "$type": "ConfigBornByAttachPoint",
+                    "offset": {
+                      "x": -0.699999988079071,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "direction": {
+                      "$type": "LHBLDEOLGKF",
+                      "attachPointName": "FocusAnchor",
+                      "attachPointTargetType": "Self"
+                    },
+                    "useRotation": true,
+                    "attachPointName": "WeaponL"
+                  }
+                },
+                {
+                  "$type": "FireEffect",
+                  "rotationDampTime": "Eff_Avatar_Girl_Bow_Faruzan_Release_SpecialCharge",
+                  "born": {
+                    "$type": "ConfigBornByAttachPoint",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.8999999761581421
+                    },
+                    "useRotation": true,
+                    "attachPointName": "WeaponR"
+                  },
+                  "effectTempleteID": 1.0,
+                  "AJDILHJFNKE": -1.0
+                },
+                {
+                  "$type": "AddGlobalValue",
+                  "shieldHP": true,
+                  "param3": -1.0,
+                  "key": "_ABILITY_Faruzan_ElementalArt_COUNT",
+                  "useLimitRange": true,
+                  "param2": "Faruzan_HurricaneArrow_MaxCount",
+                  "repeatTimes": 0.0
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "TriggerBullet",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "key": "_Enchanted_Time",
+                      "param3": 3.0,
+                      "forceByCaster": true,
+                      "compareType": "LessAndEqual"
+                    }
+                  ],
+                  "bulletID": 41076008,
+                  "born": {
+                    "$type": "ConfigBornByAttachPoint",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "direction": {
+                      "$type": "LHBLDEOLGKF",
+                      "attachPointName": "FocusAnchor",
+                      "attachPointTargetType": "Self"
+                    },
+                    "useRotation": true,
+                    "attachPointName": "WeaponL"
+                  }
+                },
+                {
+                  "$type": "FireEffect",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "key": "_Enchanted_Time",
+                      "param3": 3.0,
+                      "forceByCaster": true,
+                      "compareType": "LessAndEqual"
+                    }
+                  ],
+                  "rotationDampTime": "Eff_WindMagic_Arrow_ShootArrow",
+                  "born": {
+                    "$type": "ConfigBornByAttachPoint",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.8999999761581421
+                    },
+                    "useRotation": true,
+                    "attachPointName": "WeaponR"
+                  },
+                  "effectTempleteID": 1.0,
+                  "AJDILHJFNKE": -1.0
+                }
+              ]
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "TriggerBullet",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_Enchanted_Time",
+                  "param3": 4.0,
+                  "forceByCaster": true,
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "bulletID": 41076007,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "useRotation": true,
+                "attachPointName": "WeaponL"
+              }
+            },
+            {
+              "$type": "TriggerBullet",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_Enchanted_Time",
+                  "param3": 3.0,
+                  "forceByCaster": true,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "bulletID": 41076008,
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "useRotation": true,
+                "attachPointName": "WeaponL"
+              }
+            },
+            {
+              "$type": "FireEffect",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_Enchanted_Time",
+                  "param3": 4.0,
+                  "forceByCaster": true,
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Faruzan_Release_NormalCharge",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.8999999761581421
+                },
+                "useRotation": true,
+                "attachPointName": "WeaponR"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_Enchanted_Time",
+                  "param3": 3.0,
+                  "forceByCaster": true,
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "rotationDampTime": "Eff_WindMagic_Arrow_ShootArrow",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.8999999761581421
+                },
+                "useRotation": true,
+                "attachPointName": "WeaponR"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        {
+          "$type": "ONALKNNKKLH",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_Enchanted_Time",
+              "param3": 4.0,
+              "forceByCaster": true,
+              "compareType": "MoreThanAndEqual"
+            }
+          ],
+          "cameraShake": {
+            "shakeRange": 0.20000000298023224,
+            "shakeTime": 0.11999999731779099,
+            "shakeDistance": 30.0,
+            "extension": {
+              "baseOnCamera": true
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_ShootArrow_01",
+      "onAbilityStart": [
+        {
+          "$type": "TriggerBullet",
+          "bulletID": 41076001,
+          "born": {
+            "$type": "ConfigBornByAttachPoint",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "direction": {
+              "$type": "LHBLDEOLGKF",
+              "attachPointName": "FocusAnchor",
+              "attachPointTargetType": "Self"
+            },
+            "useRotation": true,
+            "attachPointName": "WeaponL"
+          }
+        },
+        {
+          "$type": "FireEffect",
+          "rotationDampTime": "Eff_Avatar_Girl_Bow_Faruzan_ShootArrow_Small",
+          "born": {
+            "$type": "ConfigBornByAttachPoint",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "useRotation": true,
+            "attachPointName": "WeaponL"
+          },
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_ShootArrow_02",
+      "onAbilityStart": [
+        {
+          "$type": "TriggerBullet",
+          "bulletID": 41076002,
+          "born": {
+            "$type": "ConfigBornByAttachPoint",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "direction": {
+              "$type": "LHBLDEOLGKF",
+              "attachPointName": "FocusAnchor",
+              "attachPointTargetType": "Self"
+            },
+            "useRotation": true,
+            "attachPointName": "WeaponL"
+          }
+        },
+        {
+          "$type": "FireEffect",
+          "rotationDampTime": "Eff_Avatar_Girl_Bow_Faruzan_ShootArrow_Small",
+          "born": {
+            "$type": "ConfigBornByAttachPoint",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "useRotation": true,
+            "attachPointName": "WeaponL"
+          },
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_ShootArrow_03",
+      "onAbilityStart": [
+        {
+          "$type": "TriggerBullet",
+          "bulletID": 41076003,
+          "born": {
+            "$type": "ConfigBornByAttachPoint",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "direction": {
+              "$type": "LHBLDEOLGKF",
+              "attachPointName": "FocusAnchor",
+              "attachPointTargetType": "Self"
+            },
+            "useRotation": true,
+            "attachPointName": "WeaponL"
+          }
+        },
+        {
+          "$type": "FireEffect",
+          "rotationDampTime": "Eff_Avatar_Girl_Bow_Faruzan_ShootArrow_Big",
+          "born": {
+            "$type": "ConfigBornByAttachPoint",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "useRotation": true,
+            "attachPointName": "WeaponL"
+          },
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_ShootArrow_04",
+      "onAbilityStart": [
+        {
+          "$type": "TriggerBullet",
+          "bulletID": 41076004,
+          "born": {
+            "$type": "ConfigBornByAttachPoint",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "direction": {
+              "$type": "LHBLDEOLGKF",
+              "attachPointName": "FocusAnchor",
+              "attachPointTargetType": "Self"
+            },
+            "useRotation": true,
+            "attachPointName": "WeaponL"
+          }
+        },
+        {
+          "$type": "FireEffect",
+          "rotationDampTime": "Eff_Avatar_Girl_Bow_Faruzan_ShootArrow_Big_Attack04",
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "direction": {
+              "$type": "MEADFIJAHPG",
+              "angleOffset": {
+                "x": 0.0,
+                "y": 90.0,
+                "z": 0.0
+              },
+              "startPoint": ""
+            },
+            "useRotation": true
+          },
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_ShootArrow_05",
+      "onAbilityStart": [
+        {
+          "$type": "TriggerBullet",
+          "bulletID": 41076005,
+          "born": {
+            "$type": "ConfigBornByAttachPoint",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "direction": {
+              "$type": "LHBLDEOLGKF",
+              "attachPointName": "FocusAnchor",
+              "attachPointTargetType": "Self"
+            },
+            "useRotation": true,
+            "attachPointName": "WeaponL"
+          }
+        },
+        {
+          "$type": "FireEffect",
+          "rotationDampTime": "Eff_Ganyu_ShootSpark_Big",
+          "born": {
+            "$type": "ConfigBornByAttachPoint",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "useRotation": true,
+            "attachPointName": "WeaponL"
+          },
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_ShootArrow_06",
+      "onAbilityStart": [
+        {
+          "$type": "TriggerBullet",
+          "bulletID": 41076006,
+          "born": {
+            "$type": "ConfigBornByAttachPoint",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "direction": {
+              "$type": "LHBLDEOLGKF",
+              "attachPointName": "FocusAnchor",
+              "attachPointTargetType": "Self"
+            },
+            "useRotation": true,
+            "attachPointName": "WeaponL"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Bullet_Faruzan_ShootArrow",
+      "abilityMixins": [
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "Arrow_ATK01"
+          ],
+          "actorGrassSubHurtDelta": "NormalAttack_01_DamagePercentage",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "Arrow_ATK02"
+          ],
+          "actorGrassSubHurtDelta": "NormalAttack_02_DamagePercentage",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "Arrow_ATK03"
+          ],
+          "actorGrassSubHurtDelta": "NormalAttack_03_DamagePercentage",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "Arrow_ATK04"
+          ],
+          "actorGrassSubHurtDelta": "NormalAttack_04_DamagePercentage",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "Arrow_ATK05"
+          ],
+          "actorGrassSubHurtDelta": "NormalAttack_05_DamagePercentage",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "Arrow_ATK06"
+          ],
+          "actorGrassSubHurtDelta": "NormalAttack_06_DamagePercentage",
+          "actorWindSubHurtDelta": 0.0
+        }
+      ],
+      "abilitySpecials": {
+        "NormalAttack_01_DamagePercentage": 0.0,
+        "NormalAttack_02_DamagePercentage": 0.0,
+        "NormalAttack_03_DamagePercentage": 0.0,
+        "NormalAttack_04_DamagePercentage": 0.0,
+        "NormalAttack_05_DamagePercentage": 0.0,
+        "NormalAttack_06_DamagePercentage": 0.0
+      },
+      "onAbilityStart": [
+        {
+          "$type": "GFANIJMFNOJ",
+          "hitEntity": "",
+          "hitScene": {
+            "defaultEffect": "Eff_Arrow_Hit_Earth",
+            "surfaceEffect": {
+              "Water": "Eff_Arrow_Hit_Water"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Bullet_Faruzan_ShootArrow_LightFX",
+      "modifiers": {
+        "Faruzan_ArrowEffect_LightFX": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Ganyu_Arrow_Fly_Small",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "Faruzan_ArrowEffect_LightFX"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Bullet_Faruzan_ShootArrow_HeavyFX",
+      "modifiers": {
+        "Faruzan_ArrowEffect_HeavyFX": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Ganyu_Arrow_Fly_Big",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "Faruzan_ArrowEffect_HeavyFX"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_ShootArrow_Enchanted_Wind",
+      "abilitySpecials": {
+        "DamageWithWind": 0.0
+      },
+      "modifiers": {
+        "ShootArrow_Enchanted_Wind": {
+          "modifierName": "",
+          "elementType": "Wind",
+          "bonusCritical": 25.0
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "ApplyModifier",
+          "modifierName": "ShootArrow_Enchanted_Wind"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "TriggerAttackEvent",
+          "predicates": [
+            {
+              "$type": "NFJHABGCNHE",
+              "element": "Wind"
+            }
+          ],
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "JHKEHNJBMOF",
+              "triggerType": "TriggerNoRepeat",
+              "checkHitLayerType": "Both",
+              "born": {
+                "$type": "ConfigBornByCollisionPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": -0.5
+                }
+              },
+              "size": {
+                "x": 0.10000000149011612,
+                "y": 0.10000000149011612,
+                "z": 1.0
+              }
+            },
+            "attackInfo": {
+              "attackTag": "ExtraAttack",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "DamageWithWind",
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Wind",
+                "bonusCritical": 25.0,
+                "strikeType": "Pierce",
+                "enBreak": 20.0,
+                "enHeadBreak": 60.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "Eff_WindMagic_Arrow_Hit_1",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV2",
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "canHitHead": true,
+              "hitHeadPattern": {
+                "onHitEffectName": "Eff_Arrow_Hit_Head_Wind",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV5",
+                "hitHaltTime": 0.11999999731779099,
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "bulletWane": {
+                "waneDelay": 0.699999988079071,
+                "damageWaneInterval": 0.05000000074505806,
+                "damageWaneRatio": 0.10000000149011612,
+                "damageWaneMinRatio": 0.10000000149011612,
+                "elementDurabilityWaneInterval": 0.05000000074505806,
+                "elementDurabilityWaneRatio": 0.10000000149011612,
+                "elementDurabilityWaneMinRatio": 0.10000000149011612,
+                "hitLevelWaneInterval": 0.10000000149011612,
+                "hitLevelWaneMin": "Mute"
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_ShootArrow_Enchanted_WithoutWind",
+      "abilitySpecials": {
+        "DamageWithoutWind": 0.0
+      },
+      "onAbilityStart": [
+        {
+          "$type": "TriggerAttackEvent",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "JHKEHNJBMOF",
+              "triggerType": "TriggerNoRepeat",
+              "checkHitLayerType": "Both",
+              "born": {
+                "$type": "ConfigBornByCollisionPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": -0.5
+                }
+              },
+              "size": {
+                "x": 0.10000000149011612,
+                "y": 0.10000000149011612,
+                "z": 1.0
+              }
+            },
+            "attackInfo": {
+              "attackTag": "ExtraAttack",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "DamageWithoutWind",
+                "actorWindSubHurtDelta": 0.0,
+                "bonusCritical": 100.0,
+                "strikeType": "Pierce",
+                "enBreak": 10.0,
+                "enHeadBreak": 30.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV2",
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "canHitHead": true,
+              "hitHeadPattern": {
+                "onHitEffectName": "Eff_Arrow_Hit_Head",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV5",
+                "hitHaltTime": 0.11999999731779099,
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "bulletWane": {
+                "waneDelay": 0.699999988079071,
+                "damageWaneInterval": 0.05000000074505806,
+                "damageWaneRatio": 0.10000000149011612,
+                "damageWaneMinRatio": 0.10000000149011612,
+                "elementDurabilityWaneInterval": 0.05000000074505806,
+                "elementDurabilityWaneRatio": 0.10000000149011612,
+                "elementDurabilityWaneMinRatio": 0.10000000149011612,
+                "hitLevelWaneInterval": 0.10000000149011612,
+                "hitLevelWaneMin": "Mute"
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_ShootAimingArrow_Material",
+      "modifiers": {
+        "ArrowEffectModifier": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_WindMagic_Arrow_Fly_Particle_1",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_WindMagic_Arrow_Fly_Trail_1",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "ArrowEffectModifier"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "GFANIJMFNOJ",
+          "predicates": [
+            {
+              "$type": "NFJHABGCNHE",
+              "element": "Wind"
+            }
+          ],
+          "hitEntity": "",
+          "hitScene": {
+            "defaultEffect": "Eff_WindMagic_Arrow_Hit_1",
+            "surfaceEffect": {
+              "Water": "Eff_Arrow_Fire_Hit_Water"
+            }
+          }
+        },
+        {
+          "$type": "GFANIJMFNOJ",
+          "predicates": [
+            {
+              "$type": "BCFNGJHILAG",
+              "predicates": [
+                {
+                  "$type": "NFJHABGCNHE",
+                  "element": "Wind"
+                }
+              ]
+            }
+          ],
+          "hitEntity": "",
+          "hitScene": {
+            "defaultEffect": "Eff_Arrow_Hit_Earth",
+            "surfaceEffect": {
+              "Water": "Eff_Arrow_Hit_Water"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_ShootAimingArrowWithoutWind_Material",
+      "modifiers": {
+        "Faruzan_ShootAimingArrowWithoutWind_Effect": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Faruzan_Arrow_Fly_Big",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "Faruzan_ShootAimingArrowWithoutWind_Effect"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "GFANIJMFNOJ",
+          "hitEntity": "",
+          "hitScene": {
+            "defaultEffect": "Eff_Arrow_Hit_Earth",
+            "surfaceEffect": {
+              "Water": "Eff_Arrow_Hit_Water"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_FallingAnthem",
+      "abilityMixins": [
+        {
+          "$type": "KMPFLHBHBBP",
+          "jumpSkillID": 5076010,
+          "flySkillID": 5076010
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS"
+          ],
+          "modifierName": "FallingAnthem_BS_Material",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_Loop"
+          ],
+          "modifierName": "FallingAnthem_Loop_Normal",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "FallingAnthem_BS_2",
+            "FallingAnthem_Loop",
+            "FallingAnthem_Loop_Low"
+          ],
+          "modifierName": "FallingAnthem_LoopDamage",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS"
+          ],
+          "modifierName": "FallingAnthem_BS_VelocityForce_Initialize",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop",
+            "FallingAnthem_AS_1",
+            "FallingAnthem_AS_2"
+          ],
+          "modifierName": "FallingAnthem_Height_Detect",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop",
+            "FallingAnthem_AS_1",
+            "FallingAnthem_AS_2"
+          ],
+          "modifierName": "FallingAnthem_FallingDamageImmune_01",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop"
+          ],
+          "modifierName": "Inertia",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop",
+            "FallingAnthem_AS_1",
+            "FallingAnthem_AS_2"
+          ],
+          "modifierName": "FallingAnthem_OverHead_Camera",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS"
+          ],
+          "modifierName": "FallingAnthem_ClearVelocityForce",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop"
+          ],
+          "modifierName": "FallingAnthem_AttachEffect_BS_01",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "FallingAnthem_Normal_Loop_Damage": 0.0,
+        "FallingAnthem_Normal_Rank_1_Damage": 0.0,
+        "FallingAnthem_Normal_Rank_2_Damage": 0.0,
+        "FallingAnthem_Altitude_Lv0": 20.0,
+        "FallingAnthem_Altitude_Lv1": 40.0,
+        "FallingAnthem_Altitude_Lv2": 60.0,
+        "FallingAnthem_Altitude_Lv3": 100.0,
+        "FallingAnthem_Altitude_Lv4": 200.0,
+        "FallingAnthem_FallingDamageRatio_Lv0": -1.0,
+        "FallingAnthem_FallingDamageRatio_Lv1": -1.0,
+        "FallingAnthem_FallingDamageRatio_Lv2": -0.8999999761581421,
+        "FallingAnthem_FallingDamageRatio_Lv3": -0.800000011920929,
+        "FallingAnthem_FallingDamageRatio_Lv4": -0.6000000238418579,
+        "FallingAnthem_FallingDamageRatio": 0.0
+      },
+      "modifiers": {
+        "FallingAnthem_AttachEffect_BS_01": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Bow_FallAnthem_BS_01",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "FallingAnthem_BS_Material": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Bow_FallAnthem_BS",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "JPHLIDGMGBG",
+              "cameraRadialBlur": {
+                "power": 0.30000001192092896,
+                "blurTime": 0.30000001192092896,
+                "fadeTime": 0.15000000596046448
+              }
+            }
+          ]
+        },
+        "FallingAnthem_BS_VelocityForce_Initialize": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "properties": {
+            "Actor_AddGravityScale": -2.0
+          },
+          "onAdded": [
+            {
+              "$type": "LBLNHEBGPJI",
+              "forces": [
+                "RushMoveType"
+              ]
+            }
+          ]
+        },
+        "FallingAnthem_LoopDamage": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "thinkInterval": 0.30000001192092896,
+          "onThinkInterval": [
+            {
+              "$type": "TriggerAttackEvent",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "useRotation": true
+                  },
+                  "radius": 1.0
+                },
+                "attackInfo": {
+                  "attackTag": "FallingAttack",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "FallingAnthem_Normal_Loop_Damage",
+                    "actorWindSubHurtDelta": 0.0,
+                    "bonusCritical": 0.0,
+                    "strikeType": "Pierce",
+                    "enBreak": 10.0,
+                    "attackType": "Melee",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.019999999552965164
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "FallingAnthem_FallingDamageImmune_01": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "HMKGPFBBDIC",
+              "key": "_ABILITY_FallingAttack_Altitude"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": "FallingAnthem_Altitude_Lv0"
+                }
+              ],
+              "param3": "FallingAnthem_FallingDamageRatio_Lv0",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "param2": "FallingAnthem_FallingDamageRatio_Lv0",
+              "repeatTimes": "FallingAnthem_FallingDamageRatio_Lv0"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": "FallingAnthem_Altitude_Lv1"
+                },
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": "FallingAnthem_Altitude_Lv0"
+                }
+              ],
+              "param3": "FallingAnthem_FallingDamageRatio_Lv1",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "param2": "FallingAnthem_FallingDamageRatio_Lv1",
+              "repeatTimes": "FallingAnthem_FallingDamageRatio_Lv1"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": "FallingAnthem_Altitude_Lv2"
+                },
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": "FallingAnthem_Altitude_Lv1"
+                }
+              ],
+              "param3": "FallingAnthem_FallingDamageRatio_Lv2",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "param2": "FallingAnthem_FallingDamageRatio_Lv2",
+              "repeatTimes": "FallingAnthem_FallingDamageRatio_Lv2"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": "FallingAnthem_Altitude_Lv3"
+                },
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": "FallingAnthem_Altitude_Lv2"
+                }
+              ],
+              "param3": "FallingAnthem_FallingDamageRatio_Lv3",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "param2": "FallingAnthem_FallingDamageRatio_Lv3",
+              "repeatTimes": "FallingAnthem_FallingDamageRatio_Lv3"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": "FallingAnthem_Altitude_Lv3"
+                }
+              ],
+              "param3": "FallingAnthem_FallingDamageRatio_Lv4",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "param2": "FallingAnthem_FallingDamageRatio_Lv4",
+              "repeatTimes": "FallingAnthem_FallingDamageRatio_Lv4"
+            },
+            {
+              "$type": "AttachModifier",
+              "modifierName": "FallingAnthem_FallingDamageImmune_02"
+            }
+          ]
+        },
+        "FallingAnthem_FallingDamageImmune_02": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "_ABILITY_FallingAttack_Altitude",
+              "overrideMapKey": "FallingAnthem_FallingDamageRatio"
+            },
+            {
+              "$type": "AttachModifier",
+              "modifierName": "FallingAnthem_FallingDamageImmune_03"
+            }
+          ]
+        },
+        "FallingAnthem_FallingDamageImmune_03": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "properties": {
+            "Actor_FallingDamageRatio": "FallingAnthem_FallingDamageRatio"
+          }
+        },
+        "FallingAnthem_Loop_Normal": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_FallingAnthem_UseCamera",
+                  "param3": 1.0,
+                  "forceByCaster": true
+                }
+              ],
+              "rotationDampTime": "Eff_Avatar_Bow_FallAnthem_Loop_02",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Inertia": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "KEHPDCODOOC",
+              "useXZ": false,
+              "useY": false
+            }
+          ]
+        },
+        "FallingAnthem_Height_Detect": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": 2.4000000953674316
+                }
+              ],
+              "param3": 0.0,
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "useLimitRange": true,
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": 2.4000000953674316
+                }
+              ],
+              "param3": 5.0,
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "FEKJDLHHOLE",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": 2.4000000953674316
+                }
+              ],
+              "floatID": "FallingAnthem_UseCamera",
+              "param3": 0.0
+            },
+            {
+              "$type": "FEKJDLHHOLE",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": 2.4000000953674316
+                }
+              ],
+              "floatID": "FallingAnthem_UseCamera",
+              "param3": 1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FEKJDLHHOLE",
+              "floatID": "FallingAnthem_UseCamera",
+              "param3": 0.0
+            },
+            {
+              "$type": "AddGlobalValue",
+              "param3": 0.0,
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "useLimitRange": true,
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "FallingAnthem_OverHead_Camera": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "LJBFFDLKIKL",
+              "predicates": [
+                {
+                  "$type": "NIFDMKMHAGJ",
+                  "logic": "Equal",
+                  "param3": 1.0,
+                  "parameter": "FallingAnthem_UseCamera"
+                }
+              ],
+              "cameraParam": {
+                "forceRadius": 4.5,
+                "forceRadiusDuration": 0.20000000298023224,
+                "shouldKeepForceRadius": true
+              }
+            }
+          ]
+        },
+        "FallingAnthem_OverHead_Camera_Remover": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "PEIPIGEMHEK",
+              "shieldHP": true
+            }
+          ]
+        },
+        "FallingAnthem_Landed_Camera": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "LJBFFDLKIKL",
+              "predicates": [
+                {
+                  "$type": "NIFDMKMHAGJ",
+                  "logic": "Equal",
+                  "param3": 1.0,
+                  "parameter": "FallingAnthem_UseCamera"
+                }
+              ],
+              "cameraParam": {
+                "forceRadius": 6.0,
+                "forceRadiusDuration": 0.10000000149011612,
+                "shouldKeepForceRadius": true
+              }
+            }
+          ]
+        },
+        "FallingAnthem_ClearVelocityForce": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "LBLNHEBGPJI",
+              "forces": [
+                "RushMoveType",
+                "InertiaType"
+              ]
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "TriggerAttackEvent",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "param3": 0.0,
+              "forceByCaster": true,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackCircle",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "x": 0.0,
+                  "y": -0.5,
+                  "z": 0.0
+                }
+              },
+              "height": 2.0,
+              "radius": 3.0
+            },
+            "attackInfo": {
+              "attackTag": "FallingAttack",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "FallingAnthem_Normal_Rank_1_Damage",
+                "actorWindSubHurtDelta": 0.0,
+                "bonusCritical": 25.0,
+                "strikeType": "Pierce",
+                "enBreak": 50.0,
+                "attackType": "Melee",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "none",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV2",
+                "hitHaltTimeScale": 0.10000000149011612
+              }
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "TriggerAttackEvent",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "param3": 1.0,
+              "forceByCaster": true
+            }
+          ],
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackCircle",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "x": 0.0,
+                  "y": -0.5,
+                  "z": 0.0
+                }
+              },
+              "height": 2.0,
+              "radius": 3.5
+            },
+            "attackInfo": {
+              "attackTag": "FallingAttack",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "FallingAnthem_Normal_Rank_2_Damage",
+                "actorWindSubHurtDelta": 0.0,
+                "bonusCritical": 25.0,
+                "strikeType": "Pierce",
+                "enBreak": 100.0,
+                "attackType": "Melee",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "none",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV3",
+                "hitHaltTimeScale": 0.10000000149011612
+              }
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "FireEffect",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "param3": 0.0,
+              "forceByCaster": true,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "rotationDampTime": "Eff_Avatar_Bow_FallAnthem_Strike_01",
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "FireEffect",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "param3": 1.0,
+              "forceByCaster": true
+            }
+          ],
+          "rotationDampTime": "Eff_Avatar_Bow_FallAnthem_Strike_02",
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_Elemental_Art",
+      "abilityMixins": [
+        {
+          "$type": "PHLKCMFKFIN",
+          "globalValueKey": "_ABILITY_Faruzan_ElementalArt_COUNT",
+          "valueSteps": [
+            0.5,
+            1.5,
+            2.5
+          ],
+          "modifierNameSteps": [
+            "UNIQUE_Faruzan_ElementalArt_Mark",
+            "UNIQUE_Faruzan_ElementalArt_Mark_Level2"
+          ]
+        }
+      ],
+      "abilitySpecials": {
+        "Damage": 0.0,
+        "Faruzan_HurricaneArrow_MaxCount": 1.0
+      },
+      "modifiers": {
+        "UNIQUE_Faruzan_ElementalArt_Damage": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.10000000149011612,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "TriggerAttackEvent",
+              "target": "Caster",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackCircle",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ICKMMAHFNIM",
+                    "onGround": true,
+                    "positionKey": "_ABILITY_Faruzan_ElementalArt_DamagePos",
+                    "directionKey": ""
+                  },
+                  "height": 2.0,
+                  "radius": 3.0
+                },
+                "attackInfo": {
+                  "attackTag": "Elemental_Art",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "Damage",
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Wind",
+                    "bonusCritical": 25.0,
+                    "enBreak": 200.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "Eff_Avatar_Girl_Bow_Faruzan_ElementalArt_Hit",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV3",
+                    "hitHaltTimeScale": 0.019999999552965164
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "param3": "Faruzan_HurricaneArrow_MaxCount",
+              "key": "_ABILITY_Faruzan_ElementalArt_COUNT",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Blank": {
+          "modifierName": "",
+          "bonusCritical": 100.0
+        },
+        "UNIQUE_Faruzan_ElementalArt_Mark": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Faruzan_ElementalArt_HurricaneArrow1",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Faruzan_ElementalArt_MaskDisappeared",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "UNIQUE_Faruzan_ElementalArt_Mark_Level2": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Faruzan_ElementalArt_HurricaneArrow2",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Faruzan_ElementalArt_MaskDisappeared",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "UNIQUE_Faruzan_ElementalArt_Mark_Timer": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 18.0,
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Faruzan_ElementalArt_COUNT",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "SetGlobalValue",
+          "param3": 0.0,
+          "key": "_ABILITY_Faruzan_ElementalArt_COUNT",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "AvatarSkillStart",
+          "skillID": 10762,
+          "amountByTargetCurrentHPRatio": 1.0,
+          "costStaminaRatio": 1.0
+        },
+        {
+          "$type": "AttachModifier",
+          "modifierName": "UNIQUE_Faruzan_ElementalArt_Mark_Timer"
+        },
+        {
+          "$type": "SetGlobalPos",
+          "key": "_ABILITY_Faruzan_ElementalArt_DamagePos",
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 3.0
+            },
+            "onGround": true,
+            "useRotation": true
+          }
+        },
+        {
+          "$type": "AttachModifier",
+          "modifierName": "UNIQUE_Faruzan_ElementalArt_Damage"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_Wind_Arashi",
+      "onAbilityStart": [
+        {
+          "$type": "SetGlobalPos",
+          "key": "_ABILITY_Faruzan_ElementalArt_Pos",
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 3.0
+            },
+            "onGround": true,
+            "useRotation": true
+          }
+        },
+        {
+          "$type": "FireEffect",
+          "rotationDampTime": "Eff_Avatar_Girl_Bow_Faruzan_ElementalArt_Cast",
+          "born": {
+            "$type": "ICKMMAHFNIM",
+            "onGround": true,
+            "positionKey": "_ABILITY_Faruzan_ElementalArt_Pos",
+            "directionKey": ""
+          },
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_Wind_Arashi_Bullet",
+      "abilitySpecials": {
+        "Faruzan_Wind_Arashi_Damage": 0.0
+      },
+      "modifiers": {
+        "Faruzan_Wind_Arashi_Bullet_Damage_Modifier": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "TriggerAttackEvent",
+              "target": "Caster",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "useRotation": true
+                  },
+                  "radius": 1.0
+                },
+                "attackInfo": {
+                  "attackTag": "Elemental_Art",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "Faruzan_Wind_Arashi_Damage",
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Wind",
+                    "bonusCritical": 25.0,
+                    "strikeType": "Slash",
+                    "enBreak": 36.0,
+                    "attackType": "Melee",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "retreatType": "ByOriginOwner",
+                    "hitHaltTimeScale": 0.05000000074505806
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "ApplyModifier",
+          "target": "Target",
+          "modifierName": "Faruzan_Wind_Arashi_Bullet_Damage_Modifier"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_Wind_Arashi_Bullet_Material",
+      "onAdded": [
+        {
+          "$type": "FireEffect",
+          "rotationDampTime": "Eff_Avatar_WindBlade_Bullet",
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_Aim_TrackBullet_Material",
+      "abilitySpecials": {
+        "First_Bullet_Damage": 0.0
+      },
+      "modifiers": {
+        "Faruzan_Aim_TrackBullet_Fly_Trail": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_WindMagic_Arrow_Fly_Trail_2",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_WindMagic_Arrow_Fly_Particle_2",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Faruzan_WindBlackHole_Gadget_Reject_Push": {
+          "modifierName": "",
+          "elementDurability": 2.0,
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PHBONPABPIH",
+              "attackTag": "Faruzan_WindBlackHole"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "Faruzan_Aim_TrackBullet_Fly_Trail"
+        },
+        {
+          "$type": "ApplyModifier",
+          "target": "AllPlayerAvatars",
+          "modifierName": "Faruzan_WindBlackHole_Gadget_Reject_Push"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "GFANIJMFNOJ",
+          "hitEntity": "",
+          "hitScene": {
+            "defaultEffect": "",
+            "surfaceEffect": {
+              "Water": "Eff_Arrow_Hit_Water"
+            }
+          }
+        },
+        {
+          "$type": "TriggerAttackEvent",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "JHKEHNJBMOF",
+              "triggerType": "TriggerNoRepeat",
+              "checkHitLayerType": "Both",
+              "born": {
+                "$type": "ConfigBornByCollisionPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": -0.5
+                }
+              },
+              "size": {
+                "x": 0.10000000149011612,
+                "y": 0.10000000149011612,
+                "z": 1.0
+              }
+            },
+            "attackInfo": {
+              "attackTag": "ExtraAttack",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "First_Bullet_Damage",
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Wind",
+                "bonusCritical": 25.0,
+                "strikeType": "Pierce",
+                "enBreak": 20.0,
+                "enHeadBreak": 60.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "none",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV2",
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "canHitHead": true,
+              "hitHeadPattern": {
+                "onHitEffectName": "Eff_Arrow_Hit_Head_Wind",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV5",
+                "hitHaltTime": 0.11999999731779099,
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "bulletWane": {
+                "waneDelay": 0.699999988079071,
+                "damageWaneInterval": 0.05000000074505806,
+                "damageWaneRatio": 0.10000000149011612,
+                "damageWaneMinRatio": 0.10000000149011612,
+                "elementDurabilityWaneInterval": 0.05000000074505806,
+                "elementDurabilityWaneRatio": 0.10000000149011612,
+                "elementDurabilityWaneMinRatio": 0.10000000149011612,
+                "hitLevelWaneInterval": 0.10000000149011612,
+                "hitLevelWaneMin": "Mute"
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_Constellation6_TrackBullet_Material",
+      "abilitySpecials": {
+        "First_Bullet_Damage": 0.0
+      },
+      "modifiers": {
+        "Faruzan_Aim_TrackBullet_Fly_Trail": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Faruzan_WindMagic_Constellation6_Arrow_Fly_Trail",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Faruzan_WindMagic_Constellation6_Arrow_Fly_Particle",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Faruzan_WindBlackHole_Gadget_Reject_Push": {
+          "modifierName": "",
+          "elementDurability": 2.0,
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PHBONPABPIH",
+              "attackTag": "Faruzan_WindBlackHole"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "Faruzan_Aim_TrackBullet_Fly_Trail"
+        },
+        {
+          "$type": "ApplyModifier",
+          "target": "AllPlayerAvatars",
+          "modifierName": "Faruzan_WindBlackHole_Gadget_Reject_Push"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "GFANIJMFNOJ",
+          "hitEntity": "",
+          "hitScene": {
+            "defaultEffect": "",
+            "surfaceEffect": {
+              "Water": "Eff_Arrow_Hit_Water"
+            }
+          }
+        },
+        {
+          "$type": "TriggerAttackEvent",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "JHKEHNJBMOF",
+              "triggerType": "TriggerNoRepeat",
+              "checkHitLayerType": "Both",
+              "born": {
+                "$type": "ConfigBornByCollisionPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": -0.5
+                }
+              },
+              "size": {
+                "x": 0.10000000149011612,
+                "y": 0.10000000149011612,
+                "z": 1.0
+              }
+            },
+            "attackInfo": {
+              "attackTag": "ExtraAttack",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "First_Bullet_Damage",
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Wind",
+                "bonusCritical": 25.0,
+                "strikeType": "Pierce",
+                "enBreak": 20.0,
+                "enHeadBreak": 60.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "none",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV2",
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "canHitHead": true,
+              "hitHeadPattern": {
+                "onHitEffectName": "Eff_Arrow_Hit_Head_Wind",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV5",
+                "hitHaltTime": 0.11999999731779099,
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "bulletWane": {
+                "waneDelay": 0.699999988079071,
+                "damageWaneInterval": 0.05000000074505806,
+                "damageWaneRatio": 0.10000000149011612,
+                "damageWaneMinRatio": 0.10000000149011612,
+                "elementDurabilityWaneInterval": 0.05000000074505806,
+                "elementDurabilityWaneRatio": 0.10000000149011612,
+                "elementDurabilityWaneMinRatio": 0.10000000149011612,
+                "hitLevelWaneInterval": 0.10000000149011612,
+                "hitLevelWaneMin": "Mute"
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_Bullet_Landed_WindBlackHole",
+      "abilitySpecials": {
+        "WindBlackHole_Gadget_Damage": 0.0
+      },
+      "modifiers": {
+        "WindBlackHole_Gadget_Pre": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "predicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Self",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Faruzan_WindZone_Attach_Mask",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AttachEffect",
+              "predicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Self",
+                  "entityTypes": [
+                    "Avatar"
+                  ]
+                }
+              ],
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Faruzan_WindZone_Attach_Mask_OnAvatar",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "predicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Self",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "IMPNKNCABJD",
+                  "target": "CasterOriginOwner"
+                }
+              ],
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Faruzan_ElementalArt_WindZone_Attach",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "predicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Self",
+                  "entityTypes": [
+                    "Avatar"
+                  ]
+                },
+                {
+                  "$type": "IMPNKNCABJD",
+                  "target": "CasterOriginOwner"
+                }
+              ],
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Faruzan_ElementalArt_WindZone_Attach_OnAvatar",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "CreateGadget",
+              "predicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Self",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "IMPNKNCABJD",
+                  "target": "CasterOriginOwner"
+                }
+              ],
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "FNKDGDKJHPC",
+                  "eularAngles": {
+                    "x": 0.10000000149011612,
+                    "y": 0.10000000149011612,
+                    "z": 0.10000000149011612
+                  }
+                },
+                "useRotation": true,
+                "attachPointName": "Fx_ChestNode",
+                "attachPointTargetType": "Self"
+              },
+              "gadgetID": 41076015,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            },
+            {
+              "$type": "CreateGadget",
+              "predicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Self",
+                  "entityTypes": [
+                    "Avatar"
+                  ]
+                },
+                {
+                  "$type": "IMPNKNCABJD",
+                  "target": "CasterOriginOwner"
+                }
+              ],
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "FNKDGDKJHPC",
+                  "eularAngles": {
+                    "x": 0.10000000149011612,
+                    "y": 0.10000000149011612,
+                    "z": 0.10000000149011612
+                  }
+                },
+                "useRotation": true,
+                "attachPointName": "RootNode",
+                "attachPointTargetType": "Self"
+              },
+              "gadgetID": 41076015,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            },
+            {
+              "$type": "LPAMFJLFPDF",
+              "target": "CasterOriginOwner",
+              "predicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Self",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "IMPNKNCABJD",
+                  "target": "CasterOriginOwner"
+                }
+              ],
+              "attackTargetMapEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornByAttachPoint",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "direction": {
+                      "$type": "AHGNBAPONLA"
+                    },
+                    "useRotation": true,
+                    "attachPointName": "Fx_ChestNode",
+                    "attachPointTargetType": "Self"
+                  },
+                  "radius": 6.0
+                },
+                "attackInfoMap": {
+                  "Enemy": {
+                    "attackTag": "Elemental_Art",
+                    "attenuationTag": "",
+                    "attenuationGroup": "default",
+                    "attackProperty": {
+                      "actorGrassSubHurtDelta": "WindBlackHole_Gadget_Damage",
+                      "actorWindSubHurtDelta": 0.0,
+                      "elementType": "Wind",
+                      "bonusCritical": 25.0,
+                      "strikeType": "Default",
+                      "enBreak": 150.0,
+                      "attackType": "Range",
+                      "GLKMCMDJBIK": 0.0
+                    },
+                    "hitPattern": {
+                      "onHitEffectName": "default",
+                      "hitImpulseY": "",
+                      "hitImpulseType": "LV7",
+                      "retreatType": "ByHitDirectionInverse",
+                      "hitHaltTimeScale": 0.05000000074505806
+                    }
+                  },
+                  "Alliance": {
+                    "attackTag": "Faruzan_WindBlackHole",
+                    "attenuationTag": "",
+                    "attenuationGroup": "default",
+                    "attackProperty": {
+                      "actorGrassSubHurtDelta": 0.0,
+                      "actorWindSubHurtDelta": 0.0,
+                      "elementType": "Wind",
+                      "bonusCritical": 50.0,
+                      "strikeType": "Default",
+                      "enBreak": 110.0,
+                      "GLKMCMDJBIK": 0.0
+                    },
+                    "hitPattern": {
+                      "onHitEffectName": "default",
+                      "hitImpulseY": "",
+                      "hitImpulseType": "LV7",
+                      "retreatType": "ByHitDirectionInverse",
+                      "hitHaltTimeScale": 0.05000000074505806
+                    },
+                    "canBeModifiedBy": "OriginOwner"
+                  }
+                }
+              }
+            },
+            {
+              "$type": "LPAMFJLFPDF",
+              "target": "CasterOriginOwner",
+              "predicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Self",
+                  "entityTypes": [
+                    "Avatar"
+                  ]
+                },
+                {
+                  "$type": "IMPNKNCABJD",
+                  "target": "CasterOriginOwner"
+                }
+              ],
+              "attackTargetMapEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornByAttachPoint",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "direction": {
+                      "$type": "AHGNBAPONLA"
+                    },
+                    "useRotation": true,
+                    "attachPointName": "RootNode",
+                    "attachPointTargetType": "Self"
+                  },
+                  "radius": 6.0
+                },
+                "attackInfoMap": {
+                  "Enemy": {
+                    "attackTag": "Elemental_Art",
+                    "attenuationTag": "",
+                    "attenuationGroup": "default",
+                    "attackProperty": {
+                      "actorGrassSubHurtDelta": "WindBlackHole_Gadget_Damage",
+                      "actorWindSubHurtDelta": 0.0,
+                      "elementType": "Wind",
+                      "bonusCritical": 25.0,
+                      "strikeType": "Default",
+                      "enBreak": 150.0,
+                      "attackType": "Range",
+                      "GLKMCMDJBIK": 0.0
+                    },
+                    "hitPattern": {
+                      "onHitEffectName": "default",
+                      "hitImpulseY": "",
+                      "hitImpulseType": "LV7",
+                      "retreatType": "ByHitDirectionInverse",
+                      "hitHaltTimeScale": 0.05000000074505806
+                    }
+                  },
+                  "Alliance": {
+                    "attackTag": "Faruzan_WindBlackHole",
+                    "attenuationTag": "",
+                    "attenuationGroup": "default",
+                    "attackProperty": {
+                      "actorGrassSubHurtDelta": 0.0,
+                      "actorWindSubHurtDelta": 0.0,
+                      "elementType": "Wind",
+                      "bonusCritical": 50.0,
+                      "strikeType": "Default",
+                      "enBreak": 110.0,
+                      "GLKMCMDJBIK": 0.0
+                    },
+                    "hitPattern": {
+                      "onHitEffectName": "default",
+                      "hitImpulseY": "",
+                      "hitImpulseType": "LV7",
+                      "retreatType": "ByHitDirectionInverse",
+                      "hitHaltTimeScale": 0.05000000074505806
+                    },
+                    "canBeModifiedBy": "OriginOwner"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "Predicated",
+          "target": "Target",
+          "targetPredicates": [
+            {
+              "$type": "ByEntityTypes",
+              "entityTypes": [
+                "Monster",
+                "Avatar"
+              ]
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ANIMAL_ENTITY_TYPE",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "AttachModifier",
+              "target": "Target",
+              "modifierName": "WindBlackHole_Gadget_Pre"
+            }
+          ],
+          "failActions": [
+            {
+              "$type": "CreateGadget",
+              "born": {
+                "$type": "ConfigBornByCollisionPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "FNKDGDKJHPC",
+                  "eularAngles": {
+                    "x": 0.10000000149011612,
+                    "y": 0.10000000149011612,
+                    "z": 0.10000000149011612
+                  }
+                }
+              },
+              "gadgetID": 41076011,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Faruzan_SkillObjAbility_WindZone_Hit",
+      "modifiers": {
+        "WindBlackHole_Gadget_WindZone": {
+          "modifierName": "",
+          "elementDurability": 0.30000001192092896,
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EIMGEIJIDNO",
+              "shapeName": "CircleR6",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "useRotation": true
+              },
+              "strength": 4.0,
+              "IAELBHDMINN": 2.0,
+              "MMBCLAEOEFB": 1.0,
+              "targetType": "All",
+              "predicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Avatar"
+                  ],
+                  "reject": true
+                }
+              ],
+              "modifierName": ""
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "WindBlackHole_Gadget_WindZone"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_WindZone_Avatar",
+      "onAbilityStart": [
+        {
+          "$type": "CreateGadget",
+          "shieldHP": true,
+          "born": {
+            "$type": "ICKMMAHFNIM",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "direction": {
+              "$type": "FNKDGDKJHPC",
+              "eularAngles": {
+                "x": 0.10000000149011612,
+                "y": 0.10000000149011612,
+                "z": 0.10000000149011612
+              }
+            },
+            "useRotation": true,
+            "positionKey": "Faruzan_RootNode_Pos",
+            "directionKey": ""
+          },
+          "gadgetID": 41076015,
+          "campID": 1001,
+          "campTargetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_WindZone_Monster",
+      "onAbilityStart": [
+        {
+          "$type": "CreateGadget",
+          "shieldHP": true,
+          "born": {
+            "$type": "ICKMMAHFNIM",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "direction": {
+              "$type": "FNKDGDKJHPC",
+              "eularAngles": {
+                "x": 0.10000000149011612,
+                "y": 0.10000000149011612,
+                "z": 0.10000000149011612
+              }
+            },
+            "useRotation": true,
+            "positionKey": "Faruzan_Fx_ChestNode_Pos",
+            "directionKey": ""
+          },
+          "gadgetID": 41076015,
+          "campID": 1001,
+          "campTargetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_WindZone_Monster_Constellation6",
+      "onAbilityStart": [
+        {
+          "$type": "CreateGadget",
+          "shieldHP": true,
+          "born": {
+            "$type": "ICKMMAHFNIM",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "direction": {
+              "$type": "FNKDGDKJHPC",
+              "eularAngles": {
+                "x": 0.10000000149011612,
+                "y": 0.10000000149011612,
+                "z": 0.10000000149011612
+              }
+            },
+            "useRotation": true,
+            "positionKey": "Faruzan_Fx_ChestNode_Constellation6_Pos",
+            "directionKey": ""
+          },
+          "gadgetID": 41076015,
+          "campID": 1001,
+          "campTargetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_WindBlackHole_Gadget",
+      "abilitySpecials": {
+        "WindBlackHole_Gadget_Damage": 0.0,
+        "WindSubHurtDown_Time": 0.0,
+        "WindSubHurtDown_Ratio": 0.0,
+        "Hit_Count": 0.0,
+        "ReviveEnergyExtraValue": 0.0,
+        "ReviveEnergyExtraMaxValue": 0.0,
+        "ReviveEnergyBaseValue": 0.0
+      },
+      "modifiers": {
+        "WindBlackHole_Eff_OnGround": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Faruzan_HurricaneArrow_Hit",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "WindBlackHole_Bullet": {
+          "modifierName": "",
+          "elementDurability": 0.019999999552965164,
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "WindBlackHole_Gadget_Pre"
+            }
+          ]
+        },
+        "WindBlackHole_Gadget_Pre": {
+          "modifierName": "",
+          "elementDurability": 0.47999998927116394,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "predicates": [
+                {
+                  "$type": "IMPNKNCABJD",
+                  "target": "CasterOriginOwner"
+                }
+              ],
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Faruzan_ElementalArt_WindZone_OnGround",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "predicates": [
+                {
+                  "$type": "IMPNKNCABJD",
+                  "target": "CasterOriginOwner"
+                }
+              ],
+              "modifierName": "WindBlackHole_Gadget_Handler"
+            }
+          ]
+        },
+        "WindBlackHole_Gadget_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "WindBlackHole_Gadget_WindZone"
+            },
+            {
+              "$type": "LPAMFJLFPDF",
+              "target": "OriginOwner",
+              "attackTargetMapEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "useRotation": true
+                  },
+                  "radius": 6.0
+                },
+                "attackInfoMap": {
+                  "Enemy": {
+                    "attackTag": "Elemental_Art",
+                    "attenuationTag": "",
+                    "attenuationGroup": "default",
+                    "attackProperty": {
+                      "actorGrassSubHurtDelta": "WindBlackHole_Gadget_Damage",
+                      "actorWindSubHurtDelta": 0.0,
+                      "elementType": "Wind",
+                      "bonusCritical": 25.0,
+                      "strikeType": "Default",
+                      "enBreak": 150.0,
+                      "attackType": "Range",
+                      "GLKMCMDJBIK": 0.0
+                    },
+                    "hitPattern": {
+                      "onHitEffectName": "default",
+                      "hitImpulseY": "",
+                      "hitImpulseType": "LV7",
+                      "retreatType": "ByHitDirectionInverse",
+                      "hitHaltTimeScale": 0.05000000074505806
+                    }
+                  },
+                  "Alliance": {
+                    "attackTag": "Faruzan_WindBlackHole",
+                    "attenuationTag": "",
+                    "attenuationGroup": "default",
+                    "attackProperty": {
+                      "actorGrassSubHurtDelta": 0.0,
+                      "actorWindSubHurtDelta": 0.0,
+                      "elementType": "Wind",
+                      "bonusCritical": 50.0,
+                      "strikeType": "Default",
+                      "enBreak": 110.0,
+                      "GLKMCMDJBIK": 0.0
+                    },
+                    "hitPattern": {
+                      "onHitEffectName": "default",
+                      "hitImpulseY": "",
+                      "hitImpulseType": "LV7",
+                      "retreatType": "ByHitDirectionInverse",
+                      "hitHaltTimeScale": 0.05000000074505806
+                    },
+                    "canBeModifiedBy": "OriginOwner"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "WindBlackHole_Gadget_WindZone": {
+          "modifierName": "",
+          "elementDurability": 0.30000001192092896,
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EIMGEIJIDNO",
+              "shapeName": "CircleR6",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "useRotation": true
+              },
+              "strength": 4.0,
+              "IAELBHDMINN": 2.0,
+              "MMBCLAEOEFB": 1.0,
+              "targetType": "All",
+              "predicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Avatar"
+                  ],
+                  "reject": true
+                }
+              ],
+              "modifierName": ""
+            }
+          ]
+        },
+        "Faruzan_WindBlackHole_Gadget_Reject_Push": {
+          "modifierName": "",
+          "elementDurability": 2.0,
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PHBONPABPIH",
+              "attackTag": "Faruzan_WindBlackHole"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "ApplyModifier",
+          "modifierName": "WindBlackHole_Eff_OnGround"
+        },
+        {
+          "$type": "ApplyModifier",
+          "modifierName": "WindBlackHole_Bullet"
+        },
+        {
+          "$type": "ApplyModifier",
+          "target": "AllPlayerAvatars",
+          "modifierName": "Faruzan_WindBlackHole_Gadget_Reject_Push"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_Elemental_Burst_BS",
+      "abilityMixins": [
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Faruzan_ElementalBurst"
+          ],
+          "modifierName": "UNIQUE_Faruzan_ElementalBurst_Camera_Remover",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Faruzan_ElementalBurst"
+          ],
+          "modifierName": "UNIQUE_Faruzan_ElementalBurst_Invincible",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "UNIQUE_Faruzan_ElementalBurst_Camera_Remover": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "RemoveUniqueModifier",
+              "otherTargets": {
+                "$type": "MEOIGEJCJLB",
+                "configID": 41076012
+              },
+              "shieldHP": true,
+              "modifierName": "UNIQUE_Avatar_Faruzan_ElementalBurst_GadgetLifeController"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PEIPIGEMHEK",
+              "shieldHP": true
+            },
+            {
+              "$type": "LJBFFDLKIKL",
+              "shieldHP": true,
+              "cameraParam": {
+                "forceRadius": 6.0,
+                "forceRadiusDuration": 0.0,
+                "shouldKeepForceRadius": true
+              }
+            }
+          ]
+        },
+        "UNIQUE_Faruzan_ElementalBurst_Invincible": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "bonusCritical": 100.0,
+          "state": "Invincible",
+          "onAdded": [
+            {
+              "$type": "OPAOGKPJLIG",
+              "resistanceListID": 11002
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_Elemental_Burst",
+      "onAbilityStart": [
+        {
+          "$type": "AvatarSkillStart",
+          "skillID": 10765,
+          "amountByTargetCurrentHPRatio": 1.0,
+          "costStaminaRatio": 1.0
+        },
+        {
+          "$type": "CreateGadget",
+          "born": {
+            "$type": "JHEBKCMEMLN",
+            "offset": {
+              "x": 0.0,
+              "y": 2.5,
+              "z": 1.5
+            }
+          },
+          "gadgetID": 41076012,
+          "campID": 1001,
+          "campTargetType": "Enemy"
+        },
+        {
+          "$type": "FireEffect",
+          "rotationDampTime": "Eff_Avatar_Girl_Bow_Faruzan_ElementalBurst_Cast_BS",
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "useRotation": true
+          },
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "RemoveUniqueModifier",
+          "otherTargets": {
+            "$type": "MEOIGEJCJLB",
+            "configID": 41076012
+          },
+          "shieldHP": true,
+          "modifierName": "UNIQUE_Avatar_Faruzan_ElementalBurst_GadgetLifeController"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Faruzan_ElementalBurst_Gadget_Born",
+      "modifiers": {
+        "UNIQUE_Faruzan_ElementalBurst_Gadget_Born_Eff": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.10000000149011612,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Faruzan_ElementalBurst_Cast",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "useRotation": true
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "JPHLIDGMGBG",
+              "cameraRadialBlur": {
+                "power": 0.800000011920929,
+                "blurTime": 0.20000000298023224,
+                "fadeTime": 0.25
+              }
+            },
+            {
+              "$type": "TriggerAbility",
+              "abilityName": "Faruzan_ElementalBurst_Gadget_Controller"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "UNIQUE_Faruzan_ElementalBurst_Gadget_Born_Eff"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Faruzan_ElementalBurst_Gadget_Born_Attack",
+      "abilitySpecials": {
+        "Faruzan_ElementalBurst_Damage": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_Faruzan_ElementalBurst_Gadget_Born_Attack": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.10000000149011612,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "TriggerAttackEvent",
+              "target": "CasterOriginOwner",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "useRotation": true
+                  },
+                  "radius": 6.300000190734863
+                },
+                "attackInfo": {
+                  "attackTag": "Elemental_Burst",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "Faruzan_ElementalBurst_Damage",
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Wind",
+                    "bonusCritical": 25.0,
+                    "enBreak": 200.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV3",
+                    "hitHaltTimeScale": 0.019999999552965164
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "UNIQUE_Faruzan_ElementalBurst_Gadget_Born_Attack"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Faruzan_ElementalBurst_Gadget",
+      "abilitySpecials": {
+        "Faruzan_ElementalBurst_Gadget_Duration": 12.5
+      },
+      "modifiers": {
+        "UNIQUE_Faruzan_ElementalBurst_Gadget_LifeTime": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "Faruzan_ElementalBurst_Gadget_Duration",
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "UNIQUE_Faruzan_ElementalBurst_Gadget_Die"
+            }
+          ]
+        },
+        "UNIQUE_Faruzan_ElementalBurst_Gadget_Die": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.5,
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "RemoveUniqueModifier",
+              "modifierName": "UNIQUE_Avatar_Faruzan_ElementalBurst_GadgetLifeController"
+            }
+          ]
+        },
+        "Faruzan_ElementalBurst_Weather": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "JFFOPFFEBPN",
+              "damageRatio": "Skill",
+              "weatherPattern": "Weather_Faruzan_ElementalBurst",
+              "transDuration": 0.30000001192092896,
+              "duration": 2.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "ApplyModifier",
+          "modifierName": "UNIQUE_Faruzan_ElementalBurst_Gadget_LifeTime"
+        },
+        {
+          "$type": "AttachModifier",
+          "modifierName": "Faruzan_ElementalBurst_Weather"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "FireEffect",
+          "rotationDampTime": "Eff_Avatar_Girl_Bow_Faruzan_ElementBurst_Temp",
+          "born": {
+            "$type": "ConfigBornBySelf",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "useRotation": true
+          },
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Faruzan_ElementalBurst_Gadget_Controller",
+      "abilitySpecials": {
+        "AttackUpTime": 0.0,
+        "WindSubHurtDown_Time": 0.0,
+        "WindAddHurtUp_Ratio": 0.0,
+        "WindSubHurtDown_Ratio": 0.0,
+        "Faruzan_ElementalBurst_Damage_Percentage": 0.0,
+        "BaseAttackValue": 0.0,
+        "MaxExtraDamageRatio": 0.0,
+        "ExtraDamageRatio": 0.0,
+        "ExtraDamage_CD": 0.0,
+        "CriticalHurtUpRatio": 0.0
+      },
+      "onAdded": [
+        {
+          "$type": "SetGlobalValue",
+          "param3": 0.0,
+          "key": "Faruzan_ElementalBurst_Gadget",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "KillSelf",
+          "predicates": [
+            {
+              "$type": "FMBJAJFLDIP",
+              "target": "OriginOwner",
+              "logic": "GreaterOrEqual",
+              "compareType": "XYZ",
+              "param3": 80.0,
+              "DDALGNLEHOD": ""
+            }
+          ]
+        },
+        {
+          "$type": "TriggerAbility",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "target": "Self",
+              "key": "Faruzan_ElementalBurst_Gadget",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "abilityName": "Faruzan_WindSubHurtDown_Controller"
+        },
+        {
+          "$type": "TriggerAbility",
+          "target": "CasterOriginOwner",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "target": "Self",
+              "key": "Faruzan_ElementalBurst_Gadget",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "abilityName": "Avatar_Faruzan_PermanentSkill2_WindDamageExtraUp"
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "FireEffect",
+          "rotationDampTime": "Eff_Avatar_Girl_Bow_Faruzan_ElementalBurst_Destroy",
+          "born": {
+            "$type": "ConfigBornByAttachPoint",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "useRotation": true,
+            "attachPointName": "RootNode"
+          },
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "param3": -1.0,
+          "key": "Faruzan_ElementalBurst_Gadget",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_PermanentSkill2_WindDamageExtraUp",
+      "abilitySpecials": {
+        "AttackUpTime": 0.0,
+        "ExtraDamageRatio": 0.0,
+        "ExtraDamage_CD": 0.0,
+        "WindAddHurtUp_Ratio": 0.0,
+        "CriticalHurtUpRatio": 0.0,
+        "AutoHurricaneArrow_CD_Duration": 0.0,
+        "WindBlackHole_Gadget_Damage": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_Avatar_Faruzan_ElementalBurst_WindDamageValueUp_ApplyRange": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "AttackUpTime",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "RemoveUniqueModifier",
+              "target": "AllPlayerAvatars",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "FMBJAJFLDIP",
+                  "logic": "LesserOrEqual",
+                  "param3": 40.0,
+                  "DDALGNLEHOD": ""
+                }
+              ],
+              "modifierName": "UNIQUE_Avatar_Faruzan_ElementalBurst_WindAddHurtUp"
+            },
+            {
+              "$type": "AttachModifier",
+              "target": "AllPlayerAvatars",
+              "predicates": [
+                {
+                  "$type": "FMBJAJFLDIP",
+                  "logic": "LesserOrEqual",
+                  "param3": 40.0,
+                  "DDALGNLEHOD": ""
+                }
+              ],
+              "modifierName": "UNIQUE_Avatar_Faruzan_ElementalBurst_WindAddHurtUp"
+            },
+            {
+              "$type": "ApplyModifier",
+              "target": "AllPlayerAvatars",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "FMBJAJFLDIP",
+                  "logic": "LesserOrEqual",
+                  "param3": 40.0,
+                  "DDALGNLEHOD": ""
+                }
+              ],
+              "modifierName": "UNIQUE_Avatar_Faruzan_ElementalBurst_WindAddHurtUp_EffOnAdd_Handler"
+            }
+          ]
+        },
+        "UNIQUE_Avatar_Faruzan_ElementalBurst_GadgetLifeController": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorBool",
+              "canBeHandledOnRecover": true,
+              "boolID": "Die",
+              "param3": true
+            },
+            {
+              "$type": "KillSelf",
+              "canBeHandledOnRecover": true,
+              "configIdArray": [
+                41076012
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Avatar_Faruzan_ElementalBurst_WindAddHurtUp": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "AttackUpTime",
+          "bonusCritical": 100.0,
+          "properties": {
+            "Actor_WindAddHurtDelta": "WindAddHurtUp_Ratio"
+          },
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_Avatar_Faruzan_ElementalBurst_WindAddHurtUp_LoopEff"
+            },
+            {
+              "$type": "AttachModifier",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "ByUnlockTalentParam",
+                  "target": "Caster",
+                  "talentParam": "TalentParam_Faruzan_PermanentSkill_2"
+                }
+              ],
+              "modifierName": "UNIQUE_Avatar_Faruzan_ElementalBurst_WindDamageValueUp_Handler"
+            },
+            {
+              "$type": "AttachModifier",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "ByUnlockTalentParam",
+                  "target": "Caster",
+                  "talentParam": "Faruzan_Constellation_6"
+                }
+              ],
+              "modifierName": "UNIQUE_Avatar_Faruzan_ElementalBurst_WindCriticalHurtUp"
+            },
+            {
+              "$type": "AttachModifier",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "ByUnlockTalentParam",
+                  "target": "Caster",
+                  "talentParam": "Faruzan_Constellation_6"
+                }
+              ],
+              "modifierName": "UNIQUE_Avatar_Faruzan_ElementalBurst_AutoHurricaneArrow"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_Faruzan_ElementalBurst_WindDamageValueUp_Handler": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "DIFGDDGLFDJ",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Self",
+                  "key": "_ABILITY_WindDamageExtra_Enable",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "modifierName": "UNIQUE_Avatar_Faruzan_ElementalBurst_WindDamageValueUp"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "RemoveUniqueModifier",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_Avatar_Faruzan_ElementalBurst_WindDamageValueUp"
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_Faruzan_ElementalBurst_WindDamageValueUp": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "HNFMLFFBPNA",
+              "attackTags": [
+                "NormalAttack_01",
+                "NormalAttack_02",
+                "NormalAttack_03",
+                "NormalAttack_04",
+                "NormalAttack_05",
+                "NormalAttack_06",
+                "ExtraAttack",
+                "FallingAttack",
+                "Elemental_Art",
+                "Elemental_Art_Hold",
+                "Elemental_Art_Extra",
+                "Elemental_Burst"
+              ],
+              "actorWindSubHurtDelta": 0.0,
+              "damageExtra": [
+                "ExtraDamageRatio",
+                "FIGHT_PROP_BASE_ATTACK",
+                "MUL"
+              ],
+              "predicates": [
+                {
+                  "$type": "PNLEEOAGKLD",
+                  "target": "Self",
+                  "element": "Wind"
+                },
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "maxModifyCount": 1.0,
+              "maxCountActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "shieldHP": true,
+                  "modifierName": "UNIQUE_Avatar_Faruzan_ElementalBurst_WindDamageValueUp_CD"
+                }
+              ],
+              "bonusCritical": ""
+            }
+          ]
+        },
+        "UNIQUE_Avatar_Faruzan_ElementalBurst_WindDamageValueUp_CD": {
+          "timeScale": "Level",
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "ExtraDamage_CD",
+          "bonusCritical": 100.0,
+          "state": "UnlockFrequencyLimit",
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "param3": -1.0,
+              "key": "_ABILITY_WindDamageExtra_Enable",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "canBeHandledOnRecover": true,
+              "param3": 0.0,
+              "key": "_ABILITY_WindDamageExtra_Enable",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "UNIQUE_Avatar_Faruzan_ElementalBurst_WindCriticalHurtUp": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "ModifyDamageMixin",
+              "ignoreEventInfo": true,
+              "actorWindSubHurtDelta": 0.0,
+              "actorElementReactionCriticalHurtDelta": "CriticalHurtUpRatio",
+              "predicates": [
+                {
+                  "$type": "PNLEEOAGKLD",
+                  "element": "Wind"
+                },
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ]
+            }
+          ],
+          "isLimitedProperties": true
+        },
+        "UNIQUE_Avatar_Faruzan_ElementalBurst_AutoHurricaneArrow": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "bonusCritical": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "Predicated",
+              "target": "Other",
+              "predicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Self",
+                  "key": "_ABILITY_Faruzan_AutoHurricaneArrow_Enable",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Caster",
+                  "key": "_ABILITY_Faruzan_AutoHurricaneArrow_CD",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "ByHitDamage",
+                  "target": "Self",
+                  "damage": 0.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "target": "Other",
+                  "modifierName": "WindBlackHole_Gadget_Pre_Constellation_6"
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "target": "Caster",
+                  "modifierName": "UNIQUE_Avatar_Faruzan_ElementalBurst_AutoHurricaneArrow_CD"
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "target": "AllPlayerAvatars",
+                  "modifierName": "Faruzan_WindBlackHole_Gadget_Reject_Push"
+                }
+              ]
+            }
+          ]
+        },
+        "WindBlackHole_Gadget_Pre_Constellation_6": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "predicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Self",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Faruzan_WindZone_Attach_Mask",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "predicates": [
+                {
+                  "$type": "ByEntityTypes",
+                  "target": "Self",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "IMPNKNCABJD",
+                  "target": "Caster"
+                }
+              ],
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Faruzan_ElementalArt_WindZone_Attach",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "CreateGadget",
+              "predicates": [
+                {
+                  "$type": "IMPNKNCABJD",
+                  "target": "Caster"
+                }
+              ],
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "direction": {
+                  "$type": "FNKDGDKJHPC",
+                  "eularAngles": {
+                    "x": 0.10000000149011612,
+                    "y": 0.10000000149011612,
+                    "z": 0.10000000149011612
+                  }
+                },
+                "useRotation": true,
+                "attachPointName": "Fx_ChestNode",
+                "attachPointTargetType": "Self"
+              },
+              "gadgetID": 41076015,
+              "campID": 1001,
+              "campTargetType": "Enemy"
+            },
+            {
+              "$type": "LPAMFJLFPDF",
+              "target": "Caster",
+              "predicates": [
+                {
+                  "$type": "IMPNKNCABJD",
+                  "target": "Caster"
+                }
+              ],
+              "attackTargetMapEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornByAttachPoint",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "direction": {
+                      "$type": "AHGNBAPONLA"
+                    },
+                    "useRotation": true,
+                    "attachPointName": "Fx_ChestNode",
+                    "attachPointTargetType": "Self"
+                  },
+                  "radius": 6.0
+                },
+                "attackInfoMap": {
+                  "Enemy": {
+                    "attackTag": "Elemental_Art",
+                    "attenuationTag": "",
+                    "attenuationGroup": "default",
+                    "attackProperty": {
+                      "actorGrassSubHurtDelta": "WindBlackHole_Gadget_Damage",
+                      "actorWindSubHurtDelta": 0.0,
+                      "elementType": "Wind",
+                      "bonusCritical": 25.0,
+                      "strikeType": "Default",
+                      "enBreak": 150.0,
+                      "attackType": "Range",
+                      "GLKMCMDJBIK": 0.0
+                    },
+                    "hitPattern": {
+                      "onHitEffectName": "default",
+                      "hitImpulseY": "",
+                      "hitImpulseType": "LV7",
+                      "retreatType": "ByHitDirectionInverse",
+                      "hitHaltTimeScale": 0.05000000074505806
+                    }
+                  },
+                  "Alliance": {
+                    "attackTag": "Faruzan_WindBlackHole",
+                    "attenuationTag": "",
+                    "attenuationGroup": "default",
+                    "attackProperty": {
+                      "actorGrassSubHurtDelta": 0.0,
+                      "actorWindSubHurtDelta": 0.0,
+                      "elementType": "Wind",
+                      "bonusCritical": 50.0,
+                      "strikeType": "Default",
+                      "enBreak": 110.0,
+                      "GLKMCMDJBIK": 0.0
+                    },
+                    "hitPattern": {
+                      "onHitEffectName": "default",
+                      "hitImpulseY": "",
+                      "hitImpulseType": "LV7",
+                      "retreatType": "ByHitDirectionInverse",
+                      "hitHaltTimeScale": 0.05000000074505806
+                    },
+                    "canBeModifiedBy": "OriginOwner"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "UNIQUE_Avatar_Faruzan_ElementalBurst_AutoHurricaneArrow_CD": {
+          "timeScale": "Level",
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "AutoHurricaneArrow_CD_Duration",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "param3": -1.0,
+              "key": "_ABILITY_Faruzan_AutoHurricaneArrow_CD",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "canBeHandledOnRecover": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Faruzan_AutoHurricaneArrow_CD",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "UNIQUE_Avatar_Faruzan_ElementalBurst_WindAddHurtUp_EffOnAdd_Handler": {
+          "stacking": "MultipleAllRefresh",
+          "stackingOption": {
+            "abilitySpecialName": "",
+            "maxModifierNumForMultipleType": 1.0,
+            "enableMixedUnique": true
+          },
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "AttackUpTime",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "modifierName": "UNIQUE_Avatar_Faruzan_ElementalBurst_WindAddHurtUp_EffOnAdd"
+            }
+          ]
+        },
+        "UNIQUE_Avatar_Faruzan_ElementalBurst_WindAddHurtUp_EffOnAdd": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.10000000149011612,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Faruzan_ElementalBurst_WindAddHurt_OnAdd",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": 1.0,
+                  "z": 0.0
+                },
+                "useRotation": true
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "UNIQUE_Avatar_Faruzan_ElementalBurst_WindAddHurtUp_LoopEff": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "shieldHP": true,
+              "rotationDampTime": "Eff_Avatar_Girl_Bow_Faruzan_ElementalBurst_WindAddHurt",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "useRotation": true
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Faruzan_WindBlackHole_Gadget_Reject_Push": {
+          "modifierName": "",
+          "elementDurability": 2.0,
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "PHBONPABPIH",
+              "attackTag": "Faruzan_WindBlackHole"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "RemoveUniqueModifier",
+          "otherTargets": {
+            "$type": "MEOIGEJCJLB",
+            "configID": 41076012
+          },
+          "shieldHP": true,
+          "modifierName": "UNIQUE_Avatar_Faruzan_ElementalBurst_WindDamageValueUp_ApplyRange"
+        },
+        {
+          "$type": "AttachModifier",
+          "otherTargets": {
+            "$type": "MEOIGEJCJLB",
+            "configID": 41076012
+          },
+          "shieldHP": true,
+          "modifierName": "UNIQUE_Avatar_Faruzan_ElementalBurst_WindDamageValueUp_ApplyRange"
+        },
+        {
+          "$type": "AttachModifier",
+          "otherTargets": {
+            "$type": "MEOIGEJCJLB",
+            "configID": 41076012
+          },
+          "shieldHP": true,
+          "modifierName": "UNIQUE_Avatar_Faruzan_ElementalBurst_GadgetLifeController"
+        }
+      ],
+      "onKill": [
+        {
+          "$type": "RemoveUniqueModifier",
+          "otherTargets": {
+            "$type": "MEOIGEJCJLB",
+            "configID": 41076012
+          },
+          "shieldHP": true,
+          "modifierName": "UNIQUE_Avatar_Faruzan_ElementalBurst_WindDamageValueUp_ApplyRange"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Faruzan_WindSubHurtDown_Controller",
+      "abilitySpecials": {
+        "GenerateBall_CD_Time": 0.0,
+        "WindSubHurtDown_Time": 0.0,
+        "WindSubHurtDown_Ratio": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_Faruzan_ElementalArt_WindSubHurtDown": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "bonusCritical": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "Predicated",
+              "target": "Other",
+              "shieldHP": true,
+              "targetPredicates": [
+                {
+                  "$type": "ByAttackTags",
+                  "target": "Self",
+                  "attackTags": [
+                    "Elemental_Art"
+                  ]
+                },
+                {
+                  "$type": "EGKHHMLPGLB",
+                  "target": "Self",
+                  "attackType": "Range"
+                },
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "ByUnlockTalentParam",
+                  "talentParam": "TalentParam_Faruzan_PermanentSkill_1"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "RemoveUniqueModifier",
+                  "target": "Target",
+                  "shieldHP": true,
+                  "modifierName": "UNIQUE_Faruzan_WindSubHurtDown"
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "target": "Target",
+                  "shieldHP": true,
+                  "modifierName": "UNIQUE_Faruzan_WindSubHurtDown"
+                }
+              ]
+            },
+            {
+              "$type": "Predicated",
+              "target": "Target",
+              "shieldHP": true,
+              "targetPredicates": [
+                {
+                  "$type": "ByAttackTags",
+                  "target": "Self",
+                  "attackTags": [
+                    "Elemental_Art"
+                  ]
+                },
+                {
+                  "$type": "EGKHHMLPGLB",
+                  "target": "Self",
+                  "attackType": "Range"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Self",
+                  "key": "_ABILITY_Faruzan_GenerateBall_CD",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "SetGlobalPos",
+                  "target": "Target",
+                  "shieldHP": true,
+                  "key": "Faruzan_ElementBall_Pos",
+                  "born": {
+                    "$type": "JHEBKCMEMLN"
+                  },
+                  "setTarget": false
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "shieldHP": true,
+                  "modifierName": "Faruzan_WindZoneAttackLand_GenerateBall"
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "shieldHP": true,
+                  "modifierName": "UNIQUE_Faruzan_WindZoneAttackLand_GenerateBall_CD"
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Faruzan_WindSubHurtDown": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "WindSubHurtDown_Time",
+          "bonusCritical": 100.0,
+          "properties": {
+            "Actor_WindSubHurtDelta": [
+              0.0,
+              1.0,
+              "WindSubHurtDown_Ratio",
+              "MUL",
+              "SUB"
+            ]
+          },
+          "state": "DefenseDown",
+          "isLimitedProperties": true
+        },
+        "Faruzan_WindZoneAttackLand_GenerateBall": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "GenerateElemBall",
+              "shieldHP": true,
+              "configID": 2021,
+              "born": {
+                "$type": "ICKMMAHFNIM",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "bornRandom": {
+                  "$type": "OJKHDGHBNKP",
+                  "minRandomRange": 0.5,
+                  "maxRandomRange": 1.5
+                },
+                "positionKey": "Faruzan_ElementBall_Pos",
+                "directionKey": ""
+              },
+              "hpRatio": 1.0,
+              "baseEnergy": 6.0
+            }
+          ]
+        },
+        "UNIQUE_Faruzan_WindZoneAttackLand_GenerateBall_CD": {
+          "timeScale": "Level",
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "GenerateBall_CD_Time",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "param3": -1.0,
+              "key": "_ABILITY_Faruzan_GenerateBall_CD",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Faruzan_GenerateBall_CD",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "shieldHP": true,
+          "predicates": [
+            {
+              "$type": "ByEntityTypes",
+              "target": "Self",
+              "entityTypes": [
+                "Avatar"
+              ]
+            }
+          ],
+          "modifierName": "UNIQUE_Faruzan_ElementalArt_WindSubHurtDown"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "RemoveUniqueModifier",
+          "otherTargets": {
+            "$type": "SelectTargetsByShape",
+            "entityTypePriority": [
+              "Monster"
+            ],
+            "shapeName": "CircleR6H10",
+            "campTargetType": "Enemy",
+            "doOffStage": 1.0
+          },
+          "predicates": [
+            {
+              "$type": "ByEntityTypes",
+              "entityTypes": [
+                "Monster"
+              ]
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ANIMAL_ENTITY_TYPE",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "modifierName": "UNIQUE_Faruzan_WindSubHurtDown"
+        },
+        {
+          "$type": "ApplyModifier",
+          "otherTargets": {
+            "$type": "SelectTargetsByShape",
+            "entityTypePriority": [
+              "Monster"
+            ],
+            "shapeName": "CircleR6H10",
+            "campTargetType": "Enemy",
+            "doOffStage": 1.0
+          },
+          "predicates": [
+            {
+              "$type": "ByEntityTypes",
+              "entityTypes": [
+                "Monster"
+              ]
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ANIMAL_ENTITY_TYPE",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "modifierName": "UNIQUE_Faruzan_WindSubHurtDown"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_Constellation4_ReviveEnergy",
+      "abilitySpecials": {
+        "ReviveEnergyBaseValue": 0.0,
+        "ReviveEnergyExtraValue": 0.0,
+        "ReviveEnergyExtraMaxValue": 0.0,
+        "Hit_Count": 0.0
+      },
+      "modifiers": {
+        "UNIQUE_Faruzan_Constellation4_ReviveEnergy_HurricaneArrowLand": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "param3": -1.0,
+              "key": "_AVATAR_FARUZAN_HIT_COUNT",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "param3": "ReviveEnergyExtraMaxValue",
+              "key": "_ABILITY_FARUZAN_REVIVE_MAX_ENERGY",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_FARUZAN_REVIVE_ENERGY_ZERO",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onHittingOther": [
+            {
+              "$type": "Predicated",
+              "target": "Target",
+              "shieldHP": true,
+              "targetPredicates": [
+                {
+                  "$type": "ByAttackTags",
+                  "target": "Self",
+                  "attackTags": [
+                    "Elemental_Art"
+                  ]
+                },
+                {
+                  "$type": "EGKHHMLPGLB",
+                  "target": "Self",
+                  "attackType": "Range"
+                },
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "ByUnlockTalentParam",
+                  "target": "Self",
+                  "talentParam": "Faruzan_Constellation_4"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "AddGlobalValue",
+                  "shieldHP": true,
+                  "param3": 1.0,
+                  "key": "_AVATAR_FARUZAN_HIT_COUNT",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "shieldHP": true,
+                  "modifierName": "UNIQUE_Faruzan_Constellation4_ReviveEnergy"
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Faruzan_Constellation4_ReviveEnergy": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": 0.10000000149011612,
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "LDIAIDLOPEE",
+              "shieldHP": true,
+              "globalValueKey": "_AVATAR_FARUZAN_HIT_COUNT",
+              "overrideMapKey": "Hit_Count"
+            },
+            {
+              "$type": "ReviveElemEnergy",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Self",
+                  "key": "_AVATAR_FARUZAN_HIT_COUNT",
+                  "param3": 0.0,
+                  "compareType": "MoreThanAndEqual"
+                }
+              ],
+              "param3": "ReviveEnergyBaseValue"
+            },
+            {
+              "$type": "ReviveElemEnergy",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_FARUZAN_REVIVE_MAX_ENERGY",
+                  "param3": [
+                    "ReviveEnergyExtraValue",
+                    "Hit_Count",
+                    "MUL"
+                  ],
+                  "compareType": "MoreThan"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_FARUZAN_REVIVE_ENERGY_ZERO",
+                  "param3": [
+                    "ReviveEnergyExtraValue",
+                    "Hit_Count",
+                    "MUL"
+                  ],
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "param3": [
+                "ReviveEnergyExtraValue",
+                "Hit_Count",
+                "MUL"
+              ]
+            },
+            {
+              "$type": "ReviveElemEnergy",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_FARUZAN_REVIVE_MAX_ENERGY",
+                  "param3": [
+                    "ReviveEnergyExtraValue",
+                    "Hit_Count",
+                    "MUL"
+                  ],
+                  "compareType": "LessAndEqual"
+                }
+              ],
+              "param3": "ReviveEnergyExtraMaxValue"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "param3": -1.0,
+              "key": "_AVATAR_FARUZAN_HIT_COUNT",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "shieldHP": true,
+          "modifierName": "UNIQUE_Faruzan_Constellation4_ReviveEnergy_HurricaneArrowLand"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Faruzan_Constellation6_AutoHurricaneArrow_BulletTrigger",
+      "modifiers": {
+        "Faruzan_Constellation6_AutoHurricaneArrow_DelayBullet": {
+          "modifierName": "",
+          "elementDurability": 0.30000001192092896,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Faruzan_HurricaneArrow_SpecialReady",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "TriggerBullet",
+              "bulletID": 41076013,
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "useRotation": true
+              }
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "ApplyModifier",
+          "modifierName": "Faruzan_Constellation6_AutoHurricaneArrow_DelayBullet"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,1456 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Necalevia_BeforeBattleShow",
+      "abilityMixins": [
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            3
+          ],
+          "modifierName": "Monster_Necalevia_CommunicateHandler"
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Personality2"
+          ],
+          "modifierName": "Monster_Necalevia_TurnToOther",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AOKOIIHJJPJ",
+          "alertness": [
+            2
+          ],
+          "modifierName": "Monster_Necalevia_ResetPoseValue"
+        },
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            4
+          ],
+          "modifierName": "Monster_Necalevia_WarningPose"
+        }
+      ],
+      "modifiers": {
+        "Monster_Necalevia_WarningPose": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_WARNING_POSE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Monster_Necalevia_ResetPoseValue": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "Happy"
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "Communicate"
+            },
+            {
+              "$type": "IDNGFEEBPAM",
+              "boolID": "Warning"
+            }
+          ]
+        },
+        "Monster_Necalevia_TurnToOther": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "LCMONECFEBO",
+              "steerStateIDs": [
+                "Personality2"
+              ],
+              "endNormalizedTime": 0.5,
+              "angularSpeed": 350.0,
+              "attackTrigger": "",
+              "DGFCLAIDIFI": "",
+              "globalPosKey": "_NECALEVIA_COM_TOPOS"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "MPAGCPPAIHJ",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "topLimit": 1,
+                "shapeName": "CircleR7",
+                "campTargetType": "Alliance",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_NECALEVIA_COM_POSE",
+                  "param3": 1.0
+                }
+              ],
+              "key": "_NECALEVIA_COM_TOPOS",
+              "born": {
+                "$type": "JHEBKCMEMLN"
+              },
+              "setTarget": false
+            }
+          ]
+        },
+        "Monster_Necalevia_CommunicateHandler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_NECALEVIA_COM_POSE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Necalevia_ElementInitial",
+      "abilityMixins": [
+        {
+          "$type": "LEOGLBFIELL",
+          "poseIDs": [
+            1,
+            2,
+            3
+          ],
+          "modifierName": "Monster_Necalevia_HideBillBoard"
+        },
+        {
+          "$type": "AOKOIIHJJPJ",
+          "alertness": [
+            0,
+            1
+          ],
+          "modifierName": "Monster_Necalevia_ResetInitialPose"
+        }
+      ],
+      "modifiers": {
+        "Monster_Necalevia_ResetInitialPose": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "Happy"
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "Communicate"
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "Warning"
+            }
+          ]
+        },
+        "Monster_Necalevia_HideBillBoard": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CIGJDPCDOEB",
+              "onAdded": [
+                {
+                  "$type": "HBNEMPLJCMB",
+                  "hide": true
+                }
+              ],
+              "onRemoved": [
+                {
+                  "$type": "HBNEMPLJCMB"
+                }
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Monster_Necalevia_ElementInitial": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementType": "Water",
+          "IPFJJJGABPL": 100.0,
+          "isElementDurabilityMutable": false,
+          "properties": {
+            "Actor_EndureDelta": 0.009999999776482582
+          }
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "UNIQUE_Monster_Necalevia_ElementInitial"
+        },
+        {
+          "$type": "OPAOGKPJLIG",
+          "resistanceBuffDebuffs": [
+            "ElementWet",
+            "Struggle"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Necalevia_Normal_InitialTransform",
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_MESH_STATE",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_SP_NECALEVIA",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_IN_ANGRY",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "BOBCOJHOKKD",
+          "param3": 1.0,
+          "key": "_MESH_SMALL_STATE",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Necalevia_SmallTransformToNormal",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "TransformToNormal_AS"
+          ],
+          "modifierName": "Monster_Necalevia_SmallTransformToNormal",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_MESH_STATE",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Necalevia_Normal_MeshBody",
+            "Necalevia_Normal_MeshBodyNormal"
+          ]
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_MESH_SMALL_STATE",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5
+          ],
+          "modifierNameSteps": [
+            "Necalevia_Small_MeshBodyOpen",
+            "Necalevia_Small_MeshBodyClose"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Monster_Necalevia_SmallTransformToNormal_CloseSmallMeshDelay": {
+          "modifierName": "",
+          "elementDurability": 0.9800000190734863,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_MESH_SMALL_STATE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Monster_Necalevia_SmallTransformToNormal": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_MESH_STATE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_IN_ANGRY",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Monster_Necalevia_SmallTransformToNormal_CloseSmallMeshDelay"
+            }
+          ]
+        },
+        "Necalevia_Normal_MeshBody": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KMMLIOKPIKN",
+              "canBeHandledOnRecover": true,
+              "renderNames": [
+                "Body_Normal_01"
+              ]
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBoxSmall"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBoxNormal"
+              ]
+            }
+          ]
+        },
+        "Necalevia_Normal_MeshBodyNormal": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "FPEBEMNFIPF",
+              "attachPointName": "BillboardAttach2"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KMMLIOKPIKN",
+              "canBeHandledOnRecover": true,
+              "renderNames": [
+                "Body_Normal_01"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBoxSmall"
+              ]
+            },
+            {
+              "$type": "AENLGPIPPAK",
+              "hitBoxNames": [
+                "HitBoxNormal"
+              ],
+              "setEnable": true
+            }
+          ]
+        },
+        "Necalevia_Small_MeshBodyOpen": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KMMLIOKPIKN",
+              "canBeHandledOnRecover": true,
+              "renderNames": [
+                "Body_Small_01"
+              ],
+              "setEnable": true
+            }
+          ]
+        },
+        "Necalevia_Small_MeshBodyClose": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "BIOOHKEJOPI",
+              "MIPDKACPIGJ": "EffectMesh2"
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "KMMLIOKPIKN",
+              "canBeHandledOnRecover": true,
+              "renderNames": [
+                "Body_Small_01"
+              ]
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Necalevia_Normal_TransformToNormal_AS",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Necalevia_Normal_Angry",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onKill": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Necalevia_Small_Die",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Necalevia_SmallBreakToNormal",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "BreakToNormal_BS"
+          ],
+          "modifierName": "Monster_Necalevia_SmallBreakToNormal",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "NormalChangeToSmall_AS"
+          ],
+          "modifierName": "Monster_Necalevia_NormalChangeToSmall",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Monster_Necalevia_SmallBreakToNormal": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Monster_Necalevia_SmallBreakToNormal_Delay"
+            }
+          ]
+        },
+        "Monster_Necalevia_SmallBreakToNormal_Delay": {
+          "modifierName": "",
+          "elementDurability": 0.4000000059604645,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_IN_ANGRY",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Necalevia_Normal_BreakFreeze",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_MESH_STATE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_MESH_SMALL_STATE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Monster_Necalevia_NormalChangeToSmall": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_MESH_STATE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_MESH_SMALL_STATE",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_IN_ANGRY",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Necalevia_Big_ChangeToSmall",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Necalevia_BigSP_Steer",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "RangeAOEAttack_Loop"
+          ],
+          "endNormalizedTime": 5.0,
+          "angularSpeed": 150.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Necalevia_BigGeneral_Steer",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "RangeAOEAttack_Loop"
+          ],
+          "endNormalizedTime": 5.0,
+          "angularSpeed": 50.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Necalevia_NormalSP_Steer",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "RushAttack_BS"
+          ],
+          "endNormalizedTime": 0.9100000262260437,
+          "angularSpeed": 300.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "BEJLNHKNIKK",
+          "steerStateIDs": [
+            "RushAttack_Loop"
+          ],
+          "endNormalizedTime": 10.0,
+          "angularSpeed": 120.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Necalevia_NormalGeneral_Steer",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "RushAttack_BS"
+          ],
+          "endNormalizedTime": 0.9100000262260437,
+          "angularSpeed": 300.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "BEJLNHKNIKK",
+          "steerStateIDs": [
+            "RushAttack_Loop"
+          ],
+          "endNormalizedTime": 10.0,
+          "angularSpeed": 30.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Necalevia_Steer",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "SmallAttack"
+          ],
+          "endNormalizedTime": 0.4000000059604645,
+          "angularSpeed": 150.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "RotateAttack"
+          ],
+          "endNormalizedTime": 0.20999999344348907,
+          "angularSpeed": 350.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "BEJLNHKNIKK",
+          "steerStateIDs": [
+            "NormalMeleeAttack"
+          ],
+          "endNormalizedTime": 0.5,
+          "angularSpeed": 200.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "NormalRangeAttack"
+          ],
+          "endNormalizedTime": 0.5,
+          "angularSpeed": 200.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "RangeAOEAttack_BS"
+          ],
+          "endNormalizedTime": 0.4000000059604645,
+          "angularSpeed": 150.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "RangeAOEAttack_BS"
+          ],
+          "startNormalizedTime": 0.75,
+          "angularSpeed": 100.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Necalevia_Normal_RotateAtkRush",
+      "onAbilityStart": [
+        {
+          "$type": "PAGFCBCKEBH",
+          "toPos": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 1.0
+            },
+            "useRotation": true
+          },
+          "NKPCHMCNNOK": 0.10000000149011612,
+          "maxRange": 1.0,
+          "animatorStateIDs": [
+            "RotateAttack"
+          ],
+          "overrideMoveCollider": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Necalevia_NormalRushAtk",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "RushAttack_Loop"
+          ],
+          "modifierName": "Monster_Necalevia_NormalRushAtk_Eff",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "Born"
+          ],
+          "modifierName": "Remove_RushLoopEffect_Sure",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Remove_RushLoopEffect_Sure": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Monster_Necalevia_NormalRushAtk_LoopEff"
+            }
+          ]
+        },
+        "Remove_Necalevia_Rush_LoopEffect": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Monster_Necalevia_NormalRushAtk_LoopEff"
+            }
+          ]
+        },
+        "Monster_Necalevia_NormalRushAtk_LoopEff": {
+          "modifierName": "",
+          "elementDurability": 4.0,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Necalevia_Normal_RushAttack_Loop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Monster_Necalevia_NormalRushAtk_Eff": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Monster_Necalevia_NormalRushAtk_LoopEff"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "RushAttack_End",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Monster_Necalevia_Normal_RushAttack_Loop"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Remove_Necalevia_Rush_LoopEffect"
+            }
+          ],
+          "onAttackLanded": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "Other",
+              "targetPredicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Avatar",
+                    "Partner",
+                    "Vehicle"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "RushHit"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Necalevia_NormalRushAtkSP",
+      "abilityMixins": [
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "RotateAttack"
+          ],
+          "modifierName": "Monster_Necalevia_NormalRushAtkSP_CheckDistance",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EKMHJKDLBJH",
+          "stateIDs": [
+            "RushAttack_BS",
+            "RushAttack_Loop",
+            "RushAttack_AS"
+          ],
+          "modifierName": "Monster_Necalevia_NormalRushAtkSP_CheckHit",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "RushAttack_AS",
+          "modifierName": "Monster_Necalevia_NormalRushAtkSP_GoSPAtkCheck",
+          "normalizeStart": 0.25,
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Monster_Necalevia_NormalRushAtkSP_GoSPAtkCheck": {
+          "modifierName": "",
+          "elementDurability": 0.10000000149011612,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_RUSH_HIT",
+                  "param3": 0.0
+                }
+              ],
+              "PLLJBINMGJK": "NoHit"
+            }
+          ]
+        },
+        "Monster_Necalevia_NormalRushAtkSP_CheckHit": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_RUSH_HIT",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onAttackLanded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_RUSH_HIT",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Monster_Necalevia_NormalRushAtkSP_CheckDistance": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.10000000149011612,
+          "onThinkInterval": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_TARGET_FAR",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR5H4",
+                "campTargetType": "Enemy",
+                "doOffStage": 1.0
+              },
+              "targetPredicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Avatar",
+                    "Monster",
+                    "Partner",
+                    "Vehicle"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BOBCOJHOKKD",
+                  "param3": 0.0,
+                  "key": "_TARGET_FAR",
+                  "param2": 0.0,
+                  "repeatTimes": 0.0
+                }
+              ]
+            },
+            {
+              "$type": "BLCCGIPAOIP",
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_TARGET_FAR",
+                  "param3": 1.0
+                }
+              ],
+              "PLLJBINMGJK": "GoFar"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "MPAGCPPAIHJ",
+          "key": "_SP_MELEEATK_POS",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "useRotation": true
+          }
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Necalevia_Normal_NormalMeleeAttackExplode_Earth",
+          "born": {
+            "$type": "ICKMMAHFNIM",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 4.0
+            },
+            "onGround": true,
+            "positionKey": "_SP_MELEEATK_POS",
+            "directionKey": ""
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "AIFPLABJNMA",
+          "doAfterDie": false,
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "GMDIMKKHACA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "ICKMMAHFNIM",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": -0.5,
+                  "LPCHALMFFOD": 4.0
+                },
+                "onGround": true,
+                "positionKey": "_SP_MELEEATK_POS",
+                "directionKey": ""
+              },
+              "height": 3.0,
+              "OAHPDLJIADP": 2.5
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 1.0,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Water",
+                "IPFJJJGABPL": 25.0,
+                "strikeType": "Blunt",
+                "enBreak": 101.0,
+                "attackType": "Melee",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV5",
+                "canBeDefenceHalt": true
+              }
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Monster_Necalevia_NormalMeleeAttackSP",
+      "modifiers": {
+        "Monster_Necalevia_NormalMeleeAttackSP_1": {
+          "modifierName": "",
+          "elementDurability": 0.30000001192092896,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Necalevia_Normal_NormalMeleeAttackExplode_Earth",
+              "born": {
+                "$type": "ICKMMAHFNIM",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 7.0
+                },
+                "onGround": true,
+                "positionKey": "_SP_MELEEATK_POS",
+                "directionKey": ""
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "doAfterDie": false,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ICKMMAHFNIM",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": -0.5,
+                      "LPCHALMFFOD": 7.0
+                    },
+                    "onGround": true,
+                    "positionKey": "_SP_MELEEATK_POS",
+                    "directionKey": ""
+                  },
+                  "height": 3.0,
+                  "OAHPDLJIADP": 2.5
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "MeleeSPAtk",
+                  "attenuationGroup": "Oceanid_Crab_WaterStream",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 1.0,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Water",
+                    "IPFJJJGABPL": 25.0,
+                    "strikeType": "Blunt",
+                    "enBreak": 101.0,
+                    "attackType": "Melee",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV5",
+                    "canBeDefenceHalt": true
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Necalevia_Normal_NormalMeleeAttackExplode_Earth",
+              "born": {
+                "$type": "ICKMMAHFNIM",
+                "offset": {
+                  "KGEPIMHBMOL": 4.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 8.5
+                },
+                "onGround": true,
+                "positionKey": "_SP_MELEEATK_POS",
+                "directionKey": ""
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "doAfterDie": false,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ICKMMAHFNIM",
+                    "offset": {
+                      "KGEPIMHBMOL": 4.0,
+                      "JEBHCGDPFEJ": -0.5,
+                      "LPCHALMFFOD": 8.5
+                    },
+                    "onGround": true,
+                    "positionKey": "_SP_MELEEATK_POS",
+                    "directionKey": ""
+                  },
+                  "height": 3.0,
+                  "OAHPDLJIADP": 2.5
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "MeleeSPAtk",
+                  "attenuationGroup": "Oceanid_Crab_WaterStream",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 1.0,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Water",
+                    "IPFJJJGABPL": 25.0,
+                    "strikeType": "Blunt",
+                    "enBreak": 101.0,
+                    "attackType": "Melee",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV5",
+                    "canBeDefenceHalt": true
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Necalevia_Normal_NormalMeleeAttackExplode_Earth",
+              "born": {
+                "$type": "ICKMMAHFNIM",
+                "offset": {
+                  "KGEPIMHBMOL": -4.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 8.5
+                },
+                "onGround": true,
+                "positionKey": "_SP_MELEEATK_POS",
+                "directionKey": ""
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "doAfterDie": false,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ICKMMAHFNIM",
+                    "offset": {
+                      "KGEPIMHBMOL": -4.0,
+                      "JEBHCGDPFEJ": -0.5,
+                      "LPCHALMFFOD": 8.5
+                    },
+                    "onGround": true,
+                    "positionKey": "_SP_MELEEATK_POS",
+                    "directionKey": ""
+                  },
+                  "height": 3.0,
+                  "OAHPDLJIADP": 2.5
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "MeleeSPAtk",
+                  "attenuationGroup": "Oceanid_Crab_WaterStream",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 1.0,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Water",
+                    "IPFJJJGABPL": 25.0,
+                    "strikeType": "Blunt",
+                    "enBreak": 101.0,
+                    "attackType": "Melee",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV5",
+                    "canBeDefenceHalt": true
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "Monster_Necalevia_NormalMeleeAttackSP_2"
+            }
+          ]
+        },
+        "Monster_Necalevia_NormalMeleeAttackSP_2": {
+          "modifierName": "",
+          "elementDurability": 0.30000001192092896,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Necalevia_Normal_NormalMeleeAttackExplode_Earth",
+              "born": {
+                "$type": "ICKMMAHFNIM",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 14.0
+                },
+                "onGround": true,
+                "positionKey": "_SP_MELEEATK_POS",
+                "directionKey": ""
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "doAfterDie": false,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ICKMMAHFNIM",
+                    "offset": {
+                      "KGEPIMHBMOL": 0.0,
+                      "JEBHCGDPFEJ": -0.5,
+                      "LPCHALMFFOD": 14.0
+                    },
+                    "onGround": true,
+                    "positionKey": "_SP_MELEEATK_POS",
+                    "directionKey": ""
+                  },
+                  "height": 3.0,
+                  "OAHPDLJIADP": 2.5
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "MeleeSPAtk",
+                  "attenuationGroup": "Oceanid_Crab_WaterStream",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 1.0,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Water",
+                    "IPFJJJGABPL": 25.0,
+                    "strikeType": "Blunt",
+                    "enBreak": 101.0,
+                    "attackType": "Melee",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV5",
+                    "canBeDefenceHalt": true
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Necalevia_Normal_NormalMeleeAttackExplode_Earth",
+              "born": {
+                "$type": "ICKMMAHFNIM",
+                "offset": {
+                  "KGEPIMHBMOL": 6.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 12.0
+                },
+                "onGround": true,
+                "positionKey": "_SP_MELEEATK_POS",
+                "directionKey": ""
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "doAfterDie": false,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ICKMMAHFNIM",
+                    "offset": {
+                      "KGEPIMHBMOL": 6.0,
+                      "JEBHCGDPFEJ": -0.5,
+                      "LPCHALMFFOD": 12.0
+                    },
+                    "onGround": true,
+                    "positionKey": "_SP_MELEEATK_POS",
+                    "directionKey": ""
+                  },
+                  "height": 3.0,
+                  "OAHPDLJIADP": 2.5
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "MeleeSPAtk",
+                  "attenuationGroup": "Oceanid_Crab_WaterStream",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 1.0,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Water",
+                    "IPFJJJGABPL": 25.0,
+                    "strikeType": "Blunt",
+                    "enBreak": 101.0,
+                    "attackType": "Melee",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV5",
+                    "canBeDefenceHalt": true
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Necalevia_Normal_NormalMeleeAttackExplode_Earth",
+              "born": {
+                "$type": "ICKMMAHFNIM",
+                "offset": {
+                  "KGEPIMHBMOL": -6.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 12.0
+                },
+                "onGround": true,
+                "positionKey": "_SP_MELEEATK_POS",
+                "directionKey": ""
+              },
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AIFPLABJNMA",
+              "doAfterDie": false,
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ICKMMAHFNIM",
+                    "offset": {
+                      "KGEPIMHBMOL": -6.0,
+                      "JEBHCGDPFEJ": -0.5,
+                      "LPCHALMFFOD": 12.0
+                    },
+                    "onGround": true,
+                    "positionKey": "_SP_MELEEATK_POS",
+                    "directionKey": ""
+                  },
+                  "height": 3.0,
+                  "OAHPDLJIADP": 2.5
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "MeleeSPAtk",
+                  "attenuationGroup": "Oceanid_Crab_WaterStream",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 1.0,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Water",
+                    "IPFJJJGABPL": 25.0,
+                    "strikeType": "Blunt",
+                    "enBreak": 101.0,
+                    "attackType": "Melee",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV5",
+                    "canBeDefenceHalt": true
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "MPAGCPPAIHJ",
+          "key": "_SP_MELEEATK_POS",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "useRotation": true
+          }
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Monster_Necalevia_NormalMeleeAttackSP_1"
+        }
+      ]
+    }
+  }
+]

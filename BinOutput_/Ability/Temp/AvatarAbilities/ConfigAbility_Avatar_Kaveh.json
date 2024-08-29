@@ -1,0 +1,3376 @@
+[
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Kaveh_ExtraAttack",
+      "abilityMixins": [
+        {
+          "$type": "ButtonHoldChargeMixin",
+          "skillID": 10811,
+          "chargeTime": 0.25,
+          "EKKJNADOEMB": "Max_Dura",
+          "onBeginUncharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "PLLJBINMGJK": "DoSkill"
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "SkillID",
+              "param3": 1.0
+            },
+            {
+              "$type": "GNAEJNBIFAC",
+              "PLLJBINMGJK": "EndHoldTrigger"
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "SetTrigger"
+            }
+          ],
+          "onBeginCharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "PLLJBINMGJK": "DoSkill"
+            },
+            {
+              "$type": "SetAnimatorInt",
+              "intID": "SkillID",
+              "param3": 6.0
+            }
+          ],
+          "onReleaseCharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "PLLJBINMGJK": "EndHoldTrigger"
+            },
+            {
+              "$type": "ApplyModifier",
+              "modifierName": "SetTrigger"
+            }
+          ],
+          "onBeginSecondCharged": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "PLLJBINMGJK": "EndHoldTrigger"
+            }
+          ],
+          "chargeStateIDs": [
+            "Attack01_BS",
+            "Attack01",
+            "Attack02",
+            "Attack03",
+            "Attack04",
+            "ExtraAttack",
+            "ExtraAttack1"
+          ]
+        },
+        {
+          "$type": "OMINBOKBKOB",
+          "stateIDs": [
+            "ExtraAttack1"
+          ],
+          "PBLEFEPFBPH": "",
+          "LBOBGGPJOOP": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ExtraAttack1"
+          ],
+          "modifierName": "Cost",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ExtraAttack",
+            "ExtraAttack1",
+            "ExtraAttack2",
+            "ExtraAttack3"
+          ],
+          "modifierName": "Camera",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ExtraAttack",
+            "ExtraAttack1",
+            "ExtraAttack2",
+            "ExtraAttack3"
+          ],
+          "modifierName": "ExtraAttack_GV",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "Max_Dura": 0.0,
+        "StaminaCost": 0.0
+      },
+      "modifiers": {
+        "ExtraAttack_GV": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "param3": 1.0,
+              "key": "_ABILITY_Avatar_Kaveh_ExtraAttack_Flag",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Avatar_Kaveh_ExtraAttack_Flag",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "SetTrigger": {
+          "modifierName": "",
+          "elementDurability": 1.0,
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorTrigger",
+              "PLLJBINMGJK": "EndHoldTrigger"
+            }
+          ]
+        },
+        "Camera": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "PEIPIGEMHEK",
+              "shieldHP": true
+            }
+          ],
+          "onAvatarOut": [
+            {
+              "$type": "PEIPIGEMHEK",
+              "shieldHP": true
+            }
+          ]
+        },
+        "Cost": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "ALFJHNOMEFL",
+              "costStaminaDelta": "StaminaCost",
+              "onStaminaEmpty": [
+                {
+                  "$type": "SetAnimatorTrigger",
+                  "PLLJBINMGJK": "EndHoldTrigger"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Kaveh_Chest_Handler",
+      "abilityMixins": [
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Attack01_BS",
+            "Attack01",
+            "Attack02",
+            "Attack03",
+            "Attack04",
+            "ExtraAttack",
+            "ExtraAttack1",
+            "ExtraAttack2",
+            "ExtraAttack3",
+            "Kaveh_ElementalArt",
+            "Kaveh_ElementalArt_AS",
+            "Kaveh_ElementalBurst",
+            "Kaveh_ElementalBurst_AS",
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop",
+            "FallingAnthem_AS_1",
+            "FallingAnthem_AS_2"
+          ],
+          "modifierName": "Kaveh_ElementalArt_Chest_Handler",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Attack01_BS",
+          "modifierName": "Kaveh_ElementalArt_Chest_Attack01_BS_Handler",
+          "normalizeEnd": 0.10000000149011612,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Attack01",
+          "modifierName": "Kaveh_ElementalArt_Chest_Dissolve_Handler",
+          "normalizeStart": 0.550000011920929,
+          "normalizeEnd": 0.5699999928474426,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Attack02",
+          "modifierName": "Kaveh_ElementalArt_Chest_Attack02_Handler",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Attack02",
+          "modifierName": "Kaveh_ElementalArt_Chest_Dissolve_Handler",
+          "normalizeStart": 0.6000000238418579,
+          "normalizeEnd": 0.6200000047683716,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Attack03",
+          "modifierName": "Kaveh_ElementalArt_Chest_Attack03_Handler",
+          "normalizeEnd": 0.019999999552965164,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Attack03",
+          "modifierName": "Kaveh_ElementalArt_Chest_Dissolve_Handler",
+          "normalizeStart": 0.6600000262260437,
+          "normalizeEnd": 0.6800000071525574,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Attack04",
+          "modifierName": "Kaveh_ElementalArt_Chest_Attack04_Handler",
+          "normalizeEnd": 0.029999999329447746,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Attack04",
+          "modifierName": "Kaveh_ElementalArt_Chest_Dissolve_Handler",
+          "normalizeStart": 0.2800000011920929,
+          "normalizeEnd": 0.3199999928474426,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "ExtraAttack",
+          "modifierName": "Kaveh_ElementalArt_Chest_ExtraAttack_Handler",
+          "normalizeEnd": 0.05000000074505806,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ExtraAttack1"
+          ],
+          "modifierName": "Kaveh_ElementalArt_Chest_ExtraAttack_1_Handler",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "ExtraAttack2",
+          "modifierName": "Kaveh_ElementalArt_Chest_ExtraAttack_2_Handler",
+          "normalizeEnd": 0.05000000074505806,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "ExtraAttack3",
+          "modifierName": "Kaveh_ElementalArt_Chest_ExtraAttack_3_Handler",
+          "normalizeEnd": 0.05000000074505806,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "ExtraAttack3",
+          "modifierName": "Kaveh_ElementalArt_Chest_Dissolve_Handler",
+          "normalizeStart": 0.6399999856948853,
+          "normalizeEnd": 0.699999988079071,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "FallingAnthem_AS_2",
+          "modifierName": "Kaveh_ElementalArt_Chest_Dissolve_Handler",
+          "normalizeStart": 0.019999999552965164,
+          "normalizeEnd": 0.05000000074505806,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Kaveh_ElementalArt",
+          "modifierName": "Kaveh_ElementalArt_Chest_ElementalArt_Handler",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Kaveh_ElementalArt_AS",
+          "modifierName": "Kaveh_ElementalArt_Chest_Dissolve_Handler",
+          "normalizeStart": 0.4000000059604645,
+          "normalizeEnd": 0.44999998807907104,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Kaveh_ElementalBurst",
+          "modifierName": "Kaveh_ElementalArt_Chest_ElementalBurst_Handler",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Kaveh_ElementalBurst_AS",
+          "modifierName": "Kaveh_ElementalArt_Chest_Dissolve_Handler",
+          "normalizeStart": 0.44999998807907104,
+          "normalizeEnd": 0.4699999988079071,
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "Kaveh_ElementalArt_Chest_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Kaveh_Chest_Dissolved",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FireEffect",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Kaveh_Chest_Dissolved",
+                  "param3": 0.0,
+                  "forceByCaster": true
+                }
+              ],
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest_Dissolve",
+              "born": {
+                "$type": "ConfigBornByAttachPoint",
+                "useRotation": true,
+                "attachPointName": "WeaponL"
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Kaveh_ElementalArt_Chest_Dissolve_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Disp_Dissolve",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "_ABILITY_Kaveh_Chest_Dissolved",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Kaveh_ElementalArt_Chest_Attack01_BS_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Trans_Attack01_BS",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+                  "param3": 0.0
+                }
+              ],
+              "parameter": "Disp_Loop",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+                  "param3": 1.0
+                }
+              ],
+              "parameter": "Disp_Loop_Burst",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            }
+          ]
+        },
+        "Kaveh_ElementalArt_Chest_Attack02_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Trans_Attack02",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+                  "param3": 0.0
+                }
+              ],
+              "parameter": "Disp_Loop",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+                  "param3": 1.0
+                }
+              ],
+              "parameter": "Disp_Loop_Burst",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            }
+          ]
+        },
+        "Kaveh_ElementalArt_Chest_Attack03_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Trans_Attack03",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Disp_Dissolve",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+                  "param3": 0.0
+                }
+              ],
+              "parameter": "Disp_Appear",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+                  "param3": 1.0
+                }
+              ],
+              "parameter": "Disp_Loop_Burst",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            }
+          ]
+        },
+        "Kaveh_ElementalArt_Chest_Attack04_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Trans_Attack04",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Disp_Dissolve",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+                  "param3": 0.0
+                }
+              ],
+              "parameter": "AddOn_Attack04",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+                  "param3": 1.0
+                }
+              ],
+              "parameter": "AddOn_Attack04_Burst",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+                  "param3": 0.0
+                }
+              ],
+              "parameter": "Disp_Appear",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+                  "param3": 1.0
+                }
+              ],
+              "parameter": "Disp_Loop_Burst",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            }
+          ]
+        },
+        "Kaveh_ElementalArt_Chest_ExtraAttack_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+                  "param3": 0.0
+                }
+              ],
+              "parameter": "Disp_Loop",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Trans_ExtraAttack_BS",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            }
+          ]
+        },
+        "Kaveh_ElementalArt_Chest_ExtraAttack_1_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Trans_ExtraAttack_1",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            }
+          ]
+        },
+        "Kaveh_ElementalArt_Chest_ExtraAttack_2_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Trans_ExtraAttack_2",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            }
+          ]
+        },
+        "Kaveh_ElementalArt_Chest_ExtraAttack_3_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Trans_ExtraAttack_3",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            }
+          ]
+        },
+        "Kaveh_ElementalArt_Chest_ElementalArt_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Trans_ElementalArt",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Disp_Appear",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "AddOn_ElementalArt",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            }
+          ]
+        },
+        "Kaveh_ElementalArt_Chest_ElementalBurst_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Trans_ElementalBurst",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Disp_Appear_Burst",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "AddOn_ElementalBurst",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Kaveh_Weapon_Handler",
+      "abilityMixins": [
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Attack01",
+            "Attack02",
+            "Attack03",
+            "Attack04",
+            "ExtraAttack",
+            "ExtraAttack1",
+            "ExtraAttack2",
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop",
+            "FallingAnthem_AS_1",
+            "FallingAnthem_AS_2"
+          ],
+          "modifierName": "Avatar_Kaveh_WeaponEffect_Handle_GV",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Kaveh_ElementalArt",
+            "Kaveh_ElementalArt_AS",
+            "Kaveh_ElementalBurst",
+            "Kaveh_ElementalBurst_AS"
+          ],
+          "modifierName": "Avatar_Kaveh_HideWeapon",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "ExtraAttack",
+          "modifierName": "Avatar_Kaveh_HideWeapon",
+          "normalizeEnd": 0.25,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Attack01_BS",
+          "modifierName": "Avatar_Kaveh_HideWeapon",
+          "normalizeEnd": 0.09000000357627869,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Attack02",
+          "modifierName": "Avatar_Kaveh_HideWeapon",
+          "normalizeEnd": 0.029999999329447746,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Attack03",
+          "modifierName": "Avatar_Kaveh_HideWeapon",
+          "normalizeEnd": 0.10000000149011612,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Attack04",
+          "modifierName": "Avatar_Kaveh_HideWeapon",
+          "normalizeEnd": 0.05999999865889549,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "ExtraAttack",
+          "modifierName": "Avatar_Kaveh_WeaponEffect_Appear_Handler",
+          "normalizeStart": 0.23000000417232513,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Attack04",
+          "modifierName": "Avatar_Kaveh_WeaponEffect_Appear_Handler",
+          "normalizeStart": 0.05999999865889549,
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_ABILITY_Avatar_Kaveh_WeaponVFX_Flag",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5,
+            2.5
+          ],
+          "modifierNameSteps": [
+            "Blank",
+            "Avatar_Kaveh_WeaponEffect_Handle_Handler",
+            "Avatar_Kaveh_WeaponEffect_Handle_ElementalBurst_Handler"
+          ]
+        }
+      ],
+      "modifiers": {
+        "Blank": {
+          "modifierName": "",
+          "bonusCritical": 100.0
+        },
+        "Avatar_Kaveh_HideWeapon": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "NAAJIHIKECC",
+              "partNames": [
+                "equip01",
+                "equip02",
+                "equip03",
+                "sheathPoint"
+              ]
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "NAAJIHIKECC",
+              "KGGEDGKGLDD": true,
+              "partNames": [
+                "equip01",
+                "equip02",
+                "equip03",
+                "sheathPoint"
+              ]
+            }
+          ]
+        },
+        "Avatar_Kaveh_WeaponEffect_Handle_GV": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Caster",
+                  "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+                  "param3": 0.0
+                }
+              ],
+              "param3": 1.0,
+              "key": "_ABILITY_Avatar_Kaveh_WeaponVFX_Flag",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Caster",
+                  "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+                  "param3": 1.0
+                }
+              ],
+              "param3": 2.0,
+              "key": "_ABILITY_Avatar_Kaveh_WeaponVFX_Flag",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Avatar_Kaveh_WeaponVFX_Flag",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Avatar_Kaveh_WeaponEffect_Handle_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "otherTargets": {
+                "$type": "GAPFENEFKKE",
+                "equipPartNames": [
+                  "equip01",
+                  "sheathPoint"
+                ]
+              },
+              "modifierName": "Avatar_Kaveh_WeaponEffect_Handle"
+            }
+          ]
+        },
+        "Avatar_Kaveh_WeaponEffect_Handle_ElementalBurst_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "otherTargets": {
+                "$type": "GAPFENEFKKE",
+                "equipPartNames": [
+                  "equip01",
+                  "sheathPoint"
+                ]
+              },
+              "modifierName": "Avatar_Kaveh_WeaponEffect_Handle_ElementalBurst"
+            }
+          ]
+        },
+        "Avatar_Kaveh_WeaponEffect_Handle": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Weapon_Handle",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Avatar_Kaveh_WeaponEffect_Handle_ElementalBurst": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Weapon_Handle_ElementalBurst",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Avatar_Kaveh_WeaponEffect_Appear_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachModifier",
+              "otherTargets": {
+                "$type": "GAPFENEFKKE",
+                "equipPartNames": [
+                  "equip01",
+                  "sheathPoint"
+                ]
+              },
+              "modifierName": "Avatar_Kaveh_WeaponEffect_Appear"
+            }
+          ]
+        },
+        "Avatar_Kaveh_WeaponEffect_Appear": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Caster",
+                  "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Weapon_Appear",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "AttachEffect",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Caster",
+                  "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+                  "param3": 1.0
+                }
+              ],
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Weapon_Appear_ElementalBurst",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Kaveh_ElementalArt",
+      "abilityMixins": [
+        {
+          "$type": "NAFEDCNOIGL",
+          "stateID": "Kaveh_ElementalArt",
+          "modifierName": "Avatar_Kaveh_ElementalArt_Strike",
+          "normalizeStart": 0.15000000596046448,
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "Kaveh_ElementalArt_Damage": 0.0,
+        "Kaveh_ElementalArt_HealBuff_Duration": 0.0,
+        "Kaveh_ElementalArt_HealBuff_HealedAddDelta": 0.0,
+        "Kaveh_ElementalArt_HealBuff_GrassSubHurtDelta": 0.0
+      },
+      "modifiers": {
+        "Avatar_Kaveh_ElementalArt_ElementalBall_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onHittingOther": [
+            {
+              "$type": "Predicated",
+              "target": "Other",
+              "targetPredicates": [
+                {
+                  "$type": "ByAttackTags",
+                  "attackTags": [
+                    "Elemental_Art"
+                  ]
+                },
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "modifierName": "Avatar_Kaveh_ElementalArt_ElementalBall"
+                }
+              ]
+            }
+          ],
+          "hittingOtherIgnoreDummy": true,
+          "hittingOtherIgnoreElementReaction": true
+        },
+        "Avatar_Kaveh_ElementalArt_ElementalBall": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "GenerateElemBall",
+              "configID": 2019,
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 1.0
+                }
+              },
+              "hpRatio": 1.0,
+              "baseEnergy": 6.0
+            }
+          ]
+        },
+        "Avatar_Kaveh_ElementalArt_Strike": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_ElementalArt_Strike",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "useRotation": true
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "ApplyModifier",
+              "predicates": [
+                {
+                  "$type": "ByUnlockTalentParam",
+                  "talentParam": "Kaveh_Constellation_1"
+                }
+              ],
+              "modifierName": "UNIQUE_Avatar_Kaveh_ElementalArt_HealBuff"
+            },
+            {
+              "$type": "AvatarSkillStart",
+              "skillID": 10812,
+              "amountByTargetCurrentHPRatio": 1.0,
+              "costStaminaRatio": 1.0
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackCircle",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.0,
+                      "y": -2.0,
+                      "z": 0.0
+                    },
+                    "useRotation": true
+                  },
+                  "height": 4.0,
+                  "radius": 5.0
+                },
+                "attackInfo": {
+                  "attackTag": "Elemental_Art",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "Kaveh_ElementalArt_Damage",
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Grass",
+                    "elementRank": 1.5,
+                    "bonusCritical": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 75.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV7",
+                    "overrideHitImpulse": {
+                      "hitLevel": "Air",
+                      "IMIJMPGJOGG": 0.0,
+                      "BPCDKKBKOBM": 600.0
+                    }
+                  },
+                  "forceCameraShake": true,
+                  "cameraShake": {
+                    "shakeType": "CustomVector",
+                    "shakeRange": 0.36000001430511475,
+                    "shakeTime": 0.11999999731779099,
+                    "shakeDistance": 30.0,
+                    "shakeDir": {
+                      "y": 1.0
+                    }
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "ApplyModifier",
+              "otherTargets": {
+                "$type": "SelectTargetsByShape",
+                "entityTypePriority": [
+                  "Gadget",
+                  "Bullet"
+                ],
+                "shapeName": "CircleR5H4",
+                "centerBasedOn": "CurLocalAvatar",
+                "campTargetType": "All",
+                "campBasedOn": "CurLocalAvatar",
+                "doOffStage": 1.0
+              },
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "ByAny",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "key": "_ABILITY_Is_Overgrow_Mushroom",
+                      "param3": 1.0,
+                      "compareType": "MoreThanAndEqual"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "key": "_ABILITY_Is_Overgrow_Mushroom_Seed",
+                      "param3": 1.0,
+                      "compareType": "MoreThanAndEqual"
+                    }
+                  ]
+                }
+              ],
+              "modifierName": "Kaveh_ElementalArt_OvergrowSeed_Trigger"
+            }
+          ]
+        },
+        "Kaveh_ElementalArt_OvergrowSeed_Trigger": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "elementDurability": 0.05000000074505806,
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "KillSelf",
+              "configIdArray": [
+                70900397,
+                70900443
+              ]
+            }
+          ]
+        },
+        "UNIQUE_Avatar_Kaveh_ElementalArt_HealBuff": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "Kaveh_ElementalArt_HealBuff_Duration",
+          "bonusCritical": 100.0,
+          "properties": {
+            "Actor_HealedAddDelta": "Kaveh_ElementalArt_HealBuff_HealedAddDelta",
+            "Actor_GrassSubHurtDelta": "Kaveh_ElementalArt_HealBuff_GrassSubHurtDelta"
+          },
+          "state": "DefenseUp"
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "Avatar_Kaveh_ElementalArt_ElementalBall_Handler"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Kaveh_OvergrowSeed_Trigger"
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Kaveh_ElementalBurst",
+      "abilityMixins": [
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Kaveh_ElementalBurst",
+            "Kaveh_ElementalBurst_AS"
+          ],
+          "modifierName": "Avatar_Kaveh_ElementalBurst_Pre_Weather",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Kaveh_ElementalBurst"
+          ],
+          "modifierName": "Avatar_Kaveh_ElementalBurst_ExitCamera",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Kaveh_ElementalBurst"
+          ],
+          "modifierName": "Avatar_Kaveh_ElementalBurst_VFX",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Kaveh_ElementalBurst"
+          ],
+          "modifierName": "Avatar_Kaveh_ElementalBurst_Invincible",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "abilitySpecials": {
+        "Kaveh_ElementalBurst_Damage": 0.0,
+        "Kaveh_ElementalBurst_Duration": 0.0,
+        "Kaveh_ElementalBurst_ExtraStrike_Damage": 0.0,
+        "Kaveh_ElementalBurst_ExtraStrike_CD": 0.0,
+        "Kaveh_ElementalBurst_ReactionDamageUp_TeamBuff_ElemReactOvergrowDelta": 0.0,
+        "Kaveh_ElementalBurst_ElementMastery_Buff_StackNum": 0.0,
+        "Kaveh_ElementalBurst_ElementMastery_Buff_ElemMasteryDelta": 0.0,
+        "Kaveh_ElementalBurst_AtkSpeedBuff": 0.0
+      },
+      "modifiers": {
+        "Kaveh_ElementalBurst_OvergrowSeed_Trigger": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "elementDurability": 0.05000000074505806,
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "KillSelf",
+              "configIdArray": [
+                70900397,
+                70900443
+              ]
+            }
+          ]
+        },
+        "Avatar_Kaveh_ElementalBurst_Invincible": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "state": "Invincible",
+          "onAdded": [
+            {
+              "$type": "AvatarSkillStart",
+              "skillID": 10815,
+              "amountByTargetCurrentHPRatio": 1.0,
+              "costStaminaRatio": 1.0
+            },
+            {
+              "$type": "OPAOGKPJLIG",
+              "resistanceListID": 11002
+            }
+          ]
+        },
+        "Avatar_Kaveh_ElementalBurst_VFX": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_ElementalBurst",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "useRotation": true
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Avatar_Kaveh_ElementalBurst_ExitCamera": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "PEIPIGEMHEK",
+              "shieldHP": true
+            },
+            {
+              "$type": "LJBFFDLKIKL",
+              "shieldHP": true,
+              "cameraParam": {
+                "forceRadius": 6.0,
+                "forceRadiusDuration": 0.0,
+                "shouldKeepForceRadius": true
+              }
+            }
+          ]
+        },
+        "Avatar_Kaveh_ElementalBurst_Pre_Weather": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "JFFOPFFEBPN",
+              "damageRatio": "Skill",
+              "weatherPattern": "Weather_Kaveh_ElementalBurst",
+              "duration": 1.5
+            }
+          ]
+        },
+        "Avatar_Kaveh_ElementalBurst_Enhancement_Weapon": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_ElementalBurst_Weapon",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "UNIQUE_Avatar_Kaveh_ElementalBurst_Handler": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementDurability": "Kaveh_ElementalBurst_Duration",
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "HCCJNFOGEKI",
+              "oldPatterns": [
+                "Kaveh_Attack01",
+                "Kaveh_Attack02",
+                "Kaveh_Attack03",
+                "Kaveh_Attack04",
+                "Kaveh_ExtraAttack",
+                "Kaveh_ExtraAttack1",
+                "Kaveh_ExtraAttack2"
+              ],
+              "newPatterns": [
+                "Kaveh_Attack01_ElementalBurst",
+                "Kaveh_Attack02_ElementalBurst",
+                "Kaveh_Attack03_ElementalBurst",
+                "Kaveh_Attack04_ElementalBurst",
+                "Kaveh_ExtraAttack_ElementalBurst",
+                "Kaveh_ExtraAttack1_ElementalBurst",
+                "Kaveh_ExtraAttack2_ElementalBurst"
+              ]
+            }
+          ],
+          "properties": {
+            "Actor_EndureDelta": 0.5
+          },
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Buff",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "CDHOAGHMOEE"
+            },
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "CanSpecialPerform"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "param3": 1.0,
+              "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Disp_Light_On",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            },
+            {
+              "$type": "AttachModifier",
+              "otherTargets": {
+                "$type": "GAPFENEFKKE",
+                "equipPartNames": [
+                  "equip01",
+                  "sheathPoint"
+                ]
+              },
+              "modifierName": "Avatar_Kaveh_ElementalBurst_Enhancement_Weapon"
+            },
+            {
+              "$type": "AttachModifier",
+              "predicates": [
+                {
+                  "$type": "ByUnlockTalentParam",
+                  "talentParam": "Kaveh_Constellation_2"
+                }
+              ],
+              "modifierName": "Avatar_Kaveh_ElementalBurst_AtkSpeedBuff"
+            },
+            {
+              "$type": "AttachModifier",
+              "target": "CurTeamAvatars",
+              "modifierName": "Avatar_Kaveh_ElementalBurst_ReactionDamageUp_TeamBuff"
+            },
+            {
+              "$type": "AttachModifier",
+              "predicates": [
+                {
+                  "$type": "ByUnlockTalentParam",
+                  "talentParam": "Kaveh_PermanentSkill_2"
+                }
+              ],
+              "modifierName": "Avatar_Kaveh_ElementalBurst_ElementMastery_Handler"
+            },
+            {
+              "$type": "AttachModifier",
+              "predicates": [
+                {
+                  "$type": "ByUnlockTalentParam",
+                  "talentParam": "Kaveh_Constellation_6"
+                }
+              ],
+              "modifierName": "Avatar_Kaveh_ElementalBurst_ExtraStrike_Handler"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetAnimatorBool",
+              "boolID": "CanSpecialPerform",
+              "param3": true
+            },
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "GFOOGEIKGBI",
+              "parameter": "Disp_Light_Off",
+              "attachPoint": "",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Chest"
+            },
+            {
+              "$type": "SetGlobalValue",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Caster",
+                  "key": "_ABILITY_Avatar_Kaveh_ExtraAttack_Flag",
+                  "param3": 1.0
+                }
+              ],
+              "param3": 1.0,
+              "key": "_ABILITY_Avatar_Kaveh_WeaponVFX_Flag",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "SetGlobalValue",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Caster",
+                  "key": "_ABILITY_Avatar_Kaveh_FallingAttack_Flag",
+                  "param3": 1.0
+                }
+              ],
+              "param3": 1.0,
+              "key": "_ABILITY_Avatar_Kaveh_WeaponVFX_Flag",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "SetGlobalValue",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Caster",
+                  "key": "_ABILITY_Avatar_Kaveh_FallingAttack_Flag",
+                  "param3": 1.0
+                }
+              ],
+              "param3": 1.0,
+              "key": "_ABILITY_Avatar_Kaveh_FallingAttackVFX_Flag",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onKill": [
+            {
+              "$type": "RemoveUniqueModifier",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_Avatar_Kaveh_ElementalBurst_Handler"
+            }
+          ],
+          "onAvatarOut": [
+            {
+              "$type": "RemoveUniqueModifier",
+              "shieldHP": true,
+              "modifierName": "UNIQUE_Avatar_Kaveh_ElementalBurst_Handler"
+            }
+          ]
+        },
+        "Avatar_Kaveh_ElementalBurst_ReactionDamageUp_TeamBuff": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "properties": {
+            "Actor_ElemReactOvergrowDelta": "Kaveh_ElementalBurst_ReactionDamageUp_TeamBuff_ElemReactOvergrowDelta"
+          },
+          "isLimitedProperties": true
+        },
+        "Avatar_Kaveh_ElementalBurst_ExtraStrike_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "Predicated",
+              "target": "Other",
+              "targetPredicates": [
+                {
+                  "$type": "ByAttackTags",
+                  "attackTags": [
+                    "NormalAttack_01",
+                    "NormalAttack_02",
+                    "NormalAttack_03",
+                    "NormalAttack_04",
+                    "ExtraAttack",
+                    "FallingAttack"
+                  ]
+                },
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Self",
+                  "key": "_Kaveh_ElementalBurst_ExtraStrike_CD",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "modifierName": "Avatar_Kaveh_ElementalBurst_ExtraStrike_Attack"
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "modifierName": "Avatar_Kaveh_ElementalBurst_ExtraStrike_CD"
+                }
+              ]
+            }
+          ]
+        },
+        "Avatar_Kaveh_ElementalBurst_ExtraStrike_Attack": {
+          "modifierName": "",
+          "elementDurability": 0.4000000059604645,
+          "bonusCritical": 100.0,
+          "thinkInterval": 0.30000001192092896,
+          "onAdded": [
+            {
+              "$type": "SetGlobalPos",
+              "target": "SelfAttackTarget",
+              "key": "_ABILITY_Kaveh_ElementalBurst_ExtraStrike_Pos",
+              "born": {
+                "$type": "AEDBNLGHPNN",
+                "offset": {
+                  "x": 0.0,
+                  "y": 1.0,
+                  "z": 0.0
+                }
+              },
+              "setTarget": false
+            },
+            {
+              "$type": "FireEffect",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_Extra_Strike",
+              "born": {
+                "$type": "ICKMMAHFNIM",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "positionKey": "_ABILITY_Kaveh_ElementalBurst_ExtraStrike_Pos",
+                "directionKey": ""
+              },
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "TriggerAttackEvent",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ICKMMAHFNIM",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "positionKey": "_ABILITY_Kaveh_ElementalBurst_ExtraStrike_Pos",
+                    "directionKey": ""
+                  },
+                  "radius": 4.0
+                },
+                "attackInfo": {
+                  "attackTag": "Kaveh_ExtraStrike",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "Kaveh_ElementalBurst_ExtraStrike_Damage",
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Grass",
+                    "elementRank": 1.5,
+                    "bonusCritical": 25.0,
+                    "strikeType": "Default",
+                    "enBreak": 25.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV7",
+                    "overrideHitImpulse": {
+                      "hitLevel": "Air",
+                      "IMIJMPGJOGG": 0.0,
+                      "BPCDKKBKOBM": 600.0
+                    },
+                    "hitHaltTime": 0.09000000357627869,
+                    "hitHaltTimeScale": 0.009999999776482582
+                  },
+                  "forceCameraShake": true,
+                  "cameraShake": {
+                    "shakeType": "CustomVector",
+                    "shakeRange": 0.36000001430511475,
+                    "shakeTime": 0.11999999731779099,
+                    "shakeDistance": 30.0,
+                    "shakeDir": {
+                      "y": 1.0
+                    }
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "ApplyModifier",
+              "otherTargets": {
+                "$type": "SelectTargetsByShape",
+                "entityTypePriority": [
+                  "Gadget",
+                  "Bullet"
+                ],
+                "shapeName": "CircleR4H4",
+                "centerBasedOn": "CurLocalAvatar",
+                "campTargetType": "All",
+                "campBasedOn": "CurLocalAvatar",
+                "doOffStage": 1.0
+              },
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "ByAny",
+                  "predicates": [
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "key": "_ABILITY_Is_Overgrow_Mushroom",
+                      "param3": 1.0,
+                      "compareType": "MoreThanAndEqual"
+                    },
+                    {
+                      "$type": "ByTargetGlobalValue",
+                      "key": "_ABILITY_Is_Overgrow_Mushroom_Seed",
+                      "param3": 1.0,
+                      "compareType": "MoreThanAndEqual"
+                    }
+                  ]
+                }
+              ],
+              "modifierName": "Kaveh_Constellation_6_OvergrowSeed_Trigger"
+            }
+          ]
+        },
+        "Kaveh_Constellation_6_OvergrowSeed_Trigger": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "elementDurability": 0.05000000074505806,
+          "bonusCritical": 100.0,
+          "onRemoved": [
+            {
+              "$type": "KillSelf",
+              "configIdArray": [
+                70900397,
+                70900443
+              ]
+            }
+          ]
+        },
+        "Avatar_Kaveh_ElementalBurst_ExtraStrike_CD": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "elementDurability": 9.0,
+          "bonusCritical": 100.0,
+          "thinkInterval": "Kaveh_ElementalBurst_ExtraStrike_CD",
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "_Kaveh_ElementalBurst_ExtraStrike_CD",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_Kaveh_ElementalBurst_ExtraStrike_CD",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Avatar_Kaveh_ElementalBurst_ExtraStrike_CD"
+            }
+          ]
+        },
+        "Avatar_Kaveh_ElementalBurst_ElementMastery_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAttackLanded": [
+            {
+              "$type": "Predicated",
+              "target": "Other",
+              "targetPredicates": [
+                {
+                  "$type": "ByAttackTags",
+                  "attackTags": [
+                    "NormalAttack_01",
+                    "NormalAttack_02",
+                    "NormalAttack_03",
+                    "NormalAttack_04",
+                    "ExtraAttack",
+                    "FallingAttack"
+                  ]
+                },
+                {
+                  "$type": "ByEntityTypes",
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ANIMAL_ENTITY_TYPE",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Self",
+                  "key": "_Kaveh_PermanentSkill_2_CD",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "AttachModifier",
+                  "modifierName": "Avatar_Kaveh_ElementalBurst_ElementMastery_Buff"
+                },
+                {
+                  "$type": "ApplyModifier",
+                  "modifierName": "Avatar_Kaveh_ElementalBurst_ElementMastery_CD"
+                }
+              ]
+            }
+          ]
+        },
+        "Avatar_Kaveh_ElementalBurst_ElementMastery_Buff": {
+          "stacking": "Multiple",
+          "stackingOption": {
+            "abilitySpecialName": "",
+            "maxModifierNumForMultipleType": "Kaveh_ElementalBurst_ElementMastery_Buff_StackNum"
+          },
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "properties": {
+            "Actor_ElemMasteryDelta": "Kaveh_ElementalBurst_ElementMastery_Buff_ElemMasteryDelta"
+          },
+          "state": "AttackUp",
+          "isLimitedProperties": true
+        },
+        "Avatar_Kaveh_ElementalBurst_ElementMastery_CD": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "bonusCritical": 100.0,
+          "thinkInterval": 0.10000000149011612,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "param3": 1.0,
+              "key": "_Kaveh_PermanentSkill_2_CD",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_Kaveh_PermanentSkill_2_CD",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "Avatar_Kaveh_ElementalBurst_ElementMastery_CD"
+            }
+          ]
+        },
+        "Avatar_Kaveh_ElementalBurst_AtkSpeedBuff": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "properties": {
+            "Animator_AttackSpeedRatio": "Kaveh_ElementalBurst_AtkSpeedBuff"
+          },
+          "isLimitedProperties": true
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "SetGlobalValue",
+          "shieldHP": true,
+          "param3": 0.0,
+          "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "SetGlobalValue",
+          "shieldHP": true,
+          "param3": 0.0,
+          "key": "_Kaveh_ElementalBurst_ExtraStrike_CD",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "TriggerAttackEvent",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackCircle",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "ConfigBornBySelf",
+                "offset": {
+                  "x": 0.0,
+                  "y": -2.5,
+                  "z": 0.0
+                },
+                "useRotation": true
+              },
+              "height": 5.0,
+              "radius": 5.0
+            },
+            "attackInfo": {
+              "attackTag": "Elemental_Burst",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "Kaveh_ElementalBurst_Damage",
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Grass",
+                "elementRank": 1.5,
+                "bonusCritical": 50.0,
+                "strikeType": "Default",
+                "enBreak": 100.0,
+                "attackType": "Melee",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV3",
+                "retreatType": "ByHitDirection"
+              },
+              "forceCameraShake": true,
+              "cameraShake": {
+                "shakeRange": 0.6000000238418579,
+                "shakeTime": 0.36000001430511475,
+                "shakeDistance": 30.0,
+                "extension": {
+                  "baseCycle": 0.07999999821186066,
+                  "cycleDamping": -0.03999999910593033
+                }
+              }
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "ApplyModifier",
+          "otherTargets": {
+            "$type": "SelectTargetsByShape",
+            "entityTypePriority": [
+              "Gadget",
+              "Bullet"
+            ],
+            "shapeName": "CircleR5H5",
+            "centerBasedOn": "CurLocalAvatar",
+            "campTargetType": "All",
+            "campBasedOn": "CurLocalAvatar",
+            "doOffStage": 1.0
+          },
+          "shieldHP": true,
+          "predicates": [
+            {
+              "$type": "ByAny",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Is_Overgrow_Mushroom",
+                  "param3": 1.0,
+                  "compareType": "MoreThanAndEqual"
+                },
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Is_Overgrow_Mushroom_Seed",
+                  "param3": 1.0,
+                  "compareType": "MoreThanAndEqual"
+                }
+              ]
+            }
+          ],
+          "modifierName": "Kaveh_ElementalBurst_OvergrowSeed_Trigger"
+        },
+        {
+          "$type": "FireEffect",
+          "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_ElementalBurst_Cast",
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "FireEffect",
+          "muteRemoteAction": true,
+          "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_ElementalBurst_Cast_Camera",
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "JPHLIDGMGBG",
+          "cameraRadialBlur": {
+            "power": 1.5,
+            "blurTime": 0.10000000149011612,
+            "fadeTime": 0.10000000149011612
+          }
+        },
+        {
+          "$type": "ONALKNNKKLH",
+          "cameraShake": {
+            "shakeRange": 0.3199999928474426,
+            "shakeTime": 0.1599999964237213,
+            "shakeDistance": 30.0,
+            "extension": {
+              "baseCycle": 0.07999999821186066,
+              "cycleDamping": -0.03999999910593033
+            }
+          }
+        },
+        {
+          "$type": "PFKNEFGOHIH",
+          "modifierName": "UNIQUE_Avatar_Kaveh_ElementalBurst_Handler"
+        },
+        {
+          "$type": "ApplyModifier",
+          "modifierName": "UNIQUE_Avatar_Kaveh_ElementalBurst_Handler"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Kaveh_Overgrow_HealHP",
+      "abilitySpecials": {
+        "Kaveh_Overgrow_HealHP_CD": 0.0,
+        "Kaveh_Overgrow_HealHP_ElemMastery_Multiplier": 0.0
+      },
+      "modifiers": {
+        "Avatar_Kaveh_Overgrow_HealHP_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onBeingHit": [
+            {
+              "$type": "Predicated",
+              "target": "Target",
+              "targetPredicates": [
+                {
+                  "$type": "ByAttackTags",
+                  "attackTags": [
+                    "OverGrowDamage",
+                    "OverGrow_Alter_Damage",
+                    "OverGrow_Fire_Damage",
+                    "OverGrow_Electric_Damage"
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "ApplyModifier",
+                  "modifierName": "Avatar_Kaveh_Overgrow_HealHP"
+                }
+              ]
+            }
+          ]
+        },
+        "Avatar_Kaveh_Overgrow_HealHP": {
+          "modifierName": "",
+          "elementDurability": "Kaveh_Overgrow_HealHP_CD",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FHGPOFDJDCO",
+              "GHINLKIEMFA": [
+                "FIGHT_PROP_ELEMENT_MASTERY",
+                "Kaveh_Overgrow_HealHP_ElemMastery_Multiplier",
+                "MUL"
+              ],
+              "cdRatio": ""
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "Avatar_Kaveh_Overgrow_HealHP_Handler"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Kaveh_Overgrow_ReactionDamageUp",
+      "abilitySpecials": {
+        "Kaveh_Overgrow_ReactionDamageUp_Buff_ElemReactOvergrowDelta": 0.0
+      },
+      "modifiers": {
+        "Avatar_Kaveh_Overgrow_ReactionDamageUp_Buff": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "properties": {
+            "Actor_ElemReactOvergrowDelta": "Kaveh_Overgrow_ReactionDamageUp_Buff_ElemReactOvergrowDelta"
+          },
+          "isLimitedProperties": true
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "AttachModifier",
+          "modifierName": "Avatar_Kaveh_Overgrow_ReactionDamageUp_Buff"
+        }
+      ],
+      "isDynamicAbility": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Kaveh_FallingAnthem",
+      "abilityMixins": [
+        {
+          "$type": "KMPFLHBHBBP",
+          "jumpSkillID": 5081010,
+          "flySkillID": 5081010
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS"
+          ],
+          "modifierName": "FallingAnthem_BS_Material",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_Loop"
+          ],
+          "modifierName": "FallingAnthem_Loop_Normal",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "FallingAnthem_BS_2",
+            "FallingAnthem_Loop",
+            "FallingAnthem_Loop_Low"
+          ],
+          "modifierName": "FallingAnthem_LoopDamage",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS"
+          ],
+          "modifierName": "FallingAnthem_BS_VelocityForce_Initialize",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop",
+            "FallingAnthem_AS_1",
+            "FallingAnthem_AS_2"
+          ],
+          "modifierName": "FallingAnthem_Height_Detect",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop",
+            "FallingAnthem_AS_1",
+            "FallingAnthem_AS_2"
+          ],
+          "modifierName": "FallingAnthem_FallingDamageImmune_01",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop"
+          ],
+          "modifierName": "Inertia",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop",
+            "FallingAnthem_AS_1",
+            "FallingAnthem_AS_2"
+          ],
+          "modifierName": "FallingAnthem_OverHead_Camera",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS"
+          ],
+          "modifierName": "FallingAnthem_ClearVelocityForce",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop"
+          ],
+          "modifierName": "FallingAnthem_AttachSelfEffect_GV",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "FallingAnthem_BS",
+            "FallingAnthem_Loop"
+          ],
+          "modifierName": "FallingAnthem_GV",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "MLJAPFBGEEH",
+          "globalValueKey": "_ABILITY_Avatar_Kaveh_FallingAttackVFX_Flag",
+          "gvInTalk": 0.0,
+          "valueSteps": [
+            -0.5,
+            0.5,
+            1.5,
+            2.5
+          ],
+          "modifierNameSteps": [
+            "Blank",
+            "Avatar_Kaveh_FallingAttackVFX_Handler",
+            "Avatar_Kaveh_FallingAttackVFX_ElementalBurst_Handler"
+          ]
+        }
+      ],
+      "abilitySpecials": {
+        "FallingAnthem_Normal_Loop_Damage": 0.0,
+        "FallingAnthem_Normal_Rank_1_Damage": 0.0,
+        "FallingAnthem_Normal_Rank_2_Damage": 0.0,
+        "FallingAnthem_Altitude_Lv0": 20.0,
+        "FallingAnthem_Altitude_Lv1": 40.0,
+        "FallingAnthem_Altitude_Lv2": 60.0,
+        "FallingAnthem_Altitude_Lv3": 100.0,
+        "FallingAnthem_Altitude_Lv4": 200.0,
+        "FallingAnthem_FallingDamageRatio_Lv0": -1.0,
+        "FallingAnthem_FallingDamageRatio_Lv1": -1.0,
+        "FallingAnthem_FallingDamageRatio_Lv2": -0.8999999761581421,
+        "FallingAnthem_FallingDamageRatio_Lv3": -0.800000011920929,
+        "FallingAnthem_FallingDamageRatio_Lv4": -0.6000000238418579,
+        "FallingAnthem_FallingDamageRatio": 0.0
+      },
+      "modifiers": {
+        "Blank": {
+          "modifierName": "",
+          "bonusCritical": 100.0
+        },
+        "FallingAnthem_GV": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "param3": 1.0,
+              "key": "_ABILITY_Avatar_Kaveh_FallingAttack_Flag",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Avatar_Kaveh_FallingAttack_Flag",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "FallingAnthem_AttachSelfEffect_GV": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "SetGlobalValue",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Caster",
+                  "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+                  "param3": 0.0
+                }
+              ],
+              "param3": 1.0,
+              "key": "_ABILITY_Avatar_Kaveh_FallingAttackVFX_Flag",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "target": "Caster",
+                  "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+                  "param3": 1.0
+                }
+              ],
+              "param3": 2.0,
+              "key": "_ABILITY_Avatar_Kaveh_FallingAttackVFX_Flag",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "SetGlobalValue",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Avatar_Kaveh_FallingAttackVFX_Flag",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Avatar_Kaveh_FallingAttackVFX_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Claymore_FallAnthem_Self_02",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Avatar_Kaveh_FallingAttackVFX_ElementalBurst_Handler": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AttachEffect",
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_FallingAnthem_Self_02",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "FallingAnthem_BS_Material": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "FireEffect",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+                  "param3": 0.0
+                }
+              ],
+              "rotationDampTime": "Eff_Avatar_Claymore_FallAnthem_Self",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+                  "param3": 1.0
+                }
+              ],
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_FallingAnthem_Self",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+                  "param3": 0.0
+                }
+              ],
+              "rotationDampTime": "Eff_Avatar_Claymore_FallAnthem_BS",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "FireEffect",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+                  "param3": 1.0
+                }
+              ],
+              "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_FallingAnthem_BS",
+              "effectTempleteID": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "FallingAnthem_BS_VelocityForce_Initialize": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "properties": {
+            "Actor_AddGravityScale": -2.0
+          },
+          "onAdded": [
+            {
+              "$type": "LBLNHEBGPJI",
+              "forces": [
+                "RushMoveType"
+              ]
+            }
+          ]
+        },
+        "FallingAnthem_LoopDamage": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "thinkInterval": 0.30000001192092896,
+          "onThinkInterval": [
+            {
+              "$type": "TriggerAttackEvent",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+                  "param3": 0.0,
+                  "compareType": "NoneOrEqual"
+                }
+              ],
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 1.0
+                    },
+                    "useRotation": true
+                  },
+                  "radius": 1.0
+                },
+                "attackInfo": {
+                  "attackTag": "FallingAttack",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "FallingAnthem_Normal_Loop_Damage",
+                    "actorWindSubHurtDelta": 0.0,
+                    "bonusCritical": 0.0,
+                    "overrideByWeapon": true,
+                    "strikeType": "Slash",
+                    "enBreak": 35.0,
+                    "attackType": "Melee",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.019999999552965164
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            },
+            {
+              "$type": "TriggerAttackEvent",
+              "predicates": [
+                {
+                  "$type": "ByTargetGlobalValue",
+                  "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+                  "param3": 1.0
+                }
+              ],
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "ConfigAttackSphere",
+                  "triggerType": "TriggerNoRepeat",
+                  "born": {
+                    "$type": "ConfigBornBySelf",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 1.0
+                    },
+                    "useRotation": true
+                  },
+                  "radius": 1.0
+                },
+                "attackInfo": {
+                  "attackTag": "FallingAttack",
+                  "attenuationTag": "",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": "FallingAnthem_Normal_Loop_Damage",
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Grass",
+                    "bonusCritical": 0.0,
+                    "overrideByWeapon": true,
+                    "strikeType": "Slash",
+                    "enBreak": 35.0,
+                    "attackType": "Melee",
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV2",
+                    "hitHaltTimeScale": 0.019999999552965164
+                  }
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        },
+        "FallingAnthem_FallingDamageImmune_01": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "HMKGPFBBDIC",
+              "key": "_ABILITY_FallingAttack_Altitude"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": "FallingAnthem_Altitude_Lv0"
+                }
+              ],
+              "param3": "FallingAnthem_FallingDamageRatio_Lv0",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "param2": "FallingAnthem_FallingDamageRatio_Lv0",
+              "repeatTimes": "FallingAnthem_FallingDamageRatio_Lv0"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": "FallingAnthem_Altitude_Lv1"
+                },
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": "FallingAnthem_Altitude_Lv0"
+                }
+              ],
+              "param3": "FallingAnthem_FallingDamageRatio_Lv1",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "param2": "FallingAnthem_FallingDamageRatio_Lv1",
+              "repeatTimes": "FallingAnthem_FallingDamageRatio_Lv1"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": "FallingAnthem_Altitude_Lv2"
+                },
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": "FallingAnthem_Altitude_Lv1"
+                }
+              ],
+              "param3": "FallingAnthem_FallingDamageRatio_Lv2",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "param2": "FallingAnthem_FallingDamageRatio_Lv2",
+              "repeatTimes": "FallingAnthem_FallingDamageRatio_Lv2"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": "FallingAnthem_Altitude_Lv3"
+                },
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": "FallingAnthem_Altitude_Lv2"
+                }
+              ],
+              "param3": "FallingAnthem_FallingDamageRatio_Lv3",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "param2": "FallingAnthem_FallingDamageRatio_Lv3",
+              "repeatTimes": "FallingAnthem_FallingDamageRatio_Lv3"
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": "FallingAnthem_Altitude_Lv3"
+                }
+              ],
+              "param3": "FallingAnthem_FallingDamageRatio_Lv4",
+              "key": "_ABILITY_FallingAttack_Altitude",
+              "useLimitRange": true,
+              "param2": "FallingAnthem_FallingDamageRatio_Lv4",
+              "repeatTimes": "FallingAnthem_FallingDamageRatio_Lv4"
+            },
+            {
+              "$type": "AttachModifier",
+              "modifierName": "FallingAnthem_FallingDamageImmune_02"
+            }
+          ]
+        },
+        "FallingAnthem_FallingDamageImmune_02": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "LDIAIDLOPEE",
+              "globalValueKey": "_ABILITY_FallingAttack_Altitude",
+              "overrideMapKey": "FallingAnthem_FallingDamageRatio"
+            },
+            {
+              "$type": "AttachModifier",
+              "modifierName": "FallingAnthem_FallingDamageImmune_03"
+            }
+          ]
+        },
+        "FallingAnthem_FallingDamageImmune_03": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "properties": {
+            "Actor_FallingDamageRatio": "FallingAnthem_FallingDamageRatio"
+          }
+        },
+        "FallingAnthem_Loop_Normal": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "MLJAPFBGEEH",
+              "globalValueKey": "_ABILITY_FallingAnthem_UseCamera",
+              "gvInTalk": 0.0,
+              "valueSteps": [
+                -1.0,
+                0.5,
+                1.5
+              ],
+              "modifierNameSteps": [
+                "FallingAnthem_Loop_Normal_Rank_1",
+                "FallingAnthem_Loop_Normal_Rank_2"
+              ]
+            }
+          ]
+        },
+        "FallingAnthem_Loop_Normal_Rank_1": {
+          "modifierName": "",
+          "bonusCritical": 100.0
+        },
+        "FallingAnthem_Loop_Normal_Rank_2": {
+          "modifierName": "",
+          "bonusCritical": 100.0
+        },
+        "Inertia": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "KEHPDCODOOC",
+              "useXZ": false,
+              "useY": false
+            }
+          ]
+        },
+        "FallingAnthem_Height_Detect": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": 2.4000000953674316
+                }
+              ],
+              "param3": 0.0,
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "useLimitRange": true,
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "AddGlobalValue",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": 2.4000000953674316
+                }
+              ],
+              "param3": 5.0,
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "useLimitRange": true,
+              "param2": 1.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "FEKJDLHHOLE",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "logic": "LesserOrEqual",
+                  "param3": 2.4000000953674316
+                }
+              ],
+              "floatID": "FallingAnthem_UseCamera",
+              "param3": 0.0
+            },
+            {
+              "$type": "FEKJDLHHOLE",
+              "predicates": [
+                {
+                  "$type": "NKACKHNIJOO",
+                  "param3": 2.4000000953674316
+                }
+              ],
+              "floatID": "FallingAnthem_UseCamera",
+              "param3": 1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "FEKJDLHHOLE",
+              "floatID": "FallingAnthem_UseCamera",
+              "param3": 0.0
+            },
+            {
+              "$type": "AddGlobalValue",
+              "param3": 0.0,
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "useLimitRange": true,
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "FallingAnthem_OverHead_Camera": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "LJBFFDLKIKL",
+              "predicates": [
+                {
+                  "$type": "NIFDMKMHAGJ",
+                  "logic": "Equal",
+                  "param3": 1.0,
+                  "parameter": "FallingAnthem_UseCamera"
+                }
+              ],
+              "cameraParam": {
+                "forceRadius": 4.5,
+                "forceRadiusDuration": 0.20000000298023224,
+                "shouldKeepForceRadius": true
+              }
+            }
+          ]
+        },
+        "FallingAnthem_OverHead_Camera_Remover": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "PEIPIGEMHEK",
+              "shieldHP": true
+            }
+          ]
+        },
+        "FallingAnthem_Landed_Camera": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "LJBFFDLKIKL",
+              "predicates": [
+                {
+                  "$type": "NIFDMKMHAGJ",
+                  "logic": "Equal",
+                  "param3": 1.0,
+                  "parameter": "FallingAnthem_UseCamera"
+                }
+              ],
+              "cameraParam": {
+                "forceRadius": 6.0,
+                "forceRadiusDuration": 0.10000000149011612,
+                "shouldKeepForceRadius": true
+              }
+            }
+          ]
+        },
+        "FallingAnthem_ClearVelocityForce": {
+          "modifierName": "",
+          "bonusCritical": 100.0,
+          "onAdded": [
+            {
+              "$type": "LBLNHEBGPJI",
+              "forces": [
+                "RushMoveType",
+                "InertiaType"
+              ]
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "TriggerAttackEvent",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "param3": 0.0,
+              "forceByCaster": true,
+              "compareType": "NoneOrEqual"
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackCircle",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "x": 0.0,
+                  "y": -0.5,
+                  "z": 1.0
+                }
+              },
+              "height": 2.0,
+              "radius": 3.0
+            },
+            "attackInfo": {
+              "attackTag": "FallingAttack",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "FallingAnthem_Normal_Rank_1_Damage",
+                "actorWindSubHurtDelta": 0.0,
+                "bonusCritical": 25.0,
+                "overrideByWeapon": true,
+                "strikeType": "Blunt",
+                "enBreak": 150.0,
+                "attackType": "Melee",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "none",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV4",
+                "hitHaltTimeScale": 0.10000000149011612
+              },
+              "forceCameraShake": true,
+              "cameraShake": {
+                "shakeType": "CustomVector",
+                "shakeRange": 0.23999999463558197,
+                "shakeTime": 0.11999999731779099,
+                "shakeDistance": 30.0,
+                "shakeDir": {
+                  "y": 1.0
+                },
+                "extension": {
+                  "baseCycle": 0.23999999463558197,
+                  "cycleDamping": 0.0,
+                  "rangeAttenuation": 0.30000001192092896
+                }
+              }
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "TriggerAttackEvent",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "param3": 1.0,
+              "forceByCaster": true
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackCircle",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "x": 0.0,
+                  "y": -0.5,
+                  "z": 1.0
+                }
+              },
+              "height": 2.0,
+              "radius": 5.0
+            },
+            "attackInfo": {
+              "attackTag": "FallingAttack",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "FallingAnthem_Normal_Rank_2_Damage",
+                "actorWindSubHurtDelta": 0.0,
+                "bonusCritical": 25.0,
+                "overrideByWeapon": true,
+                "strikeType": "Blunt",
+                "enBreak": 200.0,
+                "attackType": "Melee",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "none",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV7",
+                "hitHaltTimeScale": 0.10000000149011612
+              },
+              "forceCameraShake": true,
+              "cameraShake": {
+                "shakeType": "CustomVector",
+                "shakeRange": 0.5,
+                "shakeTime": 0.20000000298023224,
+                "shakeDistance": 30.0,
+                "shakeDir": {
+                  "y": 1.0,
+                  "z": 1.0
+                },
+                "extension": {
+                  "baseCycle": 0.4000000059604645,
+                  "cycleDamping": 0.0,
+                  "rangeAttenuation": 0.30000001192092896
+                }
+              }
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "TriggerAttackEvent",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "param3": 0.0,
+              "forceByCaster": true,
+              "compareType": "NoneOrEqual"
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+              "param3": 1.0
+            }
+          ],
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackCircle",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "x": 0.0,
+                  "y": -0.5,
+                  "z": 1.0
+                }
+              },
+              "height": 2.0,
+              "radius": 3.0
+            },
+            "attackInfo": {
+              "attackTag": "FallingAttack",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "FallingAnthem_Normal_Rank_1_Damage",
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Grass",
+                "bonusCritical": 25.0,
+                "strikeType": "Blunt",
+                "enBreak": 150.0,
+                "attackType": "Melee",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "none",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV4",
+                "hitHaltTimeScale": 0.10000000149011612
+              },
+              "forceCameraShake": true,
+              "cameraShake": {
+                "shakeType": "CustomVector",
+                "shakeRange": 0.23999999463558197,
+                "shakeTime": 0.11999999731779099,
+                "shakeDistance": 30.0,
+                "shakeDir": {
+                  "y": 1.0
+                },
+                "extension": {
+                  "baseCycle": 0.23999999463558197,
+                  "cycleDamping": 0.0,
+                  "rangeAttenuation": 0.30000001192092896
+                }
+              }
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "TriggerAttackEvent",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "param3": 1.0,
+              "forceByCaster": true
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+              "param3": 1.0
+            }
+          ],
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "ConfigAttackCircle",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JHEBKCMEMLN",
+                "offset": {
+                  "x": 0.0,
+                  "y": -0.5,
+                  "z": 1.0
+                }
+              },
+              "height": 2.0,
+              "radius": 5.0
+            },
+            "attackInfo": {
+              "attackTag": "FallingAttack",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": "FallingAnthem_Normal_Rank_2_Damage",
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Grass",
+                "bonusCritical": 25.0,
+                "strikeType": "Blunt",
+                "enBreak": 200.0,
+                "attackType": "Melee",
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "none",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV7",
+                "hitHaltTimeScale": 0.10000000149011612
+              },
+              "forceCameraShake": true,
+              "cameraShake": {
+                "shakeType": "CustomVector",
+                "shakeRange": 0.5,
+                "shakeTime": 0.20000000298023224,
+                "shakeDistance": 30.0,
+                "shakeDir": {
+                  "y": 1.0,
+                  "z": 1.0
+                },
+                "extension": {
+                  "baseCycle": 0.4000000059604645,
+                  "cycleDamping": 0.0,
+                  "rangeAttenuation": 0.30000001192092896
+                }
+              }
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "FireEffect",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "param3": 0.0,
+              "forceByCaster": true,
+              "compareType": "NoneOrEqual"
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+              "param3": 0.0
+            }
+          ],
+          "rotationDampTime": "Eff_Avatar_Claymore_FallAnthem_Strike_01",
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "FireEffect",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "param3": 1.0,
+              "forceByCaster": true
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+              "param3": 0.0
+            }
+          ],
+          "rotationDampTime": "Eff_Avatar_Claymore_FallAnthem_Strike_02",
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "FireEffect",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "param3": 0.0,
+              "forceByCaster": true,
+              "compareType": "NoneOrEqual"
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+              "param3": 1.0
+            }
+          ],
+          "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_FallingAnthem_Strike_01",
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "FireEffect",
+          "predicates": [
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_FallingAnthem_UseCamera",
+              "param3": 1.0,
+              "forceByCaster": true
+            },
+            {
+              "$type": "ByTargetGlobalValue",
+              "key": "_ABILITY_Kaveh_ElementalBurst_Flag",
+              "param3": 1.0
+            }
+          ],
+          "rotationDampTime": "Eff_Avatar_Male_Claymore_Kaveh_FallingAnthem_Strike_02",
+          "effectTempleteID": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "ConfigAbility",
+      "abilityName": "Avatar_Kaveh_NormalAttack_DamageHandler",
+      "abilityMixins": [
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "ATK01"
+          ],
+          "actorGrassSubHurtDelta": "Kaveh_NormalAttack_01_Damage_AtkRatio",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "ATK02"
+          ],
+          "actorGrassSubHurtDelta": "Kaveh_NormalAttack_02_Damage_AtkRatio",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "ATK03"
+          ],
+          "actorGrassSubHurtDelta": "Kaveh_NormalAttack_03_Damage_AtkRatio",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "ATK04"
+          ],
+          "actorGrassSubHurtDelta": "Kaveh_NormalAttack_04_Damage_AtkRatio",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "ExtraAttack1"
+          ],
+          "actorGrassSubHurtDelta": "Kaveh_ExtraAttack_01_Damage_AtkRatio",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "ExtraAttack2"
+          ],
+          "actorGrassSubHurtDelta": "Kaveh_ExtraAttack_02_Damage_AtkRatio",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "ATK01_ElementalBurst"
+          ],
+          "actorGrassSubHurtDelta": "Kaveh_NormalAttack_01_Damage_AtkRatio",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "ATK02_ElementalBurst"
+          ],
+          "actorGrassSubHurtDelta": "Kaveh_NormalAttack_02_Damage_AtkRatio",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "ATK03_ElementalBurst"
+          ],
+          "actorGrassSubHurtDelta": "Kaveh_NormalAttack_03_Damage_AtkRatio",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "ATK04_ElementalBurst"
+          ],
+          "actorGrassSubHurtDelta": "Kaveh_NormalAttack_04_Damage_AtkRatio",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "ExtraAttack1_ElementalBurst"
+          ],
+          "actorGrassSubHurtDelta": "Kaveh_ExtraAttack_01_Damage_AtkRatio",
+          "actorWindSubHurtDelta": 0.0
+        },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "ExtraAttack2_ElementalBurst"
+          ],
+          "actorGrassSubHurtDelta": "Kaveh_ExtraAttack_02_Damage_AtkRatio",
+          "actorWindSubHurtDelta": 0.0
+        }
+      ],
+      "abilitySpecials": {
+        "Kaveh_NormalAttack_01_Damage_AtkRatio": 0.0,
+        "Kaveh_NormalAttack_02_Damage_AtkRatio": 0.0,
+        "Kaveh_NormalAttack_03_Damage_AtkRatio": 0.0,
+        "Kaveh_NormalAttack_04_Damage_AtkRatio": 0.0,
+        "Kaveh_ExtraAttack_01_Damage_AtkRatio": 0.0,
+        "Kaveh_ExtraAttack_02_Damage_AtkRatio": 0.0
+      }
+    }
+  }
+]

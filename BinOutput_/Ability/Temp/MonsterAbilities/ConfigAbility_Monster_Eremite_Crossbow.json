@@ -1,0 +1,594 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Eremite_Crossbow_AnimatorSteer",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "SingleShoot_Aim",
+            "RapidShoot_BS",
+            "ProjectileShoot_Aim01",
+            "ProjectileShoot_Aim02"
+          ],
+          "startNormalizedTime": 0.06700000166893005,
+          "endNormalizedTime": 0.12999999523162842,
+          "angularSpeed": 10.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "SingleShoot_Fire",
+            "RapidShoot_AS",
+            "ProjectileShoot_Fire01",
+            "ProjectileShoot_Fire02"
+          ],
+          "startNormalizedTime": 0.7250000238418579,
+          "endNormalizedTime": 0.800000011920929,
+          "angularSpeed": 180.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "SingleShoot_Exit",
+            "RapidShoot_AS_Loaded"
+          ],
+          "endNormalizedTime": 0.9700000286102295,
+          "angularSpeed": 160.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Alert"
+          ],
+          "angularSpeed": 270.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "Crossleg_Alert"
+          ],
+          "startNormalizedTime": 0.11100000143051147,
+          "endNormalizedTime": 0.800000011920929,
+          "angularSpeed": 250.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Eremite_Crossbow_ProjectileShoot_Load",
+      "onAbilityStart": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Eremite_ProjectileShoot_WarningLight",
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "attachPointName": "WeaponR"
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "INBCDALOHMP",
+          "predicates": [
+            {
+              "$type": "HHHMNCNPBDK",
+              "predicates": [
+                {
+                  "$type": "FMBJAJFLDIP",
+                  "target": "SelfAttackTarget",
+                  "param3": 11.0,
+                  "DDALGNLEHOD": ""
+                },
+                {
+                  "$type": "FMBJAJFLDIP",
+                  "target": "SelfAttackTarget",
+                  "compareType": "Y",
+                  "param3": 1.2000000476837158,
+                  "DDALGNLEHOD": ""
+                }
+              ]
+            }
+          ],
+          "successActions": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "ProjectileTrigger"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Eremite_Crossbow_Fire_Dendro_Bomb",
+      "onAbilityStart": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Eremite_ProjectileShoot_Fire",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42520003,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "direction": {
+              "$type": "MEADFIJAHPG",
+              "maxAngleType": "Horizontal",
+              "maxAngle": 12.0,
+              "startPoint": ""
+            },
+            "attachPointName": "WeaponR"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Eremite_Crossbow_Fire_Dendro_Bomb_Hov",
+      "onAbilityStart": [
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Eremite_ProjectileShoot_Fire",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42520004,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "direction": {
+              "$type": "MEADFIJAHPG",
+              "maxAngleType": "Horizontal",
+              "maxAngle": 12.0,
+              "startPoint": ""
+            },
+            "attachPointName": "WeaponR"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Eremite_Crossbow_SingleShoot_Fire",
+      "onAbilityStart": [
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42520001,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.20000000298023224,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.10000000149011612
+            },
+            "direction": {
+              "$type": "MEADFIJAHPG",
+              "randomAngleHor": 0.20000000298023224,
+              "randomAngleVer": 0.4000000059604645,
+              "maxAngle": 40.0,
+              "startPoint": ""
+            },
+            "attachPointName": "WeaponR"
+          }
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Eremite_Crossbow_Shoot_01",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Eremite_Crossbow_RapidShoot_Fire",
+      "abilitySpecials": {
+        "shootingDuration": 4.0
+      },
+      "modifiers": {
+        "In_RapidShooting": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "elementDurability": "shootingDuration",
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "RapidShootEndTrigger"
+            }
+          ],
+          "onReconnect": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "RapidShootEndTrigger"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42520002,
+          "born": {
+            "$type": "KLPANPDGHHA",
+            "offset": {
+              "KGEPIMHBMOL": 0.20000000298023224,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.10000000149011612
+            },
+            "direction": {
+              "$type": "MEADFIJAHPG",
+              "randomAngleHor": 1.399999976158142,
+              "randomAngleVer": 0.8999999761581421,
+              "maxAngle": 30.0,
+              "startPoint": ""
+            },
+            "attachPointName": "WeaponR"
+          }
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Eremite_Crossbow_Shoot_01",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "FLJLMOKONMB",
+          "valueRangeMax": 5.0,
+          "valueRangeMin": 2.0,
+          "overrideMapKey": "shootingDuration"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "In_RapidShooting"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Eremit_Crossbow_Arrow_Damage",
+      "onAdded": [
+        {
+          "$type": "ANLOBBMKNIJ",
+          "rotationDampTime": "Eff_Monster_Hili_None_CrossBow_Arrow",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "JHKEHNJBMOF",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JGEBAJLEBMO",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": -0.5
+                }
+              },
+              "size": {
+                "KGEPIMHBMOL": 0.10000000149011612,
+                "JEBHCGDPFEJ": 0.10000000149011612,
+                "LPCHALMFFOD": 1.0
+              }
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 1.0,
+                "actorWindSubHurtDelta": 0.0,
+                "IPFJJJGABPL": 100.0,
+                "strikeType": "Pierce",
+                "enBreak": 50.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV2",
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "cameraShake": {
+                "shakeRange": 0.05999999865889549,
+                "shakeTime": 0.09000000357627869
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Eremit_Crossbow_Arrow_Damage_Weak",
+      "onAdded": [
+        {
+          "$type": "ANLOBBMKNIJ",
+          "rotationDampTime": "Eff_Monster_Hili_None_CrossBow_Arrow",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "JHKEHNJBMOF",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "JGEBAJLEBMO",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": -0.5
+                }
+              },
+              "size": {
+                "KGEPIMHBMOL": 0.10000000149011612,
+                "JEBHCGDPFEJ": 0.10000000149011612,
+                "LPCHALMFFOD": 1.0
+              }
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.6499999761581421,
+                "actorWindSubHurtDelta": 0.0,
+                "IPFJJJGABPL": 100.0,
+                "strikeType": "Pierce",
+                "enBreak": 50.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV2",
+                "hitHaltTimeScale": 0.009999999776482582
+              },
+              "cameraShake": {
+                "shakeRange": 0.05999999865889549,
+                "shakeTime": 0.09000000357627869
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Eremit_Crossbow_Dendro_Bomb_Display",
+      "modifiers": {
+        "UNIQUE_Dendro_Bomb_Display": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "elementType": "Grass",
+          "IPFJJJGABPL": 50.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Eremite_DendroBomb",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "UNIQUE_Dendro_Bomb_Display"
+        },
+        {
+          "$type": "ANLOBBMKNIJ",
+          "rotationDampTime": "Eff_Monster_Eremite_DendroBomb_Trail",
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Eremit_Crossbow_Dendro_Bomb_Explosion",
+      "onAbilityStart": [
+        {
+          "$type": "KBODPNEEFGD",
+          "modifierName": "UNIQUE_Dendro_Bomb_Display"
+        },
+        {
+          "$type": "KBFEIHEAMBM",
+          "rotationDampTime": "Eff_Monster_Eremite_DendroBomb_Explosion",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "onGround": true,
+            "alongGround": true
+          },
+          "PPPDJGDDOGD": 1.0,
+          "AJDILHJFNKE": -1.0
+        },
+        {
+          "$type": "AIFPLABJNMA",
+          "attackEvent": {
+            "attackPattern": {
+              "$type": "BELNOFAKNBA",
+              "triggerType": "TriggerNoRepeat",
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.25,
+                  "LPCHALMFFOD": 0.0
+                },
+                "onGround": true,
+                "alongGround": true
+              },
+              "OAHPDLJIADP": 2.0
+            },
+            "attackInfo": {
+              "attackTag": "",
+              "attenuationTag": "",
+              "attenuationGroup": "default",
+              "attackProperty": {
+                "actorGrassSubHurtDelta": 0.699999988079071,
+                "actorWindSubHurtDelta": 0.0,
+                "elementType": "Grass",
+                "IPFJJJGABPL": 50.0,
+                "strikeType": "Default",
+                "enBreak": 50.0,
+                "GLKMCMDJBIK": 0.0
+              },
+              "hitPattern": {
+                "onHitEffectName": "default",
+                "hitImpulseY": "",
+                "hitImpulseType": "LV3"
+              },
+              "cameraShake": {
+                "shakeRange": 0.05999999865889549,
+                "shakeTime": 0.09000000357627869
+              },
+              "canBeModifiedBy": "OriginOwner"
+            }
+          },
+          "targetType": "Enemy"
+        },
+        {
+          "$type": "KFCDMIMBBLD",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            },
+            "onGround": true,
+            "alongGround": true
+          },
+          "gadgetID": 42520005
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Eremite_Crossbow_Dendro_Bomb_Infection",
+      "modifiers": {
+        "Dendro_Bomb_Infection": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.5,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Eremite_DendroBomb_Remains_Loop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "AIFPLABJNMA",
+              "attackEvent": {
+                "attackPattern": {
+                  "$type": "GMDIMKKHACA",
+                  "triggerType": "TriggerNoRepeat",
+                  "OAHPDLJIADP": 2.0
+                },
+                "attackInfo": {
+                  "attackTag": "",
+                  "attenuationTag": "Group1",
+                  "attenuationGroup": "default",
+                  "attackProperty": {
+                    "actorGrassSubHurtDelta": 0.20000000298023224,
+                    "actorWindSubHurtDelta": 0.0,
+                    "elementType": "Grass",
+                    "IPFJJJGABPL": 25.0,
+                    "enBreak": 0.0,
+                    "GLKMCMDJBIK": 0.0
+                  },
+                  "hitPattern": {
+                    "onHitEffectName": "default",
+                    "hitImpulseY": "",
+                    "hitImpulseType": "LV1"
+                  },
+                  "canBeModifiedBy": "OriginOwner"
+                }
+              },
+              "targetType": "Enemy"
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Dendro_Bomb_Infection"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,321 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Fungus_Trois_BVB_Ice_Digging",
+      "abilityMixins": [
+        {
+          "$type": "EJDKAKLFCPA",
+          "stateIDs": [
+            "DigAttack_Loop"
+          ],
+          "modifierName": "DigMoveLoopHandler",
+          "DGFCLAIDIFI": ""
+        },
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "NormalAttack"
+          ],
+          "endNormalizedTime": 99.0,
+          "angularSpeed": 240.0,
+          "attackTrigger": "DigOutTrigger",
+          "attackDistance": 2.0,
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "modifiers": {
+        "DigMoveLoopHandler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Fungus_Trois_Ice_DigAttack_Trail",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "IEJIAEEJHGE"
+            },
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ]
+            },
+            {
+              "$type": "HBNEMPLJCMB",
+              "hide": true
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "IEJIAEEJHGE",
+              "castShadow": true
+            },
+            {
+              "$type": "FDFGJPNDKEA",
+              "pushColliderNames": [
+                "PushCollider"
+              ],
+              "setEnable": true
+            },
+            {
+              "$type": "HBNEMPLJCMB"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Fungus_Trois_BVB_Ice_Bullet",
+      "modifiers": {
+        "Fungus_Trois_BVB_Ice_Bullet_Display": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Fungus_Trois_Ice_Bullet",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Fungus_Trois_BVB_Ice_Bullet_Display"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Fungus_Trois_BVB_Ice_Bullet_Fire",
+      "abilityMixins": [
+        {
+          "$type": "IILHMBGONGM",
+          "steerStateIDs": [
+            "UnionBurst"
+          ],
+          "angularSpeed": 120.0,
+          "attackTrigger": "",
+          "DGFCLAIDIFI": ""
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "CAKDDHLKOAB",
+          "bulletID": 42609011,
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 1.2000000476837158,
+              "LPCHALMFFOD": -0.5
+            },
+            "useRotation": true
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Fungus_Trois_BVB_Ice_Blizzard",
+      "modifiers": {
+        "UNIQUE_ElementShield_Ice": {
+          "modifierName": "",
+          "forceTriggerWhenChangeAuthority": true,
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "AAPIOACHKCI",
+              "elementType": "Frozen",
+              "showDamageText": "",
+              "DLBHHADKGJN": 360.0,
+              "maxShieldByHPRatio": 1.0,
+              "shieldAngle": 0.25
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_IN_SHIELD_PROTECT",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Fungus_Trois_Ice_FrozenShield",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "Shield_Timer"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 0.0,
+              "key": "_IN_SHIELD_PROTECT",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "KBFEIHEAMBM",
+              "rotationDampTime": "Eff_Monster_Fungus_Trois_Ice_FrozenShield_Break",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "Shield_Timer": {
+          "modifierName": "",
+          "elementDurability": 6.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "modifierName": "UNIQUE_ElementShield_Ice"
+            }
+          ]
+        }
+      },
+      "onAbilityStart": [
+        {
+          "$type": "KBODPNEEFGD",
+          "modifierName": "UNIQUE_State_Shield_Up"
+        },
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "UNIQUE_ElementShield_Ice"
+        },
+        {
+          "$type": "KFCDMIMBBLD",
+          "born": {
+            "$type": "IAENDIPDFKD",
+            "onGround": true,
+            "useRotation": true
+          },
+          "gadgetID": 42609028
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Fungus_Trois_BVB_Ice_Blizzard_Gadget",
+      "modifiers": {
+        "FrozenStorm_State": {
+          "modifierName": "",
+          "elementDurability": 6.099999904632568,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 1.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Monster_Fungus_Trois_Ice_Blizzard",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "NCFFNDHGCMH"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "CCNPNMMONDO",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "FungusAOE_R5",
+                "campTargetType": "Enemy",
+                "doOffStage": 1.0
+              },
+              "attackInfo": {
+                "attackTag": "",
+                "attenuationTag": "FrozenStorm",
+                "attenuationGroup": "FungusFightV2_Seq1",
+                "attackProperty": {
+                  "actorGrassSubHurtDelta": 1.5,
+                  "actorWindSubHurtDelta": 0.0,
+                  "elementType": "Ice",
+                  "IPFJJJGABPL": 25.0,
+                  "enBreak": 20.0,
+                  "attackType": "Range",
+                  "GLKMCMDJBIK": 0.0
+                },
+                "hitPattern": {
+                  "onHitEffectName": "default",
+                  "hitImpulseY": "",
+                  "hitImpulseType": "LV1"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "FrozenStorm_State"
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Fungus_Trois_BVB_Ice_Passive",
+      "modifiers": {
+        "Taunt_Logic": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 2.0,
+          "onThinkInterval": [
+            {
+              "$type": "GKNNJOEDOOF",
+              "otherTargets": {
+                "$type": "IJOFJOGLDHE",
+                "shapeName": "CircleR30H10",
+                "campTargetType": "Enemy",
+                "doOffStage": 1.0
+              },
+              "predicates": [
+                {
+                  "$type": "NIMAPECDNKD",
+                  "entityTypes": [
+                    "Monster",
+                    "Partner"
+                  ]
+                }
+              ],
+              "tauntLevel": "Ability_TauntLevel_4",
+              "careValue": 36.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "PELJALPANCA",
+          "modifierName": "Taunt_Logic"
+        }
+      ]
+    }
+  }
+]

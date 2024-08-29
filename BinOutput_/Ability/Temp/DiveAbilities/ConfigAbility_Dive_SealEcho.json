@@ -1,0 +1,1174 @@
+[
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Ability_Avatar_Dive_SealEcho",
+      "abilityMixins": [
+        {
+          "$type": "CCCOHMGIJPA",
+          "index": 2,
+          "otherTargets": {
+            "$type": "IJOFJOGLDHE",
+            "topLimit": 1,
+            "sortType": "HigherScoreByParam",
+            "scoreParams": {
+              "$type": "EBLFNNGANAG",
+              "OMLEPLLPLDC": true,
+              "useJoyStick": true,
+              "overrideC": 0.8999999761581421,
+              "overrideD": 0.0
+            },
+            "shapeName": "CircleR15H30",
+            "campTargetType": "Enemy",
+            "doOffStage": 1.0
+          },
+          "predicates": [
+            {
+              "$type": "DGKEPPCGHOO",
+              "KMCAMFIJLAC": true
+            },
+            {
+              "$type": "BCFNGJHILAG",
+              "predicates": [
+                {
+                  "$type": "DIADGMMLIDG"
+                }
+              ]
+            },
+            {
+              "$type": "NIMAPECDNKD",
+              "entityTypes": [
+                "Gadget",
+                "Monster",
+                "Platform"
+              ]
+            },
+            {
+              "$type": "CNGGLKHONAA",
+              "key": "_ANIMAL_ENTITY_TYPE",
+              "param3": 0.0,
+              "compareType": "NoneOrEqual"
+            }
+          ],
+          "actionQueue": [
+            {
+              "$type": "MDIAKCCDEAL",
+              "target": "Target"
+            },
+            {
+              "$type": "CAKDDHLKOAB",
+              "bulletID": 40034112,
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.5,
+                  "JEBHCGDPFEJ": 1.5,
+                  "LPCHALMFFOD": -0.5
+                },
+                "direction": {
+                  "$type": "MEADFIJAHPG",
+                  "startPoint": ""
+                },
+                "useRotation": true
+              }
+            }
+          ],
+          "LHHLHCEIINF": [
+            {
+              "$type": "CAKDDHLKOAB",
+              "bulletID": 40034112,
+              "born": {
+                "$type": "IAENDIPDFKD",
+                "offset": {
+                  "KGEPIMHBMOL": 0.5,
+                  "JEBHCGDPFEJ": 1.5,
+                  "LPCHALMFFOD": -0.5
+                },
+                "direction": {
+                  "$type": "LEIHCELGBNN",
+                  "angleOffset": {
+                    "KGEPIMHBMOL": 0.0,
+                    "JEBHCGDPFEJ": 0.0,
+                    "LPCHALMFFOD": 0.0
+                  }
+                },
+                "useRotation": true
+              },
+              "ownerIs": "OriginOwner",
+              "propOwnerIs": "OriginOwner"
+            }
+          ],
+          "EBMENFOLACN": "",
+          "ODHOEDANPHF": ""
+        }
+      ],
+      "abilitySpecials": {
+        "DamageSystemValue": 0.0,
+        "DamageRatio": 0.0
+      },
+      "modifiers": {
+        "Avatar_Dive_SealEcho_AddSkillInfo": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PDFENCBHHAI",
+              "shieldHP": true,
+              "skillID": 20062
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "KFOBADMAFJF",
+              "shieldHP": true,
+              "skillID": 20062,
+              "refreshAfterRemove": true
+            }
+          ]
+        },
+        "Avatar_Dive_SealEcho_Hold_Handler": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "GODEMHMODCN",
+              "skillID": 20062,
+              "EKKJNADOEMB": 0.25,
+              "onReleaseCharged": [
+                {
+                  "$type": "PELJALPANCA",
+                  "modifierName": "SealEcho_Short"
+                }
+              ],
+              "onBeginSecondCharged": [
+                {
+                  "$type": "PFKNEFGOHIH",
+                  "modifierName": "Focus_Father"
+                },
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "_ABILITY_Diving_Skill_In_Focus_Skill_Mark",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "PLLJBINMGJK": "StartDiveChannelTrigger"
+                },
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "_ABILITY_Diving_Skill_In_Focus_Skill_Mark",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "PLLJBINMGJK": "StartDiveChannelTrigger2"
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "_ABILITY_Diving_Skill_In_Focus_Skill_Mark",
+                      "param3": 0.0,
+                      "compareType": "NoneOrEqual"
+                    }
+                  ],
+                  "modifierName": "Focus_Father"
+                }
+              ],
+              "onReleaseSecondCharged": [
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "EndDiveChannelTrigger"
+                }
+              ],
+              "onCancelCharged": [
+                {
+                  "$type": "BLCCGIPAOIP",
+                  "PLLJBINMGJK": "EndDiveChannelTrigger"
+                },
+                {
+                  "$type": "PELJALPANCA",
+                  "predicates": [
+                    {
+                      "$type": "CNGGLKHONAA",
+                      "target": "Self",
+                      "key": "_ABILITY_Diving_Skill_In_Focus_Skill_Mark",
+                      "param3": 2.0
+                    }
+                  ],
+                  "modifierName": "Focus_Remove_Delay"
+                }
+              ],
+              "chargeStateIDs": [
+                "DiveChannelBS",
+                "DiveChannelLoop"
+              ]
+            },
+            {
+              "$type": "CCNIOPJEHOE",
+              "globalValueTarget": "Team",
+              "globalValueKey": "_ABILITY_Dive_isInFondanieWater",
+              "valueSteps": [
+                -0.5,
+                0.5
+              ],
+              "modifierNameSteps": [
+                "Clear_Focus_Father"
+              ]
+            }
+          ]
+        },
+        "Clear_Focus_Father": {
+          "stacking": "Multiple",
+          "modifierName": "",
+          "elementDurability": 0.20000000298023224,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "shieldHP": true,
+              "modifierName": "Focus_Father"
+            }
+          ]
+        },
+        "Focus_Father": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "JJFFOLOAJFO",
+              "normalizedStateIDList": [
+                {
+                  "stateID": "DiveChannelBS"
+                },
+                {
+                  "stateID": "DiveChannelLoop"
+                },
+                {
+                  "stateID": "DiveChannelAS",
+                  "normalizeEnd": 0.17000000178813934
+                }
+              ],
+              "modifierName": "Focus",
+              "DGFCLAIDIFI": ""
+            },
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "DiveChannel_BS",
+                "DiveChannel_Loop"
+              ],
+              "modifierName": "Focus_Remove_Delay_Trigger",
+              "isCheckOnAttach": true,
+              "DGFCLAIDIFI": ""
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 2.0,
+              "key": "_ABILITY_Diving_Skill_In_Focus_Skill_Mark",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Diving_Skill_In_Focus_Skill_Mark",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ]
+        },
+        "Focus_Remove_Delay_Trigger": {
+          "modifierName": "",
+          "elementDurability": 10.0,
+          "IPFJJJGABPL": 100.0,
+          "onRemoved": [
+            {
+              "$type": "BLCCGIPAOIP",
+              "PLLJBINMGJK": "EndDiveChannelTrigger"
+            },
+            {
+              "$type": "PELJALPANCA",
+              "shieldHP": true,
+              "predicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "target": "Self",
+                  "key": "_ABILITY_Diving_Skill_In_Focus_Skill_Mark",
+                  "param3": 2.0
+                }
+              ],
+              "modifierName": "Focus_Remove_Delay"
+            }
+          ]
+        },
+        "Focus_Remove_Delay": {
+          "stacking": "Multiple",
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.12999999523162842,
+          "onAdded": [
+            {
+              "$type": "CNHCMGMMDCB",
+              "muteRemoteAction": true,
+              "parameter": "Aim_Close",
+              "cameraFogEffectName": "Eff_SkillObj_Absorb_Avatar_Aim"
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "shieldHP": true,
+              "modifierName": "Focus"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "PELJALPANCA",
+              "modifierName": "SealEcho_Hold"
+            }
+          ],
+          "onThinkIntervalIsFixedUpdate": true,
+          "onAvatarOut": [
+            {
+              "$type": "PFKNEFGOHIH",
+              "shieldHP": true,
+              "modifierName": "Focus"
+            }
+          ]
+        },
+        "Aim_Camera_Eff": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "CIGJDPCDOEB",
+              "onAdded": [
+                {
+                  "$type": "AKCJLBDMNDE",
+                  "canBeHandledOnRecover": true,
+                  "muteRemoteAction": true,
+                  "enable": true,
+                  "cameraFogEffectName": "Eff_SkillObj_Absorb_Avatar_Aim",
+                  "playerFogEffectName": ""
+                }
+              ],
+              "onRemoved": [
+                {
+                  "$type": "AKCJLBDMNDE",
+                  "shieldHP": true,
+                  "canBeHandledOnRecover": true,
+                  "muteRemoteAction": true,
+                  "cameraFogEffectName": "Eff_SkillObj_Absorb_Avatar_Aim",
+                  "playerFogEffectName": ""
+                }
+              ]
+            }
+          ]
+        },
+        "Focus": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.5,
+          "modifierMixins": [
+            {
+              "$type": "OLAFLPBKGGC",
+              "shootingConfig": {
+                "normalShoot": {
+                  "bulletBornAttachPoint": "FocusAnchor",
+                  "detectRangeFromViewport": 100.0,
+                  "autoFocusMinRange": 2.0,
+                  "autoFocusMaxRange": 7.0
+                },
+                "aimingShoot": {
+                  "bulletBornAttachPoint": "FocusAnchor",
+                  "detectRangeFromViewport": 100.0,
+                  "detectRadiusFromViewport": 0.15000000596046448,
+                  "autoFocusMinRange": 2.0,
+                  "autoFocusMaxRange": 25.0
+                }
+              }
+            },
+            {
+              "$type": "FMOKCPPLHDO"
+            },
+            {
+              "$type": "DEEMAMIJENJ",
+              "target": "Team",
+              "startDuration": 0.20000000298023224,
+              "endDuration": 0.30000001192092896,
+              "JPEPPHPPCPH": true
+            },
+            {
+              "$type": "DEEMAMIJENJ",
+              "startDuration": 0.20000000298023224,
+              "endDuration": 0.30000001192092896,
+              "JPEPPHPPCPH": true
+            }
+          ],
+          "onAdded": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "target": "Team",
+              "modifierName": "Aim_Camera_Eff"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": 2.0,
+              "key": "_ABILITY_WhiteBox_Dive_Team_Trigger",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "BGMAGODJEMF",
+                  "featureTagIDs": [
+                    1044
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BAGMOLODOME",
+                  "cameraFollowLower": {
+                    "x": 1.0,
+                    "y": -0.05000000074505806,
+                    "z": -1.5
+                  },
+                  "cameraFollowUpper": {
+                    "x": 1.0,
+                    "y": -0.05000000074505806,
+                    "z": -1.2000000476837158
+                  },
+                  "cameraFastFocusMode": true,
+                  "dragButtonName": "Skill2",
+                  "assistance": {
+                    "ps4": {},
+                    "ps5": {},
+                    "other": {
+                      "useGyro": true
+                    }
+                  },
+                  "canMove": false,
+                  "showCrosshair": false,
+                  "OMHGAKJIEFB": ""
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "BGMAGODJEMF",
+                  "featureTagIDs": [
+                    1043
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BAGMOLODOME",
+                  "cameraFollowLower": {
+                    "x": 0.800000011920929,
+                    "y": 0.10000000149011612,
+                    "z": -1.600000023841858
+                  },
+                  "cameraFollowUpper": {
+                    "x": 0.800000011920929,
+                    "y": 0.10000000149011612,
+                    "z": -1.2000000476837158
+                  },
+                  "cameraFastFocusMode": true,
+                  "dragButtonName": "Skill2",
+                  "assistance": {
+                    "ps4": {},
+                    "ps5": {},
+                    "other": {
+                      "useGyro": true
+                    }
+                  },
+                  "canMove": false,
+                  "showCrosshair": false,
+                  "OMHGAKJIEFB": ""
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "BGMAGODJEMF",
+                  "featureTagIDs": [
+                    1042
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BAGMOLODOME",
+                  "cameraFollowLower": {
+                    "x": 1.100000023841858,
+                    "y": 0.15000000596046448,
+                    "z": -1.5
+                  },
+                  "cameraFollowUpper": {
+                    "x": 1.100000023841858,
+                    "y": 0.15000000596046448,
+                    "z": -1.100000023841858
+                  },
+                  "cameraFastFocusMode": true,
+                  "dragButtonName": "Skill2",
+                  "assistance": {
+                    "ps4": {},
+                    "ps5": {},
+                    "other": {
+                      "useGyro": true
+                    }
+                  },
+                  "canMove": false,
+                  "showCrosshair": false,
+                  "OMHGAKJIEFB": ""
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "BGMAGODJEMF",
+                  "featureTagIDs": [
+                    1041
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BAGMOLODOME",
+                  "cameraFollowLower": {
+                    "x": 0.8999999761581421,
+                    "y": 0.30000001192092896,
+                    "z": -1.600000023841858
+                  },
+                  "cameraFollowUpper": {
+                    "x": 0.8999999761581421,
+                    "y": 0.30000001192092896,
+                    "z": -1.2000000476837158
+                  },
+                  "cameraFastFocusMode": true,
+                  "dragButtonName": "Skill2",
+                  "assistance": {
+                    "ps4": {},
+                    "ps5": {},
+                    "other": {
+                      "useGyro": true
+                    }
+                  },
+                  "canMove": false,
+                  "showCrosshair": false,
+                  "OMHGAKJIEFB": ""
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "BGMAGODJEMF",
+                  "featureTagIDs": [
+                    1045
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "BAGMOLODOME",
+                  "cameraFollowLower": {
+                    "x": 1.100000023841858,
+                    "y": -0.30000001192092896,
+                    "z": -1.600000023841858
+                  },
+                  "cameraFollowUpper": {
+                    "x": 1.100000023841858,
+                    "y": -0.30000001192092896,
+                    "z": -1.2000000476837158
+                  },
+                  "cameraFastFocusMode": true,
+                  "dragButtonName": "Skill2",
+                  "assistance": {
+                    "ps4": {},
+                    "ps5": {},
+                    "other": {
+                      "useGyro": true
+                    }
+                  },
+                  "canMove": false,
+                  "showCrosshair": false,
+                  "OMHGAKJIEFB": ""
+                }
+              ]
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "boolID": "LockMotionFlagExitChannel",
+              "param3": true
+            },
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "VFX"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "param3": 1.0,
+              "key": "_ABILITY_Common_IsChannelState",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            }
+          ],
+          "onRemoved": [
+            {
+              "$type": "LJEDLFDLLDP",
+              "shieldHP": true
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": 3.0,
+              "key": "_ABILITY_WhiteBox_Dive_Team_Trigger",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "KJCHPDPBJHL",
+              "shieldHP": true,
+              "boolID": "LockMotionFlagExitChannel"
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "shieldHP": true,
+              "param3": 0.0,
+              "key": "_ABILITY_Common_IsChannelState",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "PFKNEFGOHIH",
+              "shieldHP": true,
+              "modifierName": "Focus_Father"
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "JLDEMMJAMLC",
+              "modifierName": "Diving_Echo_Sustained_Shooting_Driver"
+            }
+          ]
+        },
+        "Diving_Echo_Sustained_Shooting_Driver": {
+          "stacking": "Unique",
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "modifierMixins": [
+            {
+              "$type": "EKMHJKDLBJH",
+              "stateIDs": [
+                "DiveChannel_BS",
+                "DiveChannel_Loop"
+              ],
+              "modifierName": "Diving_Echo_Sustained_Shooting",
+              "isCheckOnAttach": true,
+              "DGFCLAIDIFI": ""
+            }
+          ]
+        },
+        "Diving_Echo_Sustained_Shooting": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "thinkInterval": 0.6000000238418579,
+          "onAdded": [
+            {
+              "$type": "CAKDDHLKOAB",
+              "bulletID": 40034109,
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "angleOffset": {
+                    "KGEPIMHBMOL": 0.0,
+                    "JEBHCGDPFEJ": 0.0,
+                    "LPCHALMFFOD": 0.0
+                  },
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "useRotation": true,
+                "attachPointName": "RHand",
+                "attachPointTargetType": "Self"
+              }
+            }
+          ],
+          "onThinkInterval": [
+            {
+              "$type": "CAKDDHLKOAB",
+              "bulletID": 40034109,
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "angleOffset": {
+                    "KGEPIMHBMOL": 0.0,
+                    "JEBHCGDPFEJ": 0.0,
+                    "LPCHALMFFOD": 0.0
+                  },
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "useRotation": true,
+                "attachPointName": "RHand",
+                "attachPointTargetType": "Self"
+              }
+            }
+          ]
+        },
+        "VFX": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "BGMAGODJEMF",
+                  "featureTagIDs": [
+                    1044
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "JLDEMMJAMLC",
+                  "modifierName": "VFX_R"
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "BGMAGODJEMF",
+                  "featureTagIDs": [
+                    1042
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "JLDEMMJAMLC",
+                  "modifierName": "VFX_R"
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "BGMAGODJEMF",
+                  "featureTagIDs": [
+                    1043
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "JLDEMMJAMLC",
+                  "modifierName": "VFX_R"
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "BGMAGODJEMF",
+                  "featureTagIDs": [
+                    1041
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "JLDEMMJAMLC",
+                  "modifierName": "VFX_R"
+                }
+              ]
+            },
+            {
+              "$type": "INBCDALOHMP",
+              "targetPredicates": [
+                {
+                  "$type": "BGMAGODJEMF",
+                  "featureTagIDs": [
+                    1045
+                  ]
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "JLDEMMJAMLC",
+                  "modifierName": "VFX_R"
+                }
+              ]
+            }
+          ]
+        },
+        "VFX_L": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Avatar_Diving_Gadget_Loop",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "VFX_R": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Avatar_Diving_Gadget_Loop_2",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        },
+        "SealEcho_Hold": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "CurLocalAvatar",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ABILITY_Diving_SkillCDReduction",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PPMAOBKEOHI",
+                  "skillID": 20062,
+                  "shareCDType": 1
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "PPMAOBKEOHI",
+                  "skillID": 20062
+                }
+              ]
+            },
+            {
+              "$type": "AGCKFODECAB",
+              "skillID": 20062,
+              "damageRatio": "Skill"
+            },
+            {
+              "$type": "CAKDDHLKOAB",
+              "bulletID": 40034109,
+              "born": {
+                "$type": "KLPANPDGHHA",
+                "offset": {
+                  "KGEPIMHBMOL": 0.0,
+                  "JEBHCGDPFEJ": 0.0,
+                  "LPCHALMFFOD": 0.0
+                },
+                "direction": {
+                  "$type": "LHBLDEOLGKF",
+                  "angleOffset": {
+                    "KGEPIMHBMOL": 0.0,
+                    "JEBHCGDPFEJ": 0.0,
+                    "LPCHALMFFOD": 0.0
+                  },
+                  "attachPointName": "FocusAnchor",
+                  "attachPointTargetType": "Self"
+                },
+                "useRotation": true,
+                "attachPointName": "RHand",
+                "attachPointTargetType": "Self"
+              }
+            }
+          ]
+        },
+        "SealEcho_Short": {
+          "modifierName": "",
+          "elementDurability": 0.5,
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "INBCDALOHMP",
+              "target": "CurLocalAvatar",
+              "targetPredicates": [
+                {
+                  "$type": "CNGGLKHONAA",
+                  "key": "_ABILITY_Diving_SkillCDReduction",
+                  "param3": 1.0
+                }
+              ],
+              "successActions": [
+                {
+                  "$type": "PPMAOBKEOHI",
+                  "skillID": 20062,
+                  "shareCDType": 1
+                }
+              ],
+              "failActions": [
+                {
+                  "$type": "PPMAOBKEOHI",
+                  "skillID": 20062
+                }
+              ]
+            },
+            {
+              "$type": "AGCKFODECAB",
+              "skillID": 20062,
+              "damageRatio": "Skill"
+            },
+            {
+              "$type": "GDHGMAPPGHD",
+              "shieldHP": true,
+              "key": "DamageSystemValue",
+              "damageRatio": "ElementLevelCo"
+            },
+            {
+              "$type": "KEEOEKPABPN",
+              "onlyAvatar": false
+            },
+            {
+              "$type": "BOBCOJHOKKD",
+              "target": "Team",
+              "param3": 1.0,
+              "key": "_ABILITY_WhiteBox_Dive_Team_Trigger",
+              "param2": 0.0,
+              "repeatTimes": 0.0
+            },
+            {
+              "$type": "KPNBIIFKALF",
+              "index": 2
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "BOBCOJHOKKD",
+          "shieldHP": true,
+          "param3": 0.0,
+          "key": "_ABILITY_Dive_SealEcho_Hold_Search_Tick",
+          "param2": 0.0,
+          "repeatTimes": 0.0
+        },
+        {
+          "$type": "GDHGMAPPGHD",
+          "shieldHP": true,
+          "key": "DamageSystemValue",
+          "damageRatio": "ElementLevelCo"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Avatar_Dive_SealEcho_AddSkillInfo"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "Avatar_Dive_SealEcho_Hold_Handler"
+        }
+      ],
+      "isDynamicAbility": true,
+      "KPEGFLKLCLE": true
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Absorb_SealEcho_Bullet_01",
+      "abilitySpecials": {
+        "DamageSystemValue": 0.0,
+        "DamageRatio": 0.0
+      },
+      "modifiers": {
+        "SealEcho_Bullet_Eff": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Avatar_Diving_Echo_Hold_Bullet",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "SealEcho_Bullet_Eff"
+        },
+        {
+          "$type": "GDHGMAPPGHD",
+          "shieldHP": true,
+          "key": "DamageSystemValue",
+          "damageRatio": "ElementLevelCo"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "CCNPNMMONDO",
+          "target": "Target",
+          "born": {
+            "$type": "JGEBAJLEBMO",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            }
+          },
+          "attackInfo": {
+            "attackTag": "Dive_Echo_Bullet",
+            "attenuationTag": "",
+            "attenuationGroup": "default",
+            "attackProperty": {
+              "actorWindSubHurtDelta": 0.0,
+              "IPFJJJGABPL": 0.0,
+              "strikeType": "Default",
+              "enBreak": 0.0,
+              "attackType": "Range",
+              "HMBONGBFIAP": [
+                "DamageRatio",
+                "DamageSystemValue",
+                "MUL"
+              ],
+              "trueDamage": true,
+              "GLKMCMDJBIK": 0.0
+            },
+            "hitPattern": {
+              "onHitEffectName": "Eff_Avatar_Diving_Echo_Hit",
+              "hitImpulseY": "",
+              "hitImpulseType": "LV0"
+            },
+            "canBeModifiedBy": "OriginOwner"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Default": {
+      "$type": "CBPBEHLOHKI",
+      "abilityName": "Absorb_SealEcho_Bullet_02",
+      "abilitySpecials": {
+        "DamageSystemValue": 0.0,
+        "DamageRatio": 0.0
+      },
+      "modifiers": {
+        "SealEcho_Bullet_Eff": {
+          "modifierName": "",
+          "IPFJJJGABPL": 100.0,
+          "onAdded": [
+            {
+              "$type": "ANLOBBMKNIJ",
+              "rotationDampTime": "Eff_Avatar_Diving_Echo_Short",
+              "PPPDJGDDOGD": 1.0,
+              "AJDILHJFNKE": -1.0
+            }
+          ]
+        }
+      },
+      "onAdded": [
+        {
+          "$type": "GDHGMAPPGHD",
+          "shieldHP": true,
+          "key": "DamageSystemValue",
+          "damageRatio": "ElementLevelCo"
+        },
+        {
+          "$type": "JLDEMMJAMLC",
+          "modifierName": "SealEcho_Bullet_Eff"
+        }
+      ],
+      "onAbilityStart": [
+        {
+          "$type": "CCNPNMMONDO",
+          "target": "Target",
+          "born": {
+            "$type": "JGEBAJLEBMO",
+            "offset": {
+              "KGEPIMHBMOL": 0.0,
+              "JEBHCGDPFEJ": 0.0,
+              "LPCHALMFFOD": 0.0
+            }
+          },
+          "attackInfo": {
+            "attackTag": "Dive_Echo_Bullet",
+            "attenuationTag": "",
+            "attenuationGroup": "default",
+            "attackProperty": {
+              "actorWindSubHurtDelta": 0.0,
+              "IPFJJJGABPL": 0.0,
+              "strikeType": "Default",
+              "enBreak": 0.0,
+              "HMBONGBFIAP": [
+                "DamageRatio",
+                "DamageSystemValue",
+                "MUL"
+              ],
+              "trueDamage": true,
+              "GLKMCMDJBIK": 0.0
+            },
+            "hitPattern": {
+              "onHitEffectName": "Eff_Avatar_Diving_Echo_Hit",
+              "hitImpulseY": "",
+              "hitImpulseType": "LV0"
+            },
+            "canBeModifiedBy": "OriginOwner"
+          }
+        }
+      ]
+    }
+  }
+]
